@@ -1,0 +1,45 @@
+" defsearch is a bookmark keyword or source engine.
+" set defsearch=yahoo
+map <silent> <C-b> :js toggleSidebar("viewYBookmarksSidebar", false)<CR>
+
+" AwesomeBar like completion (automatic, uses history & bookmarks as possible
+" completer)
+set wildoptions=auto
+set complete=l
+"set wildmode="list:longest"
+
+" Clicking the url bar selects it entirely
+" set! browser.urlbar.clickSelectsAll=true
+" set! browser.urlbar.doubleClickSelectsAll=true
+" set! network.image.imageBehavior: 2
+" set! browser.blink_allowed=false
+" set! security.dialog_enable_delay=0
+" set! browser.tabs.closeWindowWithLastTab=true
+
+" Focus the window, not any inputs/etc
+set focuscontent
+
+" Add the RSS/Atom feed button to the address bar
+javascript <<EOF
+(function(){
+    var feedPanel = document.createElement("statusbarpanel");
+    feedPanel.setAttribute("id", "feed-panel-clone");
+    feedPanel.appendChild(document.getElementById("feed-button"));
+    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar")
+            .insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+" 'Y'anking the selected text saves to the X selection buffer (e.g. Edit->Copy)
+js <<EOF
+mappings.addUserMap([modes.NORMAL], ["Y"], 
+    "Yank the currently selected text",
+    function () {
+        buffer.getCurrentWord();
+        events.feedkeys("<C-v>" + (/^Mac/.test(navigator.platform) ? "<M-c>" : "<C-c>"), true);
+        setTimeout( function () {
+          liberator.echo("Yanked " + util.readFromClipboard(), commandline.FORCE_SINGLELINE);
+        }, 20 );
+    });
+EOF
