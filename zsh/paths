@@ -1,0 +1,8 @@
+binary=$(which zsh)
+install_path=$binary:h:h # Strip bin/zsh to find installation path.
+ 
+funcdirs=( $HOME/.zsh/func $install_path/share/zsh/$ZSH_VERSION/functions )
+for dir ($funcdirs)
+  if [[ -x $dir ]]; then
+    fpath=($fpath $dir)
+  fi

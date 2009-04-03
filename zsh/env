@@ -1,0 +1,71 @@
+export ZHOME="${HOME}/.zsh/"
+export HISTFILE="${ZHOME}/history"
+
+# Prompt. Make it purrty!
+export PROMPT="%B%n%b%d/ "
+export RPROMPT="[%D{%L:%M%P %d%b%Y}]"
+
+# Extra places which doesn't seem to be added to the normal paths
+export PATH="${HOME}/sys/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
+export PKG_CONFIG_PATH="/opt/NX/lib/pkgconfig:/opt/kde/lib/pkgconfig:/opt/mozilla/lib/pkgconfig:/opt/qt/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig"
+export MANPATH="${MANPATH}:/usr/share/man:/usr/share/man/man1:${HOME}/sys/man:/opt/java/man:/opt/qt/man"
+
+# Personal preferences. XDG uses these, among other applications
+export EDITOR="vim"
+# Unless already set, set these:
+(( ${+BROWSER} )) || export BROWSER="elinks"
+(( ${+PAGER} ))   || export PAGER="less"
+
+# Locale stuff - en_US.utf8
+export LOCALE="en_US.utf8"
+export LANG="en_US.utf8"
+export LC_CTYPE="en_US.utf8"
+export LC_NUMERIC="en_US.utf8"
+export LC_TIME="en_US.utf8"
+export LC_COLLATE="C"
+export LC_MONETARY="en_US.utf8"
+export LC_MESSAGES="en_US.utf8"
+export LC_PAPER="en_US.utf8"
+export LC_NAME="en_US.utf8"
+export LC_ADDRESS="en_US.utf8"
+export LC_TELEPHONE="en_US.utf8"
+export LC_MEASUREMENT="en_US.utf8"
+export LC_IDENTIFICATION="en_US.utf8"
+export LC_ALL="en_US.utf8"
+
+# Time
+export HARDWARECLOCK="UTC"
+export TIMEZONE="America/New_York"
+
+# CLI default parameters
+export MY_GREP_OPTIONS="-RPiI" # Done so that grep doesn't pick them up
+export LESS="-r"
+export VI_OPTIONS="--servername VIM -p"
+
+# Enviornment variables that affect Zsh
+export HISTSIZE=2000
+export SAVEHIST=20000
+
+# Identification
+export UID="$(id -u)"
+export USERID="${UID}"
+export ME="${UID}"
+
+# Application settings
+export SUDO_PROMPT="Your Password:"
+export OOO_FORCE_DESKTOP="kde" # For the helluvit. Values = 'gnome' or 'kde'
+export MPD_HOST='localhost'
+export MPD_PORT=7600
+export GDK_USE_XFT=1
+export QT_XFT=true
+
+export CFLAGS='-march=core2 -O3 -pipe'
+# Generic Environment stuff
+export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
+#export SDL_AUDIODRIVER="pulse"
+
+export TERMINFO="~/.terminfo"
+
+export CFLAGS='-march=core2 -O3 -pipe'
+export HOSTNAME="$(hostname)"
+
