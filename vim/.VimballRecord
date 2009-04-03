@@ -1,0 +1,1 @@
+vimperator.vba: call delete('/home/colin/.vim/syntax/vimperator.vim')|call delete('/home/colin/.vim/ftdetect/vimperator.vim')
