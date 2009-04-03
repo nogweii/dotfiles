@@ -1,0 +1,25 @@
+!urxvt*font:		xft:ProggyCleanTTSZ:size=11
+!urxvt*font:		xft:Dejavu Sans Mono:size=9
+!urxvt*font:		xft:Inconsolata:size=10
+!rxvt*boldFont:		xft:DejaVu Sans Mono:bold:size=9
+!urxvt*italicFont:	xft:DejaVu Sans Mono:italic:size=9
+!urxvt*boldItalicFont:	xft:DejaVu Sans Mono:bold:italic:size=9
+URxvt*font:             xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
+URxvt*boldFont:         xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
+URxvt*italicFont:       xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
+URxvt*boldItalicFont:   xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+
+urxvt*scrollBar:	false
+!urxvt*internalBorder:	0
+!urxvt*pointerBlank:	true
+!urxvt.perl-ext-common:	default,matcher
+!urxvt.urlLauncher:	open-browser
+!urxvt.matcher.button:	1
+!urxvt.tripleclickwords:	true
+urxvt.foreground:	white
+urxvt.background:	black
+!urxvt*urgentOnBell:	true
+URxvt*transparent: true
+URxvt*shading: 20
+
+!URxvt*font: xft:terminus:pixelsize=10
