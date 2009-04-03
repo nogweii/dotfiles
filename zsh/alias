@@ -1,0 +1,74 @@
+alias -g H='|head'
+alias -g L='|less'
+alias -g N='&>/dev/null'
+alias -g T='|tail'
+
+alias dir="ls -lSrah"
+alias lad='ls -d .*(/)'                # only show dot-directories
+alias lsa='ls -a .*(.)'                # only show dot-files
+alias lss='ls -l *(s,S,t)'             # only files with setgid/setuid/sticky flag
+alias lsl='ls -l *(@[1,10])'           # only symlinks
+alias lsx='ls -l *(*[1,10])'           # only executables
+alias lsw='ls -ld *(R,W,X.^ND/)'       # world-{readable,writable,executable} files
+alias lsbig="ls -flh *(.OL[1,10])"     # display the biggest files
+alias lsd='ls -d *(/)'                 # only show directories
+#alias lse='ls -d *(/^F)'               # only show empty directories
+alias lsnew="ls -rl *(D.om[1,10])"     # display the newest files
+alias lsold="ls -rtlh *(D.om[1,10])"   # display the oldest files
+alias lssmall="ls -Srl *(.oL[1,10])"   # display the smallest files
+
+alias mkdir='mkdir -p'
+
+#alias myip="echo \$(wget -q -O - http://whatismyip.com/automation/n09230945.asp)"
+alias myip="curl http://whatismyip.org" # So much cleaner!
+alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
+alias -g G='|mgrep'
+alias -g N='&>/dev/null'
+alias -g S='|sort'
+alias -g TO='2>&1 3>&1' # '&>&1' returns a parse error
+alias -g U='|uniq'
+alias Y="yes|"
+alias PS="ps wwaux"
+
+alias cp='cp -Ri'
+alias edit="vim"
+
+alias ll='ls -lAh'
+alias ls='ls --color'
+alias lse="ls -d *(/^F)"
+
+alias mkdir='mkdir -p'
+alias nhclean='rm ./**/nohup.out'
+#alias pacman='/usr/bin/pacman-color'
+alias rm='rm -rv'
+alias yrm='Y rm -rvf'
+alias run-help='man'
+alias which-command='whence'
+alias startxl="startx &>$HOME/startx.log"
+alias mv='nocorrect mv -i'
+
+alias vim="viml"
+
+alias makepkg="makepkg -s"
+alias makepkgi="makepkg -siL"
+
+alias mgrep="grep ${MY_GREP_OPTIONS}"
+
+alias swpclean='rm $(find G "\/\..*\.swp$")'
+alias addme='sudo gpasswd -a colin'
+
+alias s="/usr/bin/sudo"
+alias t="$HOME/bin/task"
+alias edit="${EDITOR}"
+alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use s'; s "
+
+alias catw="wget -qO - "
+# Recursive ASCII-art tree list.
+alias lsr="(pwd; tree -shACFqa | tail -n+2) L"
+
+# screen + ssh-agent fix (see also: .zsh/functions)
+alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
+
+alias git-branch-name="git branch | sed '/^\*/!d; s/^\* //'"
+alias vinny='vim --cmd "let g:vimMode = \"notes\""'
+
