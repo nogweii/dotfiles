@@ -1,0 +1,37 @@
+[github]
+	user = evaryont
+	token = 734d466776df503274d77a95f3277bc4
+[user]
+	name = Colin Shea
+	email = evaryont@gmx.us
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	excludesfile = ~/.gitignore
+[branch]
+	autosetupmerge = true
+[alias]
+	a = add
+	br = branch
+	st = status
+	com = commit
+	unpushed = log HEAD..origin
+[web]
+	browser = openb
+[browser "open"]
+	cmd = /home/colin/sys/bin/open-browser
