@@ -1,11 +1,11 @@
 set from="Colin Shea <evaryont@saphrix.com>"
 
 set mbox_type=Maildir
-set folder=~/Maildir
-set mbox="~/Maildir"
+set folder=~/mail
+set mbox="~/mail"
 set record="+.Sent"
 set postponed="+.Drafts"
-set spoolfile="~/Maildir"
+set spoolfile="~/mail"
 
 
 set edit_headers
@@ -15,5 +15,5 @@ set fast_reply
 #source ~/.mutt/themes/inkpot.88
 #source ~/.mutt/themes/inkpot.256
 #source ~/.mutt/themes/calmar.light
-source ~/.mutt/themes/calmar.dark
-source ~/.mutt/themes/THEME.`$(tput colors)`
+#source ~/.mutt/themes/calmar.dark
+source ~/.mutt/themes/THEME.`tput colors`
