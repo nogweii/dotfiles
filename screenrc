@@ -26,6 +26,13 @@ defhstatus "screen: ^En (^Et)"
 term rxvt-256color
 terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 terminfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#enable SHIFT-PGUP / SHIFT-PGDOWN scroll
+termcapinfo rxvt-unicode 'ti@:te@'
+terminfo rxvt-unicode 'ti@:te@'
+termcapinfo rxvt-256color 'ti@:te@'
+terminfo rxvt-256color 'ti@:te@'
 
 # for urgency hints from terminal bells
 vbell_msg ""
