@@ -12,6 +12,7 @@ set autoedit=yes
 set fast_reply=yes
 
 set sort=threads
+set sendmail="/usr/bin/msmtp"
 
 # Advertise my computer
 my_hdr X-OS: `uname -mrs`
