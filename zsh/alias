@@ -75,7 +75,11 @@ alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "le
 if [ -d "$HOME/sys/bin" ] ; then
 	alias vim="viml"
 	alias t="$HOME/bin/task"
+else
+	MISSING_FEATURES=($MISSING_FEATURES '~/sys/bin')
 fi
 if [ -x "$(which pacman-color)" ] ; then
 	alias pacman="$(which pacman-color)"
+else
+	MISSING_FEATURES=($MISSING_FEATURES 'pacman-color')
 fi

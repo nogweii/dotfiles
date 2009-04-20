@@ -3,4 +3,6 @@ if [ -x "$(which keychain 2>/dev/null)" ] ; then
 	keychain -q --nogui --agents gpg $(cat ~/.gnupg/key_id)
 	eval `cat ~/.keychain/$(hostname)-sh`
 	eval `cat ~/.keychain/$(hostname)-sh-gpg`
+else
+	MISSING_FEATURES=($MISSING_FEATURES keychain)
 fi
