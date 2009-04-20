@@ -3,16 +3,17 @@
 # From the many uploaded zshrc's on the 'net.
 
 ZHOME="${HOME}/.zsh"
-. $ZHOME/env
-. $ZHOME/style
-. $ZHOME/alias
-. $ZHOME/functions
-. $ZHOME/keychain
+MISSING_FEATURES=()
+source $ZHOME/env
+source $ZHOME/style
+source $ZHOME/alias
+source $ZHOME/functions
+source $ZHOME/keychain
 if [ -e $ZHOME/named_dirs ] ; then
-	. $ZHOME/named_dirs
+	source $ZHOME/named_dirs
 fi
 
-# Allow comments even in interactive shells i. e.
+# Allow comments even in interactive shells i.e.
 # $ uname # This command prints system informations
 # zsh: bad pattern: #
 # $ setopt interactivecomments
@@ -34,7 +35,13 @@ zle -N self-insert url-quote-magic
 #cd ${HOME}
 if [ -x "$(which fortune)" ] ; then
 	fortune -s # "Short" apothogems only
+else
+	MISSING_FEATURES=($MISSING_FEATURES fortune)
 fi
 #set -o vi
 # MAILDIR
 test -e $HOME/Mail && export MAILDIR=$HOME/Mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+
+if [ ! "$MISSING_FEATURES" = "" ] ; then
+	echo "Missing some features: ${MISSING_FEATURES}"
+fi
