@@ -1,4 +1,6 @@
-keychain -q id_rsa
-keychain -q --nogui --agents gpg $(cat ~/.gnupg/key_id)
-eval `cat ~/.keychain/$(hostname)-sh`
-eval `cat ~/.keychain/$(hostname)-sh-gpg`
+if [ -x "$(which keychain 2>/dev/null)" ] ; then
+	keychain -q id_rsa
+	keychain -q --nogui --agents gpg $(cat ~/.gnupg/key_id)
+	eval `cat ~/.keychain/$(hostname)-sh`
+	eval `cat ~/.keychain/$(hostname)-sh-gpg`
+fi

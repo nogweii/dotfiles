@@ -32,7 +32,9 @@ autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
 #cd ${HOME}
-fortune -s # "Short" apothogems only
+if [ -x "$(which fortune)" ] ; then
+	fortune -s # "Short" apothogems only
+fi
 #set -o vi
 # MAILDIR
 test -e $HOME/Mail && export MAILDIR=$HOME/Mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
