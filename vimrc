@@ -78,3 +78,9 @@ nmap <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 	\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 	\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" Empty mouse, I don't like it interfering when I try to do a simple
+" selection.
+set mouse=
+
+set modeline " Enable dynamic configuration per-file with special syntax
