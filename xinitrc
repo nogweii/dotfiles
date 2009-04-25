@@ -62,6 +62,10 @@ urxvt &
 
 #gpodder &
 
+if [ -f ~/.Xmodmap ] ; then
+	xmodmap ~/.Xmodmap
+fi
+
 #exec openbox
 exec awesome 
 #exec xmonad
