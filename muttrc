@@ -6,6 +6,12 @@ set spoolfile="+inbox" # Starting mailbox
 set mbox="+inbox" # inbox
 set record="+sent" # sent emails (from me)
 set postponed="+drafts" # delayed emails
+mailboxes =yahoo
+mailboxes =spam
+mailboxes =keep
+mailboxes =gmx
+mailboxes =saphrix
+save-hook .* =keep
 
 set edit_headers=yes
 set autoedit=yes
