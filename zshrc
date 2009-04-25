@@ -12,7 +12,9 @@ if [ -e $ZHOME/named_dirs ] ; then
 	. $ZHOME/named_dirs
 fi
 
-# Allow comments even in interactive shells i. e.
+zle -N zle-keymap-select
+
+# Allow comments even in interactive shells i.e.
 # $ uname # This command prints system informations
 # zsh: bad pattern: #
 # $ setopt interactivecomments
