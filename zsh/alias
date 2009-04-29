@@ -39,7 +39,6 @@ alias lse="ls -d *(/^F)"
 
 alias mkdir='mkdir -p'
 alias nhclean='rm ./**/nohup.out'
-#alias pacman='/usr/bin/pacman-color'
 alias rm='rm -rv'
 alias yrm='Y rm -rvf'
 alias run-help='man'
@@ -47,7 +46,6 @@ alias which-command='whence'
 alias startxl="startx &>$HOME/startx.log"
 alias mv='nocorrect mv -i'
 
-alias vim="viml"
 
 alias makepkg="makepkg -s"
 alias makepkgi="makepkg -siL"
@@ -58,7 +56,6 @@ alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias addme='s gpasswd -a colin'
 
 alias s="/usr/bin/sudo"
-alias t="$HOME/bin/task"
 alias edit="${EDITOR}"
 alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use \'s\' instead.'; s "
 
@@ -73,3 +70,16 @@ alias git-branch-name="git branch | sed '/^\*/!d; s/^\* //'"
 alias vinny='vim --cmd "let g:vimMode = \"notes\""'
 
 alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "let html_use_css = 1" -c "TOhtml" -c "set nu" -c "syntax on" -c "wq" -c "q" &>/dev/null'
+
+
+if [ -d "$HOME/sys/bin" ] ; then
+	alias vim="viml"
+	alias t="$HOME/bin/task"
+else
+	MISSING_FEATURES=($MISSING_FEATURES '~/sys/bin')
+fi
+if [ -x "$(which pacman-color)" ] ; then
+	alias pacman="$(which pacman-color)"
+else
+	MISSING_FEATURES=($MISSING_FEATURES 'pacman-color')
+fi

@@ -61,7 +61,9 @@ export QT_XFT=true
 
 export CFLAGS='-march=core2 -O3 -pipe'
 # Generic Environment stuff
-export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
+if [ -e /usr/lib/libtrash.so ] ; then
+	export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
+fi
 #export SDL_AUDIODRIVER="pulse"
 
 export TERMINFO="~/.terminfo"
