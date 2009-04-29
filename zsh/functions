@@ -55,8 +55,8 @@ sentenv() { export $1=$2 } # csh compatibility
 _rake_does_task_list_need_generating () {
   if [ ! -f .rake_tasks ]; then return 0;
   else
-    accurate=$(stat -f%m .rake_tasks)
-    changed=$(stat -f%m Rakefile)
+    accurate=$(stat -c%Y .rake_tasks)
+    changed=$(stat -c%Y Rakefile)
     return $(expr $accurate '>=' $changed)
   fi
 }
@@ -86,5 +86,12 @@ _force_rehash() {
 # Screen + ssh-agent fix (see also: .zsh/alias)
 _ssh_auth_save() {
 	ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"
+}
+# If I am using vi keys, I want to know what mode I'm currently using.
+# zle-keymap-select is executed every time KEYMAP changes.
+# From http://zshwiki.org/home/examples/zlewidgets
+function zle-keymap-select {
+    VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
+    zle reset-prompt
 }
 

@@ -13,6 +13,8 @@ if [ -e $ZHOME/named_dirs ] ; then
 	source $ZHOME/named_dirs
 fi
 
+zle -N zle-keymap-select
+
 # Allow comments even in interactive shells i.e.
 # $ uname # This command prints system informations
 # zsh: bad pattern: #
