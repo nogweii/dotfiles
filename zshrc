@@ -42,7 +42,7 @@ else
 fi
 #set -o vi
 # MAILDIR
-test -e $HOME/Mail && export MAILDIR=$HOME/Mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
 if [ ! "$MISSING_FEATURES" = "" ] ; then
 	echo "Missing some features: ${MISSING_FEATURES}"
