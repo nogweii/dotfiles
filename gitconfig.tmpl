@@ -1,9 +1,9 @@
 [github]
 	user = evaryont
-	token = 1234567890abcdefghijklmnopqrstuv
+	token = $(cat ~/.github-token)
 [user]
 	name = Colin Shea
-	email = evaryont@gmx.us
+	email = evaryont@saphrix.com
 [color]
 	branch = auto
 	diff = auto
@@ -22,7 +22,7 @@
 	changed = green
 	untracked = cyan
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = $(realpath ~/.gitignore)
 [branch]
 	autosetupmerge = true
 [alias]
@@ -32,6 +32,8 @@
 	com = commit
 	unpushed = log HEAD..origin
 [web]
-	browser = openb
+	browser = open
 [browser "open"]
-	cmd = /home/colin/sys/bin/open-browser
+	cmd = $(which open-browser)
+
+# This is just a template parsed by zsh

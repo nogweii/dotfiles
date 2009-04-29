@@ -1,4 +1,4 @@
-
+#!/bin/zsh
 # Helpful/Useful functions
 cl()      { cd $1 && ls -a }        # cd && ls
 # grep the history
@@ -95,3 +95,10 @@ function zle-keymap-select {
     zle reset-prompt
 }
 
+function ztmpl {
+	if [[ $1.tmpl -nt $1 || (! -f $1 && -f $1.tmpl) ]] ; then
+		echo "Using $1.tmpl as the template to make $1..."
+		local foo="$(print -bP "$(cat $1.tmpl)")"
+		echo ${(e)foo} > $1
+	fi
+}
