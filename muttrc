@@ -11,6 +11,7 @@ mailboxes =spam
 mailboxes =keep
 mailboxes =gmx
 mailboxes =saphrix
+mailboxes =archlinux
 save-hook .* =keep
 
 set edit_headers=yes
@@ -23,6 +24,13 @@ set sendmail="/usr/bin/msmtp"
 # Advertise my computer
 my_hdr X-OS: `uname -mrs`
 my_hdr X-Editor: `vim --version | head -n1`
+
+# labels
+macro index u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro pager u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro index U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro pager U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro index \Cu "<limit>~u " "Limit view to label"
 
 #source ~/.mutt/themes/inkpot.88
 #source ~/.mutt/themes/inkpot.256
