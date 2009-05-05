@@ -83,3 +83,5 @@ if [ -x "$(which pacman-color)" ] ; then
 else
 	MISSING_FEATURES=($MISSING_FEATURES 'pacman-color')
 fi
+
+alias -- -="cd - &>/dev/null"
