@@ -34,7 +34,7 @@ alias cp='cp -Ri'
 alias edit="vim"
 
 alias ll='ls -lAh'
-alias ls='ls --color'
+alias ls='ls --color=auto -F'
 alias lse="ls -d *(/^F)"
 
 alias mkdir='mkdir -p'
@@ -85,3 +85,5 @@ else
 fi
 
 alias -- -="cd - &>/dev/null"
+
+# vim: set ts=8 sw=8 tw=0 syn=sh:

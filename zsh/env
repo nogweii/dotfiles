@@ -71,3 +71,6 @@ export TERMINFO="~/.terminfo"
 export CFLAGS='-march=core2 -O3 -pipe'
 export HOSTNAME="$(hostname)"
 
+eval `dircolors -b ~/.dir_colors`
+
+#  vim: set ts=8 sw=8 tw=0 syn=sh: 
