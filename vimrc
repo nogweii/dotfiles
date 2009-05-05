@@ -84,3 +84,17 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 set mouse=
 
 set modeline " Enable dynamic configuration per-file with special syntax
+" Append modeline after last line in buffer.
+" Use substitute() (not printf()) to handle '%%s' modeline in LaTeX files.
+function! AppendModeline()
+  let save_cursor = getpos('.')
+  " Keep append split on 2 lines to keep vim from trying to parse the line as
+  let append = ' vim' " ..a modeline, when we're trying to build one instead.
+  let append = append.': set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
+  $put =substitute(&commentstring, '%s', append, '')
+  call setpos('.', save_cursor)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+let ruby_space_errors = 1
+let ruby_fold = 1
