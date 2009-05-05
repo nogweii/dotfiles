@@ -24,7 +24,7 @@ eval $(cat ~/.fehbg)
 
 #xscreensaver -no-splash &
 
-#xbindkeys &
+xbindkeys -fg ~/.xbindkeysrc.scm &
 
 #gmpc &
 #sleep .5
@@ -67,9 +67,11 @@ if [ -f ~/.Xmodmap ] ; then
 fi
 
 #exec openbox
-exec awesome 
-#exec xmonad
+#exec awesome 
+exec xmonad
 #exec compiz
 #exec fusion-icon
 #exec wmii
 #exec musca
+#exec $HOME/code/barewm/barewm
+#exec $HOME/code/dwm-5.5/dwm

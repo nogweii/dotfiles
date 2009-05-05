@@ -1,4 +1,6 @@
-set from="Colin Shea <evaryont@saphrix.com>"
+#set from="Colin Shea <evaryont@saphrix.com>"
+#set from="Colin Shea <evaryont@gmx.us>"
+set from="Colin Shea <colin@evaryont.me>"
 
 set mbox_type=Maildir
 set folder=~/mail # Parent mailbox directory
