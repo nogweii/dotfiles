@@ -1,6 +1,6 @@
 [github]
 	user = evaryont
-	token = $(cat ~/.github-token)
+	token = $(< ~/.github-token)
 [user]
 	name = Colin Shea
 	email = evaryont@saphrix.com
@@ -29,11 +29,14 @@
 	a = add
 	br = branch
 	st = status
-	com = commit
-	unpushed = log HEAD..origin
+	ci = commit
+	co = checkout
+	unpushed = log origin..HEAD
 [web]
 	browser = open
 [browser "open"]
 	cmd = $(which open-browser)
 
 # This is just a template parsed by zsh
+
+/* vim: set ts=8 sw=8 tw=0 syn=gitconfig: */
