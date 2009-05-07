@@ -2,6 +2,9 @@
 " set defsearch=yahoo
 map <silent> <C-b> :js toggleSidebar("viewYBookmarksSidebar", false)<CR>
 
+" Add tab numbers for easy Alt-<1..9> switching :D
+set guioptions+=n
+
 " AwesomeBar like completion (automatic, uses history & bookmarks as possible
 " completer)
 set wildoptions=auto
