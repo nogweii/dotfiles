@@ -57,7 +57,7 @@ alias addme='s gpasswd -a colin'
 
 alias s="/usr/bin/sudo"
 alias edit="${EDITOR}"
-alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use \'s\' instead.'; s "
+alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use \"s\" instead.'; s"
 
 alias catw="wget -qO - "
 # Recursive ASCII-art tree list.
