@@ -8,12 +8,8 @@ set spoolfile="+inbox" # Starting mailbox
 set mbox="+inbox" # inbox
 set record="+sent" # sent emails (from me)
 set postponed="+drafts" # delayed emails
-mailboxes =yahoo
-mailboxes =spam
-mailboxes =keep
-mailboxes =gmx
-mailboxes =saphrix
-mailboxes =archlinux
+
+source ~/.mutt/mailboxes
 save-hook .* =keep
 
 set edit_headers=yes
@@ -22,6 +18,9 @@ set fast_reply=yes
 
 set sort=threads
 set sendmail="/usr/bin/msmtp"
+
+set status_on_top = no
+set mark_old = no
 
 # Advertise my computer
 my_hdr X-OS: `uname -mrs`
@@ -34,8 +33,22 @@ macro index U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><s
 macro pager U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
 macro index \Cu "<limit>~u " "Limit view to label"
 
-#source ~/.mutt/themes/inkpot.88
-#source ~/.mutt/themes/inkpot.256
-#source ~/.mutt/themes/calmar.light
-#source ~/.mutt/themes/calmar.dark
 source ~/.mutt/themes/THEME.`tput colors`
+
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
+bind index B bounce-message 
+
+set sidebar_width=12
+set sidebar_visible=no
+#set sidebar_delim='|' 
+color sidebar_new yellow default 
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open 
