@@ -1,1 +1,3 @@
 hash -d blog=/home/colin/code/git-blog
+hash -d bin=/home/colin/sys/bin
+hash -d aur=/home/colin/Downloads/AUR
