@@ -23,3 +23,6 @@ URxvt*transparent: true
 URxvt*shading: 20
 
 !URxvt*font: xft:terminus:pixelsize=10
+
+xterm*foreground: white
+xterm*background: black
