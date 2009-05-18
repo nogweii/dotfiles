@@ -39,7 +39,7 @@ macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
 bind index B bounce-message 
 
-set sidebar_width=12
+set sidebar_width=25
 set sidebar_visible=no
 #set sidebar_delim='|' 
 color sidebar_new yellow default 
