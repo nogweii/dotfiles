@@ -33,6 +33,7 @@ termcapinfo rxvt-unicode 'ti@:te@'
 terminfo rxvt-unicode 'ti@:te@'
 termcapinfo rxvt-256color 'ti@:te@'
 terminfo rxvt-256color 'ti@:te@'
+termcapinfo rxvt-256color 'so=:se=:ZH=\E[3m:ZR=\E[m'
 
 # for urgency hints from terminal bells
 vbell_msg ""
@@ -41,9 +42,10 @@ vbell off
 
 backtick 10 1 60 "whoami"
 
-shelltitle "$ | zsh"
+shelltitle "/ | zsh"
 #[randy@voodoo] updates :: none                        1 irssi  [2 vim .screenrc]
-hardstatus alwayslastline "%{= dd}[%10`@%H]%=%-w[%n %t]%+w"
+#hardstatus alwayslastline "%{= dd}[%10`@%H]%=%-w[%n %t]%+w"
+caption always '%{= kG}[%{G}%H%{g}][%= %{= w}%?%-Lw%?%{r}(%{u Kk}%n*%f%t%?(%u)%?%{-})%{w}%?%+Lw%?%?%= %{g}][%{c}%d %M %{G}%c]'
 
 # Screen starts at 1, not 0
 bind c screen 1
