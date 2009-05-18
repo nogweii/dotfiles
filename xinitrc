@@ -67,8 +67,8 @@ if [ -f ~/.Xmodmap ] ; then
 fi
 
 #exec openbox
-#exec awesome 
-exec xmonad
+exec awesome 
+#exec xmonad
 #exec compiz
 #exec fusion-icon
 #exec wmii
