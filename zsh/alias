@@ -73,8 +73,8 @@ alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "le
 
 
 if [ -d "$HOME/sys/bin" ] ; then
-	alias vim="viml"
-	alias t="$HOME/bin/task"
+	#alias vim="viml"
+	alias t="$HOME/sys/bin/todo.sh"
 else
 	MISSING_FEATURES=($MISSING_FEATURES '~/sys/bin')
 fi
@@ -85,5 +85,8 @@ else
 fi
 
 alias -- -="cd - &>/dev/null"
+alias meme="curl -s meme.boxofjunk.ws/moar.txt?lines=1"
+alias mailcount="find ~/mail | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
+alias wtf="wtf -f $HOME/.acronyms.wtf"
 
 # vim: set ts=8 sw=8 tw=0 syn=sh:
