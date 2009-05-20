@@ -1,9 +1,9 @@
 [github]
 	user = evaryont
-	token = 734d466776df503274d77a95f3277bc4
+	token = $(< ~/.github-token)
 [user]
 	name = Colin Shea
-	email = evaryont@gmx.us
+	email = colin@evaryont.me
 [color]
 	branch = auto
 	diff = auto
@@ -22,16 +22,21 @@
 	changed = green
 	untracked = cyan
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = $(realpath ~/.gitignore)
 [branch]
 	autosetupmerge = true
 [alias]
 	a = add
 	br = branch
 	st = status
-	com = commit
-	unpushed = log HEAD..origin
+	ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim -p2 git_diff_staged.diff -c ':tabmove' -c ':tabprev'\\\" git commit -se ; rm git_diff_staged.diff"
+	co = checkout
+	unpushed = log origin..HEAD
 [web]
-	browser = openb
+	browser = open
 [browser "open"]
-	cmd = /home/colin/sys/bin/open-browser
+	cmd = $(whence open-browser)
+
+# This is just a template parsed by zsh
+
+# vim: set ts=8 sw=8 tw=0 syn=gitconfig:

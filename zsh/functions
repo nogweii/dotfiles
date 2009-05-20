@@ -1,4 +1,4 @@
-
+#!/bin/zsh
 # Helpful/Useful functions
 cl()      { cd $1 && ls -a }        # cd && ls
 # grep the history
@@ -55,8 +55,8 @@ sentenv() { export $1=$2 } # csh compatibility
 _rake_does_task_list_need_generating () {
   if [ ! -f .rake_tasks ]; then return 0;
   else
-    accurate=$(stat -f%m .rake_tasks)
-    changed=$(stat -f%m Rakefile)
+    accurate=$(stat -c%Y .rake_tasks)
+    changed=$(stat -c%Y Rakefile)
     return $(expr $accurate '>=' $changed)
   fi
 }
@@ -87,4 +87,18 @@ _force_rehash() {
 _ssh_auth_save() {
 	ln -sf "$SSH_AUTH_SOCK" "$HOME/.screen/ssh-auth-sock.$HOSTNAME"
 }
+# If I am using vi keys, I want to know what mode I'm currently using.
+# zle-keymap-select is executed every time KEYMAP changes.
+# From http://zshwiki.org/home/examples/zlewidgets
+function zle-keymap-select {
+    VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
+    zle reset-prompt
+}
 
+function ztmpl {
+	if [[ $1.tmpl -nt $1 || (! -f $1 && -f $1.tmpl) ]] ; then
+		echo "Using $1.tmpl as the template to make $1..."
+		local foo="$(print -bP "$(cat $1.tmpl)")"
+		echo ${(e)foo} > $1
+	fi
+}

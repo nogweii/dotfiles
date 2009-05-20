@@ -26,7 +26,7 @@ syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
 set hidden " Modified buffers are saved in the bg when exiting
 set spell " Enable spell checking, mostly this only affects comments.
-let mapleader="," " Common setting, makes <Leader> , instead of \ (the default)
+let mapleader=";" " Common setting, makes <Leader> ; instead of \ (the default)
 set history=1000 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
 set wildmenu " Nice menu for tab completion
@@ -78,3 +78,40 @@ nmap <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 	\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 	\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" Empty mouse, I don't like it interfering when I try to do a simple
+" selection.
+set mouse=
+
+set modeline " Enable dynamic configuration per-file with special syntax
+" Append modeline after last line in buffer.
+" Use substitute() (not printf()) to handle '%%s' modeline in LaTeX files.
+function! AppendModeline()
+  let save_cursor = getpos('.')
+  " Keep append split on 2 lines to keep vim from trying to parse the line as
+  let append = ' vim' " ..a modeline, when we're trying to build one instead.
+  let append = append.': set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
+  $put =substitute(&commentstring, '%s', append, '')
+  call setpos('.', save_cursor)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+
+let ruby_space_errors = 1
+let ruby_fold = 1
+
+let g:Tlist_Auto_Highlight_Tag = 1
+let g:Tlist_Auto_Update = 1
+let g:Tlist_File_Fold_Auto_Close = 1
+let g:Tlist_Enable_Fold_Column = 0
+let g:Tlist_Exit_OnlyWindow = 1
+let g:Tlist_GainFocus_on_ToggleOpen = 1
+let g:Tlist_Highlight_Tag_on_BufEnter = 1
+let g:Tlist_Show_Menu = 0
+let g:Tlist_Use_Right_Window = 1
+
+nnoremap <silent> <Leader>tl :TlistToggle<CR>
+map ZW :w<CR>
+
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
