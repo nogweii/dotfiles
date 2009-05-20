@@ -1,4 +1,4 @@
-#keychain -q id_rsa
-#keychain -q --nogui --agents gpg $(cat ~/.gnupg/key_id)
-#eval `cat ~/.keychain/$(hostname)-sh`
-#eval `cat ~/.keychain/$(hostname)-sh-gpg`
+keychain -q id_rsa
+keychain -q --nogui --agents gpg $(cat ~/.gnupg/key_id)
+eval `cat ~/.keychain/$(hostname)-sh`
+eval `cat ~/.keychain/$(hostname)-sh-gpg`
