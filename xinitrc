@@ -15,8 +15,8 @@ numlockx on
 
 #unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset &
 
-eval $(cat ~/.fehbg)
-#nitrogen --restore
+#eval $(cat ~/.fehbg)
+nitrogen --restore
 
 #stalonetray --grow-gravity W -t --sticky --geometry 124x24+1280-0 -i 24 --ignore-icon-resize --no-shrink &
 
