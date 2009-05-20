@@ -19,5 +19,3 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 
 compdef _rake rake
-
-setopt vi

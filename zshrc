@@ -25,9 +25,7 @@ stty erase "^?"
 
 setopt appendhistory autocd extendedglob notify
 unsetopt beep nomatch
-# Start Zsh in vicmd mode.
-#bindkey -A vicmd main
-bindkey -v # viins mode
+bindkey -e
 
 # Paste a URL? Now auto quoted, yay! :D
 autoload -U url-quote-magic
