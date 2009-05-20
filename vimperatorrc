@@ -2,6 +2,9 @@
 " set defsearch=yahoo
 map <silent> <C-b> :js toggleSidebar("viewYBookmarksSidebar", false)<CR>
 
+" Add tab numbers for easy Alt-<1..9> switching :D
+set guioptions+=n
+
 " AwesomeBar like completion (automatic, uses history & bookmarks as possible
 " completer)
 set wildoptions=auto
@@ -9,12 +12,15 @@ set complete=l
 "set wildmode="list:longest"
 
 " Clicking the url bar selects it entirely
-" set! browser.urlbar.clickSelectsAll=true
-" set! browser.urlbar.doubleClickSelectsAll=true
+set! browser.urlbar.clickSelectsAll=true
+set! browser.urlbar.doubleClickSelectsAll=true
 " set! network.image.imageBehavior: 2
 " set! browser.blink_allowed=false
 " set! security.dialog_enable_delay=0
 " set! browser.tabs.closeWindowWithLastTab=true
+"set! liberator.saved.browser.tabs.autoHide=true
+"set! browser.tabs.autoHide=true
+set showtabline=1
 
 " Focus the window, not any inputs/etc
 set focuscontent

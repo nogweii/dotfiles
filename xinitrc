@@ -15,8 +15,8 @@ numlockx on
 
 #unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset &
 
-#eval $(cat ~/.fehbg)
-nitrogen --restore
+eval $(cat ~/.fehbg)
+#nitrogen --restore
 
 #stalonetray --grow-gravity W -t --sticky --geometry 124x24+1280-0 -i 24 --ignore-icon-resize --no-shrink &
 
@@ -24,7 +24,7 @@ nitrogen --restore
 
 #xscreensaver -no-splash &
 
-#xbindkeys &
+xbindkeys -fg ~/.xbindkeysrc.scm &
 
 #gmpc &
 #sleep .5
@@ -62,6 +62,10 @@ urxvt &
 
 #gpodder &
 
+if [ -f ~/.Xmodmap ] ; then
+	xmodmap ~/.Xmodmap
+fi
+
 #exec openbox
 exec awesome 
 #exec xmonad
@@ -69,3 +73,5 @@ exec awesome
 #exec fusion-icon
 #exec wmii
 #exec musca
+#exec $HOME/code/barewm/barewm
+#exec $HOME/code/dwm-5.5/dwm

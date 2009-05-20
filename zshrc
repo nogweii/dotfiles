@@ -2,17 +2,21 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
+umask 077 # defaults => u=rwx,g=,o=
 ZHOME="${HOME}/.zsh"
-. $ZHOME/env
-. $ZHOME/style
-. $ZHOME/alias
-. $ZHOME/functions
-. $ZHOME/keychain
+MISSING_FEATURES=()
+source $ZHOME/env
+source $ZHOME/style
+source $ZHOME/alias
+source $ZHOME/functions
+source $ZHOME/keychain
 if [ -e $ZHOME/named_dirs ] ; then
-	. $ZHOME/named_dirs
+	source $ZHOME/named_dirs
 fi
 
-# Allow comments even in interactive shells i. e.
+zle -N zle-keymap-select
+
+# Allow comments even in interactive shells i.e.
 # $ uname # This command prints system informations
 # zsh: bad pattern: #
 # $ setopt interactivecomments
@@ -32,7 +36,18 @@ autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
 #cd ${HOME}
-fortune -s # "Short" apothogems only
+if [ -x "$(which fortune)" ] ; then
+	fortune -s # "Short" apothegms only
+else
+	MISSING_FEATURES=($MISSING_FEATURES fortune)
+fi
 #set -o vi
 # MAILDIR
-test -e $HOME/Mail && export MAILDIR=$HOME/Mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+
+# Create my git configuration unless it's already up-to-date.
+ztmpl ~/.gitconfig
+
+if [ ! "$MISSING_FEATURES" = "" ] ; then
+	echo "Missing some features: ${MISSING_FEATURES}"
+fi

@@ -1,19 +1,54 @@
-set from="Colin Shea <evaryont@saphrix.com>"
+#set from="Colin Shea <evaryont@saphrix.com>"
+#set from="Colin Shea <evaryont@gmx.us>"
+set from="Colin Shea <colin@evaryont.me>"
 
 set mbox_type=Maildir
-set folder=~/Maildir
-set mbox="~/Maildir"
-set record="+.Sent"
-set postponed="+.Drafts"
-set spoolfile="~/Maildir"
+set folder=~/mail # Parent mailbox directory
+set spoolfile="+inbox" # Starting mailbox
+set mbox="+inbox" # inbox
+set record="+sent" # sent emails (from me)
+set postponed="+drafts" # delayed emails
 
+source ~/.mutt/mailboxes
+save-hook .* =keep
 
-set edit_headers
-set autoedit
-set fast_reply
+set edit_headers=yes
+set autoedit=yes
+set fast_reply=yes
 
-#source ~/.mutt/themes/inkpot.88
-#source ~/.mutt/themes/inkpot.256
-#source ~/.mutt/themes/calmar.light
-source ~/.mutt/themes/calmar.dark
-source ~/.mutt/themes/THEME.`$(tput colors)`
+set sort=threads
+set sendmail="/usr/bin/msmtp"
+
+set status_on_top = no
+set mark_old = no
+
+# Advertise my computer
+my_hdr X-OS: `uname -mrs`
+my_hdr X-Editor: `vim --version | head -n1`
+
+# labels
+macro index u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro pager u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro index U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro pager U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro index \Cu "<limit>~u " "Limit view to label"
+
+source ~/.mutt/themes/THEME.`tput colors`
+
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
+bind index B bounce-message 
+
+set sidebar_width=25
+set sidebar_visible=no
+#set sidebar_delim='|' 
+color sidebar_new yellow default 
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open 

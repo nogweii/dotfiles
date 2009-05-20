@@ -5,6 +5,10 @@
  
 require 'fileutils'
 Dir["*"].reject {|file| file =~ /README/ or file == $0 }.each do |file|
-  FileUtils.ln_s(File.expand_path(File.join(File.dirname(file), file)), File.expand_path(File.join(ENV['HOME'], ".#{file}")), :verbose => true) unless File.exists? File.expand_path(File.join(ENV['HOME'], ".#{file}"))
+  unless File.exists? File.expand_path(File.join(ENV['HOME'], ".#{file}"))
+    FileUtils.ln_s(File.expand_path(File.join(File.dirname(file), file)), File.expand_path(File.join(ENV['HOME'], ".#{file}")), :verbose => true)
+  else
+    warn "`#{File.expand_path(File.join(ENV['HOME'], ".#{file}"))}' already exists, skipping"
+  end
 end
 

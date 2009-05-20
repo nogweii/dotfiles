@@ -1,2 +1,4 @@
 *.swp
 .swo
+.rake_tasks
+git_diff_staged.diff
