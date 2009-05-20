@@ -47,7 +47,7 @@ alias which-command='whence'
 alias startxl="startx &>$HOME/startx.log"
 alias mv='nocorrect mv -i'
 
-alias vim="viml"
+#alias vim="viml"
 
 alias makepkg="makepkg -s"
 alias makepkgi="makepkg -siL"
