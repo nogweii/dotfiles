@@ -1,1 +1,1 @@
-rc.lua.exploratory
+rc.lua.orig
