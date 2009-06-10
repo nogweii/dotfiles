@@ -2,7 +2,7 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-umask 077 # defaults => u=rwx,g=,o=
+#umask 077 # defaults => u=rwx,g=,o=
 ZHOME="${HOME}/.zsh"
 MISSING_FEATURES=()
 source $ZHOME/env
@@ -43,7 +43,7 @@ else
 fi
 #set -o vi
 # MAILDIR
-test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $MAILDIR/*(.); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
 # Create my git configuration unless it's already up-to-date.
 ztmpl ~/.gitconfig
