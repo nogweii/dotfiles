@@ -16,10 +16,32 @@ urxvt*scrollBar:	false
 !urxvt.urlLauncher:	open-browser
 !urxvt.matcher.button:	1
 !urxvt.tripleclickwords:	true
-urxvt.foreground:	white
-urxvt.background:	black
 !urxvt*urgentOnBell:	true
-URxvt*transparent: true
-URxvt*shading: 20
+!URxvt*transparent: true
+!URxvt*shading: 20
 
 !URxvt*font: xft:terminus:pixelsize=10
+!
+
+! clickable links
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: xdg-open
+!URxvt.matcher.button: 2
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
+!URxvt.background:       rgba:0000/0000/0000/eeee
+URxvt*background: rgba:0000/0000/0000/eeee
+URxvt.foreground:       grey80
+!URxvt.foreground:	white
+! Use this color for bold text
+URxvt.colorBD:          white
+!URxvt.font:             xft:Lucida Typewriter:pixelsize=10
+!URxvt.depth:            24
+URxvt.depth:            32
+URxvt.saveLines:        128
+URxvt.scrollTtyOutput:  false
+URxvt.scrollWithBuffer: false
+URxvt.scrollTtyKeypress: true
+!URxvt.secondaryScreen:  false
+!URxvt.secondaryScroll:  false
+URxvt.cursorColor:      green
+URxvt.cursorColor2:     black
