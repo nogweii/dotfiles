@@ -22,7 +22,7 @@
 	changed = green
 	untracked = cyan
 [core]
-	excludesfile = $(realpath ~/.gitignore)
+	excludesfile = $(readlink -f ~/.gitignore)
 [branch]
 	autosetupmerge = true
 [alias]
