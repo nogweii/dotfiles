@@ -49,3 +49,9 @@ mappings.addUserMap([modes.NORMAL], ["Y"],
         }, 20 );
     });
 EOF
+
+" hi CmdLine <<EOF
+" background-color: black;
+" EOF
+
+command dominspector :js inspectDOMDocument(document)

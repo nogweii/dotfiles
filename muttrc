@@ -25,30 +25,37 @@ set mark_old = no
 # Advertise my computer
 my_hdr X-OS: `uname -mrs`
 my_hdr X-Editor: `vim --version | head -n1`
+set editor='vim'
 
 # labels
-macro index u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
-macro pager u "<enter-command>set editor=\"~/sys/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
-macro index U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
-macro pager U "<enter-command>set editor=\"~/sys/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro index u "<enter-command>set editor=\"~/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro pager u "<enter-command>set editor=\"~/bin/editlabels append\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Append label"
+macro index U "<enter-command>set editor=\"~/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
+macro pager U "<enter-command>set editor=\"~/bin/editlabels menu\"\n<edit><sync-mailbox><next-undeleted><enter-command>set editor=vim\n" "Edit labels"
 macro index \Cu "<limit>~u " "Limit view to label"
 
 source ~/.mutt/themes/THEME.`tput colors`
 
-macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
-macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>' 
-bind index B bounce-message 
+# bogofilter integration: Use mutt as normal, but replying, saving and deleting
+# messages flag messages in bogofilter.
+#  - saving, replying, group-replying, and list-replying (s, r, g, l): Mark the
+#    message as non-spam
+#  - deleting using d/D: do nothing special, just delete the message.
+#  - deleting using X: mark the message as spam, and delete the message.
+macro index s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -N\n<enter-command>set wait_key\n<save-entry>"
+macro pager s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -N\n<enter-command>set wait_key\n<save-entry>"
+macro index r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<reply>"
+macro pager r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<reply>"
+macro index g "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<group-reply>"
+macro pager g "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<group-reply>"
+macro index l "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<list-reply>"
+macro pager l "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<list-reply>"
+macro index X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -S\n<enter-command>set wait_key\n<delete-message>"
+macro pager X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -S\n<enter-command>set wait_key\n<delete-message>"
 
-set sidebar_width=25
-set sidebar_visible=no
-#set sidebar_delim='|' 
-color sidebar_new yellow default 
+#bind index mn "<new-mail>"
+#bind index mr "<read-thread>"
 
-# ctrl-n, ctrl-p to select next, prev folder
-# ctrl-o to open selected folder
-bind index \CP sidebar-prev
-bind index \CN sidebar-next
-bind index \CO sidebar-open
-bind pager \CP sidebar-prev
-bind pager \CN sidebar-next
-bind pager \CO sidebar-open 
+source ~/.mutt/vim_keys
+
+set auto_tag
