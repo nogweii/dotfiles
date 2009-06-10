@@ -1,3 +1,6 @@
 [submodule "vim/git-vim"]
 	path = vim/git-vim
 	url = git://github.com/motemen/git-vim.git
+[submodule "vim/vim-ruby"]
+	path = vim/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git

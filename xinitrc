@@ -3,6 +3,7 @@
 # Startup applications for X
 # Cross-WM, anything put in here will start imediately with X
 
+
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then 
 	eval $(dbus-launch --sh-syntax)
 fi
@@ -13,7 +14,7 @@ numlockx on
 # TODO: Setup Devil's Pie (devilspie) to change tint to be lowsest-level,
 # positioned wherever
 
-#unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset &
+unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset &
 
 eval $(cat ~/.fehbg)
 #nitrogen --restore
@@ -21,6 +22,9 @@ eval $(cat ~/.fehbg)
 #stalonetray --grow-gravity W -t --sticky --geometry 124x24+1280-0 -i 24 --ignore-icon-resize --no-shrink &
 
 #xcompmgr -cC -l-5 -t-5 &
+xcompmgr &
+#xcbcompmgr &
+#cairo-compmgr &
 
 #xscreensaver -no-splash &
 
@@ -65,6 +69,12 @@ urxvt &
 if [ -f ~/.Xmodmap ] ; then
 	xmodmap ~/.Xmodmap
 fi
+
+#noteo &
+# Notfiy-OSD is used instead, but it's automattically called as needed when
+# notification DBUS events are sent
+
+#xrandr --dpi 96
 
 #exec openbox
 exec awesome 
