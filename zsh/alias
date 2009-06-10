@@ -43,7 +43,7 @@ alias rm='rm -rv'
 alias yrm='Y rm -rvf'
 alias run-help='man'
 alias which-command='whence'
-alias startxl="startx &>$HOME/startx.log"
+alias startxl="startx &>/tmp/startx.log"
 alias mv='nocorrect mv -i'
 
 
@@ -86,7 +86,7 @@ fi
 
 alias -- -="cd - &>/dev/null"
 alias meme="curl -s meme.boxofjunk.ws/moar.txt?lines=1"
-alias mailcount="find ~/mail | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
+alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.acronyms.wtf"
 
 # vim: set ts=8 sw=8 tw=0 syn=sh:
