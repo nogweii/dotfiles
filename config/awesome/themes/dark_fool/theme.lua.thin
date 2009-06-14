@@ -18,6 +18,6 @@ theme.fg_urgent = theme.fg_normal
 theme.border_urgent = theme.bg_urgent
 
 -- Don't mess with my wallpaper!
-theme.wallpaper_cmd = {}
+theme.wallpaper_cmd = ""
 
 return theme
