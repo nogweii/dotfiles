@@ -1,47 +1,22 @@
-!urxvt*font:		xft:ProggyCleanTTSZ:size=11
-!urxvt*font:		xft:Dejavu Sans Mono:size=9
-!urxvt*font:		xft:Inconsolata:size=10
-!rxvt*boldFont:		xft:DejaVu Sans Mono:bold:size=9
-!urxvt*italicFont:	xft:DejaVu Sans Mono:italic:size=9
-!urxvt*boldItalicFont:	xft:DejaVu Sans Mono:bold:italic:size=9
-URxvt*font:             xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
-URxvt*boldFont:         xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
-URxvt*italicFont:       xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
-URxvt*boldItalicFont:   xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+URxvt*font:               xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
+URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
+URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
+URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+urxvt*scrollBar:          false
+URxvt.perl-ext-common:    default,matcher
+URxvt.urlLauncher:        xdg-open
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
+URxvt*background:         [50]#000
+URxvt.foreground:         grey80
+URxvt.colorBD:            white
+URxvt.depth:              32
+URxvt.saveLines:          128
+! Only automatically scroll when I type a key, not when something is outputted
+URxvt.scrollTtyOutput:    false
+URxvt.scrollWithBuffer:   false
+URxvt.scrollTtyKeypress:  true
+! Green cursor, with black highligted text
+URxvt.cursorColor:        green
+URxvt.cursorColor2:       black
 
-urxvt*scrollBar:	false
-!urxvt*internalBorder:	0
-!urxvt*pointerBlank:	true
-!urxvt.perl-ext-common:	default,matcher
-!urxvt.urlLauncher:	open-browser
-!urxvt.matcher.button:	1
-!urxvt.tripleclickwords:	true
-!urxvt*urgentOnBell:	true
-!URxvt*transparent: true
-!URxvt*shading: 20
-
-!URxvt*font: xft:terminus:pixelsize=10
-!
-
-! clickable links
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: xdg-open
-!URxvt.matcher.button: 2
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
-!URxvt.background:       rgba:0000/0000/0000/eeee
-URxvt*background: rgba:0000/0000/0000/eeee
-URxvt.foreground:       grey80
-!URxvt.foreground:	white
-! Use this color for bold text
-URxvt.colorBD:          white
-!URxvt.font:             xft:Lucida Typewriter:pixelsize=10
-!URxvt.depth:            24
-URxvt.depth:            32
-URxvt.saveLines:        128
-URxvt.scrollTtyOutput:  false
-URxvt.scrollWithBuffer: false
-URxvt.scrollTtyKeypress: true
-!URxvt.secondaryScreen:  false
-!URxvt.secondaryScroll:  false
-URxvt.cursorColor:      green
-URxvt.cursorColor2:     black
+! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
