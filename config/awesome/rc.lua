@@ -12,7 +12,8 @@ require("naughty")
 -- Actually load theme ($HOME/.config/awesome/themes/THEME_NAME/theme.lua)
 --beautiful.init(awful.util.getdir("config") .. "/themes/" .. theme .. "/theme.lua")
 -- The default is a dark theme
-theme_path = "/usr/share/awesome/themes/default/theme.lua"
+--theme_path = "/usr/share/awesome/themes/default/theme.lua"
+theme_path = "/home/colin/.config/awesome/themes/default/theme.lua"
 
 -- Actually load theme
 beautiful.init(theme_path)

@@ -6,7 +6,8 @@ urxvt*scrollBar:          false
 URxvt.perl-ext-common:    default,matcher
 URxvt.urlLauncher:        xdg-open
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
-URxvt*background:         [50]#000
+! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
+urxvt*background:         rgba:0000/0000/0000/dddd
 URxvt.foreground:         grey80
 URxvt.colorBD:            white
 URxvt.depth:              32
