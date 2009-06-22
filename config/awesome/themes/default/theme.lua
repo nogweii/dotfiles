@@ -72,7 +72,7 @@ theme.titlebar_maximized_button_normal_active = "/home/colin/.config/awesome/the
 theme.titlebar_maximized_button_focus_active = "/home/colin/.config/awesome/themes/default/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "" }
+theme.wallpaper_cmd = { "echo 'wallpaper NOT set by awesome'" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/home/colin/.config/awesome/themes/default/layouts/fairhw.png"
