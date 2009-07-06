@@ -26,6 +26,7 @@ xcompmgr & # Special effects (requires Composite extension)
 numlockx on # Enable numlock
 xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
+autocutsel -fork # Sync the clipboards
 
 
 
