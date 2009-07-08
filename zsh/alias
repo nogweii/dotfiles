@@ -5,7 +5,7 @@ alias -g T='|tail'
 
 alias dir="ls -lSrah"
 alias lad='ls -d .*(/)'                # only show dot-directories
-alias lsa='ls -a .*(.)'                # only show dot-files
+alias lsa='ls -A'                      # only show dot-files
 alias lss='ls -l *(s,S,t)'             # only files with setgid/setuid/sticky flag
 alias lsl='ls -l *(@[1,10])'           # only symlinks
 alias lsx='ls -l *(*[1,10])'           # only executables
@@ -19,8 +19,8 @@ alias lssmall="ls -Srl *(.oL[1,10])"   # display the smallest files
 
 alias mkdir='mkdir -p'
 
-#alias myip="echo \$(wget -q -O - http://whatismyip.com/automation/n09230945.asp)"
-alias myip="curl http://whatismyip.org" # So much cleaner!
+alias myip="echo \$(wget -q -O - http://whatismyip.com/automation/n09230945.asp)"
+#alias myip="curl http://whatismyip.org" # So much cleaner!
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 alias -g G='|mgrep'
 alias -g N='&>/dev/null'
