@@ -19,7 +19,12 @@ alias lssmall="ls -Srl *(.oL[1,10])"   # display the smallest files
 
 alias mkdir='mkdir -p'
 
-alias myip="echo \$(wget -q -O - http://whatismyip.com/automation/n09230945.asp)"
+if [ -z "$(whence curl)" ] ; then
+	alias catw="wget -qO - "
+else
+	alias catw="curl -s "
+fi
+alias myip="echo \$(catw http://whatismyip.com/automation/n09230945.asp)"
 #alias myip="curl http://whatismyip.org" # So much cleaner!
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 alias -g G='|mgrep'
@@ -59,7 +64,6 @@ alias s="/usr/bin/sudo"
 alias edit="${EDITOR}"
 alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use \"s\" instead.'; s"
 
-alias catw="wget -qO - "
 # Recursive ASCII-art tree list.
 alias lsr="(pwd; tree -shACFqa | tail -n+2) L"
 
@@ -86,7 +90,7 @@ else
 fi
 
 alias -- -="cd - &>/dev/null"
-alias meme="curl -s meme.boxofjunk.ws/moar.txt?lines=1"
+alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.acronyms.wtf"
 
