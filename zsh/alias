@@ -5,7 +5,7 @@ alias -g T='|tail'
 
 alias dir="ls -lSrah"
 alias lad='ls -d .*(/)'                # only show dot-directories
-alias lsa='ls -a .*(.)'                # only show dot-files
+alias lsa='ls -A'                      # only show dot-files
 alias lss='ls -l *(s,S,t)'             # only files with setgid/setuid/sticky flag
 alias lsl='ls -l *(@[1,10])'           # only symlinks
 alias lsx='ls -l *(*[1,10])'           # only executables
@@ -19,8 +19,13 @@ alias lssmall="ls -Srl *(.oL[1,10])"   # display the smallest files
 
 alias mkdir='mkdir -p'
 
-#alias myip="echo \$(wget -q -O - http://whatismyip.com/automation/n09230945.asp)"
-alias myip="curl http://whatismyip.org" # So much cleaner!
+if [ -z "$(whence curl)" ] ; then
+	alias catw="wget -qO - "
+else
+	alias catw="curl -s "
+fi
+alias myip="echo \$(catw http://whatismyip.com/automation/n09230945.asp)"
+#alias myip="curl http://whatismyip.org" # So much cleaner!
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 alias -g G='|mgrep'
 alias -g N='&>/dev/null'
@@ -43,7 +48,7 @@ alias rm='rm -rv'
 alias yrm='Y rm -rvf'
 alias run-help='man'
 alias which-command='whence'
-alias startxl="startx &>$HOME/startx.log"
+alias startxl="startx &>/tmp/startx.log"
 alias mv='nocorrect mv -i'
 
 
@@ -60,7 +65,6 @@ alias edit="${EDITOR}"
 alias s=`whence sudo`
 alias sudo="echo 'Use \"s\" instead of \"sudo\".'; s"
 
-alias catw="wget -qO - "
 # Recursive ASCII-art tree list.
 alias lsr="(pwd; tree -shACFqa | tail -n+2) L"
 
@@ -75,7 +79,8 @@ alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "le
 
 if [ -d "$HOME/bin" ] ; then
 	#alias vim="viml"
-	alias t="$HOME/bin/todo.sh"
+	#alias t="$HOME/bin/todo.sh"
+	alias t='cd /home/colin/tmp/todo.txt-cli/; ./todo.sh -d ./todo.cfg'
 else
 	MISSING_FEATURES=($MISSING_FEATURES '~/bin')
 fi
@@ -86,8 +91,8 @@ else
 fi
 
 alias -- -="cd - &>/dev/null"
-alias meme="curl -s meme.boxofjunk.ws/moar.txt?lines=1"
-alias mailcount="find ~/mail | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
+alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
+alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.acronyms.wtf"
 
 # vim: set ts=8 sw=8 tw=0 syn=sh:

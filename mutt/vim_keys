@@ -1,0 +1,18 @@
+# A series of rebindings to make mutt very much more vim-like. Not only vi
+# emulation, but other things as well. For future-proofing, there are some
+# overlaps with the default bindings. I know that.
+
+bind index m set-flag
+bind index M clear-flag
+bind index gm mail
+
+bind generic gg top-page
+bind generic gG bottom-page
+bind generic G bottom-page
+
+# Change the quit key binding to ZQ instead of q
+bind generic ZQ exit
+bind generic q noop
+bind index q noop
+
+# vim: set syn=muttrc:

@@ -10,7 +10,8 @@ require("shifty")
 
 -- This is the key to which we delegate most controls. We'll default to a key that pretty much nothing else uses: Mod4.
 -- (That's the "command" or "Apple" key on a Macintosh, or the "Windows" key on a Windows box.)
-m = "Mod4"
+modKey = "Mod4"
+m = modKey
 
 -- These are our favourite layouts.
 layouts = {
@@ -23,13 +24,13 @@ layouts = {
 }
 
 -- And the theme!
-theme = "sheep"
+theme = "dark_fool"
 
 -- We use this variable whenever we want to launch a terminal. You can change it to whatever terminal or command you would like.
 terminal = "urxvt"
 
 -- We use this whenever we want a browser. You can change it to whatever browser or command you want.
-browser = "firefox"
+browser = "xdg-open"
 
 -- These commands are responsible for controlling the system. Remember to add entries similar to the following to the sudoers file for each setting below:
 --   %users localhost=NOPASSWD: /sbin/shutdown -h now
@@ -49,27 +50,24 @@ function each_screen(lambda)
   for s = 1, screen.count() do lambda(s) end
 end
 
--- Some things seem to assume the global variable "modkey" is set.
-modkey = m
-
 beautiful.init(awful.util.getdir("config") .. "/themes/" .. theme .. "/theme.lua")
 
 
 -- -----------------------------
 -- ----< Tags >-----------------
-shifty.config.tags = {}
+shifty.config.tags = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}
 
--- We're going to create a lobby for each screen.
-each_screen(function(s)
-  shifty.config.tags = awful.util.table.join(shifty.config.tags, {
-    -- FIXME: Currently, Shifty seems to puke all over multiple init tags of the same name string, so we add the screen's number to each one. A bit ugly, though.
-    [s .. " lobby"] = {init = true, persistent = true, screen = s}
-  })
-end)
+---- We're going to create a lobby for each screen.
+--each_screen(function(s)
+--  shifty.config.tags = awful.util.table.join(shifty.config.tags, {
+--    -- FIXME: Currently, Shifty seems to puke all over multiple init tags of the same name string, so we add the screen's number to each one. A bit ugly, though.
+--    [s .. " lobby"] = {init = true, persistent = true, screen = s}
+--  })
+--end)
 
 shifty.config.apps = {
   -- {match = {"Gran Paradiso", "Firefox"}, tag = "web"},
-  -- {match = {"xterm"}, honorsizehints = false, slave = true, tag = "term"},
+  {match = {"xterm", "urxvt"} , honorsizehints = true, slave = true},
   {match = {""}, buttons = { -- TODO: Is this necessary?
     button({}, 1, function(c) client.focus = c, c:raise() end),
     button({m}, 1, function(c) awful.mouse.client.move() end),
@@ -131,8 +129,8 @@ time_box_configuration.format = {
   date = "%b, %d (%a) ",
   time = "%l:%M:%S %p",
   -- TODO: Do I need these escapes?
-  open  = "<span face=\"Monospace\" weight=\"700\" size=\"large\">",
-  close = "</span>"
+  open  = " <span face=\"Monospace\" weight=\"700\" size=\"large\">",
+  close = "</span> "
 }
 time_box_configuration.buttons = {
   -- TODO: Why doesn't this work?
@@ -154,25 +152,9 @@ task_bars = {}
 task_bar_configuration = {position = "bottom", ontop = true, fg = beautiful.fg_normal, bg = beautiful.bg_normal, height = 16}
 
 -- The following will be run for all screens
---time_box = widget(time_box_configuration)
---awful.hooks.timer.register(1, time_box_configuration.hook)
---time_box_configuration.hook()
-
-main_menu = awful.menu.new({items = {
-  {"Terminal", terminal},
-  {"Browser", browser},
-  {"awesomewm", {
-    {"Manual", function () awful.util.spawn(terminal .. "-e man awesome") end},
-    {"Restart", awesome.restart}
-  }},
-  {"Arch Linux", {
-    {"Log out", awesome.quit},
-    {"Sleep", suspend},
-    {"Reboot", reboot},
-    {"Shut down", shutdown}
-  }}
-}})
-main_launcher = awful.widget.launcher({menu = main_menu, image = image(beautiful.awesome_icon)})
+time_box = widget(time_box_configuration)
+awful.hooks.timer.register(1, time_box_configuration.hook)
+time_box_configuration.hook()
 
 tray = widget({type = "systray", align = "right"})  
 
@@ -244,28 +226,28 @@ end
 
 root.keys(shifty.config.globalkeys)
 
--- Client hotkeys
-shifty.config.clientkeys = awful.util.table.join(
-  
-  -- Copy / Paste
-  awful.key({m}, "c", function(c)
-    -- TODO: I can't really think of a way to force a copy. I could just map this to ctrl-c, I guess, but then it'd be out of sync with mod4-v below.
-    -- c.fake_input("button_press", 2)
-    -- c.fake_input("button_release", 2)
-  end),
-  awful.key({m}, "v", function(c)
-    -- TODO: This doesn't work, and I don't know why! It *should* simulate a middle click...
-    c.fake_input("button_press", 2)
-    c.fake_input("button_release", 2)
-  end),
-  
-  -- Moves the currently focused client to a new tag all by its lonesome
-  awful.key({m}, "Tab", function(c)
-    local t = shifty.add()
-    awful.client.movetotag(t, c)
-  end)
-  
-)
+---- Client hotkeys
+--shifty.config.clientkeys = awful.util.table.join(
+--  
+--  -- Copy / Paste
+--  awful.key({m}, "c", function(c)
+--    -- TODO: I can't really think of a way to force a copy. I could just map this to ctrl-c, I guess, but then it'd be out of sync with mod4-v below.
+--    -- c.fake_input("button_press", 2)
+--    -- c.fake_input("button_release", 2)
+--  end),
+--  awful.key({m}, "v", function(c)
+--    -- TODO: This doesn't work, and I don't know why! It *should* simulate a middle click...
+--    c.fake_input("button_press", 2)
+--    c.fake_input("button_release", 2)
+--  end),
+--  
+--  -- Moves the currently focused client to a new tag all by its lonesome
+--  awful.key({m}, "Tab", function(c)
+--    local t = shifty.add()
+--    awful.client.movetotag(t, c)
+--  end)
+--  
+--)
 
 -- -----------------------------
 -- ----< Hooks >----------------

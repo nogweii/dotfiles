@@ -1,25 +1,25 @@
 ------------------------
--- Sheep awesome theme --
+-- Wool awesome theme --
 ------------------------
 
 theme = {}
 
-theme.name = "sheep"
+theme.name = "wool"
 
 theme.root = awful.util.getdir("config") .. "/themes/" .. theme.name .. "/"
 theme.shared_root = "/usr/share/awesome/themes/default/"
 
 theme.font          = "sans 8"
 
-theme.bg_normal     = "#dddddd"
+theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#00ffff"
-theme.bg_minimize   = "#bbbbbb"
+theme.bg_urgent     = "#ff0000"
+theme.bg_minimize   = "#444444"
 
-theme.fg_normal     = "#666666"
-theme.fg_focus      = "#000000"
-theme.fg_urgent     = "#000000"
-theme.fg_minimize   = "#000000"
+theme.fg_normal     = "#aaaaaa"
+theme.fg_focus      = "#ffffff"
+theme.fg_urgent     = "#ffffff"
+theme.fg_minimize  = " #ffffff"
 
 theme.border_width  = "1"
 theme.border_normal = "#000000"
@@ -77,7 +77,7 @@ theme.titlebar_maximized_button_normal_active = theme.shared_root .. "titlebar/m
 theme.titlebar_maximized_button_focus_active = theme.shared_root .. "titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper_cmd = { "awsetbg -a -r /usr/share/awesome/themes/default/backgrounds/" }
+theme.wallpaper_cmd = { "awsetbg -a -r /usr/share/awesome/themes/wool/backgrounds/" }
 
 -- You can use your own layout icons like this:
 theme.layouts_dir = theme.shared_root .. "layouts/"
