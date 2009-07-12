@@ -55,9 +55,10 @@ alias mgrep="grep ${MY_GREP_OPTIONS}"
 alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias addme='s gpasswd -a colin'
 
-alias s="/usr/bin/sudo"
 alias edit="${EDITOR}"
-alias sudo="echo '$(tput setf 4)BAD! sudo == too long!$(tput sgr0) Use \"s\" instead.'; s"
+# NOTE: Make sure it's before alias sudo
+alias s=`whence sudo`
+alias sudo="echo 'Use \"s\" instead of \"sudo\".'; s"
 
 alias catw="wget -qO - "
 # Recursive ASCII-art tree list.
