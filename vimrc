@@ -26,6 +26,7 @@ syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
 set hidden " Modified buffers are saved in the bg when exiting
 set spell " Enable spell checking, mostly this only affects comments.
+nmap gG G
 let mapleader=";" " Common setting, makes <Leader> ; instead of \ (the default)
 set history=1000 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
@@ -115,3 +116,40 @@ map ZW :w<CR>
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
+
+" when using list, keep tabs at their full width and display `arrows':
+" (Character 187 is a right double-chevron, and 183 a mid-dot.)
+" 160 is a non-breaking space.
+"execute 'set list listchars=tab:' . nr2char(187) . nr2char(160) . ',trail:' . nr2char(183)
+execute 'set list listchars=tab:' . nr2char(160) . nr2char(160) . ',trail:' . nr2char(183)
+"execute 'set list listchars=trail:' . nr2char(183)
+
+function! SwitchToNextBuffer(incr)
+	let help_buffer = (&filetype == 'help')
+	let current = bufnr("%")
+	let last = bufnr("$")
+	let new = current + a:incr
+	while 1
+		if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer)
+			execute ":buffer ".new
+			break
+		else
+			let new = new + a:incr
+			if new < 1
+				let new = last
+			elseif new > last
+				let new = 1
+			endif
+			if new == current
+				break
+			endif
+		endif
+	endwhile
+endfunction
+command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
+nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
+nnoremap <silent> <C-p> :<C-U>SwitchToBuffer(-1*v:count1)<CR>
+
+" Restore the older Q[motion] binding
+" Formats whatever motion moves over
+nnoremap Q gq

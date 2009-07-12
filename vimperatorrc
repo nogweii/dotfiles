@@ -22,6 +22,73 @@ set! browser.urlbar.doubleClickSelectsAll=true
 "set! browser.tabs.autoHide=true
 set showtabline=1
 
+set! accessibility.typeaheadfind.autostart=false
+set! accessibility.typeaheadfind.flashBar=0
+set! browser.download.dir="/home/colin/Downloads"
+set! browser.download.folderList=1
+set! browser.download.lastDir="/home/colin/tmp"
+set! browser.download.manager.showAlertOnComplete=false
+set! browser.download.manager.showWhenStarting=false
+set! browser.feeds.handler.default="web"
+set! browser.feeds.handlers.webservice="http://fusion.google.com/add?feedurl=%s"
+set! browser.feeds.showFirstRunUI=false
+set! browser.history_expire_days.mirror=180
+set! browser.history_expire_days_min=7
+set! browser.link.open_newwindow.restriction=0
+set! browser.migration.version=1
+set! browser.offline=false
+set! browser.places.importBookmarksHTML=false
+set! browser.places.importDefaults=false
+set! browser.places.migratePostDataAnnotations=false
+set! browser.places.smartBookmarksVersion=1
+set! browser.places.updateRecentTagsUri=false
+set! browser.preferences.advanced.selectedTabIndex=3
+set! browser.rights.3.shown=true
+set! browser.safebrowsing.dataProvider=1
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.malware.enabled=false
+set! browser.sessionstore.enabled=false
+set! browser.sessionstore.resume_from_crash=false
+set! browser.shell.checkDefaultBrowser=false
+set! browser.startup.homepage="about:blank"
+set! browser.startup.page=3
+set! browser.tabs.closeButtons=2
+set! browser.tabs.warnOnClose=false
+set! browser.urlbar.clickSelectsAll=true
+set! browser.zoom.full=false
+set! dom.popup_allowed_events="change click dblclick mouseup reset submit keypress"
+set! downbar.function.clearFiletypes="*"
+set! downbar.function.clearOnClose=true
+set! downbar.function.firstRun=false
+set! downbar.function.keepHistory=false
+set! downbar.function.soundCustomComplete="file://"
+set! downbar.function.useTooltipOpacity=false
+set! layout.scrollbar.side=2
+set! liberator.saved.accessibility.typeaheadfind=false
+set! liberator.saved.accessibility.typeaheadfind.autostart=false
+set! liberator.saved.accessibility.typeaheadfind.enablesound=true
+set! liberator.saved.browser.link.open_newwindow=3
+set! liberator.saved.browser.link.open_newwindow.restriction=0
+set! liberator.saved.browser.tabs.autoHide=true
+set! liberator.saved.layout.scrollbar.side=2
+set! network.cookie.alwaysAcceptSessionCookies=true
+set! network.cookie.prefsMigrated=true
+set! network.proxy.http="localhost"
+set! network.proxy.http_port=8080
+set! network.proxy.type=0
+set! pref.browser.homepage.disable_button.current_page=false
+set! pref.downloads.disable_button.edit_actions=false
+set! privacy.item.cookies=true
+set! privacy.item.offlineApps=true
+set! privacy.popups.showBrowserMessage=false
+set! privacy.sanitize.promptOnSanitize=false
+set! privacy.sanitize.sanitizeOnShutdown=true
+set! security.dialog_enable_delay=0
+set! security.disable_button.openCertManager=false
+set! security.enable_java=false
+set! security.warn_viewing_mixed=false
+set! signon.rememberSignons=false
+
 " Focus the window, not any inputs/etc
 set focuscontent
 
@@ -49,3 +116,9 @@ mappings.addUserMap([modes.NORMAL], ["Y"],
         }, 20 );
     });
 EOF
+
+" hi CmdLine <<EOF
+" background-color: black;
+" EOF
+
+command dominspector :js inspectDOMDocument(document)

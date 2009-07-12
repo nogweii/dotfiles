@@ -32,10 +32,15 @@
 	ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim -p2 git_diff_staged.diff -c ':tabmove' -c ':tabprev'\\\" git commit -se ; rm git_diff_staged.diff"
 	co = checkout
 	unpushed = log origin..HEAD
+	graph = log --oneline --graph
 [web]
 	browser = open
 [browser "open"]
 	cmd = $(whence open-browser)
+[push]
+	default = current
+[help]
+	autocorrect = 1
 
 # This is just a template parsed by zsh
 
