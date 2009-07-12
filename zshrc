@@ -2,7 +2,7 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-umask 077 # defaults => u=rwx,g=,o=
+#umask 077 # defaults => u=rwx,g=,o=
 ZHOME="${HOME}/.zsh"
 MISSING_FEATURES=()
 source $ZHOME/env
