@@ -13,5 +13,6 @@ bind generic G bottom-page
 # Change the quit key binding to ZQ instead of q
 bind generic ZQ exit
 bind generic q noop
+bind index q noop
 
 # vim: set syn=muttrc:
