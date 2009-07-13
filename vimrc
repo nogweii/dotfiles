@@ -150,3 +150,6 @@ command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
 nnoremap <silent> <C-p> :<C-U>SwitchToBuffer(-1*v:count1)<CR>
 
+" Restore the older Q[motion] binding
+" Formats whatever motion moves over
+nnoremap Q gq
