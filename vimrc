@@ -26,8 +26,10 @@ syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
 set hidden " Modified buffers are saved in the bg when exiting
 set spell " Enable spell checking, mostly this only affects comments.
-nmap gG G
-let mapleader=";" " Common setting, makes <Leader> ; instead of \ (the default)
+noremap gG G
+onoremap gG G
+map G <Nop>
+let mapleader="G"
 set history=1000 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
 set wildmenu " Nice menu for tab completion
