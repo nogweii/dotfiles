@@ -38,7 +38,7 @@ export HARDWARECLOCK="UTC"
 export TIMEZONE="America/New_York"
 
 # CLI default parameters
-export GREP_OPTIONS="-RPiI" # Done so that grep doesn't pick them up
+export GREP_OPTIONS="-RPiI"
 export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
