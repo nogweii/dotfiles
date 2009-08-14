@@ -18,6 +18,7 @@ activity ""
 defscrollback 2048
 nonblock on
 defutf8 on
+utf8 on on
 defbce on
 defflow off
 msgwait 1
