@@ -153,3 +153,8 @@ nnoremap <silent> <C-p> :<C-U>SwitchToBuffer(-1*v:count1)<CR>
 " Restore the older Q[motion] binding
 " Formats whatever motion moves over
 nnoremap Q gq
+
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
