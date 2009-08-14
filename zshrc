@@ -51,3 +51,9 @@ ztmpl ~/.gitconfig
 if [ ! "$MISSING_FEATURES" = "" ] ; then
 	echo "Missing some features: ${MISSING_FEATURES}"
 fi
+
+autoload -U backward-kill-word-match
+zle -N backward-kill-word-match
+bindkey '^W' backward-kill-word-match
+zstyle ':zle:*' word-style normal
+zstyle ':zle:*' word-chars ''
