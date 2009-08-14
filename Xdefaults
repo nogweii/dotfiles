@@ -12,18 +12,32 @@ urxvt*scrollBar:          false
 URxvt.perl-ext-common:    default,matcher
 URxvt.urlLauncher:        open-browser
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
-! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-urxvt*background:         rgba:0000/0000/0000/dddd
+!URxvt.depth:              32
+
 URxvt.foreground:         grey80
 URxvt.colorBD:            white
-URxvt.depth:              32
 URxvt.saveLines:          128
 ! Only automatically scroll when I type a key, not when something is outputted
 URxvt.scrollTtyOutput:    false
 URxvt.scrollWithBuffer:   false
 URxvt.scrollTtyKeypress:  true
-! Green cursor, with black highligted text
+! Green cursor, with black highlighted text
 URxvt.cursorColor:        green
 URxvt.cursorColor2:       black
+URxvt*borderless:         1
+
+! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
+!urxvt*background:         rgba:0000/0000/0000/aaaa
+
+urxvt*background:         black
+URxvt*transparent: true
+URxvt*shading: 50
+
+
+URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+URxvt.underlineURLs: true
+URxvt.perl-lib: /home/jukie/bart/.urxvt/
+URxvt.perl-ext: selection,mark-yank-urls
+URxvt.urlLauncher: firefox
 
 ! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
