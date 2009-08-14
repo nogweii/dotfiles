@@ -16,6 +16,14 @@ export EDITOR="vim"
 (( ${+BROWSER} )) || export BROWSER="elinks"
 (( ${+PAGER} ))   || export PAGER="less"
 
+# XDG-related stuff
+export XDG_CACHE_HOME="${HOME}/.cache/"
+export XDG_CONFIG_HOME="${HOME}/.config/"
+export XDG_DATA_HOME="${HOME}/.data/"
+# Other directories (colon separated) to search through.
+export XDG_DATA_DIRS="${HOME}/.local/share/:/usr/local/share/:/usr/share/"
+export XDG_CONFIG_DIRS="/etc/xdg:${HOME}/.local/config/"
+
 # Locale stuff - en_US.utf8
 export LOCALE="en_US.utf8"
 export LANG="en_US.utf8"
