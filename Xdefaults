@@ -1,43 +1,42 @@
+! urxvt is the default resource name and can be changed for each terminal.
+! while URxvt exists for all urxvt's
+
 ! Default HOME, though I *really* don't like this. It should be passed in when
 ! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
 #ifndef HOME
 #define HOME /home/colin
 #endif
 
-URxvt*font:               xft:Liberation Mono:pixelsize=14            , xft:Dejavu Sans Mono:pixelsize=14
-URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=14       , xft:Dejavu Sans Mono:bold:pixelsize=14
-URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14     , xft:Dejavu Sans Mono:italic:pixelsize=14
-URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=14, xft:Dejavu Sans Mono:italic:bold:pixelsize=14
+urxvt*font:               xft:Liberation Mono:pixelsize=14            , xft:Dejavu Sans Mono:pixelsize=14
+urxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=14       , xft:Dejavu Sans Mono:bold:pixelsize=14
+urxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14     , xft:Dejavu Sans Mono:italic:pixelsize=14
+urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=14, xft:Dejavu Sans Mono:italic:bold:pixelsize=14
 urxvt*scrollBar:          false
-URxvt.perl-ext-common:    default,matcher
-URxvt.urlLauncher:        open-browser
-URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
-!URxvt.depth:              32
-
-URxvt.foreground:         grey80
-URxvt.colorBD:            white
-URxvt.saveLines:          128
-! Only automatically scroll when I type a key, not when something is outputted
-URxvt.scrollTtyOutput:    false
-URxvt.scrollWithBuffer:   false
-URxvt.scrollTtyKeypress:  true
-! Green cursor, with black highlighted text
-URxvt.cursorColor:        green
-URxvt.cursorColor2:       black
-URxvt*borderless:         1
-
-! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-!urxvt*background:         rgba:0000/0000/0000/aaaa
-
+urxvt.perl-ext-common:    default,matcher
+urxvt.urlLauncher:        xdg-open
+urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
+urxvt.foreground:         grey80
+urxvt.colorBD:            white
+urxvt.saveLines:          128
+!! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
+!urxvt*background:         rgba:0000/0000/0000/dddd
+!urxvt.depth:              32
+!! Pseudo-transparent
 urxvt*background:         black
-URxvt*transparent: true
-URxvt*shading: 50
+URxvt*transparent:        true
+URxvt*shading:            50
+! Only automatically scroll when I type a key, not when something is outputted
+urxvt.scrollTtyOutput:    false
+urxvt.scrollWithBuffer:   false
+urxvt.scrollTtyKeypress:  true
+! Green cursor, with black highligted text
+urxvt.cursorColor:        green
+urxvt.cursorColor2:       black
 
-
+URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
 URxvt.perl-lib: /home/jukie/bart/.urxvt/
 URxvt.perl-ext: selection,mark-yank-urls
-URxvt.urlLauncher: firefox
 
 ! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
