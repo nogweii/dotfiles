@@ -1,3 +1,9 @@
+! Default HOME, though I *really* don't like this. It should be passed in when
+! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
+#ifndef HOME
+#define HOME /home/colin
+#endif
+
 URxvt*font:               xft:Liberation Mono:pixelsize=14            , xft:Dejavu Sans Mono:pixelsize=14
 URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=14       , xft:Dejavu Sans Mono:bold:pixelsize=14
 URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14     , xft:Dejavu Sans Mono:italic:pixelsize=14
