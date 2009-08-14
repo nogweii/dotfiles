@@ -1,7 +1,7 @@
-URxvt*font:               xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
-URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
-URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
-URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+URxvt*font:               xft:Liberation Mono:pixelsize=14            , xft:Dejavu Sans Mono:pixelsize=14
+URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=14       , xft:Dejavu Sans Mono:bold:pixelsize=14
+URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14     , xft:Dejavu Sans Mono:italic:pixelsize=14
+URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=14, xft:Dejavu Sans Mono:italic:bold:pixelsize=14
 urxvt*scrollBar:          false
 URxvt.perl-ext-common:    default,matcher
 URxvt.urlLauncher:        xdg-open
