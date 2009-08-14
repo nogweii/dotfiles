@@ -476,6 +476,7 @@ CB	Chat Brat
 CB	Coffee Break
 CBJ	Covered Blow Job
 CBT	Computer-Based Training
+CBF	Can't be Fussed (polite)
 CC	Carbon Copy
 CCD	charge coupled device
 CCD	Charge-Coupled Device
@@ -1467,14 +1468,11 @@ IPC	interprocess communication
 IP	internet protocol
 IP	Internet Protocol
 IPNG	internet protocol, next generation
-IPSEC	internet protocol security
 IPSEC	Internet Protocol Security
 IPTV	Internet Protocol Television
 IPX	Internetwork Packet Exchange
-IRC	internet relay chat
 IRC	Internet Relay Chat
 IRDA	Infrared Data Association
-IRL	in real life
 IRL	In Real Life
 IRQ	interrupt request
 IRQ	Interrupt Request

@@ -46,7 +46,7 @@ export HARDWARECLOCK="UTC"
 export TIMEZONE="America/New_York"
 
 # CLI default parameters
-export MY_GREP_OPTIONS="-RPiI" # Done so that grep doesn't pick them up
+export GREP_OPTIONS="-RPiI"
 export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
@@ -82,9 +82,14 @@ export HOSTNAME="$(hostname)"
 #export CXXFLAGS
 CARCH="i686"
 CHOST="i686-pc-linux-gnu"
-CFLAGS="-march=prescott -O2 -pipe -fomit-frame-pointer -g"
+CFLAGS="-O2 -pipe -fomit-frame-pointer -g"
 CXXFLAGS="$CFLAGS"
 
 eval `dircolors -b ~/.dir_colors`
+
+export CANTOPATH="$HOME/.config/canto"
+mkdir -p $CANTOPATH/feeds/ $CANTOPATH/scripts/
+export PYTHONPATH="$HOME/code/canto/root/$LIBDIR/python-2.6/site-packages:$PYTHONPATH"
+export MANPATH="$HOME/code/canto/root/share/man:$MANPATH"
 
 #  vim: set ts=8 sw=8 tw=0 syn=sh: 
