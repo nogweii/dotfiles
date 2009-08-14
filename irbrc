@@ -9,7 +9,7 @@
 # * what_methods ("hello".what? == 5 #=> ["length", "size"])
 # * stringIO for custom less and more commands
 # * irb/completion JIC wirble fails
-$KCODE = "utf-8"
+#$KCODE = "utf-8"
 Thread.abort_on_exception = true
 require 'rubygems'
 #require 'method_args'
@@ -22,7 +22,7 @@ def prefer lib
 	end
 end
 
-%w{rubygems wirble utility_belt ostruct open-uri etc what_methods stringio pp irb/completion facets/ansicode benchmark}.each { |lib| prefer lib }
+%w{rubygems wirble ostruct open-uri etc stringio pp irb/completion facets/ansicode benchmark}.each { |lib| prefer lib }
 
 if defined? Wirble
 	Wirble.init
