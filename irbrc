@@ -22,7 +22,7 @@ def prefer lib
 	end
 end
 
-%w{rubygems wirble ostruct open-uri etc stringio pp irb/completion facets/ansicode benchmark}.each { |lib| prefer lib }
+%w{rubygems wirble open-uri etc stringio pp irb/completion facets/ansicode benchmark}.each { |lib| prefer lib }
 
 if defined? Wirble
 	Wirble.init
