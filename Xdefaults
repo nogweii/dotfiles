@@ -10,7 +10,7 @@ URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14     , xft:Deja
 URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=14, xft:Dejavu Sans Mono:italic:bold:pixelsize=14
 urxvt*scrollBar:          false
 URxvt.perl-ext-common:    default,matcher
-URxvt.urlLauncher:        xdg-open
+URxvt.urlLauncher:        open-browser
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
 ! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
 urxvt*background:         rgba:0000/0000/0000/dddd
