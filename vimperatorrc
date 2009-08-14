@@ -121,4 +121,6 @@ EOF
 " background-color: black;
 " EOF
 
-command dominspector :js inspectDOMDocument(document)
+command! dominspector :js inspectDOMDocument(document)
+
+map gs :stop<CR>
