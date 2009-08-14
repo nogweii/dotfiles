@@ -1,23 +1,26 @@
-URxvt*font:               xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
-URxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
-URxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
-URxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+! urxvt is the default resource name and can be changed for each terminal.
+! while URxvt exists for all urxvt's
+
+urxvt*font:               xft:Liberation Mono:pixelsize=12            , xft:Dejavu Sans Mono:pixelsize=12
+urxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=12       , xft:Dejavu Sans Mono:bold:pixelsize=12
+urxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=12     , xft:Dejavu Sans Mono:italic:pixelsize=12
+urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=12, xft:Dejavu Sans Mono:italic:bold:pixelsize=12
 urxvt*scrollBar:          false
-URxvt.perl-ext-common:    default,matcher
-URxvt.urlLauncher:        xdg-open
-URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
+urxvt.perl-ext-common:    default,matcher
+urxvt.urlLauncher:        xdg-open
+urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
 ! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
 urxvt*background:         rgba:0000/0000/0000/dddd
-URxvt.foreground:         grey80
-URxvt.colorBD:            white
-URxvt.depth:              32
-URxvt.saveLines:          128
+urxvt.foreground:         grey80
+urxvt.colorBD:            white
+urxvt.depth:              32
+urxvt.saveLines:          128
 ! Only automatically scroll when I type a key, not when something is outputted
-URxvt.scrollTtyOutput:    false
-URxvt.scrollWithBuffer:   false
-URxvt.scrollTtyKeypress:  true
+urxvt.scrollTtyOutput:    false
+urxvt.scrollWithBuffer:   false
+urxvt.scrollTtyKeypress:  true
 ! Green cursor, with black highligted text
-URxvt.cursorColor:        green
-URxvt.cursorColor2:       black
+urxvt.cursorColor:        green
+urxvt.cursorColor2:       black
 
 ! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
