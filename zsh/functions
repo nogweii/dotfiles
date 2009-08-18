@@ -71,6 +71,10 @@ _rake () {
   fi
 }
 
+_cheat () {
+  compadd `ls -1 ~/.cheat/ | sed s/\.yml$//`
+}
+
 # A simple zsh-based bookmarks system (kinda)
 name-dir() {
   eval "hash -d ${1}=$(pwd)"
