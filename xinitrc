@@ -14,7 +14,7 @@ echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 #######################################
 ##     Make it pretty
 #######################################
-unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset -noevents & # Hide the mouse
+#unclutter -root -display $DISPLAY -jitter 5 -idle 5 -reset -noevents & # Hide the mouse
 eval $(cat ~/.fehbg) # Background
 xcompmgr & # Special effects (requires Composite extension)
 
