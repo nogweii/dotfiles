@@ -24,7 +24,7 @@ if [ -z "$(whence curl)" ] ; then
 else
 	alias catw="curl -s "
 fi
-alias myip="catw http://icanhazip.org"
+alias myip="catw http://icanhazip.com"
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 alias -g G='|grep'
 alias -g N='&>/dev/null'
