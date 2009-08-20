@@ -92,4 +92,5 @@ mkdir -p $CANTOPATH/feeds/ $CANTOPATH/scripts/
 export PYTHONPATH="$HOME/code/canto/root/$LIBDIR/python-2.6/site-packages:$PYTHONPATH"
 export MANPATH="$HOME/code/canto/root/share/man:$MANPATH"
 
+export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 #  vim: set ts=8 sw=8 tw=0 syn=sh: 
