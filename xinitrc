@@ -37,5 +37,6 @@ urxvtd -q -o -f
 # without requiring a hard reboot.
 urxvt &
 
-exec awesome
+#exec awesome
+exec xmonad
 ##exec VirtualBox
