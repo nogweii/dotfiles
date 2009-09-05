@@ -24,6 +24,8 @@ import XMonad.Hooks.FadeInactive
 -- layouts
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
+import XMonad.Layout.Named
+import XMonad.Layout.Tabbed
 
 -------------------------------------------------------------------------------
 -- Main --
@@ -41,6 +43,24 @@ main = do
               , layoutHook = layoutHook'
               , manageHook = manageHook'
               }
+
+-------------------------------------------------------------------------------
+-- Functions --
+-- avoidMaster:  Avoid the master window, but otherwise manage new windows normally
+avoidMaster :: W.StackSet i l a s sd -> W.StackSet i l a s sd
+avoidMaster = W.modify' $ \c -> case c of
+    W.Stack t [] (r:rs) -> W.Stack t [r] rs
+    otherwise           -> c
+
+-------------------------------------------------------------------------------
+-- Hooks --
+manageHook' :: ManageHook
+manageHook' = (doF avoidMaster) <+> manageHook defaultConfig <+> manageDocks
+
+logHook' :: Handle ->  X ()
+logHook' h = dynamicLogWithPP $ customPP { ppOutput = hPutStrLn h }
+
+layoutHook' = customLayout
 
 -------------------------------------------------------------------------------
 -- Looks --
@@ -63,25 +83,22 @@ normalBorderColor', focusedBorderColor' :: String
 normalBorderColor'  = "#333333"
 focusedBorderColor' = "#AFAF87"
 
+-- tabs
+tabTheme1 = defaultTheme { decoHeight = 16
+                         , activeColor = "#a6c292"
+                         , activeBorderColor = "#a6c292"
+                         , activeTextColor = "#000000"
+                         , inactiveBorderColor = "#000000"
+                         }
+
 -- workspaces
 workspaces' :: [WorkspaceId]
-workspaces' = ["1-main", "2-web", "3", "4", "5", "6", "7", "8", "9"]
+workspaces' = ["1-main", "2-web", "3-mail", "4-torrents", "5-im", "6", "7", "8", "9"]
 
 -- layouts
-customLayout = avoidStruts $ smartBorders (Mirror tiled) ||| smartBorders tiled ||| noBorders Full
+customLayout = avoidStruts $ named "[]=" (smartBorders tiled) ||| named "M[]=" (smartBorders (Mirror tiled))  ||| named "[]" (noBorders Full) ||| named "T" ( tabbed shrinkText tabTheme1 ) 
   where
     tiled = ResizableTall 1 (2/100) (1/2) []
-
--------------------------------------------------------------------------------
--- Hooks --
-manageHook' :: ManageHook
-manageHook' = (doF W.swapDown) <+> manageHook defaultConfig <+> manageDocks
-
-logHook' :: Handle ->  X ()
---logHook' h = dynamicLogWithPP $ customPP { ppOutput = hPutStrLn h } $ ewmhDesktopsLogHook $ fadeInactiveLogHook 0xdddddddd
-logHook' h = dynamicLogWithPP customPP{ ppOutput = hPutStrLn h } >> ewmhDesktopsLogHook >> fadeInactiveLogHook 0xdddddddd
-
-layoutHook' = ewmhDesktopsLayout $ avoidStruts $ customLayout
 
 -------------------------------------------------------------------------------
 -- Terminal --
@@ -137,16 +154,6 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_h     ), sendMessage MirrorShrink)
     , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
 
-    -- mpd controls
-    , ((modMask .|. controlMask,  xK_h     ), spawn "mpc prev")
-    , ((modMask .|. controlMask,  xK_t     ), spawn "mpc pause")
-    , ((modMask .|. controlMask,  xK_n     ), spawn "mpc play")
-    , ((modMask .|. controlMask,  xK_s     ), spawn "mpc next")
-    , ((modMask .|. controlMask,  xK_g     ), spawn "mpc seek -2%")
-    , ((modMask .|. controlMask,  xK_c     ), spawn "mpc volume -4")
-    , ((modMask .|. controlMask,  xK_r     ), spawn "mpc volume +4")
-    , ((modMask .|. controlMask,  xK_l     ), spawn "mpc seek +2%")
-
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
     , ((modMask              , xK_q     ), restart "xmonad" True)
@@ -165,4 +172,3 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 -------------------------------------------------------------------------------
---  vim: set ts=8 sw=8 tw=0 syn=haskell nospell: 
