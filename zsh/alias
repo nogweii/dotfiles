@@ -92,4 +92,6 @@ alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.acronyms.wtf"
 
+alias ssh-me="ssh me -t 'screen -R'"
+
 # vim: set ts=8 sw=8 tw=0 syn=sh:
