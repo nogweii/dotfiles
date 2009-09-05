@@ -28,8 +28,9 @@ xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 autocutsel -fork # Sync the clipboards
 
-wicd-client -o &> /tmp/wicd.log &
+which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
 
+urxvtd -q -o -f
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
