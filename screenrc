@@ -46,7 +46,7 @@ backtick 10 1 60 "whoami"
 shelltitle "/ | zsh"
 #[randy@voodoo] updates :: none                        1 irssi  [2 vim .screenrc]
 #hardstatus alwayslastline "%{= dd}[%10`@%H]%=%-w[%n %t]%+w"
-caption always '%{= kG}[%{G}%H%{g}][%= %{= w}%?%-Lw%?%{r}(%{u Kk}%n*%f%t%?(%u)%?%{-})%{w}%?%+Lw%?%?%= %{g}][%{c}%d %M %{G}%c]'
+caption always '%{= kG}[%{G}%H%{g}][%= %{= w}%?%-Lw%?%{r}(%{u Kk}%n*%f%t%?(%u)%?%{-})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
 
 # Screen starts at 1, not 0
 bind c screen 1
