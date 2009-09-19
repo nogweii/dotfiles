@@ -3,7 +3,7 @@
 # Startup applications for X
 # Cross-WM, anything put in here will start immediately with X
 
-
+# Check if dbus has already started, and if it hasn't, start it.
 if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then 
 	eval $(dbus-launch --sh-syntax)
 fi
@@ -25,6 +25,7 @@ xcompmgr & # Special effects (requires Composite extension)
 #######################################
 numlockx on # Enable numlock
 xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
+# setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 autocutsel -fork # Sync the clipboards
@@ -36,8 +37,9 @@ urxvtd -q -o -f
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
-urxvt &
+urxvtc &
 
 #exec awesome
 exec xmonad
-##exec VirtualBox
+#exec VirtualBox
+#exec openbox
