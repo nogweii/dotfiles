@@ -33,6 +33,7 @@ alias -g TO='2>&1 3>&1' # '&>&1' returns a parse error
 alias -g U='|uniq'
 alias Y="yes|"
 alias PS="ps wwaux"
+alias PSG="PS G -v grep G"
 
 alias cp='cp -Ri'
 alias edit="vim"
