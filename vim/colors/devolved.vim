@@ -113,7 +113,7 @@ let s:colorvim7 = [
             \ ["PmenuSel",      "bold",      "226",  "232",  "",         ""   ],
             \ ["PmenuSbar",     "",          "119",  "16",   "",         ""   ],
             \ ["PmenuThumb",    "",          "11",   "16",   "",         ""   ],
-            \ ["SpellBad",      "underline", "124",   "",     "undercurl","160"],
+            \ ["SpellBad",      "underline", "88",   "",     "undercurl","160"],
             \ ["SpellRare",     "",          "82",   "233",  "",         ""   ],
             \ ["SpellLocal",    "",          "227",  "234",  "",         ""   ],
             \ ["SpellCap",      "",          "46",   "236",  "",         ""   ],
