@@ -168,3 +168,9 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-h> <Left>
 imap <C-l> <Right>
+
+if argc() > 1
+	" Avoid E173 - load the last buffer then switch back to the first
+	silent blast
+	silent bfirst
+endif
