@@ -117,7 +117,7 @@ let g:Tlist_Show_Menu = 0
 let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Show_One_File = 1
 
-nnoremap <silent> <Leader>tl :TlistToggle<CR>
+nnoremap <silent> <Leader>T :TlistToggle<CR>
 map ZW :w<CR>
 
 set enc=utf-8
