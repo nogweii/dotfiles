@@ -131,13 +131,15 @@ set termencoding=utf-8
 execute 'set list listchars=tab:' . nr2char(160) . nr2char(160) . ',trail:' . nr2char(183)
 "execute 'set list listchars=trail:' . nr2char(183)
 
+" Like the classic <C-n> / <C-p>, but skip help buffers
 function! SwitchToNextBuffer(incr)
 	let help_buffer = (&filetype == 'help')
+	let taglist_buffer = (&filetype == 'taglist')
 	let current = bufnr("%")
 	let last = bufnr("$")
 	let new = current + a:incr
 	while 1
-		if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer)
+		if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer) && ((getbufvar(new, "&filetype") == 'taglist') == taglist_buffer)
 			execute ":buffer ".new
 			break
 		else
