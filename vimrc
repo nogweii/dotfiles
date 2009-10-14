@@ -23,7 +23,7 @@ let g:inkpot_black_background = 1
 "colorscheme inkpot " Thanks, omp!
 set background=dark
 "colorscheme calmar256-dark
-colorscheme devolved
+colorscheme devolved " my personal blend of themes, including inkpot and calmar
 
 " Misc options
 set incsearch " Find the moment I start searching, real-time
@@ -31,7 +31,7 @@ set ignorecase " Case insensitive searching...
 set smartcase " ...except when I search for an uppercase letter
 syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
-set hidden " Modified buffers are saved in the bg when exiting
+set hidden " Modified buffers are stored in the bg when closing
 set spell " Enable spell checking, mostly this only affects comments.
 set history=1000 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
@@ -105,15 +105,17 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 let ruby_space_errors = 1
 let ruby_fold = 1
 
-let g:Tlist_Auto_Highlight_Tag = 1
-let g:Tlist_Auto_Update = 1
-let g:Tlist_File_Fold_Auto_Close = 1
+let g:Tlist_Auto_Highlight_Tag = 1 " Track where I am in the file
+let g:Tlist_Auto_Update = 1 " Update on saves
+let g:Tlist_Auto_Open = 1 " Open up on vim start
 let g:Tlist_Enable_Fold_Column = 0
+let g:Tlist_File_Fold_Auto_Close = 1 " Close folds for inactive files
 let g:Tlist_Exit_OnlyWindow = 1
 let g:Tlist_GainFocus_on_ToggleOpen = 1
 let g:Tlist_Highlight_Tag_on_BufEnter = 1
 let g:Tlist_Show_Menu = 0
 let g:Tlist_Use_Right_Window = 1
+let g:Tlist_Show_One_File = 1
 
 nnoremap <silent> <Leader>tl :TlistToggle<CR>
 map ZW :w<CR>
