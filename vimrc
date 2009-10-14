@@ -163,10 +163,6 @@ nnoremap <silent> <C-p> :<C-U>SwitchToBuffer(-1*v:count1)<CR>
 " Formats whatever motion moves over
 nnoremap Q gq
 
-" IRB
-autocmd FileType irb inoremap <buffer> <silent> <CR> <Esc>:<C-u>ruby VIM::Buffer.current[VIM::Buffer.current.line_number] = VIM::Buffer.current[VIM::Buffer.current.line_number] + " #=> " +eval(VIM::Buffer.current[VIM::Buffer.current.line_number]).inspect<CR>o
-nnoremap <leader>irb :<C-u>below new<CR>:setfiletype irb<CR>:set syntax=ruby<CR>:set buftype=nofile<CR>:set bufhidden=delete<CR>i
-
 " Move around in insert mode
 imap <C-j> <Down>
 imap <C-k> <Up>
