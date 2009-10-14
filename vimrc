@@ -9,6 +9,13 @@ if v:progname =~? "evi"
 	quitall
 end
 
+" gG => go to end of file
+" G  => leader key
+noremap gG G
+onoremap gG G
+map G <Nop>
+let mapleader="G"
+
 " Look & Feel
 set t_Co=256 " I have 256 colors in my terminal, darn it!
 set nowrap " Disable line wraps </3
@@ -26,10 +33,6 @@ syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
 set hidden " Modified buffers are saved in the bg when exiting
 set spell " Enable spell checking, mostly this only affects comments.
-noremap gG G
-onoremap gG G
-map G <Nop>
-let mapleader="G"
 set history=1000 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
 set wildmenu " Nice menu for tab completion
