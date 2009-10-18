@@ -71,6 +71,10 @@ _rake () {
   fi
 }
 
+_cheat () {
+  compadd `ls -1 ~/.cheat/ | sed s/\.yml$//`
+}
+
 # A simple zsh-based bookmarks system (kinda)
 name-dir() {
   eval "hash -d ${1}=$(pwd)"
@@ -102,3 +106,7 @@ function ztmpl {
 		echo ${(e)foo} > $1
 	fi
 }
+
+# Based off http://gist.github.com/172292. Idea by @defunkt
+# gist it! http://gist.github.com/172323 (zsh fork)
+function ruby() { [[ "$1" == "" ]] && irb || `whence -p ruby` $@ }
