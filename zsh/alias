@@ -95,4 +95,7 @@ alias wtf="wtf -f $HOME/.acronyms.wtf"
 
 alias ssh-me="ssh me -t 'screen -R'"
 
+# Only use my preferences in the top shell, not in sub processes
+alias grep="grep $GREP_DEFAULTS"
+
 # vim: set ts=8 sw=8 tw=0 syn=sh:
