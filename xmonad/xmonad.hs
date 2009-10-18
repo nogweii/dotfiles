@@ -103,7 +103,7 @@ customLayout = avoidStruts $ named "[]=" (smartBorders tiled) ||| named "M[]=" (
 -------------------------------------------------------------------------------
 -- Terminal --
 terminal' :: String
-terminal' = "urxvt"
+terminal' = "urxvtc"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --
