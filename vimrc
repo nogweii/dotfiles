@@ -177,3 +177,23 @@ if argc() > 1
 	silent blast
 	silent bfirst
 endif
+
+" *much* shorter message than Lusty's
+if !has("ruby")
+	let g:LustyJugglerSuppressRubyWarning = 1
+	echo "Ruby not found! Please compile vim with +ruby support"
+	echo "---------------------------"
+	echo "Yes it does work with ruby 1.9+, there is a patch for that"
+endif
+
+function! Twitter()
+  if !exists("g:twitvim_login")
+	  call inputsave()
+	  let username = input("Your Twitter user name: ")
+	  let password = inputsecret("Your Twitter password: ")
+	  call inputrestore()
+	  let g:twitvim_login = username.":".password
+  endif
+  FriendsTwitter
+endfunction
+command! Twitter call Twitter()
