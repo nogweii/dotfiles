@@ -165,3 +165,11 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-h> <Left>
 imap <C-l> <Right>
+
+" *much* shorter message than Lusty's
+if !has("ruby")
+	let g:LustyJugglerSuppressRubyWarning = 1
+	echo "Ruby not found! Please compile vim with +ruby support"
+	echo "---------------------------"
+	echo "Yes it does work with ruby 1.9+, there is a patch for that"
+endif
