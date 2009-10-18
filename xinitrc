@@ -4,8 +4,9 @@
 # Cross-WM, anything put in here will start immediately with X
 
 # Check if dbus has already started, and if it hasn't, start it.
-if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then 
-	eval $(dbus-launch --sh-syntax)
+dbuslaunch="`which dbus-launch 2>/dev/null`"
+if [ -n "$dbuslaunch" ] && [ -x "$dbuslaunch" ] && [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  eval `$dbuslaunch --sh-syntax --exit-with-session`
 fi
 echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}" 
 
