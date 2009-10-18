@@ -1,37 +1,12 @@
+Thread.abort_on_exception = true # Saves a lot of guess work if a bg thread fails
+
 # Load various things...
-# * rubygems for some of the following
-# * utility_belt (and wirble) for IRB tools
-# * ostruct for OpenStruct.new
-# * open-uri (because sometimes rfuzz suxx)
-# * color (gem, not default library! see http://rubyforge.org/projects/color/)
-# for color numeric manipulation
-# * Etc for accessing /etc/* (Etc.getlogin type stuff)
-# * what_methods ("hello".what? == 5 #=> ["length", "size"])
-# * stringIO for custom less and more commands
-# * irb/completion JIC wirble fails
-#$KCODE = "utf-8"
-Thread.abort_on_exception = true
-require 'rubygems'
-#require 'method_args'
-
-def prefer lib
-	begin
-		require lib
-	rescue Exception => e
-		puts "#{e.class} loading #{lib}: #{e}"
-	end
-end
-
-%w{rubygems wirble open-uri etc stringio pp irb/completion facets/ansicode benchmark}.each { |lib| prefer lib }
+%w{wirble open-uri etc guessmethod}.each { |gem| require gem }
 
 if defined? Wirble
 	Wirble.init
 	Wirble.colorize
 end
-# I think I live in the shell/Vim to much...
-alias echo puts
-alias q exit
-alias q! exit!
 
 $START_HISTORY = Readline::HISTORY.size
 
@@ -138,6 +113,7 @@ RICompletionProc = proc{|input|
 Readline.basic_word_break_characters= " \t\n\\><=;|&"
 Readline.completion_proc = RICompletionProc
 
+# Finds the location of any libraries passed to it.
 def find_lib *args
 	libs = args.map do |lib|
 		libf = $LOADED_FEATURES.grep(/#{Regexp.escape("#{lib}")}/).first
@@ -148,58 +124,3 @@ def find_lib *args
 	libs.first if libs.size == 1
 end
 alias find_libs find_lib
-
-# Print the methods of an object with colors and arguments and
-# lots of other stuff!
-def pm(obj, *options)
-	methods = obj.methods
-	methods -= Object.methods unless options.include? :more
-	filter = options.select {|opt| opt.kind_of? Regexp}.first
-	methods = methods.select {|name| name =~ filter} if filter
-
-	data = methods.sort.collect do |name|
-		method = obj.method(name)
-		if method.arity == 0
-			args = "()"
-		elsif method.arity > 0
-			n = method.arity
-			args = "(#{(1..n).collect {|i| "arg#{i}"}.join(", ")})"
-		elsif method.arity < 0
-			n = -method.arity
-			args = "(#{(1..n).collect {|i| "arg#{i}"}.join(", ")}, ...)"
-		end
-		klass = $1 if method.inspect =~ /Method: (.*?)#/
-			[name, args, klass]
-	end
-	max_name = data.collect {|item| item[0].size}.max
-	max_args = data.collect {|item| item[1].size}.max
-	data.each do |item|
-		print " #{ANSICode.bold item[0].rjust(max_name)}"
-		print ANSICode.bold(ANSICode.black(item[1].ljust(max_args)))
-		print " #{ANSICode.white item[2]}\n"
-	end
-	data.size
-end
-
-def pmm(obj, *options)
-	methods = obj.methods
-	methods -= Object.methods unless options.include? :more
-	filter = options.select {|opt| opt.kind_of? Regexp}.first
-	methods = methods.select {|name| name =~ filter} if filter
-
-	data = methods.sort.collect do |name|
-		method = obj.method(name)
-		args = "()"
-		args = 
-		klass = $1 if method.inspect =~ /Method: (.*?)#/
-		[name, args, klass]
-	end
-	max_name = data.collect {|item| item[0].size}.max
-	max_args = data.collect {|item| item[1].size}.max
-	data.each do |item|
-		print " #{ANSICode.bold item[0].rjust(max_name)}"
-		print ANSICode.bold(ANSICode.black(item[1].ljust(max_args)))
-		print " #{ANSICode.white item[2]}\n"
-	end
-	data.size
-end
