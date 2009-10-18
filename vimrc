@@ -173,3 +173,15 @@ if !has("ruby")
 	echo "---------------------------"
 	echo "Yes it does work with ruby 1.9+, there is a patch for that"
 endif
+
+function! Twitter()
+  if !exists("g:twitvim_login")
+	  call inputsave()
+	  let username = input("Your Twitter user name: ")
+	  let password = inputsecret("Your Twitter password: ")
+	  call inputrestore()
+	  let g:twitvim_login = username.":".password
+  endif
+  FriendsTwitter
+endfunction
+command! Twitter call Twitter()
