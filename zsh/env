@@ -12,10 +12,10 @@ export MANPATH="${MANPATH}:/usr/share/man:/usr/share/man/man1:/opt/java/man:/opt
 
 # Color wrapper, colorizes common utilities (like ping or ifconfig) in a
 # non-intrusive manner
-if [ -e /usr/lib/cw ] ; then
-	export PATH="/usr/lib/cw:${PATH}"
-	export NOCOLOR_PIPE=1
-fi
+#if [ -e /usr/lib/cw ] ; then
+#	export PATH="/usr/lib/cw:${PATH}"
+#	export NOCOLOR_PIPE=1
+#fi
 
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
