@@ -197,3 +197,10 @@ function! Twitter()
   FriendsTwitter
 endfunction
 command! Twitter call Twitter()
+
+" Don't highlight the search results, alert the user to it
+map <Leader>/ :nohlsearch \| :echo "Stop highlighting search results"<CR>
+
+set nu
+set cursorline
+set cindent
