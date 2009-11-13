@@ -54,8 +54,6 @@ EOF
 " background-color: black;
 " EOF
 
-" Load FF settings (converted to a series of set! calls)
-source ~/.vimperator/firefox_settings.vimp
 command! dominspector :js inspectDOMDocument(document)
 
 map gs :stop<CR>
