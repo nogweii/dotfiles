@@ -41,6 +41,6 @@ urxvtd -q -o -f
 urxvtc &
 
 #exec awesome
-exec xmonad
+#exec xmonad
 #exec VirtualBox
-#exec openbox
+exec openbox
