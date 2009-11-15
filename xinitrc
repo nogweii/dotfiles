@@ -40,7 +40,7 @@ urxvtd -q -o -f
 # without requiring a hard reboot.
 urxvtc &
 
-#exec awesome
+ exec awesome
 #exec xmonad
 #exec VirtualBox
-exec openbox
+#exec openbox
