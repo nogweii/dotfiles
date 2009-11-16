@@ -17,7 +17,7 @@ map G <Nop>
 let mapleader="G"
 
 " Look & Feel
-set t_Co=256 " I have 256 colors in my terminal, darn it!
+"set t_Co=256 " I have 256 colors in my terminal, darn it!
 set nowrap " Disable line wraps </3
 let g:inkpot_black_background = 1
 "colorscheme inkpot " Thanks, omp!
