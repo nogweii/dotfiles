@@ -44,3 +44,5 @@ urxvtc &
 #exec xmonad
 #exec VirtualBox
 #exec openbox
+#exec /home/colin/Downloads/musca-0.9.24/musca
+#exec /home/colin/code/lich-barewm/barewm
