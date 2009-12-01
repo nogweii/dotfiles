@@ -285,8 +285,8 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
-                     border_color = beautiful.border_normal,
+      properties = { border_width = 0,
+                     border_color = 0,
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
