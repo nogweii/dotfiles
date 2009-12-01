@@ -107,7 +107,7 @@ awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
       properties = { border_width = 0,
-                     border_color = 0,
+                     border_color = "#000000",
                      focus = true, } }
 }
 -- }}}
