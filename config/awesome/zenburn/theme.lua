@@ -8,7 +8,7 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "echo 'bg not set by awesome';" }
+theme.wallpaper_cmd = { "echo 'bg not set by awesome'" }
 -- }}}
 
 -- {{{ Styles
@@ -24,7 +24,7 @@ theme.bg_urgent = "#3F3F3F"
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "2"
+theme.border_width  = "0"
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#6F6F6F"
 theme.border_marked = "#CC9393"
