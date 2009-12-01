@@ -33,13 +33,15 @@ syntax on " Enable syntax highlighting
 set fileformat=unix " What sequence to use for end-of-line (\n in this case)
 set hidden " Modified buffers are stored in the bg when closing
 set spell " Enable spell checking, mostly this only affects comments.
-set history=1000 " Remember more stuff, vim!
+set history=50 " Remember more stuff, vim!
 runtime macros/matchit.vim " Extend % matching
 set wildmenu " Nice menu for tab completion
 set wildmode=longest,full " Personal choice about matching style, see ':h wildmode'
 set title " Update the title with the VIM messages
-set backupdir=~/.vim/tmp,~/tmp,/var/tmp,/tmp " Centralize location of backup
-set directory=~/.vim/tmp,~/tmp,/var/tmp,/tmp " files (e.g. .swp files)
+" Centralize location of backup files (e.g. .swp files)
+set backupdir=~/.vim/tmp,~/tmp,/var/tmp,/tmp
+" Set directory to always be the same as &backupdir
+execute 'set directory='.&backupdir
 set visualbell t_vb= " Enable visual bell, but use nothing for visual bell
 set noerrorbells  " Disable error bells in general
 
@@ -56,8 +58,8 @@ vnoremap > >gv
 nnoremap ` '
 nnoremap ' `
 " Scroll the viewport faster
-nnoremap <C-j> 3<C-e>
-nnoremap <C-k> 3<C-y>
+nnoremap <C-j> 3j
+nnoremap <C-k> 3k
 " jump to the beginning/end of the line
 map H ^
 map L $
@@ -95,8 +97,8 @@ set modeline " Enable dynamic configuration per-file with special syntax
 function! AppendModeline()
   let save_cursor = getpos('.')
   " Keep append split on 2 lines to keep vim from trying to parse the line as
-  let append = ' vim' " ..a modeline, when we're trying to build one instead.
-  let append = append.': set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
+  " ..a modeline, when we're trying to build one instead.
+  let append = ' vim: set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
   $put =substitute(&commentstring, '%s', append, '')
   call setpos('.', save_cursor)
 endfunction
@@ -199,8 +201,30 @@ endfunction
 command! Twitter call Twitter()
 
 " Don't highlight the search results, alert the user to it
-map <Leader>/ :nohlsearch \| :echo "Stop highlighting search results"<CR>
+map <Leader>/ :nohlsearch \| :echo "Not highlighting results"<CR>
 
 set nu
 set cursorline
 set cindent
+if &lines > 1
+	set laststatus=2
+else
+	set laststatus=0
+endif
+set ruler showcmd
+set backspace=indent,eol,start
+
+set wildignore=*.o,*.obj,*~
+set autoindent expandtab
+set foldnestmax=3
+set linebreak nofoldenable
+execute 'set scrolloff='.(&lines-2)
+set shiftwidth=4
+set sidescroll=1
+set sidescrolloff=7
+set softtabstop=4
+
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
