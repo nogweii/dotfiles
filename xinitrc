@@ -46,3 +46,4 @@ urxvtc &
 #exec openbox
 #exec /home/colin/Downloads/musca-0.9.24/musca
 #exec /home/colin/code/lich-barewm/barewm
+#XDG_CONFIG_DIRS=$HOME/.config/ exec /home/colin/Downloads/subtle-0.8.1602-zeta/subtle
