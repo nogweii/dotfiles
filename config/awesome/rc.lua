@@ -9,7 +9,7 @@ require("naughty")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(os.getenv("XDG_CONFIG_HOME") .. "/awesome/zenburn/theme.lua")
+beautiful.init(awful.getdir("config") .. "/awesome/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
