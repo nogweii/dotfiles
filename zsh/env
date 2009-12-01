@@ -28,8 +28,8 @@ export XDG_CACHE_HOME="${HOME}/.cache/"
 export XDG_CONFIG_HOME="${HOME}/.config/"
 export XDG_DATA_HOME="${HOME}/.data/"
 # Other directories (colon separated) to search through.
-export XDG_DATA_DIRS="${HOME}/.local/share/:/usr/local/share/:/usr/share/"
-export XDG_CONFIG_DIRS="/etc/xdg:${HOME}/.local/config/"
+export XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:/usr/local/share/:/usr/share/"
+export XDG_CONFIG_DIRS="${HOME}/.config/:/etc/xdg:${HOME}/.local/config/"
 
 # Locale stuff - en_US.utf8
 export LOCALE="en_US.utf8"
