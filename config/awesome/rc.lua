@@ -9,7 +9,7 @@ require("naughty")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(awful.getdir("config") .. "/awesome/zenburn/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/awesome/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -35,7 +35,7 @@ end
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" })
+mytextclock = awful.widget.textclock({ align = "right", format = "%a %d %b %y %H:%M" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -43,30 +43,7 @@ mysystray = widget({ type = "systray" })
 -- Create a wibox for each screen and add it
 mywibox = {}
 mytasklist = {}
-mytasklist.buttons = awful.util.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if not c:isvisible() then
-                                                  awful.tag.viewonly(c:tags()[1])
-                                              end
-                                              client.focus = c
-                                              c:raise()
-                                          end),
-                     awful.button({ }, 3, function ()
-                                              if instance then
-                                                  instance:hide()
-                                                  instance = nil
-                                              else
-                                                  instance = awful.menu.clients({ width=250 })
-                                              end
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                              if client.focus then client.focus:raise() end
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                              if client.focus then client.focus:raise() end
-                                          end))
+mytasklist.buttons = {} -- Disable button settings
 
 for s = 1, screen.count() do
     -- Create a tasklist widget
@@ -75,11 +52,11 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {{},
         mytextclock,
-        s == 1 and mysystray or nil,
+        mysystray,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -159,7 +136,4 @@ client.add_signal("manage", function (c, startup)
         end
     end
 end)
-
-client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
