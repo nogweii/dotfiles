@@ -35,7 +35,7 @@ end
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right", format = "%a %d %b %y %H:%M" })
+mytextclock = awful.widget.textclock({ align = "right", format = "%a %d %b %Y %H:%M" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -103,9 +103,7 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Rules
-awful.rules.rules = {
-    -- All clients will match this rule.
-    { rule = { },
+awful.rules.rules = { { rule = { }, -- All clients will match this rule.
       properties = { border_width = 0,
                      border_color = "#000000",
                      focus = true, } }
