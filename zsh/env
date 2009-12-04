@@ -10,6 +10,13 @@ export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
 export PKG_CONFIG_PATH="/opt/NX/lib/pkgconfig:/opt/kde/lib/pkgconfig:/opt/mozilla/lib/pkgconfig:/opt/qt/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig"
 export MANPATH="${MANPATH}:/usr/share/man:/usr/share/man/man1:/opt/java/man:/opt/qt/man"
 
+# Color wrapper, colorizes common utilities (like ping or ifconfig) in a
+# non-intrusive manner
+#if [ -e /usr/lib/cw ] ; then
+#	export PATH="/usr/lib/cw:${PATH}"
+#	export NOCOLOR_PIPE=1
+#fi
+
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
 # Unless already set, set these:
@@ -21,8 +28,8 @@ export XDG_CACHE_HOME="${HOME}/.cache/"
 export XDG_CONFIG_HOME="${HOME}/.config/"
 export XDG_DATA_HOME="${HOME}/.data/"
 # Other directories (colon separated) to search through.
-export XDG_DATA_DIRS="${HOME}/.local/share/:/usr/local/share/:/usr/share/"
-export XDG_CONFIG_DIRS="/etc/xdg:${HOME}/.local/config/"
+export XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:/usr/local/share/:/usr/share/"
+export XDG_CONFIG_DIRS="${HOME}/.config/:/etc/xdg:${HOME}/.local/config/"
 
 # Locale stuff - en_US.utf8
 export LOCALE="en_US.utf8"
@@ -46,7 +53,7 @@ export HARDWARECLOCK="UTC"
 export TIMEZONE="America/New_York"
 
 # CLI default parameters
-export GREP_OPTIONS="-RPiI"
+export GREP_DEFAULTS="-RPiI"
 export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
@@ -85,11 +92,12 @@ CHOST="i686-pc-linux-gnu"
 CFLAGS="-O2 -pipe -fomit-frame-pointer -g"
 CXXFLAGS="$CFLAGS"
 
-eval `dircolors -b ~/.dir_colors`
+eval `dircolors -b $HOME/.dir_colors`
 
 export CANTOPATH="$HOME/.config/canto"
 mkdir -p $CANTOPATH/feeds/ $CANTOPATH/scripts/
 export PYTHONPATH="$HOME/code/canto/root/$LIBDIR/python-2.6/site-packages:$PYTHONPATH"
 export MANPATH="$HOME/code/canto/root/share/man:$MANPATH"
 
+export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 #  vim: set ts=8 sw=8 tw=0 syn=sh: 
