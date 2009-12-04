@@ -1,1 +1,2 @@
 vimperator.vba: call delete('/home/colin/.vim/syntax/vimperator.vim')|call delete('/home/colin/.vim/ftdetect/vimperator.vim')
+twitvim-0.4.2.vba: call delete('/home/colin/.vim/plugin/twitvim.vim')|call delete('/home/colin/.vim/doc/twitvim.txt')
