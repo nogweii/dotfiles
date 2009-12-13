@@ -1,8 +1,5 @@
-! urxvt is the default resource name and can be changed for each terminal.
-! while URxvt exists for all urxvt's
-
-! Default HOME, though I *really* don't like this. It should be passed in when
-! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
+!! Default HOME, though I *really* don't like this. It should be passed in when
+!! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
 #ifndef HOME
 #define HOME /home/colin
 #endif
@@ -19,13 +16,13 @@ urxvt.foreground:         grey80
 urxvt.colorBD:            white
 urxvt.saveLines:          128
 !! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-!urxvt*background:         rgba:0000/0000/0000/dddd
-!urxvt.depth:              32
+!urxvt*background:         rgba:0000/0000/0000/7fff
+!urxvt*depth:              32
 !! Pseudo-transparent
 urxvt*background:         black
 URxvt*transparent:        true
 URxvt*shading:            50
-! Only automatically scroll when I type a key, not when something is outputted
+!! Only automatically scroll when I type a key, not when something is outputted
 urxvt.scrollTtyOutput:    false
 urxvt.scrollWithBuffer:   false
 urxvt.scrollTtyKeypress:  true
