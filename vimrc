@@ -96,8 +96,6 @@ set modeline " Enable dynamic configuration per-file with special syntax
 " Use substitute() (not printf()) to handle '%%s' modeline in LaTeX files.
 function! AppendModeline()
   let save_cursor = getpos('.')
-  " Keep append split on 2 lines to keep vim from trying to parse the line as
-  " ..a modeline, when we're trying to build one instead.
   let append = ' vim: set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
   $put =substitute(&commentstring, '%s', append, '')
   call setpos('.', save_cursor)
@@ -120,18 +118,17 @@ let g:Tlist_Use_Right_Window = 1
 let g:Tlist_Show_One_File = 1
 
 nnoremap <silent> <Leader>T :TlistToggle<CR>
-map ZW :w<CR>
+nmap <silent> ZW :update<CR>:TlistUpdate<CR>
 
-set enc=utf-8
+" Set UTF-8 as the default
+set  enc=utf-8
 set fenc=utf-8
-set termencoding=utf-8
+set tenc=utf-8
 
 " when using list, keep tabs at their full width and display `arrows':
 " (Character 187 is a right double-chevron, and 183 a mid-dot.)
 " 160 is a non-breaking space.
-"execute 'set list listchars=tab:' . nr2char(187) . nr2char(160) . ',trail:' . nr2char(183)
-execute 'set list listchars=tab:' . nr2char(160) . nr2char(160) . ',trail:' . nr2char(183)
-"execute 'set list listchars=trail:' . nr2char(183)
+execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 
 " Like the classic <C-n> / <C-p>, but skip help buffers
 function! SwitchToNextBuffer(incr)
@@ -173,12 +170,6 @@ imap <C-l> <Right>
 
 set updatetime=2000 " ms to wait before writing swap & CursorHold autocmd
 set hlsearch " Show all search results
-
-if argc() > 1
-	" Avoid E173 - load the last buffer then switch back to the first
-	silent blast
-	silent bfirst
-endif
 
 " *much* shorter message than Lusty's
 if !has("ruby")
@@ -222,9 +213,36 @@ execute 'set scrolloff='.(&lines-2)
 set shiftwidth=4
 set sidescroll=1
 set sidescrolloff=7
-set softtabstop=4
+set softtabstop=4 tabstop=4
 
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+if argc() > 1
+	" Avoid E173 - load the last buffer then switch back to the first
+	silent blast
+	silent bfirst
+endif
+
+function! OutlineFoldExpr(lnum)
+    if getline(a:lnum) =~ '^$'
+        return -1
+"    elseif indent(a:lnum) > indent(a:lnum+1)
+"       return '<'.indent(a:lnum)
+    elseif indent(a:lnum) < indent(a:lnum+1)
+       return '>'.indent(a:lnum+1)
+    else
+        return indent(a:lnum)
+    endif
+endfunction
+
+function! OutlineFold()
+    setlocal foldenable
+    setlocal foldmethod=expr
+    setlocal foldexpr=OutlineFoldExpr(v:lnum)
+    setlocal foldtext=getline(v:foldstart)
+    setlocal fillchars=fold:\ "(there's a space after that \)
+endfunction
+command! OutlineFold call OutlineFold()
