@@ -9,10 +9,10 @@ require("naughty")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(awful.util.getdir("config") .. "/zenburn/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/bluebird/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -66,30 +66,18 @@ end
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
 
-    awful.key({ modkey,           }, "j",
+    awful.key({ modkey,           }, "l",
         function ()
+            awful.client.minimized = true
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "k",
+    awful.key({ modkey,           }, "h",
         function ()
+            awful.client.minimized = true
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
-        end),
-
-    -- Layout manipulation
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end),
-
-    -- Standard program
-    awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit)
+        end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
