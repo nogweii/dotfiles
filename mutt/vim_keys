@@ -6,9 +6,10 @@ bind index m set-flag
 bind index M clear-flag
 bind index gm mail
 
-bind generic gg top-page
-bind generic gG bottom-page
-bind generic G bottom-page
+bind generic <Home> top-page
+bind generic <End> bottom-page
+bind generic gg first-entry
+bind generic gG last-entry
 
 # Change the quit key binding to ZQ instead of q
 #bind index ZQ exit
