@@ -34,8 +34,8 @@ bindkey -e
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
-#cd ${HOME}
-if [ -x "$(which fortune)" ] ; then
+# Run fortune only if it's installed and we aren't connected to the machine via ssh
+if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
 	fortune -s # "Short" apothegms only
 fi
 #set -o vi
