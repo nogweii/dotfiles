@@ -4,7 +4,6 @@
 
 #umask 077 # defaults => u=rwx,g=,o=
 ZHOME="${HOME}/.zsh"
-MISSING_FEATURES=()
 source $ZHOME/env
 source $ZHOME/style
 source $ZHOME/alias
@@ -38,8 +37,6 @@ zle -N self-insert url-quote-magic
 #cd ${HOME}
 if [ -x "$(which fortune)" ] ; then
 	fortune -s # "Short" apothegms only
-else
-	MISSING_FEATURES=($MISSING_FEATURES fortune)
 fi
 #set -o vi
 # MAILDIR
@@ -47,10 +44,6 @@ test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/c
 
 # Create my git configuration unless it's already up-to-date.
 ztmpl ~/.gitconfig
-
-if [ ! "$MISSING_FEATURES" = "" ] ; then
-	echo "Missing some features: ${MISSING_FEATURES}"
-fi
 
 autoload -U backward-kill-word-match
 zle -N backward-kill-word-match
