@@ -80,12 +80,10 @@ if [ -d "$HOME/bin" ] ; then
 	#alias t="$HOME/bin/todo.sh"
 	alias t='cd /home/colin/tmp/todo.txt-cli/; ./todo.sh -d ./todo.cfg'
 else
-	MISSING_FEATURES=($MISSING_FEATURES '~/bin')
+	alias t="echo '~/bin NOT FOUND!'"
 fi
 if [ -x "$(which pacman-color)" ] ; then
 	alias pacman="$(which pacman-color)"
-else
-	MISSING_FEATURES=($MISSING_FEATURES 'pacman-color')
 fi
 
 alias -- -="cd - &>/dev/null"
