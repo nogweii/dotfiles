@@ -16,3 +16,5 @@ Repeat
 http://www.vim.org/scripts/script.php?script_id=2709 - Sudo
 http://www.vim.org/scripts/script.php?script_id=2724 - Rename
 PKGBUILD syntax & ftdetect - Copy from vim runtime (`pacman -Ql pacman-contrib | grep vim`)
+http://www.vim.org/scripts/script.php?script_id=2686 - cuteTodoList
+http://www.vim.org/scripts/script.php?script_id=642  - Get Latest Vim Script
