@@ -85,6 +85,9 @@ fi
 if [ -x "$(which pacman-color)" ] ; then
 	alias pacman="$(which pacman-color)"
 fi
+# `whence` is used to have pacman-color be called if it was aliased.
+alias -- pacman-r="s $(whence pacman) -Rcnsu"
+alias -- pacman-s="s $(whence pacman) -S"
 
 alias -- -="cd - &>/dev/null"
 alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
