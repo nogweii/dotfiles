@@ -246,3 +246,9 @@ function! OutlineFold()
     setlocal fillchars=fold:\ "(there's a space after that \)
 endfunction
 command! OutlineFold call OutlineFold()
+
+let g:googlereader_email = 'colin@evaryont.me'
+let g:googlereader_browser = "firefox.sh %s"
+
+" Haxxors: `gp` to add the X11 clipboard directly to the file, at the cursor
+nmap gp :.!xclip -out<CR>
