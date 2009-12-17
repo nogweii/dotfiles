@@ -33,6 +33,7 @@
 	co = checkout
 	unpushed = log origin..HEAD
 	graph = log --oneline --graph
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [web]
 	browser = open
 [browser "open"]
@@ -41,6 +42,12 @@
 	default = current
 [help]
 	autocorrect = 1
+[sendemail]
+        smtpserver = smtp.gmail.com
+        smtpserverport = 587
+        smtpencryption = tls
+        smtpuser = colin@evaryont.me
+
 
 # This is just a template parsed by zsh
 
