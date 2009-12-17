@@ -252,3 +252,8 @@ let g:googlereader_browser = "firefox.sh %s"
 
 " Haxxors: `gp` to add the X11 clipboard directly to the file, at the cursor
 nmap gp :.!xclip -out<CR>
+
+"augroup git-wip
+"  autocmd!
+"  autocmd BufWritePost * :silent !git wip save "  wip: %:p:t" --editor -- "%"
+"augroup END
