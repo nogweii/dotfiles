@@ -1,7 +1,7 @@
 " Vim color file:  devolved.vim
 " Last Change: 21. Aug 2007
 " License: public domain
-" Maintainer:: evaryont <evaryont@saphrix.com>
+" Maintainer:: evaryont <colin@evaryont.me>
 "
 " for a 256 color capable terminal like xterm-256color, ... or gvim as well
 " "{{{
@@ -9,14 +9,6 @@
 " set t_Co=256
 " in your vimrc"}}}
 
-" {{{ t_Co=256 is set - check 
-if &t_Co != 256 && ! has("gui_running")
-    echomsg ""
-    echomsg "write 'set t_Co=256' in your .vimrc or this file won't load"
-    echomsg ""
-    finish
-endif
-" }}}
 " {{{ reset colors and set colors_name and store cpo setting
 set background=dark
 hi clear
@@ -28,6 +20,12 @@ let g:colors_name = "devolved"
 
 let s:save_cpo = &cpo
 set cpo&vim
+" }}}
+
+" {{{ t_Co=256 is set - check 
+if &t_Co != 256 && ! has("gui_running")
+    finish
+endif
 " }}}
 
 " FORMAT:"{{{
@@ -93,7 +91,7 @@ let s:colors256 = [
                 \ ["Title",         "bold", "98",   "",     "",         ""   ],
                 \ ["Visual",        "",     "",     "238",  "",         ""   ],
                 \ ["Comment",       "",     "37",   "",     "",         ""   ],
-                \ ["Costant",       "",     "73",   "",     "",         ""   ],
+                \ ["Constant",       "",     "73",   "",     "",         ""   ],
                 \ ["String",        "",     "190",  "234",  "",         ""   ],
                 \ ["Error",         "",     "69",   "",     "",         ""   ],
                 \ ["Identifier",    "bold", "130",   "",     "",         ""   ],
