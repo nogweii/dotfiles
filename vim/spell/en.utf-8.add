@@ -62,3 +62,13 @@ GTK
 gtk
 ctrl
 unix
+args
+gui
+fileformat
+rgb
+www
+undercurl
+saphrix
+gvim
+vimrc
+EWMH
