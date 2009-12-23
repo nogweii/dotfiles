@@ -11,18 +11,7 @@ require("naughty")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/bluebird/theme.lua")
 
--- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
--- }}}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
@@ -35,7 +24,7 @@ end
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right", format = "%a %d %b %Y %H:%M" })
+mytextclock = awful.widget.textclock({align="right", format="%a %d %b %Y %H:%M"})
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -110,13 +99,15 @@ client.add_signal("manage", function (c, startup)
     end)
 
     if not startup then
-        -- Set the windows at the slave,
-        -- i.e. put it at the end of others instead of setting it master.
-        -- awful.client.setslave(c)
+        -- Set the windows at the slave, at the end of list rather than at the
+        -- beginning of it.
+        awful.client.setslave(c)
 
         c.size_hints_honor = false
-        -- Put windows in a smart way, only if they does not set an initial position.
-        if not c.size_hints.user_position and not c.size_hints.program_position then
+        -- Put windows in a smart way, only if they does not set an initial
+        -- position.
+        if not c.size_hints.user_position and
+           not c.size_hints.program_position then
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
         end
