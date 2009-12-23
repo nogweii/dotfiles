@@ -56,5 +56,5 @@ EOF
 
 command! dominspector :js inspectDOMDocument(document)
 
-map gs :stop<CR>
-map ga :addons<CR>
+map <silent> gs :stop<CR>
+map <silent> ga :addons<CR>
