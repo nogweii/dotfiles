@@ -33,15 +33,14 @@ autocutsel -fork # Sync the clipboards
 
 # Manage the internet connection
 which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
-# Support multiple urxvt terminals in a lightweight manner
-urxvtd -q -o -f
 # Noteo: Notify me of stuff.
-noteo &
+#noteo &
+/home/colin/code/cuteinformer/cuteinformer &
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
-urxvtc &
+urxvt.sh &
 
  exec awesome
 #exec xmonad
