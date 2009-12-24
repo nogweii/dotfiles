@@ -33,7 +33,7 @@ urxvt.cursorColor2:       black
 URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
-!URxvt.perl-lib: /home/jukie/bart/.urxvt/
-!URxvt.perl-ext: selection,mark-yank-urls
+URxvt.perl-lib: HOME/.data/urxvt/
+URxvt.perl-ext: selection,mark-yank-urls
 
 ! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
