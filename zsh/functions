@@ -110,3 +110,15 @@ function ztmpl {
 # Based off http://gist.github.com/172292. Idea by @defunkt
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby() { [[ "$1" == "" ]] && irb || `whence -p ruby` $@ }
+
+function detach() {
+    # Create the directory where we store the sockets, if it doesn't already exist
+    if [[ ! -d "$XDG_CACHE_HOME/dtach/" ]] ; then
+        mkdir -p "$XDG_CACHE_HOME/dtach/"
+    fi
+
+    # From `dtach --help`:
+    #     -A: Attach to the specified socket, or create it if it
+    #         does not exist, running the specified command.
+    dtach -A "$XDG_CACHE_HOME/dtach/$1.socket" -z -e "" $@
+}
