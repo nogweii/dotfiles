@@ -50,3 +50,16 @@ zle -N backward-kill-word-match
 bindkey '^W' backward-kill-word-match
 zstyle ':zle:*' word-style normal
 zstyle ':zle:*' word-chars ''
+
+function autobg() {
+    jobs -s >| /tmp/j$$
+    while read jnum jdesc
+    do
+        bg %${${jnum#\[}%\]}
+    done < /tmp/j$$
+    \rm -f /tmp/j$$
+}
+
+function precmd() {
+    autobg
+}
