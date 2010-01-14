@@ -8,7 +8,7 @@ source $ZHOME/env
 source $ZHOME/style
 source $ZHOME/alias
 source $ZHOME/functions
-source $ZHOME/keychain
+#source $ZHOME/keychain
 if [ -e $ZHOME/named_dirs ] ; then
 	source $ZHOME/named_dirs
 fi
