@@ -93,7 +93,6 @@ fi
 alias -- pacman-r="s $(whence pacman) -Rcnsu"
 alias -- pacman-s="s $(whence pacman) -S"
 
-alias -- -="cd - &>/dev/null"
 alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.acronyms.wtf"
@@ -106,4 +105,13 @@ else
 	alias catw="curl -s "
 fi
 alias myip="catw http://icanhazip.com"
+
+
+# 'special' character aliases.
+alias --     -="cd - &>/dev/null"
+alias        .='pwd'
+alias -g   ...='../..'
+alias -g  ....='../../..'
+alias -g .....='../../../..'
+alias        :='echo'
 # vim: set ts=8 sw=8 tw=0 syn=sh:
