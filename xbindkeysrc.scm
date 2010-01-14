@@ -15,18 +15,6 @@
 ; Start an application
 (xbindkey '(Mod4 p) "dmenu_run")
 
-;(xbindkey '(Mod4 t) "/home/colin/tmp/keynav-20080614.01/keynav")
-;(xbindkey-function '(Mod4 r)
-;		   (lambda ()
-;		     (grab-all-keys)
-;		     (run-command "keynav")
-;		     (ungrab-all-keys)
-;                   ))
-
-; Start an application
-;(xbindkey '(Mod4 i) "winchange 1 &>> /tmp/startx.log")
-;(xbindkey '(Mod4 o) "winchange -1 &>> /tmp/startx.log")
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start of xbindkeys guile configuration help ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
