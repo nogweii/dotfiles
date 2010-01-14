@@ -49,12 +49,12 @@ introColor: reset
 # Each field may be assigned a different color.
 
 # Warnings
-warningFileNameColor: reset
+warningFileNameColor: green
 warningNumberColor:   blue
 warningMessageColor:  yellow
 
 # Errors
-errorFileNameColor: reset
+errorFileNameColor: green
 errorNumberColor:   blue
 errorMessageColor:  bold red
 
