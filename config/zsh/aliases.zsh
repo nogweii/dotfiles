@@ -33,9 +33,6 @@ alias     lls='ll *(s,S,t)'                # only files with setgid/setuid/stick
 alias     lll='ll *(@)'                    # only symlinks
 alias     llx='ll *(*)'                    # only executables
 
-alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
-
-alias edit="vim"
 
 ########################
 # Default aliases
@@ -46,72 +43,59 @@ alias edit="vim"
 alias mkdir='mkdir -p'
 alias cp='cp -Ri'
 alias rm='rm -rv'
-alias mv='nocorrect mv -i'
+alias mv='mv -i'
 alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the top shell, not in sub processes
 
 ########################
 # Convenience aliases
 alias nhclean='rm ./**/nohup.out'
+alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias yrm='yes | rm -rvf'
 alias startxl="startx &>/tmp/startx.log"
 
 alias PS="ps wwaux"
 alias PSG="PS G -v grep G"
 
-
 alias makepkg="makepkg -s"
-alias makepkgi="makepkg -siL"
 
-alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias addme='s gpasswd -a colin'
 
 alias edit="${EDITOR}"
-# NOTE: Make sure it's before alias sudo
 alias s=`whence -p sudo`
-alias sudo="echo 'Use \"s\" instead of \"sudo\".'; s"
-
-# screen + ssh-agent fix (see also: .zsh/functions)
-alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
 alias git-branch-name="git branch | sed '/^\*/!d; s/^\* //'"
-alias vinny='vim --cmd "let g:vimMode = \"notes\""'
+#alias vinny='vim --cmd "let g:vimMode = \"notes\""'
 
 alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "let html_use_css = 1" -c "TOhtml" -c "set nu" -c "syntax on" -c "wq" -c "q" &>/dev/null'
-
-
-if [ -d "$HOME/bin" ] ; then
-	#alias vim="viml"
-	#alias t="$HOME/bin/todo.sh"
-	alias t='cd /home/colin/code/todo.txt-cli/; ./todo.sh -d ./todo.cfg'
-else
-	alias t="echo '~/bin NOT FOUND!'"
-fi
+########################
+# Pacman
 if [ -x "$(which pacman-color)" ] ; then
-	alias pacman="$(which pacman-color)"
+    alias  pacman="$(which pacman-color)"
 fi
-# `whence` is used to have pacman-color be called if it was aliased.
-alias -- pacman-r="s $(whence pacman) -Rcnsu"
-alias -- pacman-s="s $(whence pacman) -S"
+alias     pacmanr="s $(whence pacman) -Rcnsu"
+alias     spacman="s $(whence pacman) -S"
 
-alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
-alias wtf="wtf -f $HOME/.acronyms.wtf"
+alias wtf="wtf -f $HOME/.config/acronyms.wtf"
 
 alias ssh-me="ssh me -t 'screen -R'"
 
+########################
+# Web & 'catw'
+#
+# catw is a simple 
 if [ -z "$(whence curl)" ] ; then
-	alias catw="wget -qO - "
+    alias catw="wget -qO - "
 else
-	alias catw="curl -s "
+    alias catw="curl -s "
 fi
+alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
 alias myip="catw http://icanhazip.com"
 
 
+########################
 # 'special' character aliases.
-alias --     -="cd - &>/dev/null"
-alias        .='pwd'
-alias -g   ...='../..'
-alias -g  ....='../../..'
-alias -g .....='../../../..'
-alias        :='echo'
-# vim: set ts=8 sw=8 tw=0 syn=sh:
+alias --     -="cd - &>/dev/null"  # Go to the last directory
+alias        .='cd .'              # Have '.' match behaviour of .[.]+
+
+alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed

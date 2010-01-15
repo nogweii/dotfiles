@@ -1,0 +1,9080 @@
+gem 
+gem help commands
+gem ow fcgi
+alsamixer
+s gem update
+s gem update gemcutter
+gem owner fcgi
+gem owner fcgi --help
+gem owner fcgi -a saksmlz@gmail.com
+gem owner fcgi -a "saksmlz@gmail.com"
+ruby --help
+~/Downloads/ruby-fcgi-0.8.7/fcgi-gem-1.9
+ls
+vim metadata
+grep 'evaryont' *
+vim metadata
+grep '@' *
+grep '.@.' *
+grep '[^\s]@.' *
+grep '[^\s(]@.' *
+grep '[^\s({[]@.' *
+gem owner fcgi -a "saksmlz@gmail.com"
+~/code/less
+ls
+ls ..
+git config
+git config --get-all
+git config --get-all *
+git config --get-all .
+git config --get-regexp .
+git pull
+git pull origin
+git pull origin master
+git st
+git diff
+git log
+git diff
+git add lib/less/command.rb
+ls
+rake spec
+vim spec/spec.less +65
+vim spec/command_spec.rb +65
+git st
+git ci
+git st
+git push github
+git pull origin
+git pull origin master
+git diff
+vim lib/less/command.rb
+git st
+git add lib/less/command.rb
+git ci
+git st
+git push
+rake spec &> spec.log
+vim spec.log
+s gem update
+s gem --help
+s gem commands
+s gem help commands
+s gem help stale
+s gem check
+s gem outdated
+s reboot
+ls
+startxl
+ssh-me
+vim /mnt/windows/boot.ini
+s reboot
+mpc
+xdotool
+xdotool getwindowfocus
+vim bin/winchange
+chmod a+x bin/winchange
+winchange
+echo
+irb
+vim bin/winchange
+winchange
+vim bin/winchange
+wmctrl --help
+wmctrl -l
+vim bin/winchange
+wmctrl -l
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange +23
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+wmctrl --help
+wmctrl -m
+xdotool
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+winchange 3
+winchange 2
+winchange -1
+winchange -4
+vim bin/winchange
+winchange -4
+vim bin/winchange
+winchange -4
+vim bin/winchange
+winchange -4
+vim bin/winchange
+winchange -4
+vim bin/winchange
+xdotool 
+xdotool getwindowfocus
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+wmctrl --help
+vim bin/winchange
+winchange 1
+winchange 1
+winchange 1
+xdotool
+mpc
+man xdotool
+xdotool search
+xdotool search .
+xdotool search *
+xdotool search --onlyvisible .
+xdotool search --onlyvisible --name .
+vim bin/winchange
+~/dotfiles
+git st
+vim config/awesome/rc.lua
+awesome --help
+awesome -k
+ssh-me
+ssh-me
+winchange 1
+vim bin/winchange
+vim bin/winchange +20
+vim bin/winchange
+winchange 1
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+winchange 1
+winchange 1
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+winchange 1
+vim bin/winchange +20
+vim bin/winchange +20
+vim bin/winchange +20
+vim bin/winchange +20
+winchange 1a
+vim bin/winchange +20
+winchange 1a
+vim bin/winchange +7
+winchange as
+vim bin/winchange +7
+vim bin/winchange +8
+winchange as
+vim bin/winchange
+winchange as
+vim bin/winchange
+winchange as
+winchange a23
+winchange 2a3
+vim bin/winchange
+winchange 2a3
+echo $?
+vim bin/winchange
+winchange 2a3
+vim bin/winchange
+winchange 2a3
+vim bin/winchange
+winchange 2a3
+vim bin/winchange
+winchange 3
+vim bin/winchange
+winchange 3
+winchange 2a3
+vim bin/winchange
+winchange 2a3
+vim bin/winchange
+winchange
+vim bin/winchange
+s vim /boot/grub/menu.lst
+gem help
+gem help commands
+mpc
+mpc
+pms
+gem update gemcutter
+winchange
+winchange 2
+winchange 1
+winchange -1
+winchange a
+vim bin/winchange
+winchange a
+winchange 
+winchange 1
+xdotool 
+vim bin/winchange
+winchange 1
+vim bin/winchange
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange
+vim bin/winchange
+vim bin/winchange
+winchange
+grep 'dup|clone' /usr/lib/ruby/gems/1.9.1/gems/gemcutter-0.1.7
+grep 'dup\|clone' /usr/lib/ruby/gems/1.9.1/gems/gemcutter-0.1.7
+alias grep
+grep 'clone' /usr/lib/ruby/gems/1.9.1/gems/gemcutter-0.1.7
+grep 'dup' /usr/lib/ruby/gems/1.9.1/gems/gemcutter-0.1.7
+grep 'clone' /usr/lib/ruby/gems/1.9.1 L
+~/code/noitweet
+ls
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+s gem install twitter
+s gem install rack --force
+s gem install twitter
+ruby bin/twitter_oauth
+s gems update
+s gem update
+~/tmp
+cp /usr/lib/ruby/gems/1.9.1/gems/mongrel-1.1.5/ .
+mongrel-1.1.5
+ls
+vim ext/http11/http11.c
+vim ext/http11/http11.c +77
+rake -T
+vim setup.rb
+gem help commands
+gem build
+gem build mongrel.gemspec
+vim bin/mongrel_rails 
+vim bin/mongrel_rails 
+vim mongrel.gemspec
+vim mongrel.gemspec
+gem build mongrel.gemspec
+ls
+s gem install mongrel
+s gem install mongrel-1.1.5.gem
+ls
+vim ext/http11/http11.c +77
+ls
+vim mongrel.gemspec
+grep '->ptr' *
+grep '\->ptr' *
+grep 'ptr' *
+find G out$
+rm ext/http11/gem_make.out
+ls
+rm mongrel-1.1.5.gem
+s rm -rfv /usr/lib/ruby/gems/1.9.1/cache/mongrel-1.1.5.gem
+s rm -rfv /usr/lib/ruby/gems/1.9.1/gems/mongrel-1.1.5
+ls
+gem build --help
+gem install --help
+gem help commands
+ls
+ruby setup.rb
+vim ext/http11/http11.c +177
+ruby setup.rb
+ls
+vim setup.rb
+vim README
+gem build mongrel.gemspec
+s gem install mongrel-1.1.5.gem
+s gem update
+s gem update
+s gem help commands
+s gem help cleanup
+s gem cleanup
+~/code/noitweet
+ruby bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim /usr/lib/ruby/gems/1.9.1/gems/twitter-0.7.5/lib/twitter/oauth.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/twitter-0.7.5/lib/twitter/oauth.rb +32
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim /usr/lib/ruby/gems/1.9.1/gems/twitter-0.7.5/lib/twitter/oauth.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/twitter-0.7.5/lib/twitter/oauth.rb
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+s gem install little-plugger
+s gem install little-plugger --force
+code/
+git clone git://github.com/zmalltalker/ruby-hmac.git 
+ruby-hmac
+ls
+s rm -rvf /usr/lib/ruby/gems/1.9.1/cache/ruby-hmac-0.3.2.gem
+s rm -rvf /usr/lib/ruby/gems/1.9.1/gems/ruby-hmac-0.3.2
+s rm -rvf /usr/lib/ruby/gems/1.9.1/specifications/ruby-hmac-0.3.2.gemspec
+s ls -a /usr/lib/ruby/gems/1.9.1/doc
+vim ruby-hmac.gemspec
+gem build ruby-hmac.gemspec
+s gem install ruby-hmac-0.3.3.gem
+grep 'reporting' /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6/
+vim /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6/lib/oauth/consumer.rb
+startxl
+startxl
+s reboot
+date
+cat /etc/rc.local
+ll /sys/class/graphics/fbcon
+ll /sys/class/graphics/fbcon/
+vim
+vim /var/log/messages.log
+s poweroff
+vim .xinitrc
+s poweroff
+ls /dev
+ls /dev/input
+ls /dev/input/by-id
+ls /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+l; /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+ll /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+s cat /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+reset
+s cat /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd | cat
+s cat /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd | cat --help
+s cat /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd | cat -vT
+s reboot
+htop
+file -sb f
+gzip --help
+gzip -l f
+gzip f
+ls
+gunzip f
+gunzip f
+gunzip --help f
+gunzip -n f
+mv f f.gz
+gunzip f.gz
+ls
+file -sb f
+vim f
+ls
+reset
+du -sh f
+rm f
+ls
+htop
+ssh-me
+s vim /etc/resolv.conf
+s vim /etc/resolv.conf
+mcabber
+s vim .xinitrc
+mcabber
+ls
+vim
+vim
+vim ~/.vimrc
+vim ~/.vimrc
+vim
+vim --help
+vim -c 'set laststatus=0'
+vim -c 'set laststatus=1'
+vim
+vim -c 'set laststatus=0'
+vim
+s reboot
+vim /etc/fstab
+startxl
+startxl
+~aur/xtwitter/pkg/usr/bin/xtwitter
+~aur/xtwitter/pkg/usr/bin/xtwitter
+~aur/xtwitter/pkg/usr/bin/xtwitter
+~aur/xtwitter/pkg/usr/bin/xtwitter
+~aur/xtwitter/pkg/usr/bin/xtwitter -u 'testing xtwitter clinet...'
+~aur/xtwitter/src/xtwitter-0.8
+ls
+ls src
+make distclean
+ls
+ls src
+vim src/xtwitter.c
+vim src/xtwitter.c
+~
+mcabber
+vim .xbindkeysrc.scm
+mcabber
+s pacman -S pidgin microblog-purple
+gvim --help
+s pacman -S gvim
+s pacman -S gvim
+gvim --help
+gvim -geom 50x1
+vim
+s pacman -Rcnsu vim
+~aur/vim-ruby19
+ls
+vim PKGBUILD
+vi PKGBUILD
+ls vim-7.2
+makepkg
+rm vim-7.2.267-1-i686.pkg.tar.gz
+makepkg
+vim PKGBUILD
+vi PKGBUILD
+rm src pkg 
+yrm src pkg 
+ls
+ls vim-7.2
+makepkg
+ls
+ls src
+ls src/vim72
+ls src/vim72/src
+find vimrc src/vim72/
+find *vimrc* src/vim72/
+find -name *vimrc* src/vim72/
+find src/vim72 -name vimrc
+find src/vim72 G rc
+find src/vim72 G rc$
+find src/ G rc$
+ls src
+vim vimrc
+vi vimrc
+ls pkg
+ls pkg/usr/share
+ls pkg/usr/share/vim
+ls pkg/usr/share/vim/vim72
+vi pkg/usr/share/vim/vim72
+vi pkg/usr/share/vim/vim72/vimrc_example.vim
+makepkg -i
+vim
+vim pkg/usr/share/vim/vim72/vimrc_example.vim
+~/tmp
+vimdiff vim_settings_*
+ls
+reset
+vim vim_settings_1.txt
+vim vim_settings_2.txt
+vimdiff vim_settings_*
+vimdiff vim_settings_*
+vim ~/.vimrc
+curl ftp://ftp.vim.org/pub/vim/runtime/tools/blink.c
+ls ~aur/vim-ruby19/src/vim72/runtime/tools
+vim ~aur/vim-ruby19/src/vim72/runtime/tools/README.txt
+vim ~aur/vim-ruby19/src/vim72/runtime/tools/README.txt
+vim ~/.vimrc
+vim ~aur/vim-ruby19/src/vim72/runtime/tools/README.txt
+vim ~aur/vim-ruby19/src/vim72/runtime/tools/vimspell.txt
+vim ~aur/vim-ruby19/src/vim72/runtime/tools/vimspell.sh
+~/code/noitweet
+ls
+vim bin/twitter_oauth
+ruby bin/twitter_oauth
+vim ~/.vimrc
+~/Downloads/subtle-0.8.1602-zeta
+ls
+rake -T
+rake build
+vim config.yml
+vim config.h
+grep 'debug' .
+grep 'debug' . G -v src
+vim Rakefile
+rake -T
+rake config
+vim Rakefile
+rake config
+rake build
+rake clean
+rake build
+ls
+./subtler
+./subtle
+export G conf
+export G config
+vim ~/.zsh/env
+./subtle
+grep 'local\/config' *
+grep 'XDG_CONFIG' *
+vim src/subtle/ruby.c
+rake clean
+rake build
+./subtle
+echo /home/colin/Downloads/subtle-0.8.1602-zeta/subtle
+echo /home/colin/Downloads/subtle-0.8.1602-zeta/subtle
+vim ~/.xinitrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim
+gem update
+s gem update oauth
+ls /usr/lib/ruby/gems/1.9.1/gems
+grep 'hmac' /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6
+oauth
+oauth -h
+oauth --help
+vim /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6/lib/oauth/cli
+vim /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6/lib/oauth/cli.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/oauth-0.3.6/bin/oauth
+~
+s gem install twitter_oauth
+ssh-me
+ssh-me
+ri YAML
+ri --help
+ri -i
+pacman -Ss ri
+pacman -Ss ruby G ri
+arson ruby ri
+arson ruby G ri
+arson ruby G ri G aur-*\/
+arson ruby G ri G aur-*
+fri
+s gem install fastri
+fri
+s gem uninstall fastri
+s gem uninstall dakron-fastri
+s gem install dakron-fastri
+tmp
+mkdir fastri
+mv fastri-0.3.1-ruby19.v3.patch fastri
+mv ../Downloads/fastri-0.3.1.tar.gz fastri
+fastri
+tar xf fastri-0.3.1.tar.gz
+fastri-0.3.1
+ls
+vim ../fastri-0.3.1-ruby19.v3.patch
+patch -uNp1 -i ../fastri-0.3.1-ruby19.v3.patch
+rake -T
+rake test
+ls
+ls bin/
+ls lib
+ls lib/fastri
+ruby setup.rb
+ls
+vim setup.rb
+vim Rakefile
+rake -T
+rake rcov
+../..
+rm fastri
+rm ~/.ri/
+ls /usr/lib/ruby/gems/1.9.1
+ls /usr/lib/ruby/gems/1.9.1/doc
+ri --help
+ri --list-doc-dirs
+ls /usr/share/ri
+~/Downloads
+tar xf ruby-1.9.1-p243.tar.gz
+ruby-1.9.1-p243
+ls
+vim Makefile.in
+./configure --help
+./configure
+lsd
+ls doc
+ls doc/irb
+vim doc/irb/irb.rd
+vim doc/ChangeLog-1.8.0
+vim doc/ChangeLog-YARV
+vim doc/shell.rd
+vim doc/forwardable.rd
+lsd
+ls yarvtest
+ls misc
+make Makefile
+vim /var/abs/extra/ruby/PKGBUILD
+s pacman -S ruby-docs
+~
+pacman -Ql ruby-docs
+ls /usr/share/ri
+ls /usr/share/ri/1.9.1
+ls /usr/share/ri/1.9.1/system
+ri YAML
+ri YAML.dump
+ri --help
+ri YAML
+ri YAML.load_file
+ri Hashish
+grep 'hashish' /usr/lib/ruby/gems/1.9.1/gems/app_config-0.4.1
+s vim /etc/resolv.conf
+alsamixer
+ls /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1
+ls /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/generators
+vim /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/generators/configatron_generator.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/generators/templates/configatron/cucumber.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/lib/configatron.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/lib/configatron/configatron.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/configatron-2.5.1/lib/configatron/store.rb
+irb
+calc 6 * 6 * 6
+man calc
+calc 6*6*6
+ls /
+ls /tmp
+lsa /tmp
+rm /tmp/open-uri20091125-*
+ls /tmp
+ls /tmp/plugtmp
+ls /tmp/ssh-JjnBsq3274
+ls /tmp/vfN4Dsl
+lsa /tmp/vfN4Dsl
+vim .vimrc
+vim ~/.xbindkeysrc.scm
+vim ~/.xbindkeysrc.scm
+PS G xbin
+xbindkeys
+PS G xbin
+vim ~/.xbindkeysrc.scm
+PS G xbin
+xbindkeys
+PS G xbin
+xdotool 
+xdotool search
+xdotool search &
+xdotool search *
+killall xdotool
+wmctrl -l
+ls
+man xdotool
+tmp/keynav
+..
+ls
+killall keynav
+ls rec0001
+ls rec00010barry-0.16.tar.bz2
+tar tf rec00010barry-0.16.tar.bz2
+bzip2 --help rec00010barry-0.16.tar.bz2
+bzip2 --help rec00010barry-0.16.tar.bz2 G list
+bzip2 --help rec00010barry-0.16.tar.bz2 &>&1 G list
+bzip2 --help rec00010barry-0.16.tar.bz2 >&1 G list
+bzip2 --help rec00010barry-0.16.tar.bz2 2>&1 G list
+tar --help G list
+bunzip2 rec00001barry-0.16.tar.bz2
+tar tf rec00001barry-0.16.tar
+rm rec000*
+ls
+rm steam-friends-status*
+mplayer Star.Trek.TS.flv
+rm Star.Trek.TS.flv
+ls
+rm vmlinux-modules.tar.gz units.dat
+vim par
+vim parent_url.rb
+rm parent_url.rb
+vim git_notes
+vim float_to_fraction.rb
+ruby float_to_fraction.rb
+vim float_to_fraction.rb
+ruby float_to_fraction.rb
+vim float_to_fraction.rb
+ls ~/Code/Scripts
+mv float_to_fraction.rb ~/Code/Scripts
+ls
+vim tribute.rb
+ruby tribute.rb
+mv tribute.rb ~/Code/Scripts
+ls
+mplayer winwrangler-screencast-0.1.ogg
+mplayer winwrangler-screencast-0.1.ogg -zoom
+mplayer -scale winwrangler-screencast-0.1.ogg
+mplayer -zoom winwrangler-screencast-0.1.ogg
+rm winwrangler-screencast-0.1.ogg
+ls
+mplayer real_tts_voice_those_bastards.wav
+mv real_tts_voice_those_bastards.wav ~/Media/Sounds/
+mplayer ~/Media/Sounds/navi_fairy_hey_listen.wav
+ls
+file -sb fah
+vim fah
+rm fah
+ls
+rm dmenu_windows.sh dialogrc
+vim data.rb
+mv data.rb ~/Code/Scripts
+rm rtm_ruby wtf_dbs
+mkdir fsp
+mv fsp-h* -t fsp
+ls
+ls foo
+rm foo
+ls
+vim colorscheme
+vim colorscheme2.xml
+rm colorscheme2.xml colorscheme.xml
+ls
+rm cuneiform-out.txt 
+rm center*
+ls
+vim index.html
+rm index.html
+vim imap+netrc.rb
+rm imap+netrc.rb
+vim pysolls.py
+rm pysolls.py
+vim nohup.out
+rm homepage
+rm mpc_tail.rb nohup.out
+ls
+vim mu
+vim muzack
+rm gist.gif
+mpc toggle
+mplayer mplayer_zp_overload_2.flv
+rm mplayer_zp_overload_2.flv
+ls
+ls noscript
+rm noscript notpac
+ls atest
+rm atest
+yrm atest
+ls
+ls paragraph
+rm paragraph
+l
+ls
+ls firefox_bookmakrs
+vim firefox_bookmakrs/export.rb firefox_bookmakrs/print_bm.rb
+gist --help firefox_bookmakrs/export.rb firefox_bookmakrs/print_bm.rb
+gist firefox_bookmakrs/export.rb firefox_bookmakrs/print_bm.rb
+rm firefox_bookmakrs
+ls
+rm Fallout3v1.0NoDVDFixedexeEng-2*
+ls
+rm crystal_s_revisions chronics calendars black barry-0.16* bigblacklist.tar.gz blackberry.dbs.log jekyll_site keynav* lastyears-badge l_objet-dart.pl
+yrm crystal_s_revisions chronics calendars black barry-0.16* bigblacklist.tar.gz blackberry.dbs.log jekyll_site keynav* lastyears-badge l_objet-dart.pl
+ls
+rm moneytrackin mongrel-1.1.5 muttator_0.5.xpi
+ls workspace
+ls
+ls pics
+feh pics/feh_011025_000001_P1010221.JPG
+rm pics workspace
+yrm pics workspace
+ls
+ls blacklists
+yrm blacklists
+ls
+rm bmpanel fsp acros
+yrm bmpanel fsp acros
+ls
+vim grit_ex_add_commit.rb
+rm grit_ex_add_commit.rb
+ls
+vim heady_spam.html
+pacman -Ss twitter
+arson twitter
+ls /usr/lib/ruby/gems/1.9.1
+ls /usr/lib/ruby/gems/1.9.1/gems/facets-2.8.0
+ls /usr/lib/ruby/gems/1.9.1/gems/facets-2.8.0/lib
+s gem install minitar
+gem search minitar
+s pacman -S archive-tar-minitar
+s gem install archive-tar-minitar
+s vim /usr/lib/ruby/gems/1.9.1/gems/evaryont-arson-2.1.2/lib/arson/download.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/evaryont-arson-2.1.2/lib/arson.rb
+arson
+ls /usr/lib/ruby/gems/1.9.1/gems/archive-tar-minitar-0.5.2
+ls /usr/lib/ruby/gems/1.9.1/gems/archive-tar-minitar-0.5.2/lib
+ls /usr/lib/ruby/gems/1.9.1/gems/archive-tar-minitar-0.5.2/lib/archive/tar
+s vim /usr/lib/ruby/gems/1.9.1/gems/evaryont-arson-2.1.2/lib/arson.rb
+arson
+arson twitter
+arson -d xtwitter
+~aur/xtwitter
+ls
+vim PKGBUILD
+makepkg
+ls
+ls pkg
+ls pkg/usr
+ls pkg/usr/bin
+ pkg/usr/bin/xtwitter
+ pkg/usr/bin/xtwitter --help
+ls
+ls src
+ls src/xtwitter-0.8
+ls src/xtwitter-0.8/src
+vim src/xtwitter-0.8/README
+mkdir ~/.xtwitter
+vim ~/.xtwitter/config
+ pkg/usr/bin/xtwitter
+vim ~/.xtwitter/config
+pkg/usr/bin/xtwitter
+stalonetray --help
+stalonetray &
+stalonetray -p --window-type dock
+stalonetray -p --window-type normal
+stalonetray -p --window-type normal -d all
+killall stalonetray
+PS G sta
+PS G stal
+stalonetray -p --window-type normal -d all
+PS G stal
+arson notify
+arson noti
+~/tmp
+arson notify &> aur_notify.log
+mpc
+vim aur_notify.log
+vim aur_notify.log
+arson noteo
+~/Downloads
+ls
+tar xf subtle-0.8.1602-zeta.tbz2
+ls subtle-0.8.1602-zeta
+subtle-0.8.1602-zeta
+ls src
+ls src/subtle
+s vim /etc/resolv.conf
+~/
+feh --bg-scale ~/Media/Pictures/Wallpaper/01223_alittlemotivation_1920x1200.jpg
+ls
+vim 60_prompt
+ls /usr/sbin /sbin
+ls /usr/sbin /sbin -1
+nginx --help
+vim .zsh/env
+grep 'sbin' .zsh*
+mpc
+ls tmp
+vim tmp/aur_notify.log
+tmp
+arson twitter &> aur_twitter.log
+vim aur_
+vim aur_twitter.log
+alsamixer
+~/code/vimfiles
+ls
+git st
+ls mine
+git remote update ; git pull
+ls
+snippets
+ls
+git st
+git pull
+..
+git log
+ls nerdtree_plugin
+vim nerdtree_plugin/exec_menuitem.vim 
+vim nerdtree_plugin/fs_menu.vim
+ls
+vim vimrc
+vim ~/tmp/vim_settings_*
+~/tmp/
+ls
+sort --help
+sort vim_settings_1.txt
+sort vim_settings_1.txt > vim_settings_1.s.txt
+sort vim_settings_2.txt > vim_settings_2.s.txt
+vim *.s.txt
+vimdiff *.s.txt
+vimdiff *.s.txt
+pms
+pms
+alsamixer
+irb
+oauth --consumer-key LS5ch2MqpyqbGs6E1kZomQ --consumer-secret PrAbInsh1QbYWKgSaYoxypkh8pUbI8uoXXFW00AG0H0
+\oauth --consumer-key LS5ch2MqpyqbGs6E1kZomQ --consumer-secret PrAbInsh1QbYWKgSaYoxypkh8pUbI8uoXXFW00AG0H0
+irb
+ls /usr/lib/ruby/gems/1.9.1/gems/twitter_oauth-0.2.1
+ls /usr/lib/ruby/gems/1.9.1/gems/twitter_oauth-0.2.1/lib
+irb
+ls
+~/code/noitweet
+ls
+vim bin/twitter_oauth
+vim bin/twitter_oauth
+cat ~/tmp/twitter_oauth.rb| gist
+vim ~/bin/gist +23
+cat ~/tmp/twitter_oauth.rb| xclip -in
+irb
+ls
+ls bin
+vim bin/twitter_oauth
+vim bin/twitter_oauth
+vim bin/twitter_basic
+vim bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+export G xdg
+vim bin/twitter_basic
+vim bin/twitter_basic
+export G xdg
+ruby bin/twitter_basic
+vim bin/twitter_basic +8
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim bin/twitter_basic +15
+ruby bin/twitter_basic
+vim bin/twitter_basic +15
+s gem install app_config
+vim bin/twitter_basic
+rm ~/.config/noitweet.yml 
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+s gem install configarr
+s gem install configarrr
+vim bin/twitter_basic
+ruby bin/twitter_basic
+ruby -C bin/twitter_basic
+ruby -c bin/twitter_basic
+vim bin/twitter_basic +6
+ruby -c bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic +6
+ruby bin/twitter_basic
+ruby bin/twitter_basic +7
+vim bin/twitter_basic +7
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim bin/twitter_basic
+rm ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+rm ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+rm ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+vim bin/twitter_basic
+irb
+vim bin/twitter_basic
+irb
+s gem install configatron
+vim bin/twitter_basic
+ls ~/.config
+vim ~/.config/noitweet.yml
+rm ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim bin/twitter_basic +20
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic +20
+ruby bin/twitter_basic
+vim bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+../
+mkdir yaml_brick
+yaml_brick
+git init
+vim README
+../noitweet
+vim bin/twitter_
+vim bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim bin/twitter_basic +31
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic +31
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+rm ~/.config/noitweet.yml
+vim bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+irb
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+irb
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+rm ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim bin/twitter_basic
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim ~/.config/noitweet.yml
+ruby bin/twitter_basic
+vim bin/twitter_basic
+git st
+git diff README
+vim README
+git add README
+git ci
+git st
+git add bin/
+git ci
+vim bin/twitter_basic
+s reboot
+vim
+startxl
+ls
+vim .config/subtle
+PS G keyn
+s vim /etc/resolv.conf
+s vim /etc/resolv.conf.head
+xdotool --help
+xdotool 
+xdotool help mousemove
+xdotool mousemove
+xdotool mousemove_relative
+xdotool windowsize
+wmctrl --help
+wmctrl -lxpG
+Downloads
+tar xf rubyevdev.tar.gz
+tar tf rubyevdev.tar.gz
+ruby_evdev
+ls
+make clean
+ls
+vim Makefile
+make
+ls util
+vim util/miniapp
+ls doc
+vim dumpinfo.rb
+vim evdev.rb
+pacman -Ql ruby G ruby.h
+vim Makefile
+make
+ls
+ls
+vim Makefile
+ruby extconf.rb
+ls
+vim Makefile
+make
+vim eventdevice_c.c +264
+vim eventdevice_c.c +74
+ls /usr/include/ruby-1.9.1/ruby/
+vim /usr/include/ruby-1.9.1/ruby/io.h
+vim eventdevice_c.c +2
+make
+grep 'OpenFile' /usr/include/ruby-1.9.1
+grep 'OpenFile' /usr/include/ L
+grep 'OpenFile' /usr/include/
+vim /usr/include/ruby-1.9.1/ruby/io.h
+vim eventdevice_c.c
+grep openfile *
+vim eventdevice_c.c
+vim ~/.vimrc
+vim eventdevice_c.c
+vim ~/.vimrc
+vim eventdevice_c.c
+vim ~/.vimrc
+vim eventdevice_c.c
+make
+vim eventdevice_c.c +77
+make
+vim eventdevice_c.c +77
+vim /usr/include/ruby-1.9.1/ruby/io.h
+make
+vim eventdevice_c.c +77
+vim eventdevice_c.c +77
+man fileno
+vim eventdevice_c.c +77
+make
+vim +297
+vim eventdevice_c.c +297
+vim eventdevice_c.c +297
+ls
+vim morseout.rb
+./morseout.rb
+vim morseout.rb
+./morseout.rb
+ls /dev/input
+ls /dev/input/by-path
+ls /dev/input/by-id
+ls /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+ll /dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_2000-event-kbd
+./morseout.rb --device /dev/input/event4
+s ./morseout.rb --device /dev/input/event4
+ls
+./dumpinfo.rb
+vim ./dumpinfo.rb
+s ./dumpinfo.rb /dev/input/event4
+vim ./dumpinfo.rb
+cat /etc/resolv.conf
+ls
+ls
+ls
+s pacman -Sy && pacman -Qu
+vim ~/bin/open-browser
+vim ~/bin/firefox.sh
+lsof G dsp
+vim ~/bin/firefox.sh
+vim ~/bin/open-browser
+firefox.sh
+vim ~/bin/firefox.sh
+firefox.sh
+links http://google.com
+s reboot
+ls /usr/lib/ruby
+ls /usr/lib/ruby/1.9.1
+ls /usr/lib/ruby/1.9.1/i686-linux
+ls /usr/lib/ruby/
+ls /usr/lib/ruby/site_ruby
+ls /usr/lib/ruby/site_ruby/1.9.1
+pacman -Ql ruby G so
+pacman -Ql ruby G so$
+pacman -Ql ruby G a$
+colin
+startxl
+vim /tmp/startx.log
+mkdir ~/.local/config/subtle
+env
+env G local
+env G local G xdg
+vim .xinitrc
+env G local G xdg
+ls Downloads/subtle-0.8.1602-zeta
+ls Downloads/subtle-0.8.1602-zeta/build
+lsa Downloads/subtle-0.8.1602-zeta
+ls Downloads/subtle-0.8.1602-zeta/src
+ls Downloads/subtle-0.8.1602-zeta/src/shared
+ls Downloads/subtle-0.8.1602-zeta/src/subtle
+find -name *.rb Downloads/subtle-0.8.1602-zeta
+find Downloads/subtle-0.8.1602-zeta -name *.rb
+ls Downloads/subtle-0.8.1602-zeta/dist
+ls Downloads/subtle-0.8.1602-zeta/dist/scripts
+vim Downloads/subtle-0.8.1602-zeta/dist/subtle.rb
+mkdir ~/.config/subtle
+cp Downloads/subtle-0.8.1602-zeta/dist/subtle.rb .config/subtle
+startxl
+vim ~/.config/subtle
+mpc
+vim ~/.config/subtle
+vim bin/firefox.sh
+vim ~/.config/subtle
+xfontsel
+xfontsel -help
+xfontsel -print -sample "A lazy brown dog jumps over the quick fox"
+xfontsel -sample "A lazy brown dog jumps over the quick fox" -sample16 "A lazy brown dog jumps over the quick fox" -sampleUCS "A lazy brown dog jumps over the quick fox"
+-*-clearlyu-*-*-*-*-*-*-*-*-*-*-*-*
+vim ~/.config/subtle
+vim ~/.config/subtle
+vim ~/.config/subtle
+s reboot
+pms
+arson fortune
+startxl
+code/
+ls
+mkdir wishlist
+wishlist
+ls
+s gem install sinatra
+ls /usr/lib/ruby/gems/1.9.1/gems/configuration-1.1.0
+vim /usr/lib/ruby/gems/1.9.1/gems/configuration-1.1.0/config/a.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/configuration-1.1.0/samples
+vim /usr/lib/ruby/gems/1.9.1/gems/configuration-1.1.0/samples/a.rb
+ls ../noitweet
+mkdir lib; vim ../noitweet/bin/twitter_basic lib/configatron_ex.rb
+ls
+vim main.rb
+ruby -c main.rb
+vim main.rb
+ruby -c main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+vim main.rb
+ruby main.rb
+ls
+vim wishlist_db.yml
+rm wishlist_db.yml
+ruby main.rb
+vim main.rb
+ruby main.rb
+rm wishlist_db.yml
+ruby main.rb
+vim wishlist_db.yml
+vim main.rb
+vim main.rb
+ri send
+ri Object#send
+vim main.rb
+irb
+vim main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+ruby main.rb +54
+vim main.rb +54
+ruby main.rb
+vim main.rb +54
+ri Hash#empty?
+vim main.rb +54
+ruby main.rb
+vim main.rb +54
+s gem install mustache
+vim main.rb
+mkdir templates views
+ls
+ls templates
+vim templates/new.mustache
+ruby -c main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+ruby main.rb
+vim main.rb
+vim templates/layout.mustache
+vim views/index.rb
+vim templates/layout.mustache
+ruby main.rb
+vim main.rb
+ruby main.rb
+ruby main.rb
+vim config.ru
+vim config.ru
+mv main.rb app.rb
+thin --help
+thin -R config.ru
+find /usr/lib/ruby/gems/1.9.1/gems/ -name *ramaze*
+s gem install ramaze
+thin -R config.ru start
+vim app.rb
+thin -R config.ru start
+vim app.rb
+xdotool search *
+xdotool search .
+xdotool search --title .
+wmctrl -l
+mpc
+mpc
+ifconfig
+vim .xinitrc
+vim .config/subtle
+ls
+Downloads/subtle-0.8.1602-zeta/subtler -c -l
+vim .config/subtle/subtle.rb
+Downloads/subtle-0.8.1602-zeta
+ls
+grep 'WindowLeft' *
+vim src/subtle/ruby.c
+grep 'SUB_WINDOW_' *
+vim src/shared/shared.h
+ls
+./subtler
+./subtler -c -l
+mpc
+vim ~/bin/winchange
+winchange
+winchange 1
+winchange 1
+vim ~/bin/winchange
+winchange 1
+vim ~/bin/winchange
+winchange 1
+vim ~/bin/winchange
+winchange 1
+Downloads/subtle-0.8.1602-zeta/subtler -c -l
+winchange 1
+vim ~/.xbindkeysrc.scm
+Downloads/subtle-0.8.1602-zeta/subtler -c -l
+vim ~/.config/subtle/subtle.rb
+killall -HUP xbindkeys
+PS G xbin
+vim bin/winchange
+vim bin/winchange
+Downloads/subtle-0.8.1602-zeta/subtler -c -l
+PS G urxvt
+mpc
+pms
+vim bin/winchange
+winchange 1
+Downloads/subtle-0.8.1602-zeta
+vim src/subtler/subtler.c 
+arson xatom
+wmctrl --help
+vim src/subtler/subtler.c 
+vim ~/bin/winchange
+s vim ~/.xinitrc
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim .config/awesome/rc.lua
+ls Media
+ls Media/Pictures/Wallpaper
+cp /etc/xdg/awesome/rc.lua .config/awesome
+vim .config/awesome/rc.lua
+vim .config/awesome/rc.lua
+pacman -Ql awesome
+ls /usr/share/aw
+ls /usr/share/awesome
+ls /usr/share/awesome/lib
+ls /usr/share/awesome/icons
+ls /usr/share/awesome/themes
+ls /usr/share/awesome/themes/zenburn
+feh /usr/share/awesome/themes/zenburn/zenburn-background.png
+pc
+mpc
+mpc
+vim ~/.xbindkeysrc.scm
+killall -HUP xbindkeys
+alsamixer
+alsamixer
+pms
+vim code/wishlist/templates/layout.mustache
+code/wishlist/
+vim views/index.rb
+vim views/index.rb
+ri String
+ri String.capitalize
+ri String
+vim views/index.rb
+vim views/index.rb
+vim views/index.rb
+vim templates/layout.mustache
+ls public/images
+vim templates/layout.mustache
+vim templates/layout.mustache
+vim templates/layout.mustache
+..
+ssh colin@192.168.1.27
+scp wishlist colin@192.168.1.27
+scp -R wishlist colin@192.168.1.27
+scp -r wishlist colin@192.168.1.27
+ls
+ssh colin@192.168.1.27
+scp -r wishlist colin@192.168.1.27
+scp -r wishlist colin@192.168.1.27:/home/colin/wishlist
+ssh colin@192.168.1.27
+ssh colin@192.168.1.27
+code/wishlist
+ls
+thin -R config.ru start
+vim app.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/mustache-0.5.0
+ls /usr/lib/ruby/gems/1.9.1/gems/mustache-0.5.0/contrib
+vim /usr/lib/ruby/gems/1.9.1/gems/mustache-0.5.0/contrib/mustache.vim 
+cp /usr/lib/ruby/gems/1.9.1/gems/mustache-0.5.0/contrib/mustache.vim ~/.vim/syntax
+vim app.rb views/index.rb templates/index.mustache
+vim ~/.vim/syntax/mustache.vim
+vim app.rb views/index.rb templates/index.mustache
+ruby -C views/*
+ruby -c views/*
+ruby -c views/* app.rb
+ruby -c views/* app.rb config.ru
+ls
+ls views
+ls templates
+ls lib
+ruby -c views/* app.rb config.ru lib
+ruby -c views app.rb config.ru lib
+ruby -c views/* app.rb config.ru lib
+ls views/* app.rb config.ru lib
+ls views/* app.rb config.ru lib/*
+ls views/* app.rb config.ru lib/* | xargs --help
+man xargs
+ls views/* app.rb config.ru lib/* | xargs ruby -c
+ls -1 views/* app.rb config.ru lib/* | xargs ruby -c
+ls -1 views/* app.rb config.ru lib/*
+thin -R config.ru start
+vim app.rb views/index.rb templates/index.mustache
+thin -R config.ru start
+vim app.rb views/index.rb templates/index.mustache
+vim wishlist_db.yml
+vim app.rb views/index.rb templates/index.mustache
+ruby app.rb
+vim app.rb views/index.rb templates/index.mustache
+ruby app.rb
+rackup config.ru
+vim app.rb
+rackup config.ru
+thin -R config.ru start
+vim views/index.rb +12
+thin -R config.ru start
+vim views/index.rb +12
+thin -R config.ru start
+vim views/index.rb +12
+thin -R config.ru start
+vim views/index.rb +12
+vim views/index.rb +12
+vim views/index.rb +12
+thin -R config.ru start
+vim views/index.rb +12
+thin -R config.ru start
+vim app.rb
+vim templates/items.mustache templates/index.mustache templates/only.mustache
+vim views/items.partial.rb views/index.rb views/only.rb
+vim templates/index.mustache
+rm views/items.partial.rb templates/items.mustache
+vim views/only.rb templates/only.mustache
+ls
+pms
+vim app.rb
+ruby app.rb
+thin -R config.ru start
+thin -R config.ru start
+vim app.rb
+thin -R config.ru start
+vim app.rb 
+irb
+vim wishlist_db.yml
+irb
+vim app.rb 
+rm views/only.rb
+thin -R config.ru start
+vim app.rb +79
+thin -R config.ru start
+vim templates/only.mustache
+thin -R config.ru start
+vim templates/only.mustache
+thin -R config.ru start
+vim templates/only.mustache
+thin -R config.ru start
+ls
+mkdir public
+mkdir public/images
+mv vladstudio_xmasvolcano.jpg public/images
+vim templates/layout.mustache
+thin -R config.ru start
+ifconfig
+ls public
+vim app.rb 
+irb
+vim app.rb 
+ruby app.rb
+vim app.rb 
+ruby app.rb
+vim app.rb 
+ruby app.rb
+ls
+vim app.rb
+vim templates/layout.mustache
+vim ~/.vimrc
+vim templates/layout.mustache
+vim app.rb
+vim ~/.vimrc
+vim app.rb
+ruby app.rb
+vim app.rb
+ruby app.rb
+vim app.rb
+ruby app.rb
+irb
+vim app.rb
+vim wishlist_db.yml
+vim app.rb
+ruby app.rb
+vim wishlist_db.yml
+vim app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/layout.mustache
+vim templates/index.mustache
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+ruby app.rb
+vim templates/index.mustache
+vim views/index.rb
+vim templates/index.mustache
+vim views/index.rb
+ruby app.rb
+vim views/index.rb
+ruby app.rb
+vim views/index.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+ls ~/Downloads/Icons
+ls ~/Downloads/Icons/famfamfam
+ls ~/Downloads/Icons/famfamfam/Silk
+ls ~/Downloads/Icons/famfamfam/Silk/icons/
+ls ~/Downloads/Icons/famfamfam/Silk/icons/star*
+cp ~/Downloads/Icons/famfamfam/Silk/icons/star_gold.png public/images/star.png
+vim templates/index.mustache
+vim views/index.rb templates/index.mustache
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim views/index.rb templates/index.mustache
+ruby app.rb
+vim templates/layout.mustache
+ruby app.rb
+vim templates/index.mustache templates/only.mustache
+vim app.rb
+vim app.rb templates/only.mustache
+vim app.rb templates/only.mustache
+ruby app.rb
+ruby app.rb
+ruby app.rb
+ruby app.rb
+ruby app.rb
+ruby app.rb
+mcabber
+s reboot
+startxl
+startxl
+startxl
+startxl
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/rc.lua
+ssh me
+../code
+git clone git://github.com/davetron5000/moocow.git  
+moocow
+ls
+ls
+s gem install hanna
+rake -T
+s gem install grancher
+rake -T
+rm .rake_tasks
+rake rdoc
+vim README.rdoc
+ls
+ls html
+git st
+vim .gitignore
+ls html
+rm html
+rake rdoc
+ls
+..
+s gem install moocow
+xpdf ~/Downloads/mcabber_guide.pdf
+notify-send --help
+noteo --help
+pacman -Ss dbus
+s pacman -S dbus-python
+noteo --help
+rm ~/.config/noteo
+noteo --help
+vim ~/.config/noteo/MPD
+noteo
+vim ~/.config/noteo/GmailCheck
+vim ~/.config/noteo/StatusIcon
+vim ~/.config/noteo/Not
+vim ~/.config/noteo/Noteo
+vim ~/.config/noteo/DesktopDisplay
+ls /usr/share/noteo
+ls /usr/share/noteo/modules
+vim /usr/share/noteo/modules/DesktopDisplay.py
+noteo
+vim /usr/share/noteo/modules/GmailCheck.py
+vim /usr/share/noteo/modules/GmailCheck.py
+vim ~/.config/noteo/DesktopDisplay
+vim ~/.config/noteo/GmailCheck
+vim ~/.config/noteo/Not
+vim ~/.config/noteo/Noteo
+noteo
+vim ~/.xinitrc
+vim ~/.xinitrc
+vim ~/.mcabber
+vim ~/.mcabberrc
+vim ~/.mcabber/events.sh
+arson -d noteo
+~aur/noteo
+ls
+makepkg
+../pacman-color
+ls
+vim PKGBUILD
+..
+arson -d pacman-color
+pacman-color
+pacman-color/
+ls
+makepkg
+makepkg
+pacman -Sd pacman
+s pacman -Sd pacman
+makepkg
+ls
+makepkg -i
+~
+pacman
+-
+-
+~aur/not
+~aur/noteo
+ls
+makepkg
+s pacman -S tomboy
+pacman -Qs mono
+s pacman -Rcnsu mono
+s pacman -S tomboy
+s vim /etc/pacman.conf
+s pacman -S tomboy
+s vim /etc/pacman.conf
+s pacman -S tomboy
+pacman -Qs gnome
+s pacman -Rcnsu libgsf
+s pacman -Rcnsu hsqldb-java
+s pacman -Rcnsu redland
+s pacman -Rcnsu raptor
+ls
+~
+-
+makepkg 
+makepkg -i
+ls /usr/share/noteo
+pacman -Qo /usr/share/noteo/modules/Notify.pyc
+s rm -rv /usr/share/noteo/
+makepkg -i
+arson gmail
+s pacman -S libgmail libnotify
+s pacman -S libgmail 
+export G mod
+export G mpd
+feh --bg-center ~/Media/Pictures/Wallpaper/vladstudio_bug_1920x1080.jpg
+vim ~/.config/awesome/rc.lua
+s vim /etc/pacman.conf
+~/Downloads
+tar tf racc_present.tar.gz
+tar xf racc_present.tar.gz
+racc_present
+ls
+make 
+ls
+vim calc1.rb
+vim calc1.y
+vim parse_c_if.y
+vim batman.c
+ls webserver.rb
+vim webserver.rb
+vim webserver.rb
+s pacman -S openoffice-base
+soffice parseing.ppt
+racc
+mcabber
+vim ~/.mcabber/events.sh
+mkdir ~/.mcabber/events/bodies/
+vim ~/.mcabberrc
+vim ~/.mcabberrc
+mcabber 
+mkdir ~/.mcabber/logs/
+mcabber 
+vim ~/.mcabber/events.sh
+vim ~/.mcabber/logs/trace.log
+chmod a+x ~/.mcabber/events.sh
+vim ~/.mcabberrc
+ls ~/.mcabber/events
+ls ~/.mcabber/events/bodies
+vim ~/.mcabber/events/bodies/mcabber-15259.2tAQ4j
+rm ~/.mcabber/events/bodies/mcabber-15259.2tAQ4j
+mcabber
+notify-send --help
+notify-send "thomas sent you a message: " "NO"
+notify-send "thomas sent you a message: " "lolololololololololololololololololololol"
+notify-send "thomas sent you a message: " "lololololololololololololololololololololololololoolololololololololol"
+notify-send "thomas sent you a message: " "I want to kill you
+notify-send "thomas sent you a message: " "I want to kill you\!\nlol"
+echo "I want to kill you\!\nlol"
+notify-send "thomas sent you a message: " "I want to kill you\!lol"
+vim ~/.mcabber/events.sh
+sed --help
+sed s/[\n\r]//g /tmp/startx.log L
+sed s/[\n\r]//g /tmp/startx.log L
+sed s/[\n\r]//g /tmp/startx.log
+vim /tmp/startx.log
+vim /tmp/startx.log
+sed s/[\n\r]// /tmp/startx.log
+vim /tmp/startx.log
+mcabber
+vim ~/.mcabber/logs/events.log
+vim ~/.mcabber/events.sh
+vim ~/.mcabber/logs/events.log
+mcabber
+mcabber
+vim ~/.mcabber/logs/events.log
+vim ~/.mcabber/events.sh
+mcabber
+vim ~/.mcabber/events.sh
+mcabber
+vim ~/.mcabber/logs/events.log
+vim ~/.mcabber/events.sh
+mcabber
+vim ~/.mcabber/events.sh
+vim ~/.mcabber/logs/events.log
+vim ~/.mcabber/events.sh ~/.mcabber/logs/events.log
+mcabber
+vim ~/.mcabber/events.sh ~/.mcabber/logs/events.log
+mcabber
+vim ~/.config/awesome/rc.lua
+~
+mpc
+pms
+ls
+vim ~/.config/noteo/Noteo
+killall noteo
+nohup --help
+man nohup
+xwininfo
+vim ~/.config/noteo/Not
+vim ~/.config/noteo/Noteo
+PS G noteo
+ls
+ls .note
+ls .notes
+ls .notes/bookmarks
+ls .notes/date
+ls .notes/tag
+rm MS_W7_KEY
+ls
+vim ~/.config/awesome/rc.lua
+ssh-me
+dotfiles
+ls
+git st
+git add config/awesome/zenburn/
+git ci
+git diff
+git add -p config/awesome/rc.lua
+git commit --amend
+git diff
+git add config/awesome/rc.lua
+git ci
+git st
+git add xinitrc
+git ci
+git st
+git push
+vim config/awesome/rc.lua
+vim /tmp/startx.log
+vim ~/.config/awesome/rc.lua +120
+ls
+vim /tmp/startx.log
+vim ~/.config/awesome/rc.lua +82
+vim /tmp/startx.log
+vim ~/.config/awesome/rc.lua +80
+vim /tmp/startx.log
+dotfiles
+ls
+git st
+git diff
+git add config/awesome/rc.lua
+git ci
+feh --bg-center ~/Media/Pictures/Wallpaper/vladstudio_bug_1920x1080.jpg
+git add config/awesome/rc.lua
+git st
+git diff
+vim ~/.config/awesome/rc.lua
+git ci
+vim ~/.config/awesome/rc.lua
+git add config/awesome/rc.lua
+git ci
+git st
+git push
+vim config/awesome/rc.lua
+man date
+man date
+vim /tmp/startx.log
+dotfiles
+git st
+git diff
+git log
+vim /tmp/startx.log
+vim /tmp/startx.log
+vim .config/awesome/zenburn/theme.lua
+vim /tmp/startx.log
+~/dotfiles
+git st
+git diff
+git add config/awesome/rc.lua
+git add config/awesome/zenburn/theme.lua
+git ci
+git st
+git push
+ssh-me
+vim /tmp/startx.log
+cat /tmp/f| xclip -in
+vim /tmp/f
+cat /tmp/f | xclip -in
+vim dotfiles/config/awesome/rc.lua
+vim /tmp/startx.log
+ssh-me
+dotfiles/config
+ls
+-
+dotfiles/config/awesome
+vim rc.lua
+git log rc.lua
+git diff --help rc.lua
+git log rc.lua
+git diff 8994d34092f3c1d7036fe18fdeab04197103a20c rc.lua
+git add rc.lua
+git ci
+git diff 8994d34092f3c1d7036fe18fdeab04197103a20c rc.lua
+git st
+git log rc.lua
+git diff HEAD..8994d34092f3c1d7036fe18fdeab04197103a20c rc.lua
+git diff 8994d34092f3c1d7036fe18fdeab04197103a20c..HEAD rc.lua
+git diff 8994d34092f3c1d7036fe18fdeab04197103a20c^ rc.lua
+vim rc.lua
+git diff 8994d34092f3c1d7036fe18fdeab04197103a20c^ rc.lua
+git log rc.lua
+git diff e1d3dd55ee634ed209067fd66a404443f5e4f91^ rc.lua
+vim /etc/xdg/awesome/rc.lua
+vim rc.lua
+vim /etc/xdg/awesome/rc.lua
+vim rc.lua
+ls
+export
+ls 
+ls tmp/
+echo $SHELL
+echo $HOME
+ls fonts/
+ls ressources/
+ls tmp/
+ls wineprefix/
+ls wineprefix/Steam/
+ls wineprefix/Steam/drive_c/
+ls wineprefix/Steam/drive_c/Program\ Files/
+ls wineprefix/Steam/drive_c/Program\ Files/Steam/
+ls wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps/
+ls wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps/evaryont/
+ls wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps/evaryont/team\ fortress\ 2/
+wine wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps/evaryont/team\ fortress\ 2/hl2.exe 
+vim .config/noteo/Popup
+pacman -Ss dbus
+arson dbus
+arson -d lsdbus
+arson -d libindicate ruby-dbus 
+~aur/ruby-dbus
+ls
+vim PKGBUILD
+vim PKGBUILD
+ls /usr/share/licenses
+ls /usr/share/licenses/common
+ls /usr/share/licenses/common/LGPL
+ls /usr/share/licenses/common/LGPL/
+ll /usr/share/licenses/common/LGPL
+vim PKGBUILD
+makepkg -g >>PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+ls pkg
+ls pkg/usr
+ls pkg/usr/lib/ruby/site_ruby/1.9.1
+ls pkg/usr/lib/ruby/site_ruby/1.9.1/dbus
+ls /usr/share/librarian/rarian-sk-cl.xml
+ls /usr/lib/ruby
+ls /usr/lib/ruby/site_ruby/1.8
+ls /usr/lib/ruby/site_ruby/1.8/i686-linux
+ls /usr/lib/ruby/site_ruby/1.8/i686-linux/svn
+ls /usr/lib/ruby/site_ruby/1.8/i686-linux/svn/ext/
+makepkg -i
+ll /usr/lib/ruby/site_ruby/1.9.1
+ll /usr/lib/ruby/site_ruby/1.9.1/dbus
+s chmod g-s -R /usr/lib/ruby/site_ruby/1.9.1/dbus
+ll /usr/lib/ruby/site_ruby/1.9.1
+irb
+irb
+~aur/lsdbus
+ls
+makepkg
+makepkg -i
+lsdbus
+lsdbus --help
+lsdbus org.x.config.display0
+ls src/lsdbus-0.1/
+vim src/lsdbus-0.1/lsdbus.c
+arson dbus
+~aur/libindicate
+makepkg
+vim PKGBUILD
+src/libindicate-0.2.3
+./configure --help
+./configure --help G doc
+vim ../../PKGBUILD
+..
+grep 'gnome-doc-utils' *
+-
+grep 'gnome-doc-utils' *
+ls
+make libindicate
+make libindicate/
+libindicate/
+ls
+make Makefile.am
+..
+make
+./configure --disable-gtk-doc
+vim config.h.in
+;s
+ls
+vim compile
+ls
+vim configure.ac
+autoconf
+./configure
+grep 'gnome' *
+..
+rm libindicate-0.2.3
+ls
+tar xf libindicate-0.2.3.tar.gz
+libindicate-0.2.3
+grep 'gnome' *
+vim aclocal.m4
+rm m4/gnome-doc-utils.m4
+vim configure.ac
+vim aclocal.m4
+grep 'gnome' * --help
+grep 'gnome' * --help G excl
+grep 'gnome' * --exclude=doc
+grep 'gnome' * --exclude=docs
+grep 'gnome' * --exclude="^docs\/"
+grep --exclude="^docs\/" 'gnome' *
+grep 'gnome' * G -v "^docs\/"
+vim examples/Makefile.
+vim examples/Makefile.in
+vim examples/Makefile.am
+vim examples/Makefile.in
+grep 'gnome' * G -v "^docs\/"
+grep 'gnome' * G -v "^docs\/" G -v "^configure:"
+vim tests/Makefile.in
+vim Makefile.in
+vim libindicate/Makefile.
+vim libindicate/Makefile.in
+grep 'gnome' * G -v "^docs\/" G -v "^configure:"
+vim libindicate-gtk/Makefile.in
+grep 'gnome' * G -v "^docs\/" G -v "^configure:"
+..
+mv libindicate-0.2.3 libindicate-0.2.3-nognome
+tar xf libindicate-0.2.3
+tar xf libindicate-0.2.3.tar.gz
+ls
+diff -U libindicate-0.2.3 libindicate-0.2.3-nognome
+diff -u libindicate-0.2.3 libindicate-0.2.3-nognome
+diff -u libindicate-0.2.3 libindicate-0.2.3-nognome >> ../no_gnome.patch
+..
+vim PKGBUILD
+vim no_gnome.patch
+vim PKGBUILD
+makepkg -g
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/share
+ls pkg/usr/share/gtk-doc
+ls pkg/usr/share/gtk-doc/html/libindicate
+ls pkg/usr/share/doc
+ls pkg/usr/share/doc/libindicate
+ls pkg/usr/share/doc/libindicate/examples/
+vim pkg/usr/share/doc/libindicate/examples/i
+vim pkg/usr/share/doc/libindicate/examples/im-client.c
+..
+rm libindicate
+ls
+~
+lsdbus
+irb
+s pacman -S playonlinux
+s vim /etc/pacman.conf
+s pacman -Sy playonlinux
+playonlinux --help
+PS G steam
+kill 16367
+PS G steam
+PS G wine
+htop
+PS G wine
+vim /etc/xdg/awesome/rc.lua ~/.config/awesome/rc.lua
+ls ~/.PlayOnLinux
+ls ~/.PlayOnLinux/Steam_games
+ls ~/.PlayOnLinux/wineprefix
+ls ~/.PlayOnLinux/wineprefix/Steam
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps
+ls ~/.PlayOnLinux/wineprefix/Steam/drive_c/Program\ Files/Steam/steamapps/evaryont
+ls Desktop
+vim Desktop/Team\ Fortress\ 2.desktop
+vim Desktop/Steam.desktop
+rm Desktop/Steam.*
+vim Desktop/Team\ Fortress\ 2.desktop
+ls
+ping saphrix.sorcix.com
+ping tf2.saphrix.sorcix.com
+ping tf.saphrix.sorcix.com
+ping l4d.saphrix.sorcix.com
+ssh-me
+ls
+ls Desktop
+vim Desktop/Team\ Fortress\ 2.desktop
+ls .Pla
+ls .PlayOnLinux
+ls .PlayOnLinux/configurations
+ls .PlayOnLinux/Steam_games
+vim .PlayOnLinux/Steam_games/tf2.cfg
+PS G steam
+PS G wine
+htop
+du -sh /media/nas/Music
+lsof G dev
+lsof G pcm
+htop
+htop
+lsof G pcm
+lsof G dev
+lsof G dev G -v null
+lsof G dev G -v null\|pts
+lsof G dev G -v null\|pt(s\|mx)\|tty
+lsof G dev G -v null\|pt(s\|mx)\|tty
+lsof G firefox
+lsof G firefox G dev
+mplayer http://www.boldlygoingnowhere.net/safetyfirst.WMV
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/rc.lua /etc/xdg/awesome/rc.lua
+vim ~/.config/awesome/rc.lua /etc/xdg/awesome/rc.lua
+vim ~/.config/awesome/rc.lua /etc/xdg/awesome/rc.lua
+vim ~/.config/awesome/rc.lua /etc/xdg/awesome/rc.lua
+PS G team
+PS G hl
+PS G hl2
+PS G steam
+htop
+s reboot
+dotfiles
+git st
+git add config/awesome/rc.lua
+git ci
+vim config/awesome/rc.lua
+git st
+git add config/awesome/rc.lua
+git ci
+git st
+git push
+~
+ssh-me
+dotfiles
+ls
+git st
+git add vim/ftdetect/ vim/syntax/mustache.vim
+git ci
+git st
+git diff
+git add config/awesome/rc.lua
+git ci
+git diff
+git add vimrc
+git ci
+git st
+git diff
+git add zsh/env
+git ci
+git st
+git add xinitrc
+git ci
+git st
+git push
+startxl
+startxl
+vim ~/.config/awesome/rc.lua
+cp /usr/share/awesome/themes/zenburn ~/.config/awesome
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/zenburn/theme.lua
+startxl
+..
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+vim /tmp/startx.log
+grep 'util.*dir' /etc/xdg/awesome
+vim .config/awesome/rc.lua
+startxl
+startxl
+startxl
+startxl
+dotfiles
+git st
+git diff
+git diff -R
+git diff -R > rc.lua.patch
+patch -up1 -i rc.lua.patch
+git st
+rm rc.lua.patch
+vim config/awesome/rc.lua
+vim dotfiles/config/awesome/rc.lua
+date +%a
+date +%a %d
+date +"%a %d"
+date +"%a %d %b"
+date +"%a %d %b %Y"
+date +"%a %d %b %Y %H:%M"
+vim dotfiles/config/awesome/rc.lua
+ls
+ls
+rm 2009-11-13-203108_1920x1080_scrot.png
+rm 60_prompt
+ssh 192.168.1.27
+dotfiles
+ls
+git st
+git rm Juxtaposition_Neue.jpg
+ls
+git st
+git ci
+git st
+git push
+ping 8.8.8.8 8.8.4.4
+ping 8.8.8.8
+ping 8.8.4.4 -c 5
+s vim /etc/resolv.conf.head
+vim bin/xkcd
+vim bin/xkcd
+chmod a+x bin/xkcd
+xkcd
+vim bin/xkcd
+xkcd
+cat /etc/resolv.conf
+s vim /etc/resolv.conf.head
+mcabber
+vim /etc/resolv.conf
+jekyll --help
+alsamixer
+s gem install contacts
+irb
+vim dotfiles/config/awesome/rc.lua
+vim dotfiles/config/awesome/rc.lua
+dotfiles
+git st
+git diff
+git add config/awesome/rc.lua
+git ci
+git st
+ls vim
+dmenu --help
+ssh me
+ssh me
+vim ~/.ssh/config
+ssh me
+ssh-me
+ls /mnt/windows
+ls /mnt/windows/Documents\ and\ Settings/colin
+ls /mnt/windows/Documents\ and\ Settings/colin/My\ Documents
+vim /mnt/windows/Documents\ and\ Settings/colin/My\ Documents/org_mode_generic_notes.txt
+vim /mnt/windows/Documents\ and\ Settings/colin/My\ Documents/org_mode_generic_notes.txt
+Downloads
+unzip vimoutliner-122.zip
+mkdir TVO
+mv tvo.bat versions.txt README.otl syntax otl* opml2otl MANIFEST makezip macros ft* INSTALL install-tvo.bat bitmaps doc/otl.txt doc2otl easy.* FAQ.txt -t TVO
+TVO
+ls
+vim syntax/otl.vim
+vim macros/vimsettings.vim
+vim install-tvo.bat
+vim MANIFEST
+vim ftplugin/otl.vim
+ls ~/.vim/plugin
+pms
+alsamixer
+ls
+vim README.otl
+../vimoutliner-0.3.4
+ls
+ls colors
+vim install.sh
+vim vimoutlinerrc
+Downloads
+ls
+tar xf vimoutliner-0.3.4.tar.gz
+ls 
+vimoutliner-0.3.4
+ls
+vim install.sh
+..
+wget http://orgmode.org/Google-Tech-Talk-Org-mode.pdf
+xpdf --help
+xpdf Google-Tech-Talk-Org-mode.pdf
+bg %1
+jobs
+disown %1
+jobs
+~
+vim
+vim --help
+vim
+vim tmp/org_mode_in_vim.txt
+vim tmp/org_mode_in_vim.txt
+vim tmp/org_mode_in_vim.txt
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+man strchr
+vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim ~/.vimrc
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+xclip --help
+xclip
+xclip -h
+cat tmp/org_mode_in_vim.txt| xclip -in
+cat tmp/org_mode_in_vim.vim| xclip -in
+vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+vim tmp/org_mode_in_vim.vim
+vim tmp/org_mode_in_vim.txt tmp/org_mode_in_vim.vim -c 'source tmp/org_mode_in_vim.vim'
+Downloads/vimoutliner-0.3.4
+ls
+ls ftplugin
+ls ftdetect
+vim ftdetect/vo_base.vim
+ls syntax
+vim syntax/vo_base.vim
+ls experimental
+ls add-ons
+ls add-ons/plugins
+ls add-ons/scripts
+alsamixer
+vim
+~
+git clone git://github.com/scrooloose/vimfiles.git 
+ls code/
+yrm code/vimfiles
+mv vimfiles code
+code/vimfiles
+ls
+vim vimrc
+git submodule
+git submodule init
+git submodule update
+vim vimrc
+grep 'extractsnips' .
+vim plugin/snipMate.vim
+vim vimrc ~/.vimrc
+s reboot
+startxl
+startxl
+arson twitter
+arson -d twitux tweet-git gtktwitter-git
+~aur/twitux
+ls
+makepkg
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+pacman -Ss gnome doc
+makepkg
+../tweet-git
+vim PKGBUILD
+makepkg
+arson clutter
+s pacman -S clutter{,-gtk}
+vim PKGBUILD
+arson clutter
+arson cairo
+arson cairo G clutter
+vim PKGBUILD
+makepkg
+pacman -Ss gnome-common
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+s pacman -Rcnsu gnome-doc-utils gnome-common
+../gtktwitter-git
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/share
+ls pkg/usr/share/gtktwitter
+ls pkg/usr/bin/gtktwitter
+makepkg -i
+~
+gtktwitter
+arson conky
+arson -d pogodynka conkytwitter
+~aur/pogodynka
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/bin
+ls pkg/usr/share/
+ls pkg/usr/share/doc
+ls pkg/usr/share/doc/pogodynka
+ls pkg/usr/share/doc/pogodynka/examples
+tar xf pkg/usr/share/doc/pogodynka/examples/pogodynka.rc.gz
+gunzip pkg/usr/share/doc/pogodynka/examples/pogodynka.rc.gz
+ls pkg/usr/share/doc/pogodynka/examples
+vim pkg/usr/share/doc/pogodynka/examples/pogodynka.rc
+makepkg -i
+~
+pogodynka
+-
+cp pkg/usr/share/doc/pogodynka/examples/pogodynka.rc ~/.pogodynka.rc
+-
+vim ~/.pogodynka.rc
+pogodynka
+vim ~/.pogodynka.rc
+pogodynka
+vim ~/.pogodynka.rc
+pogodynka
+vim ~/.pogodynka.rc
+file -sb /usr/bin/pogodynka
+file -sb /usr/bin/pogodynka.utf8
+s vim /usr/bin/pogodynka.utf8
+vim ~/.pogodynka.rc
+vim ~/.pogodynka.rc
+ls ~/.fonts
+s pacman -S conky
+conky ---help
+conky --help
+vim ~/.conkyForecast.config
+conky
+conky -C
+conky -C > ~/.conkyrc
+vim ~/.conky
+vim ~/.conkyrc
+conky
+vim ~/.Xdefaults
+xrdb -help
+xrdb -all
+xrdb -symbols
+xrdb -help
+xrdb -merge ~/.Xdefaults
+vim ~/.Xdefaults +2
+xrdb -merge ~/.Xdefaults
+vim ~/.Xdefaults +2
+xrdb -merge ~/.Xdefaults
+vim ~/.Xdefaults +4
+xrdb -override ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+mcpp --help
+vim ~/.Xdefaults f
+vim ~/.Xdefaults
+echo '0xffff' | bc
+irb
+vim ~/.Xdefaults
+irb
+xrdb -load ~/.Xdefaults
+mcabber
+vim .mcabberrc
+mcabber
+ls ~/.fonts
+ssh-me
+vim .config/awesome/rc.lua
+vim .Xdefaults
+xrdb ~/.Xdefaults
+vim bin/winchange
+winchange 1
+vim /etc/xdg/awesome/rc.lua
+vim /etc/xdg/awesome/rc.lua .config/awesome/rc.lua
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+alsamixer
+alsamixer
+ping evaryont.me
+htop
+vim .config/awesome/rc.lua
+vim .xbindkeysrc.scm
+ssh-me
+s reboot
+startxl
+vim ~/.config/awesome/rc.lua
+vim .xbindkeysrc.scm
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults 
+export
+export G ssh
+ssh me
+pc
+mpc
+mpc stop
+s /etc/rc.d/mpd stop
+s /etc/rc.d/mpd create-db
+s vim /var/log/mpd/mpd.db-creation 
+PS G mpd
+s vim /etc/mpd.conf
+vim .vimrc
+vim ssh-back-talk.mkd VisualBoyAdvance.cfg
+mpc
+mpc playlist
+mpc listall L
+mpc listall | mpc playlist
+mpc
+mpc next
+mpc play
+mpc listall | mpc add
+mpc play
+mpc next
+mpc stop
+mpc playlist L
+mpc clear
+mpc playlist
+mpc listall | sort --help
+mpc listall | sort -R | mpc add
+mpc random off
+mpc playlist L
+mpc play
+vim bin/mpd-update
+vim bin/mpd-update
+chmod a+x bin/mpd-update
+mpd-update
+vim bin/mpd-update +13
+mpd-update
+mpc playlist L
+mpc next
+mpc next
+mpc prev
+vim ~/.config/awesome/rc.lua
+vim ~/.xbindkeysrc.scm
+vim ~/.config/awesome/rc.lua
+vim ~/.xbindkeysrc.scm
+vim bin/winchange
+vim bin/winchange
+vim ~/.xbindkeysrc.scm
+xdotool
+xdotool search
+xdotool search --onlyvisible --name .
+xdotool search --name .
+vim bin/winchange
+wmctrl -l
+wmctrl -l
+wmctrl -l
+xdotool
+xdotool se
+xdotool search
+wmctrl -l
+wmctrl --help
+arson xdot
+arson xdo
+xdotool search --name .
+wmctrl -l
+xdotool search --name .
+xdotool search --name --onlyvisible
+xdotool search --name --onlyvisible .
+xdotool search --onlyvisible .
+xdotool search .
+xdotool search .
+xdotool search .
+htop
+urxvtc --help
+urxvtc -help
+man urxvtc
+vim bin/winchange
+vim bin/winchange
+xdotool
+xdotool windowsize
+vim bin/winchange
+vim bin/winchange
+wmctrl
+wmctrl -l
+vim bin/winchange
+wmctrl -lv
+wmctrl -lvpxG
+wmctrl -m
+htop
+wmctrl -lvpxG
+wmctrl -l
+wmctrl -l
+wmctrl -l
+wmctrl -l
+wmctrl -l
+wmctrl
+wmctrl -d
+wmctrl -dl
+wmctrl -ld
+cp /var/abs/community/wmctrl/ ~aur
+~aur/wmctrl
+ls
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+src/wmctrl-1.07
+ls
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+wmctrl
+wmctrl -R :ACTIVE:
+wmctrl -l :ACTIVE:
+wmctrl -r :ACTIVE:
+wmctrl -vr :ACTIVE:
+~aur/wmctrl
+ls
+src/wmctrl-1.07
+ls
+find -name *.c *.h
+find . -name *.c *.h
+find . -name \*.(c|h)
+echo *.(c|h)
+vim main.c
+./configure
+./configure --help
+./configure
+vim Makefile
+make
+gcc -Wall -g -O2 -MT -MD -MP windows.c
+gcc -Wall -g -O2 windows.c
+vim windows.c +15
+vim windows.c +15
+gcc -Wall -g -O2 windows.c
+vim windows.c +16
+gcc -Wall -g -O2 windows.c
+gcc -Wall -g -O2 -I/usr/include/glib-2.0
+gcc -Wall -g -O2 -I/usr/include/glib-2.0 windows.c
+vim windows.c +16
+gcc -Wall -g -O2 -I/usr/include/glib-2.0 windows.c L
+gcc -Wall -g -O2 -I/usr/include/glib-2.0 windows.c &> gcc.log
+vim gcc.log
+make
+make clean
+make
+gcc -Wall -g -O2 -I. -I/usr/include/glib-2.0 windows.c -lSM -lICE -lX11 -lXmu -lglib-2.0
+make clean
+make
+gcc -Wall -g -O2 -I. -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include windows.c -lSM -lICE -lX11 -lXmu -lglib-2.0
+vim main.c windows.c
+gcc -Wall -g -O2 -I. -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include windows.c -lSM -lICE -lX11 -lXmu -lglib-2.0
+vim windows.c +93
+gcc -Wall -g -O2 -I. -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include windows.c -lSM -lICE -lX11 -lXmu -lglib-2.0 -o windows
+ls
+rm a.out
+./windows
+vim windows.c +93
+./windows
+gcc -Wall -g -O2 -I. -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include windows.c -lSM -lICE -lX11 -lXmu -lglib-2.0 -o windows
+./windows
+./windows 2
+./windows 2 3
+./windows 2 3 9 8 7 6 5 4
+./windows 2 3 9 8 7 6 5
+./windows 2 3 9 7 6 5 4
+vim windows.c +93
+man -k window
+man -k window | sort
+man -k window | sort G --color window
+vim windows.c +93
+man -k window | sort G --color id L
+youtube-dl --help http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+youtube-dl -b -s http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+youtube-dl -b -s -t -q http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+youtube-dl -b -s -t http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+youtube-dl -b -t http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+rm Talent_2008_DK_Finale_Robot_Boys_Winner-9wcg6VWW7LE.mp4
+~/Media/Videos
+youtube-dl -b -t http://www.youtube.com/watch\?v\=9wcg6VWW7LE
+youtube-dl -b -t http://www.youtube.com/watch\?v\=n6RdVIBvw5c\&feature\=related
+ls
+mplayer Best_Dance_Crew-n6RdVIBvw5c.mp4
+mkdir Robot_Dance
+mplayer 9bbH632PSpw.mp4
+mv 9bbH632PSpw.mp4 Super_Smash_TF2_9bbH632PSpw.mp4
+ls
+mv Best_Dance_Crew-n6RdVIBvw5c.mp4 Talent_2008_DK_* -t Robot_Dance
+mv Battle_of_the_robot_dance_moves-4S_i2tziV_U.mp4 -t Robot_Dance
+ls Robot_Dance
+Robot_Dance
+mplayer Talent_2008_DK_Robotboys_Nick_Jeppe_semifinale-Mfd00tgrdnI.mp4
+mplayer Talent_2008_DK_Finale_Robot_Boys_Winner-9wcg6VWW7LE.mp4
+..
+ls
+mplayer WeschInfoRevV3b.mov
+s reboot
+~/Media/Videos
+ls
+youtube-dl -b -t http://www.youtube.com/watch\?v\=Mfd00tgrdnI
+youtube-dl -b -t http://www.youtube.com/watch\?v\=4S_i2tziV_U
+env
+mpc
+startxl
+startxl
+startxl
+mpc
+startxl
+pms
+arson twitter
+s pacman -S mitter
+mitter --help
+mitter -I=cmd
+mitter -i cmd
+mitter -i tty
+mitter -i tty
+mitter -i pygtk
+ssh colin@192.168.1.27
+code/toto
+ls
+ls lib
+vim lib/ext.rb
+vim lib/toto.rb
+irb
+irb
+irb
+vim lib/toto.rb
+..
+mkdir pinball
+pinball
+mkdir lib
+vim lib/pinball.rb
+vim ~/.vimrc
+vim ~/.vimrc.more
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim ~/.vimrc tmp/org_mode_in_vim.txt
+vim tmp/org_mode_in_vim2.tx
+vim tmp/org_mode_in_vim2.txt
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim ~/.vimrc
+vim tmp/org_mode_in_vim2.txt
+vim tmp/org_mode_in_vim2.txt
+pacman -Si glade
+alsamixer
+mpc
+mpc next
+mpc next
+pmc
+pms
+~/code
+git clone git@github.com:evaryont/toto.git 
+gem search -r template
+vim ~/.gemrc
+gem search -r template
+git foo
+git LOLOLOLOLO
+echo $?
+git foo
+$?
+echo $?
+git foo
+echo $?
+git --help
+ssh-me
+s reboot
+pms
+startxl
+vim ~/.config/awesome/rc.lua
+vim /tmp/startx.log
+vim ~/.config/awesome/rc.lua
+feh --bg-center ~/Media/Pictures/Wallpaper/vladstudio_bug_1920x1080.jpg
+vim ~/.vimperatorrc
+mkdir ~/.config/awesome/sky
+~/.config/awesome
+ls
+mv sky bluebird
+cp zenburn/theme.lua bluebird
+vim bluebird/theme.lua
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/bluebird/theme.lua
+vim ~/.config/awesome/rc.lua
+vim ~/.config/awesome/bluebird/theme.lua
+vim ~/.config/awesome/bluebird/theme.lua
+vim ~/.config/awesome/bluebird/theme.lua
+vim ~/.config/awesome/bluebird/theme.lua
+vim ~/.config/awesome/rc.lua
+dot
+dotfiles
+ls
+git st
+git diff
+git add vimrc
+git ci
+git st
+git diff
+git add Xdefaults
+git ci
+git st
+git add config/awesome/bluebird/ config/awesome/rc.lua
+git ci
+git st
+git add vimperatorrc
+git ci
+git st
+git add vim/spell/en.utf-8.add
+git ci
+git push
+git pull
+git push
+dmesg T
+s mount /dev/sdh1 /media/usb1
+alsamixer
+PS G fire
+lsof G dev
+lsof G dev
+PS G fire
+s reboot
+vim ~/.config/awesome/bluebird/theme.lua
+ssh-me
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+startxl
+man pianobar
+code/
+git clone git://github.com/rtyler/TweepyDeck.git 
+ls
+TweepyDeck
+ls
+vim tweepydeck
+./tweepydeck
+man pianobar
+pacman -Qs faad
+pacman -Qs mad
+irb
+vim .vim/plugin/googlereader.vim
+vim
+vim .vim/plugin/googlereader.vim
+vim .vim/plugin/googlereader.vim
+vim ~/.vimrc
+vim
+vim .vim/plugin/googlereader.vim
+vim .vim/plugin/googlereader.vim
+vim .vim/plugin/googlereader.vim
+vim .vim/plugin/googlereader.vim +36
+vim
+vim +":GoogleReader"
+vim .vim/plugin/googlereader.vim
+vim ~/.vimrc
+vim +":GoogleReader"
+vim +":GoogleReader"
+pmc
+mpc
+mpc
+mpc next
+vim ~/.mcabber
+vim ~/.mcabber/events.sh
+vim ~/.mcabberrc
+vim ~/.mcabber/events/bodies
+grep '\#fail' ~/.mcabber/events/
+vim ~/.mcabber/events.sh
+rm ~/.mcabber/events/bodies/*
+vim .mcabber/events
+ls .mcabber/events/bodies
+chromium-browser
+chromium-browser --help
+chromium-browser /media/usb1/Web-Development/Greensburg2/index.html
+cp /media/usb1/Web-Development/Greensburg2 Code
+Code/Greensburg2
+nohup chromium-browser index.html&
+ls
+chmod a-x *
+chmod a+x images Library
+ls images
+ls Library
+ls
+chmod -R a-x *
+s chmod -R a-x *
+ls
+s chmod a+x images
+s chmod a+x Library
+ls
+ls images
+ls Library
+vim index.html
+ls images
+ls images
+vim index.html
+vim index.html styles.css
+cp index.html news.html
+vim news.html
+rm news.html
+vim index.html
+cp index.html map.html
+vim map.html
+mv images/kiowa_county_greensburg_higlighted.svg.png images/kiowa_county_greensburg_highlighted.svg.png
+vim map.html
+vim index.html
+vim events.html
+mkdir old
+ls
+mv template.html v1.html buildings.html -t old
+ls
+vim Header.lbi
+ls
+ls Library
+rm Library
+lsa
+ls images
+vim images/header.jpg
+rm images/staticmap
+vim index.html
+cp map.html history.html
+vim history.html
+ls
+xpdf /media/usb1/Web-Development/Greensburg/tw_dw8_sguide.pdf
+vim history.html
+ls images
+vim index.html history.html
+cp history.html contact.html
+vim contact.html
+ls
+vim Header.lbi
+ls
+ls images
+grep 'dw1' *
+grep 'forest' *
+rm images/dw1.jpg images/forest.jpg
+rm images/dw1.jpg images/forest-top.jpg
+grep 'forest' *
+grep 'left_' *
+vim styles.css
+vim styles.css
+grep 'left_' *
+rm images/left_title.jpg
+grep 'left' *
+grep 'lefttop' *
+rm images/lefttop.jpg
+ls
+ls images
+grep 'ls' *
+grep 'ls\d' *
+vim styles.css
+rm images/ls*
+ls images
+grep 'main.gi' *
+grep 'mainbo' *
+grep 'pic' *
+grep 'rightt' *
+vim styles.css
+rm images/main*
+vim old/*
+rm old/*
+rm old
+ls
+rm nohup.out
+ls
+vim Header.lbi
+rm Header.lbi
+grep 'header' *
+vim *.html
+grep 'header' *
+grep 'library' *
+ls
+..
+cp Greensburg2 /media/usb1/Web-Development/Greensburg3
+s cp Greensburg2 /media/usb1/Web-Development/Greensburg3
+s cp -r Greensburg2 /media/usb1/Web-Development/Greensburg3
+umount /media/usb1
+s umount /media/usb1
+ssh colin@192.168.1.27
+ssh-copy-id --help
+ssh-copy colin@192.168.1.27
+ssh-copy-id colin@192.168.1.27
+ssh colin@192.168.1.27
+ssh colin@192.168.1.27
+vim ~/.ssh/id_rsa
+vim ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub ~/.ssh/id_rsa
+ssh colin@192.168.1.27
+PS G opent
+PS G open
+s /etc/rc.d/openntpd start
+ssh colin@192.168.1.27
+ssh me
+~/dotfiles
+grep 'features'
+grep 'features' *
+grep 'features' zsh* --help
+grep 'features' zsh* --help G exc
+grep 'features' zsh* --exclude=history
+vim zsh/keychain zsh/keychain zshrc
+vim zsh/keychain zsh/alias zshrc
+~
+arson pandora
+arson -d pianobar-git
+~aur/pianobar-git
+ls
+makepkg
+ls
+src/pianobar/
+ls
+cmake --help
+make 
+ls
+lsa
+src/
+lsa
+..
+git st
+../pianobar-build
+ls
+git st
+git ls-files -i
+git ls-files
+git ls-files --ignored src
+git ls-files --ignored src*
+git ls-files --ignored *
+git ls
+ls
+rm cmake_install.cmake
+../..
+makepkg
+yrm src/pianobar-build
+makepkg
+makepkg -i
+~
+pianobar
+pianobar --help
+pianobar evaryont
+pianobar
+~aur/pianobar-git/src/pianobar
+grep 'fm' *
+-
+man pianobar
+pianobar
+vim
+vim NOTE
+vim dotfiles/vim/Scripts
+vim ~/.vim/Scripts
+ls .vim/
+ls .vim/plugin
+ls .vim/syntax
+find .vim/ -name PKGBUILD*
+pacman -Ql pacman
+pacman -Ql pacman G vim
+pacman -Ql pacman-contrib G vim
+vim ~/.vim/Scripts
+dotfiles
+git st
+git add vim/Scripts
+git ci
+vim vim/spell/en.utf-8.add
+git add vim/spell/en.utf-8.add
+git ci
+git diff
+git add zsh/alias zsh/keychain zshrc
+git ci
+vim zshrc
+git add zshrc
+git ci
+git st
+git push
+zsh
+s netstat -tunelp
+ssh -p 614 colin@localhost
+s lsof G dsp
+vim vim/Scripts
+ls vim/plugin
+ls /usr/share/vim
+ls /usr/share/vim/vimfiles
+ls /usr/share/vim/vimfiles/ftdetect
+ls /usr/share/vim/vimfiles/syntax
+vim /usr/share/vim/vimfiles/syntax/HGAnnotate.vim
+vim /usr/share/vim/vimfiles/syntax/tmux.vim
+vim /usr/share/vim/vim72/plugin/getscriptPlugin.vim
+vim /usr/share/vim/vim72/plugin/README.txt
+vim /usr/share/vim/vim72/plugin/getscriptPlugin.vim
+vim /usr/share/vim/vim72/termcap
+vim /usr/share/vim/vim72/menu.vim
+vim /usr/share/vim/vim72/menu.vim
+cp ~/Downloads/googlereader.vim vim/plugin
+vim
+vim ~/.ssh/config
+ls ~/.ssh
+vim ~/.ssh/config
+man ssh
+man ssh_config
+vim ~/.ssh/config
+man ssh
+man ssh_config
+man ssh_config | vim -
+vim ~/.ssh/config
+arson gtalk
+arson jabber
+~
+mcabber
+mcabber
+mcabber
+notify-send --help
+notify-send --urgency=critical "LOL" "OMG LOOL"
+notify-send "LOL" "OMG LOOL"
+notify-send -- "--LOL" "OMG LOOL"
+notify-send "--LOL" "OMG LOOL"
+notify-send -- "--LOL" "OMG LOOL"
+notify-send -- "--LOL" "OMG LOOL"
+notify-send -- "--LOL" "OMG LOOL"
+PS G not
+nohup noteo&
+PS G not
+vim ~/.xinitrc
+PS G not
+vim nohup.out
+vim /tmp/st
+vim /tmp/startx.log
+notify-send -- "--LOL" "OMG LOOL"
+PS G note
+killall noteo
+mcabber
+pacman -Ss notify
+pacman -Ql libnotify
+pacman -Ss galago
+s pacman -S galago-daemon
+pacman -Rcnsu noteo
+s pacman -Rcnsu noteo
+PS G note
+pacman -Ql galago-daemon
+pacman -Qi galago-daemon
+pacman -Qi libgalago
+ls /usr/lib/galago-daemon/
+file -sb /usr/lib/galago-daemon/galago-daemon
+notify-send "lol" "hi"
+htop
+notify-send "lol" "hai"
+pacman -Ss notif
+s pacman -S notification-daemon
+notify-send "lol" "hai"
+pacman -Ql notification-daemon
+notification-properties --help
+pacman -Qi notification-daemon
+vim /var/abs/extra/notification-daemon/PKGBUILD
+vim /var/abs/extra/notification-daemon/notification-daemon.install
+cp /var/abs/extra/notification-daemon/ ~aur
+~aur/not
+~aur/notification-daemon
+makepkg
+src/notification-daemon-0.4.0
+ls
+./configure --help
+find -name *theme*
+ls src/themes
+./configure --help G th
+./configure --help G the
+./configure --help G theme
+./configure
+./configure --help G sound
+./configure --enable-sound=no
+src/themes/bubble
+make
+ls
+..
+ls
+make
+make
+ls bubble
+../..
+..
+..
+vim PKGBUILD
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/lib
+ls pkg/usr/lib/notification-daemon-1.0
+ls pkg/usr/lib/notification-daemon-1.0/engines
+ls pkg/usr/share
+ls pkg/usr/share/notification-daemon
+ls pkg/usr/share/applications/notification-properties.desktop
+ls src/notification-daemon-0.4.0/src/themes
+ls src/notification-daemon-0.4.0/src/themes/standard
+vimdiff src/notification-daemon-0.4.0/src/themes/standard/libstandard.la pkg/usr/lib/notification-daemon-1.0/engines/libstandard.so
+vimdiff src/notification-daemon-0.4.0/src/themes/standard/theme.o pkg/usr/lib/notification-daemon-1.0/engines/libstandard.so
+grep 'libstandard.so' src
+vim src/notification-daemon-0.4.0/src/themes/bubble/libbubble.la
+vimdiff src/notification-daemon-0.4.0/src/themes/bubble/libbubble.la src/notification-daemon-0.4.0/src/themes/standard/libstandard.la
+arson notification
+arson -d system-sounds-android notification-daemon-engine-nodoka notification-daemon-engine-slider
+~aur/system-sounds-android
+vim PKGBUILD
+../notification-daemon-engine-slider
+vim PKGBUILD
+makepkg
+makepkg -i
+../notification-daemon-engine-nodoka
+makepkg
+makepkg -i
+~
+notification-properties
+notification-properties
+vim ~/.gtkrc
+vim .vim/spell/en.utf-8.add
+vim ~/.gtkrc
+vim ~/.gtkrc
+pacman -Ss lxappearance
+s pacman -S lxappearance
+lxappearance --help
+pacman -Ss gtk
+pacman -Ss gtk theme
+s pacman -S gtk-engines
+lxappearance
+vim .gtkrc
+vim .gtkrc-2.0
+rm ~/.gtkrc-2.0
+notification-properties
+vim .gtkrc
+vim /usr/share/gtk-engines/clearlooks.xml
+pacman -Ql gtk-engines L
+vim /usr/share/themes/Clearlooks/gtk-2.0/gtkrc 
+lxappearance
+vim .gtkrc*
+notify-send 'topic' 'body'
+pacman -Qs notif
+vim ~/.zsh/al
+vim ~/.zsh/alias
+source ~/.zsh/alias
+vim ~/.zsh/alias
+t
+s
+pacman-r startup-notification
+pacman -Qs noti
+pacman-r notification-daemon-engine-nodoka
+pacman-r gconf
+rm ~aur/not*
+vim ~/.zsh/alias
+exec zsh
+pacman-s --help
+pacman-s -s /e/
+pacman-s -s e
+vim ~/.zsh/alias
+alias pacman
+whence pacman
+vim ~/.zsh/alias
+exec zsh
+pacm
+vim ~/.zsh/alias
+arson -d noteo
+~aur/noteo
+vim PKGBUILD
+pacman-s firefox
+vim PKGBUILD
+makepkg
+pacman-s libnotify
+makepkg -i
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+makepkg -i
+noteo --help
+~/
+mcabber
+file -sb /dev/sdg1
+s file -sb /dev/sdg1
+s mount /dev/sdg1 /media/usb1
+ls /media/usb1
+s umount /media/usb1
+s file -sb /dev/sdc1
+s mount /dev/sdc1 /media/usb1
+ls /media/usb1
+s umount /media/usb1
+s file -sb /dev/sdd1
+s mount /dev/sdd1 /media/usb1
+ls /media/usb1
+ls /media/usb1/Web-Development
+ls /media/usb1/Web-Development/Greensburg2
+arson chrome
+arson -d l-echo chromium-browser-bin
+~aur/l-echo
+vim PKGBUILD
+makepkg
+ls 
+ls pkg/usr
+ls pkg/usr/bin
+./pkg/usr/bin/l-echo
+./pkg/usr/share/l-echo/l-echo 
+../chromium-browser-bin
+ls
+startxl
+makepkg
+vim PKGBUILD
+makepkg
+pacman -Qo /usr/lib/libjpeg.so.62
+s rm /usr/lib/libjpeg.so.62
+makepkg
+arson orbit
+vim /var/abs/extra/orbit2/PKGBUILD
+cp /var/abs/extra/orbit2/ ..
+~aur/orbit2
+makepkg
+src/ORBit2-2.14.17/
+ls
+./configure --help
+./configure
+vim ../../PKGBUILD
+~aur/chromium-browser-bin
+ls
+makepkg
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+rm pkg
+yrm pkg
+syrm pkg
+s rm -rv pkg
+makepkg
+makepkg -i
+~
+startxl
+htop
+PS G dbus
+PSG dbus
+htop
+startxl
+startxl
+vim /tmp/startx.log
+pacman -Qu
+pacman -Qi di
+di
+pacman-s di
+di
+di --help
+vim /tmp/startx.log
+vim Downloads/contacts\(2\).vcf
+vim Downloads/contacts\(2\).vcf
+s reboot
+pacman-s awesome
+pacman-s -y
+pacman -Qu
+pacman-r libmysqlclient
+dotfiles/
+git st
+git diff
+git add vim/spell/en.utf-8.add
+git ci
+git diff
+git add zsh/alias
+git ci
+git st
+git add vim/plugin/googlereader.vim vimrc
+git ci
+git st
+git add vim/Scripts
+git ci
+git st
+git push
+..
+startxl
+s umount /media/nas 
+lsof G nas
+lsof G media
+s umount /media/nas 
+s /etc/rc.d/mpd stop
+s umount /media/nas 
+s reboot
+ssh me
+screen --help
+screen -dmS 'ssh-me' "ssh me"
+screen -r ssh-me
+ping 8.8.8.8
+ls ~/
+ls ~/.keychain
+hostname
+~
+export G key
+export G ssh
+ls /tmp/ssh-FnGzoP3224
+ls /tmp/ssh-xwdnx26443
+pacman-s -Sy
+pacman-s -y
+code/
+git clone git://github.com/bartman/git-wip.git
+git-wip
+ls ~/bin
+ls
+vim git-wip
+ls
+ln -s git-wip ~/bin/git-wip
+ls
+ls ~/bin
+ln -s ~/bin/git-wip $(pwd)/git-wip
+ln -sf ~/bin/git-wip $(pwd)/git-wip
+ls
+git st
+git checkout -- git-wip
+ls
+git st
+ls
+ls ~/bin
+rm ~/bin/git-wip
+ln -s $(pwd)git-wip ~/bin/git-wip
+ls ~/bin
+ll ~/bin/git-wip
+ln -sf $(pwd)/git-wip ~/bin/git-wip
+ll ~/bin/git-wip
+~/code
+git wip
+-
+~/dotfiles
+git wip
+git-wip
+git wip
+vim ~/bin/git-wip
+ls /usr/lib/git-core
+vim /usr/lib/git-core/git-sh-setup
+vim ~/.vimrc
+vim vimrc
+vim vimrc
+~
+ls
+ls mail
+code/
+git clone git://notmuchmail.org/git/notmuch
+ls notmuch
+notmuch
+./configure --help
+./configure
+pacman -Ss xapian
+s pacman -S recoll
+s pacman -S xapian-core
+cp /var/abs/community/recoll ~aur
+vim ~aur
+~aur/recoll
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+src/recoll-1.12.1
+./configure --help
+ls
+ls desktop
+ls qt4gui
+ls kde
+ls kde/kioslave
+ls kde/kioslave/recoll
+../..
+vim PKGBUILD
+pacman -S hicolor-icon-theme 
+s pacman -S hicolor-icon-theme 
+vim PKGBUILD
+makepkg
+s pacman -S qt
+vim PKGBUILD
+makepkg
+ls
+makepkg -i
+~
+recoll --help
+recollindex --help
+recollindex -l
+recollindex -s english
+recollindex -S
+export G rec
+vim .config/recoll/recoll.conf
+mpc
+vim .config/recoll/recoll.conf
+vim .vimrc
+vim bin/git-wip
+WIP_DEBUG="true" git-wip
+. git-sh-setup || echo "failure"
+WIP_DEBUG="true" git wip
+vim bin/git-wip
+git --exec-path
+/
+-
+recollindex --help
+recollindex -m
+PS G recol
+kill 10170
+PSG recol
+PSG rec
+vim ~/.config/recoll/recoll.conf
+ls /media/nas/Music
+vim ~/.config/recoll/recoll.conf
+vim ~/.config/recoll/recoll.conf
+recollindex -z
+bg %1
+disown %1
+arson notmuch
+~aur/notmuch-git
+vim PKGBUILD
+makepkg
+makepkg
+~/code
+ls toto
+tot/
+toto
+git clone git://github.com/cloudhead/toto-skeleton.git
+ls toto-skeleton
+toto-skeleton
+vim Rakefile
+..
+ls
+vim ~/.zshrc
+vim ~/.zsh/style
+vim ~/.zsh/functions
+source ~/.zsh/functions
+rm .rake_tasks
+rake gemspec
+rake version
+rake build
+s gem install toto
+toto-skeleton
+ls
+makepkg
+rm .rake_tasks
+rake
+ls
+vim .rake_tasks
+vim Rakefile
+rake -T
+vim articles/2009-12-16.txt
+s
+hostname
+s
+vim ~/.gitconfig
+~/dotfiles
+git st
+vimdiff gitconfig.tmpl ~/.gitconfig
+git st
+git add gitconfig.tmpl
+git ci
+arson imap
+s pacman -S offlineimap
+pacman-r offlineimap-git
+s pacman -S offlineimap
+vim ~/.offlineimaprc
+vim ~/.vimrc
+git br
+git st
+git diff
+git add vimrc
+git ci
+vim vimrc
+vim vimrc
+vim vimrc
+vim vimrc
+git st
+git diff
+git add zsh/functions
+git ci
+git st
+arson keepass
+s pacman -S keepassx
+keepassx
+arson keepass
+~/Downloads
+tar xf ckpass-0.1.tar.gz
+ckpass-0.1
+ls
+./configure --help
+./configure 
+arson kpass
+arson pass
+arson pass &> arson.pass.txt
+vim arson.pass.txt
+arson -d libkpass
+~aur/libkpass
+makepkg
+pacman -Ql openssl
+pacman -Ql openssl G lib
+vim PKGBUILD
+src/libkpass-2
+./configure --help
+./configure --help G ssl
+grep 'you need openssl' &
+grep 'you need openssl' *
+vim configure.ac
+..
+ls
+mv libkpass-2 libkpass-2-b
+tar xf libkpass-2.tar.gz
+diff -Ru libkpass-2 libkpass-2-b
+diff -u libkpass-2 libkpass-2-b
+diff -u libkpass-2 libkpass-2-b > ../no_ssl_check.patch
+..
+ls
+vim PKGBUILD
+yrm pkg src
+mkepkg
+makepkg
+vim PKGBUILD
+yrm pkg src
+makepkg
+ls
+vim PKGBUILD
+makepkg -i
+~/Downloads/ckpass-0.1
+./configure
+~aur/libkpass
+makepkg
+makepkg -f
+makepkg -i
+-
+vim configure.in
+./configure
+autoconf
+autoreconf
+./configure
+make
+pacman -Ql libkpass 
+vim Makefile
+make
+pacman-r libkpass
+..
+yrm ckpass-0.1
+rm ~aur/libkpass
+jobs
+fg %1
+ls
+jobs
+code/notmuch
+makepkg
+ls
+./configure
+arson talloc
+~aur/talloc
+ls
+pacman -Ss talloc
+makepkg
+makepkg -i
+pacman -Qo /usr/include/talloc.h
+pacman -Ql smbclient G tal
+ls pkg
+ls pkg/usr
+ls pkg/usr/share
+ls pkg/usr/lib
+ls pkg/usr/lib/pkgconfig
+ls pkg/usr/include/
+pacman -Qu G smb
+pacman -Qh
+pacman -Qu smb
+pacman -Qu smbclient
+s pacman -Su
+s pacman -S smbclient
+pacman -Ql smbclient G tal
+~/code/notmuch
+./configure
+make clean
+ls
+./configure
+pacman-r smbclient
+pacamn -Si live-media
+pacman -Si live-media
+~aur/talloc
+makepkg
+makepkg -i
+~aur/notmuch-git
+makepkg
+makepkg -i
+~
+notmuch --help
+notmuch help
+vim .offlineimap
+vim .offlineimaprc
+vim .offlineimap
+cat .offlineimap/pid
+PSG offl
+rm .offlineimap
+vim .offlineimaprc
+arson openssl
+arson -d libopenssl2
+~aur/libopens
+~aur/libopenssl2
+vim PKGBUILD
+makepkg
+..
+rm libopenssl2
+ls
+yrm ipodtagger indywiki gtktwitter-git wikipediafs xtwitter
+pacman -Qs twitter
+pacman-r ttytter mitter gtktwitter-git
+ls
+vim autossh/PKGBUILD
+rm autossh autowifi
+pacman -Qs auto
+pacman-r autossh
+ls
+yrm beagle-no-gnome barry*
+pacman -Qs barry
+pacman -Qs beagle
+ls
+yrm actkbd amazing-git libopensync*
+pacman -Qs opensync
+pacman-r libopensync-unstable libopensync-plugin-file-unstable libopensync-plugin-vformat msynctool-unstable
+pacman -Qs amazing
+pacman -Qs actk
+pacman-r actkbd
+ls
+pacman -Qs glitz
+pacman-r glitz
+pacman -Qs ms-sus
+pacman -Qs ms-sys
+pacman-r ms-sys pam_ssh 
+rm ms-sys pam_ssh
+ls
+rm orbit2
+ls
+rm plowshare
+pacman -Ss pstotext
+arson pstotext
+rm pstotext*
+ls
+ls rachota
+vim rachota/PKGBUILD
+yrm rachota
+ls rl
+vim rl/PKGBUILD
+pacman-r rl
+yrm rl
+ls
+pacman -Qs virtual
+pacman -Ql L
+pacman -Ql | cut -d' ' -f1 L
+pacman -Ql | cut -d' ' -f1 | sort -u L
+pacman -Ql | cut -d' ' -f1 > packages.txt
+sort -u packages.txt > packages2.txt
+rm packages.txt ; mv packages2.txt packages.txt
+vim packages.txt
+pacman -Qi acct
+acct
+accton
+s accton
+s accton --help
+PSG acc
+jobs
+PSG rec
+vim bin/recoll-start.sh
+recollindex --help
+vim bin/recoll-start.sh
+ls /etc/rc.d
+vim /etc/rc.d/functions
+vim /etc/rc.d/dbus
+chmod a+x bin/recoll-start.sh
+recoll-start.sh
+vim bin/recoll-start.sh
+vim bin/recoll-start.sh
+PSG rec
+bin/recoll-start.sh
+PSG rec
+PSG rec
+PSG rec
+screen -ls
+screen -r ssh-me
+pms
+ls /media/nas
+ls /media/nas/Music
+ls /media/nas/Music/Newgrounds_Audio_Portal
+ls /media/nas/Music/Newgrounds_Audio_Portal/*guitar*
+find /media/nas/Music/ -name *guitar*
+find /media/nas/Music/ -name *vs*
+s abs ; cp /var/abs/extra/mplayer ~aur
+cp /var/abs/extra/mplayer ~aur
+yrm ~aur/mplayer
+cp /var/abs/extra/mplayer ~aur
+~aur/mplayer
+ls
+vim PKGBUILD
+makepkg
+src/mplayer/
+ls
+./configure --help
+grep samba *
+../..
+vim PKGBUILD
+pacman -Qi live-media
+makepkg
+makepkg -i
+~/code
+ls
+git clone git://github.com/ginatrapani/todo.txt-cli.git 
+todo.txt-cli
+ls
+vim GEN-VERSION-FILE
+./GEN-VERSION-FILE
+ls
+vim VERSION-FILE
+rm VERSION-FILE
+vim todo.
+vim todo.sh
+t
+vim todo.cfg
+ls ~
+mkdir ~/todo/
+t
+vim ~/.zsh/alias
+ls ~/code
+source ~/.zsh/alias
+cd Media/Videos ; http://media.libsyn.com/media/donmc1/SCO0178-omnifocuspt1-free-960x540-h264-free-540p-OS.mov
+wget http://media.libsyn.com/media/donmc1/SCO0178-omnifocuspt1-free-960x540-h264-free-540p-OS.mov
+ls
+mv SCO0178-omnifocuspt1-free-960x540-h264-free-540p-OS.mov\?nvb=20091217225217\&nva=20091218230217\&t=00e224ae942e10111bc59 SCO0178-omnifocuspt1-free-960x540-h264-free-540p-OS.mov
+mplayer SCO0178-omnifocuspt1-free-960x540-h264-free-540p-OS.mov
+mplayer Media/Videos/awesome_line_rider.mp4
+mp4art Media/Videos/awesome_line_rider.mp4
+shuf --help
+vim ~/.zsh/alias
+which sudo
+which --help
+man zshbuiltins
+which -p sudo
+man zshbuiltins
+vim ~/.zsh/alias
+whence -p sudo
+whence -p s
+source ~/.zsh/al
+source ~/.zsh/alias
+t
+t -h
+vim todo.cfg
+t lsc
+t a 
+t a Research todo.txt vim plugin
+t a Learn more about vim scripting
+t a Find out how to combine t.txt's listcon and listproj commands with vim
+t a Find out how to combine t.txt\'s listcon and listproj commands with vim
+t
+vim todo.cfg
+vim todo.sh
+todo.sh ls
+t ls
+vim todo.cfg
+vim todo.cfg
+t ls
+vim todo.cfg
+vim todo.cfg
+t ls
+vim todo.cfg
+t ls
+vim ~/todo/todo.txt
+t ls
+t listproj
+vim ~/todo/todo.txt
+vim
+vim
+vim
+mpc
+vim ~/todo/todo.txt
+t -h
+grep 'actions' *
+vim todo.cfg
+~/todo
+ls
+vim report.txt
+mkdir actions
+git init
+git st
+actions
+wget http://github.com/bgrams/todotxt-extensions/raw/master/pt
+ls
+chmod a+x pt
+ls
+~
+t -h
+t help
+t plugin_test
+t pt
+vim ~/todo/actions/pt
+mv ~/todo/actions/pt ~/todo/actions/plugin_test
+~/todo/actions
+wget http://github.com/smajda/todo.actions.d/raw/master/commit http://github.com/smajda/todo.actions.d/raw/master/nav http://github.com/smajda/todo.actions.d/raw/140d684026bcfe47750c1a59a4453663ca4aa1fb/ls http://github.com/the1ts/todo.txt-plugins/raw/master/actions/projectview/projectview http://github.com/the1ts/todo.txt-plugins/raw/master/actions/lists/listactions
+ls
+chmod a+x *
+ls
+lsx
+vim ~/.zsh/alias
+man zshbuiltins
+man zshall
+chmod a-x ls
+chmod a-x nav
+chmod g+x ls
+chmod o+x nav
+ll
+lsx
+ls *(*)
+touch foo
+ls *(*)
+rm foo
+vim ~/.zsh/alias
+~/dotfiles
+vim zsh/alias
+mv ~/Downloads/vividchalk.vim vim/colors
+vim zsh/alias
+vim vimrc
+vim zsh/alias
+vim vim/colors/vividchalk.vim
+grep 'hi ' vim*
+grep 'hi ' vim* G -v colors
+grep 'hi ' vim* G -v colors G -v link
+vim vim/colors/vividchalk.vim
+vim vim/colors/vividchalk.vim
+vim zsh/alias
+git add vim/colors/vividchalk.vim
+git st
+git reset HEAD 
+git st
+vim vimrc
+git st
+git diff
+vim vimrc
+vim vim/colors/devolved.vim
+vim vim/colors/devolved.vim
+rm vim/colors/vividchalk.vim
+git st
+git add vim/colors/devolved.vim
+git ci
+git blame vim/colors/devolved.vim
+git stash save
+git st
+git blame vim/colors/devolved.vim
+git log 51bf9f0c
+git log 51bf9f0c..51bf9f0c~
+git log 51bf9f0c..51bf9f0c^
+git log 51bf9f0c^..51bf9f0c
+git diff 51bf9f0c^..51bf9f0c
+git log --help
+git log 51bf9f0c^..51bf9f0c --stat
+git log --help
+git log 51bf9f0c^..51bf9f0c --stat -p
+git log --help
+git log 51bf9f0c^..51bf9f0c --shortstat -p
+git log --help
+vim ~/bin/git-wip
+chmod a+x ~/bin/git-cl
+git cl 51bf9f0c
+vim ~/bin/git-wip
+git stash apply 
+git diff
+git add vim/colors/devolved.vim
+git ci
+grep 'saphrix' *
+grep 'saphrix' * G -v vimp
+vim muttrc
+pms
+ls
+ls -a
+ls -A
+vim bin/winchange
+winchange 1
+winchange -11
+winchange -1
+winchange
+vim bin/winchange
+winchange
+vim bin/winchange
+vim bin/winchange
+irb
+vim bin/winchange
+winchange
+winchange 1
+vim bin/winchange
+winchange 1
+ruby --version
+vim bin/winchange
+ruby --version
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+winchange 2
+winchange 3
+winchange 4
+winchange 1
+winchange -1
+vim bin/winchange
+vim ~/.xbindkeysrc.scm
+vim bin/winchange
+winchange -1
+winchange -4
+winchange -3
+vim bin/winchange
+winchange -4
+winchange 1
+winchange 2
+winchange 3
+winchange 4
+winchange 5
+winchange 18
+vim bin/winchange
+vim .xbindkeysrc.scm
+vim .xbindkeysrc.scm
+vim bin/winchange
+winchange 1
+vim bin/winchange
+winchange 1
+winchange -11
+winchange -1
+winchange -4
+winchange -3
+winchange -2
+winchange -1
+winchange -0
+vim bin/winchange
+winchange -0
+winchange 0
+winchange 3
+winchange 6
+winchange 7
+winchange -3
+winchange -2
+winchange -1
+vim bin/winchange
+dotfiles
+vim muttrc
+wmctrl --help
+wmctrl -l
+wmctrl -ia 0x01600039
+vim ~/bin/winchange
+winchange 1
+wmctrl -l
+irb
+xdotool search --name .
+winchange 1
+wmctrl -l
+vim bin/winchange
+vim /tmp/startx.log
+vim /tmp/startx.log
+vim bin/winchange
+vim /tmp/startx.log
+killall vim
+vim /tmp/startx.log
+vim bin/winchange
+vim .vim/colors/devolved.vim
+vim .vimrc
+vim .vim/colors/devolved.vim
+vim .vimrc
+dotfiles
+git st
+git diff
+git add zsh/alias
+git ci
+git st
+git idff
+git add vim/colors/devolved.vim
+git ci
+git st
+git add vim/spell/en.utf-8.add
+git ci
+git st
+vim /tmp/startx.log
+vim /tmp/startx.log -r
+vim /tmp/startx.log -r
+vim /tmp/startx.log
+ls
+ls
+ls nas
+ls /media/nas
+ssh me
+vim .xbindkeysrc.scm
+vim .config/awesome/rc.lua
+screen -r ssh-me
+ssh me
+getent shadow
+s reboot
+cat /etc/rc.d/acpid
+acpid --help
+acpid -d
+s /etc/rc.d/acpid stop
+s acpid -d
+s acpid -d
+startxl
+startxl
+vim .xbindkeysrc.scm
+startxl
+startxl
+startxl
+s /etc/rc.d/mpd stop
+s umount /media/nas 
+s reboot
+cat /etc/fstab
+git lg
+vim .gitconfig
+-
+vim ~/.gitconfig
+irb
+ri MatchData
+xclip -out
+echo $?
+vim ~/.gitconfig
+vim ~/.gitconfig.tmpl
+git lg
+vim ~/.gitconfig
+git lg
+vim ~/.gitconfig
+vim ~/.gitconfig.tmpl
+zsh
+ls
+gem search nanotest
+s gem install nanotest nanotest_extensions
+mkdir test
+gem search redgreen
+s gem install mynyml-redgreen
+gem search context
+vim ~/.gemrc
+gem install --help
+vim ~/.gemrc
+s gem install mynyml-redgreen
+vim ~/.gemrc
+ls
+test/
+vim test.rb
+mv test.rb test_helper.rb
+vim test_helper.rb
+vim test.rb
+ruby test
+ruby test.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/nanotest_extensions-0.6.1/lib/nanotest/stats.rb +13
+vim test.rb
+vim test.rb
+ruby test.rb
+vim test.rb test_helper.rb
+ruby test.rb
+ls ../lib
+vim test.rb test_helper.rb
+ruby test.rb
+vim test.rb test_helper.rb
+ruby test.rb
+vim ../lib/mastodon.rb
+,,
+..
+vim Rakefile
+vim Rakefile
+rake -T
+vim Rakefile
+gem update
+yrm ~/.gem/
+s gem update
+rake -T
+rake version
+rake version:bump:minor
+vim VERSION
+vim Rakefile +42
+rake version:bump:minor
+vim Rakefile +42
+rake version:bump:minor
+rm VERSION
+touch VERSION.yml
+rake version:bump:minor
+vim VERSION.yml
+irb
+vim VERSION.yml
+rake version:bump:minor
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+grep 'specification' /usr/lib/ruby/site_ruby/1.9.1/rubygems/
+grep 'specification' /usr/lib/ruby/site_ruby/1.9.1/rubygems/ G -v \/specification\.rb:
+grep 'specification' /usr/lib/ruby/site_ruby/1.9.1/rubygems/ G -v \/specification\.rb: G -v \/commands\/
+grep 'specification' /usr/lib/ruby/site_ruby/1.9.1/rubygems/ G -v \/specification\.rb: G -v \/commands\/ L
+mpx
+mpc
+mpc toggle
+ls todo
+vim todo/todo.txt
+irb
+vim todo/todo.txt
+irb
+code/
+run-help mkdir
+run-help mkdir
+grep 'rtod.*' /usr/share/dict/words
+grep 'r.*tod.*' /usr/share/dict/words
+grep 'tod.*' /usr/share/dict/words
+grep 'todo.*' /usr/share/dict/words
+mkdir mastodon
+mastodon
+git init
+mkdir lib
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+git st
+git add lib/
+git ci
+git commit
+git st
+vim ~/.gitconfig.tmpl
+git commit --help
+git config commit.template
+git config apply.whitespace
+git config color.pager
+git config --help
+git config --get apply.whitespace
+echo $?
+zs
+zsh
+vimdiff ~/.gitconfig*
+~
+vim .gitconfig.tmpl
+zsh
+vim .gitconfig
+rm .gitconfig
+zsh
+-
+git lg
+vim ~/.gitconfig.tmpl
+zsh
+code/mastodon
+ls
+vim Rakefile
+rake -T
+rake gemspec:debug
+rake version
+rake version:write
+ls
+vim VERSION
+ls lib
+mkdir lib/mastodon/
+ri Kernel
+ri Kernel#autload
+ri Kernel#autoload
+ri Kernel#autoload\?
+ri Kernel
+ri Kernel#j
+ri Kernel#jj
+vim Rakefile
+rake -T
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+vim Rakefile
+rake -T
+vim Rakefile
+rake -T
+vim Rakefile
+rake -T
+vim Rakefile
+rake -T
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+rake -T
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/gemspec_helper.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/gemspec_helper.rb Rakefile
+rake -T
+vim Rakefile
+rake -T
+rake version:ruby
+vim Rakefile
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler.rb
+rake version:ruby
+vim lib/mastodon/version.rb
+rake version:ruby
+vim Rakefile
+rake version:ruby
+git st
+git log
+vim
+vim
+grep 'commit' /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+git st
+git idff
+git rm VERSION
+git st
+git diff
+git stash
+git st
+git rebase -i
+git log
+git rebase -i 2fb4f24a1eb04b32610bf4d67a775de520404b0b
+git rebase -i 2fb4f24a1eb04b32610bf4d67a775de520404b0b
+git st
+git rebase -i 2fb4f24a1eb04b32610bf4d67a775de520404b0b^
+git rebase -i 2fb4f24a1eb04b32610bf4d67a775de520404b0b~
+git log
+git st
+grep 'Git' /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/
+grep 'Git' /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/ G -v generator
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/commands/release_to_git.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/version_helper.rb
+grep 'commit' /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler.rb
+irb
+git commit --help
+vim Rakefile
+ls
+git st
+git add Rakefile
+git commit --amend
+git commit --help
+man githooks
+git st
+git add test/
+git commit --amend --no-verify
+git st
+git rebase HEAD
+git rebase HEAD^
+git rebase HEAD~
+git log
+git log
+git rebase 2fb4f24a1eb04b32610bf4d67a775de520404b0b
+git st
+git log
+git rebase 2fb4f24a1eb04b32610bf4d67a775de520404b0b -i
+git st
+git rebase --continue
+git rebase 2fb4f24a1eb04b32610bf4d67a775de520404b0b -i
+git rebase 2fb4f24a1eb04b32610bf4d67a775de520404b0b -i --help
+vim .git/COMMIT_EDITMSG
+git st
+git add lib/mastodon/
+vim .git/config
+vim ~/.gitconfig
+vim .git/config
+vim .git/COMMIT_EDITMSG
+run-help git
+git commit --file=.git/COMMIT_EDITMSG --amend
+git commit --help
+touch foo
+git add foo
+git st
+git commit --file=.git/COMMIT_EDITMSG --amend -q
+git tst
+git st
+vim Rakefile
+ls
+rm foo
+yrm .git
+git st
+git init
+git st
+vim VERSION.yml
+rm .rake_tasks
+vim Rakefile
+cat .rake_tasks
+vim Rakefile
+rake -T
+git st
+git add lib/
+git ci
+git commit -m "Initial Commit"
+git rebase -i HEAD
+git rebase -i HEAD^
+git log
+git rebase -i 0fa1b24e97cd1058b066c6dc9b5a89086e27f874
+git st
+git rm lib/mastodon/version.rb
+git st
+git reset HEAD lib/mastodon/version.rb
+git st
+git checkout -- lib/mastodon/version.rb
+git st
+git br
+git co master
+git st
+git br
+git add Rakefile VERSION.yml
+git ci
+git add test/
+git ci
+git st
+git log
+vim Rakefile
+git st
+rake version:bump:minor
+git log
+vim lib/mastodon/version.rb
+git rebase -i HEAD^
+git rebase --abort
+git st
+git rebase -i HEAD^
+git rebase --log
+git log
+git st
+ls
+ls lib
+ls ..
+git st
+git rebase --skip
+vim .git/objects/03/67f344042a2777162a39513ac31d35ae644496
+vim .git/objects/info/*
+vim .git/objects/info/
+mcabber
+irb
+htop
+pms
+mpc
+ri Array
+ri Array#grep
+screen -ls
+ssh-me
+code/mastodon
+git read-tree --help
+git relink --help
+git checkout-index --help
+..
+cp mastodon mastodon-backup
+mastodon
+git checkout-index
+git checkout-index lib/mastodon
+git checkout-index lib
+git checkout-index Rakefile
+git lost-found --help
+git fsck --help
+git fsck --lost-found
+ls .git/
+ls .git/lost-found
+ls .git/lost-found/commit
+gitk $(ls .git/lost-found/commit/*)
+git lost-found --help
+gitk $(cd .git/lost-found/commit && echo ??*)
+git lost-found --help
+git cat-file --help
+git cat-file -t 4d477eff851950c434f205579d344d151afe95be
+git cat-file commit 4d477eff851950c434f205579d344d151afe95be
+git cat-file blob 4d477eff851950c434f205579d344d151afe95be
+git cat-file tag 4d477eff851950c434f205579d344d151afe95be
+git cat-file tree 4d477eff851950c434f205579d344d151afe95be
+ls
+git cat-file --help
+git cat-file commit 4d477eff851950c434f205579d344d151afe95be -p
+git cat-file -p commit 4d477eff851950c434f205579d344d151afe95be
+git cat-file -p 4d477eff851950c434f205579d344d151afe95be
+git log
+ls .git/logs
+ls .git/logs/refs
+ls .git/logs/refs/heads
+vim .git/logs/refs/heads/master
+git cat-file -p 0367f344042a2777162a39513ac31d35ae644496
+cat .git/logs/refs/heads/master
+git branch 8d765605882e6ec6af622913e4b0ee954df0c366
+ls
+git st
+git log
+git br
+git branch --help
+git br test 8d765605882e6ec6af622913e4b0ee954df0c366
+git st
+git br
+git co test
+ls
+git log
+git br
+git co master
+git branch --help
+git branch --merged 8d765605882e6ec6af622913e4b0ee954df0c366
+git branch --help
+git br -D 8d765605882e6ec6af622913e4b0ee954df0c366
+git br -D test
+git br
+git cat-file -p 8d765605882e6ec6af622913e4b0ee954df0c366
+git co -b rakefile 8d765605882e6ec6af622913e4b0ee954df0c366
+ls
+ls
+vim Rakefile
+git co -b testing 0367f344042a2777162a39513ac31d35ae644496
+ls
+ls test
+vim test/test_helper.rb
+vim test/test.rb
+git br
+git co master
+git merge testing
+git st
+git br -D rakefile
+git br -D testing
+ls
+git log
+git gc
+git log
+ls .git
+ls .git/objects
+ls .git/objects/info
+ls .git/objects/pack
+rm .git/lost-found
+ls
+vim Rakefile
+ls lib
+vim lib/mastodon.rb
+vim Rakefile
+rake -T
+ls /usr/lib/ruby/site_ruby/1.9.1/
+ls /usr/lib/ruby/site_ruby/1.9.1/i686-linux
+ls /usr/lib/ruby/site_ruby/1.9.1/i686-linux/svn
+ls /usr/lib/ruby/site_ruby/1.9.1/i686-linux/svn/ext
+ls /usr/lib/ruby/1.9.1
+ls /usr/lib/ruby/1.9.1/rake
+vim /usr/lib/ruby/1.9.1/rake/testtask.rb
+rake test
+vim lib/mastodon
+vim Rakefile
+git st
+git diff
+vim lib/mastodon/version.rb
+rake test
+ls test
+vim Rakefile
+rake test
+vim test/test.rb
+vim Rakefile
+rake test
+touch test/test_a_helper.rb
+rake test
+touch test/test_a.rb
+rake test
+vim /usr/lib/ruby/1.9.1/rake/testtask.rb
+vim /usr/lib/ruby/1.9.1/rake/loaders/makefile.rb
+rm test/test_a*
+git st
+git diff
+git add Rakefile -p
+git add lib/mastodon/version.rb
+git ci
+git st
+git diff
+git add lib/mastodon.rb
+git ci
+vim lib/mastodon
+git commit -F .git/COMMIT_EDITMSG --amend
+git log
+git rebase -i HEAD~
+git st
+git diff
+git commit --amend
+git st
+git add lib/mastodon.rb
+git commit -F .git/COMMIT_EDITMSG --amend
+git st
+git log
+git add Rakefile
+git ci
+ls /usr/lib/ruby/1.9.1/minitest
+vim /usr/lib/ruby/1.9.1/minitest/spec.rb
+vim /usr/lib/ruby/1.9.1/minitest/unit.rb
+grep 'rake' /usr/lib/ruby/1.9.1/minitest/
+grep 'rake' /usr/lib/ruby/1.9.1/test/
+..
+git clone git@github.com:evaryont/nanotest.git
+nanotest
+gh
+git br
+vim .git/config
+git remote add --help
+git remote add mynyml git://github.com/mynyml/nanotest.git
+git remote add 
+git remote add mikowitz git://github.com/mikowitz/nanotest.git
+git remote add severin git://github.com/severin/nanotest.git
+git remote update
+git br
+git merge severin/master
+git merge mikowitz/master
+vim lib/nanotest.rb
+git st
+git add lib/nanotest.rb
+git st
+git commit lib/nanotest.rb
+git commit
+git st
+vim lib/nanotest.rb
+git st
+git add lib/nanotest.rb
+git ci
+ls
+rake test:all
+vim test/test_nanotest.rb +87
+rake test:all
+vim lib/nanotest.rb
+vim lib/nanotest.rb +19
+rake test:all
+vim lib/nanotest.rb +19
+rake test:all
+vim test/test_nanotest.rb +69
+vim lib/nanotest.rb +19
+git log
+git rebase -i 1b17eea4606967c41a0f3dff8360b51d513308ec
+git add lib/nanotest.rb
+git add test/test_nanotest.rb 
+vim ~/.gitignore
+git ci
+git st
+git rebase -i 1b17eea4606967c41a0f3dff8360b51d513308ec
+git rebase -i 1b17eea4606967c41a0f3dff8360b51d513308ec
+git st
+git diff
+git br
+git rebase --abort
+git st
+git log
+git rebase -i c3732137d3ac01ed65c5e76935711afdd2debab4
+git st
+git merge severin/master
+git diff
+git log
+vim lib/nanotest.rb
+..
+yrm nanotest
+compinstall --help
+man zshbuiltins
+functions G compinstall
+functions G compinstall -A3
+compinstall
+vim .zshr
+vim ~/.zshrc
+ls
+mastodon/
+ls
+rake test
+vim test/test.rb
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+vim test/test.rb
+rake test
+vim lib/mastodon.rb
+git st
+git diff
+git add test/test.rb
+git ci
+git commit --amend
+git st
+git log
+ls
+vim lib/mastodon
+vim test/test.rb
+rake test
+vim test/*
+rake test
+vim test/test_helper.rb
+rake test
+git st
+git add test/test_helper.rb
+git ci
+git diff
+git add lib/mastodon.rb
+git ci
+git st
+git diff
+git add test/test.rb
+git ci
+vim test/test_helper.rb
+vim test/test.rb
+rake test
+vim test/test.rb +4
+vim test/test.rb +17
+rake test
+vim test/test.rb +8
+vim test/test.rb +8
+vim test/test.rb
+vim lib/mastodon.rb
+irb -Ilib
+irb -Ilib:tests
+irb -Ilib:test
+vim lib/mastodon.rb
+irb -Ilib:test
+vim lib/mastodon.rb
+irb -Ilib:test
+rake test
+vim test/test.rb +5
+irb -Ilib:test
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb +39
+rake test
+vim test/test.rb +4
+vim lib/mastodon.rb
+rake test
+vim test/test.rb +8
+rake test
+git st
+git diff
+git add test/test.rb
+git ci
+git diff
+git add test/test_helper.rb
+git ci
+git st
+git rebase -i HEAD~~
+git add lib/mastodon.rb
+git ci
+git rebase -i HEAD~~~
+git st
+git remote add origin git@github.com:evaryont/mastodon.git
+git push origin master
+mcabber
+s reboot
+mpc
+mpc toggle
+mpc toggle
+ifconfig
+startxl
+vim .vimperator
+Downloads
+ls
+unzip -lf mono.growlstyle.1.3.zip
+unzip mono.growlstyle.1.3.zip
+mv __MACOSX Mono.growlStyle
+Mono.growlStyle
+ls
+ls Contents
+ls Contents/Resources
+vim Contents/Resources/default.css
+vim Contents/Resources/template.html
+pacman -Ql noteo L
+PS G rec
+vim ~/bin/recoll-start.sh
+PS G rec
+recollindex --help
+~/code
+git clone git://github.com/bavardage/noteo.git
+noteo/
+ls
+vim src/modules/Popup.py
+~
+arson popup
+arson notify
+arson galago
+arson -s galago
+arson --help
+pacman -Ss galago
+arson notification
+rm ~aur/galago-sharp
+arson -d statnot
+~aur/statnot
+vim PKGBUILD
+arson -d screenalert
+~aur/screenalert
+ls 
+vim PKGBUILD
+makepkg
+makepkg -A
+mv ~/Downloads/screenalert-0.1.tar.bz2 .
+ls
+makepkg
+makepkg -A
+ls 
+ls pkg/usr
+ls pkg/usr/share
+ls pkg/usr/share/screenalert
+ls pkg/usr/share/screenalert/themes/
+ls pkg/usr/share/screenalert/themes/Matrix3D
+vim pkg/usr/share/screenalert/themes/Matrix3D/theme.cfg
+feh pkg/usr/share/screenalert/themes/Matrix3D/matrix.png
+feh pkg/usr/share/screenalert/themes/WinXP/winxp.png
+vim pkg/usr/share/screenalert/themes/Matrix3D/about
+ls pkg/usr/bin
+strings pkg/usr/bin/screenalert L
+grep 'libnoti' src
+pkg/usr/bin/screenalert
+PS G screen
+kill 6473
+PS G screen
+makepkg -i
+makepkg -iA
+screenalert
+~
+screenalert --help
+screenalert -t "TITLE" "Hello, there\!"
+screenalert -t "TITLE" "Hello, there\!" -d 1000
+screenalert -t "TITLE" "Hello, there\!" -d 5
+screenalert -p
+screenalert -t "TITLE" "Hello, there\!" -d 5
+screenalert -t "TITLE" "Hello, there\!" -d 5
+screenalert -t "TITLE" "Hello, there\!" -d 16
+screenalert -t "TITLE" "Hello, there\!" -d 16
+screenalert -t "TITLE" "Hello, there\!" -d 16
+screenalert -t "TITLE" "Hello, there\!" -d 16
+screenalert -t "TITLE" "Hello, there\!" -d 16
+screenalert -t "TITLE" "Hello, there\!" -d 16
+pacman-r screenalert
+arson notification &> arson.notification.log
+vim arson.notification.log
+vim arson.notification.log
+arson notify &> arson.notify.log
+vim arson.notify.log
+rm arson.notif*
+vim notification_apps.txt
+vim notification_apps.txt
+~/code
+  git clone git://gitorious.org/colibri/colibri.git   
+colibri
+ls
+vim CMakeLists.txt
+grep 'kde' app
+..
+yrm colibri
+ls colin@192.168.1.27
+vim colin@192.168.1.27/app.rb
+yrm colin@192.168.1.27/app.rb
+yrm colin@192.168.1.27
+ls
+git clone git://github.com/borman/cuteinformer.git 
+cuteinformer
+l
+ls
+qmake
+ls
+make
+ls
+./cuteinformer
+PS G no
+PS G not
+lsdbus
+htop
+lsdbus
+./cuteinformer
+lsdbus
+htop
+lsdbus
+PS G noteo
+vim /tmp/startx.log
+noteo --help
+kill -2 6890
+PSG noteo
+kill -3 6890
+PSG noteo
+kill -15 6890
+PSG noteo
+lsdbus
+vim .xinitrc
+lsdbus
+htop
+htop --help
+htop --sort-key
+htop --sort-key help
+htop -u colin
+code/cuteinformer
+./cuteinformer
+grep 'unable to' *
+vim main.cpp
+./cuteinformer --help
+./cuteinformer --debug
+vim main.cpp
+ls theme
+strings cuteinformer L
+vim Makefile
+strings cuteinformer G theme
+vim Makefile
+grep '\/usr\/share\/cuteinformer' *
+grep '\/usr\/share\/cuteinformer' .
+grep '\/usr\/share' .
+grep 'theme' .
+make distclean
+ls
+qmake --help
+vim cuteinformer.pro
+qmake -set PREFIX /usr/local/
+ls
+vim cuteinformer.pro
+grep 'prefix' *
+bim Settings.
+vim Settings.cpp
+qmake -set PREFIX /usr/local/ -makefile
+ls
+qmake -makefile -Wall
+ls
+make --help G def
+make --help L
+INSTALL_PREFIX="/usr/local" make
+strings cuteinformer L
+make INSTALL_PREFIX="/usr/local"
+make INSTALL_PREFIX="/usr/local" all
+make clean
+make INSTALL_PREFIX="/usr/local"
+strings cuteinformer G usr
+vim Makefile
+vim cuteinformer.pro
+make distclean
+qmake 
+vim Makefile
+vim cuteinformer.pro
+make distclean
+qmake
+vim Makefile
+make
+vim Makefile
+vim cuteinformer.pro
+make distclean
+qmake
+vim Makefile
+vim cuteinformer.pro
+make distclean && qmake
+make
+vim Makefile
+make
+vim Makefile
+vim Makefile
+vim ThemeManager.cpp
+vim Settings.cpp
+git st
+git co -- cuteinformer.pro
+git st
+vim cuteinformer.pro
+make distclean
+ls
+qmake && make
+vim Makefile
+make install
+make FORCE
+make Makefile
+ls
+qmake --help
+vim .git/config
+vim ~/.xinitrc
+vim ~/.xbindkeysrc.scm
+vim ~/bin/urxvt.sh
+arson purple
+pacman -Ss ncurses
+arson mpd
+arson notify
+arson -d mpd-libnotify
+~aur/mpd-libnotify
+ls
+makepkg
+ls src
+ls src/mpd-libnotify-0.1.2
+vim src/mpd-libnotify-0.1.2/README
+vim src/mpd-libnotify-0.1.2/NEWS
+vim src/mpd-libnotify-0.1.2/INSTALL
+vim src/mpd-libnotify-0.1.2/src/mpdnotify.
+vim src/mpd-libnotify-0.1.2/src/mpdnotify.c
+vim ~/.mcabber/events.sh
+rm ~/.mcabber/events/bodies/*
+rm ~/.mcabber/logs/trace.log
+vim ~/.mcabberrc
+vim ~/.mcabber/events.sh
+vim ~/.mcabber/events.sh ~/.mcabberrc
+cp /var/abs/community/mcabber ~aur
+~aur/mcabber
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+src/mcabber-0.9.10
+ls
+ls contrib
+ls contrib/themes
+vim contrib/themes/oliver.txt
+vim contrib/events/eventcmd
+vim mcabberrc.example
+vim contrib/events/eventcmd
+vim contrib/events/eventcmd.osd
+vim contrib/events/eventcmd.pastebin
+vim contrib/events/mcnotify.py
+vim contrib/events/eventcmd
+arson sounds
+arson system-sounds-android
+~aur/system-sounds-android
+vim PKGBUILD
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/share/sounds
+ls pkg/usr/share/sounds/android
+ls pkg/usr/share/sounds/android/notifications
+play pkg/usr/share/sounds/android/notifications/IM_Me.ogg
+mplayer pkg/usr/share/sounds/android/notifications/IM_Me.ogg
+mplayer pkg/usr/share/sounds/android/notifications/TaDa.ogg
+mplayer pkg/usr/share/sounds/android/notifications/Star_Struck.ogg
+mplayer pkg/usr/share/sounds/android/notifications/Beat_Box_Android.ogg
+mplayer pkg/usr/share/sounds/android/Growl.ogg
+mplayer pkg/usr/share/sounds/android/InsertCoin.ogg
+mplayer pkg/usr/share/sounds/android/FriendlyGhost.ogg
+mplayer pkg/usr/share/sounds/android/BirdLoop.ogg
+mplayer pkg/usr/share/sounds/android/ring*
+mplayer pkg/usr/share/sounds/android/Terminated.ogg
+ls /usr/share/sounds
+ls /usr/share/sounds/alsa
+alsa sounds
+arson sounds
+makepkg -i
+arson system-sounds-hildon
+~aur/system-sounds-hildon
+makepkg
+ls pkg/usr/share/sounds
+ls pkg/usr/share/sounds/hildon
+mplayer pkg/usr/share/sounds/hildon/ui-pen_down.wav
+mplayer pkg/usr/share/sounds/hildon/ui-key_press.wav
+mplayer pkg/usr/share/sounds/hildon/ui-shutdown.wav
+mplayer pkg/usr/share/sounds/hildon/ui-new_email.wav
+mplayer pkg/usr/share/sounds/hildon/ui-information_note.wav
+mplayer pkg/usr/share/sounds/hildon/ui-default_beep.wav
+mplayer pkg/usr/share/sounds/hildon/ui-confirmation_note.wav
+mplayer pkg/usr/share/sounds/hildon/ui-battery_low.wav
+mplayer pkg/usr/share/sounds/hildon/ui-con
+mplayer pkg/usr/share/sounds/hildon/ui-connection_lost.wav
+mplayer pkg/usr/share/sounds/hildon/ui-window_*
+ls
+makepkg -i
+arson asterisk-sounds
+~aur/asterisk-sounds
+makepkg
+vim PKGBUILD
+arson sound
+arson suite
+s pacman -S pacman-contrib
+pacman -Ql pacman-contrib
+pacman -Ss pacman
+paclist
+pacsearch
+pactree
+pacscripts
+pacdiff
+~
+vim .mcabberrc .mcabber/events.sh
+vim .mcabberrc .mcabber/events.sh
+vim .mcabberrc .mcabber/events.sh
+vim .mcabberrc .mcabber/events.sh
+ls .mcabber
+ls .mcabber/events
+ls .mcabber/events/bodies
+ls .mcabber/events
+rm .mcabber/events
+mkdir .mcabber/events
+vim .mcabber/events.sh
+vim .mcabber/events.sh
+ls /usr/share/icons/oxygen/32x32/actions
+notify-send "$(< $filename)" "by: $arg2" --icon=/usr/share/icons/oxygen/32x32/actions/im-user.png
+notify-send "$(< TODO)" "by: thristhart" --icon=/usr/share/icons/oxygen/32x32/actions/im-user.png
+vim .mcabber/events.sh
+vim .mcabber/events.sh
+notify-send "$(< Stuffs)" "by: thristhart" --icon=/usr/share/icons/oxygen/32x32/actions/im-user.png
+vim /tmp/startx.log
+PS G cute
+~/code/cuteinformer
+./cuteinformer --help
+./cuteinformer --settings
+notify-send --help
+notify-send "No title associated with this one"
+notify-send "A new message appeared from HAL "I'm sorry Dave, I'm afraid I can't do that."
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that."
+find /usr/share/icons/oxygen/32x32 -name *chat*
+find /usr/share/icons/oxygen/32x32 -name *im*
+find /usr/share/icons/oxygen/32x32 -name *-im-*
+find /usr/share/icons/oxygen/32x32 -name *im-*
+find /usr/share/icons/oxygen/32x32 -name im-*
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/32x32/actions/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/32x32/actions/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/32x32/actions/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/256x256/apps/konqueror.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen//48x48/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/48x48/actions/im-user
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/48x48/actions/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/32x32/actions/im-user.png
+notify-send "A new message appeared from HAL" "I'm sorry Dave, I'm afraid I can't do that." -i /usr/share/icons/oxygen/32x32/actions/im-user.png
+vim Settings.cpp
+ls ~/.config
+ls ~/.config/Trolltech
+vim ~/.config/Trolltech.conf
+vim ~/.config/Trolltech/QMake.conf 
+ls
+grep 'settings'
+grep 'settings' *
+vim Settings.cpp
+make install
+~
+mcabber
+mcabber
+s reboot
+startxl
+htop
+lsdbus
+startxl
+startxl
+vim .xinitrc
+startxl
+irb
+vim bin/newgrounds_dl
+vim bin/newgrounds_dl
+chmod a+x bin/newgrounds_dl
+newgrounds_dl
+newgrounds_dl
+newgrounds_dl 205533
+vim bin/newgrounds_dl
+vim bin/newgrounds_dl
+newgrounds_dl 205533
+vim bin/newgrounds_dl
+newgrounds_dl 205533
+irb
+gem search debug
+s gem install ruby-debug19
+irb
+irb
+vim bin/newgrounds_dl
+irb
+vim bin/newgrounds_dl
+cat bin/newgrounds_dl
+irb
+vim bin/newgrounds_dl
+ruby bin/newgrounds_dl
+ruby bin/newgrounds_dl 92413
+id3info
+id3info --help
+id3tag --help
+id3cp --help
+wget http://www.newgrounds.com/audio/download/92413
+id3info 92413
+id3info 92413 G title
+id3info 92413 G songname
+id3info 92413 G songname | cut -d':' -f2-
+id3info 92413 G songname | cut -d':' -f2- | sed '/^\s/*d;/\s*$/d'
+id3info 92413 G songname | cut -d':' -f2- | sed '/^\s*/d;/\s*$/d'
+id3info 92413 G songname | cut -d':' -f2- | sed '/^\s/d;/\s$/d'
+id3info 92413 G songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//'
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//'
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//;s/[^A-Za-z0-9_-]*//'
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//'
+man sed
+man tr
+man sed
+man tr
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//' | tr -d '[:alphanum:]'
+man tr
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//' | tr -d '[:alnum:]'
+id3info 92413 | grep songname | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//' | tr -c -d '[:alnum:]'
+id3info 92413
+id3info 92413 | grep tpe1 | cut -d':' -f2- | sed 's/^\s*//;s/\s*$//' | tr -c -d '[:alnum:]'
+vim bin/newgroundl
+vim bin/newgroundl
+vim bin/newgroundl
+man wget
+vim bin/newgroundl
+chmod a+x bin/newgroundl
+vim bin/newgroundl
+vim bin/newgroundl
+ls
+rm 92413
+newgroundl 92413
+vim bin/newgroundl
+vim bin/newgroundl
+newgroundl 92413
+wget --user=evaryont --password=c1235748twttrs http://twitter.com/account/archive\?page\=\#\{i\}
+vim login
+rm login
+wget --user=evaryont --password=c1235748twttrs http://twitter.com/account/archive\?page\=1
+rm login
+s gem install twitter_archive
+code/
+git clone git://github.com/csexton/twitter_archive.git
+twitter_archive
+ls
+ls script
+rake
+gem search parsedate
+gem search parse date
+gem search parse date L
+ls
+vim bin/twitter_archive
+ruby bin/twitter_archive
+vim lib/twitter_archive/base.rb
+grep 'parse' *
+ls lib/twitter_archive/backends
+vim lib/twitter_archive/base.rb lib/twitter_archive/backends/blogger_archive.rb
+ls
+ruby bin/twitter_archive
+grep 'blogger' lib/twitter_archive8
+grep 'blogger' lib/twitter_archive.rb
+grep 'blogger' lib/twitter_archive/*.rb
+grep 'blogger' lib/twitter_archive/backends/
+grep 'blogger' lib/
+grep 'require' 
+grep 'require' bin lib
+vim lib/twitter_archive/base.rb
+ruby bin/twitter_archive
+grep 'markup' *
+grep 'rdoc' *
+vim lib/twitter_archive/runner.rb
+grep 'rdoc' * G rdoc_readme\.rb
+grep 'rdoc' * G rdoc_readme\.rb G -v gemspec
+ruby bin/twitter_archive
+ruby bin/twitter_archive --help
+vim README.rdoc
+vim ~/.twitter_archive.yml
+ls
+vim ~/.twitter_archive.yml
+vim ~/.twitter_archive.yml
+vim ~/.twitter_archive.yml
+ruby bin/twitter_archive
+vim lib/twitter_archive/base.rb +53
+vim lib/twitter_archive/base.rb +53
+vim ~/.twi
+vim ~/.twitter_archive.yml README.rdoc
+ls lib
+ls lib/twitter_archive
+ls lib/twitter_archive/backends
+ruby bin/twitter_archive
+ls
+vim tweets.yml
+../mastodon
+ls
+vim test/test_helper.rb
+fg
+rake test
+grep 'pathname' /usr/lib/ruby/gems/1.9.1/gems/rake-0.8.7/lib
+ls
+vim Rakefile
+rake test
+git st
+git add Rakefile
+git ci
+git add test/test_helper.rb
+git ci
+git st
+git mv test/test.rb test/test_mastodon.rb
+git st
+git ci
+vim Rakefile
+git add Rakefile
+git commit --amend
+ls
+mpc
+mpc
+ls
+ls test
+rake test
+vim test/test_mastodon.rb +4
+vim test/test_mastodon.rb +4
+ri Set
+vim test/test_mastodon.rb
+irb
+ri Struct
+ri Struct.new
+ri Struct
+ri Struct#new
+ri Struct
+ri Struct
+ri Struct
+vim lib/mastodon/todo.rb
+git st
+git diff
+vim test/test_mastodon.rb
+git diff
+git add test/test_mastodon.rb
+git ci
+ri Set
+ri Enumerable
+irb
+ri Set
+vim test/test_mastodon.rb
+git commit test/test_mastodon.rb --amend
+git st
+vim .git/config
+git branch --help
+vim lib/mastodon/todo.rb
+ri String#match
+ri String
+irb
+ri Comparable
+ri NilClass
+irb
+irb
+irb
+vim ~/.config/awesome/rc.lua
+dotfiles
+git st
+git add config/awesome/rc.lua
+git ci
+git diff
+git add -p gitconfig.tmpl
+git ci
+git diff
+git add gitconfig.tmpl
+git ci
+git st
+git diff
+git add vimperatorrc
+git ci
+git add vim/spell/en.utf-8.add 
+git ci
+git add xinitrc
+git ci
+git st
+irb
+ri Regexp
+ri String#scan
+ri String#delte
+ri String#delete
+ri String
+irb
+irb
+Media/Videos
+youtube-dl --help
+youtube-dl -b -t http://www.youtube.com/v/-dadPWhEhVk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/6FMsn-55QA4\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1
+youtube-dl -s -b -t http://www.youtube.com/v/-dadPWhEhVk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/6FMsn-55QA4\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1
+rm Ataque_de_P_nico_Panic_Attack_2009--dadPWhEhVk.flv
+youtube-dl --help
+youtube-dl -s -d -t http://www.youtube.com/v/-dadPWhEhVk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/6FMsn-55QA4\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1
+youtube-dl -s -b -t http://www.youtube.com/v/-dadPWhEhVk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/6FMsn-55QA4\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1
+youtube-dl -b -t http://www.youtube.com/v/-dadPWhEhVk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/6FMsn-55QA4\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/5InW89_vnHQ\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/0uWBAt6FKdg\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/FrLkHn_RlgY\&hl\=en_US\&fs\=1\&rel\=0 http://www.youtube.com/v/KLRPGJ8sDbU\&hl\=en_US\&fs\=1\&rel\=0\&color1\=0x5d1719\&color2\=0xcd311b\&border\=1 http://www.youtube.com/v/WxB1gB6K-2A\&hl\=en_US\&fs\=1\&rel\=0\&color1\=0x5d1719\&color2\=0xcd311b\&border\=1  http://www.youtube.com/v/icTrzUuWlHI\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/Vxq9yj2pVWk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/watch\?v\=urNyg1ftMIU\&feature\=player_embedded http://www.youtube.com/v/LFybwg4wadI\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/watch\?v\=8410qUT4QtA\&feature\=player_embedded http://www.youtube.com/v/BudhFVnN2o0\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/17jymDn0W6U\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 
+youtube-dl -b -t http://www.youtube.com/v/WxB1gB6K-2A\&hl\=en_US\&fs\=1\&rel\=0\&color1\=0x5d1719\&color2\=0xcd311b\&border\=1  http://www.youtube.com/v/icTrzUuWlHI\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/Vxq9yj2pVWk\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/watch\?v\=urNyg1ftMIU\&feature\=player_embedded http://www.youtube.com/v/LFybwg4wadI\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/watch\?v\=8410qUT4QtA\&feature\=player_embedded http://www.youtube.com/v/BudhFVnN2o0\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 http://www.youtube.com/v/17jymDn0W6U\&hl\=en_US\&fs\=1\&rel\=0\&hd\=1 
+mplayer The_Known_Universe_by_AMNH-17jymDn0W6U.mp4
+code/mastodon
+ls
+ls
+ls test
+git st
+git add lib/mastodon/todo.rb
+git ci
+vim lib/mastodon.rb
+git commit --amend lib/mastodon.rb
+ls
+vim lib/mastodon.rb
+git st
+git diff
+git add lib/mastodon/todo.rb
+git ci
+git diff
+git add lib/mastodon.rb
+git ci
+rake test
+vim /usr/lib/ruby/gems/1.9.1/gems/nanotest_extensions-0.6.1/lib/nanotest/stats.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/nanotest_extensions-0.6.1/lib/nanotest/stats.rb
+rake test
+vim lib/mastodon.rb +20
+rake test
+vim lib/mastodon.rb +20
+rake test
+git st
+git add lib/mastodon.rb
+git ci
+git commit --amend
+vim lib/mastodon.rb
+ri Array
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb +76
+rake test
+ls
+git st
+git add lib/mastodon.rb
+git ci
+git st
+vim test/test_mastodon.rb +4
+rake test
+vim lib/mastodon.rb +17
+vim test/test_mastodon.rb +17
+git st
+rake test
+git add test/test_mastodon.rb
+git ci
+vim test/test_mastodon.rb
+git commit --amend test/test_mastodon.rb
+vim test/test_helper.rb
+rake test
+ls
+mv todo.txt test
+ls
+rake test
+vim test/test_mastodon.rb +18
+rake test
+git log
+git st
+git commit --amend test/test_mastodon.rb
+git add test/todo.txt test/test_helper.rb
+git ci
+git st
+rake test
+vim test/test_mastodon.rb +18
+vim lib/mastodon/todo.rb
+rake test
+vim lib/mastodon/todo.rb
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+rake test
+vim test/test_helper.rb
+rake test
+vim test/test_helper.rb
+rake test
+vim ~/.vimrc
+vim test/test_helper.rb
+vim test/test_helper.rb
+vim ~/.vimrc
+vim test/test_helper.rb
+vim test/test_helper.rb
+vim test/test_mastodon.rb
+git st
+git diff
+vim test/test_helper.rb
+git diff
+rake test
+vim test/test_helper.rb
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+vim test/test_mastodon.rb +21
+rake test
+vim test/test_mastodon.rb +21
+rake test
+vim test/test_mastodon.rb +21
+rake test
+vim test/test_mastodon.rb +21
+git st
+git diff
+rake test
+git add lib/mastodon/todo.rb test/test_mastodon.rb
+git ci
+git st
+git push
+rake test
+vim test/test_mastodon.rb +4 test/todo.txt
+rake test
+vim test/test_mastodon.rb +4 test/todo.txt
+rake test
+vim test/todo.txt
+vim test/todo.txt
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb +37
+vim lib/mastodon.rb +37
+rake test
+vim test/test_mastodon.rb +21
+git st
+vim test/todo.txt
+irb
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+rake test
+git st
+git diff
+git add test/todo.txt
+git ci
+vim lib/mastodon
+vim lib/mastodon.rb
+vim test/todo.txt
+git st
+git diff
+git add test/todo.txt
+git ci
+vim test/todo.txt
+git commit test/todo.txt --amend
+git diff
+git diff
+rake test
+vim lib/mastodon.rb
+rake test
+vim test/todo.txt
+vim test/todo.txt
+vim test/todo.txt
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+git st
+git diff
+vim test/test_mastodon.rb
+git add test/test_mastodon.rb
+git ci
+vim lib/mastodon.rb
+vim test/todo.txt
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb +8
+vim test/test_mastodon.rb +8
+rake test
+vim test/test_mastodon.rb +8
+rake test
+vim test/test_mastodon.rb +11
+rake test
+rake test
+rake test
+ls
+git st
+git diff
+git add lib/mastodon.rb
+vim lib/mastodon.rb
+git add lib/mastodon.rb
+git ci
+git add test/test_mastodon.rb
+git ci
+git st
+git push
+vim test/test_mastodon.rb
+vim test/test_mastodon.rb test/todo.txt
+rake test
+git add test/test_mastodon.rb
+git ci
+vim test/test_mastodon.rb test/todo.txt
+fg
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+rake test
+vim test/test_mastodon.rb +34 test/todo.txt
+take test
+rake test
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+vim test/test_mastodon.rb
+rake test
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+git add lib/mastodon/todo.rb
+git ci
+git st
+git diff
+vim test/test_mastodon.rb
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+vim test/test_mastodon.rb
+rake test
+vim test/test_mastodon.rb
+git st
+git diff lib/mastodon
+git diff lib/mastodon.rb
+vim test/test_mastodon.rb
+vim test/test_mastodon.rb test/todo.txt lib/mastodon.rb
+rake test
+vim test/test_mastodon.rb test/todo.txt lib/mastodon.rb
+rake test
+vim test/test_mastodon.rb test/todo.txt lib/mastodon.rb
+rake test
+vim test/test_mastodon.rb test/todo.txt lib/mastodon.rb lib/mastodon/todo.rb
+rake test
+vim test/test_mastodon.rb test/todo.txt lib/mastodon.rb lib/mastodon/todo.rb
+rake test
+vim Rakefile
+ssh-me
+screen -ls
+ssh-me
+mcabber
+s /etc/rc.d/mpd stop
+s umount /media/nas 
+s reboot
+mpc toggle
+mpc next
+mpc toggle
+mpc toggle
+mpc next
+mpc toggle
+mpc toggle
+startxl
+PS G cute
+vim /tmp/startx.log
+~aur/awesome-git
+grep 'notifications' src/awesome/
+vim ~/.config/awesome/rc.lua
+vim ~/.vimperatorrc
+htop
+arson goo
+arson -d worldofgoo
+~aur/worldofgoo
+ls
+vim PKGBUILD
+cp ~/Downloads/WorldOfGooSetup.1.41.tar.gz .
+vim PKGBUILD
+makepkg
+ls
+makepkg -i
+vim /usr/share/worldofgoo/properties/config.txt
+../../WorldOfGoo
+./WorldOfGoo
+./WorldOfGoo
+./WorldOfGoo
+~/tmp
+~/Downloads
+tar xf keynav-20091208.00.tar.gz
+keynav-20091208.00
+ls
+vim README
+~/code
+git clone git://github.com/jordansissel/keynav.git
+keynav
+s
+ls
+vim keynav.c
+vim /usr/include/X11/keysymdef.h
+vim keynav.c
+vim keynavrc
+make
+./keynav --help
+./keynav 
+ll ~/.keynavrc
+rm ~/.keynavrc
+./keynav 
+vim keynav.c
+ln -s /home/colin/code/keynav/keynavrc ~/.keynavrc
+ll
+ll ~/.keynavrc
+vim keynavrc
+./keynav
+vim keynavrc
+./keynav
+vim keynavrc
+./keynav
+vim keynavrc
+vim /usr/include/X11/keysymdef.h
+man XStringToKeysym
+vim keynavrc
+./keynav
+./keynav
+vim keynav.c
+make
+./keynav
+./keynav
+vim ~/.Xdefaults
+mkdir ~/.data/urxvt
+..
+git clone git://git.jukie.net/urxvt
+mv urxvt bart-urxvt-perl
+bart-urxvt-perl
+ls
+cp mark-yank-urls ~/.data/urxvt
+xrdb --help
+xrdb -symbols
+xrdb -DHOME=/home/colin -symbols
+cpp --help
+cpp ~/.Xdefaults
+vim ~/.Xdefaults +39
+vim ~/.Xdefaults +39
+ls
+~/dotfiles
+ls
+vim Xdefaults
+git st
+git diff
+git add Xdefaults -p
+git ci
+git st
+git add Xdefaults
+git ci
+git st
+git diff
+git add config/awesome/rc.lua
+git ci
+git st
+git diff
+git add vim/spell/en.utf-8.add
+git ci
+xmodmap G super
+~/code/keynav
+ls
+vim keynavrc
+./keynav
+xmodmap G mod4
+xmodmap G mod4 -C2
+xmodmap G mod4 | xclip -in
+xmodmap G mod4 | xclip -in --help
+xmodmap G mod4 | xclip -in -help
+xmodmap G mod4 | xclip -in -selection primary
+xmodmap G mod4 | xclip -in -selection clipboard
+xmodmap G mod4 | xclip -in -selection buffer-cut
+xmodmap G mod4
+xmodmap G super
+urxvt
+ls ~/.data/urxvt
+vim ~/.Xdefaults
+xrdb -merge ~/.Xdefaults -cpp
+xrdb -cpp -merge ~/.Xdefaults
+file -sb /usr/bin/xrdb
+file -sb /usr/bin/cpp
+Media/Videos
+ls
+mplayer -0uWBAt6FKdg.mp4
+mplayer -- -5InW89_vnHQ.flv
+mplayer -- -5InW89_vnHQ.flv
+mplayer -- -0uWBAt6FKdg.mp4
+mplayer -- battle-sunday_mail.mp4
+mplayer -- Let_s_Enhance-Vxq9yj2pVWk.mp4
+mplayer -- JULIAN_SMITH_Techno_Jeep_Original-LFybwg4wadI.mp4
+mplayer -- honda_commercial_the_cog.mov
+mplayer -- great_christmas_lites.wmv
+ls
+mv -0uWBAt6FKdg.mp4 
+mplayer -0uWBAt6FKdg.mp4 
+mplayer -- -0uWBAt6FKdg.mp4
+mv -- -0uWBAt6FKdg.mp4 Sparta_vs_Norris_0uWBAt6FKdg.mp3
+mv Sparta_vs_Norris_0uWBAt6FKdg.mp3 Sparta_vs_Norris_0uWBAt6FKdg.mp4
+mplayer Sparta_vs_Norris_0uWBAt6FKdg.mp4
+mplayer -- -5InW89_vnHQ.flv 
+mv -- -5InW89_vnHQ.flv Kitten_AntiVirus-5InW89_vnHQ.flv
+ls
+mplayer catties_lol.wmv
+vim get_video.htm
+mplayer get_video.htm
+mv get_video.htm line_rider_Bolted_to_the_Wall.flv
+mv line_rider_Bolted_to_the_Wall.flv line_rider_Bolted_to_the_Wall.mp3
+mv line_rider_Bolted_to_the_Wall.mp3 line_rider_Bolted_to_the_Wall.mp4
+mplayer line_rider_super_mario_bros_1-1.mp4
+ls
+mplayer evolution_of_dance.mp4
+find -name *ice* /media/nas/Music
+find /media/nas/Music -name *ice*
+mplayer ~/Downloads/1101664_Vanilla_ice__Ice_ice_baby.mp3
+mplayer ~/Downloads/1101664_Vanilla_ice__Ice_ice_baby.mp3
+mplayer ~/Downloads/230_vanilla_ice_-_i.mp3
+rm ~/Downloads/1101664_Vanilla_ice__Ice_ice_baby.mp3
+mplayer ~/Downloads/16729_newgrounds_guitar.mp3
+mv ~/Downloads/230_vanilla_ice_-_i.mp3 /media/nas/Music/Vanilla_Ice-Ice_Ice_Baby.mp3
+s mv ~/Downloads/230_vanilla_ice_-_i.mp3 /media/nas/Music/Vanilla_Ice-Ice_Ice_Baby.mp3
+ls /media/nas
+s umount /media/nas 
+s /etc/rc.d/mpd stop
+s umount /media/nas 
+s vim /etc/fstab
+s vim /etc/rc.conf
+s vim /etc/rc.d/netfs
+s mount /media/nas 
+ls /media/nas
+ls /media/nas/Music
+ll /media/nas
+vim /etc/group
+groups
+s chmod -R 775 /media/nas/Music
+/media/nas/Music
+ls
+touch foo
+s touch foo
+..
+..
+s vim /etc/fstab
+s mkdir music
+ls music
+s mount -t cifs //192.168.1.5/media/Music /media/music
+s mount -t cifs "//192.168.1.5/media/Music" /media/music
+dmesg | tail
+s vim /etc/fstab
+s vim /etc/fstab
+s mount /media/music
+s vim /etc/fstab
+s pacman -S smbclient
+pacman -Qo /usr/include/talloc.h
+pacman -Qi talloc
+pacman-r talloc
+s pacman -S smbclient
+s mount /media/music
+ls /media/music
+touch /media/music/foo
+ls nas
+ls nas/Music
+rm music/foo
+mv ~/Downloads/230_vanilla_ice_-_i.mp3 music/Vanilla_Ice-Ice_Ice_Baby.mp3
+vim ~/bin/newgroundl
+music/Newgrounds_Audio_Portal
+newgroundl 16729
+ls
+mplayer 16729_Goukisan.mp3
+alsamixer
+~/Downloads
+tar xf WorldOfGooSetup.1.41.tar.gz
+WorldOfGoo
+ls
+file -sb WorldOfGoo
+file -sb WorldOfGoo.bin32
+vim WorldOfGoo
+./WorldOfGoo
+./WorldOfGoo
+ls ~/.WorldOfGoo
+vim ~/.WorldOfGoo/LastRun.txt
+vim ~/.WorldOfGoo/pers2.dat
+vim ~/.WorldOfGoo/WorldOfGoo.log
+~/code/mastodon
+ls
+rake test
+vim lib/mastodon.rb
+..
+mkdir mastodon-http
+yrm mastodon-backup
+mastodon-http
+ls
+git init
+../mastodon
+vim README.mkd
+vim Rakefile
+rake gemcutter:release
+vim README.mkd
+rdiscount README.mkd
+vim README.mkd
+rdiscount README.mkd
+git st
+git add LICENSE.txt README.mkd
+git ci
+git st
+git add Rakefile
+git ci
+vim Rakefile
+rake -T
+vim Rakefile
+ls
+rake version:bump:minor
+ls
+git add mastodon.gemspec
+git commit --amend
+git st
+git diff
+git add lib/mastodon/version.rb
+git commit --amend
+git st
+git add Rakefile
+git ci
+git st
+vim mastodon.gemspec
+vim Rakefile
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/Rakefile
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/jeweler_tasks.erb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/other_tasks.erb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/jeweler_tasks.erb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/README.rdoc
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/LICENSE
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/features/default.feature
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/riot/helper.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/templates/riot/flunking.rb
+~/Media/Videos
+ls
+youtube-dl --help
+youtube-dl -btc http://www.youtube.com/watch\?v\=b4xHc2Ow9CY\&feature\=player_embedded http://www.youtube.com/watch\?v\=o6YbG_kQPrQ\&feature\=player_embedded
+mplayer The_Honest_10000_SPAM-b4xHc2Ow9CY.mp4
+mplayer Versus-o6YbG_kQPrQ.flv
+~/dotfiles
+git st
+git diff
+vim ~/.xbindkeysrc.scm
+git st
+git diff
+vim bin/newgroundl
+man wget
+vim bin/newgroundl
+vim bin/newgroundl
+newgroundl 154390
+ls
+vim bin/newgroundl
+vim bin/newgroundl
+vim bin/newgroundl
+rm 154390_JebbaL.mp3
+newgroundl 154390
+ls
+mplayer 154390_PokemonDancemiXID154390\\__JebbaL.mp3
+rm 154390_PokemonDancemiXID154390\\__JebbaL.mp3
+vim bin/newgroundl
+man wget
+wget http://google.com -S
+rm index.html
+pv
+arson pv
+s pacman -S pv
+vim ~/bin/newgroundl
+pv
+pv --help
+pv -n
+vim ~/bin/newgroundl
+vim ~/bin/newgroundl
+newgroundl 16729
+man pv
+pacman -Ql pv
+man 1 pv
+s man-db
+s mandb
+man 1 pv
+man pv
+pv --help
+man /usr/share/man1/pv.1.gz
+vim ~/bin/newgroundl
+newgroundl 16729
+man /usr/share/man1/pv.1.gz
+vim ~/bin/newgroundl
+newgroundl 16729
+vim bin/newgroundl
+newgroundl 16729
+vim bin/newgroundl
+id3info /tmp/newgrounds_16729
+id3info /tmp/newgrounds_16729 | grep tit2
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2-
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\(ID: \d+\)//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\(ID: [0-9]+\)//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\(ID: \[0-9\]+\)//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\(ID: [:num:]+\)//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\(ID: .*\)//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/ID: .*//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\s\(ID: .*$//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\s\(ID: .*\$//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\s(ID: .*//'
+id3info /tmp/newgrounds_16729 | grep tit2 | cut -d':' -f2- | sed 's/\s(ID: .*$//'
+vim bin/newgroundl
+newgroundl
+newgroundl 16729
+man /usr/share/man1/pv.1.gz
+vim bin/newgroundl
+vim bin/newgroundl
+newgroundl 16729
+vim bin/newgroundl
+vim bin/newgroundl
+rm /tmp/newgrounds_16729
+ls
+mplayer pickleman77.mp3
+rm pickleman77.mp3
+newgroundl 16729
+vim bin/newgroundl
+echo "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bfoo"
+echo -e "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\bfoo"
+vim bin/newgroundl
+vim bin/newgroundl
+newgroundl 16729
+vim bin/newgroundl
+ls
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+code/mastodon
+ls
+mpc
+s /etc/rc.d/mpd start
+mpc
+pms
+ls
+rake test
+vim /usr/lib/ruby/gems/1.9.1/gems/rake-0.8.7/lib/rake/rake_test_loader.rb
+vim Rakefile
+vim test/run_tests.rb 
+rake test
+rake -T
+vim Rakefile
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+rake -T
+rake test
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+vim test/test_mastodon.rb +32
+git st
+git idff
+git diff
+git add Rakefile test/run_tests.rb
+vim test/test_mastodon.rb
+git ci
+vim Rakefile
+git add -p lib/mastodon.rb
+git ci
+git st
+git diff
+git add lib/mastodon.rb
+git ci
+git st
+git diff
+git add test
+git ci
+fg
+ls
+git st
+vim .git/config ../arson/.git/config
+git st
+rake test
+vim test/test_helper.rb
+git add test/test_helper.rb
+git ci
+git st
+vim test/test_helper.rb
+rake test
+vim test/test_helper.rb test/test_mastodon.rb test/todo.txt
+rake test
+vim test/test_helper.rb test/test_mastodon.rb test/todo.txt
+rake test
+vim test/test_helper.rb test/test_mastodon.rb test/todo.txt
+rake test
+vim test/test_mastodon.rb
+git st
+git add test/test_mastodon.rb
+git ci
+git st
+git push
+vim test/test_helper.rb test/test_mastodon.rb test/todo.txt
+vim test/todo.txt
+vim test/test_helper.rb test/test_mastodon.rb test/todo.txt
+ls /usr/share/vim
+ls /usr/share/vim/vimfiles
+ls /usr/share/vim/vimfiles/plugin
+ls /usr/share/vim/vimfiles/syntax
+vim /usr/share/vim/vimfiles/plugin/notmuch.vim
+git st
+../notmuch
+ls
+-
+~aur/notmuch-git
+ls
+-
+notmuch
+vim ~/.notmuch-config
+notmuch --help
+PS G notm
+ls ~/mail
+mv ~/mail ~/backup
+vim ~/.offlineimaprc
+notmuch 
+mcabber
+mcabber
+ssh-me
+s reboot
+startxl
+s reboot
+s vim /etc/rc.d/mpd
+s vim /etc/rc.conf
+s vim /etc/rc.d/nas_mount
+s chmod a+x /etc/rc.d/nas_mount
+s vim /etc/rc.d/nas_mount
+vim /tmp/startx.log
+vim /tmp/startx.log
+notify-send "hello"
+notify-send "hello" "hi"
+notify-send "hello" "hi"
+notify-send "hello" "hi"
+notify-send "hello" "hi"
+notify-send "hello" "hi"
+notify-send "hello" "hi"
+notify-send "hello" "hi2"
+vim .mcabber/events.sh
+vim .mcabber/events.sh
+mcabber
+vim .mcabberrc
+ls .mcabber/events
+vim .mcabber/events.sh
+mcabber
+vim .mcabber/events.sh
+vim .mcabber/events.rb .mcabber/events.sh
+vim .mcabber/events/events.sh.log
+vim .mcabber/events.sh +45
+vim .mcabber/events/events.sh.log
+vim .mcabber/events.sh +45
+rm .mcabber/events/*
+mcabber
+vim .mcabber/events.sh
+ls .mcabber/events/
+ls .mcabber/events/
+vim .mcabber/events.sh
+s reboot
+s /etc/rc.d/mpd stop
+s vim /etc/rc.d/nas_mount
+s touch /var/run/daemons/nas_mount
+s reboot
+s mount /media/nas
+mpc next
+mpc listall
+mpc playlist
+mpc play
+mpc next
+starxl
+startxl
+mpc
+mpc next
+mpc
+mpc toggle
+alsamixer
+vim /var/log/mpd/mpd.db-creation
+vim .mpd/mpd.log
+s reboot
+dotfiles
+ls
+..
+cp dotfiles dotfiles.2
+dotfiles.2
+ls
+git mv vimrc vim
+ls
+git st
+git ci
+git st
+git filter-branch
+git diff
+git add vimperatorrc
+git ci
+git filter-branch
+git filter-branch --help
+git br
+git co -b vimfiles
+ls
+git filter-branch --subdirectory-filter vim/ -- --all
+ls
+ls git-vim
+ll git-vim
+ll vim-ruby
+git st
+ls zsh
+ls website
+ls xmonad
+ls vim
+ls vim/git-vim
+ls vim/spell
+git br
+rm vim/ vimperator/ website xmonad zsh
+yrm vim/ vimperator/ website xmonad zsh
+ls
+git st
+git rm git-vim vim-ruby
+ls
+git rm git-vim vim-ruby -r
+git rm -r git-vim vim-ruby
+git rm --help
+git rm -r -- git-vim
+ls
+ls git-vim
+rm git-vim vim-ruby
+ls
+git st
+git rm git-vi
+git rm git-vim
+git rm vim-ruby
+git ci
+ls
+ls plugin
+rm plugin/git.vim
+ls colors
+ls doc
+ls ftdetect
+ls plugin
+ls spell
+ls syntax
+rm syntax/git-*
+ls
+git st
+git rm plugin/git.vim
+git rm syntax/git-
+git rm syntax/git-*
+git st
+git commit --amend
+ls
+git remote --help
+git reflog --help
+git remote --help
+git branch --help
+ls
+git br
+git st
+git co master
+ls
+git st
+git br
+..
+yrm dotfiles.2
+ls
+rm g15composer.fifo
+cp dotfiles dotfiles.2
+dotfiles.2
+ls
+git filter-branch --help
+git rev-list
+git rev-list --help
+git whatchanged --help
+git whatchanged 
+git rev-list --help
+git rev-list HEAD
+git branch --hel
+git br
+git co -b vimfiles
+git st
+git add vimperatorrc
+git c
+git ci
+git st
+git br
+git mv vimrc vim
+git ci
+ls
+git filter-branch --subdirectory-index vim vimfiles
+git filter-branch --subdirectory-filter vim HEAD
+ls
+git br
+git co master
+git br
+ls
+git co vimfiles
+ls
+rm git-vim vim-ruby 
+ls plugin
+ls syntax
+rm plugin/git.vim syntax/git-*
+git st
+git rm git-vim vim-ruby plugin/git.vim syntax/git-*
+git ci
+ls
+git co master
+ls
+git st
+git log
+git 
+git st
+git co vimfiles
+ls
+ls vim
+git co master
+cp .gitignore git
+ls
+git co vimfiles
+cp git .gitignore
+vim .gitignore
+ls
+git st
+rm git
+ls vim
+git add .gitignore
+git ci
+ls
+git st
+ls vim
+git co master
+ls
+git rm -r vim
+git rm vimrc
+git rm .gitmodules
+git submodules --help
+git submodules
+git submodule --help
+ls
+ls vim
+git br
+git st
+ls vim/
+ls vim/git-vim
+ls vim/spell
+vim vim/spell/en.utf-8.add.spl
+rm vim
+yrm vim
+ls
+ls website
+ls
+ls
+git st
+git ci
+git st
+ls
+git remote --hel
+git remote --help
+git merge -s ours --no-commit vimfiles
+git read-tree --prefix=vim/ -u vimfiles
+git ci
+ls
+ls vim
+ls
+git st
+git log
+git lg
+vim/
+ls
+vim vimrc
+..
+git st
+git co vimfiles
+git add vim/vimrc
+git ci
+git co vimfiles
+ls
+vim vimrc
+git pull .
+..
+yrm dotfiles.2
+xev
+vim .xbindkeysrc.scm
+mpc
+mpc
+man g15daemon
+man g15daemon
+xev
+man g15daemon
+PS G g15
+free
+~aur
+arson -d g15stats
+g15stats/
+ls
+vim PKGBUILD
+makepkg
+vim p
+vim PKGBUILD
+makepkg
+grep 'sourceforge' ../*/PKGBUILD
+grep 'sourceforge' ../*/source\.\*PKGBUILD
+grep 'source.*sourceforge' ../*/PKGBUILD
+vim PKGBUILD
+makepkg
+src/
+cp g15stats-1.0 g15stats-mod
+g15stats
+g15stats/
+g15stats-mod
+ls
+vim g15stats.c
+make
+./g15stats
+./g15stats --interface eth0
+PSG g15
+./g15stats
+vim g15stats.c
+make
+./g15stats
+vim g15stats.c
+./g15stats
+ls /sys/class
+vim g15stats.c
+ls /sys/class/net
+ls /sys/class/net/eth0
+ls /sys/class/net/eth0/
+make
+./g15stats
+vim g15stats.c
+make
+./g15stats
+vim g15stats.c
+make
+./g15stats
+make
+vim g15stats.c
+make
+vim g15stats.c +444
+vim g15stats.c +444
+make
+./g15stats
+vim g15stats.c +444
+make
+vim /usr/include/string.h
+man strdup
+man strcpy
+vim g15stats.c +444
+make
+./g15stats
+vim g15stats.c +444
+vim g15stats.c
+make
+./g15stats
+vim g15stats.c
+make
+vim g15stats.c
+make
+./g15stats
+vim g15stats.c
+make
+./g15stats
+vim g15stats.c
+make
+./g15stats
+vim Makefile
+make
+rm g15stats
+make
+./g15stats
+gdb g15stats
+man gcc
+vim Makefile
+rm ./g15stats
+make
+gdb g15stats
+gdbtui g15stats
+file g15stats
+vim Makefile
+rm g15stats
+make
+gdbtui g15stats
+code/vimfiles
+vim .git/config
+git pull
+git lg
+git log
+du -sh ~/dotfiles
+du -sh ~/dotfiles.2
+pacman -Ql glib2 G top
+pacman -Ql glib G top
+pacman -Qs glibtop
+pacman -Qs glib
+pacman -Qs top
+s locate --help
+s locate glibtop.h
+pacman -Qo /usr/include/libgtop-2.0/glibtop.h
+pacman -Ql libgtop
+pacman -Ql libgtop L
+firefox.sh /usr/share/gtk-doc/html/libgtop/index.html
+g15mpd
+xev
+g15mpd &
+g15stats &
+s killall g15mpd
+s killall g15stats
+g15stats --help
+g15stats -i eth0 &
+g15message --help
+man g15daemon
+pacman -Qi g15message
+pacman -Ql g15message
+vim /usr/share/doc/g15message-1.0.0/README
+g15message "hello"
+g15message --help
+g15message -t "Title" "Body"
+g15message -t "Title" "Body" -y
+echo $?
+g15message -t "Title" "Body" -f
+vim /usr/share/doc/g15message-1.0.0/README
+g15message -t "Title" "Body" -o
+vim /usr/share/doc/g15message-1.0.0/README
+g15message -t "Title" "Body" -c
+g15message -t "Title" "Body for a really long thing that takes for ever and ever to type but is great for testing a program's metod of wrapping text"
+g15message -t "Title" "Body for a really long thing that takes for ever and ever to type but is great for testing a program's metod of wrapping text" -c
+vim /usr/share/doc/g15message-1.0.0/README
+g15message -y -f -t "Title" "Body"
+arson g15
+s pacman -S g15composer
+~aur/g15mpd
+grep 'display' src
+grep 'display' src/g15mpd-1.0.0/*.c
+vim src/g15mpd-1.0.0/*.c
+mpc
+PS G mpd
+vim src/g15mpd-1.0.0/*.c
+ls
+src/g15mpd-1.0.0
+ls
+./configure
+make
+vim g15mpd.c +178
+make
+vim g15mpd.c +425
+make
+vim g15mpd.c +482
+vim g15mpd.c +482
+../
+..
+yrm src
+makepkg
+rm g15mpd-1.0.0-2-i686.pkg.tar.gz
+vim PKGBUILD
+makepkg
+src/g15mpd-1.0.0
+..
+cp g15mpd-1.0.0 g15mpd-nox
+g15mpd-nox
+ls
+vim g15mpd.c
+make
+vim g15mpd.c +50
+make
+vim g15mpd.c +112
+make
+vim g15mpd.c +138
+make
+vim g15mpd.c +178
+make
+vim g15mpd.c +483
+vim g15mpd.c +483
+make
+vim g15mpd.c +95
+vim g15mpd.c +433
+vim g15mpd.c +498
+make
+ls
+vim configure.in
+..
+diff --recursive --unified g15mpd-1.0.0 g15mpd-nox
+diff --recursive --unified g15mpd-1.0.0 g15mpd-nox > ../no_x_needed.patch
+vim ../no_x_needed.patch
+..
+vim PKGBUILD
+makepkg -g
+makepkg -g >> PKGBUILD
+vim pkg
+vim PKGBUILD
+ls
+makepkg
+vim PKGBUILD
+makepkg
+yrm src pkg
+makepkg
+src/
+ls
+yrm g15mpd-1.0.0
+ls
+tar xf g15mpd-1.0.0.tar.bz2
+vim ../PKGBUILD
+..
+makepkg
+rm g15mpd-1.0.0-25-i686.pkg.tar.gz
+makepkg
+src/g15mpd-1.0.0
+ls
+vim configure.in
+vim ../../no_x_needed.patch
+grep 'X' *
+grep 'X' config*
+vim config.h.in
+grep 'X' config*
+grep 'X' config* :
+grep 'X' config* L
+vim Makefile.in
+../..
+cp src/g15mpd-1.0.0 g152
+yrm src
+makepkg
+vim pkg
+cp no_x_needed.patch
+cp no_x_needed.patch no_x_needed2.patch
+vim no_x_needed
+vim no_x_needed.patch
+makepkg
+diff --recursive --unified src/g15mpd-1.0.0 g152
+diff --recursive --unified src/g15mpd-1.0.0 g152 > no_x_needed_configure.patch
+vim no_x_needed_configure.patch
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+ls
+yrm src g152 pkg no_x_needed2.patch g15mpd-1.1.0.tar.bz2.part
+l
+ls
+makepkg
+vim PKGBUILD
+ls
+yrm pkg src
+makepkg
+makepkg -i
+~
+g15composer
+g15composer --help
+man g15composer
+file -sb /usr/bin/g15stats
+file -sb /usr/bin/g15macro
+g15macro
+g15macro --help
+g15macro -d
+g15composer
+mkfifo g15composer.fifo
+g15composer ./g15composer.fifo &
+jobs
+man g15composer
+kill %2
+screen
+echo "TS 'line 1' 'line 2'" > g15composer.fifo
+echo TL "Hello" "World" > g15composer.fifo
+echo TL "Hello" "World" > g15composer.fifo
+arson g15
+arson -d g15terminal lcdproc-g15
+~aur/g15terminal
+makepkg
+vim PKGBUILD
+rm g15terminal.tar.gz
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/bin
+file -sb pkg/usr/bin/g15terminal
+pkg/usr/bin/g15terminal
+../lcdproc-g15
+ls
+makepkg
+makepkg -A
+arson -d lcdproc
+../lcdproc
+arson lcdproc
+makepkg
+arson serdisplib
+~aur/serdisplib
+ls
+makepkg
+makepkg -i
+../lcdproc
+makepkg
+arson -d libmrss
+~aur/libmrss
+makepk
+makepkg
+arson ifolder
+~/Documents
+wget 
+wget  http://www.ifolder.com/docs/ifolder_readme_3.7.2.pdf
+xpdf ifolder_readme_3.7.2.pdf
+s pacman -Syu
+ssh-me
+htop
+PSG g15
+kill 9824
+s umount /media/nas
+s /etc/rc.d/mpd stop
+s umount /media/nas
+s reboot
+mpc
+mpc toggle
+mpc toggle
+arson g15
+mpc toggle
+s pacman -S g15{daemon,macro,message,mpd,stats}
+pacman -Ql g15stats
+g15stats
+s /etc/rc.d/g15daemon start
+g15stats
+g15stats --help
+g15stats -i eth0
+s vim /etc/rc.d/g15daemon
+g15daemon --help
+g15mpd --help
+pacman -Ss libmpd
+s pacman -S libmpd
+s pacman -S libmpdclient
+arson -d g15mpd
+~aur/g15mpd
+vim PKGBUILD
+ls
+vim g15mpd-libmpdheader.patch
+makepkg
+vim PKGBUILD
+pacman -Qi g15mpd
+vim PKGBUILD
+makepkg
+rm src
+rm pkg
+rm g15mpd-1.0.0-1-i686.pkg.tar.gz
+makepkg
+makepkg -i
+~
+g15mpd
+startxl
+vim .xinitrc
+dotfiles
+git st
+git log
+git lg
+notify-send "lol"
+mpc
+export
+firefox
+s pacman -Sy
+alsamixer
+g15stats
+ls
+ri Set
+jeweler --help
+jeweler --riot riot_repo
+jeweler
+jeweler/
+riot_repo
+lsa
+..
+mkdir tmp/messing_jewler
+mv riot_repo tmp/messing_jewler
+tmp/messing_jewler
+ls
+yrm riot_repo
+ls
+jeweler --riot riot
+jeweler
+jeweler --micronaut micronaut
+jeweler --minitest minitest
+jeweler --bacon bacon
+jeweler --testspec testspec
+ls
+micronaut
+ls
+vim examples/micronaut_example.rb
+../testspec
+vim test/testspec_test.rb
+..
+ls
+riot
+vim test/teststrap.rb
+vim test/riot_test.rb
+vim ~/code/mastodon/test/test_mastodon.rb
+vim ~/code/mastodon/test/test_helper.rb
+alsamixer
+ssh-me
+s pacman -S bluez
+s /etc/rc.d/bluetooth start
+hcitool scan
+dmesg T
+dmesg T
+hcitool --help
+s pacman -S blueman
+pacman -Qs gnome
+s pacman -S blueman
+arson bluetooth
+PSG blue
+kill 5795
+PSG blue
+kill 5785
+PSG blue
+bluez-simple-agent
+s bluez-simple-agent
+hciconfig
+s hciconfig hci0 up
+hciconfig
+hcitool dev
+s hciconfig hci0 piscan
+hciconfig
+s hid2hci
+dmesg 
+hcitool scan
+hcitool scan
+hcitool
+hcitool cc 
+hcitool cc  00:10:60:18:3D:C7
+s hcitool cc  00:10:60:18:3D:C7
+s blueman-manager
+s vim /etc/asound.conf
+hcitool scan
+hcitool con
+s vim /etc/asound.conf
+PSG firefox
+s hcitool hci0 voice 
+s hcitool hci0 voice 0x0060
+s modprobe --help
+aplay -D bluetooth 16729_GuitarVsPiano2__Goukisan.mp3
+aplay 16729_GuitarVsPiano2__Goukisan.mp3
+ls /media/nas
+ls /media/nas/Music
+find /media/nas/Music -name *wav
+aplay /media/nas/Music/VG_Music/Relics\ of\ the\ Chozo/02\ So\ It\ Begins_\ \(Intro\ Theme\).wav
+aplay /media/nas/Music/VG_Music/Relics\ of\ the\ Chozo/02\ So\ It\ Begins_\ \(Intro\ Theme\).wav -D bluetooth
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+wgetpaste /etc/asound.conf
+s vim /etc/asound.conf
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+man alsaconf
+pacman -Ql alsa-lib G doc
+pacman -Ql alsa-oss G doc
+pacman -Ql alsa-plugins G doc
+pacman -Ql alsa-utils G doc
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3 -ao alsa:device=bluetooth
+s vim /etc/asound.conf
+s vim bin/foobar
+bash bin/foobar
+rm bin/foobar
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3 -ao alsa:device=bluetooth
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3 -ao alsa:device=bluetooth
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+wgetpaste --help
+wgetpaste -C /etc/asound.conf
+wgetpaste -S
+wgetpaste -L
+wgetpaste -E
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+dotfiles
+git st
+git diff
+~/code/mastodon
+vim Rakefile
+git st
+git add Rakefile
+git ci
+vim Rakefile
+rake -T
+vim Rakefile
+git add Rakefile
+git ci
+git push
+PSG g15
+vim README.mkd
+git add README.mkd
+rdiscount README.mkd
+vim lib/mastodon/todo.rb
+irb
+mpc next
+irb
+irb
+vim lib/mastodon/todo.rb
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb +76
+vim lib/mastodon.rb +76
+rake test
+vim lib/mastodon.rb +78
+rake test
+vim lib/mastodon.rb +37
+rake test
+vim lib/mastodon.rb +37
+rake test
+vim lib/mastodon.rb +37
+vim lib/mastodon.rb +37
+rake test
+vim lib/mastodon.rb +37
+rake test
+vim test/test_mastodon.rb +4
+vim lib/mastodon.rb +37
+rake test
+vim lib/mastodon.rb +37
+git st
+git ci
+git add lib/mastodon.rb 
+git ci
+git st
+git push
+vim test/test_helper.rb
+~/tmp/messing_jewler
+jeweler
+jeweler 'mastodon2' --gemcutter --reek --roodi --riot --summary "A Ruby parser for todo.txt files" --description "TODO" --yard --homepage "http://evaryont.me"
+mastodon2
+vim .document
+ls
+vim lib/mastodon2.rb
+vim Rakefile
+s gem install reek roodi
+vim Rakefile
+rake -T
+rake reek
+rake roodi
+vim Rakefile
+alsamixer
+alsamixer
+s vim /etc/asound.conf
+ls
+vim LICENSE
+vim README.rdoc
+vim test/teststrap.rb
+vim test/mastodon2_test.rb
+vim Rakefile
+vimdiff Rakefile ~/code/mastodon/Rakefile
+vimdiff Rakefile ~/code/mastodon/Rakefile
+PSG blue
+kill 5909
+s kill 5909
+PSG blue
+s /etc/rc.d/bluetooth stop
+s vim /etc/asound.conf
+mpc
+mpc toggle
+alsamixer
+code/mastodon
+vim Rakefile
+vim Rakefile
+mv Rakefile
+mv Rakefile Rakefile.bak
+cp ~/tmp/messing_jewler/mastodon2/Rakefile .
+vim Rakefile
+rake -T
+git st
+git add Rakefile
+git ci
+git rm lib/mastodon/version.rb
+mpc next
+vim lib/mastodon.rb
+ls
+vim pkg
+git st
+git add lib/mastodon.rb
+git ci
+rm Rakefile.bak pkg .rake_tasks
+ls
+git mv test test.nano
+git st
+cp ~/tmp/messing_jewler/mastodon2/test .
+test/
+mv mastodon2_test.rb mastodon_test.rb
+..
+vim test/mastodon_test.rb
+vim test/mastodon_test.rb test.nano/test_mastodon.rb
+cp test.nano/todo.txt test
+git st
+rake test
+vim test/mastodon_test.rb
+rake test
+git add test
+git rm test.nano
+git rm test.nano -r
+ls
+git st
+git reset HEAD test
+git st
+git ci
+git st
+git add test
+git st
+git rm test/run_tests.rb test/test_helper.rb test/test_mastodon.rb
+git st
+git ci
+git st
+git commit --amend
+git st
+git rm -r test.nano/
+git st
+git ci
+git st
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb +17
+vim test/mastodon_test.rb
+rake test
+git st
+git add test/mastodon_test.rb
+git ci
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+rake test
+git add test/mastodon_test.rb
+git ci
+git commit --amend
+git st
+vim test/mastodon_test.rb
+rake tests
+rake test
+rake -T
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/tasks.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/jeweler-1.4.0/lib/jeweler/commands/release_to_github.rb
+vim Rakefile
+rake check_dependencies
+rake check_dependencies:development
+rake check_dependencies:runtime
+ls
+git st
+git add Rakefile
+git ci
+git diff
+git diff
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+git st
+git idff
+git diff
+git dif
+echo $?
+git dif
+git add test/
+git ci
+git st
+rake test
+vim test/mastodon_test.rb
+vim test/mastodon_test.rb
+vim test/mastodon_test.rb test/teststrap.rb
+rake test
+vim lib/mastodon/todo.rb
+vim lib/mastodon/todo.rb
+vim lib/mastodon.rb
+rake test
+vim test/mastodon_test.rb test/teststrap.rb
+git st
+git diff
+git add lib/mastodon.rb
+git ci
+git diff
+git add test/mastodon_test.rb
+git ci
+git st
+git add test/teststrap.rb
+git ci
+git st
+git push
+cp ~/tmp/messing_jewler/mastodon2/.gitignore ~/tmp/messing_jewler/mastodon2/.document .
+vim .gitignore
+vim .document
+ls
+vim .document
+vim .document
+vim VERSION.yml
+vim VERSION.yml
+rake version:bump:minor
+vim Rakefile
+rake yard
+ls
+ls doc
+git st
+ls .yardoc
+vim .gitignore
+git st
+git add .gitignore .document
+git ci
+git mv LICENSE.txt LICENSE
+vim .document
+git add .document
+git st
+git commit --amend
+git st
+git push
+git
+ls
+git mv README.mkd README.md
+rm doc
+rake yard
+ls doc
+firefox.sh doc/index.html
+git mv LICENSE LICENSE.md
+rdiscount LICENSE.md
+git st
+vim LICENSE.md
+rdiscount LICENSE.md
+git add LICENSE.md
+git ci
+git st
+git push
+vim .document
+git add .document
+git ci
+git st
+git push
+ls
+rake yard
+vim README.md +2
+vim LICENSE.md
+vim README.md
+rdiscount README.md
+mpc next
+rm doc
+rake yard
+vim README.md
+rake yard
+vim README.md
+git diff
+git add README.md
+git ci
+git st
+vim .document
+vim test/mastodon_test.rb
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb +`03
+vim test/mastodon_test.rb +103
+rake test
+vim test/mastodon_test.rb +103
+irb
+irb
+ls test
+vim test/mastodon_test.rb +103
+ls ~
+ld /usr/lib L
+ls /usr/lib L
+ls /usr/lib/qt L
+ls /usr/lib/qt/plugins/
+ls /usr/lib/qt/plugins/designer
+rake test
+gem search libnotify
+mpc
+screen
+man libnotif
+man libnotify
+ls /usr/include/libnotify
+vim /usr/include/libnotify/notify.h
+vim /usr/include/libnotify/notification.h
+vim /usr/include/libnotify/notify-enum-types.h
+vim /usr/include/libnotify/notification.h
+s gem install libnotify riot_notifier
+code/mastodon
+s vim /usr/lib/ruby/gems/1.9.1/gems/libnotify-0.0.4/lib/libnotify.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/libnotify.rb
+vim test/teststrap.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/base.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/redgreen_binary.rb
+vim test/teststrap.rb
+rake test
+mpc next
+mpc next
+vim test/mastodon_test.rb +103
+rake test
+vim test/mastodon_test.rb +103
+rake test
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/none.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/module.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/base.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/libnotify.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/riot_notifier-0.0.7/lib/riot_notifier/redgreen_binary.rb
+vim test/teststrap.rb
+git st
+rake test
+vim test/mastodon_test.rb +/all todos/
+rake test
+vim lib/mastodon/todo.rb
+rake test
+vim lib/mastodon/todo.rb
+vim test/mastodon_test.rb
+rake test
+vim lib/mastodon/todo.rb
+rake test
+vim lib/mastodon.rb
+vim lib/mastodon.rb
+rake test
+vim lib/mastodon.rb
+vim lib/mastodon.rb test/mastodon_test.rb
+rake test
+vim lib/mastodon.rb test/mastodon_test.rb
+rake test
+vim lib/mastodon.rb test/mastodon_test.rb
+vim lib/mastodon.rb test/mastodon_test.rb
+rake test
+git st
+git idff
+git add lib/mastodon.rb
+git ci
+git diff
+git add lib/mastodon/todo.rb
+git ci
+git st
+git diff
+git add test/mastodon_test.rb
+git ci
+git st
+vim lib/mastodon.rb
+git st
+git add lib/mastodon.rb
+git ci
+git st
+rake test
+rake roodi
+rake reek
+vim lib/mastodon/todo.rb
+vim lib/mastodon.rb
+rake reek
+mkdir lib/core_ext/
+vim lib/core_ext/string.rb lib/mastodon.rb
+lib/core_ext
+mkdir string
+mv string.rb string
+string
+mv string.rb pull_regex.rb
+ls
+vim pull_regex.rb
+../..
+..
+rake test
+git st
+git diff
+git add lib/mastodon.rb -p
+git ci
+git add lib/mastodon.rb
+git ci
+git add lib/core_ext/
+git ci
+git st
+rake reek
+rake roodi
+vim lib/mastodon/todo.rb
+vim lib/mastodon.rb
+vim lib/mastodon/todo.rb
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+rake test
+vim test/mastodon_test.rb
+git st
+git diff
+git log
+vim test/mastodon_test.rb
+git st
+git push
+git st
+git log
+rake version:bump:patch
+rake release:all
+vim Rakefile
+git add Rakefile
+git ci
+git st
+rm mastodon2.gemspec
+rake gemspec
+ls
+git st
+git add mastodon.gemspec
+git commit --amend
+rake gemcutter:release
+git st
+git push
+PSG acpi
+s /etc/rc.d/acpid start
+PSG acpi
+acpi_listen
+acpi_listen --help
+acpi --help
+acpi -b
+acpi -it
+acpi -ic
+acpi -V
+acpi -Vi
+acpi -bi
+ls /proc
+s vim /etc/rc.conf
+ll /proc/mounts
+ll /proc/self
+ll /proc/self/mount
+ll /proc/self/mounts
+cat /proc/self/mounts
+ll /proc/bus
+ll /proc/bus/usb
+cat /proc/bus/usb/devices
+lsusb
+mpc
+ls /usr/share/icons
+ls /usr/share/icons/hicolor
+ls /usr/share/icons/hicolor/scalable
+ls /usr/share/icons/hicolor/scalable/emblems
+ls /usr/share/icons/hicolor/scalable/*
+ls /usr/share/icons/hicolor/scalable/stock/*
+ls /usr/share/icons/hicolor/
+ls /usr/share/icons/hicolor/24x24
+ls /usr/share/icons/hicolor/24x24/emblems
+ls /usr/share/icons/hicolor/*/emblems
+ls /usr/share/icons/hicolor/*/
+find /usr/share/icons/hicolor/ -name *face*
+find /usr/share/icons/ -name *face*
+ls /usr/share/icons/oxygen
+find /usr/share/icons/oxygen/ -name *face* L
+vim ~/.mcabber/events.sh
+find /usr/share/icons/oxygen/32x32/emblems/emblem-*
+find /usr/share/icons/oxygen/32x32/emotes/face-*
+ri Set
+ssh-me
+ssh me "screen -ls"
+python
+arson g15
+arson -d g15aiostats
+~aur/g15aiostats
+ls
+vim PKGBUILD
+vim PKGBUILD
+ls /tmp
+feh /tmp/g15daemon-sc-0.pbm
+mpc next
+pamtojpeg2k /tmp/g15daemon-sc-0.pbm
+ls
+pamtojpeg2k /tmp/g15daemon-sc-0.pbm | feh -
+pamtojpeg2k /tmp/g15daemon-sc-0.pbm > /tmp/g15daemon-sc-0.jpg
+feh /tmp/g15daemon-sc-0.jpg
+pbmtoascii /tmp/g15daemon-sc-0.pbm
+arson pbm
+pacman -Ql netpbm L
+pacman -Ql netpbm G png
+pacman -Ql netpbm G pnm
+pacman -Ql netpbm G topnm
+pbmtowbmp /tmp/g15daemon-sc-0.pbm | bmptopnm | pnmtopng 
+pbmtowbmp /tmp/g15daemon-sc-0.pbm
+pbmtowbmp /tmp/g15daemon-sc-0.pbm --help
+man pbmtowbmp
+pacman -Ql netpbm G topng$
+pacman -Ql netpbm G topam
+pacman -Ql netpbm G topsvg$
+pacman -Ql netpbm G tosvg$
+pacman -Ql netpbm G svg
+~/Downloads
+tar xf Pizza.tar.gz
+tar tf Pizza.tar.gz
+mkdir g15-pizza-timer
+mv README pizzatimer.py font.ttf alarm.wav -t g15-pizza-timer
+mv Pizza.tar.gz g15-pizza-timer
+g15
+g15-pizza-timer
+ls
+mplayer alarm.wav
+vim pizzatimer.py
+./pizzatimer.py
+vim pizzatimer.py
+vim pizzatimer.py
+vim pizzatimer.py
+arson bluetooth
+arson -d btscanner
+~aur/btscanner
+makepkg
+makepkg -i
+~
+btscanner
+btscanner --help
+PSG blue
+s /etc/rc.d/bluetooth start
+PSG blue
+s vim /etc/rc.conf
+btscanner --help
+btscanner
+arson sdp
+arson bluetooth L
+s pkgfile -u
+PSG hci
+PSG sdp
+PSG blue
+pkgfile --help
+pkgfile -r sdp
+pkgfile -r sdptool
+sdptool
+sdptool search
+sdptool get
+sdptool get --tree
+sdptool get --raw
+sdptool get --xml
+sdptool records
+hcitool
+hciconfig
+sdptool records  00:10:60:EB:AC:63 
+sdptool records 00:10:60:EB:AC:63
+hcitool dev
+hcitool scan
+hcitool inq
+l2ping 00:10:60:18:3D:C7
+s l2ping 00:10:60:18:3D:C7
+hciconfig
+hcitool cc
+hcitool cc 00:10:60:18:3D:C7
+s hcitool cc 00:10:60:18:3D:C7
+hcitool con
+s vim /etc/bluetooth/main.conf
+grep 'pin' /etc/bluetooth/
+s vim /etc/bluetooth/main.conf
+s vim /etc/bluetooth/audio.conf
+s vim /etc/bluetooth/network.conf
+blueman-assistant --help
+blueman-assistant
+blueman-manager
+PSG blue
+kill 18660
+s blueman-manager
+ls
+s vim /etc/alsa/bluetooth.conf
+s vim /etc/alsa/bluetooth.conf /etc/asound.conf
+mplayer 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/alsa/bluetooth.conf /etc/asound.conf
+hcitool con
+hcitool con --help
+hcitool cc --help
+man hcitool
+pacman -Ql bluez L
+pacman -Ql bluez G bin
+sdptool
+hcitool con
+sdptool records 00:10:60:18:3D:C7
+history 0 G mplayer
+mplayer -ao alsa:device=bluetooth 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/asound.conf
+man mplayer
+vim .mplayer/config
+mplayer -ao alsa:device=btheadset 16729_GuitarVsPiano2__Goukisan.mp3
+s vim /etc/mpd.conf
+s /etc/rc.d/mpd restart
+mpc outputs
+mpc outputs --help
+mpc outputs 2
+mpc toggle
+s vim /etc/mpd.conf
+arson bemused
+arson -d bemused-linuxserver pbmpcd
+~aur/pbmpcd
+vim PKGBUILD
+vim pbmpcd.rc
+vim pbmpcd.rc
+makepkg
+vim PKGBUILD
+arson start stop
+arson start
+vim pbmpcd.
+vim pbmpcd.rc
+mpd --help
+vim pbmpcd.rc
+arson -d start-stop-daemon
+~aur/start-stop-daemon
+makepkg
+makepkg -A
+makepkg -Ai
+-
+makepkg
+vim pbmpcd
+vim PKGBUILD
+makepkg
+makepkg --help
+makepkg --skipinteg
+ls p
+ls pkg
+ls pkg/etc
+ls pkg/etc/rc.d
+ls pkg/usr/bin
+vim PKGBUILD
+makepkg -i
+~
+pbmpcd --help
+start-stop-daemon --help
+mpc next
+mpc
+s /etc/rc.d/mpd restart
+pms
+mpc
+mpc next
+mpc
+mpc
+mpc
+s vim /etc/mpd.conf
+s /etc/rc.d/mpd restart
+mpc
+mpc next
+mpc
+alsamixer
+mpc
+s vim /etc/asound.
+s vim /etc/asound.conf
+s /etc/rc.d/mpd restart
+until [ $V == 0 ];do clear;V=$((`date +%s -d"2010-01-01"`-`date +%s`));figlet $V;sleep 1;done;figlet 'Happy New Year!'
+ls Code
+ls Code/Scripts
+ls Code/Misc
+ls Code/AUR
+ls Code/Projects
+ls code
+ls 
+ls src
+ls src/misc
+vim Dropbox/Notes/*
+find Dropbox Documents Desktop Media /media/nas/Music/ notes Downloads -name Muzack
+find Dropbox Documents Desktop Media /media/nas/Music/ notes Downloads -name *Muzack*
+vim notes/Music/Muzack.txt
+vim notes/Music/Muzack_To_Get.txt
+until [ $V == 0 ];do clear;V=$((`date +%s -d"2010-01-01"`-`date +%s`));figlet $V;sleep 1;done;figlet 'Happy New Year!'
+Downloads
+ls
+unzip -l Wale_-_The_Mixtape_About_Nothing.zip
+unzip Wale_-_The_Mixtape_About_Nothing.zip
+file -sb 10Deep_Website.webloc
+vim 10Deep_Website.webloc
+rm 10Deep_Website.webloc
+mv 10Deep_Summer_08_Teaser.jpg -t Wale\ -\ The\ Mixtape\ About\ Nothing
+rm __MACOSX
+Wale\ -\ The\ Mixtape\ About\ Nothing
+ls
+mplayer *.mp3
+..
+mkdir Wale
+Wale
+mv ../Wale\ -\ The\ Mixtape\ About\ Nothing The_Mixtape_About_Nothing
+ls
+The_Mixtape_About_Nothing
+ls
+feh 10Deep_Summer_08_Teaser.jpg
+mv 10Deep_Summer_08_Teaser.jpg cover.jpg
+mp4info 01_The_Opening_Title_Sequence.mp3
+id3info 01_The_Opening_Title_Sequence.mp3
+../..
+rm Wale_-_The_Mixtape_About_Nothing.zip
+mv Wale -t /media/nas/Music/
+ls /media
+ls /media/music
+s mount -t cifs //192.168.1.5/media/Music /media/music -o user=admin,pass=8320cottage,noexec,nosuid,nodev,uid=colin,gid=users,file_mode=0644,dir_mode=0755
+ls /media/music
+mv Wale -t /media/music
+s /etc/rc.d/mpd stop
+s mpd --create-db
+ls /media/nas/Music
+ls /media/nas/Music/Wale
+ls /media/nas/Music/Wale/The_Mixtape_About_Nothing
+vim ~/.g15aiostats.conf
+lsof G aio
+ll ~/.g15*
+s rm ~/.g15aiostats.conf
+vim ~/.g15aiostats.conf2
+vim .g15aiostats.conf2
+mv .g15aiostats.conf2 .g15aiostats.conf
+g15aiostats
+PSG g15
+kill 30536
+Downloads/g15-pizza-timer
+./pizzatimer.py
+./pizzatimer.py
+./pizzatimer.py
+./pizzatimer.py
+./pizzatimer.py
+./pizzatimer.py
+python blah.py
+alsamixer
+cat /etc/fstab
+cat /etc/fstab
+~aur/g15aiostats
+ls
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+ls ~/bin
+ls ~/code
+ls ~/Code/Scripts
+~/Code/Scripts/sex
+~/Code/Scripts/sex
+~/Code/Scripts/sex
+~/Code/Misc
+ls
+cat eaut_sample_xrds.txt
+~aur/g15aiostats
+ls pkg
+ls pkg/usr
+ls pkg/usr/share
+ls pkg/usr/share/man
+ls pkg/usr/share/man/man1
+man pkg/usr/share/man/man1/Makefile.am.gz
+man pkg/usr/share/man/man1/Makefile.gz
+man pkg/usr/share/man/man1/Makefile.in.gz
+vim PKGBUILD
+src/g15aiostats-0.22
+ls
+./configure --help
+./configure --prefix=/usr
+vim /usr/share/pacman/PKGBUILD.proto
+vim ../../PKGBUILD
+../..
+vim PKGBUILD
+-
+vim Makefile
+make install
+../..
+yrm src pkg
+rm g15aiostats-0.22-1-i686.pkg.tar.gz
+makepkg
+ls pkg
+ls pkg/usr
+ls pkg/usr/share/man/man1/g15aiostats.1.gz
+ls pkg/usr/bin
+makepkg -i
+~
+g15aiostats --help
+g15aiostats
+vim .g15aiostats.conf
+PSG aio
+kill 30272
+vim ~/.g15aiostats.conf
+s g15aiostats -f
+mv  ~/.g15aiostats.conf ~/.g15aiostats.conf2
+s g15aiostats -f
+vimdiff ~/.g15aiostats.conf ~/.g15aiostats.conf2
+PSG g15
+PSG mpd
+kill 25672
+PSG mpd
+ls ~aur/g15aiostats
+ls ~aur/g15aiostats/src/g15aiostats-0.22
+ls ~aur/g15aiostats/src/g15aiostats-0.22/src
+vim ~aur/g15aiostats/src/g15aiostats-0.22/src/config.cpp
+vim ~/.g15aiostats.conf 
+vim ~aur/g15aiostats/src/g15aiostats-0.22/src/config.cpp
+ ~aur/g15aiostats/src/g15aiostats-0.22/src/
+vim common.h
+lsa ~/.vim/
+lsa ~/tmp G vim
+rm ~/tmp/.vimrc\~
+vim ~/.g15aiostats.conf
+vim ~/.g15aiostats.conf2 common.h config.
+vim ~/.g15aiostats.conf2 common.h config.cpp
+man g15aiostats
+man g15aiostats
+vim config.cpp
+~
+g15aiostats
+du
+df
+rm bin/startx.vbox\~
+pacman -Ss notify
+pacman -Ss start
+s pacman -S startup-notification
+pacman -Ql startup-notification
+arson startup
+arson start
+arson -d xalf
+~aur/xalf
+vim PKGBUILD
+ls
+makepkg
+arson -d keynav
+~aur/keynav
+ls
+vim PKGBUILD
+vim ../glitz/PKGBUILD
+makepkg
+vim PKGBUILD
+arson xdotool
+makepkg
+pacman -Ql xdotool L
+..
+arson -d keynav
+keynav
+ls
+vim PKGBUILD
+rm pkg src
+makepkg
+ls
+makepkg -i
+~
+vim ~/.xbindkeysrc.scm
+keynav
+keynav "start, grid 3x3"
+keynav "start, grid 2x2"
+vim .keynavrc
+rm .keynavrc
+pacman -Ql keynav L
+ls ~aur/keynav
+ls ~aur/keynav/src/keynav-20091231.01
+ls ~aur/keynav/src/keynav-20091231.01/
+vim ~aur/keynav/src/keynav-20091231.01/keynavrc
+cp ~aur/keynav/src/keynav-20091231.01/keynavrc ~/.keynavrc
+keynav
+PSG keynav
+kill 1364
+vim .xbindkeysrc.scm
+PSG keynav
+rm 1373
+kill 1373
+rm Downloads/keynav-20091208.00*
+rm code/keynav/
+yrm code/keynav/
+ls
+mpc
+ls
+rm notification_apps.txt
+PSG keynav
+kill 1547
+arson record
+s pacman -S recordmydesktop
+recordmydesktop --help
+vim .keynavrc
+arson osd
+arson keyboard
+pacman-s keyboardcast
+keyboardcast --help
+pacman-r keyboardcast
+arson keyboard
+arson keyboard &> keyboard.aur.txt
+vim keyboard.aur.txt
+mplayer http://meetthegimp.org/torrents/meetthegimp001.mp4
+arson -d gtkeyboard
+pacman-s xvkbd
+xvkbd --help
+PSG xvk
+kill -9 1851
+arson -d key-mon
+~aur/key-mon
+makepkg
+makepkg -i
+~
+key-mon
+key-mon --help
+arson gksu
+s pacman -S gksu
+vim /usr/bin/key-mon
+ll /dev/input/event0
+ll /dev/input/by-id/usb-046d_G15_Gaming_Keyboard-event-kbd
+ll /dev/input/by-id/usb-046d_G15_Gaming_Keyboard-event-if01
+ll /dev/input/by-id/usb-*
+s key-mon
+s /etc/rc.d/hal start
+s key-mon
+pacman-r key-mon gksu
+~aur/gtkeyboard
+vim PKGBUILD
+makepkg
+makepkg -i
+gtkeyboard --help
+gtkeyboard
+pacman-r gtkeyboard
+..
+rm key-mon
+vim ~/.mplayer/config
+mplayer http://screencasters.heathenx.org/podpress_trac/web/133/0/ep087.ogv
+mplayer http://screencasters.heathenx.org/podpress_trac/web/131/0/ep085.ogv
+mplayer http://screencasters.heathenx.org/podpress_trac/web/130/0/ep084.ogv
+~aur
+arson -d key-mon
+key-mon
+ls
+makepkg
+makepkg -i
+key-mon
+pacman-r key-mon
+vim pkg/usr/bin/key-mon
+PSG hal
+makepkg --help
+makepkg -R
+makepkg -Rf
+makepkg -i
+~
+key-mon
+s key-mon
+pms --version
+vim .vimperator
+vim .vimperatorrc
+find code Code Downloads/AUR -name *pms*
+find code Code Downloads/AUR -name *pms* -type d
+find code Code Downloads tmp -name *pms* -type d
+Downloads/Source_Code/pms-0.40.5
+ls
+vim ChangeLog
+irb
+PSG mpd
+s /etc/rc.d/mpd --help
+s /etc/rc.d/mpd create-db
+cat /var/log/mpd/mpd.db-creation
+mpc
+mpc play
+mpc playlist
+mpc listall G wale
+mpc listall | mpc add
+mpc playlist
+mpc next
+mpc play
+PSG key
+kill 6503
+vim ~/.xbindkeysrc.scm
+man xbindkeys
+man xbindkeys
+PSG keyn
+kill 6548
+~
+mpc next
+arson ack
+arson ack G "\/ack"
+arson -d ack
+~aur/ack
+ls
+makepkg
+vim p
+vim PKGBUILD
+arson perl-file-next
+~aur/perl-file-next
+makepkg
+makepkg -i
+-
+makepkg -i
+~
+ack
+ack --thpppt
+ack --thpppt v
+ack --man
+dotfiles
+git submodules
+git submodule
+git submodule --hwlp
+git submodule status
+git submodule status --quiet
+echo $?
+git rm .gitmodules
+git rm -r vim/git-vim vim/vim-ruby
+yrm vim/git-vim vim/vim-ruby
+ls
+git st
+git rm vim/git-vim
+git rm vim/vim-ruby
+git st
+git ci
+lsr vim/
+vim zsh/alias
+ls -R
+ls -R vim
+vim vim/plugin/git.vim vim/syntax/git-*
+rm vim/plugin/git.vim vim/syntax/git-*
+git st
+git rm vim/plugin/git.vim vim/syntax/git-*
+git st
+git ci
+git commit --amend
+git st
+git idff
+git diff
+git add vim/spell/en.utf-8.add
+git ci
+git st
+git diff
+mcabber 
+~
+cd tmp; wget http://semicomplete.googlecode.com/files/keynav-20091231.03.tar.gz
+tar xf keynav-20091231.03.tar.gz
+keynav-20091231.03
+ls
+make
+vim Makefile
+vim keynav.c
+ls xdotool
+make
+echo /home/colin/tmp/keynav-20091231.03/keynav
+vim ~/.xbindkeysrc.scm
+killall -HUP xbindkeys
+PSG xbin
+vim ~/.xbindkeysrc.scm
+man xbindkeys
+       killall -HUP xbindkeys
+kill -l
+kill -HUP 1452
+kill -HUP 1452
+kill -HUP 1452
+kill -HUP 1452
+PSG xbin
+xbindkeys -fg ~/.xbindkeysrc.scm
+PSG xbin
+vim ~/.xbindkeysrc.scm
+PSG xbin
+kill -HUP 10012
+PSG xbin
+vim ~aur/keynav
+~aur/keynav
+ls
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+rm keynav-20091231.01*
+rm pkg src
+makepkg
+makepkg -i
+~
+vim .xbindkeysrc.scm
+find Downloads Code code tmp -name *keynav*
+ssh-me
+ssh-me
+code/ack.vim
+ls
+git st
+git pull
+git remote update
+git remote 
+git remote show origin
+g15daemon --help
+g15daemon -K
+s g15daemon -K
+PSG g15
+s /etc/rc.d/g15daemon start
+PSG g15
+kill 30604
+PSG g15
+g15aiostats
+g15daemon -l 0
+g15daemon -l 2
+s g15daemon -l 2
+s g15daemon -l 1
+s g15daemon -l 0
+s g15daemon --set-backlight 1
+s g15daemon --set-backlight 2
+s g15daemon --set-backlight 0
+ssh-me
+ls
+code/
+svn checkout http://semicomplete.googlecode.com/svn/trunk/ semicomplete-read-only
+svn checkout http://semicomplete.googlecode.com/svn/keynav/ keynav
+ls
+ls keynav
+keynav
+keynav/
+vim /tmp/startx.log
+vim /tmp/startx.log
+vim /tmp/startx.log
+ls
+vim keynav.c
+vim /var/abs/community/xdotool/PKGBUILD
+..
+yrm keynav
+keynav
+vim ~/.mcabberrc
+vim ~/.mcabberrc
+PSG xbin
+kill 10869
+xbindkeys -fg ~/.xbindkeysrc.scm -v
+head .keynavrc
+head -n20 .keynavrc
+head -n30 .keynavrc
+vim .keynavrc
+head -n30 .keynavrc
+xbindkeys -fg ~/.xbindkeysrc.scm -v
+PSG keynav
+kill 11438
+kill 11435
+kill 11432
+kill 10959
+PSG keynav
+vim .xbindkeysrc.scm
+g15mpd
+g15mpd --help
+nohup g15mpd&
+xev
+vim .xbindkeysrc.scm
+xev
+vim .xbindkeysrc.scm
+killall -HUP xbindkeys
+PSG xbind
+PSG xbindkeys
+xbindkeys -fg ~/.xbindkeysrc.scm
+mpc
+mpc
+mpc volume -10
+alsamixer
+mpc volume +10
+~aur
+arson -d g15mpd
+g15mpd
+g15mpd/
+ls
+src/g15mpd-1.0.0
+ls
+vim g15mpd.c
+mpc playlist
+mpc listall | sort -r | mpc add
+mpc next
+mpc play
+ls
+vim g15mpd.
+vim g15mpd.c
+./g15mpd
+mpc
+~/
+Downloads
+tar xf keynav-20091231.04.tar.gz
+keynav-20091231.04
+ls
+vim ~/.keynavrc
+vim keynav.c
+make
+~aur/keynav
+vim PKGBUILD
+ls $(cd -)
+ls ~/Downloads/keynav-20091231.04
+ls $(cd -)
+ls
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+makepkg -i
+mpc clear
+PSG g15
+kill 11512
+PSG xbin
+-
+ls
+~
+arson rotc
+arson -d rotc-ethernet
+~aur/rotc-ethernet
+vim PKGBUILD
+ls
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+ls
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+ls pkg/usr
+ls pkg/usr/bin
+ls pkg/usr/share/applications
+ls pkg/usr/share
+ls pkg/usr/share/pixmaps/rotc-ethernet.png
+ls pkg/usr/share/rotc-ethernet/
+makepkg -i
+~
+rotc-ethernet
+mplayer Downloads/Pogo\ -\ Alice.mp3
+~aur/g15terminal
+ls pkg
+ls pkg/usr
+ls pkg/usr/bin
+~
+-
+makepkg -i
+~
+g15terminal
+uzbl
+mcabber
+PSG fire
+hoep
+htop
+htop
+s /etc/rc.d/g15daemon start
+s vim /etc/rc.conf
+startxl
+startxl
+htop
+s /etc/rc.d/hal stop
+htop
+pacman -Qo /usr/sbin/console-kit-daemon
+pacman -Qi consolekit
+htop
+pacman -Qo /usr/lib/polkit-1/polkit
+pacman -Qo /usr/lib/polkit-1/polkitd
+pacman -Ql polkit G rc
+pacman -Ql consolekit G rc
+startxl
+startxl
+htop
+s htop
+ping evaryont.me
+ssh me
+ssh me
+s reboot
+g15aiostats
+g15mpd
+nohup g15mpd &
+s su --help
+s su -u colin 'g15terminal'
+s su colin 'g15terminal'
+s su colin -c 'g15terminal'
+bg %1
+kill %1
+PSG
+PSG g15
+kill 344{7,8}
+s kill 344{7,8}
+PSG g15
+s kill -9 344{7,8}
+PSG g15
+s vim /etc/rc.local
+s mkdir /etc/rc.user/
+s vim /etc/rc.user/colin
+s chmod a+x /etc/rc.user/colin
+ll /etc/rc.user
+ll /etc/rc.*
+s reboot
+s /etc/rc.d/mpd stop
+s vim /etc/rc.local
+readlink --help
+basename
+basename --help
+basename /etc/rc.user/colin
+s vim /etc/rc.local
+s umount /media/nas
+s reboot
+s vim /etc/rc.local
+s vim /etc/rc.single
+s vim /etc/rc.multi
+s vim /etc/rc.sysinit
+s vim /etc/rc.local.shutdown
+s vim /etc/rc.user/colin
+s vim /etc/rc.local
+s vim /etc/rc.multi
+s vim /etc/rc.local
+s /etc/rc.d/mpd stop
+s reboot --help
+s reboot 
+ssh-me
+man mpd.conf
+man mpd.conf G disable
+man mpd.conf G disable -C3
+man mpd.conf G disable -C3 --color
+man mpd.conf G off -C3 --color
+s reboot
+startxl
+arson lcdproc
+arson -d lcdproc lcdproc-g15
+~aur/lcdproc
+ls
+makepkg
+~aur/libmrss
+ls
+vim PKGBUILD
+mv ~/Downloads/libmrss-0.19.2.tar.gz .
+ls
+rm libmrss-0.19.2.tar.gz.part
+makepkg
+makepkg -i
+../lcdproc
+makepkg
+s pacman -Sy lirc
+s pacman -S lirc
+s pacman -S kernel26 nvidia
+~aur/nvidia
+vim PKGBUILD
+pacman -Qu nvidia
+vim PKGBUILD
+pacman -Qi nvidia
+pacman -Si nvidia
+vim PKGBUILD
+pacman -Si kernel26
+../kernel26
+vim PKGBUILD
+ls
+..
+ls kernel*
+kernel26-pae
+vim PKGBUILD
+makepkg
+s abs core/kernel26
+vimdiff config /var/abs/core/kernel26/config
+pacman -Si lirc
+~aur/lcdproc
+vi PKGBUILD
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+src/lcdproc-0.5.3
+ls
+./configure --help G lirc
+./configure --help G lirc -C2 --color
+./configure --help G lirc -C5 --color
+vim ../../PKGBUILD
+vim ../../PKGBUILD
+../..
+makepkg
+yrm src pkg
+makepkg
+makepkg -i
+../lcdproc-g15
+pacman -Ql lcdproc L
+~
+lcdproc --help
+s /etc/rc.d/lcdd start
+reet
+reset
+s
+ls
+PSG lcd
+s kill -9 15923
+htop
+vim /etc/LCDd.conf
+s vim /etc/LCDd.conf
+s vim /etc/LCDd.conf
+s /etc/rc.d/lcdd start
+lcdmetar.pl --help
+arson metar
+lcdident.pl --help
+lcdident.pl -h
+lcdident.pl 
+arson lcd
+arson -d lcd-stuff
+~aur/lcd-stuff
+ls
+makepkg
+ls pkg
+ls pkg/etc
+ls pkg/etc/rc.d
+ls pkg/usr/bin/lcd-stuff
+makepkg -i
+~
+s /etc/rc.d/lcd-stuff start
+-
+ls
+ls src
+vim lcd-stuff
+ls src/lcd-stuff-0.1.6
+ls src/lcd-stuff-0.1.6/shared
+~aur/lcd-stuff
+ls
+vim PKGBUILD
+ src/lcd-stuff-0.1.6/
+make DESTDIR=/home/colin/Downloads/AUR/lcd-stuff/pkg install-man
+ls
+ls scripts
+ivm scripts/mplayer_remote.py
+vim scripts/mplayer_remote.py
+vim src
+ls src
+find -name *conf*
+find . -name *conf*
+find . -name \*conf\*
+vim lcd-stuff.conf
+mpc
+mpc play
+arson lcdproc
+startxl
+s umount /media/nas 
+s /etc/rc.d/mpd stop
+s umount /media/nas 
+s reboot
+mpc outputs
+mpc outputs 2
+pms --help
+pms
+s vim /etc/mpd.conf
+mpc outputs
+man mpc
+arson mpd
+s pacman -S ncmpc
+ncmpc
+ncmpc --help
+ncmpc -c -M -S
+s vim /etc/mpd.conf
+s /etc/rc.d/mpd stop
+s /etc/rc.d/mpd start
+ncmpc
+mpc
+ncmpc
+mpc
+pms
+mcabber
+mcabber
+mcabber
+mplayer
+mplayer 
+mplayer http://download.youporn.com/download/178201/flv/139076_Sexual_Eruption_by_Snoop_Dogg_XXX_Version.flv\?download\=1\&ll\=1\&t\=dd
+mplayer Downloads/all1.flv
+rm Downloads/all1.flv
+code/
+git pull git://github.com/elliottcable/git-blog.git
+git clone git://github.com/elliottcable/git-blog.git
+yrm git-blog*
+git pull git://github.com/elliottcable/git-blog.git
+git clone git://github.com/elliottcable/git-blog.git
+git-blog
+ls
+vim Rakefile.rb
+ls prepped
+ls lib
+ls lib/git-blog
+vim lib/git-blog.rb
+vim lib/git-blog/core
+vim lib/git-blog/core.rb
+gem search hobix
+..
+git clone git://github.com/hobix/hobix.git
+hobix
+ls
+ls bin
+vim bin/hobix
+grep '\/Users' *
+vim bin/hobix
+git add bin/hobix
+git ci
+ls go
+vim install.rb
+vim Rakefile
+rake gem
+s gem install pkg/hobix-0.6.gem
+~
+hobix 
+hobix --help
+-
+vim lib/hobix/commandline.rb +465
+vim lib/hobix/commandline.rb +465
+git add lib/hobix/commandline.rb
+git ci
+rake gem
+ls
+vim Rakefile
+rm pkg
+rake gem
+s gem uninstall hobix
+s gem install pkg/hobix-0.6.gem
+~
+hobix
+-
+vim lib/hobix/weblog.rb +22
+vim lib/hobix/weblog.rb +22
+git st
+git rm -r doc
+git st
+git ci
+grep 'changelog' *
+grep 'doc\/' *
+git reset HEAD doc/CHANGELGO
+git reset HEAD doc/CHANGELOG
+git st
+git checkout -- doc/CHANGELOG
+git st
+vim doc/CHANGELOG
+git ci
+git st
+git mv doc/CHANGELOG CHANGELOG
+git st
+git ci
+git st
+git add lib/hobix/weblog.rb
+git ci
+grep 'opname' *
+vim Rakefile
+git st
+s gem uninstall hobix && s gem install pkg/hobix-0.6.gem
+rake gem
+vim Rakefile
+git add Rakefile
+git ci
+rake gem
+s gem uninstall hobix && s gem install pkg/hobix-0.6.gem
+-
+hobix
+-
+vim lib/hobix/commandline.rb +32
+git add lib/hobix/commandline.rb 
+git ci
+git st
+rake gem && s gem uninstall hobix && s gem install pkg/hobix-0.6.gem
+gem uninstall --help
+-
+hobix
+-
+grep '0\.5' *
+vim lib/hobix.rb
+-
+hobix create hobix_blog
+hobix create hashtable hobix_blog
+ls
+ls hobix_blog
+-
+grep '\.path' *
+vim lib/hobix/out/quick.rb
+-
+hobix
+hobix_blog
+ls
+vim hobix.out.quick
+vim hobix.yaml
+..
+vim .hobixrc
+rm .hobixrc
+yrm hobix_blog
+hobix create hashtable hobix_blog
+hobix_blog
+ls
+vim hobix.yaml
+..
+yrm hobix_blog .hobixrc
+code/
+git clone git://github.com/vanpelt/stat.git
+stat/
+ls
+rake
+s gem install erubis
+rake
+ls
+ls src
+src
+vim readme.md
+..
+vim Rakefile
+ls
+git st
+vim Rakefile
+git st
+git diff
+git add -p Rakefile
+git ci
+git st
+git diff
+git add -p Rakefile
+git ci
+git add -p Rakefile
+git ci
+git st
+vim Rakefile
+git add Rakefile -p
+git commit --amend
+git st
+git diff
+vim Rakefile
+git diff
+vim Rakefile
+git st
+git diff
+s /etc/rc.d/mpd stop
+s /etc/rc.d/nas_mount stop
+s reboot
+g15mpd
+nohup g15mpd &
+mpc toggle
+startxl
+mpc
+ssh me
+catw http://www.irssi.org/scripts/scripts/screen_away.pl
+;s
+ls
+curl http://www.irssi.org/scripts/scripts/screen_away.pl
+wget http://www.irssi.org/scripts/scripts/screen_away.pl
+vim screen_away.pl
+ls /media/nas/Music/Newgrounds_Audio_Portal
+s mount /media/music
+mv 16729_GuitarVsPiano2__Goukisan.mp3 /media/music/Newgrounds_Audio_Portal
+rm /media/music/Newgrounds_Audio_Portal/16729_Goukisan.mp3
+s umount /media/music
+arson dtach
+~aur/dtach-patched
+ls
+vim foreground.diff
+makepkg
+vim src/dtach-0.8/main.c
+pacman-s dtach
+~
+pacman -Ql dtach
+man dtach
+-
+-
+Downloads/AUR/dtach-patched/src/dtach-0.8
+-
+-
+ls
+./configure
+make 
+ls
+make distclean
+ls
+vim attach.c
+stat 
+stat --help
+ls .cache
+ssh me
+ssh-me
+ifconfig
+ping 192.168.1.254
+ping 192.168.1.1
+ping 192.168.1.5
+ssh me
+ssh me
+mpc
+mpc toggle
+lsof G dev
+mpc
+mpc toggle
+ssh me
+ssh me
+s umount /media/nas
+s /etc/rc.d/mpd stop
+s umount /media/nas
+s umount /media/music
+s reboot
+startxl
+ssh me
+ssh me
+dotfiles
+git remote update ; git pull
+ssh me
+git remote update ; git pull
+git st
+git diff
+git add -p vimperatorrc
+git st
+git ci
+git st
+vim vimperator
+vim vimperatorrc
+git add vimperatorrc
+git ci
+git st
+git push
+ssh me
+~
+vim .ssh/config
+ssh --help
+man ssh
+ssh-agent --help
+man ssh-agent
+man ssh-add
+PSG ssh
+kill 4942
+PSG ssh
+man ssh-add
+keychain -k all
+grep 'gpg' dotfiles/zsh*
+ssh me
+ls
+ssh --help
+man ssh_config
+vim .xbindkeysrc.scm
+PSG xb
+gem search --local ssh
+irb
+irb
+vim .ssh/config
+screen
+ls
+pacman -Ql notmuch
+pacman -Qs notmuch
+~aur/notmuch-git
+ls
+vim PKGBUILD
+s updatedb
+locate talloc
+locate talloc &> locate_talloc.txt
+vim locate_talloc.txt
+pacman -Qo /usr/include/talloc.h
+vim PKGBUILD
+makepkg
+ssh local
+Downloads/AUR/notmuch-git
+ls
+ls pkg
+tar tf notmuch-git-20091216-1-i686.pkg.tar.gz
+tar tf notmuch-git-20091216-1-i686.pkg.tar.gz | sort
+detach irssi
+PSG dt
+ssh me
+mkdir Media/Videos/FOSSCasts/ ; cd Media/Videos/FOSSCasts; mplayer http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg --help
+man mplayer
+man mplayer | vim -c "set ft=man" -
+ls 
+ls ..
+cat ../catties_lol.wmv | mplayer -
+mplayer -
+mplayer http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg
+curl http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg
+ls
+ls ..
+wget http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg
+mplayer http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg
+mplayer 4_command_line_tips_1.ogg
+rm 4_command_line_tips_1.ogg
+curl http://fosscasts.com/screencasts/download_ogg/4_command_line_tips_1.ogg -O command_line_tips_1.ogg
+ls
+mplayer 4_command_line_tips_1.ogg
+man zshbuiltins
+jobs -s
+vim ~/.zshrc
+zcompile ~/.zshrc
+ls
+vim ~/.zshrc
+man zshbuiltins
+vim ~/.zshrc.zwc
+rm ~/.zshrc.zwc
+~/dotfiles
+ls
+vim zsh/* zshrc
+ls zsh
+man zshbuiltins
+autoload zkbd 
+zkbd 
+export G term
+export G vendor
+export G osty
+ls ~/.zkbd
+vim ~/.zkbd/rxvt-256color-:0.0
+ls
+ls ..
+PSG ssh
+ls
+pacman -Qs uncl
+vim ~/.xinitrc
+grep 'unclut' xinitrc
+unclutter --help
+unclutter -root &
+kill %unclutter
+unclutter -root -grab &
+htop
+man offlineimap
+vim ~/.offlineimaprc
+offlineimap --help
+vim ~/.offlineimaprc
+offlineimap
+ack --help-files
+ack --help
+ack --help G help
+ack --help type
+ack --python /usr/lib/python2.6/site-packages/offlineimap/ 'ssl'
+ack --python 'ssl' /usr/lib/python2.6/site-packages/offlineimap/
+s vim /usr/lib/python2.6/site-packages/offlineimap/imaplibutil.py
+s vim /usr/lib/python2.6/site-packages/offlineimap/imaplibutil.py +172
+offlineimap
+yrm mail
+yrm ~/mail
+ls
+ls
+ls ..
+ssh me
+..
+vim .keynavrc
+jobs
+disown %unclutter
+htop
+PSG fire
+screen -r pts-0.centuar
+ssh me
+ls
+mplayer Media/Videos/FOSSCasts/4_command_line_tips_1.ogg
+ls ..
+ls
+ssh me
+ls
+ls mail
+vim .offlineimaprc
+scp .offlineimap me:/home/colin/
+scp .offlineimaprc me:/home/colin/
+ssh me
+PSG ssh
+htop
+keychain -k
+s reboot
+mpc 
+mpc toggle
+mpc next
+ssh me
+s vim /etc/rc.colin /etc/rc.local
+s vim /etc/rc.user/colin
+ssh me -- "detach irssi"
+ls
+ssh me
+startxl
+ls
+dotfiles
+grep 'rm ' zsh*
+grep 'rm ' zsh* G -v hist
+vim zshrc
+ls
+jobs
+ls Media/Pictures
+ls Media/Pictures/Macbeth
+wgetpaste --help Media/Pictures/Macbeth
+wgetpaste --help 
+ls bin
+bin/
+wget http://omploader.org/ompload
+vim ompload
+chmod a+x ompload
+~
+ompload
+ompload Media/Pictures/Macbeth/macbeth_256x192.JPG
+ls /mnt/windows
+ls /mnt/windows/Documents\ and\ Settings/colin
+ls /mnt/windows/Documents\ and\ Settings/colin/My\ Documents
+ompload /mnt/windows/Documents\ and\ Settings/colin/My\ Documents/AutoHotkey.ahk
+ssh me
+vim .gtkrc
+vim .vimperatorrc
+grep 'css' .vimperator*
+grep 'css' .vimperator* G -v history
+ls .vimperator
+ls .vimperator/
+ls .vimperator/info
+ls .vimperator/info/default
+grep 'css' .vimperator* G -v info
+grep 'css' .vimperator* --help
+grep 'css' .vimperator* --exclude-dir=info
+grep 'css' .vimperator* --exclude-dir=/home/colin/.vimperator/info
+htop
+htop
+htop
+vim .gtkrc
+vim .gtkrc-2.0
+vim .gtkrc-2.0
+dotfiles
+git st
+git diff
+git add xinitrc
+git ci
+git add zshrc
+git ci
+git st
+git push
+ssh me
+vim ~/.ssh/config
+s reboot
+sh /etc/rc.colin
+bash /etc/rc.colin
+mpc next
+mpc toggle
+mpc toggle
+startxl
+startxl
+ls
+s chmod a+x /etc/rc.colin
+man sudo
+arson sudo
+man sudo
+sudo -l
+s -l
+ssh me
+vim .ssh/config
+ssh me2
+s reboot
+htop
+nohup g15aiostats &
+\:
+\: "hi"
+\: "hi" ; echo 'hi'
+# "hi" ; echo 'hi'
+s tail /var/log/everything.log
+htop
+dotfiles
+git st
+ls
+mv ../.xbindkeysrc.scm xbindkeysrc.scm
+git add xbindkeysrc.scm
+git ci
+vim symlink.rb
+./symlink.rb
+rm ../.symlink.rb
+rm ../.libtrash
+s rm ../.libtrash
+vim ../.libtrash.conf
+git st
+vim xbindkeysrc.scm
+git add xbindkeysrc.scm
+git ci
+git st
+vim /tmp/startx.log
+s powertop
+ls
+git st
+git pull
+git push
+alias history
+alias ls
+man zshbuiltins
+pc
+arson pc
+cutsel --help
+fc -l 1 G netstat
+fc -l 1 G cut
+netstat -tunelp
+netstat -tunl -p tcp
+s netstat -tunl -p tcp
+telnet 127.0.0.1 7600
+telnet 127.0.0.1 15550
+telnet 127.0.0.1 5687
+telnet 127.0.0.1 5687
+ls ~aur/g15aiostats
+ls ~aur/g15aiostats/src/g15aiostats-0.22
+ls ~aur/g15aiostats/src/g15aiostats-0.22/src
+ack '5687' ~aur/g15aiostats/src/g15aiostats-0.22/src
+vim ~aur/g15aiostats/src/g15aiostats-0.22/src/init.cpp +408
+vim ~aur/g15aiostats/src/g15aiostats-0.22/src/network.cpp
+telnet 127.0.0.1 5687
+telnet 127.0.0.1 5687
+ls
+vim zsh/alias
+vim zsh/style
+ls zsh
+.
+alias .=pwd
+.
+ls
+zsh/
+ls
+vim env
+vim alias
+vim alias
+. alias
+source alias
+.
+\:
+\: 'hi'
+\: lol
+-
+-
+git st
+git diff
+git add alias
+git ci
+git st
+git diff
+git add style
+git ci
+ls
+git push
+vim functions
+zsh
+exec zsh
+-
+...
+ls
+lol
+vim zshrc
+vim zsh/env
+../..
+~
+dotfiles/.git/info/../../symlink.rb
+rm .todo .Dropbox .Desktop .nohup.out .dotfiles .keyboard.aur.txt .Stuffs .zshrcs .Code .Games .TODO .Trash .kee.kdb .NOTE .tmp
+rm .Zim .VisualBoyAdvance.cfg .screen_away.pl .Downloads .Media .Documents .nas .ssh-back-talk.mkd .bin .cups .My\ Games
+lsa
+rm .cups-pdf .btscanner.log .code .xinitrc.vbox  .website
+lsh
+lsd
+lsl
+lse
+alias lse
+ll cups-pdf
+ll G cups
+mplayer http://productivelinux.com/audio/PLP-Episode15.mp3
+mplayer http://productivelinux.com/audio/PLP-Episode15.mp3
+code/
+git clone git://github.com/chrisamiller/rtm-cli.git
+rtm-cli
+ls
+ln -s rtm ~/bin
+ll ~/bin/rtm
+rm ~/bin/rtm
+ln -s $(pwd)/rtm ~/bin
+ll ~/bin/rtm
+~
+rtm
+arson rtm
+s cpan WebService::RTMAgent
+s cpan install WebService::RTMAgent
+s cpan WebService::RTMAgent
+s cpan --help
+man cpan
+s cpan WebService::RTMAgent
+s cpan -f WebService::RTMAgent
+s cpan --force WebService::RTMAgent
+s cpan -e WebService::RTMAgent
+s cpan -h WebService::RTMAgent
+s cpan -fi WebService::RTMAgent
+ls
+rtm
+rtm --help
+rtm authorize
+rtm
+rtm today
+rtm --help
+rtm list
+dotfiles
+vim zshrc
+man zshcontrib
+man zshcontrib
+ping
+ping 127.0.0.1
+mpc
+mpc toggle
+mpc toggle
+vim zshrc
+man zshbuiltins
+man zshzle
+vim zshrc
+zsh
+vim zshrc
+zsh
+vim zshrc
+grep 'bindkey' *
+grep 'bindkey' zsh* G -v history G -v deb
+vim zshrc
+zsh
+zsh
+vim zshrc
+zsh
+vim zshrc
+zsh
+vim zshrc
+zsh
+dircolors --help
+dotfiles
+vim zshrc
+ack 'bindkey' zsh*
+vim zshrc zsh/functions
+zsh
+ls
+cd dotfiles/
+vim zshrc
+zsh
+vim zsh/env
+zsh
+vim zsh/env
+ls
+dotfiles
+git st
+git diff
+git add zshrc -p
+git diff
+git ci
+git commit --amend
+git diff
+git add zshrc -p
+git ci
+git st
+git diff
+git add zsh/env zshrc
+git ci
+git st
+ls
+ls
+git st
+ls
+bindkey -v
+bindkey
+vim ~/.gitconfig
+grep 'status' ~/.gitconfig
+grep 'status' -A3 ~/.gitconfig
+git config --help
+git config --help
+git config --get-color added
+git config --get-color status
+git config --get status
+git config --get color.status
+git config --get color.status.added
+git config --get color.status.changed
+git config --get color.status.untracked
+export SSH*
+htop
+lsof
+dotfiles
+ls
+zsh/
+vim debian.rc
+vim debian.rc
+echo [[ 8192 / 1024 ]]
+echo $[[ 8192 / 1024 ]]
+echo 8192 / 1024 | bc
+ls
+vim env
+..
+-
+git mv env environment.zsh
+ls
+chmod a-x functions
+ls
+vim paths
+vim environment.zsh
+vim environment.zsh
+vim environment.zsh
+vim environment.zsh
+vim environment.zsh
+vim environment.zsh
+vim ~/.vimrc
+vim environment.zsh
+vim environment.zsh
+vim ~/.vimrc
+git mv alias aliases.zsh
+vim aliases.zsh
+vim keychain
+git rm keychain
+git rm keychain -f
+ls
+vim named_dirs
+..
+name-dir dotfiles
+ls
+vim zsh/functions
+chpwd $(pwd)
+vim zsh/functions
+echo $TERM
+vim zsh/functions
+vim zsh/functions
+export ZSH
+export G zsh
+unset ZSH
+vim zshrc
+unset ZSH
+vim zshrc
+zsh
+zsh
+zsh
+vim zshrc
+zsh
+: 1263586552:0;ls
+: 1263586560:0;mv zsh config
