@@ -9,7 +9,7 @@ source $ZSH/environment.zsh
 source $ZSH/style
 source $ZSH/aliases.zsh
 source $ZSH/functions.zsh
-source $ZSH/keychain
+#source $ZSH/keychain
 if [ -e $ZSH/named_dirs ] ; then
     source $ZSH/named_dirs
 fi
