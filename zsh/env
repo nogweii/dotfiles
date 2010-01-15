@@ -3,7 +3,7 @@ export HISTFILE="${ZHOME}/history"
 
 # Prompt. Make it purrty!
 export PROMPT="%B%n%b%d/ "
-export RPROMPT="[%D{%L:%M%P %d%b%Y}]"
+export RPROMPT="-- INSERT --"
 
 # Extra places which doesn't seem to be added to the normal paths
 export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
