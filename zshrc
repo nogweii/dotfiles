@@ -73,3 +73,5 @@ rationalise-dot() {
 }
 zle -N rationalise-dot
 bindkey . rationalise-dot
+
+setopt Share_History
