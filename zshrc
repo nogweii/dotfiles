@@ -28,7 +28,7 @@ stty erase "^?"
 
 setopt appendhistory autocd extendedglob notify
 unsetopt beep nomatch
-bindkey -e
+bindkey -v # Vim mode!
 
 # Paste a URL? Now auto quoted, yay! :D
 autoload -U url-quote-magic
@@ -75,3 +75,10 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 setopt Share_History
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
