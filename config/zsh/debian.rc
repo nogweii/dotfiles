@@ -103,9 +103,10 @@ zstyle ':completion:*' completer \
 
 ### Aliasing "run-help"
 unalias run-help
-autoload run-help
+AUTOLOAD run-help
 
 ### Loading the compinit
 autoload -U compinit
 compinit
 
+# vim: set syn=sh:
