@@ -1,14 +1,14 @@
 ########################
 # Global aliases
-alias -g  H='|head'
-alias -g  L='|less'
-alias -g  N='&>/dev/null'
-alias -g  T='|tail'
-alias -g  G='|grep'
-alias -g  N='&>/dev/null'
-alias -g  S='|sort'
-alias -g TO='2>&1 3>&1' # '&>&1' returns a parse error
-alias -g  U='|uniq'
+alias -g   H='|head'
+alias -g   L='|less'
+alias -g NUL='&>/dev/null'
+alias -g   T='|tail'
+alias -g   G='|grep'
+alias -g   N='&>/dev/null'
+alias -g   S='|sort'
+alias -g  TO='2>&1 3>&1' # '&>&1' returns a parse error
+alias -g   U='|uniq'
 
 ########################
 # Listing aliases
