@@ -55,7 +55,7 @@ function precmd() {
 
 rationalise-dot() {
     if [[ $LBUFFER = *.. ]]; then
-        LBUFFER+=/../
+        LBUFFER+=/
     else
         LBUFFER+=.
     fi
@@ -66,6 +66,7 @@ bindkey . rationalise-dot
 function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
     RPS2=$RPS1
+
     zle reset-prompt
 }
 zle -N zle-line-init
