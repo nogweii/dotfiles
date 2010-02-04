@@ -1,3 +1,1 @@
-mailboxes "+Gmail.All.Mail"
-
-# vim: set syn=muttrc:
+mailboxes "+inbox"
