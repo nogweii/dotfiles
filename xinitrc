@@ -42,6 +42,11 @@ which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
 # without requiring a hard reboot.
 urxvt.sh &
 
+
+# Social application tracking / discovery
+wakoopa &
+WhatPulse & # Keyboard & Mouse tracking
+
  exec awesome
 #exec xmonad
 #exec VirtualBox
