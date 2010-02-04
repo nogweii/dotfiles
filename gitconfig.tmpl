@@ -34,6 +34,7 @@
 	unpushed = log origin..HEAD
 	graph = log --oneline --graph
 	lg = log --graph --pretty=format:'%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr)%%Creset' --abbrev-commit --date=relative
+        ls-ignored = ls-files --others -i --exclude-standard
 [web]
 	browser = open
 [browser "open"]
