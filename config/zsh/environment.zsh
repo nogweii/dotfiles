@@ -13,6 +13,7 @@ export MANPATH="${MANPATH}:/usr/share/man:/usr/share/man/man1:/opt/java/man:/opt
 export EDITOR="vim"
 export BROWSER="elinks"
 export PAGER="less"
+export MANPAGER="vim.man"
 
 # CLI default parameters
 export GREP_DEFAULTS="-RPiI"
