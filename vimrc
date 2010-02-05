@@ -257,3 +257,5 @@ nmap gp :.!xclip -out<CR>
 "  autocmd!
 "  autocmd BufWritePost * :silent !git wip save "  wip: %:p:t" --editor -- "%"
 "augroup END
+
+map <silent> <c-l> <c-l>:nohlsearch<CR>
