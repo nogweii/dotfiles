@@ -67,13 +67,6 @@ alias git-branch-name="git branch | sed '/^\*/!d; s/^\* //'"
 #alias vinny='vim --cmd "let g:vimMode = \"notes\""'
 
 alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "let html_use_css = 1" -c "TOhtml" -c "set nu" -c "syntax on" -c "wq" -c "q" &>/dev/null'
-########################
-# Pacman
-if [ -x "$(which pacman-color)" ] ; then
-    alias  pacman="$(which pacman-color)"
-fi
-alias     pacmanr="s $(whence pacman) -Rcnsu"
-alias     spacman="s $(whence pacman) -S"
 
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.config/acronyms.wtf"
