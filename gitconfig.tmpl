@@ -29,7 +29,7 @@
 	a = add
 	br = branch
 	st = status
-	ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim git_diff_staged.diff -c ':tabmove' -c ':tabprev'\\\" git commit -e ; rm git_diff_staged.diff"
+	ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim git_diff_staged.diff -c ':bnext' +1\\\" git commit -e ; rm git_diff_staged.diff"
 	co = checkout
 	unpushed = log origin..HEAD
 	graph = log --oneline --graph
