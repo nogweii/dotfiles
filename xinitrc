@@ -44,7 +44,8 @@ urxvt.sh &
 
 
 # Social application tracking / discovery
-wakoopa &
+echo "Wakoopa launched, see /tmp/wakoopa.log for output"
+wakoopa &> /tmp/wakoopa.log &
 WhatPulse & # Keyboard & Mouse tracking
 
  exec awesome
