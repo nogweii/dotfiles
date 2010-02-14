@@ -362,13 +362,6 @@ let tagetIDs = (liberator.globalVariables.maine_coon_targets || '').split(/\s+/)
     return next();
   });
 
-  around(commandline._callbacks.submit, modes.EX, function (next, args) {
-    let r = next();
-    if (autoHideCommandLine && !(modes.extended & modes.OUTPUT_MULTILINE))
-      commandline.close();
-    return r;
-  });
-
   options.add(
     ['mainecoon'],
     'Make big screen like a Maine Coon',
