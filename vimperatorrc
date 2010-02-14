@@ -1,9 +1,5 @@
-" defsearch is a bookmark keyword or source engine.
-" set defsearch=yahoo
-"map <silent> <C-b> :js toggleSidebar("viewYBookmarksSidebar", false)<CR>
-
 " Add tab numbers for easy Alt-<1..9> switching :D
-set guioptions+=n
+"set guioptions+=n
 
 " AwesomeBar like completion (automatic, uses history & bookmarks as possible
 " completer)
@@ -37,7 +33,7 @@ javascript <<EOF
 })();
 EOF
 
-" 'Y'anking the selected text saves to the X selection buffer (e.g. Edit->Copy)
+" Yanking the selected text saves to the X selection buffer (e.g. Edit->Copy)
 js <<EOF
 mappings.addUserMap([modes.NORMAL], ["Y"], 
     "Yank the currently selected text",
