@@ -1,0 +1,5 @@
+gtk-theme-name = "Clearlooks"
+gtk-icon-theme-name = "Crux"
+gtk-font-name = "Liberation Sans 11"
+gtk-toolbar-style = 0
+gtk-key-theme-name = "Emacs"
