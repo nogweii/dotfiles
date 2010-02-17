@@ -1,13 +1,16 @@
 ; toggle MPD
-(xbindkey '("c:162") "mpc toggle")
-(xbindkey '("c:144") "mpc prev")
-(xbindkey '("c:153") "mpc next")
+(xbindkey '("c:172") "mpc toggle")
+(xbindkey '("c:173") "mpc prev")
+(xbindkey '("c:171") "mpc next")
+(xbindkey '("c:174") "mpc stop")
+(xbindkey '("c:123") "dvol -i 5")
+(xbindkey '(Mod4 "c:123") "dvol -g")
+(xbindkey '("c:122") "dvol -d 5")
+(xbindkey '(Mod4 "c:122") "dvol -t")
 
 ;(xbindkey '(Mod4 F2) "gmrun")
 
 (xbindkey '(Mod4 Return) "urxvt.sh")
-
-(xbindkey '("c:178") "open-browser")
 
 ;; Super-R starts keynav, a keyboard based mouse mover. Awesome, right?!?
 (xbindkey '(Mod4 r) "keynav 'start, grid 2x2'")
