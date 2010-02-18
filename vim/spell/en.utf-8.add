@@ -167,3 +167,9 @@ c
 vendored
 readme
 Readme
+stdin
+stdout
+stderr
+gpg
+GnuPG
+POSIX
