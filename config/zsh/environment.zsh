@@ -42,7 +42,7 @@ if [ -e /usr/lib/libtrash.so ] ; then
 fi
 export TERMINFO="~/.terminfo"
 
-export HOSTNAME="$(hostname)"
+[ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
 
 eval `dircolors -b $HOME/.dir_colors`
 
