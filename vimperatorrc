@@ -1,5 +1,4 @@
-" Add tab numbers for easy Alt-<1..9> switching :D
-"set guioptions+=n
+set guioptions-=rb
 
 " AwesomeBar like completion (automatic, uses history & bookmarks as possible
 " completer)
