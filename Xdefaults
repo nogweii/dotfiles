@@ -1,4 +1,4 @@
-!! Default HOME, though I *really* don't like this. It should be passed in when
+!! Default HOME, though I *really* do not like this. It should be passed in when
 !! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
 #ifndef HOME
 #define HOME /home/colin
