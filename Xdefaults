@@ -36,4 +36,4 @@ URxvt.underlineURLs: true
 URxvt.perl-lib: HOME/.data/urxvt/
 URxvt.perl-ext: selection,mark-yank-urls
 
-! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
+! vim: set syn=xdefaults:
