@@ -48,7 +48,11 @@ echo "Wakoopa launched, see /tmp/wakoopa.log for output"
 wakoopa &> /tmp/wakoopa.log &
 WhatPulse & # Keyboard & Mouse tracking
 
- exec awesome
+# Thanks to http://totherme.livejournal.com/4154.html for this trick!
+(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
+
+#exec awesome
+ exec startkde
 #exec xmonad
 #exec VirtualBox
 #exec openbox
