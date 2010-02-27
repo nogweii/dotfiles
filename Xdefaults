@@ -16,10 +16,10 @@ urxvt.foreground:         grey80
 urxvt.colorBD:            white
 urxvt.saveLines:          128
 !! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-urxvt*background:         rgba:0000/0000/0000/7fff
-urxvt*depth:              32
+!urxvt*background:         rgba:0000/0000/0000/7fff
+!urxvt*depth:              32
 !! Pseudo-transparent
-!urxvt*background:         black
+urxvt*background:         black
 !URxvt*transparent:        true
 !URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
