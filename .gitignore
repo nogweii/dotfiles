@@ -4,6 +4,7 @@ config/zsh/history
 /zsh/
 vim/spell/en.utf-8.add.spl
 xmonad/xmonad-i386-linux
+xmonad/xmonad-x86_64-linux
 xmonad/xmonad.errors
 xmonad/xmonad.hi
 xmonad/xmonad.o
