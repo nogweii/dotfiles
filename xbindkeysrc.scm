@@ -16,7 +16,7 @@
 (xbindkey '(Mod4 r) "keynav 'start, grid 2x2'")
 
 ; Start an application
-(xbindkey '(Mod4 p) "dmenu_run")
+;(xbindkey '(Mod4 p) "dmenu_run")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Start of xbindkeys guile configuration help ;;
