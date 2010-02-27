@@ -19,3 +19,6 @@ end.each do |file|
      end
 end
 
+# Symlink ~/.xsession to ~/.xinitrc so graphical display managers also work
+FileUtils.ln_s(File.expand_path(File.join(ENV['HOME'], ".xinitrc")),
+          File.expand_path(File.join(ENV['HOME'], ".xsession")), :verbose => true)
