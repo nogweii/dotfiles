@@ -11,8 +11,6 @@ fi
 export DBUS_SESSION_BUS_PID
 echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}" 
 
-[ -f /etc/profile ] && . /etc/profile
-
 ########################################
 ###     Make it pretty
 ########################################
