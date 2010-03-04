@@ -16,53 +16,18 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Replace
 import XMonad.Util.Scratchpad
 
-main = do
-    replace
-    xmonad $ ewmh kde4Config {
+main = xmonad $ ewmh kde4Config {
+    -- replace ; ewmh
+    -- kde4Config {
 
         modMask = mod4Mask -- use the Windows button as mod
       , terminal = "urxvt.sh"
-
-      , keys = myKeys
 
       , manageHook = manageHook kdeConfig <+> myManageHook
       , logHook = myLogHook
 
     }
-
-myManageHook = composeAll (
-
-    -- Apps, etc to float & center
-    [ className =? c <||> resource =? r <||> title =? t <||> isDialog --> doCenterFloat
-    | c <- ["Wine", "Switch2", "quantum-Quantum"]
-    , r <- ["Dialog", "Download"]
-    , t <- ["Schriftart auswählen", "Choose a directory"]
-    ] ++
-
-    -- Separate float apps
-    [ className =? "Plasma-desktop" --> doFloat -- For KDE
-
-    -- Workspaces
-    -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
-    -- , resource =? ""
-    -- , title =? ""
-
-    -- "Real" fullscreen
-    , isFullscreen              --> doFullFloat
-    , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
-    ] )
-
-    -- Default hooks:
-    -- <+> insertPosition Below Newer
-    -- <+> positionStoreManageHook
-    <+> manageDocks
-    -- TODO: Figure out the rectangle required for a 1-line terminal. (Note: percentages!)
-    <+> scratchpadManageHook (W.RationalRect 0.25 0.375 0.5 0.35)
-
-  where makeMaster = insertPosition Master Newer
-
-
-myKeys conf = mkKeymap conf $
+    `additionalKeysP`
     [ ("M-<Escape>", kill)
     , ("M-<Space>", sendMessage NextLayout)
     , ("M-r", refresh)
@@ -80,6 +45,39 @@ myKeys conf = mkKeymap conf $
     -- TODO: This will be replaced by a bashrun (but using zsh!) clone
     , ("M-g", scratchpadSpawnActionTerminal "urxvt" )
     ]
+
+myManageHook = composeAll (
+
+    -- Apps, etc to float & center
+    [ className =? c <||> resource =? r <||> title =? t <||> isDialog --> doCenterFloat
+    | c <- ["Wine", "Switch2", "quantum-Quantum"]
+    , r <- ["Dialog", "Download"]
+    , t <- ["Schriftart auswählen", "Choose a directory"]
+    ] ++
+
+    -- Separate float apps
+    [ className =? "Plasma-desktop" --> doFloat -- For KDE
+    , className =? "mplayer" --> doFloat
+
+    -- Workspaces
+    -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
+    -- , resource =? ""
+    -- , title =? ""
+
+    -- "Real" fullscreen
+    , isFullscreen              --> doFullFloat
+    , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
+    ] )
+
+    -- Default hooks:
+    -- <+> insertPosition Below Newer
+    -- <+> positionStoreManageHook
+    <+> manageDocks
+    -- TODO: Figure out the rectangle required for a 1-line terminal. (Note: percentages!)
+    <+> scratchpadManageHook (W.RationalRect 0.1 0.375 0.15 0.35)
+
+  where makeMaster = insertPosition Master Newer
+
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
