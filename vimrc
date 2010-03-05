@@ -64,23 +64,6 @@ nnoremap <C-k> 3k
 map H ^
 map L $
 
-if !exists("g:vimMode")
-	let g:vimMode = "vim"
-end
-if g:vimMode == "notes"
-	let g:treeExplLocalRoot = "/home/colin/Dropbox/Notes"
-	execute "cd " . g:treeExplLocalRoot
-	au VimEnter * exe 'VSTreeExplore' . g:treeExplLocalRoot | wincmd w
-	" call s:TreeExplorer(1, '')
-	" call VSTreeExplore()
-end
-" echo g:vimMode
-
-let g:treeExplVertical = 1
-let g:treeExplWinSize = 25
-
-"autocmd BufRead,BufNewFile *.mkd *.md set ai formatoptions=tcroqn2 comments=n:>
-
 nmap <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -179,21 +162,6 @@ if !has("ruby")
 	echo "Yes it does work with ruby 1.9+, there is a patch for that"
 endif
 
-function! Twitter()
-  if !exists("g:twitvim_login")
-	  call inputsave()
-	  let username = input("Your Twitter user name: ")
-	  let password = inputsecret("Your Twitter password: ")
-	  call inputrestore()
-	  let g:twitvim_login = username.":".password
-  endif
-  FriendsTwitter
-endfunction
-command! Twitter call Twitter()
-
-" Don't highlight the search results, alert the user to it
-map <Leader>/ :nohlsearch \| :echo "Not highlighting results"<CR>
-
 set nu
 set cursorline
 set cindent
@@ -215,6 +183,7 @@ set sidescroll=1
 set sidescrolloff=7
 set softtabstop=4 tabstop=4
 
+" Return to the last line you were editing in a file
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
