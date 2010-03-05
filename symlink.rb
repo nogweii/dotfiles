@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+system("git submodule init")
+system("git submodule update")
+
 # Makes symlinks for all the configuration files except for this script and any
 # file with README in it.
 
