@@ -94,7 +94,7 @@ gsConfig = defaultGSConfig
     , gs_cellwidth = 100
     , gs_navigate = M.unions
         [reset
-        ,viStyleKeys
+        ,nethackKeys
         ,gs_navigate                               -- get the default navigation bindings
             $ defaultGSConfig `asTypeOf` gsConfig  -- needed to fix an ambiguous type variable
         ]
@@ -105,12 +105,6 @@ gsConfig = defaultGSConfig
                               ,((0,xK_i),(1,-1))
                               ,((0,xK_n),(-1,1))
                               ,((0,xK_m),(1,1))
-                              ]
-          viStyleKeys = M.map addPair $ M.fromList
-                              [((0,xK_j),(0,1))
-                              ,((0,xK_k),(0,-1))
-                              ,((0,xK_h),(-1,0))
-                              ,((0,xK_l),(1,0))
                               ]
           -- jump back to the center with the spacebar, regardless of the current position.
           reset = M.singleton (0,xK_space) (const (0,0))
