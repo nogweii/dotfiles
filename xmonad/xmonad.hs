@@ -7,6 +7,7 @@ import qualified XMonad.StackSet as W
 
 -- Actions
 import XMonad.Actions.GridSelect
+import XMonad.Actions.Submap
 
 -- Hooks
 import XMonad.Hooks.FadeInactive
@@ -50,6 +51,14 @@ main = xmonad $ ewmh kde4Config {
 
     -- TODO: This will be replaced by a bashrun (but using zsh!) clone
     , ("M-g", scratchpadSpawnActionTerminal "urxvt" )
+
+    -- mpc control via 'normal' keys
+    , ("M-a", submap . M.fromList $
+        [ ((0, xK_l),     spawn "mpc next")
+        , ((0, xK_h),     spawn "mpc prev")
+        , ((0, xK_z),     spawn "mpc random")
+        , ((0, xK_space), spawn "mpc toggle")
+        ])
     ]
 
 myManageHook = composeAll (
