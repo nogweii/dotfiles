@@ -31,8 +31,6 @@ export ME="${UID}"
 
 # Application settings
 export SUDO_PROMPT="Your Password:"
-export MPD_HOST='localhost'
-export MPD_PORT=7600
 export GDK_USE_XFT=1
 export QT_XFT=true
 
