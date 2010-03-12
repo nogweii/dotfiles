@@ -94,3 +94,5 @@ alias        .='cd .'              # Have '.' match behaviour of .[.]+
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
 alias portstat="s netstat -tunelp"
+
+alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
