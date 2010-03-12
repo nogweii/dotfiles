@@ -1,5 +1,6 @@
 # Saves a lot of guess work if a background thread fails
 Thread.abort_on_exception = true
+ARGV.concat ["--readline", "--prompt-mode", "simple"]
 
 # Load various things...
 %w{wirble open-uri etc guessmethod}.each { |gem| require gem }
