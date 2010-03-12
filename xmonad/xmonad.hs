@@ -72,6 +72,7 @@ myManageHook = composeAll (
 
     -- Separate float apps
     [ className =? "Plasma-desktop" --> doFloat -- For KDE
+    , className =? "kmix" --> doFloat -- For KDE
     , className =? "mplayer" --> doFloat
 
     -- Workspaces
