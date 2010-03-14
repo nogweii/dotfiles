@@ -1,6 +1,6 @@
 DYNAMIC_MANPATH="$(
 echo -n $(manpath)
-    for MAN in /usr/lib/gems/*/gems/*/man; do
+    for MAN in /usr/lib/ruby/gems/*/gems/*/man; do
         echo -n :$MAN
     done
 )"
