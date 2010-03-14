@@ -15,20 +15,20 @@ echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 ###     Make it pretty
 ########################################
 unclutter -root -display $DISPLAY -jitter 5 -idle 5 -noevents & # Hide the mouse
-eval $(cat ~/.fehbg) # Background
+#eval $(cat ~/.fehbg) # Background
 xcompmgr -fFD 5 & # Special effects (requires Composite extension)
-xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
+#xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
 #
 #
 ########################################
 ###     Keyboard stuff
 ########################################
 #numlockx on # Enable numlock
-xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
+#xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
 ## setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
-autocutsel -fork # Sync the clipboards
+#autocutsel -fork # Sync the clipboards
 
 # Manage the internet connection
 #which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
