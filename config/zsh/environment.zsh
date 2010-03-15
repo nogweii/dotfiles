@@ -43,9 +43,4 @@ export TERMINFO="~/.terminfo"
 
 eval `dircolors -b $HOME/.dir_colors`
 
-export CANTOPATH="$HOME/.config/canto"
-mkdir -p $CANTOPATH/feeds/ $CANTOPATH/scripts/
-export PYTHONPATH="$HOME/code/canto/root/$LIBDIR/python-2.6/site-packages:$PYTHONPATH"
-export MANPATH="$HOME/code/canto/root/share/man:$MANPATH"
-
 export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
