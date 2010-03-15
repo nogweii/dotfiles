@@ -96,3 +96,5 @@ alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ 
 alias portstat="s netstat -tunelp"
 
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
+
+alias man="gem man -s"
