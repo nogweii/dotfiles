@@ -1,21 +1,57 @@
 <?xml version="1.0"?>
 <RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="chrome://mozapps/content/downloads/unknownContentType.xul#unknownContentType"
+                   screenX="714"
+                   screenY="368" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#main-window"
+                   screenY="25"
+                   sizemode="normal"
+                   height="1053"
+                   screenX="0"
+                   width="1918" />
+  <RDF:Description RDF:about="chrome://mozapps/content/extensions/extensions.xul#viewGroup"
+                   last-selected="search" />
+  <RDF:Description RDF:about="chrome://mozapps/content/extensions/extensions.xul#search-view"
+                   selected="true"
+                   last-selected="urn:mozilla:addons:search:https://addons.mozilla.org/downloads/file/77849/download_statusbar-0.9.6.7-fx.xpi?src=api" />
+  <RDF:Description RDF:about="chrome://mozapps/content/downloads/downloads.xul#downloadManager"
+                   screenX="716"
+                   screenY="389"
+                   width="485"
+                   height="300"
+                   sizemode="normal" />
+  <RDF:Description RDF:about="chrome://global/content/viewSource.xul#viewSource"
                    screenX="0"
                    screenY="25"
                    sizemode="normal"
-                   width="1918"
+                   width="958"
                    height="1053" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-title"
                    value="" />
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-box"
-                   sidebarcommand=""
-                   width=""
-                   src="" />
+  <RDF:Description RDF:about="chrome://mozapps/content/downloads/unknownContentType.xul">
+    <NC:persist RDF:resource="chrome://mozapps/content/downloads/unknownContentType.xul#unknownContentType"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://global/content/viewSource.xul">
+    <NC:persist RDF:resource="chrome://global/content/viewSource.xul#viewSource"/>
+  </RDF:Description>
   <RDF:Description RDF:about="chrome://browser/content/browser.xul">
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#main-window"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-box"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-title"/>
   </RDF:Description>
+  <RDF:Description RDF:about="chrome://mozapps/content/extensions/extensions.xul">
+    <NC:persist RDF:resource="chrome://mozapps/content/extensions/extensions.xul#search-view"/>
+    <NC:persist RDF:resource="chrome://mozapps/content/extensions/extensions.xul#viewGroup"/>
+    <NC:persist RDF:resource="chrome://mozapps/content/extensions/extensions.xul#extensionsManager"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://mozapps/content/downloads/downloads.xul">
+    <NC:persist RDF:resource="chrome://mozapps/content/downloads/downloads.xul#downloadManager"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://mozapps/content/extensions/extensions.xul#extensionsManager"
+                   screenX="0"
+                   screenY="25"
+                   sizemode="normal"
+                   width="958"
+                   height="1053" />
 </RDF:RDF>
