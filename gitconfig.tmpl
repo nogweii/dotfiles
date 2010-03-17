@@ -35,7 +35,7 @@
     graph = log --oneline --graph
     lg = log --graph --pretty=format:'%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr)%%Creset' --abbrev-commit --date=relative
     ls-ignored = ls-files --others -i --exclude-standard
-    up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+    up = !"git pull && git log --pretty=format:'%%Cred%%ae %%Creset- %%C(yellow)%%s %%Creset(%%ar)' HEAD@{1}.."
 [web]
     browser = open
 [browser "open"]
