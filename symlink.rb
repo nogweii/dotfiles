@@ -12,7 +12,7 @@ require 'fileutils'
     file == $0 or
     file =~ %r[^config/?$] or
     file =~ /website/
-end.each do |file|
+end.sort.each do |file|
     dotfile = File.expand_path(File.join(ENV['HOME'], ".#{file}"))
 
      unless File.exists? dotfile
@@ -23,5 +23,7 @@ end.each do |file|
 end
 
 # Symlink ~/.xsession to ~/.xinitrc so graphical display managers also work
-FileUtils.ln_s(File.expand_path(File.join(ENV['HOME'], ".xinitrc")),
-          File.expand_path(File.join(ENV['HOME'], ".xsession")), :verbose => true)
+unless File.exists? File.expand_path(File.join(ENV['HOME'], ".xsession"))
+    FileUtils.ln_s(File.expand_path(File.join(ENV['HOME'], ".xinitrc")),
+              File.expand_path(File.join(ENV['HOME'], ".xsession")), :verbose => true)
+end
