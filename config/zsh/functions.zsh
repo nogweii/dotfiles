@@ -80,3 +80,7 @@ function detach() {
     #         does not exist, running the specified command.
     dtach -A "$XDG_CACHE_HOME/dtach/$1.socket" -z -e "" $@
 }
+
+function d() {
+    mkdir -p $1 ; cd $1
+}
