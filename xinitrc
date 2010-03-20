@@ -28,7 +28,8 @@ xcompmgr -fFD 5 & # Special effects (requires Composite extension)
 ## setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
-#autocutsel -fork # Sync the clipboards
+autocutsel -selection PRIMARY -fork
+autocutsel -selection CLIPBOARD -fork
 
 # Manage the internet connection
 #which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
