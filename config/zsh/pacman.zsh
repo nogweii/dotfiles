@@ -11,3 +11,16 @@ fi
 
 alias pacmanr="s $(whence pacman) -Rcnsu"
 alias spacman="s $(whence pacman) -S"
+
+# Pacman completion for clyde
+compdef _pacman clyde=pacman
+
+sup-clyde() {
+    case $1 in
+        (-Ss | -Si | -Q* | -T)
+            /usr/bin/clyde "$@" ;;
+        (-S* | -R* | -U | *)
+            /usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;
+    esac
+}
+alias clyde="sup-clyde"
