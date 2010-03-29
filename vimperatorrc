@@ -59,4 +59,4 @@ map <silent> ga :addons<CR>
 map <silent> <C-j> 25j
 map <silent> <C-k> 25k
 
-set mainecoon=ca
+let g:maine_coon_default = "ac"
