@@ -16,7 +16,7 @@ if [ -e $ZSH/named_dirs ] ; then
 fi
 
 setopt interactivecomments
-setopt Share_History
+#setopt Share_History
 setopt appendhistory autocd extendedglob notify
 unsetopt beep nomatch
 bindkey -v # Vim mode!
