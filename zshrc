@@ -2,33 +2,24 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-#umask 077 # defaults => u=rwx,g=,o=
-ZHOME="${HOME}/.zsh"
-source $ZHOME/env
-source $ZHOME/style
-source $ZHOME/alias
-source $ZHOME/functions
-source $ZHOME/keychain
-if [ -e $ZHOME/named_dirs ] ; then
-	source $ZHOME/named_dirs
+ZSH="${HOME}/.config/zsh"
+source $ZSH/environment.zsh
+ source $ZSH/locale.zsh
+ source $ZSH/xdg.zsh
+source $ZSH/style
+source $ZSH/aliases.zsh
+ source $ZSH/pacman.zsh
+source $ZSH/functions.zsh
+#source $ZSH/keychain
+if [ -e $ZSH/named_dirs ] ; then
+    source $ZSH/named_dirs
 fi
 
-zle -N zle-keymap-select
-
-# Allow comments even in interactive shells i.e.
-# $ uname # This command prints system informations
-# zsh: bad pattern: #
-# $ setopt interactivecomments
-# $ uname # This command prints system informations
-# Linux
 setopt interactivecomments
-
-# Ctrl-Q will no longer freeze the terminal.
-stty erase "^?"
-
+#setopt Share_History
 setopt appendhistory autocd extendedglob notify
 unsetopt beep nomatch
-bindkey -e
+bindkey -v # Vim mode!
 
 # Paste a URL? Now auto quoted, yay! :D
 autoload -U url-quote-magic
@@ -36,9 +27,8 @@ zle -N self-insert url-quote-magic
 
 # Run fortune only if it's installed and we aren't connected to the machine via ssh
 if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
-	fortune -s # "Short" apothegms only
+    fortune -s # "Short" apothegms only
 fi
-#set -o vi
 # MAILDIR
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
@@ -63,3 +53,26 @@ function autobg() {
 function precmd() {
     autobg
 }
+
+rationalise-dot() {
+    if [[ $LBUFFER = *.. ]]; then
+        LBUFFER+=/
+    else
+        LBUFFER+=.
+    fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
+
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+keychain --quiet # Start ssh-agent, but don't add any keys (yet)
+[ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh # Load ssh-agent environment variables
+[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg # ditto, gpg-agent

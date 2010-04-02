@@ -1,4 +1,4 @@
-!! Default HOME, though I *really* don't like this. It should be passed in when
+!! Default HOME, though I *really* do not like this. It should be passed in when
 !! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
 #ifndef HOME
 #define HOME /home/colin
@@ -20,8 +20,8 @@ urxvt.saveLines:          128
 !urxvt*depth:              32
 !! Pseudo-transparent
 urxvt*background:         black
-URxvt*transparent:        true
-URxvt*shading:            50
+!URxvt*transparent:        true
+!URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
 urxvt.scrollTtyOutput:    false
 urxvt.scrollWithBuffer:   false
@@ -36,4 +36,4 @@ URxvt.underlineURLs: true
 URxvt.perl-lib: HOME/.data/urxvt/
 URxvt.perl-ext: selection,mark-yank-urls
 
-! vim: set ts=8 sw=8 tw=0 syn=xdefaults:
+! vim: set syn=xdefaults:
