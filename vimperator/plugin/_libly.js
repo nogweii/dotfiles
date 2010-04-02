@@ -12,9 +12,9 @@ var PLUGIN_INFO =
     <description lang="ja">適当なライブラリっぽいものたち。</description>
     <author mail="suvene@zeromemory.info" homepage="http://zeromemory.sblo.jp/">suVene</author>
     <license>MIT</license>
-    <version>0.1.21</version>
-    <minVersion>1.2</minVersion>
-    <maxVersion>2.1</maxVersion>
+    <version>0.1.30</version>
+    <minVersion>2.2</minVersion>
+    <maxVersion>2.3pre</maxVersion>
     <updateURL>http://svn.coderepos.org/share/lang/javascript/vimperator-plugins/trunk/_libly.js</updateURL>
     <detail><![CDATA[
 == Objects ==
@@ -34,14 +34,25 @@ extend(dst, src):
     オブジェクトを拡張します。
 A(iterable):
     オブジェクトを配列にします。
-around(obj, name, func):
+around(obj, name, func, autoRestore):
   obj がもつ name 関数を、func に置き換えます。
   func は
     function (next, args) {...}
   という形で呼ばれます。
   next はオリジナルの関数を呼び出すための関数、
   args はオリジナルの引数列です。
-  next には引数を渡す必要はありません。
+  通常、next には引数を渡す必要はありません。
+  (任意の引数を渡したい場合は配列で渡します。)
+  また、autoRestore が真であれば、プラグインの再ロードなどで around が再実行されたときに、関数の置き換え前にオリジナル状態に書き戻します。
+  (多重に置き換えられなくなるので、auto_source.js などを使ったプラグイン開発で便利です)
+  返値は以下のオブジェクトです
+  >||
+  {
+    original: オリジナルの関数
+    current: 現在の関数
+    restore: 元に戻すための関数
+  }
+  ||<
 bind(obj, func):
     func に obj を bind します。
     func内からは this で obj が参照できるようになります。
@@ -102,6 +113,80 @@ toStyleText(style):
         left: 10px;
     ||<
     のような文字列に変換します。
+
+== Object Request ==
+Request(url, headers, options):
+    コンストラクタ
+    url:
+        HTTPリクエスト先のURL
+    headers:
+        以下のようにHTTPヘッダの値を指定できる（省略可）
+        >||
+        {
+            'Referer' : 'http://example.com/'
+        }
+        ||<
+        以下の値はデフォルトで設定される（'Content-type'はPOST時のみ）
+        >||
+        {
+            'Accept': 'text/javascript, application/javascript, text/html, application/xhtml+xml, application/xml, text/xml, */*;q=0.1',
+            'Content-type': 'application/x-www-form-urlencoded; charset=' + options.encodingの値
+        }
+        ||<
+
+    options:
+        オプションとして以下のようなオブジェクトを指定できる（省略可）
+        asynchronous:
+            true: 同期モード／false: 非同期モード（デフォルト:true）
+        encoding:
+            エンコーディング（デフォルト: 'UTF-8'）
+        username:
+            BASIC認証時のuser名
+        password:
+            BASIC認証時のパスワード
+        postBody:
+            POSTメソッドにより送信するbody
+addEventLister(name, func):
+    イベントリスナを登録する。
+    name:
+        'onSuccess':
+            成功時
+        'onFailure':
+            失敗を表すステータスコードが返ってきた時
+        'onException':
+            例外発生時
+    func:
+        イベント発火時の処理
+        引数として以下Responseオブジェクトが渡される
+get():
+    GETメソッドによりHTTPリクエストを発行する。
+post():
+    POSTメソッドによりHTTPリクエストを発行する。
+
+== Object Response ==
+HTTPレスポンスを表すオブジェクト
+req:
+    レスポンスと対となるRequestオブジェクト
+doc:
+    レスポンスから生成されたHTMLDocumentオブジェクト
+isSuccess():
+    ステータスコードが成功を表していればtrue、失敗であればfalse
+getStatus():
+    ステータスコードを取得する
+getStatusText():
+    ステータを表す文字列を取得する
+getHTMLDocument(xpath, xmlns, ignoreTags, callback, thisObj):
+    レスポンスからHTMLDocumentオブジェクトを生成し、xpath を評価した結果の snapshot の配列を返す
+
+== Object Wedata ==
+~/vimperator/info/profile_name/plugins-libly-wedata-?????
+に store されます。
+getItems(expire, itemCallback, finalCallback):
+    インスタンス作成時に指定した dbname から、item を読込みます。
+=== TODO ===
+clearCache:
+  wedata 読込み成功したら、強制的にキャッシュと置き換えるの作って！
+
     ]]></detail>
 </VimperatorPlugin>;
 //}}}
@@ -149,14 +234,52 @@ libly.$U = {//{{{
         }
         return ret;
     },
-    around: function around (obj, name, func) {
-        let next = obj[name];
-        let current = obj[name] = function () {
-            let self = this, args = arguments;
-            return func.call(self, function () next.apply(self, args), args);
+    around: (function () {
+        function getPluginPath () {
+          let pluginPath;
+          Error('hoge').stack.split(/\n/).some(
+            function (s)
+              let (m = s.match(/^\(\)@chrome:\/\/liberator\/content\/liberator\.js -> (.+):\d+$/))
+                (m && (pluginPath = m[1]))
+          );
+          return pluginPath;
+        }
+
+        let restores = {};
+
+        return function (obj, name, func, autoRestore) {
+            let original;
+            let restore = function () obj[name] = original;
+            if (autoRestore) {
+                let pluginPath = getPluginPath();
+                if (!pluginPath)
+                    throw 'getPluginPath failed';
+                restores[pluginPath] =
+                    (restores[pluginPath] || []).filter(
+                        function (res) (
+                            res.object != obj ||
+                            res.name != name ||
+                            (res.restore() && false)
+                        )
+                    );
+                restores[pluginPath].push({
+                    object: obj,
+                    name: name,
+                    restore: restore
+                });
+            }
+            original = obj[name];
+            let current = obj[name] = function () {
+                let self = this, args = arguments;
+                return func.call(self, function (_args) original.apply(self, _args || args), args);
+            };
+            return libly.$U.extend({
+                original: original,
+                current: current,
+                restore: restore
+            }, [original, current]);
         };
-        return [next, current];
-    },
+    })(),
     bind: function(obj, func) {
         return function() {
             return func.apply(obj, arguments);
@@ -166,7 +289,7 @@ libly.$U = {//{{{
         var fnc = window.eval;
         var sandbox;
         try {
-            sandbox = new Components.utils.Sandbox(window);
+            sandbox = new Components.utils.Sandbox("about:blank");
             if (Components.utils.evalInSandbox('true', sandbox) === true) {
                 fnc = function(text) { return Components.utils.evalInSandbox(text, sandbox); };
             }
@@ -248,7 +371,7 @@ libly.$U = {//{{{
     // }}}
     // System {{{
     readDirectory: function(path, filter, func) {
-        var d = io.getFile(path);
+        var d = io.File(path);
         if (d.exists() && d.isDirectory()) {
             let enm = d.directoryEntries;
             let flg = false;
@@ -325,7 +448,7 @@ libly.$U = {//{{{
         try {
             return (new XMLSerializer()).serializeToString(xml)
                                         .replace(/<!--(?:[^-]|-(?!->))*-->/g, '')
-                                        .replace(/<[^>]+>/g, function(all) all.toLowerCase());
+                                        .replace(/<\s*\/?\s*\w+/g, function(all) all.toLowerCase());
         } catch (e) { return '' }
     },
     xmlToDom: function xmlToDom(node, doc, nodes)
@@ -576,7 +699,7 @@ libly.Wedata.prototype = {
         req.addEventListener('onSuccess', libly.$U.bind(this, function(res) {
             var text = res.responseText;
             if (!text) {
-                errDispatcher('respons is null.', cache);
+                errDispatcher('response is null.', cache);
                 return;
             }
             var json = libly.$U.evalJson(text);

@@ -1,54 +1,56 @@
 [github]
-	user = evaryont
-	token = $(< ~/.github-token)
+    user = evaryont
+    token = $(< ~/.github-token)
 [user]
-	name = Colin Shea
-	email = colin@evaryont.me
+    name = Colin Shea
+    email = colin@evaryont.me
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+    branch = auto
+    diff = auto
+    status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 [core]
-	excludesfile = $(readlink -f ~/.gitignore)
+    excludesfile = $(readlink -f ~/.gitignore)
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [alias]
-	a = add
-	br = branch
-	st = status
-	ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim -p2 git_diff_staged.diff -c ':tabmove' -c ':tabprev'\\\" git commit -e ; rm git_diff_staged.diff"
-	co = checkout
-	unpushed = log origin..HEAD
-	graph = log --oneline --graph
-	lg = log --graph --pretty=format:'%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr)%%Creset' --abbrev-commit --date=relative
+    a = add
+    br = branch
+    st = status
+    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim git_diff_staged.diff -c ':bnext' -c ':1'\\\" git commit -e ; rm git_diff_staged.diff"
+    co = checkout
+    unpushed = log origin..HEAD
+    graph = log --oneline --graph
+    lg = log --graph --pretty=format:'%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr)%%Creset' --abbrev-commit --date=relative
+    ls-ignored = ls-files --others -i --exclude-standard
+    up = !"git pull && git log --pretty=format:'%%Cred%%ae %%Creset- %%C(yellow)%%s %%Creset(%%ar)' HEAD@{1}.."
 [web]
-	browser = open
+    browser = open
 [browser "open"]
-	cmd = $(whence open-browser)
+    cmd = $(whence open-browser)
 [push]
-	default = current
+    default = current
 [help]
-	autocorrect = 1
+    autocorrect = 1
 [sendemail]
-        smtpserver = smtp.gmail.com
-        smtpserverport = 587
-        smtpencryption = tls
-        smtpuser = colin@evaryont.me
+    smtpserver = smtp.gmail.com
+    smtpserverport = 587
+    smtpencryption = tls
+    smtpuser = colin@evaryont.me
 
 
 # This is just a template parsed by zsh
 
-# vim: set ts=8 sw=8 tw=0 syn=gitconfig:
+# vim: set syn=gitconfig:

@@ -1,9 +1,4 @@
-" defsearch is a bookmark keyword or source engine.
-" set defsearch=yahoo
-"map <silent> <C-b> :js toggleSidebar("viewYBookmarksSidebar", false)<CR>
-
-" Add tab numbers for easy Alt-<1..9> switching :D
-set guioptions+=n
+set guioptions-=rb
 
 " AwesomeBar like completion (automatic, uses history & bookmarks as possible
 " completer)
@@ -20,7 +15,7 @@ set! browser.urlbar.doubleClickSelectsAll=true
 " set! browser.tabs.closeWindowWithLastTab=true
 "set! liberator.saved.browser.tabs.autoHide=true
 "set! browser.tabs.autoHide=true
-set showtabline=1
+set showtabline=0
 
 " Focus the window, not any inputs/etc
 set focuscontent
@@ -37,7 +32,7 @@ javascript <<EOF
 })();
 EOF
 
-" 'Y'anking the selected text saves to the X selection buffer (e.g. Edit->Copy)
+" Yanking the selected text saves to the X selection buffer (e.g. Edit->Copy)
 js <<EOF
 mappings.addUserMap([modes.NORMAL], ["Y"], 
     "Yank the currently selected text",
@@ -63,3 +58,5 @@ map <silent> ga :addons<CR>
 
 map <silent> <C-j> 25j
 map <silent> <C-k> 25k
+
+let g:maine_coon_default = "ac"

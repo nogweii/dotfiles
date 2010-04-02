@@ -1,11 +1,11 @@
-
-zstyle :compinstall filename '/home/.zshrc'
+zstyle ':compinstall' filename '/home/.zshrc'
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 
 # Use a cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:::::' completer _force_rehash _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
 zstyle ':completion:*:descriptions' format "- %d -"
@@ -21,3 +21,5 @@ zstyle ':completion:*' verbose yes
 compdef _rake rake
 compdef _cheat cheat
 compdef pacman-color=pacman
+
+# vim: set syn=sh:

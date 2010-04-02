@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2008, anekos.
+Copyright (c) 2008-2009, anekos.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -38,10 +38,10 @@ let PLUGIN_INFO =
   <name lang="ja">メインクーン</name>
   <description>Make the screen larger</description>
   <description lang="ja">なるべくでかい画面で使えるように</description>
-  <version>2.2.2</version>
+  <version>2.3.0</version>
   <author mail="anekos@snca.net" homepage="http://d.hatena.ne.jp/nokturnalmortum/">anekos</author>
-  <minVersion>2.0pre</minVersion>
-  <maxVersion>2.1</maxVersion>
+  <minVersion>2.2</minVersion>
+  <maxVersion>2.3</maxVersion>
   <updateURL>http://svn.coderepos.org/share/lang/javascript/vimperator-plugins/trunk/maine_coon.js</updateURL>
   <license>new BSD License (Please read the source code comments of this plugin)</license>
   <license lang="ja">修正BSDライセンス (ソースコードのコメントを参照してください)</license>
@@ -343,6 +343,14 @@ let tagetIDs = (liberator.globalVariables.maine_coon_targets || '').split(/\s+/)
     });
   }
 
+  {
+    // for multiline input
+    let cmdline = document.getElementById("liberator-commandline");
+    messageBox.inputField.__defineGetter__("scrollWidth", function() {
+        return cmdline.clientWidth;
+    });
+  }
+
   around(commandline, 'open', function (next, args) {
     messageBox.collapsed = false;
     return next();
@@ -356,7 +364,7 @@ let tagetIDs = (liberator.globalVariables.maine_coon_targets || '').split(/\s+/)
 
   options.add(
     ['mainecoon'],
-    'Make big screen like a Maine Coone',
+    'Make big screen like a Maine Coon',
     'charlist',
     '',
     {
