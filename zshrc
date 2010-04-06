@@ -76,3 +76,7 @@ zle -N zle-keymap-select
 keychain --quiet # Start ssh-agent, but don't add any keys (yet)
 [ -f $HOME/.keychain/$HOSTNAME-sh ] && source $HOME/.keychain/$HOSTNAME-sh # Load ssh-agent environment variables
 [ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && source $HOME/.keychain/$HOSTNAME-sh-gpg # ditto, gpg-agent
+
+# Ignore ^D when we're on an empty line, therefore, I have to type "exit" or
+# "logout" to kill a zsh session
+setopt IGNORE_EOF
