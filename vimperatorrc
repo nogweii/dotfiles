@@ -56,7 +56,7 @@ map <silent> ga :addons<CR>
 
 "map <silent> gb :javascript "if(document.getSelection){s=document.getSelection();}else{s='';};document.location='http://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)"
 
-map <silent> <C-j> 25j
-map <silent> <C-k> 25k
+map <silent> <C-j> 15j
+map <silent> <C-k> 15k
 
 let g:maine_coon_default = "ac"
