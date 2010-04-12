@@ -8,6 +8,7 @@ import qualified XMonad.StackSet as W
 -- Actions
 import XMonad.Actions.GridSelect
 import XMonad.Actions.Submap
+import XMonad.Actions.UpdatePointer
 
 -- Hooks
 import XMonad.Hooks.FadeInactive
@@ -102,6 +103,7 @@ myManageHook = composeAll (
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
+            >> updatePointer (Relative 0.5 0.5)
     where fadeAmount = 0.1
 
 gsConfig = defaultGSConfig
