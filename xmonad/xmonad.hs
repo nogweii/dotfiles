@@ -51,7 +51,7 @@ main = xmonad $ ewmh kde4Config {
     , ("<XF86AudioPrev>", spawn "exec mpc prev")
     , ("<XF86AudioNext>", spawn "exec mpc next")
     -- My keyboard (a G15) also includes volume controls, but KDE already
-    -- manages them.
+    -- manages some of them.
     -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
 
     -- TODO: This will be replaced by a bashrun (but using zsh!) clone
