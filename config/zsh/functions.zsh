@@ -67,7 +67,14 @@ function ztmpl {
 
 # Based off http://gist.github.com/172292. Idea by @defunkt
 # gist it! http://gist.github.com/172323 (zsh fork)
-function ruby() { [[ "$1" == "" ]] && `whence -p irb` || `whence -p ruby` $@ }
+function ruby_or_irb() {
+    if [[ "$1" == "" ]]; then
+        irb
+    else
+        ruby $@
+    fi
+}
+alias ruby=ruby_or_irb
 
 function detach() {
     # Create the directory where we store the sockets, if it doesn't already exist

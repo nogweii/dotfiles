@@ -98,6 +98,5 @@ alias portstat="s netstat -tunelp"
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
 
 alias man="gem man -s"
-alias irb=
 eval `hub alias -s zsh`
 alias open="$(command -v xdg-open open firefox | head -1)"
