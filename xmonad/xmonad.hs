@@ -102,7 +102,7 @@ myManageHook = composeAll (
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-    where fadeAmount = 1.0
+    where fadeAmount = 0.1
 
 gsConfig = defaultGSConfig
     { gs_cellheight = 30
