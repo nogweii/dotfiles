@@ -65,17 +65,7 @@ main = xmonad $ ewmh kde4Config {
         , ((0, xK_z),     spawn "mpc random")
         , ((0, xK_space), spawn "mpc toggle")
         ])
-    , ("M-;", submode)
-
     ]
-    where submode = let keyActs :: M.Map (KeyMask,KeySym) (X ())
-                        keyActs = M.fromList [] -- this should actually list some keys...
-             in submapDefault
-                  submode
-                  (M.insert
-                          (0,xK_Escape)
-                          (return ())
-                          (M.map (>> submode) keyActs))
 
 myManageHook = composeAll (
 
