@@ -21,7 +21,6 @@ import XMonad.Hooks.Place
 -- Utils
 import XMonad.Util.EZConfig
 import XMonad.Util.Replace
-import XMonad.Util.Scratchpad
 
 -- Prompts, baby, prompts!
 import XMonad.Prompt
@@ -55,7 +54,6 @@ main = xmonad $ ewmh kde4Config {
     -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
 
     -- TODO: This will be replaced by a bashrun (but using zsh!) clone
-    --, ("M-g", scratchpadSpawnActionTerminal "urxvt" )
     , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
 
     -- mpc control via 'normal' keys
@@ -95,8 +93,6 @@ myManageHook = composeAll (
     -- <+> insertPosition Below Newer
     -- <+> positionStoreManageHook
     <+> manageDocks
-    -- TODO: Figure out the rectangle required for a 1-line terminal. (Note: percentages!)
-    <+> scratchpadManageHook (W.RationalRect 0.1 0.375 0.15 0.35)
 
   where makeMaster = insertPosition Master Newer
 
