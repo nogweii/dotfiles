@@ -80,3 +80,6 @@ keychain --quiet # Start ssh-agent, but don't add any keys (yet)
 # Ignore ^D when we're on an empty line, therefore, I have to type "exit" or
 # "logout" to kill a zsh session
 setopt IGNORE_EOF
+
+export PATH="/usr/lib/cw:$PATH"
+export NOCOLOR_PIPE=1
