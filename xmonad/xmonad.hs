@@ -63,6 +63,9 @@ main = xmonad $ ewmh kde4Config {
         , ((0, xK_z),     spawn "mpc random")
         , ((0, xK_space), spawn "mpc toggle")
         ])
+
+    -- Spawn the configured terminal
+    , ("M-<Enter>", spawn $ XMonad.terminal main)
     ]
 
 myManageHook = composeAll (
