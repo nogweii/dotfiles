@@ -26,7 +26,7 @@ import XMonad.Util.Replace
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
 
-main = xmonad $ ewmh kde4Config {
+main = xmonad $ let conf = ewmh kde4Config {
     -- replace ; ewmh
     -- kde4Config {
 
@@ -65,7 +65,7 @@ main = xmonad $ ewmh kde4Config {
         ])
 
     -- Spawn the configured terminal
-    , ("M-<Enter>", spawn $ XMonad.terminal main)
+    , ("M-<Enter>", spawn $ terminal conf)
     ]
 
 myManageHook = composeAll (
