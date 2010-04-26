@@ -17,7 +17,7 @@ compdef _pacman clyde=pacman
 
 sup-clyde() {
     case $1 in
-        (-Ss | -Si | -Q* | -T)
+        (-Ss | -Si | -Q* | -T | -*h*)
             /usr/bin/clyde "$@" ;;
         (-S* | -R* | -U | *)
             /usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;
