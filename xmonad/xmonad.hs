@@ -65,7 +65,7 @@ main = xmonad $ let conf = ewmh kde4Config {
                           ])
 
                       -- Spawn the configured terminal
-                      , ("M-<Enter>", spawn $ terminal conf)
+                      , ("M-<Return>", spawn $ terminal conf)
                       ] in conf
 
 myManageHook = composeAll (
