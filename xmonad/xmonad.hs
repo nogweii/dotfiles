@@ -79,6 +79,7 @@ myManageHook = composeAll (
 
     -- Separate float apps
     [ className =? "Plasma-desktop" --> doFloat -- For KDE
+    , className =? "plasma-desktop" --> makeMaster <+> doFloat -- For KDE
     , className =? "kmix" --> doFloat -- For KDE
     , className =? "mplayer" --> doFloat
 
@@ -96,6 +97,7 @@ myManageHook = composeAll (
     -- <+> insertPosition Below Newer
     -- <+> positionStoreManageHook
     <+> manageDocks
+    <+> makeMaster
 
   where makeMaster = insertPosition Master Newer
 
