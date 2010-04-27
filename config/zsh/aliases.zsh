@@ -99,4 +99,3 @@ alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && gi
 
 alias man="gem man -s"
 eval `hub alias -s zsh`
-alias open="$(command -v xdg-open open firefox | head -1)"
