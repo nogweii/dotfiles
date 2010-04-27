@@ -60,3 +60,7 @@ map <silent> <C-j> 15j
 map <silent> <C-k> 15k
 
 let g:maine_coon_default = "ac"
+
+cabbrev open_sidebar  sidebar Bookmarks " <Esc>:execute 'map <C-b> ' + close_sidebar<CR>
+cabbrev close_sidebar sbclose ":execute 'map <C-b> ' + open_sidebar<CR>
+map <C-b> :open_sidebar <CR>
