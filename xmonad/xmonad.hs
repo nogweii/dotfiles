@@ -26,47 +26,52 @@ import XMonad.Util.Replace
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
 
-main = xmonad $ let conf = ewmh kde4Config {
-                      -- replace ; ewmh
-                      -- kde4Config {
+--main = xmonad $ let conf = ewmh kde4Config {
+--                      -- replace ; ewmh
+--                      -- kde4Config {
+--
+--                          modMask = mod4Mask -- use the Windows button as mod
+--                        , terminal = "urxvt.sh"
+--                        , startupHook = return () >> checkKeymap conf myKeymap
+--
+--                        , manageHook = manageHook kdeConfig <+> myManageHook
+--                        , logHook = myLogHook
+--
+--                      }
+--                      `additionalKeysP`
 
-                          modMask = mod4Mask -- use the Windows button as mod
-                        , terminal = "urxvt.sh"
+-- My keybindings
+myKeys = \conf -> mkKeymap conf $
+         [ ("M-<Escape>", kill)
+         , ("M-<Space>", sendMessage NextLayout)
+         , ("M-r", refresh)
+         , ("M-j", windows W.focusDown)
+         , ("M-k", windows W.focusUp)
+         , ("M-x", goToSelected gsConfig)
+         -- MPC keyboard control
+         , ("<XF86AudioPlay>", spawn "exec mpc toggle")
+         , ("<XF86AudioStop>", spawn "exec mpc stop")
+         , ("<XF86AudioPrev>", spawn "exec mpc prev")
+         , ("<XF86AudioNext>", spawn "exec mpc next")
+         -- My keyboard (a G15) also includes volume controls, but KDE already
+         -- manages some of them.
+         -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
 
-                        , manageHook = manageHook kdeConfig <+> myManageHook
-                        , logHook = myLogHook
+         -- TODO: This will be replaced by a bashrun (but using zsh!) clone
+         , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
 
-                      }
-                      `additionalKeysP`
-                      [ ("M-<Escape>", kill)
-                      , ("M-<Space>", sendMessage NextLayout)
-                      , ("M-r", refresh)
-                      , ("M-j", windows W.focusDown)
-                      , ("M-k", windows W.focusUp)
-                      , ("M-x", goToSelected gsConfig)
-                      -- MPC keyboard control
-                      , ("<XF86AudioPlay>", spawn "exec mpc toggle")
-                      , ("<XF86AudioStop>", spawn "exec mpc stop")
-                      , ("<XF86AudioPrev>", spawn "exec mpc prev")
-                      , ("<XF86AudioNext>", spawn "exec mpc next")
-                      -- My keyboard (a G15) also includes volume controls, but KDE already
-                      -- manages some of them.
-                      -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
+         -- mpc control via 'normal' keys
+         , ("M-a", submap . M.fromList $
+             [ ((0, xK_l),     spawn "mpc next")
+             , ((0, xK_h),     spawn "mpc prev")
+             , ((0, xK_z),     spawn "mpc random")
+             , ((0, xK_space), spawn "mpc toggle")
+             ])
 
-                      -- TODO: This will be replaced by a bashrun (but using zsh!) clone
-                      , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
+         -- Spawn the configured terminal
+         , ("M-<Return>", spawn $ terminal conf)
+         ]
 
-                      -- mpc control via 'normal' keys
-                      , ("M-a", submap . M.fromList $
-                          [ ((0, xK_l),     spawn "mpc next")
-                          , ((0, xK_h),     spawn "mpc prev")
-                          , ((0, xK_z),     spawn "mpc random")
-                          , ((0, xK_space), spawn "mpc toggle")
-                          ])
-
-                      -- Spawn the configured terminal
-                      , ("M-<Return>", spawn $ terminal conf)
-                      ] in conf
 
 myManageHook = composeAll (
 
@@ -127,3 +132,32 @@ gsConfig = defaultGSConfig
           reset = M.singleton (0,xK_space) (const (0,0))
 
 --- vim: set syn=haskell nospell:
+
+
+------------------------------------------------------------------------
+-- Now run xmonad with all the defaults we set up.
+
+-- Run xmonad with the settings you specify. No need to modify this.
+--
+main = do
+  pipe <- spawnPipe "xmobar"
+  xmonad $ withUrgencyHook NoUrgencyHook $ defaults pipe
+
+defaults pipe = defaultConfig {
+        -- simple stuff
+        terminal           = myTerminal,
+--      focusFollowsMouse  = myFocusFollowsMouse,
+--      borderWidth        = myBorderWidth,
+        modMask            = myModMask,
+        numlockMask        = myNumlockMask,
+        workspaces         = myWorkspaces,
+--      normalBorderColor  = myNormalBorderColor,
+--      focusedBorderColor = myFocusedBorderColor,
+        -- key bindings
+        keys               = myKeys,
+--      mouseBindings      = myMouseBindings,
+        -- hooks, layouts
+        layoutHook         = myLayout,
+        manageHook         = myManageHook,
+        logHook            = myLogHook pipe
+    }
