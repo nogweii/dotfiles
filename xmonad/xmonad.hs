@@ -5,6 +5,28 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+-- Actions
+import XMonad.Actions.GridSelect
+import XMonad.Actions.Submap
+import XMonad.Actions.UpdatePointer
+
+-- Hooks
+import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.InsertPosition
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.Place
+
+-- Utils
+import XMonad.Util.EZConfig
+import XMonad.Util.Replace
+
+-- Prompts, baby, prompts!
+import XMonad.Prompt
+import XMonad.Prompt.AppendFile
+
+
 -- The default number of workspaces (virtual screens) and their names.
 --
 the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
