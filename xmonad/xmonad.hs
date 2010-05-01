@@ -214,6 +214,6 @@ the_settings = ewmh defaultConfig {
         manageHook  = manage_hook,
         startupHook = startup_hook,
         logHook     = log_hook
-    }
+}
 
 --- vim: set syn=haskell nospell:
