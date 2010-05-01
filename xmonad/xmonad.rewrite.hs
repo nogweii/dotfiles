@@ -141,6 +141,16 @@ manage_hook = composeAll
 startup_hook = return () >> checkKeymap the_settings key_bindings
 
 ------------------------------------------------------------------------
+-- Log hook
+--
+-- Fade unfocused windows to 90% transparency, and move the cursor to the center
+-- of the newly focused window.
+--
+myLogHook :: X ()
+myLogHook = fadeInactiveLogHook 0.1
+            >> updatePointer (Relative 0.5 0.5)
+
+------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 --
 main = xmonad the_settings
