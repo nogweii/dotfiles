@@ -159,7 +159,7 @@ main = xmonad the_settings
 -- Any you don't override, will use the defaults defined in
 -- xmonad/XMonad/Config.hs
 --
-the_settings = defaultConfig {
+the_settings = ewmh defaultConfig {
         terminal           = "urxvt.sh",
         modMask            = mod4mask,
         workspaces         = the_workspaces,
