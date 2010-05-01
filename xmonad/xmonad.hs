@@ -208,7 +208,7 @@ main = xmonad the_settings
 --
 the_settings = ewmh defaultConfig {
         terminal    = "urxvt.sh",
-        modMask     = mod4mask,
+        modMask     = mod4Mask,
         workspaces  = the_workspaces,
         keys        = key_bindings,
         manageHook  = manage_hook,
