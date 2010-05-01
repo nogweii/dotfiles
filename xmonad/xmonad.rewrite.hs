@@ -160,13 +160,13 @@ main = xmonad the_settings
 -- xmonad/XMonad/Config.hs
 --
 the_settings = ewmh defaultConfig {
-        terminal           = "urxvt.sh",
-        modMask            = mod4mask,
-        workspaces         = the_workspaces,
-        keys               = key_bindings,
-        manageHook         = manage_hook,
-        startupHook        = startup_hook,
-        logHook            = log_hook
+        terminal    = "urxvt.sh",
+        modMask     = mod4mask,
+        workspaces  = the_workspaces,
+        keys        = key_bindings,
+        manageHook  = manage_hook,
+        startupHook = startup_hook,
+        logHook     = log_hook
     }
 
 --- vim: set syn=haskell nospell:
