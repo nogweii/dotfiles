@@ -39,6 +39,7 @@ key_bindings = \c -> mkKeymap c $
 
              -- Spawn the configured terminal
              , ("M-<Return>", spawn $ XMonad.terminal conf)
+             , ("M-t", withFocused $ windows . (if M.member W.floating then W.float else W.sink))
              ]
 
 --    -- launch dmenu
