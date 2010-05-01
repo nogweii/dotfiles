@@ -60,7 +60,7 @@ key_bindings = \c -> mkKeymap c $
              , ("M-a <Space>", spawn "mpc toggle")
 
              -- Spawn the configured terminal
-             , ("M-<Return>", spawn $ XMonad.terminal conf)
+             , ("M-<Return>", spawn $ XMonad.terminal c)
              , ("M-t", withFocused $ windows . (if M.member W.floating then W.float else W.sink))
              ]
 
