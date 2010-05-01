@@ -40,7 +40,7 @@ key_bindings = \c -> mkKeymap c $
              , ("M-r", refresh)
              , ("M-j", windows W.focusDown)
              , ("M-k", windows W.focusUp)
-             , ("M-x", goToSelected gsConfig)
+             , ("M-x", goToSelected grid_config)
              -- MPC keyboard control
              , ("<XF86AudioPlay>", spawn "exec mpc toggle")
              , ("<XF86AudioStop>", spawn "exec mpc stop")
@@ -171,6 +171,31 @@ startup_hook = return () >> checkKeymap the_settings key_bindings
 log_hook :: X ()
 log_hook =  fadeInactiveLogHook 0.1
          >> updatePointer (Relative 0.5 0.5)
+
+------------------------------------------------------------------------
+-- Grid select configuration
+--
+-- Based off the default, add some extra keys.
+--
+grid_config = defaultGSConfig
+    { gs_cellheight = 30
+    , gs_cellwidth = 100
+    , gs_navigate = M.unions
+        [reset
+        ,nethackKeys
+        ,gs_navigate                                 -- get the default navigation bindings
+            $ defaultGSConfig `asTypeOf` grid_config -- needed to fix an ambiguous type variable
+        ]
+    }
+    where addPair (a,b) (x,y) = (a+x,b+y)
+          nethackKeys = M.map addPair $ M.fromList
+                              [((0,xK_y),(-1,-1))
+                              ,((0,xK_i),(1,-1))
+                              ,((0,xK_n),(-1,1))
+                              ,((0,xK_m),(1,1))
+                              ]
+          -- jump back to the center with the spacebar, regardless of the current position.
+          reset = M.singleton (0,xK_space) (const (0,0))
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
