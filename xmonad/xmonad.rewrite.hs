@@ -179,3 +179,5 @@ the_settings = defaultConfig {
         manageHook         = manage_hook,
         startupHook        = startup_hook
     }
+
+--- vim: set syn=haskell nospell:
