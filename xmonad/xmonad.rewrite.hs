@@ -165,7 +165,8 @@ the_settings = ewmh defaultConfig {
         workspaces         = the_workspaces,
         keys               = key_bindings,
         manageHook         = manage_hook,
-        startupHook        = startup_hook
+        startupHook        = startup_hook,
+        logHook            = log_hook
     }
 
 --- vim: set syn=haskell nospell:
