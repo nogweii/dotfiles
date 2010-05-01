@@ -32,10 +32,10 @@ key_bindings = \c -> mkKeymap c $
              , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
 
              -- mpc control via 'normal' keys
-             , ("M-a l"),       spawn "mpc next")
-             , ("M-a h"),       spawn "mpc prev")
-             , ("M-a z"),       spawn "mpc random")
-             , ("M-a <Space>"), spawn "mpc toggle")
+             , ("M-a l",       spawn "mpc next")
+             , ("M-a h",       spawn "mpc prev")
+             , ("M-a z",       spawn "mpc random")
+             , ("M-a <Space>", spawn "mpc toggle")
 
              -- Spawn the configured terminal
              , ("M-<Return>", spawn $ XMonad.terminal conf)
