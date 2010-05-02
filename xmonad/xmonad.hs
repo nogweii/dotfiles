@@ -74,6 +74,11 @@ key_bindings = [ ("M-<Escape>", kill)
                , ("M-q",   spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q", io (exitWith ExitSuccess))
                ]
+               ++
+               -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
+               [(m ++ k, windows $ f w)
+                    | (w, k) <- zip (XMonad.workspaces the_settings) (map show [1..9])
+               , (m, f) <- [("M-",W.greedyView), ("M-S-",W.shift)]]
 
 compiled_bindings = \c -> mkKeymap c $ key_bindings
 
