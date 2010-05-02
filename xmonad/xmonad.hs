@@ -158,11 +158,39 @@ compiled_bindings = \c -> mkKeymap c $ key_bindings
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
-manage_hook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+manage_hook = composeAll (
+
+    -- Apps, etc to float & center
+    [ className =? c <||> resource =? r <||> title =? t <||> isDialog --> doCenterFloat
+    | c <- ["Wine", "Switch2", "quantum-Quantum"]
+    , r <- ["Dialog", "Download"]
+    , t <- ["Schriftart auswählen", "Choose a directory"]
+    ] ++
+
+    -- Separate float apps
+    [ className =? "Plasma-desktop" --> doIgnore -- For KDE
+    , className =? "kmix" --> doFloat -- For KDE
+    , className =? "mplayer" --> doFloat
+    , className =? "MPlayer" --> doFloat
+    , className =? "Gimp" --> doFloat
+
+    -- Workspaces
+    -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
+    -- , resource =? ""
+    -- , title =? ""
+
+    -- "Real" fullscreen
+    , isFullscreen              --> doFullFloat
+    , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
+    ] )
+
+    -- Default hooks:
+    -- <+> insertPosition Below Newer
+    -- <+> positionStoreManageHook
+    <+> manageDocks
+    <+> makeMaster
+
+  where makeMaster = insertPosition Master Newer
 
 ------------------------------------------------------------------------
 -- Startup hook
