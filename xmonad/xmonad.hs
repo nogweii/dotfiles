@@ -70,6 +70,9 @@ key_bindings = [ ("M-<Escape>", kill)
                              else float windowId -- it's currently tiled, float it.
                          })
                  )
+
+               , ("M-q",   spawn "xmonad --recompile; xmonad --restart")
+               , ("M-S-q", io (exitWith ExitSuccess))
                ]
 
 compiled_bindings = \c -> mkKeymap c $ key_bindings
