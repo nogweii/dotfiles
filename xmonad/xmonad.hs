@@ -60,7 +60,13 @@ key_bindings = [ ("M-<Escape>", kill)
 
                -- Spawn the configured terminal
                , ("M-<Return>", spawn $ XMonad.terminal the_settings)
-               , ("M-t", withFocused (\windowId -> do { floats <- gets (W.floating . windowset); if windowId `M.member` floats then withFocused $ windows . W.sink else float windowId }))
+               , ("M-t", withFocused (\windowId -> do {
+                           floats <- gets (W.floating . windowset);
+                           if windowId `M.member` floats
+                             then withFocused $ windows . W.sink
+                             else float windowId
+                         })
+                 )
                ]
 
 compiled_bindings = \c -> mkKeymap c $ key_bindings
