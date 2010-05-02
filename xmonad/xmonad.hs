@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Config.Kde
 import Data.Monoid
 import System.Exit
 
@@ -243,7 +244,7 @@ main = xmonad the_settings
 -- Any you don't override, will use the defaults defined in
 -- xmonad/XMonad/Config.hs
 --
-the_settings = ewmh defaultConfig {
+the_settings = ewmh kde4Config {
         terminal    = "urxvt.sh",
         modMask     = mod4Mask,
         workspaces  = the_workspaces,
