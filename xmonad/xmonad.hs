@@ -62,14 +62,7 @@ key_bindings = [ ("M-<Escape>", kill)
                -- Spawn the configured terminal
                , ("M-<Return>", spawn $ XMonad.terminal the_settings)
 
-               -- Toggle if a window is floating
-               , ("M-t", withFocused (\windowId -> do { -- anonymous function
-                           floats <- gets (W.floating . windowset); -- get all the floating windows
-                           if windowId `M.member` floats -- check if the current window is in that list
-                             then withFocused $ windows . W.sink -- 'sink' it if it is
-                             else float windowId -- it's currently tiled, float it.
-                         })
-                 )
+               , ("M-t", toggleFloat)
 
                , ("M-q",   spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q", io (exitWith ExitSuccess))
@@ -79,6 +72,12 @@ key_bindings = [ ("M-<Escape>", kill)
                [(m ++ k, windows $ f w)
                     | (w, k) <- zip (XMonad.workspaces the_settings) (map show [1..9])
                , (m, f) <- [("M-",W.greedyView), ("M-S-",W.shift)]]
+
+               where toggleFloat = withFocused $ \windowId -> do
+                       floats <- gets (W.floating . windowset)
+                       if windowId `M.member` floats
+                         then withFocused $ windows . W.sink
+                         else float windowId
 
 compiled_bindings = \c -> mkKeymap c $ key_bindings
 
