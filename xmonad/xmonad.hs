@@ -34,35 +34,36 @@ the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
-key_bindings = \c -> mkKeymap c $
-             [ ("M-<Escape>", kill)
-             , ("M-<Space>", sendMessage NextLayout)
-             , ("M-r", refresh)
-             , ("M-j", windows W.focusDown)
-             , ("M-k", windows W.focusUp)
-             , ("M-x", goToSelected grid_config)
-             -- MPC keyboard control
-             , ("<XF86AudioPlay>", spawn "exec mpc toggle")
-             , ("<XF86AudioStop>", spawn "exec mpc stop")
-             , ("<XF86AudioPrev>", spawn "exec mpc prev")
-             , ("<XF86AudioNext>", spawn "exec mpc next")
-             -- My keyboard (a G15) also includes volume controls, but KDE already
-             -- manages some of them.
-             -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
+key_bindings = [ ("M-<Escape>", kill)
+               , ("M-<Space>", sendMessage NextLayout)
+               , ("M-r", refresh)
+               , ("M-j", windows W.focusDown)
+               , ("M-k", windows W.focusUp)
+               , ("M-x", goToSelected grid_config)
+               -- MPC keyboard control
+               , ("<XF86AudioPlay>", spawn "exec mpc toggle")
+               , ("<XF86AudioStop>", spawn "exec mpc stop")
+               , ("<XF86AudioPrev>", spawn "exec mpc prev")
+               , ("<XF86AudioNext>", spawn "exec mpc next")
+               -- My keyboard (a G15) also includes volume controls, but KDE already
+               -- manages some of them.
+               -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
 
-             -- TODO: This will be replaced by a bashrun (but using zsh!) clone
-             , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
+               -- TODO: This will be replaced by a bashrun (but using zsh!) clone
+               , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
 
-             -- mpc control via 'normal' keys
-             , ("M-a l",       spawn "mpc next")
-             , ("M-a h",       spawn "mpc prev")
-             , ("M-a z",       spawn "mpc random")
-             , ("M-a <Space>", spawn "mpc toggle")
+               -- mpc control via 'normal' keys
+               , ("M-a l",       spawn "mpc next")
+               , ("M-a h",       spawn "mpc prev")
+               , ("M-a z",       spawn "mpc random")
+               , ("M-a <Space>", spawn "mpc toggle")
 
-             -- Spawn the configured terminal
-             , ("M-<Return>", spawn $ XMonad.terminal c)
-             , ("M-t", withFocused (\windowId -> do { floats <- gets (W.floating . windowset); if windowId `M.member` floats then withFocused $ windows . W.sink else withFocused $ \w float w }))
-             ]
+               -- Spawn the configured terminal
+               , ("M-<Return>", spawn $ XMonad.terminal the_settings)
+               , ("M-t", withFocused (\windowId -> do { floats <- gets (W.floating . windowset); if windowId `M.member` floats then withFocused $ windows . W.sink else float windowId }))
+               ]
+
+compiled_bindings = \c -> mkKeymap c $ key_bindings
 
 --    -- launch dmenu
 --    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
@@ -210,7 +211,7 @@ the_settings = ewmh defaultConfig {
         terminal    = "urxvt.sh",
         modMask     = mod4Mask,
         workspaces  = the_workspaces,
-        keys        = key_bindings,
+        keys        = compiled_bindings,
         manageHook  = manage_hook,
         startupHook = startup_hook,
         logHook     = log_hook
