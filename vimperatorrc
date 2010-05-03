@@ -64,3 +64,5 @@ let g:maine_coon_default = "ac"
 "cabbrev open_sidebar  sidebar Bookmarks " <Esc>:execute 'map <C-b> ' + close_sidebar<CR>
 "cabbrev close_sidebar sbclose ":execute 'map <C-b> ' + open_sidebar<CR>
 "map <C-b> :open_sidebar <CR>
+
+map <C-l> :nohlsearch<CR>:redraw<CR>
