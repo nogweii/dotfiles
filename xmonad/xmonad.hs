@@ -10,6 +10,7 @@ import qualified Data.Map        as M
 import XMonad.Actions.GridSelect
 import XMonad.Actions.Submap
 import XMonad.Actions.UpdatePointer
+import XMonad.Actions.CycleWS
 
 -- Hooks
 import XMonad.Hooks.FadeInactive
@@ -41,11 +42,14 @@ key_bindings = [
                  ("M-j",             windows W.focusDown)
                , ("M-k",             windows W.focusUp)
                , ("M-x",             goToSelected grid_config)
+               , ("M-i",             moveTo Next NonEmptyWS)
+               , ("M-o",             moveTo Prev NonEmptyWS)
 
                -- Window management
                , ("M-t",             toggleFloat)
                , ("M-<Escape>",      kill)
                , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
+               , ("M-u",             shiftTo Next EmptyWS)
 
                -- Note taking
                , ("M-g",             appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
