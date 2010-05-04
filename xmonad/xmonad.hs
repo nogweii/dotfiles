@@ -237,7 +237,7 @@ main = xmonad the_settings
 -- xmonad/XMonad/Config.hs
 --
 the_settings = ewmh kde4Config {
-        terminal    = "urxvt.sh",
+        terminal    = "$HOME/bin/urxvt.sh",
         modMask     = mod4Mask,
         workspaces  = the_workspaces,
         keys        = compiled_bindings,
