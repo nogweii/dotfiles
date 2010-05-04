@@ -57,6 +57,7 @@ key_bindings = [ ("M-<Escape>", kill)
                , ("M-a l",       spawn "mpc next")
                , ("M-a h",       spawn "mpc prev")
                , ("M-a z",       spawn "mpc random")
+               , ("M-a x",       spawn "dmenu-playlist.sh")
                , ("M-a <Space>", spawn "mpc toggle")
 
                -- Spawn the configured terminal
