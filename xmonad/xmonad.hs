@@ -246,4 +246,10 @@ the_settings = ewmh kde4Config {
         logHook     = log_hook
 }
 
+------------------------------------------------------------------------
+-- Notes
+--
+-- Get the screen width
+-- gets $ screenRect . W.screenDetail . W.current . windowset
+
 --- vim: set syn=haskell nospell:
