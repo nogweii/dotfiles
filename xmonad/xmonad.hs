@@ -36,37 +36,35 @@ the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Key bindings. Add, modify or remove key bindings here.
 --
 key_bindings = [ ("M-<Escape>", kill)
-               , ("M-<Space>", sendMessage NextLayout)
-               , ("M-r", refresh)
-               , ("M-j", windows W.focusDown)
-               , ("M-k", windows W.focusUp)
-               , ("M-x", goToSelected grid_config)
-               -- MPC keyboard control
-               , ("<XF86AudioPlay>", spawn "exec mpc toggle")
-               , ("<XF86AudioStop>", spawn "exec mpc stop")
-               , ("<XF86AudioPrev>", spawn "exec mpc prev")
-               , ("<XF86AudioNext>", spawn "exec mpc next")
-               -- My keyboard (a G15) also includes volume controls, but KDE already
-               -- manages some of them.
-               -- For reference, the keys are <XF86AudioMute> <XF86AudioRaiseVolume> <XF86AudioLowerVolume>
+               , ("M-<Space>",  sendMessage NextLayout)
+               , ("M-r",        refresh)
+               , ("M-j",        windows W.focusDown)
+               , ("M-k",        windows W.focusUp)
+               , ("M-x",        goToSelected grid_config)
+               , ("M-g",        appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
+               , ("M-S-g",      scratchpadSpawnActionTerminal "$HOME/bin/urxvt.sh")
 
-               , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
-               , ("M-S-g", scratchpadSpawnActionTerminal "$HOME/bin/urxvt.sh")
-
-               -- mpc control via 'normal' keys
-               , ("M-a l",       spawn "mpc next")
-               , ("M-a h",       spawn "mpc prev")
-               , ("M-a z",       spawn "mpc random")
-               , ("M-a x",       spawn "dmenu-playlist.sh")
-               , ("M-a <Space>", spawn "mpc toggle")
+               -- MPD Control
+               -- Special multimedia keys
+               , ("<XF86AudioPlay>", spawn "mpc toggle")
+               , ("<XF86AudioStop>", spawn "mpc stop")
+               , ("<XF86AudioPrev>", spawn "mpc prev")
+               , ("<XF86AudioNext>", spawn "mpc next")
+               -- Fall back
+               , ("M-a l",           spawn "mpc next")
+               , ("M-a h",           spawn "mpc prev")
+               , ("M-a z",           spawn "mpc random")
+               , ("M-a x",           spawn "dmenu-playlist.sh")
+               , ("M-a <Space>",     spawn "mpc toggle")
 
                -- Spawn the configured terminal
-               , ("M-<Return>", spawn $ XMonad.terminal the_settings)
+               , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
 
-               , ("M-t", toggleFloat)
+               , ("M-t",             toggleFloat)
 
-               , ("M-q",   spawn "xmonad --recompile; xmonad --restart")
-               , ("M-S-q", io (exitWith ExitSuccess))
+               -- XMonad control
+               , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
+               , ("M-S-q",           io (exitWith ExitSuccess))
                ]
                ++
                -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
