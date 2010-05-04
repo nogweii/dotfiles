@@ -18,6 +18,7 @@ import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.Place
+import XMonad.Hooks.SetWMName
 
 -- Utils
 import XMonad.Util.EZConfig
@@ -191,7 +192,9 @@ manage_hook = composeAll (
 --
 -- Check the keymap for duplicates, errors, etc
 --
-startup_hook = return () >> checkKeymap the_settings key_bindings
+startup_hook = return ()
+            >> checkKeymap the_settings key_bindings
+            >> setWMName "LG3D"
 
 ------------------------------------------------------------------------
 -- Log hook
