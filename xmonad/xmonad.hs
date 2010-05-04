@@ -35,14 +35,20 @@ the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
-key_bindings = [ ("M-<Escape>", kill)
-               , ("M-<Space>",  sendMessage NextLayout)
-               , ("M-r",        refresh)
-               , ("M-j",        windows W.focusDown)
-               , ("M-k",        windows W.focusUp)
-               , ("M-x",        goToSelected grid_config)
-               , ("M-g",        appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
-               , ("M-S-g",      scratchpadSpawnActionTerminal "$HOME/bin/urxvt.sh")
+key_bindings = [
+               -- Window switching
+                 ("M-j",             windows W.focusDown)
+               , ("M-k",             windows W.focusUp)
+               , ("M-x",             goToSelected grid_config)
+
+               -- Window management
+               , ("M-t",             toggleFloat)
+               , ("M-<Escape>",      kill)
+               , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
+
+               -- Note taking
+               , ("M-g",             appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
+               , ("M-S-g",           scratchpadSpawnActionTerminal "$HOME/bin/urxvt.sh")
 
                -- MPD Control
                -- Special multimedia keys
@@ -57,14 +63,12 @@ key_bindings = [ ("M-<Escape>", kill)
                , ("M-a x",           spawn "dmenu-playlist.sh")
                , ("M-a <Space>",     spawn "mpc toggle")
 
-               -- Spawn the configured terminal
-               , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
-
-               , ("M-t",             toggleFloat)
 
                -- XMonad control
+               , ("M-<Space>",       sendMessage NextLayout)
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q",           io (exitWith ExitSuccess))
+               , ("M-r",             refresh)
                ]
                ++
                -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
