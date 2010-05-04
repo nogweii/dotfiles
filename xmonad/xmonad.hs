@@ -22,11 +22,11 @@ import XMonad.Hooks.Place
 -- Utils
 import XMonad.Util.EZConfig
 import XMonad.Util.Replace
+import XMonad.Util.Scratchpad
 
 -- Prompts, baby, prompts!
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
-
 
 -- The default number of workspaces (virtual screens) and their names.
 --
@@ -52,6 +52,7 @@ key_bindings = [ ("M-<Escape>", kill)
 
                -- TODO: This will be replaced by a bashrun (but using zsh!) clone
                , ("M-g", appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
+               , ("M-S-g", scratchpadSpawnActionTerminal "$HOME/bin/urxvt.sh")
 
                -- mpc control via 'normal' keys
                , ("M-a l",       spawn "mpc next")
@@ -190,7 +191,10 @@ manage_hook = composeAll (
     -- "Real" fullscreen
     , isFullscreen              --> doFullFloat
     , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
-    ] )
+    -- RationalRect params: width, height, pos y, pos x -- in %
+    , scratchpadManageHook (W.RationalRect 1.0 0.6 1.0 0.0)
+    ]
+    )
 
     -- Default hooks:
     -- <+> insertPosition Below Newer
@@ -222,6 +226,7 @@ log_hook =  fadeInactiveLogHook 0.1
 --
 -- Based off the default, add some extra keys.
 --
+-- TODO: Can I use scratchpadFilterOutWorkspace to filter out the scratchpad terminal?
 grid_config = defaultGSConfig
     { gs_cellheight = 30
     , gs_cellwidth = 100
