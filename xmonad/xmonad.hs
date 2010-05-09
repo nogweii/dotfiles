@@ -50,6 +50,9 @@ key_bindings = [
                , ("M-<Escape>",      kill)
                , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
                , ("M-u",             shiftTo Next EmptyWS)
+               -- increase or decrease number of windows in the master area
+               , ("M-,",             sendMessage (IncMasterN 1))
+               , ("M-.",             sendMessage (IncMasterN (-1)))
 
                -- Note taking
                , ("M-g",             appendFilePrompt defaultXPConfig "/home/colin/notes/notes.txt")
