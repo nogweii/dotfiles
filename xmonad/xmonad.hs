@@ -68,7 +68,6 @@ key_bindings = [
                , ("M-a x",           spawn "dmenu-playlist.sh")
                , ("M-a <Space>",     spawn "mpc toggle")
 
-
                -- XMonad control
                , ("M-<Space>",       sendMessage NextLayout)
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
@@ -169,6 +168,9 @@ manage_hook = composeAll (
     , className =? "mplayer" --> doFloat
     , className =? "MPlayer" --> doFloat
     , className =? "Gimp" --> doFloat
+    , title     =? "" --> doFloat
+    , title     =? "x" --> doFloat -- weird cinelerra splash window
+    , className =? "Cinelerra" --> doFloat
 
     -- Workspaces
     -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
