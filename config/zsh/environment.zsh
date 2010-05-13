@@ -44,3 +44,5 @@ export TERMINFO="~/.terminfo"
 eval `dircolors -b $HOME/.dir_colors`
 
 export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
+
+export TERMINAL="urxvt.sh"
