@@ -47,7 +47,6 @@ key_bindings = [
 
                -- Window management
                , ("M-t",             toggleFloat)
-               , ("M-<Escape>",      kill)
                , ("M-<Return>",      spawn $ XMonad.terminal the_settings)
                , ("M-u",             shiftTo Next EmptyWS)
                -- increase or decrease number of windows in the master area
@@ -76,6 +75,11 @@ key_bindings = [
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q",           io (exitWith ExitSuccess))
                , ("M-r",             refresh)
+
+               -- Applications!
+               , ("M-<Escape>",      kill)
+               , ("M-p",             spawn "dmenu_run")
+               , ("M-S-p",           spawn "dmenu-app")
                ]
                ++
                -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
