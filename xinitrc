@@ -49,11 +49,11 @@ urxvt.sh &
 #WhatPulse & # Keyboard & Mouse tracking
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
-(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
+#(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
 
 #exec awesome
- exec startkde &> /tmp/startkde.log
-#exec xmonad
+#exec startkde &> /tmp/startkde.log
+ exec xmonad
 #exec VirtualBox
 #exec openbox
 #exec /home/colin/Downloads/musca-0.9.24/musca
