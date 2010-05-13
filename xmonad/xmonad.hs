@@ -70,6 +70,12 @@ key_bindings = [
                , ("M-a x",           spawn "dmenu-playlist.sh")
                , ("M-a <Space>",     spawn "mpc toggle")
 
+               -- Volume control
+               , ("<XF86AudioRaiseVolume>", spawn "dvol -i 2")
+               , ("<XF86AudioLowerVolume>", spawn "dvol -d 2")
+               , ("M-a k",           spawn "dvol -i 2")
+               , ("M-a j",           spawn "dvol -d 2")
+
                -- XMonad control
                , ("M-<Space>",       sendMessage NextLayout)
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
