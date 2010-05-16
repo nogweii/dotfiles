@@ -429,5 +429,5 @@ folder-hook . 'push <collapse-all>'
 set hide_thread_subject
 
 # Cache headers & bodies, to speed up mutt
-set header_cache=$XDG_CONFIG_HOME/mutt/headers/
-set message_cachedir=$XDG_CONFIG_HOME/mutt/bodies/
+set header_cache=$XDG_CACHE_HOME/mutt/headers/
+set message_cachedir=$XDG_CACHE_HOME/mutt/bodies/
