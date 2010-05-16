@@ -427,3 +427,7 @@ set sort_aux=last-date-sent
 folder-hook . 'push <collapse-all>'
 
 set hide_thread_subject
+
+# Cache headers & bodies, to speed up mutt
+set header_cache=$XDG_CONFIG_HOME/mutt/headers/
+set message_cachedir=$XDG_CONFIG_HOME/mutt/bodies/
