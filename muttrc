@@ -422,3 +422,6 @@ source ~/.mutt/themes/THEME.`tput colors`
 set sort=threads
 # Sub-sorting with threads
 set sort_aux=last-date-sent
+
+# Collapse all threads by default
+folder-hook . 'push <collapse-all>'
