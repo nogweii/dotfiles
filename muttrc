@@ -425,3 +425,5 @@ set sort_aux=last-date-sent
 
 # Collapse all threads by default
 folder-hook . 'push <collapse-all>'
+
+set hide_thread_subject
