@@ -5,14 +5,13 @@ cl()  {
 }
 
 # mkdir && cd
-mcd() {
-    mkdir -p "$1"
-    cd "$1"
+function md() {
+    mkdir -p $1 ; cd $1
 }
 
 # Display path in titlebar of terms.
-# Automagical function called every time there is a path change (that I called, not within 
-# another script)
+# Automatic function called every time there is a path change (that I called,
+# not within another script)
 chpwd() {
     [[ -t 1 ]] || return 0
     case $TERM in
@@ -86,8 +85,4 @@ function detach() {
     #     -A: Attach to the specified socket, or create it if it
     #         does not exist, running the specified command.
     dtach -A "$XDG_CACHE_HOME/dtach/$1.socket" -z -e "" $@
-}
-
-function d() {
-    mkdir -p $1 ; cd $1
 }
