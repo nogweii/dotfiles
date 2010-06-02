@@ -228,3 +228,5 @@ map <silent> <c-l> <c-l>:nohlsearch<CR>
 
 " Run pathogen
 call pathogen#runtime_append_all_bundles()
+
+map zp 1z=
