@@ -222,7 +222,7 @@ startup_hook = return ()
 -- of the newly focused window.
 --
 log_hook :: X ()
-log_hook =  fadeInactiveLogHook 0.1
+log_hook =  fadeInactiveLogHook 0.6
          >> updatePointer (Relative 0.5 0.5)
 
 ------------------------------------------------------------------------
