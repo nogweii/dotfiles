@@ -16,3 +16,4 @@ vim/ruby/command-t/ext.so
 vim/ruby/command-t/match.o
 vim/ruby/command-t/matcher.o
 vim/ruby/command-t/mkmf.log
+vim/bundle/*/doc/tags
