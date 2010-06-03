@@ -1,0 +1,20 @@
+have_header: checking for ruby.h... -------------------- yes
+
+"gcc -o conftest -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I.    -march=x86-64 -mtune=generic -O2 -pipe -O2 -g -Wall -Wno-parentheses  -fPIC conftest.c  -L. -L/usr/lib -Wl,-R/usr/lib -L. -Wl,--hash-style=gnu -Wl,--as-needed -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/lib -L/usr/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/usr/include/ruby-1.9.1/x86_64-linux -I/usr/include/ruby-1.9.1/ruby/backward -I/usr/include/ruby-1.9.1 -I.    -march=x86-64 -mtune=generic -O2 -pipe -O2 -g -Wall -Wno-parentheses  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
+/* end */
+
+--------------------
+
