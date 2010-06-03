@@ -157,9 +157,7 @@ set hlsearch " Show all search results
 " *much* shorter message than Lusty's
 if !has("ruby")
 	let g:LustyJugglerSuppressRubyWarning = 1
-	echo "Ruby not found! Please compile vim with +ruby support"
-	echo "---------------------------"
-	echo "Yes it does work with ruby 1.9+, there is a patch for that"
+	echo "The latest Vim 7.2 includes Ruby 1.9 support. Please upgrade."
 endif
 
 set nu
