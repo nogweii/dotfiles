@@ -193,27 +193,6 @@ if argc() > 1
 	silent bfirst
 endif
 
-function! OutlineFoldExpr(lnum)
-    if getline(a:lnum) =~ '^$'
-        return -1
-"    elseif indent(a:lnum) > indent(a:lnum+1)
-"       return '<'.indent(a:lnum)
-    elseif indent(a:lnum) < indent(a:lnum+1)
-       return '>'.indent(a:lnum+1)
-    else
-        return indent(a:lnum)
-    endif
-endfunction
-
-function! OutlineFold()
-    setlocal foldenable
-    setlocal foldmethod=expr
-    setlocal foldexpr=OutlineFoldExpr(v:lnum)
-    setlocal foldtext=getline(v:foldstart)
-    setlocal fillchars=fold:\ "(there's a space after that \)
-endfunction
-command! OutlineFold call OutlineFold()
-
 " Haxxors: `gp` to add the X11 clipboard directly to the file, at the cursor
 nmap gp :.!xclip -out<CR>
 
