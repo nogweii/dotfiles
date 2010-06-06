@@ -37,3 +37,9 @@
 [submodule "vim/bundle/yaifa"]
 	path = vim/bundle/yaifa
 	url = http://github.com/Raimondi/YAIFA.git
+[submodule "vim/bundle/NarrowRegion"]
+	path = vim/bundle/NarrowRegion
+	url = http://github.com/chrisbra/NrrwRgn.git
+[submodule "vim/bundle/gist"]
+	path = vim/bundle/gist
+	url = http://github.com/mattn/gist-vim.git
