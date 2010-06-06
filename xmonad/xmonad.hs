@@ -44,6 +44,8 @@ key_bindings = [
                , ("M-x",             goToSelected grid_config)
                , ("M-i",             moveTo Next NonEmptyWS)
                , ("M-o",             moveTo Prev NonEmptyWS)
+               , ("M-h",             sendMessage Shrink)
+               , ("M-l",             sendMessage Expand)
 
                -- Window management
                , ("M-t",             toggleFloat)
