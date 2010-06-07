@@ -4,47 +4,43 @@
 " vim: set fdm=marker:
 
 " {{{ Settings
-set      nocompatible
-set      nowrap
-set      noerrorbells
-set      nofoldenable
-set      incsearch
-set      ignorecase
-set      smartcase
-set      hidden
-set      spell
-set      wildmenu
-set      title
-set      visualbell
-set      nu
-set      cursorline
-set      cindent
-set      ruler
-set      showcmd
-set      autoindent
-set      expandtab
-set      linebreak
-set      modeline
-set      hlsearch
-set      foldnestmax   =3
-set      background    =dark
-set      fileformat    =unix
-set      history       =50
-set      wildmode      =longest,full
-set      backupdir     =~/.vim/tmp,~/tmp,/var/tmp,/tmp
-set      backspace     =indent,eol,start
-set      wildignore    =*.o,*.obj,*~
-set      shiftwidth    =4
-set      sidescroll    =1
-set      sidescrolloff =7
-set      softtabstop   =4
-set      tabstop       =4
-set      enc           =utf-8
+set      nocompatible                    " Enable vim-only options, those incompatible with classic Vi
+set      nowrap                          " Don't wrap lines
+set      noerrorbells                    " Disable any error bells
+set      visualbell                      " Use a visual notification instead of beeping
+set      t_vb          =                 " Modify the termcap entry: Disable the visual bell code
+set      foldenable                      " Enable folding, at launch
+set      hlsearch                        " Highlight search results
+set      incsearch                       " Jump to the first match in real-time
+set      ignorecase                      " Case insensitive search, by default.
+set      smartcase                       " Become case-sensitive if there any capital letters
+set      hidden                          " Allow changing buffers even with unsaved modifications
+set      spell                           " Enable spell check
+set      title                           " Modify the terminal title
+set      number                          " Number lines
+set      cursorline                      " Emphasize the current line the cursor is on
+set      laststatus    =2                " Always show the status bar
+set      ruler                           " Always show the position of the cursor
+set      showcmd                         " Show incomplete commands in the status bar
+set      autoindent                      " Automatically indent the next line
+set      cindent                         " Smart automatic indent
+set      linebreak                       " Don't wrap in the middle of a word
+set      modeline                        " Let individual files specify settings
+set      background    =dark             " Use dark colors over lighter ones
+set      fileformat    =unix             " Prefer UNIX line endings
+set      history       =50               " Remember the 50 most recent commands
+set      wildmenu                        " Show completion matches in the status bar, above the command bar. And other Ex-mode goodies.
+set      wildmode      =longest,full     " Expand the longest common match, then show the full menu
+set      wildignore    =*.o,*.obj,*~     " What to ignore in wildmenu
+set      backupdir     =/tmp             " Store backup files in /tmp
+set      directory     =/tmp             " Store swap files in /tmp
+set      backspace     =indent,eol,start " Smart backspace in insert mode
+set      sidescroll    =1                " Scroll horizontally 1 column at a time
+set      sidescrolloff =7                " Always show this at least this many columns
+set      enc           =utf-8            " Use UTF-8 encoding
 set      fenc          =utf-8
 set      tenc          =utf-8
-set      updatetime    =2000
-set      laststatus    =2
-execute 'set directory='.&backupdir
+set      updatetime    =2000             " Milli secs of idle before calling the CursorHold autocmd
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
@@ -79,9 +75,9 @@ imap     <C-l> <Right>
 nnoremap <silent> <Leader>T :TlistToggle<CR>
 nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-     \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-     \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
- " }}}
+           \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" \
+           \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" }}}
 
 " {{{ Other Settings
 colorscheme devolved " my personal blend of themes, including inkpot and calmar
