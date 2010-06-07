@@ -43,3 +43,9 @@
 [submodule "vim/bundle/gist"]
 	path = vim/bundle/gist
 	url = http://github.com/mattn/gist-vim.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = http://github.com/tpope/vim-markdown.git
