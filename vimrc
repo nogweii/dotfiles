@@ -143,22 +143,18 @@ endif
 " }}}
 
 " {{{ Let / Misc plugin configuration
-let g:yaifa_max_lines                 =  1024 " The default is 16 times this many...whoa.
-let g:showmarks_enable                =  0
-let mapleader                         = "G"
-let ruby_space_errors                 =  1
-let ruby_fold                         =  1
-let g:Tlist_Auto_Highlight_Tag        =  1    " Track where I am in the file
-let g:Tlist_Auto_Update               =  1    " Update on saves
-let g:Tlist_Auto_Open                 =  1    " Open up on vim start
-let g:Tlist_Enable_Fold_Column        =  0
-let g:Tlist_File_Fold_Auto_Close      =  1    " Close folds for inactive files
-let g:Tlist_Exit_OnlyWindow           =  1
-let g:Tlist_GainFocus_on_ToggleOpen   =  1
-let g:Tlist_Highlight_Tag_on_BufEnter =  1
-let g:Tlist_Show_Menu                 =  0
-let g:Tlist_Use_Right_Window          =  1
-let g:Tlist_Show_One_File             =  1
+let g:yaifa_max_lines                 =  1024    " The default is 16 times this many...whoa.
+let g:showmarks_enable                =  0       " Don't enable showmarks automatically
+let mapleader                         =  "G"     " Use 'G' as map leader, not the default '\'
+let ruby_space_errors                 =  1       " Enable space errors in Ruby files
+let ruby_fold                         =  1       " Enable folding in Ruby files
+let g:Tlist_Auto_Highlight_Tag        =  1       " Track where I am in the file
+let g:Tlist_Auto_Open                 =  1       " Open up on vim start
+let g:Tlist_Enable_Fold_Column        =  0       " Don't show the fold column in the tag list window
+let g:Tlist_File_Fold_Auto_Close      =  1       " Close folds for inactive files
+let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the only window open
+let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
+let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
 " }}}
 
 " {{{ Call commands
