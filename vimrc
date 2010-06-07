@@ -203,3 +203,5 @@ call pathogen#runtime_append_all_bundles()
 
 map zp 1z=
 let g:yaifa_max_lines = 1024 " The default is 16 times this many...woah.
+
+let g:showmarks_enable = 0
