@@ -67,8 +67,8 @@ map L $
 nmap <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-	\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-	\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+    \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+    \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Empty mouse, I don't like it interfering when I try to do a simple
 " selection.
@@ -115,27 +115,27 @@ execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . n
 
 " Like the classic <C-n> / <C-p>, but skip help buffers
 function! SwitchToNextBuffer(incr)
-	let help_buffer = (&filetype == 'help')
-	let taglist_buffer = (&filetype == 'taglist')
-	let current = bufnr("%")
-	let last = bufnr("$")
-	let new = current + a:incr
-	while 1
-		if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer) && ((getbufvar(new, "&filetype") == 'taglist') == taglist_buffer)
-			execute ":buffer ".new
-			break
-		else
-			let new = new + a:incr
-			if new < 1
-				let new = last
-			elseif new > last
-				let new = 1
-			endif
-			if new == current
-				break
-			endif
-		endif
-	endwhile
+    let help_buffer = (&filetype == 'help')
+    let taglist_buffer = (&filetype == 'taglist')
+    let current = bufnr("%")
+    let last = bufnr("$")
+    let new = current + a:incr
+    while 1
+        if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer) && ((getbufvar(new, "&filetype") == 'taglist') == taglist_buffer)
+            execute ":buffer ".new
+            break
+        else
+            let new = new + a:incr
+            if new < 1
+                let new = last
+            elseif new > last
+                let new = 1
+            endif
+            if new == current
+                break
+            endif
+        endif
+    endwhile
 endfunction
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
@@ -156,17 +156,17 @@ set hlsearch " Show all search results
 
 " *much* shorter message than Lusty's
 if !has("ruby")
-	let g:LustyJugglerSuppressRubyWarning = 1
-	echo "The latest Vim 7.2 includes Ruby 1.9 support. Please upgrade."
+    let g:LustyJugglerSuppressRubyWarning = 1
+    echo "The latest Vim 7.2 includes Ruby 1.9 support. Please upgrade."
 endif
 
 set nu
 set cursorline
 set cindent
 if &lines > 1
-	set laststatus=2
+    set laststatus=2
 else
-	set laststatus=0
+    set laststatus=0
 endif
 set ruler showcmd
 set backspace=indent,eol,start
@@ -188,9 +188,9 @@ autocmd BufReadPost *
     \ endif
 
 if argc() > 1
-	" Avoid E173 - load the last buffer then switch back to the first
-	silent blast
-	silent bfirst
+    " Avoid E173 - load the last buffer then switch back to the first
+    silent blast
+    silent bfirst
 endif
 
 " Haxxors: `gp` to add the X11 clipboard directly to the file, at the cursor
