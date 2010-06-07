@@ -4,11 +4,6 @@
 
 set nocompatible " This is Vim, not Vi!
 
-" Never, ever start as evim. Seriously, I don't like it at all!
-if v:progname =~? "evi"
-	quitall
-end
-
 " gG => go to end of file
 " G  => leader key
 noremap gG G
