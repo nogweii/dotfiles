@@ -89,6 +89,7 @@ runtime macros/matchit.vim " Extend % matching
 " }}}
 
 " {{{ Functions
+" Append a vim modeline to the end of the file
 function! AppendModeline()
   let save_cursor = getpos('.')
   let append = ' vim: set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
@@ -96,14 +97,13 @@ function! AppendModeline()
   call setpos('.', save_cursor)
 endfunction
 
+" Switch to the next buffer that is not help or taglist
 function! SwitchToNextBuffer(incr)
-    let help_buffer = (&filetype == 'help')
-    let taglist_buffer = (&filetype == 'taglist')
     let current = bufnr("%")
     let last = bufnr("$")
     let new = current + a:incr
     while 1
-        if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer) && ((getbufvar(new, "&filetype") == 'taglist') == taglist_buffer)
+        if new != 0 && bufexists(new) && !(getbufvar(new, "&filetype") == 'help') && !(getbufvar(new, "&filetype") == 'taglist')
             execute ":buffer ".new
             break
         else
