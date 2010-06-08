@@ -41,7 +41,7 @@ key_bindings = [
                -- Window switching
                  ("M-j",             windows W.focusDown)
                , ("M-k",             windows W.focusUp)
-                 ("M-S-j",           windows W.swapDown)
+               , ("M-S-j",           windows W.swapDown)
                , ("M-S-k",           windows W.swapUp)
                , ("M-S-<Return>",    windows W.swapMaster)
                , ("M-x",             goToSelected grid_config)
