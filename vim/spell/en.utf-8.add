@@ -195,3 +195,5 @@ js
 upsert
 cron
 url
+HTTPS
+tmp
