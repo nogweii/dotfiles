@@ -59,6 +59,7 @@ endif
 "                                                       "gui-style", 
 "                                                                   "under-curl-color" ],
 
+" Color arrays {{{
 let s:colors256 = [
                 \ ["Normal",        "",           "253",  "",     "",         ""   ],
                 \ ["Cursor",        "",           "255",  "33",   "",         ""   ],
@@ -120,6 +121,11 @@ let s:colorvim7 = [
                 \ ["TabLineSel",    "bold",      "247",  "16",   "",         ""   ],
                 \ ["TabLineFill",   "",          "247",  "16",   "",         ""   ]]
 
+" The ruby specific colors. Don't include the `ruby' prefix, that is automatically prepended
+let s:rubyColors = [
+                \ ["StringDelimiter", "",        "162",  "",    "",          ""]]
+" }}}
+
 "============================================================
 "        * NO NEED * to edit below (unless bugfixing)
 "============================================================
@@ -135,6 +141,14 @@ for s:col in s:colors256
 endfor
 
 for s:col in s:colorvim7
+    for i in  [1, 2, 3, 4, 5]
+        if s:col[i] == "" 
+            let s:col[i] = "NONE"
+        endif
+    endfor
+endfor
+
+for s:col in s:rubyColors
     for i in  [1, 2, 3, 4, 5]
         if s:col[i] == "" 
             let s:col[i] = "NONE"
@@ -178,6 +192,9 @@ if ! has("gui_running")
             exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
         endfor
     endif
+    for s:col in s:rubyColors
+        exec "hi ruby".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
+    endfor
 else
 " }}}
     " color-mapping array {{{
@@ -242,4 +259,4 @@ else
 endif
 " }}}
 let &cpo = s:save_cpo   " restoring &cpo value
-" vim: set fdm=marker fileformat=unix:
+" vim: set fdm=marker fileformat=unix nospell:
