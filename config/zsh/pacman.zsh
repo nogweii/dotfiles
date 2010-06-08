@@ -21,7 +21,7 @@ fi
 
 sup-clyde() {
     case $1 in
-        (-Ss | -Si | -Q* | -T | -*h*)
+        (-Ss | -Si | -Q* | -T | -*h* | --help)
             /usr/bin/clyde "$@" ;;
         (-S* | -R* | -U | *)
             /usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;

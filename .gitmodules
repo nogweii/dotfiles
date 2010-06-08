@@ -28,6 +28,24 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = http://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/yaifa"]
+	path = vim/bundle/yaifa
+	url = http://github.com/Raimondi/YAIFA.git
+[submodule "vim/bundle/NarrowRegion"]
+	path = vim/bundle/NarrowRegion
+	url = http://github.com/chrisbra/NrrwRgn.git
+[submodule "vim/bundle/gist"]
+	path = vim/bundle/gist
+	url = http://github.com/mattn/gist-vim.git
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = http://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = http://github.com/mileszs/ack.vim.git
