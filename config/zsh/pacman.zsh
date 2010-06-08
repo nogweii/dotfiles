@@ -13,11 +13,15 @@ alias pacmanr="s $(whence pacman) -Rcnsu"
 alias spacman="s $(whence pacman) -S"
 
 # Pacman completion for clyde
-compdef _pacman clyde=pacman
+if [ ! -f /etc/lsb-release ] ; then
+    echo "hello"
+    compdef _pacman clyde=pacman
+    compdef pacman-color=pacman
+fi
 
 sup-clyde() {
     case $1 in
-        (-Ss | -Si | -Q* | -T | -*h*)
+        (-Ss | -Si | -Q* | -T | -*h* | --help)
             /usr/bin/clyde "$@" ;;
         (-S* | -R* | -U | *)
             /usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;

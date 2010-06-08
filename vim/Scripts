@@ -4,17 +4,11 @@ http://www.vim.org/scripts/script.php?script_id=2842 - vorg
 http://www.vim.org/scripts/script.php?script_id=2843 - Flip LR
 http://www.vim.org/scripts/script.php?script_id=2834 - Template
 http://www.vim.org/scripts/script.php?script_id=2856 - vimmpc
-http://www.vim.org/scripts/script.php?script_id=1891 - vividchalk - Dark-ish color scheme by tpope
 http://www.vim.org/scripts/script.php?script_id=2790 - command-mode increment/decrement
 http://www.vim.org/scripts/script.php?script_id=2771 - Run an interactive shell within vim!
 http://www.vim.org/scripts/script.php?script_id=2775 - Windows Notepad LOG feature
-GetLatestVimScripts
-Surround
-http://www.vim.org/scripts/script.php?script_id=2754 - delimit Mate
 http://www.vim.org/scripts/script.php?script_id=2744 - git-cheat converted to the vim help tags format
-Repeat
 http://www.vim.org/scripts/script.php?script_id=2709 - Sudo
 http://www.vim.org/scripts/script.php?script_id=2724 - Rename
-PKGBUILD syntax & ftdetect - Copy from vim runtime (`pacman -Ql pacman-contrib | grep vim`)
 http://www.vim.org/scripts/script.php?script_id=2686 - cuteTodoList
 http://www.vim.org/scripts/script.php?script_id=642  - Get Latest Vim Script
