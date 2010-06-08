@@ -35,7 +35,7 @@ export QT_XFT=true
 
 # Generic Environment stuff
 if [ -e /usr/lib/libtrash.so ] ; then
-	export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
+    export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
 fi
 export TERMINFO="~/.terminfo"
 
@@ -46,3 +46,16 @@ eval `dircolors -b $HOME/.dir_colors`
 export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 
 export TERMINAL="urxvt.sh"
+export TMOUT=3600
+
+# Test the current terminal settings. If there isn't a termcap,
+# then switch from rxvt-unicode to rxvt-256color (or vice-versa).
+#
+# Meant for Ubuntu & Arch compatibility.
+if [ ! $(infocmp $TERM &>/dev/null) ] ; then
+    if [ "$TERM" = "rxvt-unicode" -a $(infocmp rxvt-256color &>/dev/null)] ; then
+        export TERM=rxvt-256color
+    elif [ "$TERM" = "rxvt-256color" -a $(infocmp rxvt-unicode &>/dev/null)] ; then
+        export TERM=rxvt-unicode
+    fi
+fi
