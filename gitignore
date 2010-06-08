@@ -3,3 +3,4 @@
 .rake_tasks
 git_diff_staged.diff
 *.exe
+~/.vim/bundle/*/doc/tags

@@ -41,9 +41,14 @@ key_bindings = [
                -- Window switching
                  ("M-j",             windows W.focusDown)
                , ("M-k",             windows W.focusUp)
+               , ("M-S-j",           windows W.swapDown)
+               , ("M-S-k",           windows W.swapUp)
+               , ("M-S-<Return>",    windows W.swapMaster)
                , ("M-x",             goToSelected grid_config)
                , ("M-i",             moveTo Next NonEmptyWS)
                , ("M-o",             moveTo Prev NonEmptyWS)
+               , ("M-h",             sendMessage Shrink)
+               , ("M-l",             sendMessage Expand)
 
                -- Window management
                , ("M-t",             toggleFloat)
@@ -101,35 +106,12 @@ key_bindings = [
 
 compiled_bindings = \c -> mkKeymap c $ key_bindings
 
---    -- launch dmenu
---    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
 --
 --    --  Reset the layouts on the current workspace to default
 --    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 --
 --    -- Resize viewed windows to the correct size
 --    , ((modm,               xK_n     ), refresh)
---
---    -- Move focus to the master window
---    , ((modm,               xK_m     ), windows W.focusMaster  )
---
---    -- Swap the focused window and the master window
---    , ((modm,               xK_Return), windows W.swapMaster)
---
---    -- Swap the focused window with the next window
---    , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
---
---    -- Swap the focused window with the previous window
---    , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
---
---    -- Shrink the master area
---    , ((modm,               xK_h     ), sendMessage Shrink)
---
---    -- Expand the master area
---    , ((modm,               xK_l     ), sendMessage Expand)
---
---    -- Push window back into tiling
---    , ((modm,               xK_t     ), withFocused $ windows . (if M.member W.floating then W.float else W.sink))
 --
 --    -- Increment the number of windows in the master area
 --    , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
@@ -222,7 +204,7 @@ startup_hook = return ()
 -- of the newly focused window.
 --
 log_hook :: X ()
-log_hook =  fadeInactiveLogHook 0.1
+log_hook =  fadeInactiveLogHook 0.6
          >> updatePointer (Relative 0.5 0.5)
 
 ------------------------------------------------------------------------
