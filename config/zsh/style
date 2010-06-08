@@ -20,6 +20,5 @@ zstyle ':completion:*' verbose yes
 
 compdef _rake rake
 compdef _cheat cheat
-compdef pacman-color=pacman
 
 # vim: set syn=sh:
