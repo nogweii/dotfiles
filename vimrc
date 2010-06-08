@@ -41,6 +41,7 @@ set      enc           =utf-8            " Use UTF-8 encoding
 set      fenc          =utf-8
 set      tenc          =utf-8
 set      updatetime    =2000             " Milli secs of idle before calling the CursorHold autocmd
+set      shortmess     =filnxtToOmIAr    " Use shorter messages in some ways
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
