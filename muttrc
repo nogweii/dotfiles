@@ -416,7 +416,8 @@ openssl smime -verify -inform DER -in %s -noverify 2>/dev/null"
 
 #############################################
 source ~/.mutt/vim_keys
-source ~/.mutt/themes/THEME.`tput colors`
+#source ~/.mutt/themes/THEME.`tput colors`
+source ~/.mutt/themes/devolved
 
 # How to sort email in the index
 set sort=threads
