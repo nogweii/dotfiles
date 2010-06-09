@@ -26,7 +26,7 @@ xsetroot -cursor_name left_ptr & # Set the X cursor, not all WM's (Xmonad!) set 
 numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp &
-xmodmap ~/.Xmodmap & # Remap some keys (swap Caps/Esc)
+xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 autocutsel -selection PRIMARY -fork
 autocutsel -selection CLIPBOARD -fork
 
