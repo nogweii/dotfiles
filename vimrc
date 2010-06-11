@@ -167,12 +167,17 @@ let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the 
 let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
 let g:SuperTabDefaultCompletionType = "context"
+let s:did_snips_mappings = 1
+let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
 " }}}
 
 " {{{ Autocommands
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "au BufWinLeave * mkview
 "au BufWinEnter * silent loadview
+au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
+" Delay calling GetSnippets 'til after vim has loaded all the plugins
+au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
 " }}}
 
 " {{{ Call commands
