@@ -154,10 +154,10 @@ endif
 let g:yaifa_max_lines                 =  1024    " The default is 16 times this many...whoa.
 let g:showmarks_enable                =  0       " Don't enable showmarks automatically
 let mapleader                         =  "G"     " Use 'G' as map leader, not the default '\'
-let ruby_space_errors                 =  1       " Enable space errors in Ruby files
-let ruby_fold                         =  1       " Enable folding in Ruby files
-let ruby_operators                    =  1       " Highlight ruby operators
-let ruby_no_expensive                 =  0       " Enable CPU expensive stuff
+let g:ruby_space_errors               =  1       " Enable space errors in Ruby files
+let g:ruby_fold                       =  1       " Enable folding in Ruby files
+let g:ruby_operators                  =  1       " Highlight ruby operators
+let g:ruby_no_expensive               =  0       " Enable CPU expensive stuff
 let g:rubycomplete_classes_in_global  =  1       " Add local buffer classes to the completion list
 let g:Tlist_Auto_Highlight_Tag        =  1       " Track where I am in the file
 let g:Tlist_Auto_Open                 =  1       " Open up on vim start
