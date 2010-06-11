@@ -166,6 +166,7 @@ let g:Tlist_File_Fold_Auto_Close      =  1       " Close folds for inactive file
 let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the only window open
 let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
+let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
 " {{{ Call commands
