@@ -14,7 +14,6 @@ alias spacman="s $(whence pacman) -S"
 
 # Pacman completion for clyde
 if [ ! -f /etc/lsb-release ] ; then
-    echo "hello"
     compdef _pacman clyde=pacman
     compdef pacman-color=pacman
 fi
