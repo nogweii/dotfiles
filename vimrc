@@ -10,6 +10,8 @@ set      noerrorbells                    " Disable any error bells
 set      visualbell                      " Use a visual notification instead of beeping
 set      t_vb          =                 " Modify the termcap entry: Disable the visual bell code
 set      foldenable                      " Enable folding, at launch
+set      foldmethod    =syntax           " Default to syntax based folds
+set      foldminlines  =2                " Require at least 2 lines before actually closing a fold
 set      hlsearch                        " Highlight search results
 set      incsearch                       " Jump to the first match in real-time
 set      ignorecase                      " Case insensitive search, by default.
