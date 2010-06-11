@@ -169,7 +169,6 @@ let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a
 let g:SuperTabDefaultCompletionType = "context"
 let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
-let g:buftabs_in_statusline=1
 " }}}
 
 " {{{ Autocommands
