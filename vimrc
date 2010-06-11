@@ -169,6 +169,12 @@ let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a
 let g:SuperTabDefaultCompletionType = "context"
 " }}}
 
+" {{{ Autocommands
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
+" }}}
+
 " {{{ Call commands
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
