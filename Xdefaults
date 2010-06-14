@@ -4,10 +4,10 @@
 #define HOME /home/colin
 #endif
 
-urxvt*font:               xft:Liberation Mono:size=14            , xft:Dejavu Sans Mono:size=14
-urxvt*boldFont:           xft:Liberation Mono:bold:size=14       , xft:Dejavu Sans Mono:bold:size=14
-urxvt*italicFont:         xft:Liberation Mono:italic:size=14     , xft:Dejavu Sans Mono:italic:size=14
-urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:size=14, xft:Dejavu Sans Mono:italic:bold:size=14
+urxvt*font:               xft:Liberation Mono:pixelsize=14,             xft:Dejavu Sans Mono:pixelsize=14
+urxvt*boldFont:           xft:Liberation Mono:bold:pixelsize=14,        xft:Dejavu Sans Mono:bold:pixelsize=14
+urxvt*italicFont:         xft:Liberation Mono:italic:pixelsize=14,      xft:Dejavu Sans Mono:italic:pixelsize=14
+urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:pixelsize=14, xft:Dejavu Sans Mono:italic:bold:pixelsize=14
 urxvt*scrollBar:          false
 urxvt.perl-ext-common:    default,matcher
 urxvt.urlLauncher:        xdg-open
