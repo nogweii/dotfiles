@@ -23,11 +23,10 @@ xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
 ########################################
 ###     Keyboard stuff
 ########################################
-#numlockx on # Enable numlock
-#xbindkeys -fg ~/.xbindkeysrc.scm & # Hot keys
+numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
-setxkbmap -option terminate:ctrl_alt_bksp
-xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
+setxkbmap -option terminate:ctrl_alt_bksp &
+xmodmap ~/.Xmodmap & # Remap some keys (swap Caps/Esc)
 autocutsel -selection PRIMARY -fork
 autocutsel -selection CLIPBOARD -fork
 
@@ -37,11 +36,12 @@ autocutsel -selection CLIPBOARD -fork
 #noteo &
 #/home/colin/code/cuteinformer/cuteinformer &
 
+xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
+
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
 urxvt.sh &
-
 
 ## Social application tracking / discovery
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
