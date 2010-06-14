@@ -88,12 +88,12 @@ alias myip="catw http://icanhazip.com"
 
 ########################
 # 'special' character aliases.
-alias --     -="cd - &>/dev/null"  # Go to the last directory
-alias        .='cd .'              # Have '.' match behaviour of .[.]+
-alias      ...='cd ../..'
-alias     ....='cd ../../..'
-alias    .....='cd ../../../..'
-alias   ......='cd ../../../../..'
+alias --      -="cd - &>/dev/null"  # Go to the last directory
+alias -g      .='cd .'              # Have '.' match behaviour of .[.]+
+alias -g    ...='cd ../..'
+alias -g   ....='cd ../../..'
+alias -g  .....='cd ../../../..'
+alias -g ......='cd ../../../../..'
 
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
