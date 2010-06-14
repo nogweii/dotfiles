@@ -38,6 +38,11 @@ autocutsel -selection CLIPBOARD -fork
 
 xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
 
+# Change monitor gamma over time, to avoid blue in my eyes & night.
+# Average value between Washington, DC & Gaithersburg MD. Works well enough.
+xflux -l 39
+# Real DC: 38.9065, Real Gaithersburg: 39.1382, Average: 39.0223
+
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
