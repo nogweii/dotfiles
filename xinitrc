@@ -14,10 +14,10 @@ echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 ########################################
 ###     Make it pretty
 ########################################
-unclutter -root -display $DISPLAY -jitter 5 -idle 5 -noevents & # Hide the mouse
+unclutter -display $DISPLAY -jitter 5 -idle 5 & # Hide the mouse
 eval $(cat ~/.fehbg) # Background
 xcompmgr -fFD 5 & # Special effects (requires Composite extension)
-xsetroot -cursor_name left_ptr & # Set the X cursor, not all WM's (Xmonad!) set it
+xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
 
 ########################################
 ###     Keyboard stuff
@@ -35,6 +35,13 @@ autocutsel -selection CLIPBOARD -fork
 # Noteo: Notify me of stuff.
 #noteo &
 #/home/colin/code/cuteinformer/cuteinformer &
+
+xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
+
+# Change monitor gamma over time, to avoid blue in my eyes & night.
+# Average value between Washington, DC & Gaithersburg MD. Works well enough.
+xflux -l 39
+# Real DC: 38.9065, Real Gaithersburg: 39.1382, Average: 39.0223
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
