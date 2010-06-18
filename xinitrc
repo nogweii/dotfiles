@@ -9,24 +9,24 @@ if [ -n "$dbuslaunch" ] && [ -x "$dbuslaunch" ] && [ -z "$DBUS_SESSION_BUS_ADDRE
   eval `$dbuslaunch --sh-syntax --exit-with-session`
 fi
 export DBUS_SESSION_BUS_PID
-echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}" 
+echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 
 ########################################
 ###     Make it pretty
 ########################################
-unclutter -root -display $DISPLAY -jitter 5 -idle 5 -noevents & # Hide the mouse
+unclutter -display $DISPLAY -jitter 5 -idle 5 & # Hide the mouse
 eval $(cat ~/.fehbg) # Background
 xcompmgr -fFD 5 & # Special effects (requires Composite extension)
-xsetroot -cursor_name left_ptr & # Set the X cursor, not all WM's (Xmonad!) set it
-#
-#
+xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
+
 ########################################
 ###     Keyboard stuff
 ########################################
+xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
 numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp &
-xmodmap ~/.Xmodmap & # Remap some keys (swap Caps/Esc)
+xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 autocutsel -selection PRIMARY -fork
 autocutsel -selection CLIPBOARD -fork
 
@@ -37,6 +37,11 @@ autocutsel -selection CLIPBOARD -fork
 #/home/colin/code/cuteinformer/cuteinformer &
 
 xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
+
+# Change monitor gamma over time, to avoid blue in my eyes & night.
+# Average value between Washington, DC & Gaithersburg MD. Works well enough.
+xflux -l 39
+# Real DC: 38.9065, Real Gaithersburg: 39.1382, Average: 39.0223
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
