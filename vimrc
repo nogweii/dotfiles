@@ -10,6 +10,8 @@ set      noerrorbells                    " Disable any error bells
 set      visualbell                      " Use a visual notification instead of beeping
 set      t_vb          =                 " Modify the termcap entry: Disable the visual bell code
 set      foldenable                      " Enable folding, at launch
+set      foldmethod    =syntax           " Default to syntax based folds
+set      foldminlines  =2                " Require at least 2 lines before actually closing a fold
 set      hlsearch                        " Highlight search results
 set      incsearch                       " Jump to the first match in real-time
 set      ignorecase                      " Case insensitive search, by default.
@@ -42,6 +44,10 @@ set      fenc          =utf-8
 set      tenc          =utf-8
 set      updatetime    =2000             " Milli secs of idle before calling the CursorHold autocmd
 set      shortmess     =filnxtToOmIAr    " Use shorter messages in some ways
+set      softtabstop=2
+set      shiftwidth=2
+set      tabstop=4
+set      expandtab
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
@@ -79,6 +85,7 @@ map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
            \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" \
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     s ys
+nmap     ZD :call CleanClose(0)
 " }}}
 
 " {{{ Other Settings
@@ -121,6 +128,28 @@ function! SwitchToNextBuffer(incr)
         endif
     endwhile
 endfunction
+
+function! CleanClose(tosave)
+  if (a:tosave == 1)
+    w!
+  endif
+
+  let todelbufNr = bufnr("%")
+  let newbufNr = bufnr("#")
+
+  if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+    exe "b".newbufNr
+  else
+    bnext
+  endif
+
+  if (bufnr("%") == todelbufNr)
+    new
+  endif
+
+  exe "bd".todelbufNr
+  call Buftabs_show()
+endfunction
 " }}}
 
 " {{{ Autocmds
@@ -148,8 +177,11 @@ endif
 let g:yaifa_max_lines                 =  1024    " The default is 16 times this many...whoa.
 let g:showmarks_enable                =  0       " Don't enable showmarks automatically
 let mapleader                         =  "G"     " Use 'G' as map leader, not the default '\'
-let ruby_space_errors                 =  1       " Enable space errors in Ruby files
-let ruby_fold                         =  1       " Enable folding in Ruby files
+let g:ruby_space_errors               =  1       " Enable space errors in Ruby files
+let g:ruby_fold                       =  1       " Enable folding in Ruby files
+let g:ruby_operators                  =  1       " Highlight ruby operators
+let g:ruby_no_expensive               =  0       " Enable CPU expensive stuff
+let g:rubycomplete_classes_in_global  =  1       " Add local buffer classes to the completion list
 let g:Tlist_Auto_Highlight_Tag        =  1       " Track where I am in the file
 let g:Tlist_Auto_Open                 =  1       " Open up on vim start
 let g:Tlist_Enable_Fold_Column        =  0       " Don't show the fold column in the tag list window
@@ -157,6 +189,18 @@ let g:Tlist_File_Fold_Auto_Close      =  1       " Close folds for inactive file
 let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the only window open
 let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
+let g:SuperTabDefaultCompletionType = "context"
+let s:did_snips_mappings = 1
+let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
+" }}}
+
+" {{{ Autocommands
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
+au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
+" Delay calling GetSnippets 'til after vim has loaded all the plugins
+au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
 " }}}
 
 " {{{ Call commands
