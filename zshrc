@@ -41,18 +41,18 @@ bindkey '^W' backward-kill-word-match
 zstyle ':zle:*' word-style normal
 zstyle ':zle:*' word-chars ''
 
-function autobg() {
-    jobs -s >| /tmp/j$$
-    while read jnum jdesc
-    do
-        bg %${${jnum#\[}%\]}
-    done < /tmp/j$$
-    \rm -f /tmp/j$$
-}
-
-function precmd() {
-    autobg
-}
+#function autobg() {
+#    jobs -s >| /tmp/j$$
+#    while read jnum jdesc
+#    do
+#        bg %${${jnum#\[}%\]}
+#    done < /tmp/j$$
+#    \rm -f /tmp/j$$
+#}
+#
+#function precmd() {
+#    autobg
+#}
 
 function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
