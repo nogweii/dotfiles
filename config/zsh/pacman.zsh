@@ -23,7 +23,8 @@ sup-clyde() {
         (-Ss | -Si | -Q* | -T | -*h* | --help)
             /usr/bin/clyde "$@" ;;
         (-S* | -R* | -U | *)
-            /usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;
+            #/usr/bin/sudo /usr/bin/clyde "$@" || /bin/su -c /usr/bin/clyde "$@" || return $? ;;
+            /usr/bin/sudo /usr/bin/clyde "$@" || return $? ;;
     esac
 }
 alias clyde="sup-clyde"
