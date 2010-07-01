@@ -80,7 +80,7 @@ color_err () {
     ## sysread & syswrite are part of zsh/system
     while sysread 'std_err'
     do
-      syswrite -o 2 "${fg_bold[red]}${std_err}${terminfo[sgr0]}"
+      syswrite -o 2 -- "${fg_bold[red]}${std_err}${terminfo[sgr0]}"
     done
 }
 exec 2> >( color_err )
