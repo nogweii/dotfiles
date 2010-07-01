@@ -1,7 +1,7 @@
 export HISTFILE="${ZSH}/history"
 
 # Prompt. Make it purrty!
-export PROMPT="%B%n%b%d/ "
+export PROMPT="%B%n%b%d%(?..[%?])/ "
 export RPROMPT="-- INSERT --"
 
 # Extra places which doesn't seem to be added to the normal paths
