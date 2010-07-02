@@ -1,25 +1,30 @@
-# Saves a lot of guess work if a background thread fails
-require 'irb/completion'
-require 'irb/ext/save_history'
+begin
+    require 'irb/ext/save_history'
+    require 'irb/completion'
 
-Thread.abort_on_exception = true
-ARGV.concat ["--readline", "--prompt-mode", "simple"]
+    Thread.abort_on_exception = true
+    ARGV.concat ["--readline", "--prompt-mode", "simple"]
 
-IRB.conf[:SAVE_HISTORY] = 500
-IRB.conf[:HISTORY_FILE] = File.expand_path File.join(%w[~ .data irb_history])
+    IRB.conf[:SAVE_HISTORY] = 500
+    IRB.conf[:HISTORY_FILE] = File.expand_path File.join(%w[~ .data irb_history])
 
-require 'pp'
-pp IRB.conf[:HISTORY_FILE]
+    require 'pp'
+    pp IRB.conf[:HISTORY_FILE]
 
-# http://ozmm.org/posts/time_in_irb.html
-def time(times = 1)
-    require 'benchmark'
-    ret = nil
-    Benchmark.bm { |x| x.report { times.times { ret = yield } } }
-    ret
-end
+    # http://ozmm.org/posts/time_in_irb.html
+    def time(times = 1)
+        require 'benchmark'
+        ret = nil
+        Benchmark.bm { |x| x.report { times.times { ret = yield } } }
+        ret
+    end
 
-# thanks rtomayko
-def IRB.reload
-    load __FILE__
+    # thanks rtomayko
+    def IRB.reload
+        load __FILE__
+    end
+rescue Exception => e
+    puts "Error! Error! #{e.class} raised!"
+    puts "> #{e.message}"
+    puts e.backtrace.join("\n")
 end
