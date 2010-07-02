@@ -86,6 +86,8 @@ map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     s ys
 nmap     ZD :call CleanClose(0)
+nnoremap gf gF
+nnoremap <silent> gF :CommandT<CR>
 " }}}
 
 " {{{ Other Settings
