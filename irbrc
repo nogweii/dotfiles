@@ -9,6 +9,8 @@ begin
     require 'net-http-spy' # Spy on Net::HTTP requests
     require 'wirble'
     require File.join(ENV['HOME'], '.irb/irb_rocket')
+    require "ap"
+    require "looksee"
 
     Thread.abort_on_exception = true
     ARGV.concat ["--readline", "--prompt-mode", "simple"]
@@ -18,13 +20,6 @@ begin
     IRB.conf[:USE_READLINE] = true # Use readline
     IRB.conf[:IGNORE_EOF] = true # Ignore Ctrl-D, require 'exit' (like I have in zsh)
 
-    # Set awesome_print as the default formatter
-    require "ap"
-#    IRB::Irb.class_eval do
-#      def output_value
-#        ap @context.last_value
-#      end
-#    end
 
     # http://ozmm.org/posts/time_in_irb.html
     def time(times = 1)
