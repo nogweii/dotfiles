@@ -24,6 +24,10 @@ begin
     def IRB.reload
         load __FILE__
     end
+
+# Make some noise whenever there is an exception, of any kind.
+# Otherwise IRB won't report any error and just stop executing irbrc, leaving me
+# confused as to why some of the file hasn't been loaded.
 rescue Exception => e
     puts "Error! Error! #{e.class} raised!"
     puts "> #{e.message}"
