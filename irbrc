@@ -6,6 +6,7 @@ begin
     require 'method_extensions/method/super' # Mods core classes!
     require 'bond'; Bond.start
     Bond.load_gems 'hirb'; require 'hirb' # Hirb has custom bond completion
+    require 'boson'; Boson.start
     require 'net-http-spy' # Spy on Net::HTTP requests
     require 'wirble'
     require File.join(ENV['HOME'], '.irb/irb_rocket')
