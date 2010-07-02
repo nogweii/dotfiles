@@ -1,5 +1,19 @@
-! Swap caps lock and escape
+!! Swap caps lock and escape
+!remove Lock = Caps_Lock
+!keysym Escape = Caps_Lock
+!keysym Caps_Lock = Escape
+!add Lock = Caps_Lock
+!
+!
+! Swap Caps_Lock and Escape
+!
 remove Lock = Caps_Lock
+remove Control = Escape
 keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
 add Lock = Caps_Lock
+add Control = Escape
+
+!keycode 135 = Multi_key Multi_key Multi_key Multi_key Multi_key Multi_key
+!keycode 135 = Multi_key
+!keysym menu = Mode_switch
