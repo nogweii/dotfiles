@@ -1,5 +1,5 @@
 begin
-    require 'irb/ext/save_history'
+    require 'irb/ext/save-history'
     require 'irb/completion'
 
     Thread.abort_on_exception = true
