@@ -13,6 +13,7 @@ begin
 
     # http://ozmm.org/posts/time_in_irb.html
     def time(times = 1)
+        return nil unless block_given?
         require 'benchmark'
         ret = nil
         Benchmark.bm { |x| x.report { times.times { ret = yield } } }
