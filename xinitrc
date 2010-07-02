@@ -36,8 +36,6 @@ autocutsel -selection CLIPBOARD -fork
 #noteo &
 #/home/colin/code/cuteinformer/cuteinformer &
 
-xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
-
 # Change monitor gamma over time, to avoid blue in my eyes & night.
 # Average value between Washington, DC & Gaithersburg MD. Works well enough.
 xflux -l 39
