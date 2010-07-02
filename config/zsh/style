@@ -21,4 +21,13 @@ zstyle ':completion:*' verbose yes
 compdef _rake rake
 compdef _cheat cheat
 
+
+# cygwin only: commands that auto-complete with and without .exe or .dll suffixes are annoying.
+# thanks Thorsten Kampe & Bart Schaefer (and 'Atom Smasher' for his zshrc)
+# http://www.zsh.org/mla/users/2009/threads.html#00391
+[[ ${OSTYPE} == cygwin ]] && zstyle ':completion:*:-command-:*' ignored-patterns '(#i)*.exe' '(#i)*.dll'
+
+## if there's a `manpath` command, use it
+[[ -x $(whence -p manpath) ]] && export MANPATH=$(manpath 2> /dev/null)
+
 # vim: set syn=sh:

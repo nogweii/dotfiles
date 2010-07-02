@@ -97,6 +97,7 @@ filetype on
 filetype plugin on
 filetype indent on
 runtime macros/matchit.vim " Extend % matching
+runtime ftplugin/man.vim " :Man command
 " }}}
 
 " {{{ Functions
