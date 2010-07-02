@@ -49,3 +49,6 @@
 [submodule "vim/snipmate-snippets"]
 	path = vim/snipmate-snippets
 	url = git://github.com/scrooloose/snipmate-snippets.git
+[submodule "vim/bundle/recover.vim"]
+	path = vim/bundle/recover.vim
+	url = http://github.com/chrisbra/Recover.vim.git
