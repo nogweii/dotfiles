@@ -75,4 +75,24 @@ export XDG_CONFIG_DIRS="${HOME}/.config/:${HOME}/.local/config/:${XDG_CONFIG_DIR
 # MAILDIR
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
+# Locale
+export LOCALE="en_US.utf8"
+export LANG="en_US.utf8"
+export LC_CTYPE="en_US.utf8"
+export LC_NUMERIC="en_US.utf8"
+export LC_TIME="en_US.utf8"
+export LC_COLLATE="C"
+export LC_MONETARY="en_US.utf8"
+export LC_MESSAGES="en_US.utf8"
+export LC_PAPER="en_US.utf8"
+export LC_NAME="en_US.utf8"
+export LC_ADDRESS="en_US.utf8"
+export LC_TELEPHONE="en_US.utf8"
+export LC_MEASUREMENT="en_US.utf8"
+export LC_IDENTIFICATION="en_US.utf8"
+
+# Time
+export HARDWARECLOCK="UTC"
+export TIMEZONE="America/New_York"
+
 fpath=(~/.data/zsh $fpath)
