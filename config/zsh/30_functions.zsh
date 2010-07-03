@@ -110,8 +110,6 @@ function smart_cd () {
 }
 
 function cd () {
-  setopt localoptions
-  setopt extendedglob
   local approx1 ; approx1=()
   local approx2 ; approx2=()
   if (( ${#*} == 0 )) || [[ ${1} = [+-]* ]] ; then
