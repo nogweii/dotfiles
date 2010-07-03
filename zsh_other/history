@@ -1,0 +1,7179 @@
+clyde -Si xorg
+clyde -Qs xorg
+clyde -Si xorg-server
+ls
+abs extra/xorg-server
+s abs extra/xorg-server
+vim /var/abs/extra/xorg-server/PKGBUILD
+mplayer https://s3.amazonaws.com/s3.wincent.com/command-t/screencasts/command-t-demo.mov
+mplayer http://s3.amazonaws.com/s3.wincent.com/command-t/screencasts/command-t-demo.mov
+ls
+ls code/
+code/to
+code/toto
+ls
+vim
+~/dotfiles/vim/ruby/command-t
+ls
+ruby extconf.rb
+make
+.....
+-
+...
+..
+ls
+git st
+~
+code/to
+code/toto
+ls
+vim
+vim
+vim ~/.vim/bundle/surround/doc/surround.txt
+vim
+vim
+vim ~/.vimrc
+vim ~/.vimrc
+ll ~/.vimrc
+ls ~/dotfiles
+ ~/dotfiles
+ls
+git st
+git diff
+git add gitignore .gitignore
+git ci
+git add vimrc
+git ci
+git st
+gi tpush
+git push
+..
+vim notes/Vim_Stuff
+exit
+exit
+vim .xmonad/xmonad.hs
+exit
+exit
+exit
+irb
+vim notes/Vim_Stuff
+bc
+bc
+bc
+code/to
+code/toto
+ls
+vim .git/config
+git pull cloudhead
+git remote update
+git pull
+git pull cloudhead master
+git lg
+git push
+vim test/toto_test.rb
+vim lib/ext/ext.rb
+~/blog
+ls
+git st
+git diff
+git add templates/layout.rhtml
+git ci
+vim templates/pages/index.rhtml
+exit
+lsof G dns
+lsof G (snd|dsp)
+lsof G (snd|dsp)
+clyde -Ss sieve
+clyde -Si sieve-connect
+vim notes/Email.txt
+bc
+bc
+clyde -Ss sslh
+vim ~/notes/Ports.txt
+clyde -Ss multiplex
+vim notes/Email.txt
+crontab -e
+vim /usr/lib/cw/crontab
+vim /usr/lib/cw/cal
+chmod a-x /usr/lib/cw/crontab
+s chmod a-x /usr/lib/cw/crontab
+crontab
+crontab -e
+timedrive-backup --help
+crontab -e
+vim bin/youtube.dl.script
+vim bin/download_queue
+vim bin/do_download_queue
+vim bin/do_download_queue
+vim tmp/download_queue.txt
+ruby bin/do_download_queue
+vim bin/do_download_queue
+vim ~/tmp/download_queue.txt
+vim tmp/download_queue.txt
+vim bin/do_download_queue
+vim tmp/download_queue.txt
+vim tmp/download_queue.txt
+lsof G (snd|dsp)
+ls
+mpc
+mpc next
+vim bin/do_download_queue
+irb
+fg
+vim bin/do_download_queue
+clyde -Ss limit
+clyde -S netbrake
+netbrake --help
+mpc
+man netbrake
+clyde -Ql netbrake
+#netbrake -l ruby bin/do_download_queue
+ls
+ls bin
+ls tmp
+vim bin/do_download_queue
+netbrake -l ruby bin/do_download_queue
+ls
+PSG ruby
+netbrake "ruby bin/do_download_queue"
+netbrake "/usr/bin/ruby bin/do_download_queue"
+netbrake -l "/usr/bin/ruby bin/do_download_queue"
+clyde -Ss limit
+clyde -S wondershaper
+ls /tmp/clyde
+ls /tmp/clyde
+ls /tmp/clyde/iproute
+/tmp/clyde/iproute
+file -sb iproute.tar.gz
+vim iproute.tar.gz
+cat iproute.tar.gz | vim -
+~
+yrm /tmp/clyde/{iproute}
+clyde -S wondershaper
+vim
+ls /tmp
+ls /tmp/clyde
+ls /tmp/clyde/iproute
+curl -I http://toolserver.org/\~daniel/potd/potd.php/commons/full
+curl -I http://toolserver.org/tsthumb/tsthumb\?f\=Carcharhinus_melanopterus_Luc_Viatour.jpg\&domain\=commons.wikimedia.org
+ncmpc
+ncmpc --color
+ncmpc -c
+ncmpc -c
+curl --help
+vim tmp/download_queue.txt
+rm tmp/download_queue.txt.lock
+ruby bin/do_download_queue
+ls
+rm WorldOfGooSetup.1.41.tar.gz'\
+'
+vim bin/do_download_queue
+ruby bin/do_download_queue
+ls
+vim bin/do_download_queue
+vim bin/do_download_queue
+dmesg T
+dmesg T
+alsactl --help
+alsaconf --help
+ls /proc/asound
+vim /proc/asound/cards
+vim /proc/asound/devices
+s /etc/rc.d/alsa restart
+ls /proc/asound
+aplay -l
+ls /media/nas/Music
+find /media/nas/Music G iriver
+aplay /media/nas/Music/iriver.mp3
+mplayer -ao alsa /media/nas/Music/iriver.mp3
+find /media/nas/Music G audio
+find /media/nas/Music G sound
+ls /media/nas/Music G sound
+vifm /media/nas/Music
+vi /media/nas/Music
+vim /media/nas/Music
+find /media/nas/Music G right
+find /media/nas/Music G left
+find /media/nas/Music G exp
+find /media/nas/Music G blast
+mplayer -ao alsa /media/nas/Music/iriver.mp3
+aply -l
+aplay -l
+ALSA_CARD=2 mplayer -ao alsa /media/nas/Music/iriver.mp3
+ALSA_PCM_CARD=2 ALSA_CARD=2 mplayer -ao alsa /media/nas/Music/iriver.mp3
+ALSA_PCM_CARD=Headset ALSA_CARD=Headset mplayer -ao alsa /media/nas/Music/iriver.mp3
+find /media/nas/Music G audio
+find /media/nas/Music G sound L
+find /media/nas/Music G blast
+ls /media/nas
+ls /media/nas/Music/Dad\'s\ Music
+mplayer -ao alsa:device=plughw=Headset tmp/Arcade_Fire/Month_Of_May.mp3
+ls
+tmp/
+ls
+mkdir Games
+Games
+ls
+ruby ~/bin/do_download_queue
+ls
+rm ~/tmp/download_queue.txt.lock
+vim ~/bin/do_download_queue
+ruby ~/bin/do_download_queue
+vim ~/bin/do_download_queue
+ruby ~/bin/do_download_queue
+vim ~/tmp/download_queue.txt
+vim ~/bin/do_download_queue +13
+ruby ~/bin/do_download_queue
+vim ~/bin/do_download_queue +13
+ls
+rm WorldOfGooSetup.1.41.tar.gz
+ruby ~/bin/do_download_queue
+ssh me
+ls
+ssh me
+ssh me
+irb
+ruby --help
+ruby -rpp -e 'pp $:'
+ruby -rpp -e 'pp $:.sort'
+s gem install twitter
+ruby -rpp -e 'pp $:.grep /twitter/'
+ruby -rpp -e 'pp $:.grep /twitter-[\d\.]+/'
+ruby -rpp -e 'pp $:.grep /twitter-[\d\.]+\/lib/'
+ruby -rpp -e 'pp File.join(($:.grep /twitter-[\d\.]+\/lib/), "..", "examples", "config_store.rb")'
+ssh me
+dig ell.io
+ssh me
+nmap 174.129.205.205
+irb
+irb
+irb 0>~/tmp/rb_io_fd0.txt
+irb 1>~/tmp/rb_io_fd0.txt
+vim tmp/rb_io_fd0.txt
+rm tmp/rb_io_fd0.txt
+vim
+vim ~/.mcabber/mcabberrc
+ssh me
+vim /proc/cpuinfo
+ack 'nvidia' /proc
+s ack 'nvidia' /proc
+ls /proc/
+vim /proc/bu
+vim /proc/buddyinfo
+vim /proc/devices
+dmesg T nvidia
+dmesg G nvidia
+dmesg G gefo
+mpc
+PSG mpd
+s /etc/rc.d/mpd restart
+s vim /etc/rc.d/mpd
+tail /var/log/everything.log
+s vim /var/log/everything.log
+s vim /var/log/auth.log
+s vim /var/log/auth.log*
+s vim /var/log/everything.log*
+s /etc/rc.d/mpdscribble stop
+s vim /var/log/everything.log*
+ifconfig
+s /etc/rc.d/network restart
+ifconfig
+s /etc/rc.d/mpd start
+s /etc/rc.d/mpdscribble start
+s vim /var/log/everything.log.2
+s vim /etc/logrotate.
+s vim /etc/logrotate.conf
+code/
+man dialog
+lpr --help
+lpr -h
+man lpr
+vim /usr/bin/lprsetup.sh
+man lprm
+man lpr
+lpadmin
+man lpadmin 
+man lp
+man lpr
+mpc
+lpr
+lpadmin --help
+lpadmin -h
+lpadmin localhost
+lpadmin -h localhost
+man lpadmin
+nmap localhost
+PSG cups
+s vim /etc/cups/cupsd.conf
+lpstat
+lpstat -p -d
+lpoptions -d laserjet
+lrp
+lpr
+ls
+ls clyde
+vim clyde/README
+lpr clyde/README
+vim clyde/README
+ssh me
+ping evaryont.me
+ssh me
+ssh me
+ssh me
+ls
+ls
+exit
+ls
+vim tmp/Games
+ tmp/Games
+vim ../download_queue.txt
+ls
+du -sh aquaria-lnx-humble-bundle.mojo.run
+du -sh gish153-1.tar.gz
+cat ../download_queue.txt | awk -F'/' '{ print $3 }'
+cat ../download_queue.txt | awk -F'/' '{ print $5 }'
+du -sh penumbra_overture_1.1.sh
+du -h penumbra_overture_1.1.sh
+du penumbra_overture_1.1.sh
+du --help penumbra_overture_1.1.sh
+du --si penumbra_overture_1.1.sh
+du --si aquaria-lnx-humble-bundle.mojo.run
+du --si gish153-1.tar.gz
+du --si lugaru-full-linux-x86-1.0c.bin
+du --si samorost2_linux.zip
+ls
+exit
+clyde -Ss freecell
+clyde -Ss solitare
+clyde -Ss cards
+tmp/
+extr freecell4cli-0.2.1.tar.gz
+free
+freecell4cli-0.2.1
+ls
+make
+ls
+./freecell_debug
+vim freecell
+vim freecell.h
+vim card.h
+ack color
+vim freecell.cpp
+vim freecell.cpp card.h
+make
+vim freecell.cpp card.h
+make
+./freecell
+man ncurses
+man curs_colors
+man curs_color
+vim freecell.cpp card.h
+make
+./freecell
+vim freecell.cpp card.h
+vim freecell.cpp card.h
+vim Makefile
+ls
+rm freecell freecell_debug
+make freecell_debug
+vim card.h +46
+./freecell_debug
+vim freecell.cpp card.h
+vim freecell.cpp card.h
+ack 'SPADES'
+vim freecell.cpp card.h
+make
+vim card.h
+make
+vim freecell.h +235
+vim freecell.h +235
+make
+vim card.h +109
+make
+vim card.h +187
+make
+vim freecell.h +88
+vim freecell.cpp +88
+vim freecell.cpp +88
+make
+vim freecell.cpp +88
+ack 'substr'
+vim freecell.cpp +69
+vim freecell.cpp
+make
+./freecell_debug
+reset
+clyde -Ss gdb
+clyde -S gdb
+ls
+gdbtui freecell_debug
+vim Makefile
+make
+vim Makefile
+make
+make clean
+make
+gdbtui ./freecell_debug
+vim trace.txt
+..
+rm freecell4cli-0.2.1
+extr freecell4cli-0.2.1.tar
+freecell4cli-0.2.1
+ls
+vim freecell.cpp
+ls
+make
+./freecell
+..
+~/code
+git clone http://github.com/murilasso/tty-solitaire.git
+clyde -Ss solitaire
+tty-solitaire
+ls
+make
+ls
+ls bin
+bin/tty-solitaire
+bin/tty-solitaire --help
+ls
+vim src/tty-solitaire.c
+ack 'handle_stock'
+vim lib/keyboard.c
+bin/tty-solitaire
+vim src/tty-solitaire.c
+make
+vim src/tty-solitaire.c
+vim src/tty-solitaire.c lib/keyboard.c
+git remote update
+vim .git/config
+git pull origin debug
+git br
+ls
+vim debug/card_debug.c
+..
+yrm tty-solitaire
+git clone http://github.com/murilasso/tty-solitaire.git
+tty-solitaire
+git co -b origin/debug
+git br
+ls
+git pull
+git co --help
+git checkout --help
+git co master
+git br
+git br -d origin/debug
+git co -b debug origin/debug
+ls
+make
+ls
+bin/tty-solitaire
+ls
+vim README
+vim src/tty-solitaire.c
+~/dotfiles
+~/tmp
+mkdir dotfiles
+dotfiles
+wget http://toolserver.org/\~daniel/potd/potd.php/commons/full -qO ~/.data/wikip_picture_of_the_day
+feh ~/.data/wikip_picture_of_the_day
+wget http://upload.wikimedia.org/wikipedia/commons/d/d5/Carcharhinus_melanopterus_Luc_Viatour.jpg -qO ~/.data/wikip_picture_of_the_day
+feh --bg-scale ~/.data/wikip_picture_of_the_day
+dotfiles
+ls
+bc
+echo "960x854"
+clyde -Ss ncmatrix
+clyde -S ncmatrix
+clyde -Ss consolefonts
+clyde -Ss console font
+clyde -S terminus-font
+ls /usr/share/fonts
+s vim /etc/rc.conf
+ls /usr/share/fonts/local
+/tmp/clyde/ncmatrix
+ls
+ncmatrix
+ncmatrix/
+ls
+ls src/ncmatrix-1.0
+ src/ncmatrix-1.0
+./configure --help
+vim config.h.in
+vim config.h.in
+vim configure.in
+ls
+ack 'font' /etc/rc.conf
+ls /usr/share/kbd
+vim configure.in
+ls /usr/share/fonts
+ls /usr/share/fonts/local
+cp configure.in configure.in2
+echo /usr/share/fonts/local /usr/share/kdb >> configure.in2
+vim configure.in2
+diff -u configure.in*
+diff -u configure.in* > ../../arch_font_dirs.patch
+...
+ls
+vim arch_font_dirs.patch
+vim PKGBUILD
+ls src/ncmatrix-1.0
+ls
+rm ncmatrix-1.0-1-x86_64.pkg.tar.gz
+ls
+makepkg
+src/ncmatrix-1.0
+ls
+cp configure configure2
+vim configure2
+vim configure.in
+..
+rm ncmatrix-1.0
+ls
+unzip ncmatrix-1.0.zip
+ls
+ncmatrix-1.0
+ls
+vim stamp-h.in
+vim config.h.in
+vim Makefile.am
+vim ../../PKGBUILD
+...
+ls
+rm arch_font_dirs.patch
+rm pkg src
+ls
+makepkg
+ls src
+ls pkg
+ls pkg/usr/share
+ls pkg/usr/share/fonts
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+ls
+makepkg
+makepkg -i
+vim PKGBUILD
+ncmatrix --help
+ncmatrix -l
+ncmatrix -x
+ncmatrix -xs
+ncmatrix -xbs
+ncmatrix -xbs -o
+ncmatrix -xbs -a
+ncmatrix -xbsu2
+ncmatrix -xbsu3
+ncmatrix -xbsu1
+ncmatrix -xbsu6
+ncmatrix -xbsu5
+ncmatrix -xbsf
+ncmatrix --help
+ncmatrix -xbs
+ncmatrix -xbs
+ncmatrix -xb
+ls
+vim src/ncmatrix-1.0/ncmatrix.c
+~
+ncmatrix --help
+ncmatrix -xbs
+ncmatrix -bs
+ncmatrix -bs
+ssh joshua@crawl.akrasiac.org
+PSG xcomp
+vim ~/.xinitrc
+nohup xcompmgr -fFD 5 &
+exit
+disown %nohup
+exit
+%blow
+quit
+exit
+vim .vimrc
+quit
+exit
+ssh me
+ssh -t me 'detach irssi'
+vim ~/.config/zsh/functions.zsh
+ssh -t me 'dtach -A "/home/colin/.data/dtach/irssi.socket" -z -e "^Z"'
+ssh -t me 'dtach -A "/home/colin/.data/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh me
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ifconfig
+mutt
+ssh -t me mutt
+clyde -Ss autofs
+ckyde -S autofs
+clyde -S autofs
+vim /etc/conf.d/autofs
+vim /etc/rc.d/autofs
+s vim /etc/rc.d/autofs /etc/conf.d/autofs
+ifconfig eth0
+ifconfig eth0 G p-t-p
+clyde -Ss verse
+%blow
+bash
+vim tmp/install.txt
+tmp/
+mkdir kent-ext
+mv kent-vim-ext-rc-unix.tar.gz install.txt kent-ext
+kent-ext
+ls
+extr kent-vim-ext-rc-unix.tar.gz
+ls
+extr kent-vim-ext-rc-unix.tar
+ls
+extr kent-vim-ext-rc-unix.tar
+lsa
+vim .vimrc
+mv ../kent-vim-ext-runtime.tar.gz .
+extr kent-vim-ext-runtime.tar.gz
+ls
+vim doc/kent-vim-ext.txt
+vim doc/kent-folding.txt
+..
+rm kent-ext
+ls ~/.vim/
+ls ~/.vim/bundle
+ls ~/.vim/plugin
+~/dotfiles
+git submodule
+ls
+git st
+git submodule add http://github.com/Raimondi/delimitMate.git vim/bundle/delimitMate
+git st
+git git ci
+git  ci
+ls ci
+yrm ci
+git ci
+ls
+git submodule add http://github.com/Raimondi/YAIFA.git vim/bundle/yaifa
+git st
+git ci
+git diff
+git add xmonad/xmonad.hs 
+git ci
+vim
+git rm vim/plugin/autoclose.vim
+git ci
+vim vimrc
+vim ~/tmp/utl_3_0a.vba
+ls
+vim vim/plugin/taglist.vim
+~/tmp
+ls
+extr vimoutliner-122.zip
+mkdir tvo
+mv bitmaps/ changes.txt doc doc2otl easy.* FAQ.txt ft* INSTALL install-tvo.bat opml2otl otl* README.otl syntax tvo.bat versions.txt -t tvo
+ls
+tvo
+mv ../pod2otl .
+file -sb ../makezip
+vim ../makezip
+mv ../macros ../makezip -t .
+ls
+vim README.otl
+ls ftdetect
+vim ftdetect/otl.vim
+vim ftplugin/otl.vim
+vim macros/vimsettings.vim
+vim otlParser.rb
+ruby otlParser.rb
+ruby otlParser.rb --help
+ruby otlParser.rb +207
+vim otlParser.rb +207
+ruby otlParser.rb --help
+ruby otlParser.rb README.otl
+ruby otlParser.rb README.otl L
+vim ../vim.mm
+code/
+mkdir google_maps_directions/
+google_maps_directions
+ls
+vim from_home_to_work.rb
+s gem install yajl-ruby
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+echo 2666 \ 60 | bc
+echo '2666 \ 60' | bc
+echo '2666 / 60' | bc
+vim from_home_to_work.rb
+vim from_home_to_work.rb
+vim from_home_to_work.rb
+irb
+ls /usr/lib/ruby/gems/1.9.1/gems
+ack --ruby ansi /usr/lib/ruby/gems/1.9.1/gems/*/lib/**/*.rb
+ack --ruby ANSI /usr/lib/ruby/gems/1.9.1/gems/*/lib/**/*.rb
+irb
+vim from_home_to_work.rb
+vim from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+irb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+vim from_home_to_work.rb
+ruby from_home_to_work.rb
+ls
+irb
+vim from_home_to_work.rb
+wget http://maps.google.com/maps/api/directions/json\?origin\=8320%20Cottage%20Hill%20Ct,%20Gaithersburg%20MD%2020877\&destination\=1133%2019th%20St%20NW,%209th%20Floor%20Washington,%20DC%2020036\&sensor\=false\&alternatives\=true -O results.json
+vim results.json
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+vim pretty_present.rb results.json
+vim pretty_present.rb results.json
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+vim pretty_present.rb results.json
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+vim ~/.vimrc
+vim pretty_present.rb results.json
+vim ~/.vimrc
+vim pretty_present.rb results.json
+vim ~/.vimrc
+vim pretty_present.rb results.json
+ruby pretty_present.rb
+vim pretty_present.rb results.json
+dialog --help
+dialog --help G lits
+dialog --help G list
+dialog --infobox "info box vs msg box, what is different about them?" 0 0
+dialog --msgbox "info box vs msg box, what is different about them?" 0 0
+dialog --help
+dialog --item-help
+dialog --help G help
+dialog --help-status
+clyde -Ss dialog
+dialog --help
+dialog --menu "Choose a route..." 0 0 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi"
+dialog --help
+dialog --menu "Choose a route..." 0 15 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi"
+dialog --menu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi"
+dialog --help G color
+dialog --colors
+man dialog
+dialog --create-rc
+dialog --create-rc dialog.conf
+vim dialog.conf
+man dialog
+dialog --menu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help
+dialog --item-help --menu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi"
+dialog --menu --item-help "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi"
+dialog --menu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help
+ruby pretty_present.rb
+man dialog
+dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help
+dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help --extra-label ""
+dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help --extra-label "Cancel"
+man dialog
+dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help --extra-label "Extra"
+dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help --extra-label "Extra"
+gem search curses
+gem search curses --remote
+gem search --help
+gem search curses --remote --all --deatils
+gem search curses --remote --all --details
+gem install ncursesw
+s gem install ncursesw
+irb
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/lib
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/ex
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form.rb fo
+ruby /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form.rb fo
+ /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/
+examples/form.rb
+lib
+../examples/form.rb
+ls
+s vim ../examples/form
+s vim ../examples/form.rb
+~
+ruby /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form.rb
+ruby /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form2.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form2.rb
+ruby /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form2.rb
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/examples/form2.rb
+s gem uninstall ncursesw
+code/google_maps_directions
+ls
+vim pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+apvlv ~/tmp/SIP-AUP.pdf
+man mcabber
+ls
+vim from_home_to_work.rb
+vim pretty_present.rb
+vim dialog.conf 
+dialog --help
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --msgbox "lol"
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --msgbox 0 0 "lol"
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --msgbox "lol" 0 0
+vim dialog.conf 
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --msgbox "lol" 0 0
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --inputmenu "Choose a route..." 0 50 10 "tag" "route 1  44 mins   28 mi" "tag2" "route 2  43 mins  30 mi" --item-help
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --inputmenu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi" --item-help
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim dialog.conf
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim dialog.conf
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim dialog.conf
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim dialog.conf
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route..." 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim dialog.conf
+vim pretty_present.rb
+DIALOGRC=/home/colin/code/google_maps_directions/dialog.conf dialog --menu "Choose a route...\nHello" 0 50 10 "route 1" "44 mins, 28 mi" "route 2" "43 mins, 30 mi"
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+man dialog
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+dialog --help
+dialog --infobox "test" 0 0
+dialog --msgbox "test" 0 0
+dialog --msgbox "test" 0 0
+dialog --help
+dialog --msgbox "test" 0 0 --extra-button --extra-label "Print"
+dialog --help
+dialog --extra-button --msgbox "test" 0 0
+dialog --help
+man dialog
+dialog --extra-button --yesno "test" 0 0
+dialog --extra-button --extra-label "Print" --yesno "test" 0 0
+dialog --extra-button --extra-label "Print" --cancel-label "Back" --yesno "test" 0 0
+dialog --extra-button --extra-label "Print" --cancel-label "Back" --yesno "test" 0 0
+dialog --extra-button --extra-label "Print" --cancel-label "Back" --yesno "test\\nfoo" 0 0
+dialog --extra-button --extra-label "Print" --cancel-label "Back" --yesno "test\nfoo" 0 0
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ls /tmp
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+clyde -Ss cups L
+vim pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ls
+vim results.json
+vim pretty_present.rb
+vim results.json
+vim pretty_present.rb
+vim results.json
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ls
+vim from_home_to_work.rb
+vim pretty_present.rb
+vim pp_json.rb
+ruby pp_json.rb
+vim pp_json.rb
+vim pretty_present.rb
+json_reformat results.json
+cat results.json| json_reformat
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+lpr
+vim pretty_present.rb
+ls
+vim from_home_to_work.rb
+cat from_home_to_work.rb | lpr
+ls --colors
+ls --color=always
+ln -s pretty_present.rb.2 pretty_present.rb
+ln -s pretty_present.rb pretty_present.rb.2
+ls
+ls --color=always
+ls --color=always | less
+ls --color=always > file
+vim file
+lpr file
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ruby pretty_present.rb
+vim pretty_present.rb
+ruby pretty_present.rb
+ls
+rm file pretty_present.rb.2
+ls
+vim pp_json.rb
+vim from_home_to_work.rb
+man dialog
+dialog --help G form
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 0 0 "" 0 1 10 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 10 0 "" 0 1 10 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "" 0 1 10 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "Start" 0 1 10 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "Start" 0 1 0 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 0 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 10 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 10000 0
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 10000 25
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 10 25
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 10 "foo" 0 1 10 10000
+dialog --form "Enter where you want to go..." 0 0 0 "start" 1 10 "" 0 1 10 10000
+dialog --form "Enter where you want to go..." 0 0 0 "start" 1 10 "" 0 1 10 10000 2>form_results
+vim form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 1 2 10 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 1 10 10 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 2 10 10 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 2 1 10 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 2 1 19 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start" 1 1 "" 2 1 20 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start Point:" 1 1 "" 2 1 20 10000 "End Point:" 4 1 "" 5 1 20 10000 2>form_results
+dialog --help G form
+dialog --form "Enter where you want to go..." 0 0 100 "Start Point:" 1 1 "" 2 1 20 10000 "End Point:" 4 1 "" 5 1 20 10000 2>form_results
+dialog --help G form
+dialog --form "Enter where you want to go..." 0 100 0 "Start Point:" 1 1 "" 2 1 20 10000 "End Point:" 4 1 "" 5 1 20 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start Point:" 1 1 "" 2 1 30 10000 "End Point:" 4 1 "" 5 1 30 10000 2>form_results
+dialog --form "Enter where you want to go..." 0 0 0 "Start Point:" 1 1 "" 2 1 35 10000 "End Point:" 4 1 "" 5 1 35 10000 2>form_results
+vim form_results
+vim get_directions.rb
+vim get_directions.rb
+ruby get_directions.rb
+vim get_directions.rb
+ruby get_directions.rb
+vim get_directions.rb
+ruby get_directions.rb
+vim get_directions.rb
+vim get_directions.rb
+dialog --help
+dialog --help G check
+dialog --checklist "What do you want to avoid?" 0 0 0 "Toll Roads" 0 "Highways" 0
+dialog --help G check
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0 2>checklist_results
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0 2>checklist_results
+vim checklist_results
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0 2>checklist_results
+vim checklist_results
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0 2>checklist_results
+vim checklist_results
+dialog --checklist "What do you want to avoid?" 0 0 0 "tolls" "Toll Roads" 0 "hw" "Highways" 0 2>checklist_results
+vim checklist_results
+vim get_directions.rb
+dialog --help G radio
+dialog --radiolist "How do you want to get there?" 0 0 0 "d" "Driving" 0 "w" "Walking" 0 "b" "Bicycling" 0 2>radiolist_results
+vim radiolist_results
+vim get_directions.rb
+vim radiolist_results
+vim get_directions.rb
+ruby get_directions.rb
+vim get_directions.rb
+ruby get_directions.rb
+vim get_directions.rb
+git st
+ls
+rm checklist_results radiolist_results
+ls
+rm form_results
+ls
+vim get_directions.rb
+ls
+vim maps.rb from_home_to_work.rb get_directions.rb pretty_present.rb
+curl http://maps.google.com/maps/api/directions/json\?origin\=Chicago,IL\&destination\=Los+Angeles,CA\&avoid\=tolls\|highways\&sensor\=false
+vim maps.rb from_home_to_work.rb get_directions.rb pretty_present.rb
+ruby maps.rb
+vim maps.rb from_home_to_work.rb get_directions.rb pretty_present.rb
+ruby maps.rb
+vim maps.rb from_home_to_work.rb get_directions.rb pretty_present.rb
+man dialog
+vim maps.rb from_home_to_work.rb get_directions.rb pretty_present.rb
+ack 'dialog' maps.rb
+vim maps.rb
+ruby maps.rb
+vim maps.rb
+ruby maps.rb
+vim maps.rb +21
+ruby maps.rb
+vim maps.rb +23
+ruby maps.rb
+ls
+vim maps.rb
+vim ~/.recently-used
+vim ~/.recently-used.xbel
+rm ~/.swp
+rm ~/.appcfg_cookies
+vim ~/.appcfg_nag
+rm ~/.appcfg_nag
+vim ~/.mcabber/mcabberrc
+vim ~/notes/Guitars.txt
+man mcabber
+vim ~/notes/Guitars.txt
+ssh me
+vim ~/notes/Guitars.txt
+ls
+git st
+vim maps.rb
+~/tmp
+ls
+extr huludesktop-x86_64.rpm
+huludesktop
+ls
+mkdir huludesktop
+mv etc usr -t huludesktop
+huludesktop
+huludesktop/
+ls
+ls usr/bin
+strings usr/bin/huludesktop G version
+..
+rm huludesktop*
+dig ell.io
+dig ell.io ALL
+dig ell.io ANY
+dig ell.io SRV
+ls
+vim command-t-0.6.vba
+~/.vim/
+ls
+ls ruby
+vim ruby/vim.rb
+vim ruby/vim/screen.rb
+vim ruby/vim/window.rb
+ruby/command-t
+ls
+vim depend
+ruby extconf.rb
+make
+ls
+vim Makefile
+vim ../../plugin/command-t.vim
+~
+clyde vim ruby
+ls /tmp/clyde/gvim-ruby19/gvim-ruby19/
+vim /tmp/clyde/gvim-ruby19/gvim-ruby19/vim7-ruby19.patch
+vim /tmp/clyde/gvim-ruby19/gvim-ruby19/vim7-ruby19.patch
+clyde -Qi vim
+abs extra/vim
+s abs extra/vim
+ls /var/abs/extra/vim
+vim /var/abs/extra/vim/PKGBUILD
+clyde -Ss mimeo
+vim /etc/pacman.d/mirrorlist
+vim /etc/clyde.conf
+vim /etc/pacman.
+vim /etc/pacman.conf
+clyde -S mimeo
+mimeo --help
+mimeo --assoc-help
+man mimeo
+clyde -Sy
+clyde -Syu
+vim bin/git-cv
+vim bin/ssh-local
+vim bin/ssh-intercept
+vim bin/ssh-notify
+vim bin/ssh-notify
+ack 'pacman' bin/
+yes n | clyde -Su 2>&1 | grep 'MB\]' | sed "s/Targets (.*)://g;s/ \[/-\[/g;s/ M/-M/g" | tr ' ' '\n' | sort -u | sed 's/-\[\(.*\)-MB\]/ \1/' | sort -nk2 | column -t | less
+ls /var/abs/extra/vim/
+vim /var/abs/extra/vim/PKGBUILD
+cp /var/abs/extra/vim/ tmp/vim-fat/
+tmp/vim-fat
+ls
+vim vimrc
+vim PKGBUILD
+makepkg --help
+makepkg
+vim PKGBUILD
+rm src p
+ls
+rm pkg
+makepkg
+ls
+makepkg -i vim-fat
+clyde -Uh
+clyde -U vim-fat-7.2-1-x86_64.pkg.tar.gz
+clyde -Rcnssu vim
+clyde -U vim-fat-7.2-1-x86_64.pkg.tar.gz vim-runtime-7.2-1-x86_64.pkg.tar.gz
+vim 
+vim ~/.vimrc
+~/dotfiles
+git st
+git diff
+ls vim/ruby
+git diff
+git add vim/doc/ vim/ruby/ vim/plugin/command-t.vim vim/.VimballRecord
+git ci
+git st
+git add vimrc
+git ci
+ls
+git st
+vim/ruby/command-t
+ls
+make distclean
+ls
+make
+ruby extconf.rb
+make
+cp ext.so ext.so.2
+ls
+make distclean
+mv ext.so.2 ext.so
+ls
+../..
+git st
+git diff
+git add ruby/command-t
+git ci
+git rm ruby/command-t/{Makefile,ext.o,match.o,matcher.o,mkmf.log}
+git st
+git ci
+vim ../.gitignore
+git rm ruby/command-t/ext.so
+git st
+git commit --amend
+..
+git add .gitignore
+git ci
+ls vim/bundle
+vim vim/bundle/surround/plugin/surround.vim
+vim vim/bundle/surround/doc/surround.txt
+git st
+git diff
+ls vim/bundle
+ls vim/bundle/syntastic
+ls vim/bundle/syntastic/doc
+vim ~/.gitignore
+git st
+git diff -R | vim -
+path -p1 -u -i dirty_diff
+patch -p1 -u -i dirty_diff
+ls
+git st
+rm dirty_diff
+vim .gitmodules
+vim .git/config
+lsa vim/bundle/
+lsa vim/bundle/ruby
+vim vim/bundle/ruby/.git/HEAD
+vim vim/bundle/ruby/.git/config
+vim vim/bundle/ruby/.git/info/exclude
+vim vim/bundle/ruby/.git/refs/heads/master
+git st
+git push
+..
+mv dotfiles dotfiles2
+git clone git@github.com:evaryont/dotfiles.git
+ls
+ls dotfiles
+ dotfiles
+vim .gitignore
+ls .vim/
+ls vim/bundle/
+git st
+ls vim/bundle/snipmate/
+git submodule init
+git submodule update
+ls vim/bundle/snipmate/
+ls vim/bundle/snipmate/doc
+vim .gitignore
+vim
+ls vim/bundle/snipmate/doc
+git st
+git diff
+git submodule
+git submodule --help
+git submodule status
+git submodule --help
+git submodule sync
+git st
+git diff
+vim ~/.gitignore
+ls ~/.vim/bundle/*/doc/tags
+git st
+git diff
+..
+git clone git@github.com:evaryont/dotfiles.git dotfiles3
+ls
+git clone git@github.com:evaryont/dotfiles.git dotfiles4
+dig -t NS @8.8.4.4 ell.io
+dig @8.8.4.4 ell.io
+dig @8.8.4.4 ell.io SRV
+dig @8.8.4.4 ell.io ANY
+mpc
+mpc next
+mpc
+lsof G dev
+lsof G snd
+clyde -Ql flashplugin L
+htop
+exit
+vim notes/Cli_Apps.txt
+ssh me
+vim ~/.Xdefaults
+dotfiles
+ls
+vim symlink.rb
+vim gtkrc-2.0
+vim irbrc
+vim vimrc
+vim vimrc
+vim vimrc
+evi
+git st
+git diff
+git add vimrc
+git ci
+vim vimrc
+git st
+git add vimrc
+git ci
+git st
+exit
+~/dotfiles
+git submodule add http://github.com/chrisbra/NrrwRgn.git vim/bundle/NarrowRegion
+git st
+git submodule add http://github.com/mattn/gist-vim.git vim/bundle/gist
+git st
+git ci
+git submodule add http://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
+git submodule add http://github.com/tpope/vim-markdown.git vim/bundle/markdown
+ls vim/ftdetect
+ls vim/bundle/markdown
+ls vim/bundle/markdown/ftdetect
+vim vim/bundle/markdown/ftdetect/markdown.vim
+vim vim/bundle/markdown/ftplugin/markdown.vim
+vim vim/bundle/markdown/syntax/markdown.vim
+ls vim/plugin
+ls vim/syntax
+ls vim/ftdetect
+find vim G markdown
+find vim G markdown G -v bundle
+rm vim/{syntax,ftdetect}/markdown.vim
+git st
+git rm vim/{syntax,ftdetect}/markdown.vim
+git st
+git ci
+git submodule add http://github.com/tpope/vim-ragtag.git vim/bundle/ragtag
+ls vim/bundle
+git st
+git ci
+git st
+ls vim/bundle
+vim vim/Scripts
+git st
+git diff
+git diff | vim -c "setf diff" -
+git add -p vimrc
+git ci
+git add -p vimrc
+git ci
+git add -p vimrc
+git ci
+git st
+git diff
+git add vim/Scripts
+git ci
+git st
+git add vim/spell/en.utf-8.add
+git ci
+ls
+git diff
+ls vim/
+ls vim/plugin
+git submodule add http://github.com/mileszs/ack.vim.git vim/bundle/ack
+git st
+git ci
+git st
+vim vim/Scripts
+git st
+ls vim/bundle
+ls vim/bundle/syntastic
+ls vim/bundle/snipmate
+ls vim/bundle/snipmate/snippets
+ls vim/bundle/snipmate-snippets
+ls vim/bundle/snipmate-snippets/ruby
+ls vim/bundle/snipmate-snippets/_
+ls vim/bundle/snipmate-snippets/_/date
+git st
+git add vim/autoload/utl_lib.vim vim/plugin/utl{.vim,_{rc.vim,scm.vim,uri.vim}}
+git st
+git add vim/.VimballRecord
+git ci
+git st
+~/tmp
+extr EnhancedCommentify-2.3.tar.gz
+EnhancedCommentify-2.3
+l
+ls
+ls doc
+ls ftplugin
+ls plugin
+vim ftplugin/php_enhcomm.vim
+vim ftplugin/ocaml_enhcomm.vim
+ls plugin
+..
+mv EnhancedCommentify-2.3 ~/dotfiles/vim/bundle/
+~/dotfiles/
+mv vim/bundle/EnhancedCommentify-2.3 vim/bundle/EnhancedCommentify
+git st
+git add vim/bundle/EnhancedCommentify/
+git ci
+ls ~/tmp
+rm ~/tmp/EnhancedCommentify-2.3.tar
+vim ~/tmp/a.vim
+mv ~/tmp/a.vim vim/plugin
+git add vim/plugin/a.vim
+git ci
+vim ~/tmp/showmarks.vim
+mkdir vim/bundle/showmarks
+mkdir vim/bundle/showmarks/{plugins,doc}
+ls vim/bundle
+ls vim/bundle/ack
+vim/bundle/showmarks
+mv plugins plugin
+mv ~/tmp/showmarks.vim plugin
+mv ~/tmp/showmarks.txt doc
+ls
+ls doc
+ls plugin
+vim plugin/showmarks.vim
+-
+git st
+git add vim/bundle/showmarks/
+git ci
+git st
+git push
+ls
+git st
+..
+ls
+dotfiles2
+git st
+git diff
+../dotfiles3
+git st
+../dotfiles4
+git st
+ls
+vim .gitignore
+ls vim/bundle
+ls vim/bundle/ragtag
+git lg
+git submodule init
+git submodule update
+git st
+lsof G (snd|dsp)
+htop
+htop
+lsof G (snd|dsp)
+exit
+vim
+~/.vim/
+ls bundle/showmarks
+vim bundle/showmarks/doc/showmarks.txt
+vim
+vim
+vim bundle/showmarks/doc/showmarks.txt
+vim bundle/showmarks/plugin/showmarks.vim
+vim bundle/showmarks/doc/showmarks.txt
+git rm bundle/showmarks/doc
+git rm -r bundle/showmarks/doc
+ls bundle/showmarks
+git rm bundle/showmarks/doc
+rm bundle/showmarks/doc
+git st
+git ci
+vim bundle/showmarks/plugin/showmarks.vim
+vim bundle/showmarks/plugin/showmarks.vim
+git st
+git add ../.vimrc
+git add ../vimrc
+git ci
+~/dotfiles
+vim vimrc
+git st
+git add vimrc
+git ci
+vim vimrc
+vim vimrc
+vim vimrc
+vim vimrc
+vim vimrc
+git st
+git diff
+vim vimrc
+vim vimrc
+git diff
+git add vimrc
+git ci
+vim vimrc
+git st
+git diff
+vim
+vim vimrc
+vim vimrc
+vim vimrc
+vim vimrc
+vim vimrc
+git diff
+git add vimrc
+git ci
+git st
+git add vim/spell/en.utf-8.add
+git ci
+vim vimrc
+git add vimrc
+git ci
+vim vimrc
+git st
+git add vimrc
+git ci
+git st
+vim vimrc
+git add vimrc
+git ci
+git st
+git push
+vim
+vim vimrc
+git submodule --help
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/NCU3icz-ZFQ/ChristopherPoole_2010.mp4
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/BecrHI1IU_A/AdamSadowsky_2010X.mp4
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/QeuVqGYpM9E/JohnUnderkoffler_2010.mp4
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+ack 'Traditional' vim/
+git st
+git diff
+ls vim/bundle
+git submodule
+git submodule --help
+git submodule sync
+git submodule update
+git st
+hub
+git
+vim .gitmodules
+vim .git/config
+rm vim/bundle/nerdcommenter
+yrm vim/bundle/nerdcommenter
+git st
+git rm vim/bundle/nerdcommenter
+git add .gitmodules
+git ci
+git s
+vim
+ack 'Traditionalj'
+ack 'TraditionalJ'
+ack '<Plug>Traditional' --text
+vim vim/doc/EnhancedCommentify.txt
+ls vim/plugin
+ls vim/doc
+rm vim/doc/{EnhancedCommentify.txt,NERD_tree.txt}
+git rm vim/doc/{EnhancedCommentify.txt,NERD_tree.txt}
+git st
+git ci
+git st
+ssh -t me mutt
+ssh -t me mutt
+exit
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+exit
+mcabber
+mcabber
+ping evaryont.me
+ssh me
+nmap me
+nmap evaryont.me
+ls
+aplay -l
+s vim /etc/asound.conf
+cat /proc/asound/cards
+s /etc/rc.d/mpd restart
+mpc
+mpc next
+mpc next
+alsamixer
+s /etc/rc.d/alsa restart
+ls tmp
+tmp/
+tvo
+ls
+ls bitmaps
+ls bitmaps/TVO
+vim syntax/otl.vim
+vim otl2swiki
+vim opml2otl
+vim otl2trac
+vim otl2trac
+..
+mkdir vimoutliner
+mv vimoutliner-122.zip vimoutliner
+vimoutliner
+exrt vimoutliner-122.zip
+ls
+extr vimoutliner-122.zip
+ls
+rm -i *
+ls
+mv vimoutliner-122.zip ../tvo
+ls ..
+mv ../VimOutliner_0.3.0.tgz .
+ls
+extr VimOutliner_0.3.0.tgz
+ls
+vim vo_README.otl
+..
+ls
+-
+ls
+mkdir foo
+mv * -t foo
+ls
+mv ../vim-vimoutliner_0.3.4-8_all.deb .
+extr vim-vimoutliner_0.3.4-8_all.deb
+ls
+lsa
+vim ~/bin/extr
+extr vim-vimoutliner_0.3.4-8_all.deb
+echo $?
+vim ~/bin/extr
+clyde -Ss deb
+clyde -Ss extract deb
+tar xf vim-vimoutliner_0.3.4-8_all.deb
+ls
+file -sb vim-vimoutliner_0.3.4-8_all.deb
+ar vx vim-vimoutliner_0.3.4-8_all.deb
+ls
+tar xf data.tar.gz
+ls
+ls usr
+ls usr/bin/
+ls usr/share/doc/vim-vimoutliner/vo_hoist.otl
+vim usr/share/doc/vim-vimoutliner/vo_hoist.otl
+vim usr/share/vim/registry/vim-vimoutliner.yaml
+vim usr/share/vim/addons/colors/vo_dark.vim
+vim usr/share/vim/addons/doc/vo_readme.txt.gz
+vim usr/share/vim/addons/ftplugin/vo_base.vim
+vim usr/share/vim/addons/ftplugin/vo_checkbox.vim
+ls usr/share/vim
+ls usr/share/vim/addons
+vim ~/notes/Cli_Apps.txt
+~
+mcabber
+exit
+bin/
+ls
+mkdir src/
+src/
+wget http://sam.nipl.net/xdark.c
+..
+git add src/
+git ci
+git st
+git diff
+git add extr
+git ci
+git st
+vim do_download_queue
+git add do_download_queue
+git ci
+ls
+git lg
+git lg
+git push
+l
+ls
+git unpushed
+git diff HEAD..f45dfaeb22f19584258104041738bc650c6de917
+git diff f45dfaeb22f19584258104041738bc650c6de917..HEAD
+git diff f45dfaeb22f19584258104041738bc650c6de917...HEAD
+git unpush
+git help unpushed
+git show origin..HEAD
+git show --help
+git show origin..HEAD --oneline
+git show origin..HEAD --no-notes
+git show --help
+git show origin..HEAD --format="%b"
+git show origin..HEAD --format="%a"
+git show --help
+git show origin..HEAD --pretty=raw
+git show origin..HEAD --pretty=full
+git show origin..HEAD --pretty=email
+xgamma --help
+xgamma
+xgamma -bgamma 0.2
+xgamma -bgamma 0.000
+xgamma -bgamma 0.100
+xgamma -bgamma 1.0
+xgamma -gamma 0.3
+xgamma -gamma 0.1
+xgamma -gamma 1.0
+clyde -Ss zg
+vim
+clyde -Ss delicious
+clyde -Ss del.icio.us
+clyde -Ss bookmarks
+vim ~/.xmonad/xmonad.hs
+git st
+~/.xmonad
+git st
+git add xmonad.hs
+git ci
+git diff
+git add ../vimrc
+git ci
+git reset HEAD ../vimrc
+git add ../vimrc -p
+git ci
+vim xmonadhs
+vim xmonad.hs
+~/dotfiles
+git st
+git st
+git diff
+ls vim/bundle
+vim vimrc
+git st
+git diff
+git add vimrc
+git ci
+ls
+git diff
+git add xmonad/xmonad.hs
+git ci
+vim .gitignore
+git lg
+git log
+git diff
+git st
+git ci
+git st
+vim .gitignore
+git st
+git push
+~/bin
+git st
+git push
+vim ~/dotfiles/.git/config .git/config
+git remote update
+git push
+ls
+git st
+mplayer http://feedproxy.google.com/\~r/rubypulse_episodes/\~3/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://feedproxy.google.com/\~r/rubypulse_episodes/\~3/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://feedproxy.google.com/\~r/rubypulse_episodes/\~5/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://www.rubypulse.com/episode-0.40_pathname/rubypulse_ep0.40_pathname.mov
+ssh -t me mutt
+ssh -t me mutt
+ssh -t me mutt
+vim ~/notes/Picture_of_The_Day.txt
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+mcabber
+ping evaryont.me
+PSG ssh
+netstat L
+netstat G conn
+netstat G tcp
+ssh me
+ssh me
+ssh me
+ls
+ld dotfiles{2,3,4}
+ls dotfiles{2,3,4}
+yrm dotfiles{2,3,4}
+ls
+dotfiles
+git st
+git diff
+git diff-reset
+ls
+git st
+ack '-dirty'
+ack -- '-dirty'
+ack '\-dirty'
+ack '\-dirty' vim/
+ack '\-dirty' vim/ --text
+ack '\-dirty' vim/ --text --help
+ack '\-dirty' vim/ --text --help type
+ack '\-dirty' vim/ --text --vim --u
+ack '\-dirty' vim/ --text --vim -u
+ack '\-dirty' vim/ --text --vim -u --noskipped
+ls
+grep '\-dirty' . L
+ls ~/tmp
+~/tmp/
+Games
+ls
+clyde -Ss mojo
+sh aquaria-lnx-humble-bundle.mojo.run
+chmod a+x penumbra_overture_1.1.sh lugaru-full-linux-x86-1.0c.bin aquaria-lnx-humble-bundle.mojo.run
+./aquaria-lnx-humble-bundle.mojo.run
+ls
+ls aquaria
+ aquaria
+vim default-1.xml
+vim usersettings.xml
+vim xdg-open
+file -sb aquaria
+./aquaria
+tmp/Games/aquaria
+ls
+./aquaria --help
+tmp/Games/aquaria
+./aquaria
+unclutter -help
+PSG clut
+kill 22398
+aoss ./aquaria
+tmp/Games/aquaria/
+ls
+./aquaria --help
+vim default-1.xml
+ls config
+vim config/MasterServers.vdf
+vim _mods/jukebox.xml
+vim _mods/guert_mod.xml
+vim _mods/aquariatemplate.xml
+vim _mods/aquariaeditortutorial.xml
+ls data
+vim data/maps/00_starter.xml
+vim data/achievements.txt
+vim data/help_end.txt
+vim data/worldmap.txt
+vim data/maps/secret01.xml
+vim 
+ls
+lsa maptemplates/
+ls mus
+ls sfx
+ls sfx/local
+ls sfx/cache
+ls scripts
+ls scripts/vox
+ls
+vim usersettings.xml
+strings ./aquaria L
+ls docs
+vim docs/walkthrough.html
+hg clone http://hg.icculus.org/icculus/aquaria/
+ls
+..
+hg clone http://hg.icculus.org/icculus/aquaria/ aquaria-source
+aquaria-source
+ls
+cmake
+cmake .
+clyde openal
+cmake .
+ls
+make
+ls
+./aquaria
+../aquaria/
+ls
+mv aquaria aquaria-old
+cp ../aquaria-source/aquaria .
+./aquaria 
+pkill unclutter
+./aquaria 
+elinks docs/readme.html
+clyde elinks
+elinks
+elinks docs/readme.html
+aplay -L
+./aquaria
+ls
+ssh me
+exot
+exit
+ls
+exit
+clyde -Si hyphen
+xprop
+clyde -Ss torrent
+clyde -Ss rtorrent
+tmp/
+mkdir TCA_Nationals
+TCA_Nationals
+ls
+wget http://downloads.tcanationals.com/tca_152/TCA_152_1.iso\?torrent http://downloads.tcanationals.com/tca_152/TCA_152_2.iso\?torrent
+ls
+mv TCA_152_1.iso.torrent
+mv TCA_152_1.iso\?torrent TCA_152_1.iso.torrent
+mv TCA_152_2.iso\?torrent TCA_152_2.iso.torrent
+ls
+rtorrent --help
+rtorrent -h
+rtorrent -n TCA_152_{1,2}.iso.torrent
+PSG rtor
+cdparanoia --help
+dmesg T
+clyde -Ss play cd L
+clyde -S cdcd
+cdcd --help
+cdcd play
+vim ~/.cdserverrc
+vim ~/.cdcdrc
+s mount /dev/cdrom
+s mount /dev/cdrom /media/cd/
+s mount /dev/cdrom /media/cd -o ro -t iso9660
+dmesg T
+s mount /dev/cdrom /media/cd -o ro -t iso9660
+PSG unc
+tmp/Games/aquaria
+./aquaria
+echo Find a pearl to the east of this area and take it to the slot next to the door, then charge the pearl with Energy Form
+~/tmp
+ls
+ls /media/wdbook
+mount /media/wdbook
+s mount /media/wdbook
+ls /dev/disk
+ls /dev/disk/by-uuid
+mkdir DroidLife_APK
+mv *.apk -t DroidLife_APK
+clyde openoffice
+clyde -Sh openoffice
+pacman -Ss openoffice
+clyde -S openoffice{,-sdk}
+clyde -S go-openoffice
+vim /var/log/pacman.log
+vim /var/log/pacman.log
+ls /usr/lib/go-openoffice
+ls /usr/lib/go-openoffice/share/extension
+ls /usr/lib/go-openoffice/share/extension/install
+file -sb /usr/lib/go-openoffice/share/extension/install/dict-en.oxt
+soffice
+apvlv Colin_Shea_Resume.pdf
+ssh -t me mutt
+vim tmp/TCA_Nationals/md5sums.txt
+cdcd
+cdcd open
+dmesg T
+dmesg T -n50 L
+tmp/Games/aquaria/
+./aquaria
+exit
+zsh
+tmp/TCA_Nationals
+md5sum TCA_152_1.iso.torrent
+md5sum TCA_152_2.iso.torrent
+cat md5sums.txt
+ping evaryont.me
+ssh me
+tmp/TCA_Nationals
+ls
+rtorrent TCA_152_1.iso.torrent TCA_152_2.iso.torrent
+alsamixer
+tmp/Games/aquaria
+./aquaria
+vim ~/.ssh/config
+ssh me
+ssh me
+ssh -t me mutt
+ssh -t me mutt
+exit
+tmp/Games/aquaria
+ls
+./aquaria
+./aquaria
+~ ; nohup xcompmgr -fFD 5 &
+exit
+disown %1
+exit
+exit
+code; git clone http://github.com/zh/pubsubpostbin.git psh-life
+psh-life
+ls
+vim README
+vim views/index.erb 
+thin config.ru
+thin start
+vim pubsubpostbin.rb
+s gem install httpclient
+thin start
+s gem install system_timer
+thin start
+rack config.ru
+s gem install rack
+rack config.ru
+rackup config.ru
+../
+git clone http://github.com/collin/orbited-ruby.git
+orbited-ruby
+ls
+mkdir ../psh-life/static ; cp lib/static/*.js -t ../psh-life/static
+-
+-
+../psh-life
+mv static public
+clyde bosh
+clyde -Ss bosh
+clyde -Ss punjab
+vim pubsubpostbin.rb
+ruby -C pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+vim pubsubpostbin.rb
+wget http://code.stanziq.com/strophe/strophejs/releases/strophejs-1.0.1.tar.gz
+tar xf strophejs-1.0.1.tar.gz
+strophejs-1.0.1
+ls
+vim plugins/strophe.pubsub.js
+vim plugins/strophe.flxhr.js
+ls
+ls contrib
+ls contrib/discojs/
+vim contrib/discojs/README.txt
+vim contrib/discojs/punjab.tac
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+code/psh-life
+ls
+vim pubsubpostbin.rb
+ls
+ls strophejs-1.0.1
+ls strophejs-1.0.1/contrib
+ls strophejs-1.0.1/contrib/discojs
+cp strophejs-1.0.1/strophe.min.js public
+ls
+vim views/index.erb
+ls strophejs-1.0.1/
+vim strophejs-1.0.1/README.txt
+vim strophejs-1.0.1/strophe.min.js
+ls
+ruby pubsubpostbin.rb
+gem search --details --all --both bosh
+s gem install bosh
+vim pub
+vim pubsubpostbin.rb
+rackup
+s gem install nokogiri
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim strophejs-1.0.1/contrib/discojs/punjab.tac
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+wget http://rhb.rubyforge.org/svn/trunk/RHB/lib/xmpphttpbind.rb
+vim xmpphttpbind.rb
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+ruby -c xmpphttpbind.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+s gem install xmpp4r
+ruby pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb +12
+rackup
+git st
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb config.ru
+vim pubsubpostbin.rb
+ls
+ls ~
+rackup
+vim pubsubpostbin.rb +92
+rackup
+vim pubsubpostbin.rb +92
+echo $COLUMNS
+vim
+echo $COLUMNS
+echo 63
+echo $LINES
+echo $LINES
+echo $COLUMNS
+vim
+ssh me
+ssh me
+tmp/TCA_Nationals
+rtorrent TCA_152_2.iso.torrent
+rtorrent TCA_152_*.iso.torrent
+vim code/psh-life/log/sinatra.log
+code/psh-life/
+gem search --details --all --both shotgun
+s gem install shotgun
+rack --help
+rackup --help
+s gem install thin eventmachine
+vim pubsubpostbin.rb
+vim config.ru
+ack bin
+ack bin --ruby
+vim pubsubpostbin.rb
+ls
+git diff
+vim config.ru
+echo > log/sinatra.log
+cat log/sinatra.log
+cat log/sinatra.log
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+git st
+git diff
+git add config.ru
+git ci
+git add pubsubpostbin.rb
+git ic
+git st
+git push heroku
+heroku logs
+heroku logs
+heroku logs
+vim pubsubpostbin.rb
+heroku logs
+heroku logs
+code/psh-life
+l
+ls
+git st
+rm strophejs-1.0.1* xmpphttpbind.rb
+ls
+ls
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+rackup
+git st
+git diff
+git add config.ru
+git ci
+git add config.ru
+git diff
+vim pubsubpostbin.rb
+git add -p
+git ci
+git add -p
+vim pubsubpostbin.rb
+git add -p
+git commit --amend
+git lg
+git diff 4910474
+git diff HEAD..4910474
+git diff 4910474..HEAD
+git diff --help 4910474..HEAD
+git diff 4910474..4910474^1
+git show 4910474
+git add -p
+git ci
+git commit --amend
+git show 4910474
+git lg
+git show b324b1a
+git commit --amend
+git st
+git diff
+git add -p
+git ci
+git st
+git diff
+git add pub
+git add pubsubpostbin.rb
+git ci
+git add public/ views/index.erb
+git ci
+gitst
+git st
+heroku --help
+heroku help
+heroku create
+git push heroku master
+vim .gems
+ls
+vim .gems pubsubpostbin.rb
+git add .gems
+git ci
+git st
+git push heroku
+heroku help
+heroku logs
+vim pubsubpostbin.rb
+git add .
+git ci
+vim config.ru
+git add config.ru
+git ci
+mkdir log
+ls
+git st
+vim pubsubpostbin.rb
+git st
+git add pubsubpostbin.rb
+git ci
+git st
+git push
+git push heroku
+heroku logs
+vim pubsubpostbin.rb
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku logs
+heroku help G lg
+heroku help G log
+vim pubsubpostbin.rb +16
+git add pubsubpostbin.rb
+git ci
+git push heroku master
+heroku help G log
+heroku logs
+ruby pubsubpostbin.rb
+rackup
+vim config.ru
+touch log/sinatra.log
+rackup
+vim config.ru +4
+rackup
+shotgun --help
+shotgun -O -p 9292 
+s gem install mongrel
+gem search --both mongrel
+shotgun -O -p 9292 
+shotgun -O -p 9292 
+nmap superfeedr.com
+dig superfeedr.com
+dig superfeedr.com ALL
+tmp/Games/aquaria
+./aquaria
+wget http://gist.github.com/raw/434991/ac3727d4dc07c4144841878bb36a88c57c23c86e/github_clone_all_public.rb
+mkdir tmp/github_check
+mv github_clone_all_public.rb tmp/github_check
+ls
+tmp/github_check
+ls
+ruby github_clone_all_public.rb
+..
+yrm github_check
+exit
+code/psh-life
+vim pubsubpostbin.rb
+git diff
+git add pubsubpostbin.rb
+git ci
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/stdout.log
+git st
+git diff
+vim pubsubpostbin.rb
+vim log/*(
+vim log/*
+git st
+git diff
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku --help
+heroku help G env
+heroku config
+heroku help
+heroku config:add SUPRFD_USER='colin@evaryont.me'
+heroku config:add SUPRFD_PASS='c1235748supfds'
+heroku logs
+vim .gems
+vim .gems pubsubpostbin.rb
+git add .gems
+git ci
+git push heroku
+heroku logs
+vim pubsubpostbin.rb
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku logs
+heroku config:add SUPRFD_USER='evaryont'
+heroku logs
+code/psh-life
+vim
+vim log/stdout.log
+vim log/sinatra.log
+vim log/stdout.log
+git diff
+git add config.ru
+git ci
+git st
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git diff
+git add views/index.erb
+git ci
+git st
+git co -b get_variable
+ls
+vim views/index.erb
+vim pub
+vim pubsubpostbin.rb
+vim views/index.erb
+git diff
+git add .
+git ci
+git st
+vim views/index.erb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+git lg
+git show 596d8fc
+vim pubsubpostbin.rb
+git diff
+vim pubsubpostbin.rb
+vim views/index.erb
+git diff
+git add .
+git ci
+git st
+git co master
+git merge get_variable
+git br -d get_variable
+exit
+~/tmp
+wget http://code.stanziq.com/strophe/strophejs/releases/strophejs-1.0.1.tar.gz
+extr strophejs-1.0.1.tar.gz
+strophejs-1.0.1
+ls
+ls examples
+vim examples/basic.html
+vim examples/prebind.html
+vim examples/prebind.js
+ssh -t me mutt
+PSG ssh
+ssh me
+irb
+exit
+mcabber
+clyde -Ss privoxy
+tmp
+xpdf aquaria_maps.pdf
+apvlv aquaria_maps.pdf
+tmp
+ls
+mkdir aquaria
+mv aquaria_maps.pdf Memories\ of\ Aquaria\ Medley.mp3 NudeMod.rar -t aquaria
+ls
+aquaria
+vim ../MANIFEST
+mv ../MANIFEST ../tvo
+ls
+extr NudeMod.rar
+ls
+feh bhand.png
+feh etc-body.png
+feh energyform-body.png
+feh seahorse-body.png
+feh teen-body.png
+feh beast-body.png
+rm *.png
+ls
+unrar l NudeMod.rar
+mkdir NudeMod
+NudeMod/
+extr ../NudeMod.rar
+ls
+vim Readme.txt
+feh body.png
+feh teen-body.png
+ls ~/tmp/Games/aquaria
+ls ~/tmp/Games/aquaria/gfx
+feh ~/tmp/Games/aquaria/gfx/e
+feh ~/tmp/Games/aquaria/gfx/eviljelly.png
+vim Readme.txt
+ls
+rm *.png
+unrar x ../NudeMod.rar
+ls
+Nude\ Mod
+ls
+ls Backup
+ls Backup/gfx
+ls Backup/gfx/naija
+feh Backup/gfx/naija/teen-body.png
+feh Naija/gfx/naija/teen-body.png
+mv Naija/gfx/naija/* -t ~/tmp/Games/aquaria/gfx/naija/
+mv Backup/gfx/naija/* -t ~/tmp/Games/aquaria/gfx/naija/
+firefox -help
+firefox -ProfileManager
+exit
+ekg2 --help
+ekg2 --frontend=gtk2
+ekg2
+code/psh-life
+shotgun -O -p 9292 
+ls
+rm log/s*
+ls
+shotgun -O -p 9292 
+SUPFD_USER=evaryont SUPFD_PASS=c1235748supfds shotgun -O -p 9292 
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds shotgun -O -p 9292 
+rm log/*
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds shotgun -O -p 9292 
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds rackup
+clyde -Ss pubsub
+clyde -Ss mcabber
+clyde -Ss jabber
+clyde -Ss purple
+clyde -Ss finch
+clyde -S finch
+clyde -Sy finch
+finch
+reset
+finch -
+vim ~/.gntrc
+clyde -Qs gnt
+clyde -Ql finch
+man finch
+finc
+finch
+vim ~/.gntrc
+finch
+clyde -Ss ekg
+clyde -S ekg2
+ekg2 --help
+ekg2
+vim ~/.esd_auth
+clyde -Ql ekg2
+vim /usr/share/ekg2/plugins/sms/commands-pl.txt
+vim /usr/share/ekg2/plugins/sms/vars-pl.txt
+ekg2 --help
+ekg2 -F gtk2
+ls ~/.config
+~/
+find H
+find G ekg
+ekg2 --frontend=gtk
+find G ekg
+ls
+lsa G ek
+tmp
+ls
+mkdir ekg
+ekg/
+ls /var/abs/community/ekg2
+cp /var/abs/community/ekg2 .
+ekg2
+/quit
+ls
+ekg2/
+ls
+makepkg
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+src/
+ls
+ekg2-20100613
+ls
+vim ../../PKGBUILD
+ls
+./configure --help
+mpc
+./configure --help G able
+vim ../../PKGBUILD
+./configure --help G with
+vim ../../PKGBUILD
+./configure --help G with
+vim ../../PKGBUILD
+vim ../../PKGBUILD
+ls
+ls docs
+ls con
+ls contrib
+ls contrib/themes
+ls contrib/python
+ls contrib/perl
+vim contrib/perl/slownik.pl
+vim contrib/perl/xmms.pl
+vim contrib/perl/dns.pl
+vim contrib/perl/ggbe.pl
+ docs/ekg2book-en/
+ls
+./generate.sh 
+ls
+../
+ls
+..
+./configure
+docs
+ls
+make 
+vim README
+vim TODO
+ls ekg2book-en
+ekg2book-en
+make 
+ls
+../ekg2book
+ls
+make
+..
+ls
+vim session-en.txt
+vim events.txt
+....
+vim PKGBUILD
+yrm src
+makepkg
+vim /etc/makepkg.conf
+vim /etc/makepkg.conf
+s vim /etc/makepkg.conf
+man gcc
+s vim /etc/makepkg.conf
+ls 
+ls src/ekg2-20100613/remote
+find src/ekg2-20100613 G ssl L
+ack 'remote-ssl' src
+vim src/ekg2-20100613/remote/remote.c
+makepkg
+vim src/ekg2-20100613/remote/remote.c +67
+vim src/ekg2-20100613/remote/remote.c +67
+cd vim src/ekg2-20100613/remote/remote.c +67
+cd src/ekg2-20100613/remote
+cp remote.c remote.c2
+vim remote.c2
+diff -u remote.c*
+diff -u remote.c* >> ../../../no_ssl.h
+-
+vim PKGBUILD
+makepkg
+-
+ls
+mv remote.c2 remote.2.c
+vim remote.2.c
+vim ../../../PKGBUILD
+....
+makepkge
+makepkg
+makepkg -i
+~
+htop
+-
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+src/ekg2-0.1.1
+ls
+./configure --help
+ls contrib
+ls contrib/perl
+ls docs
+...
+makepkg
+makepkg -i
+~
+ekg2-config --help
+ekg2-config --lib
+ekg2-config --libs
+ekg2-config --cflags
+ekg2-config --data-dir
+ekg2-config --plugin-dir
+ls /usr/share/ekg2
+vim /usr/share/ekg2/session-en-utf.txt
+vim /usr/share/ekg2/session-en.txt
+ls /usr/share/ekg2/themes
+-
+ls src/ekg2-0.1.1/con
+ls src/ekg2-0.1.1/contrib/
+ls src/ekg2-20100613/contrib/themes
+vimdiff src/ekg2-20100613/contrib/themes/irc-irssi.theme src/ekg2-0.1.1/contrib/irc-irssi.theme
+~
+vim ~/.ekg2/config
+rm ~/.ekg2/config
+ekg2
+PSG ekg
+PSG e L
+PSG k L
+PSG kg
+ekg2 --help
+ekg2 -F ncurses
+-
+vim PKGBUILD
+rm src
+yrm src
+makepkg
+rm ekg2-*x86_64.pkg.tar.gz
+makepkg
+makepkg -i
+~
+ekg2
+-
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+makepkg
+vim
+exit
+cal
+code/psh-life
+ls
+vim pubsubpostbin.rb
+gem help
+gem help commands 
+gem list --details ty
+ls
+git diff
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb +13
+ruby pubsubpostbin.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb
+ruby pubsubpostbin.rb
+curl http://superfeeder.com/http-bind/
+curl http://superfeedr.com/http-bind/
+curl -I http://superfeedr.com/http-bind/
+wget -O- http://superfeedr.com/http-bind/
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim log/sinatra.log
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/sinatra.log
+vim views/index.erb
+vim log/sinatra.log
+vim log/stdout.log
+vim log/sinatra.log
+rm log/s*
+ls
+vim pubsubpostbin.rb
+vim log/*
+vim views/index.erb
+vim pubsubpostbin.rb
+vim views/index.erb
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/stdout.log
+vim config.ru
+clyde -Ss multitail
+clyde -S multitail
+multitail --help
+multitail log/s*
+multitail -cC log/s*
+multitail -C log/s*
+multitail -c log/s*
+~/dotfiles
+git svn --help
+git submodule --help
+clyde -S subversion
+git svnimport http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+git svn --help http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+clyde -S subversion
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+vim .git/config
+vim .gitmodules
+grep 'svn' .git*
+~
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+1714\ Tail\ Bundle
+ls
+lsa
+yrm .git
+ls
+lsa plugin
+..
+mv 1714\ Tail\ Bundle dotfiles/vim/bundle/1714_Tail_Bundle
+dotfiles
+git st
+vim
+vim vim/bundle/1714_Tail_Bundle/macros/vim-tail.zsh
+vim vim/bundle/1714_Tail_Bundle/plugin/tail.vim
+vim vim/bundle/1714_Tail_Bundle/autoload/tail.vim 
+vim vim/bundle/1714_Tail_Bundle/tail_options.vim
+vim vim/bundle/1714_Tail_Bundle/plugin/tail.vim
+vim vim/bundle/1714_Tail_Bundle/autoload/tail.vim
+~/code/psh-life
+vim pubsubpostbin.rb views/index.erb
+vim pubsubpostbin.rb 
+ls
+ls pub
+ls public
+ls ~/tmp
+ls
+vim public/prebind.js
+ssh colin@69.162.133.172
+nmap evaryont.me
+~/tmp
+ls
+wget http://www.rutschle.net/tech/sslh-1.7a.tar.gz
+extr sslh-1.7a.tar.gz
+sslh-1.7a
+ls
+vim sslh.c
+~/tmp/Games/aquaria
+./aquaria
+mplayer ~/tmp/Memories\ of\ Aquaria\ Medley.mp3
+aoss mplayer ~/tmp/Memories\ of\ Aquaria\ Medley.mp3
+./aquaria
+xgamma -help
+xgamma -rgamma 0.0
+xgamma -rgamma 0.1
+xgamma -bgamma 0.1
+xgamma -rgamma 1.0
+ls
+./aquaria
+dmesg T
+./aquaria
+xgamma -bgamma 1.0
+ssh me
+firefox -help
+firefox -safe-mode -P new
+clyde -Ss uzbl
+clyde -S uzbl-browser
+uzbl-browser
+sleep 1; uzbl-core
+uzbl-browser -help
+uzbl-browser http://rapidxen.net
+PSG uz
+kill 164{36,24}
+PSG uz
+kill -9 164{36,24}
+PSG uz
+kill 16413
+PSG uz
+ls
+vim README-linux.txt
+du -sh aquaria*
+./aquaria
+~/code/psh-life
+ls
+vim pubsubpostbin.rb
+vim log/s*
+htop
+vim log/s*
+vim log/s*
+vim log/s*
+ls
+vim pubsubpostbin.rb
+export G env
+export G sup
+vim log/s*
+vim pubsubpostbin.rb
+vim log/s*
+vim log/s*
+vim pubsubpostbin.rb
+vim log/s*
+vim log/s*
+portstat
+vim views/index.erb
+vim views/index.erb public/prebind.js
+vim views/index.erb public/prebind.js
+ls
+git st
+git diff
+git add public/prebind.js
+git ci
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git push heroku master
+heroku logs
+vim .gems
+git st
+git add .gems
+git ci
+git st
+git push heroku
+heroku logs
+ls /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1
+vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb +130
+vim pubsubpostbin.rb
+git st
+git diff
+vim .gems
+git diff
+git add .
+git ci
+git st
+git push heroku
+git st
+vim .gems
+ls /usr/lib/ruby/gems/1.9.1/gems/
+s gem install ruby_bosh
+vim .gems
+git lg
+git revert 0cb877c
+git st
+git push heroku
+heroku logs
+vim .gems
+vim .gems
+vim pub
+vim pubsubpostbin.rb
+vim .gems
+git st
+git add .gems pubsubpostbin.rb
+git ci
+git st
+git push heroku
+heroku logs
+vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb +130
+clyde -Ql finch L
+strings /usr/bin/finch L
+strings /usr/bin/finch G \.so
+strings /usr/bin/finch G irssi
+htop
+htop
+htop
+vim ~/.config/zsh/aliases.zsh
+clyde -Ss ncursesw
+clyde -Ss wide ncurses
+clyde -Ss wide ncurse
+uname --help
+uname -m
+vim /usr/lib/cw/uname
+uname
+uname -a
+clyde -Ss warzone
+clyde -S warzone2100
+warzone2100 --help
+warzone2100 --selftest
+warzone2100 --help
+warzone2100 --shadows --sound --window
+warzone2100 --shadows --sound
+ifconfig
+warzone2100 --shadows --sound
+warzone2100 --help
+warzone2100 --join=192.168.1.17:2100
+warzone2100 --join=192.168.1.17
+vim /var/log/everything.log
+vim /var/log/everything.log.1
+vim /var/log/everything.log.2
+s /etc/rc.d/mpdscribble stop
+s /etc/rc.d/mpd stop
+vim /var/log/everything.log.2
+s vim /etc/logrotate.
+s vim /etc/logrotate.conf
+s /etc/rc.d/syslog-ng restart
+ls /var/log
+vim /var/log/everything.log.2
+tail -F /var/log/everything.log.2 /var/log/auth.log
+clyde -Sy
+clyde -Syu
+s abs community/warzone2100
+cp /var/abs/community/warzone2100 ~/tmp
+~/tmp/warzone2100
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg -i
+src/warzone2100-2.3.1
+ls
+./configure --help
+...
+yrm src pkg
+ls
+makepkg
+makepkg -i
+makepkg -i
+ls
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+rm warzone2100-2.3.1-1-x86_64.pkg.tar.gz warzone2100-2.3.1.tar.gz
+ls
+yrm src pkg
+ls
+makepkg
+makepkg -i
+warzone2100 --help
+warzone2100 
+ifconfig
+warzone2100 
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+htop
+xdpyinfo G dpi
+xdpyinfo G dots
+htop
+xdpyinfo --help
+xdpyinfo G dimen
+xdpyinfo G reso
+xdpyinfo G resol
+vim ~/.Xdefaults
+xrdb -merge ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -merge ~/.Xdefaults
+xrdb -help ~/.Xdefaults
+xrdb -override ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+xdpyinfo G resol
+xrdb -edit ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -remove
+xrdb -load ~/.Xdefaults
+urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+urxvt
+xrdb -load ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+exit
+exit
+exit
+exit
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+exit
+s /etc/rc.d/mpd start
+mpc
+mpc next
+vim .xmonad/xmonad.hs
+clyde -Ss photo
+clyde -Ss flickr
+clyde -S postr
+clyde -S frupple
+frup --help
+clyde -Ss flickr
+clyde -Ss priv
+clyde -Ss vim
+clyde -Ss dovecot
+clyde -Ss sieve
+clyde -Ss bogo
+ls ~/.gnome
+ls ~/.macromedia
+ls ~/.macromedia/Flash_Player/
+ls ~/.macromedia/Flash_Player/\#SharedObjects
+ls ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/
+ls ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX//ebaumsworld.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX//ebaumsworld.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/*
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.xvideos.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.xvideos.com/sitevideos/flv_player_site_v4.swf
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files/flash
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files/flash/player_v1.swf
+vim ~/.data/wikip_picture_of_the_day
+vim ~/.data/wikip_picture_of_the_day
+clyde -Ss swatch
+clyde -S swatch
+swatch --help
+swatch 
+man swatch
+ls /etc/rc.d
+clyde -Qs swatch
+clyde -Ql swatch
+PSG apc
+PSG ups
+vim /etc/rc.d/autokey
+clyde -Qs autokey
+vim /etc/rc.d/autokey
+vim notes/notes.txt
+vim ~/.config/zsh/aliases.zsh
+dotfiles
+git st
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git diff
+git add xinitrc
+git ci
+vim xinitrc
+git add xinitrc
+git ci
+git st
+git push
+git pu
+git diff
+vim xinitrc
+git st
+git add xinitrc
+git ci
+git st
+git push
+git lg
+clyde -Ss monitor
+clyde -Ss flux
+clyde -S xflux
+ls /tmp/clyde/xflux
+ls /tmp/clyde/xflux/xflux/src
+vim /tmp/clyde/xflux/xflux/src/xflux
+vim /tmp/clyde/xflux/xflux/PKGBUILD
+strings /usr/bin/xflux L
+xflux
+xflux -k 20877
+xflux
+xflux -k 20877 -k 3400
+xflux -k 20877 -k 3400K
+xflux
+xflux
+xflux -l 39.1382
+wget http://upload.wikimedia.org/wikipedia/en/d/d0/Macroxiphus_sp_cricket.jpg -O ~/.data/wikip_picture_of_the_day
+vim ~/.fehbg
+eval `cat ~/.fehbg`
+vim ~/notes/Security_Sites.txt
+vim ~/notes/Security.txt
+vim ~/.vimrc
+vim ~/.xinitrc
+vim ~/.xinitrc
+ack '39' ~/.xinitrc
+bc
+man bc
+bc
+vim ~/.xinitrc
+vim ~/.xinitrc
+clyde -Ss gamma
+clyde -Ss flux
+clyde -Ss temperature
+clyde -Ss rtorrent
+vim ~/notes/Torrent.txt
+ssh vince@evaryont.me
+ssh -o PubkeyAuthentication=no me
+nmap xmpp.lobstermonster.org
+nmapfe --help
+PATH=/usr/bin/ nmapfe
+s PATH=/usr/bin/ nmapfe
+ls
+git st
+ls 1714\ Tail\ Bundle
+lsa 1714\ Tail\ Bundle
+yrm 1714\ Tail\ Bundle
+git diff
+git add xinitrc
+git ci
+git st
+git push
+ekg2
+clyde -Qs ekg
+~/tmp/ekg
+ls
+ekg2
+ekg2/
+ls
+vim PKGBUILD
+makepkg -i
+~
+rm .ekg2
+ekg2
+ls
+urxvt
+exit
+mcabber
+exit
+code/psh-life
+ls
+gem search --both superfeedr
+s gem install superfeedr-rb
+ls
+git st
+vim pubsubpostbin.rb
+vim config.ru
+git add config.ru
+git ci
+git st
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+shotgun -O -p 9292 
+SUPRFD_USER='colin@evaryont.me' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+SUPRFD_USER='evaryont' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+SUPRFD_USER='evaryont' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+clyde skype
+clyde -Ss xmpp
+ssh me
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ping evaryont.me
+ssh me
+clyde -S irssi
+irssi
+exit
+exit
+exit
+vim ~/.config/zsh/pacman.zsh
+dotfiles
+git st
+git add config/
+git ci
+git diff
+vim Xdefaults
+urxvt
+xdpyinfo G resol
+xrdb -help
+xrdb -all L
+xrdb -all -symbols L
+xrdb -all -query L
+vim Xdefaults
+vim ~/.Xdefaults
+-
+lsa
+vimdiff .Xdefaults*
+-
+g diff
+g a Xdefaults
+git ci
+git st
+clyde -Ss autoscan
+dig morpheus.sorcix.com
+clyde -Ss teamspeak
+clyde -S teamspeak2
+clyde -S teamspeak3
+apvlv tmp/aquaria/aquaria_maps.pdf
+clyde -Ss xpdf
+clyde -S xpdf
+xpdf tmp/aquaria/aquaria_maps.pdf
+dig demuzere.be
+dig demuzere.be ALL
+dig demuzere.be MX
+dig demuzere.be SRV
+ls
+PSG nm
+s PATH=/usr/bin nmapfe
+clyde -Ss libpng
+clyde -Ss jabber voice
+clyde -Ss xmpp voice
+clyde -Ss gtalk
+clyde -S gtalx
+clyde -Ss v4l
+clyde -S libv4l
+clyde -S gtalx
+irssi
+clyde -Ss sip
+ssh -o PubkeyAuthentication=no me
+ssh -o PubkeyAuthentication=no me
+dig SRV sorcix.com
+dig  sorcix.com SRV
+dig sorcix.com SRV
+dig sorcix.com ALL
+dig sorcix.com MX
+dig --help
+dig -h
+dig sorcix.com txt
+dig sorcix.com ns
+dig sorcix.com soa
+dig demuzere.be soa
+dig demuzere.be mx
+dig demuzere.be srv
+dig demuzere.be SRV
+dig demuzere.be SRV
+dig demuzere.be ALL
+man dig
+dig demuzere.be any
+ls
+vim notes
+dig demuzere.be any
+tmp/Games/aquaria
+./aquaria
+wget http://github.com/downloads/mbleigh/present-future-of-oauth/present_future_of_oauth.pdf
+xpdf --help
+cat ~/tmp/aquaria/aquaria_maps.pdf | xpdf -
+wget http://github.com/downloads/mbleigh/present-future-of-oauth/present_future_of_oauth.pdf
+mv present_future_of_oauth.pdf ~/tmp
+~/tmp
+xpdf present_future_of_oauth.pdf
+exit
+wget http://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.epub
+clyde -Ss ebook
+clyde -Ss epub
+clyde -Ss reader
+clyde -Ss fbre
+clyde -S fbreader
+FBReader accelerando.epub
+irssi
+ssh -o PubkeyAuthentication=no me
+vim ~/.ssh/config
+ssh me
+vim ~/.ssh/config
+ssh me
+vim ~/.ssh/config
+ssh me
+ssh-copy-id --help
+ssh-copy-id -i ~/.ssh/id_evaryont.me me
+vim ~/.ssh/config
+ssh me
+ssh me
+irssi
+irssi --help
+irssi -c lambdagaming.com -n evaryont
+tmp/
+ls
+jabberd2_sqlite_convert
+ls
+ls fs
+ls fs/active
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+dig sorcix.com any
+dig @8.8.8.8 sorcix.com any
+dig @8.8.4.4 sorcix.com any
+portstat
+tail -f /etc/motd
+tail -f /etc/motd
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+vim
+base64 --help
+base64 -d youtube_b64
+cat youtube_b64 | base64 -d
+rm youtube_b64
+tmp/Games/aquaria/
+./aquaria
+mcabber
+mcabber
+mcabber
+mcabber
+mcabber
+scp me:/home/colin/sqlite.db ~/tmp/
+~/tmp
+mkdir jabberd2_sqlite_convert
+jabberd2_sqlite_convert
+mv ../sqlite.db .
+ls
+sqlite3
+sqlite3 sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+s gem install sequel
+s gem update rdoc
+s gem update rdoc-data
+s gem uninstall rdoc
+s gem uninstall rdoc
+s gem uninstall hanna
+s gem help
+s gem help commands
+s gem cleanup
+s gem update
+s gem cleanup
+heroku
+ls
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+ls fs/
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+ls fs/
+vim fs/sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+sqlite3 sqlite.db
+ls
+rm fs
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ls fs
+rm fs
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls fs
+ls fs/active
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+sqlite3 sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+mcabber
+tmp/Games/aquaria
+./aquaria
+cal
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/nfE4s2cKx_8/MichaelShermer_2010.mp4
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/lLS3w6aMgxc/RorySutherland_2010S.mp4
+vim notes/Passive_Tracking.txt
+vim notes/Passive_Tracking.txt
+tmp/Games/aquaria
+ls
+./aquaria
+wget http://smasher.org/zsh/zshrc-v0.151.gz
+md tmp/zsh
+mv ~/zshrc-v0.151.gz .
+ls
+extr zshrc-v0.151.gz
+ls
+vim zshrc-v0.151
+vim zshrc-v0.151
+command -p getconf PATH
+man zshbuiltins
+getconf
+getconf PATH
+man getcofn
+man getconf
+ls
+vim zshrc-v0.151
+vim zshrc-v0.151 ~/.zshrc
+jobs
+vim zshrc-v0.151 ~/.zshrc
+deb2targz --help
+man deb2targz
+clyde -Qo /usr/bin/deb2targz
+clyde -Qi deb2targz
+ls
+find .. G deb
+find .. G \.deb
+find .. G "\.deb"
+../vimoutliner/
+ls
+cp vim-vimoutliner_0.3.4-8_all.deb vim-vimoutliner_0.3.4-8_all2.deb
+deb2targz vim-vimoutliner_0.3.4-8_all2.deb
+ls
+tar xf vim-vimoutliner_0.3.4-8_all2.tar.gz
+ls
+rm control.tar.gz data.tar.gz debian-binary etc usr
+ls
+rm vim-vimoutliner_0.3.4-8_all2.*
+ls
+deb2targz vim-vimoutliner_0.3.4-8_all.deb
+ls
+tar xf vim-vimoutliner_0.3.4-8_all.tar.gz
+ls
+ls etc/vim
+ls usr/share/vim/addons/
+ls usr/share/vim/addons/ftplugin
+ls usr/share/vim/addons/ftdetect
+vim usr/share/vim/addons/ftdetect/vo_base.vim
+vim usr/share/vim/addons/syntax/vo_base.vim
+ls
+rm etc usr
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb | tar xf
+deb2targz vim-vimoutliner_0.3.4-8_all.deb | tar x
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb - | tar x
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb -
+file -sb /usr/bin/deb2targz
+vim /usr/bin/deb2targz
+vim ~/.zshrc
+~
+exit
+wyrd
+s gem install rbcurse
+rbcurse --help
+rbcurse
+rbcurse -h
+vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/bin/rbcurse
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/bin/rbcurse
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+s gem install ncurses
+gem search ncurses
+gem search ncurses --both --details --all
+s gem install ncursesw
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+s rm -rf /usr/lib/ruby/gems/1.9.1/gems/ncurses-0.9.1
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+md tmp/rbcurse ; cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb \.
+ls
+vim test2.rb
+ruby test2.rb
+vim test2.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/lib
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/lib/ncursesw.rb
+vim test2.rb
+ruby test2.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/lib/rbcurse/rwidget.rb +24
+ /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/lib/
+ack 'require..ncu'
+ack 'require..ncurses\''
+ack "require..ncurses'"
+ack "require..ncurses'" -l
+ack "require..ncurses'" | sed s/require\ 'ncurses\'/require\ 'ncursesw'/
+ack "require..ncurses'" | sed "s/require 'ncurses\'/require 'ncursesw'/"
+ack "require..ncurses'" | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" -i | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" -l | sed "s/require 'ncurses'/require 'ncursesw'/"
+s sed -i "s/require 'ncurses'/require 'ncursesw'/" $(ack "require 'ncurses'" -l)
+ack "require 'ncurses'" -i
+ack "require 'ncursesw'" -i
+~
+tmp/rbcurse
+ls
+ruby test2.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples
+cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/qdfilechooser.rb \.
+ls
+ruby test2.rb
+vim qdfilechooser.rb
+ruby test2.rb
+vim test2.rb
+cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/README.markdown .
+ls
+vim test2.rb
+ruby test2.rb
+vim test2.rb
+ruby new_event.rb
+vim test2.rb
+-
+-
+/usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/
+ack VER
+ack VER lib
+ack 'mo.*VER' lib
+ls lib/ver
+vim lib/ver/ncurses.rb
+ack 'requi.*VER' -i lib
+-
+vim new_event.rb
+ruby new_event.rb
+;s
+ls
+reset
+ls
+echo | reset
+echo reset | reset
+man reset
+ls
+reset
+ls
+exit
+tmp/rbcurse
+ls
+ruby new_event.rb &> view.log
+vim view.log
+vim new_event.rb
+ruby new_event.rb &> view.log
+vim new_event.rb
+vim view.log
+ruby new_event.rb &> view.log
+vim view.log
+vim new_event.rb
+ruby new_event.rb &> view.log
+vim view.log
+ruby new_event.rb
+vim view.log
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+vim new_event.rb
+dialog --help
+dialog --calendar "Choose a date" 0 0 17 06 2010
+man dialog
+ls
+man dialog
+exit
+man manpath
+s vim /etc/man_db.conf
+ls /usr/lib/ruby/gems/1.9.1/gems
+ls /usr/lib/ruby/gems/1.9.1/gems/*/man/
+stat --help
+man rsync
+man zshall
+zsh --version
+man zshall
+ls
+readlink --help
+readlink -f accelerando.epub
+dirname --help
+basename --help
+man tar
+~/tmp/vimoutliner
+ls
+foo
+ls
+tar tf VimOutliner_0.3.0.tgz
+ls
+~
+clyde -Ss remind
+clyde -S remind wyrd
+remind --help
+remind -n
+clyde -Qi remind
+man remind
+htop
+exit
+mcabber
+syncml-ds-tool --help
+syncml-ds-tool --sync "text/x-vcalendar" 'Contacts' tmp/Syncml_Expieriments/syncml/calendar --http-client https://colin.p.shea%40gmail.com:c1235748googs%24@syncme.se
+tmp/Syncml_Expieriments/sync
+tmp/Syncml_Expieriments/syncml
+ls
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se
+ls /tmp/clyde
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+ls calendar
+lsa calendar
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml --useStringTable
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se/index.php --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+...
+apvlv funambol-installation-and-administration-guide.pdf
+rm funambol-installation-and-administration-guide.pdf
+Syncml_Expieriments
+ls
+syncevolution
+ls
+vim PKGBUILD
+rm pkg src
+makepkg
+vim src/syncevolution-0.9.1/configure.in
+clyde -Ss evolution
+clyde -Ss syncevolution
+ssh me
+mplayer http://www.buzzsprout.com/105/5806-episode-0-2-7-padrino-sinatra-based-ruby-web-framework.mp3
+~/tmp/jabberd2_sqlite_convert
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+rm fs
+ruby jabberd2_convert_sqlite_to_text.rb
+ssh me
+git show --help
+git show origin..HEAD --oneline
+git show origin..HEAD --no-notes
+git show --help
+git show origin..HEAD --format="%b"
+git show origin..HEAD --format="%a"
+git show --help
+git show origin..HEAD --pretty=raw
+git show origin..HEAD --pretty=full
+git show origin..HEAD --pretty=email
+xgamma --help
+xgamma
+xgamma -bgamma 0.2
+xgamma -bgamma 0.000
+xgamma -bgamma 0.100
+xgamma -bgamma 1.0
+xgamma -gamma 0.3
+xgamma -gamma 0.1
+xgamma -gamma 1.0
+clyde -Ss zg
+vim
+clyde -Ss delicious
+clyde -Ss del.icio.us
+clyde -Ss bookmarks
+vim ~/.xmonad/xmonad.hs
+git st
+~/.xmonad
+git st
+git add xmonad.hs
+git ci
+git diff
+git add ../vimrc
+git ci
+git reset HEAD ../vimrc
+git add ../vimrc -p
+git ci
+vim xmonadhs
+vim xmonad.hs
+~/dotfiles
+git st
+git st
+git diff
+ls vim/bundle
+vim vimrc
+git st
+git diff
+git add vimrc
+git ci
+ls
+git diff
+git add xmonad/xmonad.hs
+git ci
+vim .gitignore
+git lg
+git log
+git diff
+git st
+git ci
+git st
+vim .gitignore
+git st
+git push
+~/bin
+git st
+git push
+vim ~/dotfiles/.git/config .git/config
+git remote update
+git push
+ls
+git st
+mplayer http://feedproxy.google.com/\~r/rubypulse_episodes/\~3/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://feedproxy.google.com/\~r/rubypulse_episodes/\~3/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://feedproxy.google.com/\~r/rubypulse_episodes/\~5/VqA73lANECY/rubypulse_ep0.40_pathname.mov
+wget http://www.rubypulse.com/episode-0.40_pathname/rubypulse_ep0.40_pathname.mov
+ssh -t me mutt
+ssh -t me mutt
+ssh -t me mutt
+vim ~/notes/Picture_of_The_Day.txt
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+mcabber
+ping evaryont.me
+PSG ssh
+netstat L
+netstat G conn
+netstat G tcp
+ssh me
+ssh me
+ssh me
+ls
+ld dotfiles{2,3,4}
+ls dotfiles{2,3,4}
+yrm dotfiles{2,3,4}
+ls
+dotfiles
+git st
+git diff
+git diff-reset
+ls
+git st
+ack '-dirty'
+ack -- '-dirty'
+ack '\-dirty'
+ack '\-dirty' vim/
+ack '\-dirty' vim/ --text
+ack '\-dirty' vim/ --text --help
+ack '\-dirty' vim/ --text --help type
+ack '\-dirty' vim/ --text --vim --u
+ack '\-dirty' vim/ --text --vim -u
+ack '\-dirty' vim/ --text --vim -u --noskipped
+ls
+grep '\-dirty' . L
+ls ~/tmp
+~/tmp/
+Games
+ls
+clyde -Ss mojo
+sh aquaria-lnx-humble-bundle.mojo.run
+chmod a+x penumbra_overture_1.1.sh lugaru-full-linux-x86-1.0c.bin aquaria-lnx-humble-bundle.mojo.run
+./aquaria-lnx-humble-bundle.mojo.run
+ls
+ls aquaria
+ aquaria
+vim default-1.xml
+vim usersettings.xml
+vim xdg-open
+file -sb aquaria
+./aquaria
+tmp/Games/aquaria
+ls
+./aquaria --help
+tmp/Games/aquaria
+./aquaria
+unclutter -help
+PSG clut
+kill 22398
+aoss ./aquaria
+tmp/Games/aquaria/
+ls
+./aquaria --help
+vim default-1.xml
+ls config
+vim config/MasterServers.vdf
+vim _mods/jukebox.xml
+vim _mods/guert_mod.xml
+vim _mods/aquariatemplate.xml
+vim _mods/aquariaeditortutorial.xml
+ls data
+vim data/maps/00_starter.xml
+vim data/achievements.txt
+vim data/help_end.txt
+vim data/worldmap.txt
+vim data/maps/secret01.xml
+vim 
+ls
+lsa maptemplates/
+ls mus
+ls sfx
+ls sfx/local
+ls sfx/cache
+ls scripts
+ls scripts/vox
+ls
+vim usersettings.xml
+strings ./aquaria L
+ls docs
+vim docs/walkthrough.html
+hg clone http://hg.icculus.org/icculus/aquaria/
+ls
+..
+hg clone http://hg.icculus.org/icculus/aquaria/ aquaria-source
+aquaria-source
+ls
+cmake
+cmake .
+clyde openal
+cmake .
+ls
+make
+ls
+./aquaria
+../aquaria/
+ls
+mv aquaria aquaria-old
+cp ../aquaria-source/aquaria .
+./aquaria 
+pkill unclutter
+./aquaria 
+elinks docs/readme.html
+clyde elinks
+elinks
+elinks docs/readme.html
+aplay -L
+./aquaria
+ls
+ssh me
+exot
+exit
+ls
+exit
+clyde -Si hyphen
+xprop
+clyde -Ss torrent
+clyde -Ss rtorrent
+tmp/
+mkdir TCA_Nationals
+TCA_Nationals
+ls
+wget http://downloads.tcanationals.com/tca_152/TCA_152_1.iso\?torrent http://downloads.tcanationals.com/tca_152/TCA_152_2.iso\?torrent
+ls
+mv TCA_152_1.iso.torrent
+mv TCA_152_1.iso\?torrent TCA_152_1.iso.torrent
+mv TCA_152_2.iso\?torrent TCA_152_2.iso.torrent
+ls
+rtorrent --help
+rtorrent -h
+rtorrent -n TCA_152_{1,2}.iso.torrent
+PSG rtor
+cdparanoia --help
+dmesg T
+clyde -Ss play cd L
+clyde -S cdcd
+cdcd --help
+cdcd play
+vim ~/.cdserverrc
+vim ~/.cdcdrc
+s mount /dev/cdrom
+s mount /dev/cdrom /media/cd/
+s mount /dev/cdrom /media/cd -o ro -t iso9660
+dmesg T
+s mount /dev/cdrom /media/cd -o ro -t iso9660
+PSG unc
+tmp/Games/aquaria
+./aquaria
+echo Find a pearl to the east of this area and take it to the slot next to the door, then charge the pearl with Energy Form
+~/tmp
+ls
+ls /media/wdbook
+mount /media/wdbook
+s mount /media/wdbook
+ls /dev/disk
+ls /dev/disk/by-uuid
+mkdir DroidLife_APK
+mv *.apk -t DroidLife_APK
+clyde openoffice
+clyde -Sh openoffice
+pacman -Ss openoffice
+clyde -S openoffice{,-sdk}
+clyde -S go-openoffice
+vim /var/log/pacman.log
+vim /var/log/pacman.log
+ls /usr/lib/go-openoffice
+ls /usr/lib/go-openoffice/share/extension
+ls /usr/lib/go-openoffice/share/extension/install
+file -sb /usr/lib/go-openoffice/share/extension/install/dict-en.oxt
+soffice
+apvlv Colin_Shea_Resume.pdf
+ssh -t me mutt
+vim tmp/TCA_Nationals/md5sums.txt
+cdcd
+cdcd open
+dmesg T
+dmesg T -n50 L
+tmp/Games/aquaria/
+./aquaria
+exit
+zsh
+tmp/TCA_Nationals
+md5sum TCA_152_1.iso.torrent
+md5sum TCA_152_2.iso.torrent
+cat md5sums.txt
+ping evaryont.me
+ssh me
+tmp/TCA_Nationals
+ls
+rtorrent TCA_152_1.iso.torrent TCA_152_2.iso.torrent
+alsamixer
+tmp/Games/aquaria
+./aquaria
+vim ~/.ssh/config
+ssh me
+ssh me
+ssh -t me mutt
+ssh -t me mutt
+exit
+tmp/Games/aquaria
+ls
+./aquaria
+./aquaria
+~ ; nohup xcompmgr -fFD 5 &
+exit
+disown %1
+exit
+exit
+code; git clone http://github.com/zh/pubsubpostbin.git psh-life
+psh-life
+ls
+vim README
+vim views/index.erb 
+thin config.ru
+thin start
+vim pubsubpostbin.rb
+s gem install httpclient
+thin start
+s gem install system_timer
+thin start
+rack config.ru
+s gem install rack
+rack config.ru
+rackup config.ru
+../
+git clone http://github.com/collin/orbited-ruby.git
+orbited-ruby
+ls
+mkdir ../psh-life/static ; cp lib/static/*.js -t ../psh-life/static
+-
+-
+../psh-life
+mv static public
+clyde bosh
+clyde -Ss bosh
+clyde -Ss punjab
+vim pubsubpostbin.rb
+ruby -C pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+vim pubsubpostbin.rb
+wget http://code.stanziq.com/strophe/strophejs/releases/strophejs-1.0.1.tar.gz
+tar xf strophejs-1.0.1.tar.gz
+strophejs-1.0.1
+ls
+vim plugins/strophe.pubsub.js
+vim plugins/strophe.flxhr.js
+ls
+ls contrib
+ls contrib/discojs/
+vim contrib/discojs/README.txt
+vim contrib/discojs/punjab.tac
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+code/psh-life
+ls
+vim pubsubpostbin.rb
+ls
+ls strophejs-1.0.1
+ls strophejs-1.0.1/contrib
+ls strophejs-1.0.1/contrib/discojs
+cp strophejs-1.0.1/strophe.min.js public
+ls
+vim views/index.erb
+ls strophejs-1.0.1/
+vim strophejs-1.0.1/README.txt
+vim strophejs-1.0.1/strophe.min.js
+ls
+ruby pubsubpostbin.rb
+gem search --details --all --both bosh
+s gem install bosh
+vim pub
+vim pubsubpostbin.rb
+rackup
+s gem install nokogiri
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim strophejs-1.0.1/contrib/discojs/punjab.tac
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+wget http://rhb.rubyforge.org/svn/trunk/RHB/lib/xmpphttpbind.rb
+vim xmpphttpbind.rb
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+ruby -c xmpphttpbind.rb
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+s gem install xmpp4r
+ruby pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb +12
+rackup
+git st
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+rackup
+vim pubsubpostbin.rb config.ru
+vim pubsubpostbin.rb
+ls
+ls ~
+rackup
+vim pubsubpostbin.rb +92
+rackup
+vim pubsubpostbin.rb +92
+echo $COLUMNS
+vim
+echo $COLUMNS
+echo 63
+echo $LINES
+echo $LINES
+echo $COLUMNS
+vim
+ssh me
+ssh me
+tmp/TCA_Nationals
+rtorrent TCA_152_2.iso.torrent
+rtorrent TCA_152_*.iso.torrent
+vim code/psh-life/log/sinatra.log
+code/psh-life/
+gem search --details --all --both shotgun
+s gem install shotgun
+rack --help
+rackup --help
+s gem install thin eventmachine
+vim pubsubpostbin.rb
+vim config.ru
+ack bin
+ack bin --ruby
+vim pubsubpostbin.rb
+ls
+git diff
+vim config.ru
+echo > log/sinatra.log
+cat log/sinatra.log
+cat log/sinatra.log
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+git st
+git diff
+git add config.ru
+git ci
+git add pubsubpostbin.rb
+git ic
+git st
+git push heroku
+heroku logs
+heroku logs
+heroku logs
+vim pubsubpostbin.rb
+heroku logs
+heroku logs
+code/psh-life
+l
+ls
+git st
+rm strophejs-1.0.1* xmpphttpbind.rb
+ls
+ls
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+rackup
+git st
+git diff
+git add config.ru
+git ci
+git add config.ru
+git diff
+vim pubsubpostbin.rb
+git add -p
+git ci
+git add -p
+vim pubsubpostbin.rb
+git add -p
+git commit --amend
+git lg
+git diff 4910474
+git diff HEAD..4910474
+git diff 4910474..HEAD
+git diff --help 4910474..HEAD
+git diff 4910474..4910474^1
+git show 4910474
+git add -p
+git ci
+git commit --amend
+git show 4910474
+git lg
+git show b324b1a
+git commit --amend
+git st
+git diff
+git add -p
+git ci
+git st
+git diff
+git add pub
+git add pubsubpostbin.rb
+git ci
+git add public/ views/index.erb
+git ci
+gitst
+git st
+heroku --help
+heroku help
+heroku create
+git push heroku master
+vim .gems
+ls
+vim .gems pubsubpostbin.rb
+git add .gems
+git ci
+git st
+git push heroku
+heroku help
+heroku logs
+vim pubsubpostbin.rb
+git add .
+git ci
+vim config.ru
+git add config.ru
+git ci
+mkdir log
+ls
+git st
+vim pubsubpostbin.rb
+git st
+git add pubsubpostbin.rb
+git ci
+git st
+git push
+git push heroku
+heroku logs
+vim pubsubpostbin.rb
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku logs
+heroku help G lg
+heroku help G log
+vim pubsubpostbin.rb +16
+git add pubsubpostbin.rb
+git ci
+git push heroku master
+heroku help G log
+heroku logs
+ruby pubsubpostbin.rb
+rackup
+vim config.ru
+touch log/sinatra.log
+rackup
+vim config.ru +4
+rackup
+shotgun --help
+shotgun -O -p 9292 
+s gem install mongrel
+gem search --both mongrel
+shotgun -O -p 9292 
+shotgun -O -p 9292 
+nmap superfeedr.com
+dig superfeedr.com
+dig superfeedr.com ALL
+tmp/Games/aquaria
+./aquaria
+wget http://gist.github.com/raw/434991/ac3727d4dc07c4144841878bb36a88c57c23c86e/github_clone_all_public.rb
+mkdir tmp/github_check
+mv github_clone_all_public.rb tmp/github_check
+ls
+tmp/github_check
+ls
+ruby github_clone_all_public.rb
+..
+yrm github_check
+exit
+code/psh-life
+vim pubsubpostbin.rb
+git diff
+git add pubsubpostbin.rb
+git ci
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/stdout.log
+git st
+git diff
+vim pubsubpostbin.rb
+vim log/*(
+vim log/*
+git st
+git diff
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku --help
+heroku help G env
+heroku config
+heroku help
+heroku config:add SUPRFD_USER='colin@evaryont.me'
+heroku config:add SUPRFD_PASS='c1235748supfds'
+heroku logs
+vim .gems
+vim .gems pubsubpostbin.rb
+git add .gems
+git ci
+git push heroku
+heroku logs
+vim pubsubpostbin.rb
+git add pubsubpostbin.rb
+git ci
+git push heroku
+heroku logs
+heroku config:add SUPRFD_USER='evaryont'
+heroku logs
+code/psh-life
+vim
+vim log/stdout.log
+vim log/sinatra.log
+vim log/stdout.log
+git diff
+git add config.ru
+git ci
+git st
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git diff
+git add views/index.erb
+git ci
+git st
+git co -b get_variable
+ls
+vim views/index.erb
+vim pub
+vim pubsubpostbin.rb
+vim views/index.erb
+git diff
+git add .
+git ci
+git st
+vim views/index.erb
+vim pubsubpostbin.rb
+vim pubsubpostbin.rb
+git lg
+git show 596d8fc
+vim pubsubpostbin.rb
+git diff
+vim pubsubpostbin.rb
+vim views/index.erb
+git diff
+git add .
+git ci
+git st
+git co master
+git merge get_variable
+git br -d get_variable
+exit
+~/tmp
+wget http://code.stanziq.com/strophe/strophejs/releases/strophejs-1.0.1.tar.gz
+extr strophejs-1.0.1.tar.gz
+strophejs-1.0.1
+ls
+ls examples
+vim examples/basic.html
+vim examples/prebind.html
+vim examples/prebind.js
+ssh -t me mutt
+PSG ssh
+ssh me
+irb
+exit
+mcabber
+clyde -Ss privoxy
+tmp
+xpdf aquaria_maps.pdf
+apvlv aquaria_maps.pdf
+tmp
+ls
+mkdir aquaria
+mv aquaria_maps.pdf Memories\ of\ Aquaria\ Medley.mp3 NudeMod.rar -t aquaria
+ls
+aquaria
+vim ../MANIFEST
+mv ../MANIFEST ../tvo
+ls
+extr NudeMod.rar
+ls
+feh bhand.png
+feh etc-body.png
+feh energyform-body.png
+feh seahorse-body.png
+feh teen-body.png
+feh beast-body.png
+rm *.png
+ls
+unrar l NudeMod.rar
+mkdir NudeMod
+NudeMod/
+extr ../NudeMod.rar
+ls
+vim Readme.txt
+feh body.png
+feh teen-body.png
+ls ~/tmp/Games/aquaria
+ls ~/tmp/Games/aquaria/gfx
+feh ~/tmp/Games/aquaria/gfx/e
+feh ~/tmp/Games/aquaria/gfx/eviljelly.png
+vim Readme.txt
+ls
+rm *.png
+unrar x ../NudeMod.rar
+ls
+Nude\ Mod
+ls
+ls Backup
+ls Backup/gfx
+ls Backup/gfx/naija
+feh Backup/gfx/naija/teen-body.png
+feh Naija/gfx/naija/teen-body.png
+mv Naija/gfx/naija/* -t ~/tmp/Games/aquaria/gfx/naija/
+mv Backup/gfx/naija/* -t ~/tmp/Games/aquaria/gfx/naija/
+firefox -help
+firefox -ProfileManager
+exit
+ekg2 --help
+ekg2 --frontend=gtk2
+ekg2
+code/psh-life
+shotgun -O -p 9292 
+ls
+rm log/s*
+ls
+shotgun -O -p 9292 
+SUPFD_USER=evaryont SUPFD_PASS=c1235748supfds shotgun -O -p 9292 
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds shotgun -O -p 9292 
+rm log/*
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds shotgun -O -p 9292 
+SUPRFD_USER=evaryont SUPRFD_PASS=c1235748supfds rackup
+clyde -Ss pubsub
+clyde -Ss mcabber
+clyde -Ss jabber
+clyde -Ss purple
+clyde -Ss finch
+clyde -S finch
+clyde -Sy finch
+finch
+reset
+finch -
+vim ~/.gntrc
+clyde -Qs gnt
+clyde -Ql finch
+man finch
+finc
+finch
+vim ~/.gntrc
+finch
+clyde -Ss ekg
+clyde -S ekg2
+ekg2 --help
+ekg2
+vim ~/.esd_auth
+clyde -Ql ekg2
+vim /usr/share/ekg2/plugins/sms/commands-pl.txt
+vim /usr/share/ekg2/plugins/sms/vars-pl.txt
+ekg2 --help
+ekg2 -F gtk2
+ls ~/.config
+~/
+find H
+find G ekg
+ekg2 --frontend=gtk
+find G ekg
+ls
+lsa G ek
+tmp
+ls
+mkdir ekg
+ekg/
+ls /var/abs/community/ekg2
+cp /var/abs/community/ekg2 .
+ekg2
+/quit
+ls
+ekg2/
+ls
+makepkg
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+src/
+ls
+ekg2-20100613
+ls
+vim ../../PKGBUILD
+ls
+./configure --help
+mpc
+./configure --help G able
+vim ../../PKGBUILD
+./configure --help G with
+vim ../../PKGBUILD
+./configure --help G with
+vim ../../PKGBUILD
+vim ../../PKGBUILD
+ls
+ls docs
+ls con
+ls contrib
+ls contrib/themes
+ls contrib/python
+ls contrib/perl
+vim contrib/perl/slownik.pl
+vim contrib/perl/xmms.pl
+vim contrib/perl/dns.pl
+vim contrib/perl/ggbe.pl
+ docs/ekg2book-en/
+ls
+./generate.sh 
+ls
+../
+ls
+..
+./configure
+docs
+ls
+make 
+vim README
+vim TODO
+ls ekg2book-en
+ekg2book-en
+make 
+ls
+../ekg2book
+ls
+make
+..
+ls
+vim session-en.txt
+vim events.txt
+....
+vim PKGBUILD
+yrm src
+makepkg
+vim /etc/makepkg.conf
+vim /etc/makepkg.conf
+s vim /etc/makepkg.conf
+man gcc
+s vim /etc/makepkg.conf
+ls 
+ls src/ekg2-20100613/remote
+find src/ekg2-20100613 G ssl L
+ack 'remote-ssl' src
+vim src/ekg2-20100613/remote/remote.c
+makepkg
+vim src/ekg2-20100613/remote/remote.c +67
+vim src/ekg2-20100613/remote/remote.c +67
+cd vim src/ekg2-20100613/remote/remote.c +67
+cd src/ekg2-20100613/remote
+cp remote.c remote.c2
+vim remote.c2
+diff -u remote.c*
+diff -u remote.c* >> ../../../no_ssl.h
+-
+vim PKGBUILD
+makepkg
+-
+ls
+mv remote.c2 remote.2.c
+vim remote.2.c
+vim ../../../PKGBUILD
+....
+makepkge
+makepkg
+makepkg -i
+~
+htop
+-
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+src/ekg2-0.1.1
+ls
+./configure --help
+ls contrib
+ls contrib/perl
+ls docs
+...
+makepkg
+makepkg -i
+~
+ekg2-config --help
+ekg2-config --lib
+ekg2-config --libs
+ekg2-config --cflags
+ekg2-config --data-dir
+ekg2-config --plugin-dir
+ls /usr/share/ekg2
+vim /usr/share/ekg2/session-en-utf.txt
+vim /usr/share/ekg2/session-en.txt
+ls /usr/share/ekg2/themes
+-
+ls src/ekg2-0.1.1/con
+ls src/ekg2-0.1.1/contrib/
+ls src/ekg2-20100613/contrib/themes
+vimdiff src/ekg2-20100613/contrib/themes/irc-irssi.theme src/ekg2-0.1.1/contrib/irc-irssi.theme
+~
+vim ~/.ekg2/config
+rm ~/.ekg2/config
+ekg2
+PSG ekg
+PSG e L
+PSG k L
+PSG kg
+ekg2 --help
+ekg2 -F ncurses
+-
+vim PKGBUILD
+rm src
+yrm src
+makepkg
+rm ekg2-*x86_64.pkg.tar.gz
+makepkg
+makepkg -i
+~
+ekg2
+-
+vim PKGBUILD
+makepkg
+vim PKGBUILD
+makepkg
+vim
+exit
+cal
+code/psh-life
+ls
+vim pubsubpostbin.rb
+gem help
+gem help commands 
+gem list --details ty
+ls
+git diff
+ruby pubsubpostbin.rb
+vim pubsubpostbin.rb +13
+ruby pubsubpostbin.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb
+ruby pubsubpostbin.rb
+curl http://superfeeder.com/http-bind/
+curl http://superfeedr.com/http-bind/
+curl -I http://superfeedr.com/http-bind/
+wget -O- http://superfeedr.com/http-bind/
+vim pubsubpostbin.rb
+ruby pubsubpostbin.rb
+vim log/sinatra.log
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/sinatra.log
+vim views/index.erb
+vim log/sinatra.log
+vim log/stdout.log
+vim log/sinatra.log
+rm log/s*
+ls
+vim pubsubpostbin.rb
+vim log/*
+vim views/index.erb
+vim pubsubpostbin.rb
+vim views/index.erb
+vim pubsubpostbin.rb
+vim log/sinatra.log
+vim log/stdout.log
+vim config.ru
+clyde -Ss multitail
+clyde -S multitail
+multitail --help
+multitail log/s*
+multitail -cC log/s*
+multitail -C log/s*
+multitail -c log/s*
+~/dotfiles
+git svn --help
+git submodule --help
+clyde -S subversion
+git svnimport http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+git svn --help http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+clyde -S subversion
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+vim .git/config
+vim .gitmodules
+grep 'svn' .git*
+~
+git svn clone http://vim-scripts.googlecode.com/svn/trunk/1714\ Tail\ Bundle/
+1714\ Tail\ Bundle
+ls
+lsa
+yrm .git
+ls
+lsa plugin
+..
+mv 1714\ Tail\ Bundle dotfiles/vim/bundle/1714_Tail_Bundle
+dotfiles
+git st
+vim
+vim vim/bundle/1714_Tail_Bundle/macros/vim-tail.zsh
+vim vim/bundle/1714_Tail_Bundle/plugin/tail.vim
+vim vim/bundle/1714_Tail_Bundle/autoload/tail.vim 
+vim vim/bundle/1714_Tail_Bundle/tail_options.vim
+vim vim/bundle/1714_Tail_Bundle/plugin/tail.vim
+vim vim/bundle/1714_Tail_Bundle/autoload/tail.vim
+~/code/psh-life
+vim pubsubpostbin.rb views/index.erb
+vim pubsubpostbin.rb 
+ls
+ls pub
+ls public
+ls ~/tmp
+ls
+vim public/prebind.js
+ssh colin@69.162.133.172
+nmap evaryont.me
+~/tmp
+ls
+wget http://www.rutschle.net/tech/sslh-1.7a.tar.gz
+extr sslh-1.7a.tar.gz
+sslh-1.7a
+ls
+vim sslh.c
+~/tmp/Games/aquaria
+./aquaria
+mplayer ~/tmp/Memories\ of\ Aquaria\ Medley.mp3
+aoss mplayer ~/tmp/Memories\ of\ Aquaria\ Medley.mp3
+./aquaria
+xgamma -help
+xgamma -rgamma 0.0
+xgamma -rgamma 0.1
+xgamma -bgamma 0.1
+xgamma -rgamma 1.0
+ls
+./aquaria
+dmesg T
+./aquaria
+xgamma -bgamma 1.0
+ssh me
+firefox -help
+firefox -safe-mode -P new
+clyde -Ss uzbl
+clyde -S uzbl-browser
+uzbl-browser
+sleep 1; uzbl-core
+uzbl-browser -help
+uzbl-browser http://rapidxen.net
+PSG uz
+kill 164{36,24}
+PSG uz
+kill -9 164{36,24}
+PSG uz
+kill 16413
+PSG uz
+ls
+vim README-linux.txt
+du -sh aquaria*
+./aquaria
+~/code/psh-life
+ls
+vim pubsubpostbin.rb
+vim log/s*
+htop
+vim log/s*
+vim log/s*
+vim log/s*
+ls
+vim pubsubpostbin.rb
+export G env
+export G sup
+vim log/s*
+vim pubsubpostbin.rb
+vim log/s*
+vim log/s*
+vim pubsubpostbin.rb
+vim log/s*
+vim log/s*
+portstat
+vim views/index.erb
+vim views/index.erb public/prebind.js
+vim views/index.erb public/prebind.js
+ls
+git st
+git diff
+git add public/prebind.js
+git ci
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git push heroku master
+heroku logs
+vim .gems
+git st
+git add .gems
+git ci
+git st
+git push heroku
+heroku logs
+ls /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1
+vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb +130
+vim pubsubpostbin.rb
+git st
+git diff
+vim .gems
+git diff
+git add .
+git ci
+git st
+git push heroku
+git st
+vim .gems
+ls /usr/lib/ruby/gems/1.9.1/gems/
+s gem install ruby_bosh
+vim .gems
+git lg
+git revert 0cb877c
+git st
+git push heroku
+heroku logs
+vim .gems
+vim .gems
+vim pub
+vim pubsubpostbin.rb
+vim .gems
+git st
+git add .gems pubsubpostbin.rb
+git ci
+git st
+git push heroku
+heroku logs
+vim /usr/lib/ruby/gems/1.9.1/gems/bosh-1.2.1/lib/bosh.rb +130
+clyde -Ql finch L
+strings /usr/bin/finch L
+strings /usr/bin/finch G \.so
+strings /usr/bin/finch G irssi
+htop
+htop
+htop
+vim ~/.config/zsh/aliases.zsh
+clyde -Ss ncursesw
+clyde -Ss wide ncurses
+clyde -Ss wide ncurse
+uname --help
+uname -m
+vim /usr/lib/cw/uname
+uname
+uname -a
+clyde -Ss warzone
+clyde -S warzone2100
+warzone2100 --help
+warzone2100 --selftest
+warzone2100 --help
+warzone2100 --shadows --sound --window
+warzone2100 --shadows --sound
+ifconfig
+warzone2100 --shadows --sound
+warzone2100 --help
+warzone2100 --join=192.168.1.17:2100
+warzone2100 --join=192.168.1.17
+vim /var/log/everything.log
+vim /var/log/everything.log.1
+vim /var/log/everything.log.2
+s /etc/rc.d/mpdscribble stop
+s /etc/rc.d/mpd stop
+vim /var/log/everything.log.2
+s vim /etc/logrotate.
+s vim /etc/logrotate.conf
+s /etc/rc.d/syslog-ng restart
+ls /var/log
+vim /var/log/everything.log.2
+tail -F /var/log/everything.log.2 /var/log/auth.log
+clyde -Sy
+clyde -Syu
+s abs community/warzone2100
+cp /var/abs/community/warzone2100 ~/tmp
+~/tmp/warzone2100
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg -i
+src/warzone2100-2.3.1
+ls
+./configure --help
+...
+yrm src pkg
+ls
+makepkg
+makepkg -i
+makepkg -i
+ls
+vim PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+rm warzone2100-2.3.1-1-x86_64.pkg.tar.gz warzone2100-2.3.1.tar.gz
+ls
+yrm src pkg
+ls
+makepkg
+makepkg -i
+warzone2100 --help
+warzone2100 
+ifconfig
+warzone2100 
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+htop
+xdpyinfo G dpi
+xdpyinfo G dots
+htop
+xdpyinfo --help
+xdpyinfo G dimen
+xdpyinfo G reso
+xdpyinfo G resol
+vim ~/.Xdefaults
+xrdb -merge ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -merge ~/.Xdefaults
+xrdb -help ~/.Xdefaults
+xrdb -override ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+xdpyinfo G resol
+xrdb -edit ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -remove
+xrdb -load ~/.Xdefaults
+urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+urxvt
+xrdb -load ~/.Xdefaults
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+exit
+exit
+exit
+exit
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+vim ~/.Xdefaults
+xrdb -load ~/.Xdefaults ; urxvt
+exit
+s /etc/rc.d/mpd start
+mpc
+mpc next
+vim .xmonad/xmonad.hs
+clyde -Ss photo
+clyde -Ss flickr
+clyde -S postr
+clyde -S frupple
+frup --help
+clyde -Ss flickr
+clyde -Ss priv
+clyde -Ss vim
+clyde -Ss dovecot
+clyde -Ss sieve
+clyde -Ss bogo
+ls ~/.gnome
+ls ~/.macromedia
+ls ~/.macromedia/Flash_Player/
+ls ~/.macromedia/Flash_Player/\#SharedObjects
+ls ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/
+ls ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX//ebaumsworld.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX//ebaumsworld.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/*
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.xvideos.com
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.xvideos.com/sitevideos/flv_player_site_v4.swf
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files/flash
+lsa ~/.macromedia/Flash_Player/\#SharedObjects/EBBKBZGX/www.pornhub.com/cdn_files/flash/player_v1.swf
+vim ~/.data/wikip_picture_of_the_day
+vim ~/.data/wikip_picture_of_the_day
+clyde -Ss swatch
+clyde -S swatch
+swatch --help
+swatch 
+man swatch
+ls /etc/rc.d
+clyde -Qs swatch
+clyde -Ql swatch
+PSG apc
+PSG ups
+vim /etc/rc.d/autokey
+clyde -Qs autokey
+vim /etc/rc.d/autokey
+vim notes/notes.txt
+vim ~/.config/zsh/aliases.zsh
+dotfiles
+git st
+git diff
+git add -p
+git ci
+git add -p
+git ci
+git st
+git diff
+git add xinitrc
+git ci
+vim xinitrc
+git add xinitrc
+git ci
+git st
+git push
+git pu
+git diff
+vim xinitrc
+git st
+git add xinitrc
+git ci
+git st
+git push
+git lg
+clyde -Ss monitor
+clyde -Ss flux
+clyde -S xflux
+ls /tmp/clyde/xflux
+ls /tmp/clyde/xflux/xflux/src
+vim /tmp/clyde/xflux/xflux/src/xflux
+vim /tmp/clyde/xflux/xflux/PKGBUILD
+strings /usr/bin/xflux L
+xflux
+xflux -k 20877
+xflux
+xflux -k 20877 -k 3400
+xflux -k 20877 -k 3400K
+xflux
+xflux
+xflux -l 39.1382
+wget http://upload.wikimedia.org/wikipedia/en/d/d0/Macroxiphus_sp_cricket.jpg -O ~/.data/wikip_picture_of_the_day
+vim ~/.fehbg
+eval `cat ~/.fehbg`
+vim ~/notes/Security_Sites.txt
+vim ~/notes/Security.txt
+vim ~/.vimrc
+vim ~/.xinitrc
+vim ~/.xinitrc
+ack '39' ~/.xinitrc
+bc
+man bc
+bc
+vim ~/.xinitrc
+vim ~/.xinitrc
+clyde -Ss gamma
+clyde -Ss flux
+clyde -Ss temperature
+clyde -Ss rtorrent
+vim ~/notes/Torrent.txt
+ssh vince@evaryont.me
+ssh -o PubkeyAuthentication=no me
+nmap xmpp.lobstermonster.org
+nmapfe --help
+PATH=/usr/bin/ nmapfe
+s PATH=/usr/bin/ nmapfe
+ls
+git st
+ls 1714\ Tail\ Bundle
+lsa 1714\ Tail\ Bundle
+yrm 1714\ Tail\ Bundle
+git diff
+git add xinitrc
+git ci
+git st
+git push
+ekg2
+clyde -Qs ekg
+~/tmp/ekg
+ls
+ekg2
+ekg2/
+ls
+vim PKGBUILD
+makepkg -i
+~
+rm .ekg2
+ekg2
+ls
+urxvt
+exit
+mcabber
+exit
+code/psh-life
+ls
+gem search --both superfeedr
+s gem install superfeedr-rb
+ls
+git st
+vim pubsubpostbin.rb
+vim config.ru
+git add config.ru
+git ci
+git st
+vim pubsubpostbin.rb
+ruby -c pubsubpostbin.rb
+shotgun -O -p 9292 
+SUPRFD_USER='colin@evaryont.me' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+SUPRFD_USER='evaryont' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+SUPRFD_USER='evaryont' SUPRFD_PASS='c1235748supfds' shotgun -O -p 9292
+clyde skype
+clyde -Ss xmpp
+ssh me
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ping evaryont.me
+ssh me
+clyde -S irssi
+irssi
+exit
+exit
+exit
+vim ~/.config/zsh/pacman.zsh
+dotfiles
+git st
+git add config/
+git ci
+git diff
+vim Xdefaults
+urxvt
+xdpyinfo G resol
+xrdb -help
+xrdb -all L
+xrdb -all -symbols L
+xrdb -all -query L
+vim Xdefaults
+vim ~/.Xdefaults
+-
+lsa
+vimdiff .Xdefaults*
+-
+g diff
+g a Xdefaults
+git ci
+git st
+clyde -Ss autoscan
+dig morpheus.sorcix.com
+clyde -Ss teamspeak
+clyde -S teamspeak2
+clyde -S teamspeak3
+apvlv tmp/aquaria/aquaria_maps.pdf
+clyde -Ss xpdf
+clyde -S xpdf
+xpdf tmp/aquaria/aquaria_maps.pdf
+dig demuzere.be
+dig demuzere.be ALL
+dig demuzere.be MX
+dig demuzere.be SRV
+ls
+PSG nm
+s PATH=/usr/bin nmapfe
+clyde -Ss libpng
+clyde -Ss jabber voice
+clyde -Ss xmpp voice
+clyde -Ss gtalk
+clyde -S gtalx
+clyde -Ss v4l
+clyde -S libv4l
+clyde -S gtalx
+irssi
+clyde -Ss sip
+ssh -o PubkeyAuthentication=no me
+ssh -o PubkeyAuthentication=no me
+dig SRV sorcix.com
+dig  sorcix.com SRV
+dig sorcix.com SRV
+dig sorcix.com ALL
+dig sorcix.com MX
+dig --help
+dig -h
+dig sorcix.com txt
+dig sorcix.com ns
+dig sorcix.com soa
+dig demuzere.be soa
+dig demuzere.be mx
+dig demuzere.be srv
+dig demuzere.be SRV
+dig demuzere.be SRV
+dig demuzere.be ALL
+man dig
+dig demuzere.be any
+ls
+vim notes
+dig demuzere.be any
+tmp/Games/aquaria
+./aquaria
+wget http://github.com/downloads/mbleigh/present-future-of-oauth/present_future_of_oauth.pdf
+xpdf --help
+cat ~/tmp/aquaria/aquaria_maps.pdf | xpdf -
+wget http://github.com/downloads/mbleigh/present-future-of-oauth/present_future_of_oauth.pdf
+mv present_future_of_oauth.pdf ~/tmp
+~/tmp
+xpdf present_future_of_oauth.pdf
+exit
+wget http://www.antipope.org/charlie/blog-static/fiction/accelerando/accelerando.epub
+clyde -Ss ebook
+clyde -Ss epub
+clyde -Ss reader
+clyde -Ss fbre
+clyde -S fbreader
+FBReader accelerando.epub
+irssi
+ssh -o PubkeyAuthentication=no me
+vim ~/.ssh/config
+ssh me
+vim ~/.ssh/config
+ssh me
+vim ~/.ssh/config
+ssh me
+ssh-copy-id --help
+ssh-copy-id -i ~/.ssh/id_evaryont.me me
+vim ~/.ssh/config
+ssh me
+ssh me
+irssi
+irssi --help
+irssi -c lambdagaming.com -n evaryont
+tmp/
+ls
+jabberd2_sqlite_convert
+ls
+ls fs
+ls fs/active
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+dig sorcix.com any
+dig @8.8.8.8 sorcix.com any
+dig @8.8.4.4 sorcix.com any
+portstat
+tail -f /etc/motd
+tail -f /etc/motd
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+vim
+base64 --help
+base64 -d youtube_b64
+cat youtube_b64 | base64 -d
+rm youtube_b64
+tmp/Games/aquaria/
+./aquaria
+mcabber
+mcabber
+mcabber
+mcabber
+mcabber
+scp me:/home/colin/sqlite.db ~/tmp/
+~/tmp
+mkdir jabberd2_sqlite_convert
+jabberd2_sqlite_convert
+mv ../sqlite.db .
+ls
+sqlite3
+sqlite3 sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+s gem install sequel
+s gem update rdoc
+s gem update rdoc-data
+s gem uninstall rdoc
+s gem uninstall rdoc
+s gem uninstall hanna
+s gem help
+s gem help commands
+s gem cleanup
+s gem update
+s gem cleanup
+heroku
+ls
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+ls fs/
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+ls fs/
+vim fs/sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls
+sqlite3 sqlite.db
+ls
+rm fs
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb +14
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb +14
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ls fs
+rm fs
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ls fs
+ls fs/active
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+sqlite3 sqlite.db
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+mcabber
+tmp/Games/aquaria
+./aquaria
+cal
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/nfE4s2cKx_8/MichaelShermer_2010.mp4
+mplayer http://feedproxy.google.com/\~r/TEDTalks_video/\~5/lLS3w6aMgxc/RorySutherland_2010S.mp4
+vim notes/Passive_Tracking.txt
+vim notes/Passive_Tracking.txt
+tmp/Games/aquaria
+ls
+./aquaria
+wget http://smasher.org/zsh/zshrc-v0.151.gz
+md tmp/zsh
+mv ~/zshrc-v0.151.gz .
+ls
+extr zshrc-v0.151.gz
+ls
+vim zshrc-v0.151
+vim zshrc-v0.151
+command -p getconf PATH
+man zshbuiltins
+getconf
+getconf PATH
+man getcofn
+man getconf
+ls
+vim zshrc-v0.151
+vim zshrc-v0.151 ~/.zshrc
+jobs
+vim zshrc-v0.151 ~/.zshrc
+deb2targz --help
+man deb2targz
+clyde -Qo /usr/bin/deb2targz
+clyde -Qi deb2targz
+ls
+find .. G deb
+find .. G \.deb
+find .. G "\.deb"
+../vimoutliner/
+ls
+cp vim-vimoutliner_0.3.4-8_all.deb vim-vimoutliner_0.3.4-8_all2.deb
+deb2targz vim-vimoutliner_0.3.4-8_all2.deb
+ls
+tar xf vim-vimoutliner_0.3.4-8_all2.tar.gz
+ls
+rm control.tar.gz data.tar.gz debian-binary etc usr
+ls
+rm vim-vimoutliner_0.3.4-8_all2.*
+ls
+deb2targz vim-vimoutliner_0.3.4-8_all.deb
+ls
+tar xf vim-vimoutliner_0.3.4-8_all.tar.gz
+ls
+ls etc/vim
+ls usr/share/vim/addons/
+ls usr/share/vim/addons/ftplugin
+ls usr/share/vim/addons/ftdetect
+vim usr/share/vim/addons/ftdetect/vo_base.vim
+vim usr/share/vim/addons/syntax/vo_base.vim
+ls
+rm etc usr
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb | tar xf
+deb2targz vim-vimoutliner_0.3.4-8_all.deb | tar x
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb - | tar x
+ls
+rm vim-vimoutliner_0.3.4-8_all.tar.gz
+deb2targz vim-vimoutliner_0.3.4-8_all.deb -
+file -sb /usr/bin/deb2targz
+vim /usr/bin/deb2targz
+vim ~/.zshrc
+~
+exit
+wyrd
+s gem install rbcurse
+rbcurse --help
+rbcurse
+rbcurse -h
+vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/bin/rbcurse
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/bin/rbcurse
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+s gem install ncurses
+gem search ncurses
+gem search ncurses --both --details --all
+s gem install ncursesw
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+s rm -rf /usr/lib/ruby/gems/1.9.1/gems/ncurses-0.9.1
+ruby /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb
+md tmp/rbcurse ; cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/test2.rb \.
+ls
+vim test2.rb
+ruby test2.rb
+vim test2.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1
+ls /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/lib
+vim /usr/lib/ruby/gems/1.9.1/gems/ncursesw-1.2.4.1/lib/ncursesw.rb
+vim test2.rb
+ruby test2.rb
+s vim /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/lib/rbcurse/rwidget.rb +24
+ /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/lib/
+ack 'require..ncu'
+ack 'require..ncurses\''
+ack "require..ncurses'"
+ack "require..ncurses'" -l
+ack "require..ncurses'" | sed s/require\ 'ncurses\'/require\ 'ncursesw'/
+ack "require..ncurses'" | sed "s/require 'ncurses\'/require 'ncursesw'/"
+ack "require..ncurses'" | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" -i | sed "s/require 'ncurses'/require 'ncursesw'/"
+ack "require 'ncurses'" -l | sed "s/require 'ncurses'/require 'ncursesw'/"
+s sed -i "s/require 'ncurses'/require 'ncursesw'/" $(ack "require 'ncurses'" -l)
+ack "require 'ncurses'" -i
+ack "require 'ncursesw'" -i
+~
+tmp/rbcurse
+ls
+ruby test2.rb
+ls /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples
+cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/examples/qdfilechooser.rb \.
+ls
+ruby test2.rb
+vim qdfilechooser.rb
+ruby test2.rb
+vim test2.rb
+cp /usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/README.markdown .
+ls
+vim test2.rb
+ruby test2.rb
+vim test2.rb
+ruby new_event.rb
+vim test2.rb
+-
+-
+/usr/lib/ruby/gems/1.9.1/gems/rbcurse-1.1.3/
+ack VER
+ack VER lib
+ack 'mo.*VER' lib
+ls lib/ver
+vim lib/ver/ncurses.rb
+ack 'requi.*VER' -i lib
+-
+vim new_event.rb
+ruby new_event.rb
+;s
+ls
+reset
+ls
+echo | reset
+echo reset | reset
+man reset
+ls
+reset
+ls
+exit
+tmp/rbcurse
+ls
+ruby new_event.rb &> view.log
+vim view.log
+vim new_event.rb
+ruby new_event.rb &> view.log
+vim new_event.rb
+vim view.log
+ruby new_event.rb &> view.log
+vim view.log
+vim new_event.rb
+ruby new_event.rb &> view.log
+vim view.log
+ruby new_event.rb
+vim view.log
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+ruby new_event.rb
+vim new_event.rb
+vim new_event.rb
+dialog --help
+dialog --calendar "Choose a date" 0 0 17 06 2010
+man dialog
+ls
+man dialog
+exit
+man manpath
+s vim /etc/man_db.conf
+ls /usr/lib/ruby/gems/1.9.1/gems
+ls /usr/lib/ruby/gems/1.9.1/gems/*/man/
+stat --help
+man rsync
+man zshall
+zsh --version
+man zshall
+ls
+readlink --help
+readlink -f accelerando.epub
+dirname --help
+basename --help
+man tar
+~/tmp/vimoutliner
+ls
+foo
+ls
+tar tf VimOutliner_0.3.0.tgz
+ls
+~
+clyde -Ss remind
+clyde -S remind wyrd
+remind --help
+remind -n
+clyde -Qi remind
+man remind
+htop
+exit
+mcabber
+syncml-ds-tool --help
+syncml-ds-tool --sync "text/x-vcalendar" 'Contacts' tmp/Syncml_Expieriments/syncml/calendar --http-client https://colin.p.shea%40gmail.com:c1235748googs%24@syncme.se
+tmp/Syncml_Expieriments/sync
+tmp/Syncml_Expieriments/syncml
+ls
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se
+ls /tmp/clyde
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+ls calendar
+lsa calendar
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client https://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml --useStringTable
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$" --wbxml
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+syncml-ds-tool --sync "text/x-vcalendar" 'Calendar' calendar --http-client http://syncme.se/index.php --username "colin.p.shea@gmail.com" --password "c1235748goog\$"
+...
+apvlv funambol-installation-and-administration-guide.pdf
+rm funambol-installation-and-administration-guide.pdf
+Syncml_Expieriments
+ls
+syncevolution
+ls
+vim PKGBUILD
+rm pkg src
+makepkg
+vim src/syncevolution-0.9.1/configure.in
+clyde -Ss evolution
+clyde -Ss syncevolution
+ssh me
+mplayer http://www.buzzsprout.com/105/5806-episode-0-2-7-padrino-sinatra-based-ruby-web-framework.mp3
+~/tmp/jabberd2_sqlite_convert
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+rm fs
+ruby jabberd2_convert_sqlite_to_text.rb
+ssh me
+mpc
+xgamma
+xgamma -help
+xgamma -screen
+xgamma -gamma
+xgamma -rgamma
+xdpyinfo G gamma
+xrandr -help
+m notes/B
+m notes/Bank.txt
+m ~/.zshrc
+dotfiles
+ls
+git st
+config/zsh
+m prompt.sh
+vim git.zsh
+fc
+vim git.zsh
+fc -A
+mpc
+xgamma
+xgamma -help
+xgamma -screen
+xgamma -gamma
+xgamma -rgamma
+xdpyinfo G gamma
+xrandr -help
+m notes/B
+m notes/Bank.txt
+m ~/.zshrc
+dotfiles
+ls
+git st
+config/zsh
+m prompt.sh
+vim git.zsh
+fc
+vim git.zsh
+fc -A
+man zshbuiltins
+kill %1
+ls
+git st
+reset
+exit
+cal
+cal 05
+cal --help
+cal 05 2010
+cal 06 2010
+cal -3 05 2010
+exit
+vim ~/.Xdefaults
+dotfiles
+git st
+git diff
+git add config/zsh/style
+git ci
+git diff
+git add -p zshrc
+git ci
+git add -p zshrc
+git ci
+git st
+git diff -p
+git add zshrc
+git ci
+git st
+git pull
+git s
+rm vim/bundle/snipmate-snippets 
+yrm vim/bundle/snipmate-snippets 
+ls
+git diff
+vim zshrc
+vim zshrc
+git add zshrc
+git ci
+git st
+gitp ush
+git push
+git alias --help
+git alias
+~/bin
+git st
+git rm extr
+git st
+ls
+git ci
+git st
+git push
+git up
+git st
+git rm extr
+git st
+git up
+git ci
+git st
+git push
+man zshbuiltins
+ls /usr/share/vim/vimfiles
+ls /usr/share/vim/vimfiles/ftdetect
+ls /usr/share/vim/vim72/ft
+ls /usr/share/vim/vim72/ftplug
+ls /usr/share/vim/vim72/ftplugin/
+vim /usr/share/vim/vim72/ftplugin/man.vim
+hto
+htop
+clyde -Si aur/indicator-session
+clyde -Si indicator-session
+clyde -Si listo
+clyde -Si task
+clyde -S task
+/tmp/clyde/task
+ls
+task/
+vim PKGBUILD
+makepkg -g
+vim PKGBUILD
+makepkg
+makepkg -i
+~
+task
+task
+task --help
+task add todo
+taskadmin
+taskset
+taskadmin ls
+task shell
+task shell
+clyde -Si etm
+wyrd --hel
+wyrd -a 
+wyrd -a Watching Toy Story 3 tomorrow at 11:30 AM for 3 hours
+wyrd
+wyrd
+vim ~/.reminders
+wyrd
+vim ~/.reminders
+tmp
+ls
+extr Zelda3T64.tar.gz
+ls
+Zelda3T
+ls
+ldd Zelda3T
+clyde -Ss sdl gfx
+clyde -S sdl_gfx
+ldd Zelda3T
+ls /usr/lib/libSDL_gfx.*
+ls
+ls data
+xpdf Manuel.pdf
+htop
+vim
+vim bin/vim.man
+vim ~/.vimrc
+vim ~/.vimrc
+vim ~/.vimrc
+unset MANPAGER
+vim ~/.vimrc
+ls
+vim ~/.vimrc
+ls /usr/man
+ls /usr/man/man1
+ls /usr/man/man6
+cblocks
+cmines
+cmines --help
+cmines -et
+cmines -et
+vim bin/vim.man
+man ncmatrix
+export MANPAGER=vim.man
+man ncmatrix
+ls
+mv accelerando.epub doc/
+blog/
+git st
+git diff
+rake new
+vim articles/2010-06-18-where-ive-been-and-where-im-going.txt
+git st
+git add articles/
+git ci
+git st
+git push
+vim ~/.zshrc
+exec 2>&1
+git push
+git st
+git push heroku
+ls
+vim Re
+vim README.md
+git add README.md
+git ci
+git st
+git push
+vim ~/.zshrc
+zsh
+rem
+rem --help
+man rem
+clyde -Ss surfraw
+clyde -S surfraw
+surfraw --help
+surfraw-update-path --help
+surfraw-update-path -check
+surfraw-update-path -check -shell=zsh
+ls /usr/lib/surfraw
+vim /usr/lib/surfraw/bugmenot
+surfraw google
+vim /usr/lib/surfraw/google
+surfraw google --help
+man surfraw
+ls /etc/xdg
+ls /etc/xdg/surfraw
+vim /etc/xdg/surfraw/bookmarks
+vim /etc/xdg/surfraw/conf
+clyde -Ss warrior
+clyde -Si jfsw
+clyde -Si linwarrior
+clyde -Ss task
+clyde -Ss task --color L
+clyde -Si eris
+clyde -Si doit.im
+clyde -Ss task --color L
+clyde -Ss task > tasks.aur.search
+clyde -Si ikog
+vim tasks.aur.search
+vim ~/.vimrc
+vim tasks.aur.search
+clyde -Ss rescue
+clyde -Ss documentation
+clyde -Si rtfm
+clyde -Ss menace
+clyde -S astromenace
+astromenace
+sleep 1; astromenace
+ls
+~
+vim .astromenace/amconfig.xml 
+echo {a-z}
+echo {a..z}
+echo {1..9}
+setopt braceccl
+echo {a..z}
+echo {a-z}
+echo {a-Z}
+echo {A-z}
+man zshoptions
+ls
+reset
+exit
+htop
+exit
+htop
+exit
+man zshoptions
+ls
+doc/
+ls
+vim the_webservices_i_use/services.txt
+exit
+config_data --help
+configure --help
+vim /usr/lib/cw
+.config/zsh
+ls
+ack 'ps'
+ack 'ps' -i
+echo $PS1
+echo $PS2
+echo $PS3
+echo $RPS1
+echo $RPS2
+echo $RPS3
+vim ~/.zshrc
+vim environment.zsh
+vim environment.zsh
+~/tmp/Games/aquaria/
+./aquaria
+...
+jabberd2_sqlite_convert
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+htop
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+clyde jabber
+clyde -S jabber
+clyde -Ss jabber
+pacman -Ss jabber
+clyde -S gajim
+ssh me
+ls
+tmp/jabberd2_sqlite_convert
+ls
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+clyde -Ss pyopenssl
+clyde -S pyopenssl
+ssh me
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+ssh me
+l
+ls
+ping evaryont.me
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ruby jabberd2_convert_sqlite_to_text.rb
+vim jabberd2_convert_sqlite_to_text.rb
+ls fs
+ls fs/vcard
+scp me:/home/colin/sqlite.db $(pwd)
+ls
+rm sqlite.db
+scp me:/home/colin/sqlite.db $(pwd)
+rm fs
+ruby jabberd2_convert_sqlite_to_text.rb
+ls fs
+ls fs/roster-items
+ls fs/roster-items/colin@evaryont.me
+vim fs/roster-items/colin@evaryont.me/8
+vim fs/roster-items/colin@evaryont.me/10
+vim fs/roster-items/colin@evaryont.me/12
+vim fs/roster-items/colin@evaryont.me/1*
+ls fs/active
+ls fs/active/colin@evaryont.me
+cat fs/active/colin@evaryont.me/1
+cat fs/private/colin@evaryont.me/1
+ls
+scp -r fs me:/home/colin/
+myip
+ls
+aplay -L
+alsaconf --help
+aplay -L
+s vim /etc/asound.conf
+s vim /etc/asound.conf
+ls
+cat /etc/asound.conf
+mcabber
+mcabber
+mcabber
+mcabber
+exit
+ssh me
+ls
+ssh me
+ls
+ls tmp
+tmp
+jabberd2_sqlite_convert
+ls
+vim fs/roster-items/colin@evaryont.me/*
+wget http://images.barnesandnoble.com/pimages/bravo/whiteout/nook_3G_coverage_map.pdf
+xpdf nook_3G_coverage_map.pdf
+exit
+g15daemon --help
+PSG g15
+s vim /etc/rc.d/g15daemon
+pidof
+pidof /usr/sbin/g15daemon
+/usr/sbin/g15daemon
+PSG g15
+g15daemon --help
+g15daemon -v
+clyde -Ss g15
+clyde -S libg15
+ifconfig
+ping 192.168.1.254
+ping 192.168.1.1
+ping 8.8.8.8
+clyde -Qu g15daemon
+clyde -Qi g15daemon
+clyde -Qi libg15
+clyde -Qi libg15render
+clyde -S libg15 libg15render g15daemon
+clyde -Rcnssu libg15
+clyde -Ss g15aio
+clyde -Ss g15aiostats g15daemon
+rm /tmp/clyde/
+clyde -Ss g15aiostats g15daemon
+clyde -S g15aiostats g15daemon
+clyde -Sy g15aiostats g15daemon
+clyde -Sy g15aiostats g15daemon
+clyde -Sy g15aiostats
+s vim /etc/rc.d/g15daemon
+mpc
+s /etc/rc.d/g15daemon start
+s vim /etc/rc.d/g15daemon
+s /etc/rc.d/g15daemon start
+s vim /etc/rc.d/g15daemon
+sleep 0.5;
+sleep 1
+sleep 0.5
+s vim /etc/rc.d/g15daemon
+/media/windows
+ls
+Users/Colin/Music/
+ls
+Music/
+ls
+..
+ls
+ls ..
+ls ../Downloads
+ls ../Downloads/Multimedia
+ls ../Downloads/Multimedia/New\ folder
+ls ../Downloads/Multimedia/Audio
+ls ../Videos
+..
+find -name \*7z
+man find
+find -regex '.*7z'
+find G 7z
+..
+ls
+ls Default
+ls Default/Music
+ls Public
+ls Public/Music
+Public/Music
+ls
+extr APD.rar
+clyde -S unrar
+extr APD.rar
+ls
+md APD
+mv ../0*.mp3 -t .
+ls
+ls ..
+mv ../\(no\ seriously\)\ whats\ my\ name.txt .
+vim \(no\ seriously\)\ whats\ my\ name.txt
+ls
+rm \(no\ seriously\)\ whats\ my\ name.txt
+ls
+ls ..
+mv ../APD.rar .
+clyde -S mp3info
+mp3info 01\ -\ \(No\ Seriously\)\ Whats\ My\ Name.mp3
+..
+mkdir Antisoc/White_Colla_Chryme
+mv APD/* Antisoc/White_Colla_Chryme
+rm APD
+ls
+rm Antisoc/White_Colla_Chryme/APD.rar
+extr Antisoc-Future_Hop.zip
+mv Antisoc-Future_Hop Antisoc/Future_Hop
+rm Antisoc/Future_Hop/lyrics
+mpc toggle
+Antisoc
+Future_Hop
+ls
+mplayer *
+aoss mplayer *
+mp3info 01-Intro.mp3
+mp3info --help
+aoss mplayer -q *
+aoss mplayer -quiet *
+aoss mplayer -really-quiet *
+aoss mplayer *
+irssi --help
+irssi -c lambdagaming.com -n evaryont
+s reboot
+ls
+mpc
+mpc toggle
+mpc next
+htop
+s htop
+alsamixer
+startxl
+startxl
+ssh me
+ssh me
+vim .vimrc
+vim .xinitrc
+unclutter -help
+vim .xinitrc
+unclutter -help
+vim .xinitrc
+startxl
+startxl
+s vim /etc/rc.d/g15daemon
+ls
+mpc
+mpc toggle
+clyde -Syu
+vim .config/zsh/pacman.zsh
+exit
+mpc
+mpc toggle
+exit
+mpc
+exit
+ls tmp
+ tmp/Syncml_Expieriments
+ls
+../TCA_Nationals
+ls
+vim md5sums.txt
+md5sum --help
+md5sum tca_152_TCA_152_1.iso
+md5sum tca_152_TCA_152_2.iso
+md5sum tca_152_TCA_152_* >> md5sums.txt
+htop
+s clyde -S gcombust
+ -S gcombust
+clyde -S gcombust
+clyde -S brasero
+brasero --help
+brasero -i /home/colin/tmp/TCA_Nationals/tca_152_TCA_152_1.iso
+brasero -i /home/colin/tmp/TCA_Nationals/tca_152_TCA_152_1.iso --device=/dev/sr1
+brasero --device=/dev/sr1 -i /home/colin/tmp/TCA_Nationals/tca_152_TCA_152_1.iso
+brasero
+s brasero
+s brasero --device=/dev/sr1 -i /home/colin/tmp/TCA_Nationals/tca_152_TCA_152_1.iso
+s brasero --device=/dev/sr1
+brasero --help
+s vim /boot/grub/menu.lst
+s reboot
+clyde -Ss burn
+clyde -S graveman recorder
+recorder --help
+dmesg T
+ls /dev
+ll /dev G sr
+groups
+vim .config/recorder/recorderrc
+xmodmap ~/.Xmodmap
+recorder --help
+recorder
+graveman --help
+graveman
+clyde -Ss burn iso
+clyde -Ss  iso
+clyde -Ss iso L
+clyde -S tcdr
+tcdr
+tcdr --help
+s tcdr
+clyde -Ss iso L
+htop
+file -sb /dev/sr1
+s file -sb /dev/sr1
+s file  /dev/sr1
+s file /dev/sr1
+s file /dev/sda1
+file --help
+s file -s /dev/sda1
+s file -s /dev/sr1
+ll /dev/disk
+ll /dev/disk/by-uuid
+find --help
+man find
+unset MANPAGER
+man find
+man find
+find -L /dev -iname sr
+s find -L /dev -iname 'sr*'
+s find -L /dev -iname 'sr1'
+s find -L /dev -iname 'sr1' 2>/dev/null
+clyde -Qs kde
+clyde -Rcnssu kde
+date
+clyde -Rcnssu qtcurve
+clyde -Qs kde
+clyde -Rcnssu automoc4
+clyde -Qu
+clyde -Rcnssu qt
+clyde -Rcnssu perl-xyne-arch
+clyde -Rcnssu perl-xyne-common
+clyde -Qu
+clyde -Rcnssu namcap
+clyde -Rcnssu lib32-zlib
+clyde -Qu
+clyde -Rcnssu awesome
+clyde -Rcnssu tomcat
+clyde -Rcnssu pango
+clyde -Rcnssu net-snmp
+clyde -Syu
+ack 'g15' /var/log/pacman.log
+date
+clyde -S g15{daemon,aiostats}
+clyde -S --help
+clyde --help
+clyde --help
+vim /usr/bin/clyde
+clyde -S --help
+clyde -S g15{daemon,aiostats} --noconfirm
+startxl
+ls /media/wdbook
+s mount /media/wdbook
+ls /dev/disk/by-uuid
+cat /etc/fstab
+ll /dev/disk/by-uuid
+file -h
+file --help
+file -sb /dev/sde1
+file -sb /dev/sdg1
+file -sb /dev/sdc
+file -sb /dev/sdd
+file -sb /dev/sde
+file -sb /dev/sdf
+file -sb /dev/sdg
+df
+mount
+ls /dev/sd
+ls /dev/sd*
+s mount /dev/sde1 /media/wdbook 
+ls /media/wdbook
+ls /media/wdbook/DCIM
+s umount /media/wdbook
+s mount /dev/sdg1 /media/wdbook 
+ls /media/wdbook
+ls /media/wdbook/Ha
+ls /media/wdbook/HammerAutosave
+s umount /media/wdbook
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+ls /media/windows
+mkdir /media/windows/Users/Colin/Downloads/SkillsUSA
+s mv tmp/TCA_Nationals/*.iso -t /media/windows/Users/Colin/Downloads/SkillsUSA
+md5sum /media/windows/Users/Colin/Downloads/SkillsUSA/*
+s reboot
+ssh me
+links http://evaryont.me
+vim ~/.xinitrc
+vim /tmp/startx.log
+vim ~/.xinitrc
+vim /tmp/startx.log
+PSG xf
+ls
+s vim /etc/makepkg.conf
+cat /proc/cpuinfo
+cat /proc/cpuinfo G pen
+xmodmap ~/.Xmodmap
+ssh me
+exit
+mpc
+mpc next
+vim
+clyde -Ss newsb
+clyde -S newsbeuter
+newsbeuter --help
+newsbeuter
+vim ~/.newsbeuter/urls
+clyde -Ss skype
+vim notes/Google.txt
+dig demuzere.be any
+dig demuzere.be SRV
+mcabber
+htop
+s vim /boot/grub/menu.lst
+s reboot
+ls /media
+ls /media/nas
+ls /media/wdbook
+startxl
+vim /tmp/startx.log
+vim .xinitrc
+vim /tmp/startx.log
+vim /tmp/startx.log
+vim /var/log/Xorg.0.log
+pacman -Syu
+s pacman -Syu
+tmp
+ls
+extr SyServ_Demo_linux_3.4.0.0.zip
+SyServ_Demo_linux_3.4.0.0
+ls
+file -sb *
+file -s *
+chmod +x syncserv_demo
+./syncserv_demo --help
+ls
+vim readme_first.txt
+ls
+file -s *
+ldd syncserv_demo
+vim syncserv_demo
+./syncserv_demo
+sh syncserv_demo
+exec syncserv_demo
+port=9000
+username=my_own_name
+password=my_super_secret_password
+datapath=$(pwd)
+exit
+pacman -Sh
+pacman -Su --print
+uname -a
+uname -A
+uname -h
+uname --help
+uname -p
+uname -i
+uname -o
+uname -api
+uname -m
+pacman -Su --print 2>/dev/null
+pacman -Su --print >/dev/null
+pacman -Su --print S
+pacman -Su --print | tail --help
+pacman -Su --print | tail -n +2
+pacman -Su --print | tail -n +1
+pacman -Su --print | tail -n +2 S
+xmodmap ~/.Xmodmap
+apvlv tmp/SyServ_Demo_linux_3.4.0.0/SySync_Server_manual.pdf
+apvlv tmp/SyServ_Demo_linux_3.4.0.0/SySync_Server_manual.pdf --help
+s vim /etc/makepkg.conf
+s vim /etc/makepkg.conf*
+s vimdif /etc/makepkg.conf*
+s vimdiff /etc/makepkg.conf*
+tmp/syncevolution
+vim PKGBUILD
+clyde -Ss evolution
+clyde -Si hacker-evolution-untold
+startxl
+makepkg
+makepkg -i
+vim PKGBUILD
+clyde -Qs curl
+vim PKGBUILD
+clyde -Qs notif
+clyde -Ss notification
+vim PKGBUILD
+syncevolution --help
+syncevolution
+syncevolution --print-servers
+syncevolution --template ?
+syncevolution --config local
+syncevolution --configure local
+syncevolution --configure default
+syncevolution --print-config default
+syncevolution
+syncevolution --print-config default > default.config
+vim default.config
+syncevolution --configure --sync-property "syncURL=http://localhost:8082/syncevolution'" default
+syncevolution --print-config default L
+syncevolution --configure --sync-property "syncURL='http://localhost:8082/syncevolution'" default
+syncevolution --print-config default L
+syncevolution --configure --sync-property "syncURL=http://localhost:8082/syncevolution" default
+syncevolution default
+ls ~/.cache/syncevolution
+ls ~/.cache/syncevolution/default-2010-06-27-23-46
+links ~/.cache/syncevolution/default-2010-06-27-23-46/syncevolution-log.html
+syncevolution default
+ls ~/.cache/syncevolution
+vim default.config
+ls
+src/syncevolution-1.0
+ls
+ls test
+test/syncevo-http-server.py http://localhost:8082/syncevolution
+test/syncevo-http-server.py http://localhost:8082/syncevolution
+vim test/syncevo-http-server.py
+vim /usr/bin/syncevo-http-server
+syncevo-phone-config --help
+ls
+ls test
+vim test/synccompare.pl
+vim test/Algorithm/README
+vim README
+ls src
+ls src/backends
+ls src/backends/file
+ls .../
+ls ...
+vim ~/.config/zsh/aliases.zsh
+unalias .
+unalias \.
+ls ...
+.
+unalias -- \.
+alias -- .=
+.
+ls ...
+alias
+ls
+vim de
+vim description
+ls /usr/share/doc
+ls /usr/share/doc/syncevolution
+links /usr/share/doc/syncevolution/syncevo-dbus-api-doc.html
+firefox /usr/share/doc/syncevolution/syncevo-dbus-api-doc.html
+ls
+~/tmp/Syncml_Expieriments
+ls
+syncml/ls
+syncml/
+ls
+cat syncml_ds_tool_help.txt
+syncevolution default
+ls ~/.config/syncevolution
+ls ~/.config/syncevolution/default
+vim ~/.config/syncevolution/default/config.ini
+vim ~/.config/syncevolution/default/sources/calendar/config.ini
+vim ~/.config/syncevolution/default/sources/addressbook/config.ini
+syncevolution default
+vim ~/.config/syncevolution/default/sources/calendar/config.ini
+syncevolution default
+vim ~/.config/syncevolution/default/sources/calendar/config.ini
+syncevolution default
+ls
+..
+mkdir syncevolution_foo
+syncevolution_foo
+ls
+zsh
+ls ~/tmp/syncevolution/src/syncevolution-1.0
+ls ~/tmp/syncevolution/src/syncevolution-1.0/src
+vim  ~/tmp/syncevolution/PKGBUILD
+ls ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server
+file ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server
+ ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server
+ ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server
+vim ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server-startup.sh
+vim ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server-startup.sh.in
+vim ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server.cpp
+s /etc/rc.d/dbus stop
+ ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server
+vim ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server.cpp
+vim ~/tmp/syncevolution/src/syncevolution-1.0/src/syncevo-dbus-server.cpp
+s /etc/rc.d/dbus start
+export G dbus
+-
+~/tmp/syncevolution/src/syncevolution-1.0
+ls
+ls
+find G backends
+ls src/backends
+ls src/backends/file
+ src/backends/file
+make
+make clean
+make
+ls
+....
+ls
+exit
+exit
+tmp/
+SyServ_Demo_linux_3.4.0.0
+ls
+vim read_me_disclaimer.txt
+vim release_notes.txt
+./syncserv_demo
+ls ./syncserv_demo
+ll ./syncserv_demo
+....
+-
+...
+tmp/SyServ_Demo_linux_3.4.0.0/syncserv_demo
+tmp/
+extr clyde-git.tar.gz
+ls
+clyde-git
+ls
+makepkg
+makepkg -i
+~
+clyde
+clyde -Ss syncml
+clyde -S syncevolution
+/tmp/
+ls
+vim /etc/clyde.conf
+vim /etc/pacman.conf
+-
+tmp
+wget http://aur.archlinux.org/packages/syncevolution/syncevolution.tar.gz
+extr syncevolution.tar.gz
+syncevolution
+ls
+vim PKGBUILD
+makepkg
+makepkg -g >> PKGBUILD
+vim PKGBUILD
+makepkg
+ls
+src/syncevolution-1.0
+ls
+./configure --help
+./configure --help L
+vim /tmp/startx.log
+vim /tmp/startx.log
+clyde -Qs gnome
+vim .../PKGBUILD
+...
+vim PKGBUILD
+~
+ls /usr/lib/syncevolution
+ls /usr/lib/syncevolution/backends
+lsa /usr/lib/syncevolution/backends
+syncevo-http-server --help
+clyde -Ss twisted
+clyde -S twisted
+syncevo-http-server --help
+syncevo-http-server http://localhost:8082/syncevolution
+syncevo-http-server http://localhost:8082/syncevolution
+syncevo-http-server http://localhost:9000/syncevolution
+syncevo-http-server http://localhost:9000/syncevolution
+exit
+syncevo-http-server
+syncevo-http-server --help
+syncevo-http-server http://localhost:8082/syncevolution
+syncevo-http-server http://localhost:8082/
+zle
+zle --help
+zle -h
+zle beep
+vim foo
+sh foo
+vim foo
+vim foo
+ls .config
+ls .config/syncevolution
+sh foo L
+vim foo
+sh foo L
+sh foo
+rm .{config,cache}/syncevolution
+sh foo | tee syncevo.log
+vim syncevo.log
+vim foo
+mv foo sev_server_conf.sh
+chmod +x sev_server_conf.sh
+./sev_server_conf.sh | tee syncevo.log
+vim sev_server_conf.sh
+ls .config
+ls
+mv sev_server_conf.sh syncevo.log -t /tmp/syncml
+/tmp/syncml
+ls
+./sev_server_conf.sh | tee syncevo.log
+vim sev_server_conf.sh
+./sev_server_conf.sh | tee syncevo.log
+vim sev_server_conf.sh
+./sev_server_conf.sh | tee syncevo.log
+vim syncevo.log
+ls ~/.cache
+ls ~/.config/syncevolution
+vim ~/.config/syncevolution/default
+vim ~/.config/syncevolution/default/sources/calendar/config.ini
+ ~/.config/syncevolution/
+ack 'fooD'
+ack 'foo' -i
+vim config.ini
+-
+vim sev_server_conf.sh
+./sev_server_conf.sh | tee syncevo.log
+ls ~/.config/syncevolution
+ls ~/.config/syncevolution/default
+vim sev_server_conf.sh
+ack 'id' ~/.config/syncevolution
+ack 'id' -i ~/.config/syncevolution
+ack 'device' -i ~/.config/syncevolution
+ls /tmp
+ls /tmp
+man syncevolution
+clyde -Ql syncevolution
+clyde -Ql syncevolution L
+vim /usr/share/syncevolution/templates/clients/SyncEvolution.ini
+vim /usr/share/syncevolution/templates/servers/ScheduleWorld.ini
+vim /usr/share/syncevolution/templates/servers/Funambol.ini
+vim /usr/share/syncevolution/templates/clients/SyncEvolution.ini
+vim /usr/share/syncevolution/templates/clients/SyncEvolution.ini
+curl http://lists.syncevolution.org/pipermail/syncevolution/attachments/20100626/28c5d175/attachment.sh
+syncevolution fooDevice
+curl http://lists.syncevolution.org/pipermail/syncevolution/attachments/20100626/28c5d175/attachment.sh
+ssh -t me 'mutt'
+ssh -t me 'mutt'
+htop
+syncevolution --print-servers
+syncevolution --print-configs
+syncevolution --print-peers
+syncevolution --print-sessions
+syncevolution --status
+syncevolution --print-sessions
+syncevolution --print-sessions default
+syncevolution default
+syncevolution default
+vim .config/syncevolution/default/peers/default/config.ini
+vim .config/syncevolution/default/sources/calendar/config.ini
+mkdir /tmp/syncml/
+mkdir /tmp/syncml/{addressbook,calendar,todo,memo}
+ls .config
+ls .config/ayoy
+syncevo-http-server http://localhost:9000/syncml
+ext
+exit
+syncevolution --template ?
+syncevolution default
+syncevolution --configure --sync-property "username=123456" --sync-property "password=Bcd1234" scheduleworld
+syncevolution --configure --sync-property "username=123456" --sync-property "password=Bcd1234" scheduleworld
+syncevolution --print-config scheduleworld L
+syncevolution --configure --sync-property "syncURL=http://localhost:9000/syncml" scheduleworld
+syncevolution --print-config scheduleworld L
+syncevolution default
+syncevolution scheduleworld
+ls .cache/syncevolution
+ls .cache/syncevolution/scheduleworld-2010-06-28-00-57-a
+vim .cache/syncevolution/scheduleworld-2010-06-28-00-57-a/status.ini
+vim .cache/syncevolution/scheduleworld-2010-06-28-00-57-a/status.ini
+syncevolution --print-config scheduleworld L
+syncevolution --configure --sync-property "sync=two-way" scheduleworld
+syncevolution --print-config scheduleworld L
+syncevolution --configure --sync-property "sync=slow" scheduleworld
+s clyde -S genesis
+clyde -S genesis
+clyde -Ss genesis
+clyde -S genesis-sync
+vim /etc/makepkg.conf
+clyde -Sw genesis-sync
+clyde -Sw genesis-sync
+exit
+irssi
+exit
+tmp/syncevolution/src/syncevolution-1.0
+ls
+src/syncevo-dbus-server
+s /etc/rc.d/dbus stop
+src/syncevo-dbus-server
+s src/syncevo-dbus-server
+s /etc/rc.d/dbus start
+exit
+ssh -t me 'mutt'
+ssh -t me 'EDITOR=vim TERM=rxvt-256color mutt'
+exit
+mcabber
+s reboot
+g15aiostats
+PSG g15
+s vim /etc/rc.d/g15daemon
+su --help
+s vim /etc/rc.d/g15daemon
+su --help
+s vim /etc/rc.d/g15daemon
+mpc
+clyde -Sy
+clyde -Qu
+clyde -Rcnsu brasero 
+clyde -Rh brasero 
+clyde -Rcnssu brasero 
+clyde -Qi vigra
+clyde -Syu
+clyde -Syu
+ls /tmp
+startxl
+startxl
+clyde -Syu
+xmodmap ~/.Xmodmap
+ssh me
+vim notes/Bank.txt
+vim notes/Bank.txt
+dotfiles
+git st
+git diff
+git add config/zsh/environment.zsh
+git ci
+git add config/zsh/pacman.zsh
+git ci
+git diff
+git add vimrc
+git ci
+git diff
+git a xinitrc
+git ci
+git diff
+git add zshrc
+git ci
+git up
+git push
+vim config/zsh/git.zsh
+vim config/zsh/git.zsh
+ssh -t me mutt
+ssh -t me 'EDITOR=vim TERM=rxvt-256color mutt'
+irb
+vim .irbrc
+irb
+vim ~/.irbrc
+irb
+irb --help
+ruby -e "require 'irb/completion'"
+ls .data
+ruby -e "require 'irb/ext/save_history'"
+vim .irbrc
+rib
+irb
+vim ~/.irbrc
+ls /usr/lib/ruby/
+ls /usr/lib/ruby/1.9.1/irb
+ls /usr/lib/ruby/1.9.1/irb/ext
+vim ~/.irbrc
+vim /usr/lib/ruby/1.9.1/irb/ext/tracer.rb
+vim ~/.irbrc
+irb
+vim ~/.irbrc
+irb
+vim ~/.irbrc
+irb
+dotfiles
+git st
+git diff
+git add irbrc
+git ci
+vim irbrc
+git a irbrc
+git ci
+vim irbrc
+git diff
+git add -p
+git ci
+git a -p
+git ci
+ls
+vim irbrc
+s gem install method_extensions
+ls /usr/lib/ruby/gems/1.9.1/gems/method_extensions-0.0.8
+ls /usr/lib/ruby/gems/1.9.1/gems/method_extensions-0.0.8/lib
+ls /usr/lib/ruby/gems/1.9.1/gems/method_extensions-0.0.8/lib/method_extensions
+ls /usr/lib/ruby/gems/1.9.1/gems/method_extensions-0.0.8/lib/method_extensions/method
+vim /usr/lib/ruby/gems/1.9.1/gems/method_extensions-0.0.8/lib/method_extensions.rb
+vim irbrc
+s gem install bond hirb
+ls /usr/lib/ruby/gems/1.9.1/gems/bond-0.2.1
+ls /usr/lib/ruby/gems/1.9.1/gems/bond-0.2.1/lib
+ls /usr/lib/ruby/gems/1.9.1/gems/hirb-0.3.2
+ls /usr/lib/ruby/gems/1.9.1/gems/hirb-0.3.2/lib
+vim /usr/lib/ruby/gems/1.9.1/gems/hirb-0.3.2/README.rdoc
+vim irbrc
+irb
+vim ~/.gemrc2
+gem
+gem search --remote spy
+s gem install net-http-spy
+gem search --remote --details spy
+vim irbrc
+vim irbrc
+s gem install awesome_print
+vim irbrc
+gem search --remote --details terminf
+s gem install ruby-terminfo
+s gem install irb_rocket wirble
+gem search --remote --details rocket
+wget http://github.com/genki/irb_rocket/raw/master/lib/irb_rocket.rb
+mkdir irb
+mv irb_rocket.rb irb
+vim irb/irb_rocket.rb
+vim irbrc
+ruby symlink.rb
+irb
+vim irbrc
+irb
+ls /usr/lib/ruby/gems/1.9.1
+ls /usr/lib/ruby/1.9.1/irb
+vim /usr/lib/ruby/1.9.1/irb.rb
+vim /usr/lib/ruby/1.9.1/irb.rb irbrc irb/irb_rocket.rb
+git diff
+irb
+m irb/irb_rocket.rb 
+irb
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/init.rb
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/lib/ap.rb
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/lib/ap/awesome_print.rb
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/lib/ap/core_ext/kernel.rb
+m irb/irb_rocket.rb
+irb
+m irb/irb_rocket.rb
+irb
+m irb
+m irbrc
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/lib/ap/awesome_print.rb +226
+m /usr/lib/ruby/gems/1.9.1/gems/awesome_print-0.2.1/lib/ap/core_ext/kernel.rb
+m irb/irb_rocket.rb
+irb
+ls
+git st
+git add irb irbrc
+git ci
+git diff
+git st
+s gem install looksee
+vim irbrc
+git add irbrc
+git ci
+s gem install boson
+ls /usr/lib/ruby/gems/1.9.1/gems/boson-0.2.5
+ls /usr/lib/ruby/gems/1.9.1/gems/boson-0.2.5/lib/boson/
+ls /usr/lib/ruby/gems/1.9.1/gems/boson-0.2.5/lib/boson/command
+ls /usr/lib/ruby/gems/1.9.1/gems/boson-0.2.5/lib/boson/commands/
+vim irb
+vim irbrc
+irb
+git st
+git diff
+git add irbrc
+git ci
+git st
+git pull
+git push
+clyde -S antiword wv2
+clyde -Si antiword wv2
+clyde -Ss docx
+clyde -Ss o3read
+clyde -S docx2txt o3read antiword
+clyde -S docx2txt o3read antiword
+clyde -S docx2txt o3read
+clyde -S  o3read
+ls /tmp/clyde-colin
+ls /tmp/clyde-colin/o3read
+ls /tmp/clyde-colin/o3read/o3read/
+ /tmp/clyde-colin/o3read/o3read/
+ls src
+ls src/o3read-0.0.4
+ src/o3read-0.0.4
+vim Makefile
+vim ../destdir.patch
+vim Makefile
+../..
+vim PKGBUILD
+makepkg
+makepkg -i
+makepkg --help
+s vim /etc/makepkg.conf
+vim /usr/bin/makepkg
+s vim /etc/makepkg.conf
+makepkg --help G color
+s vim /etc/makepkg.conf
+s vim /etc/makepkg.conf /usr/bin/makepkg
+man make
+htop
+ls
+../../docx2txt
+ls
+docx2txt
+ls
+vim PKGBUILD
+rm docx2txt-1.0.tgz src
+makepkg
+makepkg -i
+~
+view
+vim /usr/bin/docx2txt.sh
+vim /usr/bin/docx2txt.sh
+vim .zshrc
+vim bin/docview
+htop
+echo "foo" | vim -
+ls
+\
+
+vim --version | grep -P '^(\+|\-)' | sed 's/\s/\n/g' | grep -Pv '^ ?$' | head
+vim <(echo bar)
+htop
+unset MANPAGE
+man
+man make
+unset MANPAGER
+man make
+make --help
+docx2txt.pl --help
+vim /usr/bin/docx2txt.pl
+vim /usr/bin/docx2txt.pl
+docx2txt.pl
+antiword
+ls tmp
+tmp/
+mkdir aw
+mv Express_Check_Out_Form.doc aw
+aw/
+cp Express_Check_Out_Form.doc Express_Check_Out_Form2.doc
+antiword Express_Check_Out_Form.doc
+file -sb Express_Check_Out_Form.doc
+vim Express_Check_Out_Form.doc
+file -sb Express_Check_Out_Form.doc
+clyde -Ss doc L
+clyde -Ss microsoft L
+clyde -S catdoc
+catdoc --help
+catdoc Express_Check_Out_Form.doc
+antiword Express_Check_Out_Form.doc
+catdoc Express_Check_Out_Form.doc -
+echo | catdoc Express_Check_Out_Form.doc -
+echo | catdoc Express_Check_Out_Form.doc - | $EDITOR -
+ls
+vim --help
+vim --version
+vim --version G '^\+|\-'
+vim --version G '^(\+|\-)'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/g'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/g' G -v '^\s$'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/g' G -v '^ $'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/g' G -v '^ ?$'
+vim --version G '^(\+|\-)' | sed 's/\s/\n/g' G -v '^ ?$' | sort
+vim --version | grep -P '^(\+|\-)' | sed 's/\s/\n/g' | grep -Pv '^ ?$' | sort
+alias G grep
+vim --version | \grep -P '^(\+|\-)' | sed 's/\s/\n/g' | \grep -Pv '^ ?$' | sort
+htop
+catdoc Express_Check_Out_Form2.doc L
+clyde -Ss pdf text
+clyde -Ss pdf txt
+vim /etc/asound.conf
+clyde -S bluez
+s /etc/rc.d/dbus start
+s /etc/rc.d/bluetooth start
+clyde -Ss bluetooth
+clyde -S btscanner phonetooth obexpushd bfsms 
+clyde -S phonetooth obexpushd bfsms 
+s vim /etc/makepkg.conf
+clyde -S phonetooth obexpushd bfsms 
+clyde -Syu
+wget http://aur.archlinux.org/packages/btscanner/btscanner.tar.gz
+mv btscanner.tar.gz tmp
+tmp
+mkdir btscanner
+mv btscanner.tar.gz btscanner
+btscanner
+ls
+tar xf btscanner.tar.gz
+btscanner
+ls
+makepkg
+makepkg -i
+btscanner --help
+btscanner
+s vim /etc/btscanner/btscanner.xml
+ls ~
+ls ~
+btscanner
+clyde -Rcnssu bluez
+ls /etc
+clyde -S bluez
+clyde -S dbus-python libusb
+ls /etc/bluetooth
+clyde -Rcnssu bluez
+s yrm /etc/bluetooth
+ls /etc/bluetooth
+s rm -rf /etc/bluetooth
+ls /etc/bluetooth
+clyde -S bluez
+ls /etc/bluetooth
+hcitool scan
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+hciconfig
+hciconfig -a
+hcitool dev
+dmesg T
+dmesg T
+dmesg T
+dmesg T
+PSG blue
+htop
+dmesg T
+ls /dev
+hcitool dev
+hciconfig -a
+hciconfig -a hci0
+s vim /etc/rc.conf
+exit
+mcabber
+exit
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+ssh me
+exit
+exit
+ssh -t me 'detach irssi'
+ssh -t me 'dtach -A "/home/colin/.cache/dtach/irssi.socket" -z -e "^Z" irssi'
+mutt
+ssh -t me 'EDITOR=vim TERM=rxvt-256color mutt'
+ssh -t me 'EDITOR=vim TERM=rxvt-256color mutt'
+ls .mcabber/
+cp .mcabber/mcabberrc .mcabber/mcabberrc 'detach irssi'
+cp .mcabber/mcabberrc .mcabber/mcabberrc.econify
+vim .mcabber/mcabberrc.econify
+mcabber --help
+mcabber -f ~/.mcabber/mcabberrc.econify
+vim .mcabber/mcabberrc.econify
+mcabber -f ~/.mcabber/mcabberrc.econify
+ssh -t me 'EDITOR=vim TERM=rxvt-256color mutt'
+ssh me
+dotfiles
+ls
+ls vim/
+ls vim/plugin
+git ls-files
+git ls-files G supertab
+git rm vim/doc/supertab.txt
+git rm vim/plugin/supertab.txt
+git rm vim/plugin/supertab.vim
+git submodule add http://github.com/ervandew/supertab vim/bundle/supertab
+git submodule add git://github.com/ervandew/supertab vim/bundle/supertab
+ls vim/bundle/supertab
+ls vim/bundle/supertab/plugin
+ls vim/bundle/supertab/doc
+git st
+git ci
+git st
+git push
+git up
+vim gitconfig.tmpl
+vimdiff gitconfig.tmpl ~/.gitconfig
+zsh
+git pu
+tidy --help G
+tidy --help L
+tidy -help L
+tidy -help-config L
+ls
+htop
+uzbl-browser --help
+PSG uzbl
+uzbl-event-manager stop
+uzbl-cookie-daemon stop
+PSG uzbl
+vim ~/.zcompdump
+s reboot
+startxl
+exit
+exit
+zsh
+dotfi
+ls
+dotfiles/
+cd dotfiles/
+ls
+vim zshrc
+git head
+git lg
+git show bc35b04
+ls config/zsh
+git mv config/zsh/style config/zsh/style.zsh
+zsh
+exit --help
+exit --help
+exit 0
