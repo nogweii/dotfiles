@@ -1,7 +1,6 @@
 setopt   interactive_comments # Allow comments in interactive mode
 setopt   share_history        # Share the history, live, between instances
 setopt   append_history       # Append, don't overwrite, the history file
-setopt   notify               # Tell me when a job exits
 setopt   ignore_eof           # Ignore ^D to exit zsh
 setopt   auto_cd              # Just type in the directory, no 'cd' needed!
 setopt   extended_glob        # Advanced shell globs
