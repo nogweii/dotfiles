@@ -7,6 +7,10 @@ export RPROMPT="-- INSERT --"
 # Extra places which doesn't seem to be added to the normal paths
 export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
 export PKG_CONFIG_PATH="/opt/NX/lib/pkgconfig:/opt/kde/lib/pkgconfig:/opt/mozilla/lib/pkgconfig:/opt/qt/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig"
+if [ -d '/usr/lib/cw' ] ; then
+    export PATH="/usr/lib/cw:$PATH"
+    export NOCOLOR_PIPE=1
+fi
 
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
@@ -48,14 +52,27 @@ export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 export TERMINAL="urxvt.sh"
 export TMOUT=3600
 
-# Test the current terminal settings. If there isn't a termcap,
-# then switch from rxvt-unicode to rxvt-256color (or vice-versa).
-#
-# Meant for Ubuntu & Arch compatibility.
-if [ ! $(infocmp $TERM &>/dev/null) ] ; then
-    if [ "$TERM" = "rxvt-unicode" -a $(infocmp rxvt-256color &>/dev/null)] ; then
-        export TERM=rxvt-256color
-    elif [ "$TERM" = "rxvt-256color" -a $(infocmp rxvt-unicode &>/dev/null)] ; then
-        export TERM=rxvt-unicode
-    fi
+# XDG-related stuff
+export XDG_CACHE_HOME="${HOME}/.cache/"
+if [ ! -d $XDG_CACHE_HOME ] ; then
+    mkdir -p $XDG_CACHE_HOME
 fi
+
+export XDG_CONFIG_HOME="${HOME}/.config/"
+if [ ! -d $XDG_CONFIG_HOME ] ; then
+    mkdir -p $XDG_CONFIG_HOME
+fi
+
+export XDG_DATA_HOME="${HOME}/.data/"
+if [ ! -d $XDG_DATA_HOME ] ; then
+    mkdir -p $XDG_DATA_HOME
+fi
+
+# Other directories (colon separated) to search through.
+export XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:${XDG_DATA_DIRS}"
+export XDG_CONFIG_DIRS="${HOME}/.config/:${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
+
+# MAILDIR
+test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+
+fpath=(~/.data/zsh $fpath)
