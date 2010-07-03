@@ -1,10 +1,10 @@
-zstyle ':compinstall' filename '/home/.zshrc'
+zstyle ':compinstall' filename "${XDG_CONFIG_HOME}/zsh/50_style.zsh"
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 
 # Use a cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/compcache"
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:::::' completer _force_rehash _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
