@@ -94,5 +94,5 @@ export HARDWARECLOCK="UTC"
 export TIMEZONE="America/New_York"
 
 fpath=(~/.data/zsh $fpath)
-export HISTFILE="${XDG_DATA_HOME}/zsh/history"
+export HISTFILE="${XDG_CACHE_HOME}/zsh/history"
 
