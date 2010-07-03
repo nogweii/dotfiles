@@ -1,5 +1,3 @@
-export HISTFILE="${ZSH}/history"
-
 # Prompt. Make it purrty!
 export PROMPT="%B%n%b%d%(?..[%?])/ "
 export RPROMPT="-- INSERT --"
@@ -96,3 +94,5 @@ export HARDWARECLOCK="UTC"
 export TIMEZONE="America/New_York"
 
 fpath=(~/.data/zsh $fpath)
+export HISTFILE="${XDG_DATA_HOME}/zsh/history"
+
