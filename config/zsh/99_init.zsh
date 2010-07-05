@@ -14,8 +14,6 @@ keychain --quiet # Start ssh-agent, but don't add any keys (yet)
 [ -f $HOME/.keychain/${HOSTNAME}-sh ] && source $HOME/.keychain/${HOSTNAME}-sh # Load ssh-agent environment variables
 [ -f $HOME/.keychain/${HOSTNAME}-sh-gpg ] && source $HOME/.keychain/${HOSTNAME}-sh-gpg # ditto, gpg-agent
 
-[[ ! -d ~/.data/zsh ]] && mkdir ~/.data/zsh
-
 # Run fortune only if it's installed and we aren't connected to the machine via ssh
 if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
