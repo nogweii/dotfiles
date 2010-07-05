@@ -1,26 +1,4 @@
 #!/bin/zsh
-# cd && ls
-cl()  {
-    cd $1 && lsa
-}
-
-# mkdir && cd
-function md() {
-    mkdir -p $1 ; cd $1
-}
-
-# Display path in titlebar of terms.
-# Automatic function called every time there is a path change (that I called,
-# not within another script)
-chpwd() {
-    [[ -t 1 ]] || return 0
-    case $TERM in
-        *xterm*|*rxvt*|(dt|k|E)term)
-            print -Pn "\e]2;%~@$(hostname)\a"
-        ;;
-    esac
-}
-
 # rake autocompletion from:
 # http://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-zsh
 _rake_does_task_list_need_generating () {
