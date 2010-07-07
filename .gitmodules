@@ -52,3 +52,15 @@
 [submodule "vim/bundle/recover.vim"]
 	path = vim/bundle/recover.vim
 	url = http://github.com/chrisbra/Recover.vim.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab
+[submodule "vim/bundle/reimin"]
+	path = vim/bundle/reimin
+	url = git://github.com/wilhelmtell/reimin.git
+[submodule "vim/bundle/mru"]
+	path = vim/bundle/mru
+	url = git://github.com/ornicar/vim-mru.git
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
+	url = http://github.com/tsaleh/vim-tcomment.git
