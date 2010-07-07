@@ -106,3 +106,6 @@ eval `hub alias -s zsh`
 
 alias  m="$EDITOR"
 alias  g="git"
+
+alias s=smart_sudo
+alias extr=extract_archive

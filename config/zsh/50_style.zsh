@@ -1,10 +1,10 @@
-zstyle ':compinstall' filename '/home/.zshrc'
+zstyle ':compinstall' filename "${XDG_CONFIG_HOME}/zsh/50_style.zsh"
 zmodload zsh/complist
 autoload -Uz compinit && compinit
 
 # Use a cache
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/compcache"
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:::::' completer _force_rehash _complete _approximate
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
@@ -29,5 +29,16 @@ compdef _cheat cheat
 
 ## if there's a `manpath` command, use it
 [[ -x $(whence -p manpath) ]] && export MANPATH=$(manpath 2> /dev/null)
+
+compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lzma *.lha *.rpm *.deb"' extract_archive
+compdef _sudo smart_sudo
+
+# check-for-changes can be really slow in large repositories
+zstyle ':vcs_info:*:prompt:*' check-for-changes true
+zstyle ':vcs_info:*:prompt:*' unstagedstr   '¹'  # display ¹ if there are unstaged changes
+zstyle ':vcs_info:*:prompt:*' stagedstr     '²'  # display ² if there are staged changes
+zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}//" "${FMT_PATH}"
+zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}//"              "${FMT_PATH}"
+zstyle ':vcs_info:*:prompt:*' nvcsformats   ""                             "%~"
 
 # vim: set syn=sh:
