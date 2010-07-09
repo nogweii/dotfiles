@@ -47,10 +47,9 @@ autocutsel -selection CLIPBOARD -fork
 #/home/colin/code/cuteinformer/cuteinformer &
 
 # Change monitor gamma over time, to avoid blue in my eyes & night.
-# Average value between Washington, DC & Gaithersburg MD. Works well enough.
-echo "xflux"
+echo "redshift"
 xflux -l 39
-# Real DC: 38.9065, Real Gaithersburg: 39.1382, Average: 39.0223
+redshift -l 39.2:-77.2 -m vidmode -v
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
