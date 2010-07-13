@@ -87,7 +87,7 @@ map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 nmap     s ys
 nmap     ZD :call CleanClose(0)
 nnoremap gf gF
-nnoremap <silent> gF :CommandT<CR>
+nnoremap <silent> gF :FuzzyFinderTextMate<CR>
 " }}}
 
 " {{{ Other Settings
@@ -195,6 +195,8 @@ let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a
 let g:SuperTabDefaultCompletionType = "context"
 let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
+" Fuzzy finder: ignore stuff that can't be opened, and generated files
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 " }}}
 
 " {{{ Autocommands
