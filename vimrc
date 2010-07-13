@@ -85,7 +85,10 @@ map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
            \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     s ys
-nmap     ZD :call CleanClose(0)
+nmap     ZD :call CleanClose(0)<CR>
+nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
+nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
+nmap     ZV :vnew <C-R>=expand("%:p:h")<CR>/
 nnoremap gf gF
 nnoremap <silent> gF :FuzzyFinderTextMate<CR>
 " }}}
