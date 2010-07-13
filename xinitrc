@@ -27,7 +27,7 @@ xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
 ###     Keyboard stuff
 ########################################
 echo "xrdb"
-xrdb $(echo $(xrdb -symbols)) -all -load ~/.Xdefaults &
+xrdb $(echo $(xrdb -symbols | grep -Ev "\"|'")) -all -load ~/.Xdefaults &
 echo "numlockx"
 numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
