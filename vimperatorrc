@@ -66,5 +66,6 @@ let g:maine_coon_default = "ac"
 "map <C-b> :open_sidebar <CR>
 
 map <C-l> :nohlsearch<CR>:redraw<CR>
+set defsearch=duck
 
 " todo plugin: http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/splitBrowser.js?rev=11323
