@@ -52,47 +52,41 @@ export TMOUT=3600
 
 # XDG-related stuff
 export XDG_CACHE_HOME="${HOME}/.cache/"
-if [ ! -d $XDG_CACHE_HOME ] ; then
+if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
     mkdir -p $XDG_CACHE_HOME/zsh
 fi
 
 export XDG_CONFIG_HOME="${HOME}/.config/"
-if [ ! -d $XDG_CONFIG_HOME ] ; then
+if [ ! -d $XDG_CONFIG_HOME/zsh ] ; then
     mkdir -p $XDG_CONFIG_HOME/zsh
 fi
 
 export XDG_DATA_HOME="${HOME}/.data/"
-if [ ! -d $XDG_DATA_HOME ] ; then
+if [ ! -d $XDG_DATA_HOME/zsh ] ; then
     mkdir -p $XDG_DATA_HOME/zsh
 fi
-
-# Other directories (colon separated) to search through.
-export XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:${XDG_DATA_DIRS}"
-export XDG_CONFIG_DIRS="${HOME}/.config/:${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
 
 # MAILDIR
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
-# Locale
-export LOCALE="en_US.utf8"
-export LANG="en_US.utf8"
-export LC_CTYPE="en_US.utf8"
-export LC_NUMERIC="en_US.utf8"
-export LC_TIME="en_US.utf8"
-export LC_COLLATE="C"
-export LC_MONETARY="en_US.utf8"
-export LC_MESSAGES="en_US.utf8"
-export LC_PAPER="en_US.utf8"
-export LC_NAME="en_US.utf8"
-export LC_ADDRESS="en_US.utf8"
-export LC_TELEPHONE="en_US.utf8"
-export LC_MEASUREMENT="en_US.utf8"
+export     XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:${XDG_DATA_DIRS}"
+export   XDG_CONFIG_DIRS="${HOME}/.config/:${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
+export            LOCALE="en_US.utf8"
+export              LANG="en_US.utf8"
+export          LC_CTYPE="en_US.utf8"
+export        LC_NUMERIC="en_US.utf8"
+export           LC_TIME="en_US.utf8"
+export        LC_COLLATE="C"
+export       LC_MONETARY="en_US.utf8"
+export       LC_MESSAGES="en_US.utf8"
+export          LC_PAPER="en_US.utf8"
+export           LC_NAME="en_US.utf8"
+export        LC_ADDRESS="en_US.utf8"
+export      LC_TELEPHONE="en_US.utf8"
+export    LC_MEASUREMENT="en_US.utf8"
 export LC_IDENTIFICATION="en_US.utf8"
-
-# Time
-export HARDWARECLOCK="UTC"
-export TIMEZONE="America/New_York"
+export     HARDWARECLOCK="UTC"
+export          TIMEZONE="America/New_York"
+export          HISTFILE="${XDG_CACHE_HOME}/zsh/history"
 
 fpath=(~/.data/zsh $fpath)
-export HISTFILE="${XDG_CACHE_HOME}/zsh/history"
-
