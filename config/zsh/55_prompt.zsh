@@ -1,5 +1,6 @@
 # Prompt. Make it purrty!
-export PROMPT=$'%B%n%b%d%(?..[%?])/\n> '
+#export PROMPT=$'%B%n%b%d%(?..[%?])/\n> '
+export PROMPT='%B%n%b%d%(?..[%?])/'
 export RPROMPT="-- INSERT --"
 #DEFPROMPT='${BLUE}%~ ${PROMPTCOLOR}${PROMPTCHAR}${NC} '   # promptcolor/promptchar match hostname coloring and show a different char if ssh'd somewhere
 #DEFRPROMPT=$SSHPROMPT     # shows @ when ssh'd somewhere else
