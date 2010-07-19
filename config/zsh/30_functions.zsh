@@ -211,3 +211,14 @@ function zsh_vcs_prompt_precmd {
        fi
 }
 precmd_functions+='zsh_vcs_prompt_precmd'
+
+
+function nicename() {
+  for i in "$@" ; do
+    j=$(echo "$i" | tr [[:upper:]] [[:lower:]] | tr ' ' _) && mv "$i" "$j" 
+  done
+}
+
+function error_log() {
+  s find /var/log/* -type f -regex '[^0-9]+$' -exec grep -Eni '.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))' {} \+ | $PAGEr
+}
