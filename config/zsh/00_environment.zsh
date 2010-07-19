@@ -1,7 +1,3 @@
-# Prompt. Make it purrty!
-export PROMPT="%B%n%b%d%(?..[%?])/ "
-export RPROMPT="-- INSERT --"
-
 # Extra places which doesn't seem to be added to the normal paths
 export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
 export PKG_CONFIG_PATH="/opt/NX/lib/pkgconfig:/opt/kde/lib/pkgconfig:/opt/mozilla/lib/pkgconfig:/opt/qt/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig"
