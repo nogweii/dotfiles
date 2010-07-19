@@ -115,7 +115,7 @@ function! SwitchToNextBuffer(incr)
     let last = bufnr("$")
     let new = current + a:incr
     while 1
-        if new != 0 && bufexists(new) && !(getbufvar(new, "&filetype") == 'help') && !(getbufvar(new, "&filetype") == 'taglist')
+        if new != 0 && bufexists(new) && !(getbufvar(new, "&filetype") == 'help') && !(getbufvar(new, "&filetype") == 'taglist') && !(getbufvar(new, "&filetype") == 'nerdtree')
             execute ":buffer ".new
             break
         else
