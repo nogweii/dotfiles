@@ -2,6 +2,7 @@ begin
     require 'irb/ext/save-history' # Save history across sessions to a file
     require 'irb/completion' # Tab complete objects/methods
 
+    require 'rubygems'
     require 'method_extensions' # Awesome extensions to Method
     require 'method_extensions/method/super' # Mods core classes!
     require 'bond'; Bond.start

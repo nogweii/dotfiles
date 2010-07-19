@@ -82,12 +82,17 @@ imap     <C-l> <Right>
 nnoremap <silent> <Leader>T :TlistToggle<CR>
 nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-           \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" \
+           \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     s ys
-nmap     ZD :call CleanClose(0)
+nmap     ZD :call CleanClose(0)<CR>
+nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
+nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
+nmap     ZV :vnew <C-R>=expand("%:p:h")<CR>/
 nnoremap gf gF
-nnoremap <silent> gF :CommandT<CR>
+nnoremap <silent> gF :FuzzyFinderTextMate<CR>
+nmap     [q :cp<CR>
+nmap     ]q :cn<CR>
 " }}}
 
 " {{{ Other Settings
@@ -195,6 +200,8 @@ let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a
 let g:SuperTabDefaultCompletionType = "context"
 let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
+" Fuzzy finder: ignore stuff that can't be opened, and generated files
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 " }}}
 
 " {{{ Autocommands
