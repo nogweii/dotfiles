@@ -432,3 +432,7 @@ set hide_thread_subject
 # Cache headers & bodies, to speed up mutt
 set header_cache=$XDG_CACHE_HOME/mutt/headers/
 set message_cachedir=$XDG_CACHE_HOME/mutt/bodies/
+
+#set news_server="news://news.gmane.org"
+set news_server="news://localhost:4321"
+set sleep_time=0 # No delay between showing stuff.
