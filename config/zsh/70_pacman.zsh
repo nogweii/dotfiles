@@ -8,7 +8,7 @@ if [ -x /usr/bin/clyde ] ; then
             (-Ss | -Si | -Q* | -T | -*h* | --help)
                 /usr/bin/clyde "$@" ;;
             (-S* | -R* | -U | *)
-                /usr/bin/sudo /usr/bin/clyde "$@" || return $? ;;
+                /usr/bin/sudo /usr/bin/clyde --needed "$@" || return $? ;;
         esac
     }
     alias clyde="sup-clyde"
