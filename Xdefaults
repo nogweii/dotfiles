@@ -30,12 +30,11 @@ urxvt.scrollTtyKeypress:  true
 urxvt.cursorColor:        green
 urxvt.cursorColor2:       black
 
-urxvt.termName: rxvt-256color
-
 URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
 URxvt.perl-lib: HOME/.data/urxvt/
 URxvt.perl-ext: selection,mark-yank-urls
 
+URxvt.termName: rxvt-256color
 ! vim: set syn=xdefaults:
