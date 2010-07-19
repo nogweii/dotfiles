@@ -48,7 +48,8 @@ autocutsel -selection CLIPBOARD -fork
 
 # Change monitor gamma over time, to avoid blue in my eyes & night.
 echo "redshift"
-redshift -l 39.2:-77.2 -m vidmode -v -t 6000:3500
+redshift -l 39.2:-77.2 -m vidmode -v -t 6000:3500 &>/tmp/redshift.log &
+#redshift -o -l 39.2:-77.2 -m vidmode -v -t 6000:3500
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
