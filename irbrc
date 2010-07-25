@@ -77,6 +77,11 @@ begin
         eval(paste)
     end
 
+    HASH = { :red => "blue", "blue" => :green, 3 => "four" } unless defined?(HASH)
+    ARRAY = HASH.keys unless defined?(ARRAY)
+    STRING = "blue" unless defined?(STRING)
+    SYMBOL = :green unless defined?(SYMBOL)
+
 # Make some noise whenever there is an exception, of any kind.
 # Otherwise IRB won't report any error and just stop executing irbrc, leaving me
 # confused as to why some of the RC file hasn't been loaded.
