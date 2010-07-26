@@ -1,7 +1,9 @@
 # Extra places which doesn't seem to be added to the normal paths
 export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin"
 export PKG_CONFIG_PATH="/opt/NX/lib/pkgconfig:/opt/kde/lib/pkgconfig:/opt/mozilla/lib/pkgconfig:/opt/qt/lib/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig"
-if [ -d '/usr/lib/cw' ] ; then
+if [ -x '/usr/bin/cope_path' ] ; then
+    export PATH="$(cope_path):$PATH"
+elif [ -d '/usr/lib/cw' ] ; then
     export PATH="/usr/lib/cw:$PATH"
     export NOCOLOR_PIPE=1
 fi
