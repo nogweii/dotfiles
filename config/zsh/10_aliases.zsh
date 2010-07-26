@@ -89,7 +89,7 @@ alias myip="catw http://icanhazip.com"
 ########################
 # 'special' character aliases.
 alias --      -="cd - &>/dev/null"  # Go to the last directory
-alias -g      .='cd .'              # Have '.' match behaviour of .[.]+
+alias         .='cd .'              # Have '.' match behaviour of .[.]+
 alias -g    ...='cd ../..'
 alias -g   ....='cd ../../..'
 alias -g  .....='cd ../../../..'
@@ -106,3 +106,6 @@ eval `hub alias -s zsh`
 
 alias  m="$EDITOR"
 alias  g="git"
+
+alias s=smart_sudo
+alias extr=extract_archive
