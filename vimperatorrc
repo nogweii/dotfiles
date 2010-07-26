@@ -66,5 +66,12 @@ let g:maine_coon_default = "ac"
 "map <C-b> :open_sidebar <CR>
 
 map <C-l> :nohlsearch<CR>:redraw<CR>
+set defsearch=duck
 
 " todo plugin: http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/splitBrowser.js?rev=11323
+
+" Firefox settings related to Duck Duck Go
+"browser.search.selectedEngine;Duck Duck Go
+"keyword.URL;http://duckduckgo.com/?q=
+" XML file with the search engine info
+" ~/.mozilla/firefox/dotfiles.git/searchplugins/duck-duck-go.xml

@@ -1,0 +1,3 @@
+#!/bin/zsh
+# cd && ls
+cd $1 && lsa
