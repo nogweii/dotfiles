@@ -7,7 +7,7 @@ system("git submodule update")
 # file with README in it.
 
 require 'fileutils'
-[Dir["*"], Dir["config/*"]].flatten.reject do |file|
+[Dir["*"], Dir["config/*"], Dir["data/*"]].flatten.reject do |file|
     file =~ /README/ or
     file == $0 or
     file =~ %r[^config/?$] or

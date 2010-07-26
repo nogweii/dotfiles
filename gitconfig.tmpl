@@ -39,6 +39,7 @@
     keep = !"find . ( -type d -empty ) -and ( -not -regex ./.git.* ) -exec touch {}/.gitkeep ; ; git commit -am 'Keep all directories'"
     diff-reset = !"git diff -R \\\$1 | patch -up1 -i-"
     reset-head = diff-reset
+    pu = push
 [web]
     browser = open
 [browser "open"]
