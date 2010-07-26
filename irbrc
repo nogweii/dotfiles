@@ -44,6 +44,13 @@ begin
     tramp_require File.join(ENV['HOME'], '.irb/irb_rocket')
     tramp_require "ap"
     tramp_require "looksee"
+    if File.exists? (ENV['CONFIG_RU'] || "config.ru")
+        tramp_require "racksh/init" do
+            ENV['CONFIG_RU'] ||= 'config.ru'
+            ENV['RACK_ENV'] ||= 'development'
+            Rack::Shell.init
+        end
+    end
 
     Thread.abort_on_exception = true
     ARGV.concat ["--readline", "--prompt-mode", "simple"]
