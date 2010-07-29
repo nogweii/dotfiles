@@ -64,3 +64,9 @@
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = http://github.com/tsaleh/vim-tcomment.git
+[submodule "vim/bundle/regbuf"]
+	path = vim/bundle/regbuf
+	url = http://github.com/tyru/regbuf.vim.git
+[submodule "vim/bundle/CommandT"]
+	path = vim/bundle/CommandT
+	url = git://git.wincent.com/command-t.git
