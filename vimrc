@@ -90,9 +90,7 @@ nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
 nmap     ZV :vnew <C-R>=expand("%:p:h")<CR>/
 nnoremap gf gF
-nnoremap <silent> gF :FuzzyFinderTextMate<CR>
-nmap     [q :cp<CR>
-nmap     ]q :cn<CR>
+nnoremap <silent> gF :CommandT<CR>
 " }}}
 
 " {{{ Other Settings
