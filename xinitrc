@@ -29,7 +29,7 @@ cmd xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) se
 cmd xrdb $(echo $(xrdb -symbols | grep -Ev "\"|'")) -all -load ~/.Xdefaults &
 cmd numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
-cmd setxkbmap -option terminate:ctrl_alt_bksp &
+cmd setxkbmap -option terminate:ctrl_alt_bksp
 cmd xmodmap -verbose ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 cmd autocutsel -selection PRIMARY -fork
 cmd autocutsel -selection CLIPBOARD -fork
