@@ -162,11 +162,11 @@ if !has("ruby")
     echo "The latest Vim 7.2 includes Ruby 1.9 support. Please upgrade."
 endif
 
-if argc() > 1
-    " Avoid E173 - load the last buffer then switch back to the first
-    silent blast
-    silent bfirst
-endif
+" if argc() > 1
+"     " Avoid E173 - load the last buffer then switch back to the first
+"     silent blast
+"     silent bfirst
+" endif
 " }}}
 
 " {{{ Let / Misc plugin configuration
