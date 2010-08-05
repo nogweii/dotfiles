@@ -215,3 +215,18 @@ au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
 " }}}
+
+" " Namespace Ruby Debugger maps with 'rd'
+" map <Leader>rdb :call g:RubyDebugger.toggle_breakpoint()<CR>
+" map <Leader>rdv :call g:RubyDebugger.open_variables()<CR>
+" map <Leader>rdm :call g:RubyDebugger.open_breakpoints()<CR>
+" map <Leader>rdt :call g:RubyDebugger.open_frames()<CR>
+" map <Leader>rds :call g:RubyDebugger.step()<CR>
+" map <Leader>rdf :call g:RubyDebugger.finish()<CR>
+" map <Leader>rdn :call g:RubyDebugger.next()<CR>
+" map <Leader>rdc :call g:RubyDebugger.continue()<CR>
+" map <Leader>rde :call g:RubyDebugger.exit()<CR>
+" map <Leader>rdd :call g:RubyDebugger.remove_breakpoints()<CR>
+
+let g:tcommentMapLeader1 = ''
+let g:tcommentMapLeader2 = ''
