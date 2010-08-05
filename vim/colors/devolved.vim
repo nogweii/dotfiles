@@ -124,6 +124,10 @@ let s:colorvim7 = [
 " The ruby specific colors. Don't include the `ruby' prefix, that is automatically prepended
 let s:rubyColors = [
                 \ ["StringDelimiter", "",        "162",  "",    "",          ""]]
+
+let s:otherColors = [
+                \ ["diffRemoved",   "",           "",     "124",     "",         ""   ],
+                \ ["diffAdded",     "",           "",     "106",     "",         ""   ]]
 " }}}
 
 "============================================================
@@ -180,6 +184,9 @@ if ! has("gui_running")
     endif
     for s:col in s:rubyColors
         exec "hi ruby".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
+    endfor
+    for s:col in s:otherColors
+        exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
     endfor
 else
 " }}}
