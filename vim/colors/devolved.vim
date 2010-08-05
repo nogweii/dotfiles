@@ -132,27 +132,13 @@ let s:rubyColors = [
 "
 " {{{ change empty fields to "NONE"
 
-for s:col in s:colors256
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
-    endfor
-endfor
-
-for s:col in s:colorvim7
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
-    endfor
-endfor
-
-for s:col in s:rubyColors
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
+for s:var in [s:colors256, s:colorvim7, s:rubyColors, s:otherColors]
+    for s:col in s:var
+        for i in  [1, 2, 3, 4, 5]
+            if s:col[i] == "" 
+                let s:col[i] = "NONE"
+            endif
+        endfor
     endfor
 endfor
 " }}}
