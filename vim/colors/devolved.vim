@@ -63,8 +63,8 @@ endif
 let s:colors256 = [
                 \ ["Normal",        "",           "253",  "",     "",         ""   ],
                 \ ["Cursor",        "",           "255",  "33",   "",         ""   ],
-                \ ["CursorLine",    "underline",  "",     "",     "",         ""   ],
-                \ ["CursorColumn",  "",           "",     "223",  "",         ""   ],
+                \ ["CursorLine",    "underline",   "",    "",     "",         ""   ],
+                \ ["CursorColumn",  "",            "",    "223",  "",         ""   ],
                 \ ["Incsearch",     "bold",       "195",  "124",  "",         ""   ],
                 \ ["Search",        "",           "232",  "184",  "",         ""   ],
                 \ ["ErrorMsg",      "bold",       "16",   "202",  "",         ""   ],
