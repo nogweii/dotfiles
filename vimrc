@@ -96,9 +96,7 @@ nnoremap <silent> gF :CommandT<CR>
 " {{{ Other Settings
 colorscheme devolved " my personal blend of themes, including inkpot and calmar
 syntax on " Enable syntax highlighting
-filetype on
-filetype plugin on
-filetype indent on
+filetype off " Turn off filetype before pathogen.
 runtime macros/matchit.vim " Extend % matching
 runtime ftplugin/man.vim " :Man command
 " }}}
@@ -214,6 +212,12 @@ au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
 " {{{ Call commands
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
+
+" Turn filetype on *now*, with extra ftdetect paths added, so vim actually
+" sees them!
+filetype on
+filetype plugin on
+filetype indent on
 " }}}
 
 " " Namespace Ruby Debugger maps with 'rd'
