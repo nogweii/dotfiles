@@ -194,6 +194,8 @@ let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeader2 = ''
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerDetailedHelp=0      " Do not show detailed help.
 " }}}
 
 " {{{ Autocommands
