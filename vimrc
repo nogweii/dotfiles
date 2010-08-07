@@ -190,8 +190,6 @@ let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
 let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeader2 = ''
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
