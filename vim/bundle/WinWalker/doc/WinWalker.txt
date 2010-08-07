@@ -1,0 +1,850 @@
+*WinWalker.txt* version2.2 : Vim windows navigator/manager 
+
+	Table Of Contents: ~ {{{
+
+	|WW_Features|
+	|WW_Useful_Examples|
+	|WW_Initial_Set_Up|
+	|WW_Commands|
+		|WW_Starting|
+		|WW_Main_Menu|
+			|WW_window_next_prev|
+			|WW_movement|
+			|WW_rotate|
+			|WW_only_clone|
+			|WW_Jump_list|
+			|WW_grow|  |WW_resize|
+			|WW_New_edit_etc|
+			|WW_equalize|
+			|WW_ex_passthrough|
+			|WW_edit_passthrough|
+			|WW_find_window|
+			|WW_Quitting|
+		|WW_Misc_Menu|
+			|WW_grow_toggle|
+			|WW_screen_wrap_type|
+			|WW_menu_verbose_level|
+			|WW_highlight_current_window|
+			|WW_empty_files|
+			|WW_timeoutlen|
+			|WW_mtimeoutlen|
+			|WW_Jump_list_display|
+			|WW_key_remap|
+			|WW_Dropout_keys|
+			|WW_Macro_keys|
+		|WW_Tab_Menu|
+		|WW_Save_Menu|
+		|WW_Attach_Constrain_Menu|
+		|WW_Customizing|
+	|WW_Notes|
+	|WW_Other|
+	|WW_Caveats|
+	|WW_Bugs|
+
+
+	|Turn_folding_on|
+	|Turn_folding_off|
+ }}}
+
+
+  Features:                                            *WW_Features* {{{~
+
+	-	Navigate and manage windows and layouts with blinding speed!
+
+	-	Multiple window operations are faster and easier because it creates
+		a window navigation and management mode where all window commands
+		are familiar single chars,  i.e.  h,H,^H  and j,J,^J  etc.  If you
+		weren't using Vim in full-screen mode, you'll start considering it.
+
+	-	More added functionality:
+
+		-	Better [im]movability:
+
+			-	Enhanced push/drag for windows and buffers.
+
+			-	Push/drag/exchange buffers between windows, and windows
+				between tabs.  Use adjacent tabs as if they were extensions
+				of the current visible screen.
+			
+			-	Constrained size and placement.  Windows can be 'attached'
+				to walls or other windows.  Windows will resize to preset
+				values as you move into them.  
+
+			-	Windows can follow focus into new tabs.
+
+		-	Explore buffer list, and quick search/jump to any window in any
+			tab by giving the first unique char(s).  It jumps to a buffer's
+			window, instead of the default action of editing buffers in the
+			current window.
+
+
+		-	More intuitive for many operations:
+			
+			-	Incremental resizing is easier, using the [HJKL] and
+				[^h^j^k^l].
+
+			-	Resize in the direction specified, unlike  wincmd + - < > 
+
+			-	Windows move/push past each other more like you'd expect.
+				They can push 'between', instead of just 'maximize at far
+				side'.
+
+		-	Other usability stuff:
+
+			-	A window-level jump list for ^I/^O  movement.
+
+			-	O/^O  as a tab-capable alternative to ^Wo .
+
+			-	Various shortcuts to help keep you from breaking your
+				stride, i.e. to  :edit,  :ex  mode, sessions, macros, remapping
+
+	-	All the commands are presented as a prompt menu in the command line
+		so forgetting stuff isn't a problem.
+
+	-	Many of the commands are the same as the default Vim window  ^W  and
+		'wincmd' for easy transition, others are shifted around to be more
+		consistent.
+
+	-	Different invocation modes:  |WW_timeoutlen| for menu, key
+		pass-through.  The goal is to have the menu mode there when you
+		want it, and keep quiet otherwise.  Experiment with the different
+		methods to find what works best for you.  Particularly useful for
+		^W^P   ^W^O  ^W^I  ^W/   etc.
+
+
+ }}}
+
+
+  Useful Examples:                                            *WW_Useful_Examples* {{{~
+
+	... Or, 'How is this going to help me?'
+
+
+	Ergonomics:
+
+		Overall speed dealing with multiple windows.  Try it out:
+
+		-	Start the WinWalker menu, ^W
+		-	Open a new tab with  'N'
+		-	Open a few windows with  'n' and 'v'
+		-	Jump around a little with  '[hljk]'
+		-	Put some files in them with 'e'
+		-	Push some around with '[HLJK]'
+		-	Smack them all down with 'q'
+
+		By now you should have a feel for the difference it makes to have
+		single keys to deal with the window system.
+
+
+	AutoResizing:
+
+		-	Your screen/terminal/GUI size will no longer cramp your style.
+			Create windows that are always big enough.
+
+			Example:  You have several windows open, vertical and
+			horizontal, which you set to 80 columns, but you only have
+			120 or whatever.
+
+			-	Quickly visit each window, set the dimensions with 'c'.
+				See |WW_Misc_Menu| => |WW_presets| if you want to change
+				the values.
+			
+			-	For more individualized sizing,  'grow' the window to
+				whatever size makes sense, and use the
+				|WW_Attach_Constrain_Menu| -> lc 'lock columns' (and/or
+				'll') command to cause the window to resize itself to the
+				current size each time it is entered.
+
+			Now all those windows will resize themselves each time they are
+			entered.
+
+	Templates:
+
+	-	Store a tab to a session with the windows arranged how you
+		want.
+
+	-	Create a macro key to retrieve the template like:
+
+		<F2>	srsessname^M
+
+				s				save menu
+				 r				restore
+				  sessname		name of the session (without Session. or .vim )
+						  ^M	literal carriage return, with ^V^M or ^Q^M
+					
+
+	Keeping Track Of Buffers:
+
+		If you're using TabLineSet.vim with the verbose option, you'll be
+		able to see all open buffers in the tabline (especially if you have
+		the 'Tabline wrapping patch' installed).
+
+		The find, '/', command will show you all loaded buffers, or '?' for
+		all buffers.
+
+   See Also:  |WW_Other|
+
+
+	To do :  Better tab-to-tab navigation. (^I, ^O, wrapping, /find )
+	To do :  Creating Layouts with attachments and locked sizes.
+
+
+
+ }}}
+
+	Initial Set Up:                                 *WW_Initial_Set_Up* {{{~
+
+		-	Unzip the distribution file above your plugin to extract:
+>
+				plugin/WinWalker.vim
+				plugin/Char_menu.vim
+				doc/WinWalker.txt
+<
+
+		-	Set up a key map.  I.e.
+>
+				nmap <silent> <Leader>w :call WinWalkerMenu()<CR>
+<
+					Default.  I like it mapped to ^W, since I'm used to
+					hitting ^W for windows stuff, and WinWalker is mostly a
+					superset of the standard ^W/wincmd commands.
+
+		-	Look through the |WW_Misc_Menu| and |WW_Customizing| for other
+			options to change.
+
+
+}}}
+
+
+
+                             Commands:                   *WW_Commands*  {{{~
+
+
+	Starting:                                          *WW_Starting*   {{{~
+
+				Assuming you decide to map ^W :
+>
+		nnoremap <silent> <C-W> :call WinWalkerMenu()<CR>
+<
+			<C-W>
+
+				-	Type <C-W> and note the delay (~1/2 sec) before the menu
+					starts.  
+
+				-	Type <C-W>j (or whatever) fast together, and it
+					should move down one window without starting the menu.  
+
+				-	Decide whether you want more or less time to type the
+					second char before the menu starts.  
+
+				-	Change the timeoutlen in {m}isc
+					menu -> {t}imeoutlent ( |WW_timeoutlen| ).
+
+			<C-W><SPACE>
+
+				This starts the menu immediately without the initial
+				timeoutlen.  (For us impatient people :-)  Set timeoutlen to 0
+				for a similar effect.
+
+			See also |WW_Customizing|
+
+
+}}}
+
+
+	Main Menu:										 *WW_Main_Menu* {{{~
+
+
+		{w}/{W}/{<C-W>}indow=>Nxt/Prv				*WW_window_next_prev*
+
+				Move through the window list, same as default behavior.
+
+
+		{k}/{K}/{<C-K>}=up							*WW_movement*
+		{j}/{J}/{<C-J>}=down
+		{h}/{H}/{<C-H>}=left
+		{l}/{L}/{<C-L>}=right
+
+				There are three general kinds of move operations with Vim
+				windows that are handled here:  
+				1)	moving a cursor from one window into another, 
+				2)	moving a buffer from one window to another, without
+					creating or destroying windows , 
+				3)	moving a window (and its buffer and cursor) to a new
+					location, causing the layout to rearrange.
+				
+				*	See |WW_grow| for the alternation actions for these
+					keys when 'grow' mode is on.
+
+				The above key commands are set up along those lines:
+
+			-	Lowercase='move cursor to another window'
+			-	Uppercase='push the current window up/down/left/right'
+			-	Control='exchange buffers, keep focus with buffer'
+				(when exchanging to an adjacent tab, it relocates the
+				buffer into a new window, since it's more confusing
+				otherwise).
+			-	Arrow keys are mapped to analogous [jkhl] commands, i.e.
+				<S-UP> is mapped to 'K'.
+
+
+		{r}/{R}=rotate wins/buffers					*WW_rotate*
+
+			{r}	Rotates the current window according to new/vnew.  It isn't
+				smart about detecting the orientation of a window it
+				hasn't seen before, so you might have to hit "r" twice to
+				get it started.
+
+			{R}	Rotate all the buffers around the windows in the screen
+				without changing the window layout.
+
+		{o}/{O}='only'/clone					*WW_only_clone*
+
+			{o}	The default 'wincmd' behavior where all windows are closed
+				but the current.  
+				
+			{O}	Clone the current buffer in it's own new tab.  This is for
+				when you want to temporarily maximize the current window
+				without changing any others.  If <C-O> ( <C-W><C-O> from Vim
+				Normal ) is the first command used to leave, it will close the
+				window, and return to the origination.
+			
+												*WW_Jump_list*
+		{<C-I>}/{<C-O>}=jump forward/back
+
+				The jump list is a history of windows visited.  It
+				traverses WinWalker's window-level jump list.  (As opposed
+				to the Vim Normal mode ^I/^O, which traverses a
+				buffer-level jump list.)
+
+				^I moves the jump list index forward toward a higher, more
+				recent jump number.
+
+				^O moves the jump list index backward toward a lower, older
+				jump number.
+				
+				If you move to a different window when the jump list index
+				isn't at the end, the new window jump point will be
+				inserted into the list.  The list manager will prune
+				invalid jump points when they are encountered by ^I or ^O.
+
+				See |WW_Misc_Menu| -> |WW_Jump_list_display| to inspect the
+				jump list, or go directly to a specific jump number.
+
+		{t}ab menu
+			
+				Submenu for handling tabs.  See |WW_Tab_Menu|
+
+		Window {a}ttach/Constrain menu
+
+				Submenu for setting windows attachments, fixed sizing, etc.
+				See |WW_Attach_Constrain_Menu|
+
+		{m}isc menu
+				
+				Submenu for setting options.  See |WW_Misc_Menu|
+
+		{s}ave/restore menu
+
+				Submenu for saving sessions.  See |WW_Save_Menu|
+				( ^S and ^R macros are set by default to
+				quicksave/restore.  See |WW_Macro_keys| .)
+
+
+		{g}row        *WW_grow*  *WW_resize*
+
+				Toggles 'grow' mode where the shift- and control- of [jkhl]
+				keys are changed to do window resizing.  This toggle in the
+				|WW_Misc_Menu|, but is also at the top level for convenience.
+
+			[JKHL]
+				Grow the window one line/col in the given direction.  I.e
+				(remember, 'l' is Vim for 'right', and 'h' is Vim for
+				'left' ) for win1 'L' will increase the width by 1, and 'H'
+				will decrease by 1, and the opposite will happen for win2:
+>
+				---------------
+				|     L|->    |
+				|win1  |      |
+				|    <-|H     |
+				---------------
+				---------------
+				|     L|->    |
+				|      |  win2|
+				|    <-|H     |
+				---------------
+<
+				The [JKHL] and arrow keys attempt to 'grow' the window in
+				that direction, not just shrink or expand like wincmd + - <
+				>  .  Hopefully others will find this more intuitive, as I
+				do.  The exception is for windows between other windows,
+				where the directional keys become ambiguous, in which case a
+				default action is done.
+
+			^J^K^H^L
+				Grow the window more quickly (I picked a couple values
+				which seemed about right...not real scientific).
+				
+
+				This option is reset each time WinWalkerMenu() is called
+				from Vim Normal mode via ^W or whatever.
+				
+												*WW_New_edit_etc*
+		{n}ew win
+		{v}ert new
+
+				Same as  :new  and  :vnew  .
+
+		{=}equalize windows						*WW_equalize*
+
+				Same as Vim default.
+
+		{:}ex									*WW_ex_passthrough*
+
+				Prompts for a command and transfers it to  :ex  to execute.
+				Saves time exiting and re-entering the menu.
+
+		{e}dit									*WW_edit_passthrough*
+				A shortcut to |:edit| without exiting the menu first.
+
+		{/}{?}find win							*WW_find_window*
+
+				Submenu of available/loaded buffers.  Typing the first one or
+				so unique leading characters jumps to the matched window.
+				Buffer name or number can be selected. {?} includes hidden
+				buffer names.
+
+		{c}olumn preset ( lines, cols, actually)	|WW_presets|
+
+				A quick set option to resize the current window to user's
+				preferred working dimensions, I.e. 80 columns, and 15 lines.
+
+													*WW_Quitting*
+		:{q}uit/:{Q}uit!/{<C-Q>}=tabclose!/{Z}Z
+				
+				Sends various quit commands.
+
+		{<SPACE>}/{<ESC>}=>Exit
+
+				Exit the WinWalker subsytem.  <C-C> and <BS> also work.  If
+				<C-W><SPACE>, <C-W><C-SPACE>, <C-W><CR>, <C-W><C-CR> are
+				entered before the timeoutlen (before the menu starts), it
+				the reverse effect, and bypasses the timeoutlen, and starts
+				the menu immediately.
+
+		Any other keys
+
+				... are delivered to Normal mode, and the menu exits.  So,
+				typing ^U, ^D, ^F, ^B  exits WinWalker, and scroll the
+				window.
+
+ }}}
+
+
+	Attach/Constrain Menu:                        *WW_Attach_Constrain_Menu*   {{{~
+
+		lines/{c}olumns preset		*WW_presets*
+
+				The preset is used create a standard workable size for a
+				window.  It is most useful when creating and moving around
+				a layout with multiple windows.  This will prompt for
+				{lines,cols}.  It is triggered by the 'c' command at the
+				top level.
+
+		{ll}/{lc} lock-lines/cols
+				
+				Lock the height or width at the current value.
+				
+		{a}ttach
+				
+				Attach the window to walls or other windows.
+
+				An attachment tells the window to seek a position next to a
+				wall or another window, but doesn't create any bond with
+				other window, meaning the attachment won't 'pull' the other
+				window.
+
+				The best way to decrease conflicts is to set the minimum
+				number of constraints possible.  Vim windows can have
+				constraints of their own which can interferWinWalkerWinWalker
+				e with WinWalkers (i.e. if you have two windows, one atop
+				the other, Vim causes them to share the same width, so
+				different WinWalker 'locked' column values won't result in
+				windows with different widths).
+
+				The placement routine is fairly simplistic, and will have
+				trouble with many windows and constraints, particularly
+				because Vim's native placement can fight back.
+
+				There can be cases when there are no direct conflicts, but
+				there are a lot of windows open, and doing the auto-resize
+				for locked line/col values will fight with the Vim default
+				window size minimums.
+
+				There are some cases where the auto-resizing won't work
+				immediately, i.e. a window is trying to resize itself to a
+				locked value, and it is adjacent to the current/cursor
+				window, then the minimum Vim value for the current window
+				will take precedence.  Typing '=' in some other window can
+				give all windows a chance to update properly.
+
+				There are some cases that aren't handled:
+
+				-	A window attached to walls up/down or left/right will
+					not necessarily allow windows to 'push' (JKHL)
+					past it.  
+
+					The exchange (^J^K^H^L) command is the right choice for
+					this, and similar move-past situations.
+				
+				-	If win1 is attached upwards to the top wall, and you're
+					trying to 'push' win2 which is adjacent to win1, it can
+					fail depending on the rotation of win2 (which causes it
+					to always try to push win2 over win1).
+
+
+
+ }}}
+
+
+	Misc Menu:                                        *WW_Misc_Menu* {{{~
+
+
+		{g}row						*WW_grow_toggle*
+
+			Toggle whether the [jkhl] uppercase and control keys are used
+			to resize windows.
+
+		{w}rap						*WW_screen_wrap_type*
+
+			Set wrap behavior:
+				None :	default Vim
+				Win :	wrap at top/bottom/left/right sides of screen
+				tabs :	wrap into adjacent tabs at R/L sides of screen
+
+		{me}nu							*WW_menu_verbose_level*
+
+			Set whether full prompt is shown for the main menu.
+
+		{h}ighlight current win 		*WW_highlight_current_window*
+
+			Toggle highlighting of the current window.  The highlighting is
+			done to help distinguish which window is current, since the
+			cursor won't be visible.
+
+		{e}mpty files					*WW_empty_files*
+
+			Same as highlighting, above, but add some text to empty files
+			to help distinguish as current window.
+
+		{t}imeoutlen  					*WW_timeoutlen*
+
+			Set the timeoutlen used for the wait for the key press after ^W
+			(or whatever) in Vim Normal mode.  If the second key is
+			received before the timeoutlen, the command is executed and
+			control returns immediately to Vim Normal.  If timeoutlen is
+			reached, the main menu starts and subsequent commands require
+			only one key.  Control is kept by WinWalker until the menu is
+			exited.
+
+			It is analogous to the Vim |timeoutlen|, but it is an
+			independent internal value.
+
+			This also affects the timeoutlen for ambiguous matches in the
+			{/}find command (using the Char_menu function).
+
+		{mt}imeoutlen  					*WW_mtimeoutlen*
+
+			Set the timeoutlen used for menu entries which match partial
+			entries, i.e. if the find menu had {win} and {WinWalker}, and
+			you typed 'win', it will return 'win' unless you type 'walker'
+			before mtimeoutlen milliseconds.
+
+		{j}ump list						*WW_Jump_list_display*
+
+			Show the window-level jump list (like |:jumps| ).
+>
+                Jump  Tab   Win   WinId Buf   Name
+                5     5     1     60    27    pablo.vim
+                4     4     3     3     3     gui.c
+                3     4     2     14    1     normal.c
+                2     5     1     60    27    pablo.vim
+                1     3     1     1     35    WinWalker.vim
+              > 0     3     2     77    116   WinWalker.txt
+<
+		{k}ey remap						*WW_key_remap*
+
+			Remap single keys.  No nesting.
+
+		{d}ropout keys					*WW_Dropout_keys*
+
+			Change keys in the list which causes the main menu to exit
+			after execution.  This is most useful for when |WW_timeoutlen|
+			is set to 0.  See |WW_Customizing|
+
+		{ma}cro keys      				*WW_Macro_keys*
+			
+			Use this to create single key mappings to key sequence macros
+			(like the Vim 'normal' command') that are given to:
+>
+				call feedkeys( sequence, 't' )
+<
+			At the moment, if you want to enter a special/control char, use
+			^V or ^Q to escape it.
+
+			Examples :
+>
+				1		vemyfile^Mc
+						Bring up your favorite file in a new window:
+							vertical new, edit 'myfile', resize to preset
+
+				2		/WinWalker^M^C
+						Jump to your favorite window from anywhere.  In this
+						example 'W' matches 'WinWalker' since it's the only
+						buffer starting with 'w' in my current buffer list,
+						and 'inWalker' is discarded (^M,^C,<ESC>,' '
+						delimit the discard end).  ^C quits (or ' ', etc.)
+						and leaves the 'WinWalker' window/buffer open.
+
+				<F2>	Nsrmysession^M 
+						Bring up your favorite screen/tab layout:
+						new tab, save menu, restore 'mysession'
+
+
+
+		Note: the g:WinWalker_opts.rc_file is updated when the Misc menu is
+		exited.
+
+}}}
+
+
+	Tab Menu:                                         *WW_Tab_Menu*   {{{~
+
+				Note:  The prev/next commands for tabs are down in a
+				submenu because I found that, in general, it's more
+				consistent to move through tabs using the window left/right
+				when wrap=tabs.
+
+		{h}/{l}
+				Go to prev/next tab.
+
+		{H}/{L}
+				Move/rotate tab.  Changes the order of the tab in the tab
+				line list.
+
+		{n}ew tab
+
+				See :help tabpage  ;-)
+
+		{t}ab table
+				
+				Run  |:tabs|
+
+		{q}/{C-Q>=:tabclose/:tabclose!
+
+ }}}
+
+
+	Save Menu:                                         *WW_Save_Menu*   {{{~
+
+		Save {d}irectory
+				
+				Directory to hold the Session files.  Default is |$HOME|.
+
+		{s}ave session
+				
+				Save the current session with 'tabpages' session option to the
+				file prompted for, using the above directory as the starting
+				point.  Any filename can be used, but the prefix 'Session.' is
+				used as a default to help filter the completion list more
+				quickly.  If the completion key (^D or <TAB>) is pressed when
+				only a single file can be completed, a summary is show, per
+				the {l}ist sessions command format, below.
+
+		{t}ab save session
+
+				Same as above, but without the 'tabpages' session option, so
+				saves only the current tab.
+
+		{r}estore session
+
+				Restore a session file, with the usual defaults and prefixes.
+
+		{l}ist sessions
+			
+				Lists the Session.* files in the current and default
+				directories.  It shows a summary of the buffers, and their tabs,
+				stored in the session files.
+
+ }}}
+
+
+	Customizing:                                     *WW_Customizing* {{{~
+
+		-	g:WinWalker_opts.rc_file  sets the filename for the options
+			settings.  Default is  $HOME/.WInWalker.vim .  Most of the
+			global option variables are handled here, so they don't need to
+			go into your .vimrc.  The  g:WinWalker_opts.rc_file  file is
+			sourced once only, when the plugin is first read when Vim
+			starts up.
+		
+		-	Highlighting overrides can be done by copying the  s:Hi_init()
+			function into your  .vimrc , and making changes there. 
+
+		-	You can set certain keys to drop out of (bypass) the menu
+			automatically and return to Vim Normal mode with this var:
+>				
+				let g:WinWalker_dropout_keys = [ "\<C-W>", "\<C-P>" ]
+<
+
+
+			This is most useful for when timeoutlen is set to 0.  For example:
+
+			With timeoutlen > 0, typing ^W^W fast from Vim Normal mode will
+			move to the next window without starting the menu.
+
+			With timeoutlen = 0, the first  ^W  will start the menu, and the
+			second  ^W  will move to the next window, and then leave you back
+			in the menu, regardless of how fast you type them.
+
+			With  ^W  set in the dropout keys list,  ^W^W  from Vim Normal
+			mode will behave the same regardless of timeoutlen.  If you set
+			it up this way, the following are handy for moving around
+			outside the menu mode:
+>
+				nnoremap <silent> <tab> :call Tab_jump_or_win_move()<CR>
+				nmap <silent> <S-Tab> <C-W><C-P>
+				nnoremap <silent> <c-tab> :tabnext<CR>
+				nnoremap <silent> <s-c-tab> :tabprev<CR>
+<
+
+		-	Single keys can be remapped inside WinWalker via the
+			g:WinWalker_remap  dict var.  You can put it into your .vimrc,
+			but it probably easier to use it through the |WW_Misc_Menu|
+	
+ }}}
+
+ End Commands fold }}}
+
+
+
+{{{	*WW_Notes_Other_Bugs*
+
+
+	Notes:     *WW_Notes* ~
+
+	-	Since this uses Vim7 tabs extensively, see  TabLineSet.vim  for
+		better visual information in the tabs themselves.
+
+	-	Don't map a key that also has other operator-pending maps, i.e.
+		trying to map  ^W  while there were still other mappings like
+		custom  ^W^O  will cause it to wait (forever, possibly) for the
+		second key, which keeps the main menu from starting.
+
+	-	Removing a tab, or re-arranging windows can invalidate parts of the
+		jumplist, which will become somewhat unpredictable until it clears
+		all the bad jumps as they are encountered.
+
+
+	Other:     *WW_Other*  ~
+
+		-	Make some test tabs:
+>
+			map ,t <c-w>Nnvnvnv
+
+			map ,tt <C-W>N:Tlist<CR>hn:Explore<CR><CR>:copen<CR>H:help WinWalker<CR>Lnesomefile<CR>=c<SPACE>asome stuff<ESC>
+
+				<C-W>				calls WinWalkerMenu function
+				N					opens a new tab
+				:Tlist<CR>			opens Taglist using the  :  pass-through
+				h					move left one window (return into Taglist)
+				n					open a new window horizontally
+				:Explore<CR><CR>	Run Explore in the new window, don't
+									know why it needs two <CR>s
+				:copen<CR>			open the quickfix window
+				H					push it left in line vertically with
+									Tlist and Explore
+				:help WinWalker<CR>	open a help window
+				L					push it right
+				n					open a new window below the help
+				etmpfile<CR>		open 'tmpfile' in it using 'e' quick
+									edit
+				=					equalize all the windows
+				c					resize 'tmpfile' window to preset
+				<SPACE>				exit WinWalker
+				asome stuff<ESC>	put some stuff into 'tmpfile'
+<
+
+		-	Mappings to resize with shift-arrows from Normal mode, using the
+			pass-through of the default  wincmd  resizing commands:
+>
+			nmap <c-up> <c-w>+
+			nmap <c-down> <c-w>-
+			nmap <c-left> <c-w><
+			nmap <c-right> <c-w>>
+<
+			Mappings which use the modified resize commands:
+>
+			nmap <c-up> <c-w>g<c-k>
+			nmap <c-down> <c-w>g<c-j>
+			nmap <c-left> <c-w>g<c-h>
+			nmap <c-right> <c-w>g<c-l>
+<
+			If timeoutlen is 0, these maps will have to explicitly exit the
+			menu to be used from Vim Normal mode directly.
+
+>
+			nmap <expr> <s-up> ( g:WinWalker_opts.timeoutlen ? '<c-w>gK' : '<c-w>gK<space>' )
+			nmap <expr> <s-down> ( g:WinWalker_opts.timeoutlen ? '<c-w>gJ' : '<c-w>gJ<space>' )
+			nmap <expr> <s-left> ( g:WinWalker_opts.timeoutlen ? '<c-w>gH' : '<c-w>gH<space>' )
+			nmap <expr> <s-right> ( g:WinWalker_opts.timeoutlen ? '<c-w>gL' : '<c-w>gL<space>' )
+
+			nmap <expr> <c-up> ( g:WinWalker_opts.timeoutlen ? '<c-w>g<c-k>' : '<c-w>g<c-k><space>' )
+			nmap <expr> <c-down> ( g:WinWalker_opts.timeoutlen ? '<c-w>g<c-j>' : '<c-w>g<c-j><space>' )
+			nmap <expr> <c-left> ( g:WinWalker_opts.timeoutlen ? '<c-w>g<c-h>' : '<c-w>g<c-h><space>' )
+			nmap <expr> <c-right> ( g:WinWalker_opts.timeoutlen ? '<c-w>g<c-l>' : '<c-w>g<c-l><space>' )
+<
+
+	-	Some apps like 'Taglist' and 'quickfix window' set 'bufhidden',
+		which interferes with window moving/exchanging.  This is mostly
+		dealt with, but other app.s like 'Project.vim' reset the window
+		every time the buffer is entered, which isn't handled (probably
+		can't be without changing the application itself).
+
+
+	Caveats:  *WW_Caveats*  ~
+		
+		Here will be listed things to keep in mind if problems should ever
+		crop up.
+
+	-	The tag jump keys are remapped for Help file types to go through the
+		WinWalker_help_tag_trap().  This should in general be an improvement,
+		but side any effects aren't known yet as of v1.3.
+
+
+	Bugs Etc:  *WW_Bugs*  ~
+
+	-	The cmdheight isn't always restored correctly at this time.  As of
+		Vim70c, a bug exists for setting/resetting the value in different
+		tabs.  It seems to be better with 70d, but not all cmdheight issues
+		are resolved.
+
+	-	New windows are inheriting set_fixed_lines/cols.
+
+	-	As of Vim70d, there is a problem with using <expr>, so this form:
+
+			nnoremap <expr> <c-w> WinWalkerMenu()
+
+		does not allow subsequent mappings like:
+
+			nmap <s-up> <c-w>g<c-k>
+
+		use instead,
+
+			nnoremap <silent> <c-w> :call WinWalkerMenu()<CR>
+	
+
+}}} End Notes fold
+
+
+vim7:ft=help:norl:ts=4:sw=4

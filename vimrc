@@ -59,7 +59,8 @@ map      G <Nop>
 map      zp 1z=
 map      <silent> <c-l> <c-l>:nohlsearch<CR>
 nmap     gp :.!xclip -out<CR>
-map      <C-w>w :wn<CR>
+"map      <C-w>w :wn<CR>
+nmap <silent> <C-w> :call WinWalkerMenu()<CR>
 vnoremap < <gv
 vnoremap > >gv
 nnoremap ` '
