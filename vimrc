@@ -144,7 +144,7 @@ function! CleanClose(tosave)
   let newbufNr = bufnr("#")
 
   if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
-    exe "b".newbufNr
+    exe "b ".newbufNr
   else
     bnext
   endif
@@ -153,7 +153,7 @@ function! CleanClose(tosave)
     new
   endif
 
-  exe "bd".todelbufNr
+  exe "bd ".todelbufNr
   call Buftabs_show()
 endfunction
 " }}}
