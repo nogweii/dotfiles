@@ -22,11 +22,11 @@ imap <expr> <s-tab> BackwardsTab()
 " Default, if nothing is happening: Return <c-n>, for SuperTab
 function ForwardsTab()
     if pumvisible()
-        return '\<c-n>'
+        return "\<c-n>"
     elseif exists('g:snipPos')
-        call TriggerSnippet()
+        return snipMate#jumpTabStop(0)
     else
-        return '\<c-n>'
+        return "\<c-n>"
     endif
 endfunction
 
@@ -35,10 +35,10 @@ endfunction
 " Default, if nothing is happening: Return TriggerSnippet(), for snipMate
 function BackwardsTab()
     if pumvisible()
-        return '\<c-p>'
+        return "\<c-p>"
     elseif exists('g:snipPos')
-        call BackwardsSnippet()
+        return snipMate#jumpTabStop(1)
     else
-        call TriggerSnippet()
+        return "\<c-o>:call TriggerSnippet()<CR>"
     endif
 endfunction
