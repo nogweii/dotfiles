@@ -6,6 +6,10 @@ iunmap <c-r><tab>
 " After that run, the only map left from superTab is..
 iunmap <c-tab>
 
+" delimitMate uses S-Tab to quicky escape, but that interferes with snipMate,
+" so let's disable that.
+let g:delimitMate_tab2exit = 0
+
 " NOTE: snipMate's tab bindings in select mode are left alone, as generally
 " speaking, you want that.
 
@@ -24,7 +28,7 @@ function ForwardsTab()
     if pumvisible()
         return "\<c-n>"
     elseif exists('g:snipPos')
-        return snipMate#jumpTabStop(0)
+        return "\<c-r>=TriggerSnippet()\<CR>"
     else
         return "\<c-n>"
     endif
@@ -37,8 +41,8 @@ function BackwardsTab()
     if pumvisible()
         return "\<c-p>"
     elseif exists('g:snipPos')
-        return snipMate#jumpTabStop(1)
+        return "\<c-r>=BackwardsSnippet()\<cr>"
     else
-        return "\<c-o>:call TriggerSnippet()<CR>"
+        return "\<c-r>=TriggerSnippet()\<CR>"
     endif
 endfunction
