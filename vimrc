@@ -70,8 +70,8 @@ nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 vnoremap <C-j> 3j
 vnoremap <C-k> 3k
-map      H ^
-map      L $
+noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
+nmap     L $
 nmap     <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
