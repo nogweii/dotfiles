@@ -48,6 +48,8 @@ set      softtabstop=2
 set      shiftwidth=2
 set      tabstop=4
 set      expandtab
+set      complete+=k,kspell
+set      completeopt=menuone,longest,preview
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
