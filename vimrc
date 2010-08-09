@@ -48,6 +48,8 @@ set      softtabstop=2
 set      shiftwidth=2
 set      tabstop=4
 set      expandtab
+set      complete+=k,kspell
+set      completeopt=menuone,longest,preview
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
@@ -68,8 +70,8 @@ nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 vnoremap <C-j> 3j
 vnoremap <C-k> 3k
-map      H ^
-map      L $
+noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
+nmap     L $
 nmap     <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
@@ -84,7 +86,6 @@ nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
            \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-nmap     s cs
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
@@ -142,7 +143,7 @@ function! CleanClose(tosave)
   let newbufNr = bufnr("#")
 
   if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
-    exe "b".newbufNr
+    exe "b ".newbufNr
   else
     bnext
   endif
@@ -151,7 +152,7 @@ function! CleanClose(tosave)
     new
   endif
 
-  exe "bd".todelbufNr
+  exe "bd ".todelbufNr
   call Buftabs_show()
 endfunction
 " }}}
@@ -186,14 +187,16 @@ let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the 
 let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
 let g:SuperTabDefaultCompletionType = "context"
-let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
 let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeader2 = ''
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerDetailedHelp=0      " Do not show detailed help.
+let g:SuperTabCrMapping=0
+let g:delimitMate_expand_space=0
+let g:delimitMate_expand_cr=0
 " }}}
 
 " {{{ Autocommands
@@ -220,15 +223,3 @@ filetype on
 filetype plugin on
 filetype indent on
 " }}}
-
-" " Namespace Ruby Debugger maps with 'rd'
-" map <Leader>rdb :call g:RubyDebugger.toggle_breakpoint()<CR>
-" map <Leader>rdv :call g:RubyDebugger.open_variables()<CR>
-" map <Leader>rdm :call g:RubyDebugger.open_breakpoints()<CR>
-" map <Leader>rdt :call g:RubyDebugger.open_frames()<CR>
-" map <Leader>rds :call g:RubyDebugger.step()<CR>
-" map <Leader>rdf :call g:RubyDebugger.finish()<CR>
-" map <Leader>rdn :call g:RubyDebugger.next()<CR>
-" map <Leader>rdc :call g:RubyDebugger.continue()<CR>
-" map <Leader>rde :call g:RubyDebugger.exit()<CR>
-" map <Leader>rdd :call g:RubyDebugger.remove_breakpoints()<CR>
