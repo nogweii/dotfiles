@@ -223,3 +223,5 @@ filetype on
 filetype plugin on
 filetype indent on
 " }}}
+
+inoremap <expr> <Esc>      pumvisible() ? "\\\\<C-e>" : "\\\\<C-R>=delimitMate#Finish()\\\\<CR>\\\\<C-o>:echo 'esc'\\\\<Esc>"
