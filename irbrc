@@ -44,7 +44,7 @@ begin
     tramp_require File.join(ENV['HOME'], '.irb/irb_rocket')
     tramp_require "ap"
     tramp_require "looksee/shortcuts"
-    if File.exists? (ENV['CONFIG_RU'] || "config.ru")
+    if File.exists?(ENV['CONFIG_RU'] || "config.ru")
         tramp_require "racksh/init" do
             ENV['CONFIG_RU'] ||= 'config.ru'
             ENV['RACK_ENV'] ||= 'development'
