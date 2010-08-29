@@ -20,3 +20,5 @@ vim/bundle/*/doc/tags
 vim/.netrwhist
 irssi/away.log
 irssi/saved_colors
+mutt/news.gwene.org
+mutt/.index
