@@ -1,7 +1,10 @@
---type-add=ruby=.rake,Rakefile
+--type-add=ruby=Rakefile,.rake
 --type-add=ruby=.haml,.rsel
---type-add=shell=.awk,.sed 
---type-add=ini=.cfg
+--type-add=shell=.awk,.sed
+--type-set=config=.ini
+--type-add=config=.cfg
+--type-add=config=.conf
+--type-add=config=.yml
 --smart-case
 --recurse
 --sort-files
