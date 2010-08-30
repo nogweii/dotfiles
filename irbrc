@@ -1,4 +1,9 @@
 begin
+    # Check if the load path has been properly set.
+    if $LOAD_PATH.grep(Regexp.new(File.join("config", "irb"))).count == 0
+        $LOAD_PATH.unshift File.join(ENV['HOME'], ".config", "irb")
+    end
+
     def tramp_require(what, &block)
         loaded, require_result = false, nil
 
