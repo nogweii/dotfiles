@@ -220,5 +220,10 @@ function nicename() {
 }
 
 function error_log() {
-  s find /var/log/* -type f -regex '[^0-9]+$' -exec grep -Eni '.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))' {} \+ | $PAGEr
+  regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
+  if [ "x$1" != "x" ] ; then
+    echo $regexp
+    return 0;
+  fi
+  s find /var/log/* -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
 }
