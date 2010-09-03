@@ -46,7 +46,7 @@ begin
         Wirble.init
         Wirble.colorize
     end
-    tramp_require File.join(ENV['HOME'], '.irb/irb_rocket')
+    tramp_require File.expand_path(File.join((ENV['XDG_CONFIG_DIR'] || "~/.config"), '/irb/irb_rocket'))
     tramp_require "ap"
     tramp_require "looksee"
     if File.exists? (ENV['CONFIG_RU'] || "config.ru")
