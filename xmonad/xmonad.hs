@@ -86,6 +86,7 @@ key_bindings = [
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q",           io (exitWith ExitSuccess))
                , ("M-r",             refresh)
+               , ("M-f",             spawn "slock")
 
                -- Applications!
                , ("M-<Escape>",      kill)
