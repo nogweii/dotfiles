@@ -48,8 +48,8 @@ begin
     end
     tramp_require File.expand_path(File.join((ENV['XDG_CONFIG_DIR'] || "~/.config"), '/irb/irb_rocket'))
     tramp_require "ap"
-    tramp_require "looksee"
-    if File.exists? (ENV['CONFIG_RU'] || "config.ru")
+    tramp_require "looksee/shortcuts"
+    if File.exists?(ENV['CONFIG_RU'] || "config.ru")
         tramp_require "racksh/init" do
             ENV['CONFIG_RU'] ||= 'config.ru'
             ENV['RACK_ENV'] ||= 'development'

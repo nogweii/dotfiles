@@ -63,8 +63,8 @@ endif
 let s:colors256 = [
                 \ ["Normal",        "",           "253",  "",     "",         ""   ],
                 \ ["Cursor",        "",           "255",  "33",   "",         ""   ],
-                \ ["CursorLine",    "underline",  "",     "",     "",         ""   ],
-                \ ["CursorColumn",  "",           "",     "223",  "",         ""   ],
+                \ ["CursorLine",    "underline",   "",    "",     "",         ""   ],
+                \ ["CursorColumn",  "",            "",    "223",  "",         ""   ],
                 \ ["Incsearch",     "bold",       "195",  "124",  "",         ""   ],
                 \ ["Search",        "",           "232",  "184",  "",         ""   ],
                 \ ["ErrorMsg",      "bold",       "16",   "202",  "",         ""   ],
@@ -92,10 +92,10 @@ let s:colors256 = [
                 \ ["Title",         "bold",       "98",   "",     "",         ""   ],
                 \ ["Visual",        "",           "",     "238",  "",         ""   ],
                 \ ["Comment",       "",           "240",  "",     "",         ""   ],
-                \ ["Constant",       "",           "73",   "",    "",         ""   ],
+                \ ["Constant",      "",           "75",   "",     "",         ""   ],
                 \ ["String",        "",           "162",  "234",  "",         ""   ],
                 \ ["Error",         "",           "69",   "",     "",         ""   ],
-                \ ["Identifier",    "bold",       "130",   "",    "",         ""   ],
+                \ ["Identifier",    "bold",       "124",   "",    "",         ""   ],
                 \ ["Ignore",        "",           "",     "",     "",         ""   ],
                 \ ["Number",        "",           "50",   "",     "",         ""   ],
                 \ ["PreProc",       "",           "62",   "",     "",         ""   ],
@@ -124,6 +124,10 @@ let s:colorvim7 = [
 " The ruby specific colors. Don't include the `ruby' prefix, that is automatically prepended
 let s:rubyColors = [
                 \ ["StringDelimiter", "",        "162",  "",    "",          ""]]
+
+let s:otherColors = [
+                \ ["diffRemoved",   "",           "",     "124",     "",         ""   ],
+                \ ["diffAdded",     "",           "",     "106",     "",         ""   ]]
 " }}}
 
 "============================================================
@@ -132,27 +136,13 @@ let s:rubyColors = [
 "
 " {{{ change empty fields to "NONE"
 
-for s:col in s:colors256
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
-    endfor
-endfor
-
-for s:col in s:colorvim7
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
-    endfor
-endfor
-
-for s:col in s:rubyColors
-    for i in  [1, 2, 3, 4, 5]
-        if s:col[i] == "" 
-            let s:col[i] = "NONE"
-        endif
+for s:var in [s:colors256, s:colorvim7, s:rubyColors, s:otherColors]
+    for s:col in s:var
+        for i in  [1, 2, 3, 4, 5]
+            if s:col[i] == "" 
+                let s:col[i] = "NONE"
+            endif
+        endfor
     endfor
 endfor
 " }}}
@@ -194,6 +184,9 @@ if ! has("gui_running")
     endif
     for s:col in s:rubyColors
         exec "hi ruby".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
+    endfor
+    for s:col in s:otherColors
+        exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
     endfor
 else
 " }}}
