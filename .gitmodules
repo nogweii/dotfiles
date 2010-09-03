@@ -73,3 +73,6 @@
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = http://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/lusty"]
+	path = vim/bundle/lusty
+	url = http://github.com/sjbach/lusty.git
