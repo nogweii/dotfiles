@@ -44,10 +44,7 @@ cmd autocutsel -selection PRIMARY -fork
 cmd autocutsel -selection CLIPBOARD -fork
 
 # Manage the internet connection
-#which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
-# Noteo: Notify me of stuff.
-#noteo &
-#/home/colin/code/cuteinformer/cuteinformer &
+which wicd-client &>/dev/null && cmd wicd-client -o &> /tmp/wicd.log &
 
 # Change monitor gamma over time, to avoid blue in my eyes @ night.
 # latitude (DC) == 39.2:-77.2
@@ -64,6 +61,8 @@ cmd urxvt.sh &
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
 #wakoopa &> /tmp/wakoopa.log &
 #WhatPulse & # Keyboard & Mouse tracking
+
+cmd cuteinformer &
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
 #(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"

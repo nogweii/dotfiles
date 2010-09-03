@@ -48,6 +48,8 @@ set      softtabstop=2
 set      shiftwidth=2
 set      tabstop=4
 set      expandtab
+set      complete+=k,kspell
+set      completeopt=menuone,longest,preview
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
@@ -68,7 +70,7 @@ nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 vnoremap <C-j> 3j
 vnoremap <C-k> 3k
-map      H ^
+noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 map      L $
 nmap     <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
@@ -84,7 +86,6 @@ nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
            \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
            \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-nmap     s cs
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
@@ -96,9 +97,7 @@ nnoremap <silent> gF :CommandT<CR>
 " {{{ Other Settings
 colorscheme devolved " my personal blend of themes, including inkpot and calmar
 syntax on " Enable syntax highlighting
-filetype on
-filetype plugin on
-filetype indent on
+filetype off " Turn off filetype before pathogen.
 runtime macros/matchit.vim " Extend % matching
 runtime ftplugin/man.vim " :Man command
 " }}}
@@ -144,7 +143,7 @@ function! CleanClose(tosave)
   let newbufNr = bufnr("#")
 
   if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
-    exe "b".newbufNr
+    exe "b ".newbufNr
   else
     bnext
   endif
@@ -153,17 +152,9 @@ function! CleanClose(tosave)
     new
   endif
 
-  exe "bd".todelbufNr
+  exe "bd ".todelbufNr
   call Buftabs_show()
 endfunction
-" }}}
-
-" {{{ Autocmds
-" Return to the last line you were editing in a file
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
 " }}}
 
 " {{{ Conditionals
@@ -172,11 +163,11 @@ if !has("ruby")
     echo "The latest Vim 7.2 includes Ruby 1.9 support. Please upgrade."
 endif
 
-if argc() > 1
-    " Avoid E173 - load the last buffer then switch back to the first
-    silent blast
-    silent bfirst
-endif
+" if argc() > 1
+"     " Avoid E173 - load the last buffer then switch back to the first
+"     silent blast
+"     silent bfirst
+" endif
 " }}}
 
 " {{{ Let / Misc plugin configuration
@@ -196,10 +187,16 @@ let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the 
 let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
 let g:SuperTabDefaultCompletionType = "context"
-let s:did_snips_mappings = 1
 let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+let g:tcommentMapLeader1 = ''
+let g:tcommentMapLeader2 = ''
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerDetailedHelp=0      " Do not show detailed help.
+let g:SuperTabCrMapping=0
+let g:delimitMate_expand_space=0
+let g:delimitMate_expand_cr=0
 " }}}
 
 " {{{ Autocommands
@@ -209,9 +206,22 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
 " Delay calling GetSnippets 'til after vim has loaded all the plugins
 au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
+" Return to the last line you were editing in a file
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 " }}}
 
 " {{{ Call commands
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
+
+" Turn filetype on *now*, with extra ftdetect paths added, so vim actually
+" sees them!
+filetype on
+filetype plugin on
+filetype indent on
 " }}}
+
+inoremap <expr> <Esc>      pumvisible() ? "\\\\<C-e>" : "\\\\<C-R>=delimitMate#Finish()\\\\<CR>\\\\<C-o>:echo 'esc'\\\\<Esc>"
