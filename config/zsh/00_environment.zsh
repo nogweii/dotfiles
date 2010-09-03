@@ -87,4 +87,12 @@ export     HARDWARECLOCK="UTC"
 export          TIMEZONE="America/New_York"
 export          HISTFILE="${XDG_CACHE_HOME}/zsh/history"
 
+DYNAMIC_MANPATH="$(
+  gemdir=$(ruby -e"puts Gem.dir")
+  gem man -a | tail -n+3 | sort -r | awk '{ print $2, $1 }' | uniq -f1 \
+      | awk "{ print \"$gemdir\" \"/\" \$2 \"-\" \$1 }" | tr '\n' ':'
+  unset gemdir
+  echo -n $(manpath)
+)"
+
 fpath=(~/.data/zsh $fpath)
