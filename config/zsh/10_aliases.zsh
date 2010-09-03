@@ -101,7 +101,6 @@ alias portstat="s netstat -tunelp"
 
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
 
-alias man="gem man -s"
 eval `hub alias -s zsh`
 
 alias  m="$EDITOR"
@@ -109,3 +108,8 @@ alias  g="git"
 
 alias s=smart_sudo
 alias extr=extract_archive
+
+alias mandb="mandb $DYNAMIC_MANPATH"
+alias man="man -M$DYNAMIC_MANPATH"
+alias whatis="whatis -M$DYNAMIC_MANPATH"
+alias apropos="apropos -M$DYNAMIC_MANPATH"
