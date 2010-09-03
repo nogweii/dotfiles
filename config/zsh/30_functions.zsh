@@ -159,6 +159,9 @@ smart_sudo () {
         if [[ -n $aliases[$1] ]]; then
             #if so, substitute the real command
             sudo ${=aliases[$1]} $argv[2,-1]
+        elif [[ "$1" = "vim" ]] ; then
+            # sudo vim -> sudoedit
+            sudoedit $argv[2,-1]
         else
             #else just run sudo as is
             sudo $argv
