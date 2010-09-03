@@ -46,7 +46,7 @@ function ztmpl {
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby_or_irb() {
     if [[ "$1" == "" ]]; then
-        irb
+        irb -f -I ~/.config/irb -r irb_conf
     else
         ruby $@
     fi
