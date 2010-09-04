@@ -64,3 +64,15 @@
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = http://github.com/tsaleh/vim-tcomment.git
+[submodule "vim/bundle/regbuf"]
+	path = vim/bundle/regbuf
+	url = http://github.com/tyru/regbuf.vim.git
+[submodule "vim/bundle/CommandT"]
+	path = vim/bundle/CommandT
+	url = git://git.wincent.com/command-t.git
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = http://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/lusty"]
+	path = vim/bundle/lusty
+	url = http://github.com/sjbach/lusty.git

@@ -29,16 +29,13 @@ cmd xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) se
 cmd xrdb $(echo $(xrdb -symbols | grep -Ev "\"|'")) -all -load ~/.Xdefaults &
 cmd numlockx on & # Enable numlock
 ## setxkbmap should always run before xmodmap!
-cmd setxkbmap -option terminate:ctrl_alt_bksp &
+cmd setxkbmap -option terminate:ctrl_alt_bksp
 cmd xmodmap -verbose ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 cmd autocutsel -selection PRIMARY -fork
 cmd autocutsel -selection CLIPBOARD -fork
 
 # Manage the internet connection
-#which wicd-client &>/dev/null && wicd-client -o &> /tmp/wicd.log &
-# Noteo: Notify me of stuff.
-#noteo &
-#/home/colin/code/cuteinformer/cuteinformer &
+which wicd-client &>/dev/null && cmd wicd-client -o &> /tmp/wicd.log &
 
 # Change monitor gamma over time, to avoid blue in my eyes & night.
 cmd redshift -l 39.2:-77.2 -m vidmode -v -t 6000:3500 &>/tmp/redshift.log &
@@ -53,6 +50,8 @@ cmd urxvt.sh &
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
 #wakoopa &> /tmp/wakoopa.log &
 #WhatPulse & # Keyboard & Mouse tracking
+
+cmd cuteinformer &
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
 #(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
