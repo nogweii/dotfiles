@@ -1,0 +1,37 @@
+color normal        color35      default
+color indicator     color226     default
+color tree          color23      default
+color status        color48      default
+color error         color30      default
+color message       color50      default
+color signature     color70      default
+color attachment    color37      default
+color search        color100     default
+color tilde         color130     default
+color markers       color138     default
+
+color quoted        color107     default     # quoted text
+color quoted1       color66      default
+color quoted2       color32      default
+color quoted3       color30      default
+color quoted4       color99      default
+color quoted5       color36      default
+color quoted6       color114     default
+color quoted7       color109     default
+color quoted8       color41      default
+color quoted9       color138     default
+color index         color202     default  ~F # Flagged
+color index         color39      default  ~N # New
+color index         color39      color234 ~O
+color index         color229     color22  ~T # Tagged
+color index         color240     default  ~D # Deleted
+
+color hdrdefault color30     color233
+color header     color132    color233    '^date:'
+color header     color153    color233    '^(to|cc|bcc):'
+color header     color120    color233    '^from:'
+color header     color178    color233    '^subject:'
+color header     color31     color233    '^user-agent:'
+color header     color29     color233    '^reply-to:'
+
+# vim: set filetype=muttrc:
