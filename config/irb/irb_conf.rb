@@ -31,13 +31,7 @@ begin
     tramp_require 'rubygems'
     tramp_require 'method_extensions' # Awesome extensions to Method
     tramp_require 'method_extensions/method/super' # Mods core classes!
-    tramp_require 'bond' do
-        Bond.start
-    end
-    tramp_require 'hirb' do
-        # # Hirb has custom bond completion
-        # Bond.load_gems 'hirb'
-    end
+    tramp_require 'hirb'
     tramp_require 'boson' do
         Boson.start
     end
