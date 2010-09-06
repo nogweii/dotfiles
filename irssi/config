@@ -259,11 +259,23 @@ statusbar = {
     };
     disable = { disabled = "yes"; };
     reset = { disabled = "yes"; };
+    niq = { items = { niq = { }; }; disabled = "yes"; };
   };
 };
 settings = {
-  core = { real_name = "Unknown"; user_name = "colin"; nick = "colin"; };
+  core = {
+    real_name = "Colin Shea";
+    user_name = "colin";
+    nick = "colin";
+    cmdchars = "/\\";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = {
+    niq_show_in_statusbar = "yes";
+    niq_own_statusbar = "yes";
+    niq_hide_on_inactive = "yes";
+    niq_color_char = "yes";
+  };
 };
 hilights = (
   { text = "zenix"; nick = "yes"; word = "yes"; },
