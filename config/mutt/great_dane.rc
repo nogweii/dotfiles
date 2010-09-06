@@ -1,0 +1,3 @@
+set news_server="news://news.gwene.org"
+
+# vim: set filetype=muttrc:
