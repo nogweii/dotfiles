@@ -42,7 +42,7 @@ alias     llx='ll *(*)'                    # only executables
 # parent directories?
 alias mkdir='mkdir -p'
 alias cp='cp -Ri'
-alias rm='rm -rv'
+alias rm='rm -rv --interactive=once --one-file-system --no-preserve-root'
 alias mv='mv -i'
 alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the top shell, not in sub processes
 
