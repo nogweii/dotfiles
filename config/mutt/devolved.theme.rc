@@ -22,7 +22,7 @@ color quoted8       color41      default
 color quoted9       color138     default
 color index         color202     default  ~F # Flagged
 color index         color39      default  ~N # New
-color index         color39      color234 ~O
+color index         color39      color234 ~O # Old
 color index         color229     color22  ~T # Tagged
 color index         color240     default  ~D # Deleted
 
