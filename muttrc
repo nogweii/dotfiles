@@ -25,7 +25,7 @@ set hide_thread_subject = no
 set history_file =$XDG_CACHE_HOME/mutt/history
 set hostname = 'evaryont.me'
 set include = yes
-set mail_check = '10'
+set mail_check = 10
 set menu_scroll = yes
 set narrow_tree = yes
 set pgp_auto_decode = yes
@@ -33,12 +33,13 @@ set realname = 'Colin Shea'
 set reply_to = yes
 set save_history = '100'
 set simple_search = '~f %s | ~s %s | ^~t %s | ~b %s'
-set spoolfile = '~/mail'
+set spoolfile = '+INBOX'
 set wait_key = no
 
 source $XDG_CONFIG_HOME/mutt/smime.rc
 source $XDG_CONFIG_HOME/mutt/vim_keys.rc
-source $XDG_CONFIG_HOME/mutt/devolved.theme.rc
+# source $XDG_CONFIG_HOME/mutt/devolved.theme.rc
+source $XDG_CONFIG_HOME/mutt/mailboxes
 
 # How to sort email in the index
 set sort=threads
@@ -57,3 +58,7 @@ set message_cachedir=$XDG_CACHE_HOME/mutt/bodies/
 ifdef news_server "source $XDG_CONFIG_HOME/mutt/great_dane.rc"
 
 set sleep_time=0 # No delay between showing stuff.
+
+set pager ="/usr/bin/vim"
+set prompt_after = no
+set pager_format = "> vim :set nospell nolist ft=mail:"
