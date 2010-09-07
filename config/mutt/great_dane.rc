@@ -1,3 +1,10 @@
 set news_server="news://news.gwene.org"
 
+color index_number color49 default
+color index_date color49 default
+color index_flags color49 default
+color index_label color49 default
+color index_size color49 default
+color index_subject color49 default ~A
+
 # vim: set filetype=muttrc:
