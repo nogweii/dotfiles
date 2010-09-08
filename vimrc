@@ -50,6 +50,7 @@ set      tabstop=4
 set      expandtab
 set      complete+=k,kspell
 set      completeopt=menuone,longest,preview
+set      virtualedit+=block              " Block movement can go beyond end-of-line
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
