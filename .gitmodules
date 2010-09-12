@@ -73,3 +73,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = http://github.com/sjbach/lusty.git
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
+	url = http://github.com/tpope/vim-speeddating.git
