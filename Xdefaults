@@ -11,7 +11,7 @@ urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:size=12, xft:Dejavu Sa
 urxvt*scrollBar:          false
 urxvt.perl-ext-common:    default,matcher
 urxvt.urlLauncher:        xdg-open
-urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-] 
+urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt.foreground:         grey80
 urxvt.colorBD:            white
 urxvt.saveLines:          128
@@ -37,4 +37,41 @@ URxvt.perl-lib: HOME/.data/urxvt/
 URxvt.perl-ext: selection,mark-yank-urls
 
 URxvt.termName: rxvt-256color
+
+x11-ssh-askpass.Dialog.font: -adobe-helvetica-bold-r-normal-*-*-120-*-*-*-*-iso8859-1
+x11-ssh-askpass.Dialog.title: OpenSSH Authentication Passphrase Request
+x11-ssh-askpass.Dialog.label: Please enter your authentication passphrase:
+x11-ssh-askpass.Indicator.foreground: rgb:9b/ff/9b
+x11-ssh-askpass.Indicator.background: rgb:cc/cc/cc
+x11-ssh-askpass.Indicator.shadowThickness: 0
+x11-ssh-askpass.Indicator.borderWidth: 1
+x11-ssh-askpass.Indicator.height: 5
+x11-ssh-askpass.Indicator.width: 10
+x11-ssh-askpass.Indicator.horizontalSpacing: 4
+x11-ssh-askpass.Indicator.verticalSpacing: 2
+x11-ssh-askpass.Indicator.minimumCount: 3
+x11-ssh-askpass.Indicator.maximumCount: 5
+x11-ssh-askpass.Button.font: -adobe-helvetica-bold-r-normal-*-*-120-*-*-*-*-iso8859-1
+x11-ssh-askpass.Button.shadowThickness: 0
+x11-ssh-askpass.Button.borderWidth: 0
+x11-ssh-askpass.Button.horizontalSpacing: 5
+x11-ssh-askpass.Button.verticalSpacing: 2
+x11-ssh-askpass.okButton.label:
+x11-ssh-askpass.cancelButton.label:
+! '?' is replaced any one item, the following will match 'Button', 'Indicator',
+! 'Dialog', 'okButton', & 'cancelButton' all at once
+x11-ssh-askpass.?.foreground: rgb:00/00/00
+x11-ssh-askpass.?.background: rgb:cc/cc/cc
+x11-ssh-askpass.topShadowColor: rgb:ff/ff/ff
+x11-ssh-askpass.bottomShadowColor: rgb:7f/7f/7f
+x11-ssh-askpass.borderColor: rgb:20/20/20
+x11-ssh-askpass.shadowThickness: 2
+x11-ssh-askpass.borderWidth: 1
+x11-ssh-askpass.horizontalSpacing: 5
+x11-ssh-askpass.verticalSpacing: 6
+x11-ssh-askpass.inputTimeout: 5
+x11-ssh-askpass.grabKeyboard: true
+x11-ssh-askpass.grabPointer: true
+x11-ssh-askpass.grabServer: false
+
 ! vim: set syn=xdefaults:
