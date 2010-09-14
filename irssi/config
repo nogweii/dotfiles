@@ -200,7 +200,6 @@ statusbar = {
       # list of items in statusbar in the display order
       items = {
         barstart = { priority = "100"; };
-        user = { };
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
@@ -276,6 +275,7 @@ settings = {
     niq_hide_on_inactive = "yes";
     niq_color_char = "yes";
   };
+  "fe-common/core" = { show_names_on_join = "no"; };
 };
 hilights = (
   { text = "zenix"; nick = "yes"; word = "yes"; },
