@@ -154,21 +154,25 @@ TRAPINT() {
 # Give us a root shell, or run the command with sudo.
 # Expands command aliases first (cool!)
 smart_sudo () {
+    sudo_opts=""
+    if [ ! -z "$SUDO_ASKPASS" ]; then
+        sudo_opts="-A"
+    fi
     if [[ -n $1 ]]; then
         #test if the first parameter is a alias
         if [[ -n $aliases[$1] ]]; then
             #if so, substitute the real command
-            sudo ${=aliases[$1]} $argv[2,-1]
+            sudo $sudo_opts ${=aliases[$1]} $argv[2,-1]
         elif [[ "$1" = "vim" ]] ; then
             # sudo vim -> sudoedit
-            sudoedit $argv[2,-1]
+            sudoedit $sudo_opts $argv[2,-1]
         else
             #else just run sudo as is
-            sudo $argv
+            sudo $sudo_opts $argv
         fi
     else
         #if no parameters were given, then assume we want a root shell
-        sudo -s
+        sudo $sudo_opts -s
     fi
 }
 
@@ -229,4 +233,11 @@ function error_log() {
     return 0;
   fi
   s find /var/log/* -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
+}
+
+function cawk {
+    first="awk '{print "
+    last=" \"\"}'"
+    cmd="${first}$(echo "$@" | sed "s:[0-9]*:\$&,:g")${last}"
+    eval $cmd
 }
