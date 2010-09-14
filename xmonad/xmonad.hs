@@ -167,6 +167,11 @@ manage_hook = composeAll (
     , title     =? "" --> doFloat
     , title     =? "x" --> doFloat -- weird cinelerra splash window
     , className =? "Cinelerra" --> doFloat
+    , className =? "stalonetray" --> doIgnore
+    -- x11-ssh-askpass: Float it
+    , className =? "x11-ssh-askpass" --> doFloat
+    , className =? "ssh-askpass" --> doFloat
+    , className =? "SshAskpass" --> doFloat
 
     -- Workspaces
     -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
