@@ -389,7 +389,7 @@ sub assert_colors() {
 
 # load colors from file
 sub load_colors() {
-	open(FID, "<".Irssi::get_irssi_dir()."/saved_colors"); || return;
+	open(FID, "<".Irssi::get_irssi_dir()."/saved_colors") || return;
 
 	while (<FID>) {
 		chomp;
