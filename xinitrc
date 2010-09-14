@@ -36,6 +36,9 @@ cmd xrdb $(echo $(xrdb -symbols | grep -Ev "\"|'")) -all -load ~/.Xdefaults
 # Only enable numlock when I'm not on my laptop, 'gryphon'
 if [ "$HOSTNAME" != "gryphon" ] ; then
   cmd numlockx on # Enable numlock
+else
+  # Disable tapping/scrolling during keyboard press
+  cmd syndaemon -i2 -d -t -k -p /tmp/syndaemon.pid
 fi
 ## setxkbmap should always run before xmodmap!
 cmd setxkbmap -option terminate:ctrl_alt_bksp
