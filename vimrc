@@ -73,11 +73,13 @@ vnoremap <C-j> 3j
 vnoremap <C-k> 3k
 noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 map      L $
-nmap     <S-Ins> :set paste<CR><S-Ins>:set nopaste<CR>
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 nnoremap <silent> <C-n> :<C-U>SwitchToBuffer(v:count1)<CR>
 nnoremap <silent> <C-p> :<C-U>SwitchToBuffer(-1*v:count1)<CR>
+" Quick access to formatting
 nnoremap Q gq
+" Format the next paragraph, quick!
+nmap     gQ gqap
 imap     <C-j> <Down>
 imap     <C-k> <Up>
 imap     <C-h> <Left>
