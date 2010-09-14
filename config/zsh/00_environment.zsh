@@ -98,3 +98,8 @@ DYNAMIC_MANPATH="$(
 )"
 
 fpath=(~/.data/zsh $fpath)
+
+if [ -x "/usr/lib/openssh/x11-ssh-askpass" -a -n "$DISPLAY" ] ; then
+  export SSH_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
+  export SUDO_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
+fi
