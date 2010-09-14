@@ -108,6 +108,8 @@ alias  g="git"
 
 alias s=smart_sudo
 alias extr=extract_archive
+# sudo the previous command
+alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
 alias mandb="mandb $DYNAMIC_MANPATH"
 alias man="man -M$DYNAMIC_MANPATH"
