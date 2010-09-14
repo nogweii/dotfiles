@@ -52,8 +52,8 @@ which wicd-client &>/dev/null && cmd wicd-client -o &> /tmp/wicd.log &
 # Change monitor gamma over time, to avoid blue in my eyes @ night.
 # latitude (DC) == 39.2:-77.2
 # latitude (Tempe) == 33.4:111.93
-echo redshift -l 33.4:111.93 -m vidmode -v -t 6000:3500 \&\>/tmp/redshift.log
-redshift -l 33.4:111.93 -m vidmode -v -t 6000:3500 &>/tmp/redshift.log &
+echo redshift -l 33.4:-111.93 -m vidmode -v -t 6000:3500 \&\>/tmp/redshift.log
+redshift -l 33.4:-111.93 -m vidmode -v -t 6000:3500 &>/tmp/redshift.log &
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
