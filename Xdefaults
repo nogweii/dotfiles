@@ -9,7 +9,6 @@ urxvt*boldFont:           xft:Liberation Mono:bold:size=12,        xft:Dejavu Sa
 urxvt*italicFont:         xft:Liberation Mono:italic:size=12,      xft:Dejavu Sans Mono:italic:size=12
 urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:size=12, xft:Dejavu Sans Mono:italic:bold:size=12
 urxvt*scrollBar:          false
-urxvt.perl-ext-common:    default,matcher
 urxvt.urlLauncher:        xdg-open
 urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt.foreground:         grey80
@@ -34,7 +33,15 @@ URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
 URxvt.perl-lib: HOME/.data/urxvt/
-URxvt.perl-ext: selection,mark-yank-urls
+!URxvt.perl-ext: selection,mark-yank-urls
+!urxvt.perl-ext-common:    default,matcher
+URxvt.perl-ext-common: clipboard,url-select,keyboard-select
+URxvt.keysym.M-C-c: perl:clipboard:copy
+URxvt.keysym.M-C-v: perl:clipboard:paste
+URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
+URxvt.keysym.M-C-u: perl:url-select:select_next
+URxvt.keysym.M-C-y: perl:keyboard-select:activate
+URxvt.keysym:M-C-s: perl:keyboard-select:search
 
 URxvt.termName: rxvt-256color
 
