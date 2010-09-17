@@ -45,9 +45,10 @@ cmd setxkbmap -option terminate:ctrl_alt_bksp
 cmd xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 cmd autocutsel -selection PRIMARY -fork
 cmd autocutsel -selection CLIPBOARD -fork
+cmd cuteinformer
 
 # Manage the internet connection
-which wicd-client &>/dev/null && cmd wicd-client -o &> /tmp/wicd.log &
+which wicd-client &>/dev/null && cmd wicd-client -nao &> /tmp/wicd.log &
 
 # Change monitor gamma over time, to avoid blue in my eyes @ night.
 # latitude (DC) == 39.2:-77.2
@@ -64,8 +65,6 @@ cmd urxvt.sh &
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
 #wakoopa &> /tmp/wakoopa.log &
 #WhatPulse & # Keyboard & Mouse tracking
-
-cmd cuteinformer &
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
 #(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
