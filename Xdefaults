@@ -1,9 +1,3 @@
-!! Default HOME, though I *really* do not like this. It should be passed in when
-!! you call xrdb, e.g. `xrdb -DHOME=$HOME ~/.Xdefaults`.
-#ifndef HOME
-#define HOME /home/colin
-#endif
-
 urxvt*font:               xft:Liberation Mono:size=12,             xft:Dejavu Sans Mono:size=12
 urxvt*boldFont:           xft:Liberation Mono:bold:size=12,        xft:Dejavu Sans Mono:bold:size=12
 urxvt*italicFont:         xft:Liberation Mono:italic:size=12,      xft:Dejavu Sans Mono:italic:size=12
@@ -32,9 +26,7 @@ urxvt.cursorColor2:       black
 URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
-URxvt.perl-lib: HOME/.data/urxvt/
-!URxvt.perl-ext: selection,mark-yank-urls
-!urxvt.perl-ext-common:    default,matcher
+URxvt.perl-lib: /home/colin/.data/urxvt/
 URxvt.perl-ext-common: clipboard,url-select,keyboard-select
 URxvt.keysym.M-C-c: perl:clipboard:copy
 URxvt.keysym.M-C-v: perl:clipboard:paste
