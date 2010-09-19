@@ -241,3 +241,14 @@ function cawk {
     cmd="${first}$(echo "$@" | sed "s:[0-9]*:\$&,:g")${last}"
     eval $cmd
 }
+
+function title {
+  case $TERM in
+      *xterm*|rxvt|rxvt-unicode|rxvt-256color|(dt|k|E)term)
+        print -Pn "\e]0;$1\a"
+      ;;
+      screen)
+        print -Pn "\ek$1\e\\"
+      ;;
+  esac
+}
