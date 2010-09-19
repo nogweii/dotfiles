@@ -2,6 +2,6 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-for zshrc_snipplet in ~/.config/zsh/* ; do
+for zshrc_snipplet in ~/.config/zsh/*.zsh ; do
         source $zshrc_snipplet
 done
