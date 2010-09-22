@@ -161,6 +161,14 @@ manage_hook = composeAll (
     , className =? "x11-ssh-askpass" --> doFloat
     , className =? "ssh-askpass" --> doFloat
     , className =? "SshAskpass" --> doFloat
+    -- OpenOffice Table Toolbar
+    , className =? "VCLSalFrame" --> doFloat
+    , title     =? "Namoroka Preferences" --> doFloat
+    , className =? "sun-awt-X11-XDialogPeer" --> doFloat
+    , className =? "sun-applet-PluginMain" --> doFloat
+    , className =? "sun-awt-X11-XFramePeer" --> doFloat
+    , className =? "net-minecraft-MinecraftLauncher" --> doFloat
+    , className =? "Eclipse" --> doFloat
 
     -- Workspaces
     -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
