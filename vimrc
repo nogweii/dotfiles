@@ -209,6 +209,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
 " Delay calling GetSnippets 'til after vim has loaded all the plugins
 au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
+au BufReadPost *.pacmans set nospell
 " Return to the last line you were editing in a file
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
