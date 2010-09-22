@@ -99,7 +99,15 @@ DYNAMIC_MANPATH="$(
 
 fpath=(~/.data/zsh $fpath)
 
-if [ -x "/usr/lib/openssh/x11-ssh-askpass" -a -n "$DISPLAY" ] ; then
-  export SSH_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
-  export SUDO_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
+if [ -n "$DISPLAY" ] ; then
+    if [ -x /usr/lib/openssh/x11-ssh-askpass ] ; then
+        export SSH_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
+        export SUDO_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
+    fi
+fi
+
+if [ -f /var/run/daemons/privoxy ] ; then
+    export http_proxy=http://localhost:8118
+    export https_proxy=http://localhost:8118
+    export ftp_proxy=http://localhost:8118
 fi
