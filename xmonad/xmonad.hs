@@ -92,6 +92,7 @@ key_bindings = [
                , ("M-<Escape>",      kill)
                , ("M-p",             spawn "dmenu_run")
                , ("M-S-p",           spawn "dmenu-app")
+               , ("M-b",             spawn "keynav \"start, grid 2x2\"")
                ]
                ++
                -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
