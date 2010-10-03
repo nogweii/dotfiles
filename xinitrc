@@ -40,10 +40,10 @@ setxkbmap -option terminate:ctrl_alt_bksp
 xmodmap ~/.Xmodmap # Remap some keys (swap Caps/Esc)
 autocutsel -selection PRIMARY -fork
 autocutsel -selection CLIPBOARD -fork
-cuteinformer &
+#cuteinformer &
 
 # Manage the internet connection
-which wicd-client &>/dev/null && wicd-client -nao &
+which wicd-gtk &>/dev/null && wicd-gtk -o &
 
 # Change monitor gamma over time, to avoid blue in my eyes @ night.
 # latitude (DC) == 39.2:-77.2
