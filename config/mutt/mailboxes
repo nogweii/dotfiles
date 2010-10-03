@@ -1,1 +1,1 @@
-mailboxes "+INBOX" "+Spam" "+Trash"
+mailboxes "+Drafts" "+INBOX" "+Spam" "+Trash"
