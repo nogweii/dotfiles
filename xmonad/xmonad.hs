@@ -1,4 +1,5 @@
 import XMonad
+import IO
 import XMonad.Config.Kde
 import Data.Monoid
 import System.Exit
@@ -13,6 +14,7 @@ import XMonad.Actions.UpdatePointer
 import XMonad.Actions.CycleWS
 
 -- Hooks
+import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.InsertPosition
