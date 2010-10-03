@@ -157,8 +157,6 @@ manage_hook = composeAll (
     , className =? "mplayer" --> doFloat
     , className =? "MPlayer" --> doFloat
     , className =? "Gimp" --> doFloat
-    , title     =? "" --> doFloat
-    , title     =? "x" --> doFloat -- weird cinelerra splash window
     , className =? "Cinelerra" --> doFloat
     , className =? "stalonetray" --> doIgnore
     -- x11-ssh-askpass: Float it
@@ -173,6 +171,8 @@ manage_hook = composeAll (
     , className =? "sun-awt-X11-XFramePeer" --> doFloat
     , className =? "net-minecraft-MinecraftLauncher" --> doFloat
     , className =? "Eclipse" --> doFloat
+    , resource  =? "stalonetray" --> doIgnore
+    , className =? "xawtv" --> doFloat
 
     -- Workspaces
     -- , className =? "Firefox"      --> makeMaster <+> moveTo 0
@@ -182,8 +182,10 @@ manage_hook = composeAll (
     -- "Real" fullscreen
     , isFullscreen              --> doFullFloat
     , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
+    , isKDETrayWindow           --> doIgnore
     -- RationalRect params: width, height, pos y, pos x -- in %
     , scratchpadManageHook (W.RationalRect 1.0 0.6 1.0 0.0)
+    , transience'
     ]
     )
 
