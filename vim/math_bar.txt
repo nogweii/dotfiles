@@ -1,0 +1,31 @@
+vim: set nospell syntax=:
+= Equality
+≠ Inequality (Not equal)
+< Less than
+≪ Is much less than
+≤ Less than or equal to
+> Greater than
+≫ Is much greater than
+≥ Greater than or equal to
+- Subtract / Minus
++ Addition
+* Multiplication
+× Multiplication
+· Dot Product / Multiplication
+÷ Division
+/ Division
+± Plus or Minus
+∓ Minus or Plus
+√ Square Root
+! Factorial
+≈ Approximately Equal
+∴ Therefore (Proofs)
+∵ Because (Proofs)
+ℕ Natural Numbers
+ℤ Integers
+ℝ Real Numbers
+∞ Infinity
+∑ Summation
+∫ Integral
+π Pi
+′ Prime
