@@ -54,13 +54,15 @@ redshift -l 33.4:-111.93 -m vidmode -t 6000:3500 &
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
 urxvtd -q -o -f &
+(sleep 1; urxvtc) &
 
 ## Social application tracking / discovery
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
-#wakoopa &> /tmp/wakoopa.log &
+wakoopa &> /dev/null &
 #WhatPulse & # Keyboard & Mouse tracking
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
 #(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
 
-exec xmonad
+#exec xmonad
+exec startkde
