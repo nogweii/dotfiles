@@ -58,7 +58,7 @@ urxvtd -q -o -f &
 
 ## Social application tracking / discovery
 #echo "Wakoopa launched, see /tmp/wakoopa.log for output"
-wakoopa &> /dev/null &
+# wakoopa &> /dev/null &
 #WhatPulse & # Keyboard & Mouse tracking
 
 # Thanks to http://totherme.livejournal.com/4154.html for this trick!
