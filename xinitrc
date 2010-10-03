@@ -11,6 +11,11 @@ if [ -n "$dbuslaunch" ] && [ -x "$dbuslaunch" ] && [ -z "$DBUS_SESSION_BUS_ADDRE
   echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 fi
 
+# Load the fonts in ~/.fonts/
+test -d "~/.fonts/" && (mkfontdir "~/.fonts/" ; xset fp+ "~/.fonts/")
+# Ask X11 to rebuild its font list.
+xset fp rehash
+
 ########################################
 ###     Make it pretty
 ########################################
