@@ -158,6 +158,14 @@ function! CleanClose(tosave)
   exe "bd ".todelbufNr
   call Buftabs_show()
 endfunction
+
+function! Sidebar(filepath)
+    execute ":TlistClose"
+    execute ":NERDTreeClose"
+    execute ":10vpslit"
+    execute ":edit ".a:filepath
+    setlocal nonumber
+endfunction
 " }}}
 
 " {{{ Conditionals
@@ -220,6 +228,7 @@ autocmd BufReadPost *
 " {{{ Call commands
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
+command! MathBar call Sidebar("~/.vim/math_bar.txt")
 
 " Turn filetype on *now*, with extra ftdetect paths added, so vim actually
 " sees them!
