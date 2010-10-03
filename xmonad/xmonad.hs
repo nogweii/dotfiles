@@ -36,6 +36,8 @@ import XMonad.Prompt.AppendFile
 --
 the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
 
+icons_path = "/home/colin/.icons"
+
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -237,6 +239,47 @@ grid_config = defaultGSConfig
                               ]
           -- jump back to the center with the spacebar, regardless of the current position.
           reset = M.singleton (0,xK_space) (const (0,0))
+
+-- myPP handle = defaultPP {
+--         ppCurrent = wrap ("^fg(" ++ fgHLight color_scheme ++ ")^bg(" ++ bgHLight color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
+--         -- Inverse the hilight colors for urgency
+--         ppUrgent = wrap ("^fg(" ++ bgHLight color_scheme ++ ")^bg(" ++ fgHLight color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
+--         ppVisible = wrap ("^fg(" ++ fgColor color_scheme ++ ")^bg(" ++ bgColor color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
+--         ppSep     = "^fg(" ++ borderColor color_scheme ++ ")^r(3x3)^fg()",
+--         ppTitle   = wrap ("^fg(" ++ bgHLight  ++ ")") "^fg()" ,
+--         ppOutput  = hPutStrLn handle
+-- }
+-- 
+myDzenPP h = defaultPP {
+                        ppOutput          = hPutStrLn h,
+                        ppSep             = (wrapFg  (borderColor color_scheme) "^r(3x3)"),
+                        ppVisible         = wrapFgBg (fgColor color_scheme) (bgColor color_scheme),
+                        ppCurrent         = wrapFgBg (fgHLight color_scheme)    (bgHLight color_scheme),
+                        -- Inverse the hilight colors for urgency
+                        ppUrgent          = wrapFgBg (bgHLight color_scheme) (fgHLight color_scheme),
+                        ppTitle           = (\x -> "  " ++ wrapFg (fgHLight color_scheme) x),
+                        ppLayout          = (\x -> case x of
+                                              "ResizableTall"        -> wrapIcon "dzen_bitmaps/tall.xbm"
+                                              "Mirror ResizableTall" -> wrapIcon "dzen_bitmaps/mtall.xbm"
+                                              "Full"                 -> wrapIcon "dzen_bitmaps/full.xbm"
+                                              _                      -> " " ++ x ++ " "
+                                            )
+                       }
+                        where
+                          wrapFgBg fgColor bgColor content= wrap ("^fg(" ++ fgColor ++ ")^bg(" ++ bgColor ++ ")") "^fg()^bg()" content
+                          wrapFg color content = wrap ("^fg(" ++ color ++ ")") "^fg()" content
+                          wrapBg color content = wrap ("^bg(" ++ color ++ ")") "^bg()" content
+                          wrapIcon path = " ^i(" ++ icons_path ++ "/" ++ path ++ ")"
+
+-- Universal color scheme. DZen, prompts, everything!
+color_scheme = defaultXPConfig {
+                   font              = "-*-liberation mono-medium-r-*-*-12-*-*-*-*-*-*-*"
+                 , bgColor           = "#2f2f2f"
+                 , fgColor           = "#0099cc"
+                 , bgHLight          = "#aecf96"
+                 , fgHLight          = "black"
+                 , borderColor       = "blue"
+                 }
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
