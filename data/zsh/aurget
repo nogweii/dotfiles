@@ -1,0 +1,4 @@
+wget http://aur.archlinux.org/packages/$1/$1.tar.gz
+bsdtar xf $1.tar.gz
+rm $1.tar.gz
+cd $1
