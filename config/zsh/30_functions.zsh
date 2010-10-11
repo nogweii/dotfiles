@@ -252,3 +252,7 @@ function title {
       ;;
   esac
 }
+
+for i in ~/.data/zsh/* ; do
+  alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
+done
