@@ -5,7 +5,7 @@ if [ -x /usr/bin/clyde ] ; then
 
     sup-clyde() {
         case $1 in
-            (-Ss | -Si | -Q* | -T | -*h* | --help)
+            (-Ss | -Si | -Sg | -Q* | -T | -*h* | --help)
                 /usr/bin/clyde "$@" ;;
             (-S* | -R* | -U | *)
                 /usr/bin/sudo /usr/bin/clyde --needed "$@" || return $? ;;
