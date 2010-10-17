@@ -19,7 +19,7 @@ c
 Cafe
 charset
 cli
-colin
+#olin
 conf
 config
 cpp
@@ -217,3 +217,5 @@ workgroup
 barcode
 WEP
 WPA
+colin/!
+Colin
