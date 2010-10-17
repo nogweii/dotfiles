@@ -1,8 +1,21 @@
+-- Sources of configuration:
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive/lorincs_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive/loupgaroublonds_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive/31d1's_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive/lazor's_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive/Herzen's_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Using_xmonad_in_KDE
+--
+-- And as Daft Punk says, around the world...
 import XMonad
 import IO
 import XMonad.Config.Kde
 import Data.Monoid
 import System.Exit
+
+-- import DBus
+-- import DBus.Connection
+-- import DBus.Message
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -31,6 +44,18 @@ import XMonad.Util.Scratchpad
 -- Prompts, baby, prompts!
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
+
+---- This retry is really awkward, but sometimes DBus won't let us get our
+---- name unless we retry a couple times.
+--getWellKnownName :: Connection -> IO ()
+--getWellKnownName dbus = tryGetName `catchDyn` (\ (DBus.Error _ _) ->
+--                        where
+--                         tryGetName = do
+--                           namereq <- newMethodCall serviceDBus pathDBus interfaceDBus "RequestName"
+--                           addArgs namereq [String "org.xmonad.Log", Word32 5]
+--                           sendWithReplyAndBlock dbus namereq 0
+--                           return ()
+
 
 -- The default number of workspaces (virtual screens) and their names.
 --
@@ -87,10 +112,23 @@ key_bindings = [
 
                -- XMonad control
                , ("M-<Space>",       sendMessage NextLayout)
+               -- IDEA: Pop up an OSD with the new layout's name
+   -- -- Rotate through layouts
+   -- , ((modMask,               xK_grave ), sendMessage NextLayout
+   -- >> (dynamicLogString myPP >>= \d->safeSpawn "gnome-osd-client" [d]))
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q",           io (exitWith ExitSuccess))
+
+    -- [ ((modm, xK_p), spawn "krunner")
+    -- , ((modm .|. shiftMask, xK_q), spawn "dbus-send --print-reply --dest=org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout int32:1 int32:0 int32:1")
+    -- , ((modm, xK_a), withFocused (sendMessage . expandWindowAlt))
+
                , ("M-r",             refresh)
-               , ("M-f",             spawn "slock")
+               , ("M-f",             spawn "qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock")
+
+                   -- toggle focused window fullscreen
+                   --     , ((modMask,               xK_m     ), sendMessage (Toggle "Full"))
+                   --         >> (dynamicLogString myPP >>= \d->safeSpawn "gnome-osd-client" [d]))"
 
                -- Applications!
                , ("M-<Escape>",      kill)
@@ -122,8 +160,6 @@ compiled_bindings = \c -> mkKeymap c $ key_bindings
 --    --
 --    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 --
---    -- Restart xmonad
---    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
 --    ]
 --    ++
 
@@ -152,9 +188,8 @@ manage_hook = composeAll (
     ] ++
 
     -- Separate float apps
-    [ className =? "Plasma-desktop" --> doIgnore -- For KDE
-    , className =? "kmix" --> doFloat -- For KDE
-    , className =? "mplayer" --> doFloat
+    [ -- className =? "Plasma-desktop" --> doIgnore, -- For KDE
+      className =? "mplayer" --> doFloat
     , className =? "MPlayer" --> doFloat
     , className =? "Gimp" --> doFloat
     , className =? "Cinelerra" --> doFloat
@@ -286,6 +321,18 @@ color_scheme = defaultXPConfig {
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 --
+-- IDEA: Register xmonad to GNOME's session manager. XXX: What about KDE's KSM?
+--  env <- getEnvironment
+--  case lookup "DESKTOP_AUTOSTART_ID" env of
+--      Just id -> do
+--          forkIO $ (>> return ()) $ rawSystem "dbus-send" ["--session","--print-reply=string","--dest=org.gnome.SessionManager","/org/gnome/SessionManager","org.gnome.SessionManager.RegisterClient","string:xmonad","string:"++id]
+--          return ()
+--      Nothing -> return ()
+-- main = withConnection Session $ \ dbus -> do
+--   putStrLn "Getting well-known name."
+--   getWellKnownName dbus
+--   putStrLn "Got name, starting XMonad."
+--   xmonad $ gnomeConfig
 main = xmonad the_settings
 
 -- A structure containing the configuration settings.
