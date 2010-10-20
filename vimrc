@@ -128,9 +128,9 @@ imap     <C-h> <Left>
 imap     <C-l> <Right>
 nnoremap <silent> <Leader>T :TlistToggle<CR>
 nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
-map      <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-           \   . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-           \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+map      <F10> :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
+     \   . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+     \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
@@ -151,18 +151,19 @@ runtime ftplugin/man.vim " :Man command
 " Append a vim modeline to the end of the file
 function! AppendModeline()
   let save_cursor = getpos('.')
-  let append = ' vim: set ts='.&tabstop.' sw='.&shiftwidth.' tw='.&textwidth.' syn='.&syntax.': '
+  let append =  ' vim: set ts='.&tabstop.' sw='.&shiftwidth
+  let append += ' tw='.&textwidth.' syn='.&syntax.': '
   $put =substitute(&commentstring, '%s', append, '')
   call setpos('.', save_cursor)
 endfunction
 
-" Switch to the next buffer that is not help or taglist
+" Switch to the next buffer (or previous, if passed a negative number)
 function! SwitchToNextBuffer(incr)
     let current = bufnr("%")
     let last = bufnr("$")
     let new = current + a:incr
     while 1
-        if new != 0 && bufexists(new) && !(getbufvar(new, "&filetype") == 'help') && !(getbufvar(new, "&filetype") == 'taglist') && !(getbufvar(new, "&filetype") == 'nerdtree')
+        if new != 0 && buflisted(new)
             execute ":buffer ".new
             break
         else
