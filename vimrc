@@ -376,6 +376,7 @@ let g:bufExplorerDetailedHelp=0      " Do not show detailed help.
 let g:SuperTabCrMapping=0
 let g:delimitMate_expand_space=0
 let g:delimitMate_expand_cr=0
+let g:syntastic_enable_signs=1
 " }}}
 
 " {{{ Autocommands
