@@ -1,56 +1,55 @@
-"
+" vim configuration file, from all over the web.
 " Maintainer: Colin Shea <colin@evaryont.me>
-" Last Change: 6 June 2010
 " vim: set fdm=marker:
 
 " {{{ Settings
-set      nocompatible                    " Enable vim-only options, those incompatible with classic Vi
-set      nowrap                          " Don't wrap lines
-set      noerrorbells                    " Disable any error bells
-set      visualbell                      " Use a visual notification instead of beeping
-set      t_vb          =                 " Modify the termcap entry: Disable the visual bell code
-set      foldenable                      " Enable folding, at launch
-set      foldmethod    =syntax           " Default to syntax based folds
-set      foldminlines  =2                " Require at least 2 lines before actually closing a fold
-set      hlsearch                        " Highlight search results
-set      incsearch                       " Jump to the first match in real-time
-set      ignorecase                      " Case insensitive search, by default.
-set      smartcase                       " Become case-sensitive if there any capital letters
-set      hidden                          " Allow changing buffers even with unsaved modifications
-set      spell                           " Enable spell check
-set      title                           " Modify the terminal title
-set      number                          " Number lines
-set      cursorline                      " Emphasize the current line the cursor is on
-set      laststatus    =2                " Always show the status bar
-set      ruler                           " Always show the position of the cursor
-set      showcmd                         " Show incomplete commands in the status bar
-set      autoindent                      " Automatically indent the next line
-set      cindent                         " Smart automatic indent
-set      linebreak                       " Don't wrap in the middle of a word
-set      modeline                        " Let individual files specify settings
-set      background    =dark             " Use dark colors over lighter ones
-set      fileformat    =unix             " Prefer UNIX line endings
-set      history       =50               " Remember the 50 most recent commands
-set      wildmenu                        " Show completion matches in the status bar, above the command bar. And other Ex-mode goodies.
-set      wildmode      =longest,full     " Expand the longest common match, then show the full menu
-set      wildignore    =*.o,*.obj,*~     " What to ignore in wildmenu
-set      backupdir     =/tmp             " Store backup files in /tmp
-set      directory     =/tmp             " Store swap files in /tmp
-set      backspace     =indent,eol,start " Smart backspace in insert mode
-set      sidescroll    =1                " Scroll horizontally 1 column at a time
-set      sidescrolloff =7                " Always show this at least this many columns
-set      enc           =utf-8            " Use UTF-8 encoding
-set      fenc          =utf-8
-set      tenc          =utf-8
-set      updatetime    =2000             " Milli secs of idle before calling the CursorHold autocmd
-set      shortmess     =filnxtToOmIAr    " Use shorter messages in some ways
-set      softtabstop=2
-set      shiftwidth=2
-set      tabstop=4
-set      expandtab
-set      complete+=k,kspell
-set      completeopt=menuone,longest,preview
-set      virtualedit+=block              " Block movement can go beyond end-of-line
+set nocompatible               " Enable vim-only options
+set nowrap                     " Don't wrap lines
+set noerrorbells               " Disable any error bells
+set visualbell                 " Use a visual notification instead of beeping
+set t_vb=                      " Disable the visual bell termcap
+set foldenable                 " Enable folding, at launch
+set foldmethod=syntax          " Default to syntax based folds
+set foldminlines=2             " Require at least 2 lines before closing a fold
+set hlsearch                   " Highlight search results
+set incsearch                  " Jump to the first match in real-time
+set ignorecase                 " Case insensitive search, by default.
+set smartcase                  " Case-sensitive if there any capital letters
+set hidden                     " Allow changing buffers even with modifications
+set spell                      " Enable spell check
+set title                      " Modify the terminal title
+set number                     " Number lines
+set cursorline                 " Emphasize the current line the cursor is on
+set laststatus=2               " Always show the status bar
+set ruler                      " Always show the position of the cursor
+set showcmd                    " Show incomplete commands in the status bar
+set autoindent                 " Automatically indent the next line
+set cindent                    " Smart automatic indent
+set linebreak                  " Don't wrap in the middle of a word
+set modeline                   " Let individual files specify settings
+set background=dark            " Use dark colors over lighter ones
+set fileformat=unix            " Prefer UNIX line endings
+set history=1000               " Remember lots of history for :
+set wildmenu                   " Show completion matches in the status bar
+set wildmode=longest,full      " Expand the longest common match, then all
+set wildignore=*.o,*.obj,*~    " What to ignore in wildmenu
+set backupdir=/tmp             " Store backup files in /tmp
+set directory=/tmp             " Store swap files in /tmp
+set backspace=indent,eol,start " Smart backspace in insert mode
+set sidescroll=1               " Scroll horizontally 1 column at a time
+set sidescrolloff =7           " Always show this at least this many columns
+set enc=utf-8                  " Use UTF-8 encoding
+set fenc=utf-8
+set tenc=utf-8
+set updatetime=2000            " Millisecs idle before calling the CursorHold
+set shortmess =filnxtToOmIAr   " Use shorter messages in some ways
+set softtabstop=2
+set shiftwidth=2
+set tabstop=4
+set expandtab
+set complete+=k,kspell         " Scan dictionaries for completion as well
+set completeopt=menuone,longest,preview
+set virtualedit+=block         " Block movement can go beyond end-of-line
 execute 'set scrolloff='.(&lines-2)
 execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
 " }}}
