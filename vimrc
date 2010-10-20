@@ -405,4 +405,15 @@ filetype plugin on
 filetype indent on
 " }}}
 
-inoremap <expr> <Esc>      pumvisible() ? "\\\\<C-e>" : "\\\\<C-R>=delimitMate#Finish()\\\\<CR>\\\\<C-o>:echo 'esc'\\\\<Esc>"
+" visual search mappings
+function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
+endfunction
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
+
+autocmd FileType man set textwidth=0
+autocmd FileType diff set nospell
