@@ -189,7 +189,7 @@ color_err () {
 
 function nicename() {
   for i in "$@" ; do
-    j=$(echo "$i" | tr [[:upper:]] [[:lower:]] | tr ' ' _) && mv "$i" "$j" 
+    j=$(echo "$i" | tr [[:upper:]] [[:lower:]] | tr ' ' _) && mv "$i" "$j"
   done
 }
 
