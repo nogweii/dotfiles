@@ -187,39 +187,6 @@ color_err () {
 # Automatically red-ify all stderr output
 #exec 2> >( color_err )
 
-# This variable dictates weather we are going to do the vcs prompt update
-# before printing the next prompt.  On some setups this saves 10s of work.
-PR_VCS_UPDATE=1
-
-# called before command execution
-# here we decide if we should update the prompt next time
-function zsh_vcs_prompt_preexec {
-        case "$(history $HISTCMD)" in 
-            *vcs*)
-                PR_VCS_UPDATE=1
-                ;;
-        esac
-}
-preexec_functions+='zsh_vcs_prompt_preexec'
-
-# called after directory change
-# we just assume that we have to update vcs prompt
-function zsh_vcs_prompt_chpwd {
-        PR_VCS_UPDATE=1
-}
-chpwd_functions+='zsh_vcs_prompt_chpwd'
-
-# called before prompt generation
-# if needed, we will update the prompt info
-function zsh_vcs_prompt_precmd {
-       if [[ -n "$PR_VCS_UPDATE" ]] ; then
-               vcs_info 'prompt'
-               PR_VCS_UPDATE=
-       fi
-}
-precmd_functions+='zsh_vcs_prompt_precmd'
-
-
 function nicename() {
   for i in "$@" ; do
     j=$(echo "$i" | tr [[:upper:]] [[:lower:]] | tr ' ' _) && mv "$i" "$j" 
