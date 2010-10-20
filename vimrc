@@ -179,6 +179,7 @@ function! SwitchToNextBuffer(incr)
     endwhile
 endfunction
 
+" Close the current buffer in a clean manner
 function! CleanClose(tosave)
   if (a:tosave == 1)
     w!
@@ -337,28 +338,36 @@ endif
 "     silent blast
 "     silent bfirst
 " endif
+
+" Vim 7.3 only settings.
+if v:version >= 703
+    " undo settings
+    set undodir=~/.vim/undofiles
+    set undofile
+endif
 " }}}
 
 " {{{ Let / Misc plugin configuration
-let g:yaifa_max_lines                 =  1024    " The default is 16 times this many...whoa.
-let g:showmarks_enable                =  0       " Don't enable showmarks automatically
-let mapleader                         =  "G"     " Use 'G' as map leader, not the default '\'
-let g:ruby_space_errors               =  1       " Enable space errors in Ruby files
-let g:ruby_fold                       =  1       " Enable folding in Ruby files
-let g:ruby_operators                  =  1       " Highlight ruby operators
-let g:ruby_no_expensive               =  0       " Enable CPU expensive stuff
-let g:rubycomplete_classes_in_global  =  1       " Add local buffer classes to the completion list
-let g:Tlist_Auto_Highlight_Tag        =  1       " Track where I am in the file
-let g:Tlist_Auto_Open                 =  1       " Open up on vim start
-let g:Tlist_Enable_Fold_Column        =  0       " Don't show the fold column in the tag list window
-let g:Tlist_File_Fold_Auto_Close      =  1       " Close folds for inactive files
-let g:Tlist_Exit_OnlyWindow           =  1       " Exit vim when TagList is the only window open
-let g:Tlist_Highlight_Tag_on_BufEnter =  1       " On BufEnter, highlight the correct tag
-let g:Tlist_Sort_Type                 =  "order" " Sort by the order for which a tag appears, not alphabetically
-let g:SuperTabDefaultCompletionType = "context"
-let snippets_dir = substitute(globpath(&rtp, 'snipmate-snippets/'), "\n", ',', 'g')
+let g:yaifa_max_lines=1024              " Only inspect the 1st KB
+let g:showmarks_enable=0                " Don't enable showmarks automatically
+let mapleader="G"                       " Use 'G' as map leader instead of '\'
+let g:ruby_space_errors=1               " Enable space errors in Ruby files
+let g:ruby_fold=1                       " Enable folding in Ruby files
+let g:ruby_operators=1                  " Highlight ruby operators
+let g:ruby_no_expensive=0               " Enable CPU expensive stuff
+let g:rubycomplete_classes_in_global=1  " Add local classes to completion
+let g:Tlist_Auto_Highlight_Tag=1        " Track where I am in the file
+let g:Tlist_Auto_Open=1                 " Open up on vim start
+let g:Tlist_Enable_Fold_Column=0        " Don't show the fold column in TagList
+let g:Tlist_File_Fold_Auto_Close=1      " Close folds for inactive files
+let g:Tlist_Exit_OnlyWindow=1           " Exit vim when TagList is the only one
+let g:Tlist_Highlight_Tag_on_BufEnter=1 " On BufEnter, highlight the correct tag
+let g:Tlist_Sort_Type="order"           " Sort by location in code
+let g:SuperTabDefaultCompletionType="context"
+let snippets_dir = substitute(globpath(&rtp,'snipmate-snippets/'),"\n",',','g')
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+let g:fuzzy_ignore  = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;"
+let g:fuzzy_ignore += "coverage/**;tmp/**;rdoc/**"
 let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeader2 = ''
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
