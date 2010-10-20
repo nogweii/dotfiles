@@ -1,14 +1,14 @@
 # Create my git configuration unless it's already up-to-date.
 ztmpl ~/.gitconfig
 
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#function zle-line-init zle-keymap-select {
+#    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#    RPS2=$RPS1
+#
+#    zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 if [ -x /usr/bin/keychain ] ; then
     keychain --quiet # Start gpg-agent & ssh-agent, but don't add any keys (yet)
