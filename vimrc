@@ -51,7 +51,50 @@ set complete+=k,kspell         " Scan dictionaries for completion as well
 set completeopt=menuone,longest,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 execute 'set scrolloff='.(&lines-2)
-execute 'set list listchars=tab:' . nr2char(9655) . nr2char(160) . ',trail:' . nr2char(183)
+set list                       " Show certain chars for newline, tab, etc
+execute 'set listchars=tab:'.nr2char(9655).nr2char(160).',trail:'.nr2char(183)
+" statusline setup
+set statusline=%f "tail of the filename
+
+"display a warning if fileformat isn't unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+"display a warning if file encoding isn't UTF-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+set statusline+=%h "help file flag
+set statusline+=%y "filetype
+set statusline+=%r "read only flag
+set statusline+=%m "modified flag
+
+"display a warning if &et is wrong, or we have mixed-indenting
+set statusline+=%#error#
+set statusline+=%{StatuslineTabWarning()}
+set statusline+=%*
+
+set statusline+=%{StatuslineTrailingSpaceWarning()}
+
+set statusline+=%{StatuslineLongLineWarning()}
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+
+set statusline+=%= "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \  " current highlight
+set statusline+=%c, "cursor column
+set statusline+=%l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
+set textwidth=80
 " }}}
 
 " {{{ Mappings
