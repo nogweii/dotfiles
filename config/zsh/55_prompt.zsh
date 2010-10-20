@@ -33,6 +33,14 @@ function precmd {
         zstyle ':vcs_info:*' formats "$vcsformat%F{red}●%F{green})"
     fi
     vcs_info
+
+    # Change the color of the directory if it's not writable
+    if [[ ! -w $PWD ]]; then
+        PR_PWD_COLOR=$PR_BRIGHT_YELLOW
+    else
+        PR_PWD_COLOR=$PR_BRIGHT_RED
+    fi
+
 }
 
 function preexec () {
@@ -69,7 +77,7 @@ function setprompt () {
     PROMPT='$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_ULCORNER$PR_GREEN$PR_HBAR\
 $PR_SHIFT_OUT($PR_GREEN%(!.%SROOT%s.%n)$PR_WHITE@$PR_GREEN%m$PR_GREEN)\
 $PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_HBAR${(e)PR_FILLBAR}$PR_GREEN$PR_HBAR\
-$PR_SHIFT_OUT($PR_BRIGHT_RED%$PR_PWDLEN<...<%~%<<$PR_NO_COLOUR$PR_GREEN)\
+$PR_SHIFT_OUT($PR_PWD_COLOR%$PR_PWDLEN<...<%~%<<$PR_NO_COLOUR$PR_GREEN)\
 $PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_URCORNER$PR_SHIFT_OUT\
 
 $PR_GREEN$PR_SHIFT_IN$PR_LLCORNER$PR_GREEN$PR_HBAR$PR_SHIFT_OUT(\
