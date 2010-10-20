@@ -4,7 +4,7 @@ zstyle ':vcs_info:*' stagedstr '%F{28}●' # after `git add`
 zstyle ':vcs_info:*' unstagedstr '%F{11}●' # modified & tracked, file
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:[svn]' formats '[%b%c%u]'
-zstyle ':vcs_info:*' enable bzr git svn
+zstyle ':vcs_info:*' enable bzr git svn hg #cvs #darcs
 setopt prompt_subst
 
 function precmd {
