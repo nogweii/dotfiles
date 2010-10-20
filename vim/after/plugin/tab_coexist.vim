@@ -46,3 +46,12 @@ function BackwardsTab()
         return "\<c-r>=TriggerSnippet()\<CR>"
     endif
 endfunction
+
+inoremap <expr> <Esc> MagicEsc()
+function MagicEsc()
+    if pumvisible()
+        return "\<c-e>"
+    else
+        return "\<c-r>=delimitMate#Finish()\<CR>\<Esc>"
+    endif
+endfunction
