@@ -11,7 +11,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 if [ -x /usr/bin/keychain ] ; then
-    keychain --quiet # Start ssh-agent, but don't add any keys (yet)
+    keychain --quiet # Start gpg-agent & ssh-agent, but don't add any keys (yet)
     [ -f $HOME/.keychain/${HOSTNAME}-sh ] && source $HOME/.keychain/${HOSTNAME}-sh # Load ssh-agent environment variables
     [ -f $HOME/.keychain/${HOSTNAME}-sh-gpg ] && source $HOME/.keychain/${HOSTNAME}-sh-gpg # ditto, gpg-agent
 fi
