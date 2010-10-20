@@ -1,3 +1,6 @@
+!--------------------------------------
+!                urxvt
+!--------------------------------------
 urxvt*font:               xft:Liberation Mono:size=12,             xft:Dejavu Sans Mono:size=12
 urxvt*boldFont:           xft:Liberation Mono:bold:size=12,        xft:Dejavu Sans Mono:bold:size=12
 urxvt*italicFont:         xft:Liberation Mono:italic:size=12,      xft:Dejavu Sans Mono:italic:size=12
@@ -72,5 +75,25 @@ x11-ssh-askpass.inputTimeout: 5
 x11-ssh-askpass.grabKeyboard: true
 x11-ssh-askpass.grabPointer: true
 x11-ssh-askpass.grabServer: false
+
+!--------------------------------------
+!              Xautolock
+!--------------------------------------
+Xautolock.time: 10
+Xautolock.locker: xlock
+Xautolock.killtime: 20
+Xautolock.killer: /sbin/shutdown -h now
+!Xautolock.notify: 1
+!Xautolock.notifier: 1
+!Xautolock.bell: 1
+! Move the mouse to: top right corner: lock, bottom left corner: disable
+Xautolock.corners: 0+-0
+Xautolock.cornersize: 25
+!Xautolock.cornerdelay: 1
+!Xautolock.cornerredelay: 1
+!Xautolock.resetsaver: 1
+!Xautolock.nocloseout: 1
+!Xautolock.nocloseerr: 1
+!Xautolock.noclose: 1
 
 ! vim: set syn=xdefaults:
