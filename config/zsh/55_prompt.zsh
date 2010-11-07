@@ -1,7 +1,7 @@
 # vcs_info
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' stagedstr '%F{28}●' # after `git add`
-zstyle ':vcs_info:*' unstagedstr '%F{11}●' # modified & tracked, file
+zstyle ':vcs_info:*' stagedstr '%F{28}●%f' # after `git add`
+zstyle ':vcs_info:*' unstagedstr '%F{11}●%f' # modified & tracked, file
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:[svn]' formats '[%b%c%u]'
 zstyle ':vcs_info:*' enable bzr git svn hg #cvs #darcs
@@ -28,9 +28,9 @@ function precmd {
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) &&
           -z $(bzr ls --unknown 2> /dev/null) ]]; then
         # No untracked files (or they are all ignored) to worry about
-        zstyle ':vcs_info:*' formats "$vcsformat%F{green})"
+        zstyle ':vcs_info:*' formats "$vcsformat%F{green}%f)"
     else
-        zstyle ':vcs_info:*' formats "$vcsformat%F{red}●%F{green})"
+        zstyle ':vcs_info:*' formats "$vcsformat%F{red}●%F{green}%f)"
     fi
     vcs_info
 
@@ -72,22 +72,23 @@ function setprompt () {
     PR_LLCORNER="${altchar[m]:--}"
     PR_LRCORNER="${altchar[j]:--}"
     PR_URCORNER="${altchar[k]:--}"
+    VIMODE="%#" # TODO: Actually show the mode, without breaking the prompt
 
     # Terminal prompt settings
-    PROMPT='$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_ULCORNER$PR_GREEN$PR_HBAR\
+    PROMPT='$PR_NO_COLOUR$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_ULCORNER$PR_GREEN$PR_HBAR\
 $PR_SHIFT_OUT($PR_GREEN%(!.%SROOT%s.%n)$PR_WHITE@$PR_GREEN%m$PR_GREEN)\
 $PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_HBAR${(e)PR_FILLBAR}$PR_GREEN$PR_HBAR\
 $PR_SHIFT_OUT($PR_PWD_COLOR%$PR_PWDLEN<...<%~%<<$PR_NO_COLOUR$PR_GREEN)\
-$PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_URCORNER$PR_SHIFT_OUT\
+$PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_URCORNER$PR_SHIFT_OUT$PR_NO_COLOUR\
 
 $PR_GREEN$PR_SHIFT_IN$PR_LLCORNER$PR_GREEN$PR_HBAR$PR_SHIFT_OUT(\
-%(?..$PR_RED%?$PR_WHITE:)%(!.$PR_RED.$PR_YELLOW)%#$PR_GREEN)$PR_NO_COLOUR '
+%(?..$PR_RED%?$PR_WHITE:)%(!.$PR_RED.$PR_YELLOW)$VIMODE$PR_GREEN)$PR_NO_COLOUR '
 
-    RPROMPT='${vcs_info_msg_0_}$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_GREEN\
+    RPROMPT='$PR_NO_COLOUR${vcs_info_msg_0_}$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_GREEN\
 $PR_LRCORNER$PR_SHIFT_OUT$PR_NO_COLOUR'
 
     # Continuation prompt (e.g. unfinished quote, for loop...)
-    PROMPT2='$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_HBAR$PR_SHIFT_OUT(\
+    PROMPT2='$PR_NO_COLOUR$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_HBAR$PR_SHIFT_OUT(\
 $PR_YELLOW%_$PR_GREEN)$PR_SHIFT_IN$PR_HBAR$PR_HBAR$PR_SHIFT_OUT$PR_NO_COLOUR '
 }
 
