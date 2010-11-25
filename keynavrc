@@ -28,9 +28,12 @@ clear
 # Use 'daemonize' to background ourselves.
 #daemonize
 
-ctrl+semicolon start
-Escape end
-ctrl+bracketleft end
+# end vs quit: end stops keynav, but doesn't kill the process. quit does.
+
+#ctrl+semicolon start
+Escape quit
+Enter warp,quit
+ctrl+bracketleft quit
 h cut-left
 j cut-down
 k cut-up
@@ -47,8 +50,8 @@ shift+y move-left,move-up
 shift+u move-right,move-up
 shift+b move-left,move-down
 shift+n move-right,move-down
-space warp,click 1,end
-semicolon warp,end
+space warp,click 1,quit
+semicolon warp,quit
 1 click 1
 2 click 2
 3 click 3
