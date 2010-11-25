@@ -2,6 +2,7 @@
 " Maintainer: Colin Shea <colin@evaryont.me>
 " vim: set fdm=marker:
 
+let g:showtab = 0
 " {{{ Settings
 set nocompatible               " Enable vim-only options
 set nowrap                     " Don't wrap lines
@@ -51,8 +52,8 @@ set complete+=k,kspell         " Scan dictionaries for completion as well
 set completeopt=menuone,longest,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 execute 'set scrolloff='.(&lines-2)
-set list                       " Show certain chars for newline, tab, etc
-execute 'set listchars=tab:'.nr2char(9655).nr2char(160).',trail:'.nr2char(183)
+set list                       " Show certain chars for tabs & trailing chars
+execute 'set listchars=trail:'.nr2char(183)
 " statusline setup
 set statusline=%f "tail of the filename
 
@@ -101,6 +102,7 @@ set textwidth=80
 noremap  gG G
 onoremap gG G
 map      G <Nop>
+let mapleader="G"                       " Use 'G' as map leader instead of '\'
 map      zp 1z=
 map      <silent> <c-l> <c-l>:nohlsearch<CR>
 nmap     gp :.!xclip -out<CR>
@@ -137,6 +139,7 @@ nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
 nmap     ZV :vnew <C-R>=expand("%:p:h")<CR>/
 nnoremap gf gF
 nnoremap <silent> gF :CommandT<CR>
+nmap     <Leader>gt :GundoToggle<CR>
 " }}}
 
 " {{{ Other Settings
@@ -315,7 +318,8 @@ function! s:LongLines()
     let long_line_lens = []
 
     let i = 1
-    while i <= line("$")
+    " Only look at the first 1024 lines, since larger files take forever
+    while i <= line("$") && i < 1025
         let len = strlen(substitute(getline(i), '\t', spaces, 'g'))
         if len > threshold
             call add(long_line_lens, len)
@@ -343,27 +347,26 @@ endif
 " Vim 7.3 only settings.
 if v:version >= 703
     " undo settings
-    set undodir=~/.vim/undofiles
+    set undodir=~/.vim/undo
     set undofile
 endif
 " }}}
 
 " {{{ Let / Misc plugin configuration
-let g:yaifa_max_lines=1024              " Only inspect the 1st KB
-let g:showmarks_enable=0                " Don't enable showmarks automatically
-let mapleader="G"                       " Use 'G' as map leader instead of '\'
+let g:yaifa_max_lines=1024              " Only inspect the 1st KB of the file
 let g:ruby_space_errors=1               " Enable space errors in Ruby files
 let g:ruby_fold=1                       " Enable folding in Ruby files
 let g:ruby_operators=1                  " Highlight ruby operators
 let g:ruby_no_expensive=0               " Enable CPU expensive stuff
 let g:rubycomplete_classes_in_global=1  " Add local classes to completion
 let g:Tlist_Auto_Highlight_Tag=1        " Track where I am in the file
-let g:Tlist_Auto_Open=1                 " Open up on vim start
+let g:Tlist_Auto_Open=0                 " Open up on vim start
 let g:Tlist_Enable_Fold_Column=0        " Don't show the fold column in TagList
-let g:Tlist_File_Fold_Auto_Close=1      " Close folds for inactive files
 let g:Tlist_Exit_OnlyWindow=1           " Exit vim when TagList is the only one
 let g:Tlist_Highlight_Tag_on_BufEnter=1 " On BufEnter, highlight the correct tag
 let g:Tlist_Sort_Type="order"           " Sort by location in code
+let g:Tlist_Show_One_File = 1           " Only show the current file
+let g:Tlist_Use_Horiz_Window = 1
 let g:SuperTabDefaultCompletionType="context"
 let snippets_dir = substitute(globpath(&rtp,'snipmate-snippets/'),"\n",',','g')
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
@@ -377,6 +380,8 @@ let g:SuperTabCrMapping=0
 let g:delimitMate_expand_space=0
 let g:delimitMate_expand_cr=0
 let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_quiet_warnings = 0
 " }}}
 
 " {{{ Autocommands
@@ -417,4 +422,31 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
 autocmd FileType man set textwidth=0
-autocmd FileType diff set nospell
+autocmd FileType diff set nospell textwidth=0
+autocmd FileType jproperties set nospell
+
+" Limit showmarks to the user-controlled marks
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let g:showmarks_enable = 1
+
+" Falls back to 'grepprg' when the Ack plugin is not installed
+function! AckSearch()
+    let string = input("Ack: ")
+    if exists(":Ack")
+        execute ":Ack" string
+    else
+        execute ":grep" string
+    endif
+endfunction
+
+nmap <silent> ZG :call AckSearch()<CR>
+nmap ZA :A<CR>
+nmap GR :Include<CR>
+
+let g:nosession = 0
+"if argc() < 1
+"    " If we're loading a file manually, or via stdin, don't restore session
+"    au VimEnter * if !g:nosession | so ~/.vim/Session.vim | endif
+"endif
+au StdinReadPre * let g:nosession = 1 " on stdin, don't load the session file
+au VimLeave * if !v:dying | mksession! ~/.vim/Session.vim | endif
