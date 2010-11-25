@@ -17,7 +17,7 @@ alias     lsa='ls -A'                      # only show dot-files
 alias     lsw='ls -d *(R,W,X.^ND/)'        # world-{readable,writable,executable} files
 alias     lsd='ls -d *(/)'                 # only show directories
 alias     lse='ls -d *(/^F)'               # only show empty directories
-alias     lss='ls *(s,S,t)'                # only files with setgid/setuid/sticky flag
+alias     lss='ls *(s,S,t)'                # only files with setgid/setuid/sticky
 alias     lsl='ls *(@)'                    # only symlinks
 alias     lsx='ls *(*)'                    # only executables
 alias   lsnew="ls -rl *(D.om[1,10])"       # display the newest files
@@ -29,7 +29,7 @@ alias      ll='ls -lAh'
 alias     llw='ll -d *(R,W,X.^ND/)'        # world-{readable,writable,executable} files
 alias     lld='ll -d *(/)'                 # only show directories
 alias     lle='ll -d *(/^F)'               # only show empty directories
-alias     lls='ll *(s,S,t)'                # only files with setgid/setuid/sticky flag
+alias     lls='ll *(s,S,t)'                # only files with setgid/setuid/sticky
 alias     lll='ll *(@)'                    # only symlinks
 alias     llx='ll *(*)'                    # only executables
 
@@ -42,9 +42,9 @@ alias     llx='ll *(*)'                    # only executables
 # parent directories?
 alias mkdir='mkdir -p'
 alias cp='cp -Ri'
-alias rm='rm -rv --interactive=once --one-file-system --no-preserve-root'
+alias rm='rm -rv --one-file-system --no-preserve-root'
 alias mv='mv -i'
-alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the top shell, not in sub processes
+alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the parent process
 
 ########################
 # Convenience aliases
@@ -76,7 +76,7 @@ alias ssh-me="ssh me -t 'screen -R'"
 ########################
 # Web & 'catw'
 #
-# catw is a simple 
+# catw is a simple
 if [ -z "$(whence curl)" ] ; then
     alias catw="wget -qO - "
 else
