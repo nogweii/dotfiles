@@ -195,11 +195,18 @@ function nicename() {
 
 function error_log() {
   regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
+  # If the parameter is a file, search only that one
+  if [ -f "$1" ] ; then
+    s find "$1" -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+
+    return $?
+  fi
+  # Otherwise just output the regex
   if [ "x$1" != "x" ] ; then
     echo $regexp
     return 0;
   fi
-  s find /var/log/* -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
+  # Default case: No parameters passed, so search all of /var/log
+  s find /var/log -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
 }
 
 function cawk {
