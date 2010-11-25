@@ -79,21 +79,95 @@ x11-ssh-askpass.grabServer: false
 !--------------------------------------
 !              Xautolock
 !--------------------------------------
-Xautolock.time: 10
+Xautolock.time: 3
 Xautolock.locker: xlock
-Xautolock.killtime: 20
-Xautolock.killer: /sbin/shutdown -h now
+!Xautolock.killtime: 20
+!Xautolock.killer: /sbin/shutdown -h now
 !Xautolock.notify: 1
 !Xautolock.notifier: 1
 !Xautolock.bell: 1
 ! Move the mouse to: top right corner: lock, bottom left corner: disable
 Xautolock.corners: 0+-0
-Xautolock.cornersize: 25
+Xautolock.cornersize: 15
 !Xautolock.cornerdelay: 1
-!Xautolock.cornerredelay: 1
+Xautolock.cornerredelay: 30
 !Xautolock.resetsaver: 1
 !Xautolock.nocloseout: 1
 !Xautolock.nocloseerr: 1
 !Xautolock.noclose: 1
+
+!--------------------------------------
+!                XLock
+!--------------------------------------
+XLock.mode: blank
+!XLock.erasemode: 
+!XLock.erasedelay: 400
+!XLock.erasetime: 2
+!XLock.allowaccess: off
+!XLock.debug: off
+XLock.description: off
+!XLock.echokeys: off
+!XLock.echokey: ?
+!XLock.enablesaver: off
+!XLock.resetsaver: on
+!XLock.grabmouse: on
+!XLock.grabserver: off
+!XLock.hide: on
+!XLock.install: on
+!XLock.mousemotion: off
+!XLock.mono: off
+!XLock.sound: off
+!XLock.showfps: off
+!XLock.fpstop: on
+!XLock.fpsfont: -*-helvetica-medium-r-*-*-24-*-*-*-*-*-*
+!XLock.showdate: on
+!XLock.timeelapsed: off
+!XLock.usefirst: on
+!XLock.verbose: off
+!XLock.visual: 
+!XLock.nice: 10
+!XLock.lockdelay: 0
+!XLock.unlockdelay: 0
+!XLock.timeout: 30
+!XLock.font: -*-helvetica-medium-r-*-*-24-*-*-*-*-*-*
+!XLock.planfont: -*-fixed-medium-r-*-*-14-*-*-*-*-*-*
+!XLock.background: White
+!XLock.foreground: Black
+!XLock.username: Name: 
+!XLock.password: Password: 
+!XLock.info: Enter password to unlock; select icon to lock.
+!XLock.validate: Validating login...
+!XLock.invalid: Invalid login.
+!XLock.invalidCapsLock: Invalid login, Caps Lock on.
+!XLock.attempt:  failed attempt.
+!XLock.attempts:  failed attempts.
+!XLock.geometry: 
+!XLock.icongeometry: 
+!XLock.wireframe: off
+!XLock.use3d: off
+!XLock.delta3d: 1.5
+!XLock.none3d: Black
+!XLock.right3d: Blue
+!XLock.left3d: Red
+!XLock.both3d: Magenta
+!XLock.program: fortune -s
+!XLock.messagesfile: 
+!XLock.messagefile: 
+!XLock.message: 
+!XLock.messagefont: -*-times-*-*-*-*-18-*-*-*-*-*-*-*
+!XLock.locksound: thank-you.au
+!XLock.infosound: identify-please.au
+!XLock.validsound: complete.au
+!XLock.invalidsound: not-programmed.au
+!XLock.startCmd: 
+!XLock.endCmd: 
+!XLock.pipepassCmd: 
+!XLock.logoutCmd: 
+!XLock.dpmsstandby: -1
+!XLock.dpmssuspend: -1
+!XLock.dpmsoff: -1
+!XLock.mailCmd: 
+!XLock.mailIcon: 
+!XLock.nomailIcon: 
 
 ! vim: set syn=xdefaults:
