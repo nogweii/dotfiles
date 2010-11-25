@@ -1,11 +1,13 @@
 # Create my git configuration unless it's already up-to-date.
 ztmpl ~/.gitconfig
 
-#function zle-line-init zle-keymap-select {
-#    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-#    RPS2=$RPS1
-#
+#function zle-keymap-select zle-line-init {
+#    VIMODE="${${KEYMAP/vicmd/%#}/(main|viins)/&}"
 #    zle reset-prompt
+#}
+#function zle-line-init {
+#    VIMODE='%#'
+#    #zle -K vicmd
 #}
 #zle -N zle-line-init
 #zle -N zle-keymap-select
