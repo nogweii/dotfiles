@@ -87,6 +87,8 @@ export LC_IDENTIFICATION="en_US.utf8"
 export     HARDWARECLOCK="UTC"
 export          TIMEZONE="America/New_York"
 export          HISTFILE="${XDG_CACHE_HOME}/zsh/history"
+export          HISTSIZE="5000000"
+export          SAVEHIST="${HISTSIZE}"
 
 unset MANPATH
 DYNAMIC_MANPATH="$(
