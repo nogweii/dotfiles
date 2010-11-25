@@ -13,7 +13,7 @@ $Data::Dumper::Indent = 1;
 
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "2.4.3";
+$VERSION = "2.4.4";
 %IRSSI   = (
     authors     => 'Dan Boger',
     contact     => 'zigdon@gmail.com',
@@ -88,6 +88,10 @@ sub cmd_direct_as {
     }
 
     return unless $username = &valid_username($username);
+
+    if (!utf8::is_utf8($text)) {
+        $text = decode(&get_charset, $text);
+    }
 
     eval {
         if ( $twits{$username}
@@ -178,6 +182,10 @@ sub cmd_retweet_as {
 
     return if $modified and &too_long($data);
 
+    if (!utf8::is_utf8($data)) {
+        $data = decode &get_charset, $data;
+    }
+
     my $success = 1;
     eval {
         if ($modified)
@@ -203,8 +211,8 @@ sub cmd_retweet_as {
         return;
     }
 
-    foreach ( $data =~ /@([-\w]+)/ ) {
-        $nicks{$1} = time;
+    foreach ( $data =~ /@([-\w]+)/g ) {
+        $nicks{$_} = time;
     }
 
     &notice("Retweet sent");
@@ -244,6 +252,10 @@ sub cmd_tweet_as {
 
     return if &too_long($data);
 
+    if (!utf8::is_utf8($data)) {
+        $data = decode &get_charset, $data;
+    }
+
     my $success = 1;
     my $res;
     eval {
@@ -260,8 +272,8 @@ sub cmd_tweet_as {
         return;
     }
 
-    foreach ( $data =~ /@([-\w]+)/ ) {
-        $nicks{$1} = time;
+    foreach ( $data =~ /@([-\w]+)/g ) {
+        $nicks{$_} = time;
     }
 
     $id_map{__last_tweet}{$username} = $res->{id};
@@ -351,6 +363,10 @@ sub cmd_reply_as {
 
     return if &too_long($data);
 
+    if (!utf8::is_utf8($data)) {
+        $data = decode &get_charset, $data;
+    }
+
     my $success = 1;
     eval {
         unless (
@@ -373,8 +389,8 @@ sub cmd_reply_as {
         return;
     }
 
-    foreach ( $data =~ /@([-\w]+)/ ) {
-        $nicks{$1} = time;
+    foreach ( $data =~ /@([-\w]+)/g ) {
+        $nicks{$_} = time;
     }
 
     my $away = &update_away($data);
@@ -540,9 +556,10 @@ sub cmd_login {
             } else {
                 $twit = Net::Twitter->new(
                     traits => [ 'API::REST', 'OAuth', 'API::Search' ],
-                    consumer_key => 'BZVAvBma4GxdiRwXIvbnw',
-                    consumer_secret =>
-                      '0T5kahwLyb34vciGZsgkA9lsjtGCQ05vxVE2APXM',
+                    ( grep tr/a-zA-Z/n-za-mN-ZA-M/, map $_,
+                      pbafhzre_xrl => 'OMINiOzn4TkqvEjKVioaj',
+                      pbafhzre_frperg => '0G5xnujYlo34ipvTMftxN9yfwgTPD05ikIR2NCKZ',
+                    ),
                     source => "twirssi",
                     ssl    => !Irssi::settings_get_bool("twirssi_avoid_ssl"),
                 );
@@ -569,8 +586,7 @@ sub cmd_login {
                 eval { $url = $twit->get_authorization_url; };
 
                 if ($@) {
-                    &notice("ERROR: Failed to get OAuth authorization_url. "
-                          . "Try again later." );
+                    &notice("ERROR: Failed to get OAuth authorization_url: $@" );
                     return;
                 }
                 &notice(
@@ -1026,7 +1042,7 @@ sub get_updates {
         foreach ( keys %twits ) {
             $error++ unless &do_updates( $fh, $_, $twits{$_}, \%context_cache );
 
-            if ( $id_map{__fixreplies}{$_} ) {
+            if ( exists $id_map{__fixreplies}{$_} and keys %{ $id_map{__fixreplies}{$_} } ) {
                 my @frusers = sort keys %{ $id_map{__fixreplies}{$_} };
 
                 $error++
@@ -1090,13 +1106,22 @@ sub do_updates {
     print scalar localtime, " - Polling for updates for $username" if &debug;
     my $tweets;
     my $new_poll_id = 0;
+    my @ignored_accounts =
+      Irssi::settings_get_str("twirssi_ignored_accounts")
+      ? split /\s*,\s*/, Irssi::settings_get_str("twirssi_ignored_accounts")
+      : ();
     eval {
-        if ( $id_map{__last_id}{$username}{timeline} )
-        {
-            $tweets = $obj->home_timeline( { count => 100 } );
-        } else {
-            $tweets = $obj->home_timeline();
-        }
+	if ( grep { $_ eq $username } @ignored_accounts ) {
+	    $tweets = ();
+	    print $fh "type:debug Ignoring timeline for $username\n" if &debug;
+	} else {
+	    if ( $id_map{__last_id}{$username}{timeline} )
+	    {
+		$tweets = $obj->home_timeline( { count => 100 } );
+	    } else {
+		$tweets = $obj->home_timeline();
+	    }
+	}
     };
 
     if ($@) {
@@ -1143,7 +1168,7 @@ sub do_updates {
         next if not &debug and $match;
 
         foreach my $tag (@strip_tags) {
-            $text =~ s/\b\Q$tag\E\b//gi;
+            $text =~ s/(?:\b|^)\Q$tag\E(?:\b|$)//gi;
         }
 
         if (    Irssi::settings_get_bool("show_reply_context")
@@ -1796,7 +1821,11 @@ sub shorten {
                     "Set short_url_args to username,API_key or change your",
                     "short_url_provider."
                 );
-                return decode &get_charset, $data;
+                if (!utf8::is_utf8($data)) {
+                    return decode &get_charset, $data;
+                } else {
+                    return $data;
+                }
             }
         }
 
@@ -1813,7 +1842,11 @@ sub shorten {
         }
     }
 
-    return decode &get_charset, $data;
+    if (!utf8::is_utf8($data)) {
+        return decode &get_charset, $data;
+    } else {
+        return $data;
+    }
 }
 
 sub normalize_username {
@@ -1887,6 +1920,7 @@ Irssi::settings_add_str( "twirssi", "twirssi_nick_color",      "%B" );
 Irssi::settings_add_str( "twirssi", "twirssi_topic_color",     "%r" );
 Irssi::settings_add_str( "twirssi", "twirssi_ignored_tags",    "" );
 Irssi::settings_add_str( "twirssi", "twirssi_stripped_tags",   "" );
+Irssi::settings_add_str( "twirssi", "twirssi_ignored_accounts","" );
 Irssi::settings_add_str( "twirssi", "twirssi_retweet_format",
     'RT $n: "$t" ${-- $c$}' );
 Irssi::settings_add_str( "twirssi", "twirssi_location",
@@ -2042,6 +2076,14 @@ if ($window) {
             "/twitter_unblock <username>",
             "destroy_block",
             sub { &notice("Unblock $_[0]"); }
+        )
+    );
+    Irssi::command_bind(
+        "twitter_spam",
+        &gen_cmd(
+            "/twitter_spam <username>",
+            "report_spam",
+            sub { &notice("Reported $_[0] for spam"); }
         )
     );
     Irssi::signal_add_last( 'complete word' => \&sig_complete );
