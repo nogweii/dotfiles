@@ -22,7 +22,16 @@ servers = (
   { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; }
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "7000";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    ssl_capath = "/etc/ssl/certs";
+    autoconnect = "yes";
+  }
 );
 
 chatnets = {
@@ -274,6 +283,7 @@ settings = {
     niq_own_statusbar = "yes";
     niq_hide_on_inactive = "yes";
     niq_color_char = "yes";
+    short_url_provider = "Bitly";
   };
   "fe-common/core" = { show_names_on_join = "no"; };
 };
