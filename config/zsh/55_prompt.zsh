@@ -33,6 +33,8 @@ function precmd {
         zstyle ':vcs_info:*' formats "$vcsformat%F{red}●%F{green}%f)"
     fi
     vcs_info
+    # escaped urls messes with the prompt
+    PR_VCS="$(echo ${vcs_info_msg_0_} | sed 's/%[0-9][0-9]/_/g')"
 
     # Change the color of the directory if it's not writable
     if [[ ! -w $PWD ]]; then
@@ -84,7 +86,7 @@ $PR_SHIFT_IN$PR_HBAR$PR_GREEN$PR_URCORNER$PR_SHIFT_OUT$PR_NO_COLOUR\
 $PR_GREEN$PR_SHIFT_IN$PR_LLCORNER$PR_GREEN$PR_HBAR$PR_SHIFT_OUT(\
 %(?..$PR_RED%?$PR_WHITE:)%(!.$PR_RED.$PR_YELLOW)$VIMODE$PR_GREEN)$PR_NO_COLOUR '
 
-    RPROMPT='$PR_NO_COLOUR${vcs_info_msg_0_}$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_GREEN\
+    RPROMPT='$PR_NO_COLOUR$PR_VCS$PR_GREEN$PR_SHIFT_IN$PR_HBAR$PR_GREEN\
 $PR_LRCORNER$PR_SHIFT_OUT$PR_NO_COLOUR'
 
     # Continuation prompt (e.g. unfinished quote, for loop...)
