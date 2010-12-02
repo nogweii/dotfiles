@@ -111,6 +111,4 @@ fi
 # Only if privoxy is running (`/etc/rc.d/privoxy start`)
 if [ -f /var/run/daemons/privoxy ] ; then
     export http_proxy=http://localhost:8118
-    export https_proxy=http://localhost:8118
-    export ftp_proxy=http://localhost:8118
 fi
