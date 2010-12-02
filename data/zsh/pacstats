@@ -1,0 +1,13 @@
+# The number given after pacstatus determines how many lines of history you would like shown
+pacman -V | grep Pacman | cut -d " " -f 20-
+echo
+echo "Last Sy - " `cat /var/log/pacman.log | grep sync | tail -n1 | cut -d "[" -f 2 | cut -d "]" -f -1`
+echo "Last Su - " `cat /var/log/pacman.log | grep "full system" | tail -n1 | cut -d "[" -f 2 | cut -d "]" -f -1`
+echo
+echo "Last "$1" Installed"
+cat /var/log/pacman.log | grep installed | tail -n1 $1 | cut -d " " -f 4,5
+echo
+echo "Last "$1" Removed"
+cat /var/log/pacman.log | grep removed | tail -n1 $1 | cut -d " " -f 4,5
+
+# vim: set syntax=zsh:
