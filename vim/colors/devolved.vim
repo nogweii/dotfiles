@@ -3,11 +3,11 @@
 " License: public domain
 " Maintainer:: evaryont <colin@evaryont.me>
 "
-" for a 256 color capable terminal like xterm-256color, ... or gvim as well
-" "{{{
+" {{{ for a 256 color capable terminal like xterm-256color, ... or gvim as well
 " it only works in such a terminal and when you have:
 " set t_Co=256
-" in your vimrc"}}}
+" in your vimrc
+" }}}
 
 " {{{ reset colors and set colors_name and store cpo setting
 set background=dark
@@ -86,7 +86,7 @@ let s:colors256 = [
                 \ ["FoldedColumn",  "",           "39",   "190",  "",         ""   ],
                 \ ["FoldColumn",    "",           "38",   "234",  "",         ""   ],
                 \ ["Directory",     "",           "28",   "",     "",         ""   ],
-                \ ["LineNr",        "",           "23",   "232",  "",         ""   ],
+                \ ["LineNr",        "NONE",       "23",   "232",  "",         ""   ],
                 \ ["NonText",       "",           "244",  "",     "",         ""   ],
                 \ ["SpecialKey",    "",           "190",  "",     "",         ""   ],
                 \ ["Title",         "bold",       "98",   "",     "",         ""   ],
@@ -99,6 +99,7 @@ let s:colors256 = [
                 \ ["Ignore",        "",           "",     "",     "",         ""   ],
                 \ ["Number",        "",           "50",   "",     "",         ""   ],
                 \ ["PreProc",       "",           "62",   "",     "",         ""   ],
+                \ ["SignColumn",    "NONE",       "",     "232",  "",         ""   ],
                 \ ["Special",       "",           "15",   "234",  "",         ""   ],
                 \ ["SpecialChar",   "",           "155",  "",     "",         ""   ],
                 \ ["Statement",     "",           "62",   "",     "",         ""   ],
@@ -128,6 +129,10 @@ let s:rubyColors = [
 
 let s:otherColors = [
                 \ ["diffRemoved",   "",           "",     "124",     "",         ""   ],
+                \ ["ShowMarksHLl",  "bold",       "18",   "43",      "",         ""   ],
+                \ ["ShowMarksHLu",  "bold",       "9",    "1",       "",         ""   ],
+                \ ["ShowMarksHLo",  "bold",       "11",   "3",       "",         ""   ],
+                \ ["ShowMarksHLm",  "bold",       "2",    "20",      "",         ""   ],
                 \ ["diffAdded",     "",           "",     "22",      "",         ""   ]]
 " }}}
 
