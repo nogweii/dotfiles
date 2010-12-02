@@ -1,67 +1,66 @@
 -- Sources of configuration:
--- https://haskell.org/haskellwiki/Xmonad/Config_archive/lorincs_xmonad.hs
--- https://haskell.org/haskellwiki/Xmonad/Config_archive/loupgaroublonds_xmonad.hs
--- https://haskell.org/haskellwiki/Xmonad/Config_archive/31d1's_xmonad.hs
--- https://haskell.org/haskellwiki/Xmonad/Config_archive/lazor's_xmonad.hs
--- https://haskell.org/haskellwiki/Xmonad/Config_archive/Herzen's_xmonad.hs
+-- https://haskell.org/haskellwiki/Xmonad/Config_archive
 -- https://haskell.org/haskellwiki/Xmonad/Using_xmonad_in_KDE
+-- https://github.com/
 --
 -- And as Daft Punk says, around the world...
-import XMonad
-import IO
-import XMonad.Config.Kde
 import Data.Monoid
+import IO
 import System.Exit
-
--- import DBus
--- import DBus.Connection
--- import DBus.Message
+import XMonad
+import XMonad.Config.Kde
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
 -- Actions
+import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
 import XMonad.Actions.Submap
 import XMonad.Actions.UpdatePointer
-import XMonad.Actions.CycleWS
+import XMonad.Actions.WindowGo
 
 -- Hooks
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.Place
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.UrgencyHook
 
 -- Utils
 import XMonad.Util.EZConfig
 import XMonad.Util.Replace
 import XMonad.Util.Scratchpad
+import XMonad.Util.NamedWindows (getName)
+import XMonad.Util.Run
 
 -- Prompts, baby, prompts!
+import XMonad.Layout.LayoutModifier
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
 
----- This retry is really awkward, but sometimes DBus won't let us get our
----- name unless we retry a couple times.
---getWellKnownName :: Connection -> IO ()
---getWellKnownName dbus = tryGetName `catchDyn` (\ (DBus.Error _ _) ->
---                        where
---                         tryGetName = do
---                           namereq <- newMethodCall serviceDBus pathDBus interfaceDBus "RequestName"
---                           addArgs namereq [String "org.xmonad.Log", Word32 5]
---                           sendWithReplyAndBlock dbus namereq 0
---                           return ()
-
-
 -- The default number of workspaces (virtual screens) and their names.
---
 the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 icons_path = "/home/colin/.icons"
+
+-- list of window layouts I use
+-- avoidStruts  $ (tiled |||  reflectTiled ||| Mirror tiled ||| Grid ||| Full)
+layouts = avoidStruts $ (Mirror tiled ||| tiled ||| Full)
+  where
+     -- default tiling algorithm partitions the screen into two panes
+     tiled   = Tall nmaster delta ratio
+     -- The default number of windows in the master pane
+     nmaster = 1
+     -- Default proportion of screen occupied by master pane
+     ratio   = 1/2
+     -- Percent of screen to increment by when resizing panes
+     delta   = 3/100
+
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -74,10 +73,8 @@ key_bindings = [
                , ("M-S-k",           windows W.swapUp)
                , ("M-S-<Return>",    windows W.swapMaster)
                , ("M-x",             goToSelected grid_config)
-               , ("M-i",             moveTo Next NonEmptyWS)
-               , ("M-o",             moveTo Prev NonEmptyWS)
-               , ("M-h",             sendMessage Shrink)
-               , ("M-l",             sendMessage Expand)
+               , ("M-S-h",           sendMessage Shrink)
+               , ("M-S-l",           sendMessage Expand)
 
                -- Window management
                , ("M-t",             toggleFloat)
@@ -119,12 +116,19 @@ key_bindings = [
                , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
                , ("M-S-q",           io (exitWith ExitSuccess))
 
+-- Restart xmonad
+-- , ((modMask              , xK_q     ),)
+--       broadcastMessage ReleaseResources >> restart
+--       "/home/vince/usr/bin/xmonad" True)
+--
+--
+
     -- [ ((modm, xK_p), spawn "krunner")
     -- , ((modm .|. shiftMask, xK_q), spawn "dbus-send --print-reply --dest=org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout int32:1 int32:0 int32:1")
     -- , ((modm, xK_a), withFocused (sendMessage . expandWindowAlt))
 
                , ("M-r",             refresh)
-               , ("M-f",             spawn "qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock")
+               , ("M-f",             spawn "xautolock -locknow")
 
                    -- toggle focused window fullscreen
                    --     , ((modMask,               xK_m     ), sendMessage (Toggle "Full"))
@@ -132,15 +136,19 @@ key_bindings = [
 
                -- Applications!
                , ("M-<Escape>",      kill)
-               , ("M-p",             spawn "dmenu_run")
+               , ("M-p",             spawn "dmenu-run")
                , ("M-S-p",           spawn "dmenu-app")
                , ("M-b",             spawn "keynav \"start, grid 2x2\"")
+               , ("M-o",             runOrRaiseNext "firefox.sh" (className =? "Namoroka"))
+               , ("M-S-o",           runOrRaiseNext "arora" (className =? "Arora"))
                ]
                ++
-               -- Workspaces: M-{1..9} - go to that work space, M-S-{1..9} - move client
+               -- Workspaces: M-{1..9} - go to that workspace,
+               -- M-S-{1..9} - move client & go to that workspace, M-C-{1..9},
+               -- move the client
                [(m ++ k, windows $ f w)
                     | (w, k) <- zip (XMonad.workspaces the_settings) (map show [1..9])
-               , (m, f) <- [("M-",W.greedyView), ("M-S-",\w -> W.greedyView w . W.shift w)]]
+               , (m, f) <- [("M-",W.greedyView), ("M-S-",\w -> W.greedyView w . W.shift w), ("M-C-",W.shift)]]
 
                where toggleFloat = withFocused $ \windowId -> do
                        floats <- gets (W.floating . windowset)
@@ -181,7 +189,11 @@ compiled_bindings = \c -> mkKeymap c $ key_bindings
 manage_hook = composeAll (
 
     -- Apps, etc to float & center
-    [ className =? c <||> resource =? r <||> title =? t <||> isDialog --> doCenterFloat
+    [ className =? c <||>
+      resource =? r  <||>
+      title =? t     <||>
+      isDialog
+         --> doCenterFloat
     | c <- ["Wine", "Switch2", "quantum-Quantum"]
     , r <- ["Dialog", "Download"]
     , t <- ["Schriftart auswählen", "Choose a directory"]
@@ -194,6 +206,7 @@ manage_hook = composeAll (
     , className =? "Gimp" --> doFloat
     , className =? "Cinelerra" --> doFloat
     , className =? "stalonetray" --> doIgnore
+    , className =? "stalonetray" --> doIgnore
     -- x11-ssh-askpass: Float it
     , className =? "x11-ssh-askpass" --> doFloat
     , className =? "ssh-askpass" --> doFloat
@@ -204,6 +217,7 @@ manage_hook = composeAll (
     , className =? "sun-awt-X11-XDialogPeer" --> doFloat
     , className =? "sun-applet-PluginMain" --> doFloat
     , className =? "sun-awt-X11-XFramePeer" --> doFloat
+    , className =? "openDialog_popup" --> doFloat
     , className =? "net-minecraft-MinecraftLauncher" --> doFloat
     , className =? "Eclipse" --> doFloat
     , resource  =? "stalonetray" --> doIgnore
@@ -216,7 +230,9 @@ manage_hook = composeAll (
 
     -- "Real" fullscreen
     , isFullscreen              --> doFullFloat
-    , isDialog                  --> placeHook (inBounds (underMouse (0,0))) <+> makeMaster <+> doFloat
+    , isDialog                  --> placeHook (inBounds (underMouse (0,0)))
+                                    <+> makeMaster
+                                    <+> doFloat
     , isKDETrayWindow           --> doIgnore
     -- RationalRect params: width, height, pos y, pos x -- in %
     , scratchpadManageHook (W.RationalRect 1.0 0.6 1.0 0.0)
@@ -231,6 +247,15 @@ manage_hook = composeAll (
     <+> makeMaster
 
   where makeMaster = insertPosition Master Newer
+
+-- data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
+-- 
+-- instance UrgencyHook LibNotifyUrgencyHook where
+--     urgencyHook LibNotifyUrgencyHook w = do
+--         name <- getName w
+--         ws <- gets windowset
+--         whenJust (W.findTag w ws) (flash name)
+--       where flash name index = spawn ("notify-send " ++ name ++ " requests your attention on workspace " ++ index)
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -277,37 +302,6 @@ grid_config = defaultGSConfig
           -- jump back to the center with the spacebar, regardless of the current position.
           reset = M.singleton (0,xK_space) (const (0,0))
 
--- myPP handle = defaultPP {
---         ppCurrent = wrap ("^fg(" ++ fgHLight color_scheme ++ ")^bg(" ++ bgHLight color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
---         -- Inverse the hilight colors for urgency
---         ppUrgent = wrap ("^fg(" ++ bgHLight color_scheme ++ ")^bg(" ++ fgHLight color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
---         ppVisible = wrap ("^fg(" ++ fgColor color_scheme ++ ")^bg(" ++ bgColor color_scheme ++ ")^p(4)") "^p(4)^fg()^bg()",
---         ppSep     = "^fg(" ++ borderColor color_scheme ++ ")^r(3x3)^fg()",
---         ppTitle   = wrap ("^fg(" ++ bgHLight  ++ ")") "^fg()" ,
---         ppOutput  = hPutStrLn handle
--- }
--- 
-myDzenPP h = defaultPP {
-                        ppOutput          = hPutStrLn h,
-                        ppSep             = (wrapFg  (borderColor color_scheme) "^r(3x3)"),
-                        ppVisible         = wrapFgBg (fgColor color_scheme) (bgColor color_scheme),
-                        ppCurrent         = wrapFgBg (fgHLight color_scheme)    (bgHLight color_scheme),
-                        -- Inverse the hilight colors for urgency
-                        ppUrgent          = wrapFgBg (bgHLight color_scheme) (fgHLight color_scheme),
-                        ppTitle           = (\x -> "  " ++ wrapFg (fgHLight color_scheme) x),
-                        ppLayout          = (\x -> case x of
-                                              "ResizableTall"        -> wrapIcon "dzen_bitmaps/tall.xbm"
-                                              "Mirror ResizableTall" -> wrapIcon "dzen_bitmaps/mtall.xbm"
-                                              "Full"                 -> wrapIcon "dzen_bitmaps/full.xbm"
-                                              _                      -> " " ++ x ++ " "
-                                            )
-                       }
-                        where
-                          wrapFgBg fgColor bgColor content= wrap ("^fg(" ++ fgColor ++ ")^bg(" ++ bgColor ++ ")") "^fg()^bg()" content
-                          wrapFg color content = wrap ("^fg(" ++ color ++ ")") "^fg()" content
-                          wrapBg color content = wrap ("^bg(" ++ color ++ ")") "^bg()" content
-                          wrapIcon path = " ^i(" ++ icons_path ++ "/" ++ path ++ ")"
-
 -- Universal color scheme. DZen, prompts, everything!
 color_scheme = defaultXPConfig {
                    font              = "-*-liberation mono-medium-r-*-*-12-*-*-*-*-*-*-*"
@@ -333,7 +327,16 @@ color_scheme = defaultXPConfig {
 --   getWellKnownName dbus
 --   putStrLn "Got name, starting XMonad."
 --   xmonad $ gnomeConfig
-main = xmonad the_settings
+toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
+
+dzen_windows conf = statusBar ("dzen2 " ++ flags) dzenPP toggleStrutsKey conf
+ where
+    colors  = "-fg '#a8a3f7' -bg '#3f3c6d'" -- n.b quoting
+    font    = " -fn 'xft:Terminus:size=10'"
+    --font = "-*-terminus-*-*-*-*-16-*-*-*-*-*-*-*"
+    flags   = "-e 'onstart=lower' -h 24 -w 500 -ta l " ++ colors ++ font
+
+main = xmonad =<< dzen_windows the_settings
 
 -- A structure containing the configuration settings.
 -- Any you don't override, will use the defaults defined in
