@@ -450,3 +450,8 @@ let g:nosession = 0
 "endif
 au StdinReadPre * let g:nosession = 1 " on stdin, don't load the session file
 au VimLeave * if !v:dying | mksession! ~/.vim/Session.vim | endif
+
+" Return to the previous location after repeating a change
+nmap . .`[
+" Disable vim-as-man-pager within vim (so :Man works)
+let $MANPAGER = ''
