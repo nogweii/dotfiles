@@ -34,8 +34,8 @@ set history=1000               " Remember lots of history for :
 set wildmenu                   " Show completion matches in the status bar
 set wildmode=longest,full      " Expand the longest common match, then all
 set wildignore=*.o,*.obj,*~    " What to ignore in wildmenu
-set backupdir=/tmp             " Store backup files in /tmp
-set directory=/tmp             " Store swap files in /tmp
+set backupdir=~/.vim/tmp//     " Store backup files in ~/.vim/tmp
+set directory=~/.vim/tmp//     " Store swap files in ~/.vim/tmp
 set backspace=indent,eol,start " Smart backspace in insert mode
 set sidescroll=1               " Scroll horizontally 1 column at a time
 set sidescrolloff =7           " Always show this at least this many columns
@@ -347,7 +347,7 @@ endif
 " Vim 7.3 only settings.
 if v:version >= 703
     " undo settings
-    set undodir=~/.vim/undo
+    set undodir=~/.vim/tmp//
     set undofile
 endif
 " }}}
