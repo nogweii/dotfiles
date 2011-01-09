@@ -1,5 +1,5 @@
 gtk-theme-name = "Clearlooks"
 gtk-icon-theme-name = "oxygen"
-gtk-font-name = "Liberation Sans 12"
+gtk-font-name = "Liberation Sans 10"
 gtk-toolbar-style = 0
 gtk-key-theme-name = "Emacs"
