@@ -39,9 +39,18 @@ import XMonad.Util.NamedWindows (getName)
 import XMonad.Util.Run
 
 -- Prompts, baby, prompts!
-import XMonad.Layout.LayoutModifier
 import XMonad.Prompt
 import XMonad.Prompt.AppendFile
+
+-- Layouts are fun to mess with...
+import XMonad.Layout.LayoutModifier
+import XMonad.Layout.LayoutHints
+import XMonad.Layout.NoBorders
+import XMonad.Layout.ShowWName
+import XMonad.Layout.MosaicAlt
+import XMonad.Layout.Gaps
+import XMonad.Layout.Grid
+import XMonad.Layout.Magnifier
 
 -- The default number of workspaces (virtual screens) and their names.
 the_workspaces    = ["1","2","3","4","5","6","7","8","9"]
@@ -249,7 +258,7 @@ manage_hook = composeAll (
   where makeMaster = insertPosition Master Newer
 
 -- data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
--- 
+--
 -- instance UrgencyHook LibNotifyUrgencyHook where
 --     urgencyHook LibNotifyUrgencyHook w = do
 --         name <- getName w
@@ -350,7 +359,8 @@ the_settings = ewmh kde4Config {
         keys        = compiled_bindings,
         manageHook  = manage_hook,
         startupHook = startup_hook,
-        logHook     = log_hook
+        logHook     = log_hook,
+        layoutHook  = showWName layout_hook
 }
 
 ------------------------------------------------------------------------
