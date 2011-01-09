@@ -304,7 +304,7 @@ grid_config = defaultGSConfig
 
 -- Universal color scheme. DZen, prompts, everything!
 color_scheme = defaultXPConfig {
-                   font              = "-*-liberation mono-medium-r-*-*-12-*-*-*-*-*-*-*"
+                   font              = "-*-liberation mono-medium-r-*-*-10-*-*-*-*-*-*-*"
                  , bgColor           = "#2f2f2f"
                  , fgColor           = "#0099cc"
                  , bgHLight          = "#aecf96"
@@ -332,9 +332,9 @@ toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 dzen_windows conf = statusBar ("dzen2 " ++ flags) dzenPP toggleStrutsKey conf
  where
     colors  = "-fg '#a8a3f7' -bg '#3f3c6d'" -- n.b quoting
-    font    = " -fn 'xft:Terminus:size=10'"
+    font    = " -fn 'xft:Liberation Mono:size=7'"
     --font = "-*-terminus-*-*-*-*-16-*-*-*-*-*-*-*"
-    flags   = "-e 'onstart=lower' -h 24 -w 500 -ta l " ++ colors ++ font
+    flags   = "-e 'onstart=lower' -h 18 -w 500 -ta l " ++ colors ++ font
 
 main = xmonad =<< dzen_windows the_settings
 
