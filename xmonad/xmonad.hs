@@ -148,7 +148,7 @@ key_bindings = [
                , ("M-p",             spawn "dmenu-run")
                , ("M-S-p",           spawn "dmenu-app")
                , ("M-b",             spawn "keynav \"start, grid 2x2\"")
-               , ("M-o",             runOrRaiseNext "firefox.sh" (className =? "Namoroka"))
+               , ("M-o",             runOrRaiseNext "chromium-dev" (className =? "Chromium"))
                , ("M-S-o",           runOrRaiseNext "arora" (className =? "Arora"))
                ]
                ++
