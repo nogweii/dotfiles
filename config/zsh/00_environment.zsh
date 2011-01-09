@@ -107,8 +107,3 @@ if [ -n "$DISPLAY" ] ; then
         export SUDO_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
     fi
 fi
-
-# Only if privoxy is running (`/etc/rc.d/privoxy start`)
-if [ -f /var/run/daemons/privoxy ] ; then
-    export http_proxy=http://localhost:8118
-fi
