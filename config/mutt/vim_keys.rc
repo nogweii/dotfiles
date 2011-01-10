@@ -5,6 +5,7 @@
 bind index m set-flag
 bind index M clear-flag
 bind index gm mail
+macro index gy <set-flag>!
 
 bind generic <Home> top-page
 bind generic <End> bottom-page
@@ -15,5 +16,10 @@ bind generic gG last-entry
 #bind index ZQ exit
 #bind generic q noop
 #bind index q noop
+
+macro index S "|bogofilter -s\ns=spam/\n" "Learn as spam and save to junk"
+macro pager S "|bogofilter -s\ns=spam/\n" "Learn as spam and save to junk"
+macro index H "|bogofilter -n\ns="        "Learn as ham and save"
+macro pager H "|bogofilter -n\ns="        "Learn as ham and save"
 
 # vim: set syn=muttrc:
