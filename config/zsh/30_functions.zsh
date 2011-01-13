@@ -232,3 +232,18 @@ for i in ~/.data/zsh/*(*) ; do
 done
 
 autoload colors zsh/terminfo
+
+# source from, or add to ~/.zshrc
+# go opens zsh at the current location, and on exit, cd into ranger's last location.
+ranger_open () {
+     ranger "$(pwd)" <$TTY
+     print -n "\033[A"
+     zle && zle -I
+     cd "$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)"
+     # Redo the prompt, to fit any new data from the new directory
+     setprompt
+     precmd
+     _zsh_highlight-zle-buffer
+}
+zle -N ranger_open
+bindkey -a "go" ranger_open
