@@ -380,7 +380,7 @@ let g:SuperTabCrMapping=0
 let g:delimitMate_expand_space=0
 let g:delimitMate_expand_cr=0
 let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_quiet_warnings = 0
 " }}}
 
