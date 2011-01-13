@@ -22,3 +22,5 @@ fi
 if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
+
+source ~/.config/zsh/zsh-syntax-highlighting.zsh
