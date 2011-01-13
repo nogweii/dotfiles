@@ -1,0 +1,3 @@
+ * Better than a command that adds an include would be a command that scans the
+   source files and then adds all the necessary #includes. That would reduce
+   the distraction factor!
