@@ -1,0 +1,208 @@
+*regbuf.txt* *regbuf*
+
+Author:
+  tyru <tyru.exe@gmail.com>
+Version: 0.0.0
+License:
+" NEW BSD LICENSE {{{
+"   Copyright (c) 2009, tyru
+"   All rights reserved.
+"
+"   Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+"
+"       * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+"       * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+"       * Neither the name of the tyru nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+"
+"   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+" }}}
+
+==============================================================================
+CONTENTS						*regbuf-contents*
+
+Introduction				|regbuf-introduction|
+Interface					|regbuf-interface|
+  Keymappings				|regbuf-keymappings|
+  Variables					|regbuf-variables|
+  Commands					|regbuf-commands|
+  Registers window			|regbuf-registers-window|
+    Keymappings				|regbuf-registers-window-keymappings|
+  Registers edit window		|regbuf-registers-edit-window|
+    Keymappings				|regbuf-registers-edit-window-keymappings|
+TODO						|regbuf-todo|
+Changelog					|regbuf-changelog|
+
+
+==============================================================================
+INTRODUCTION						*regbuf-introduction*
+
+|regbuf| is handy |:reg| buffer.
+
+1. Yank/Paste register
+2. Edit register on buffer
+3. etc.
+
+==============================================================================
+INTERFACE				*regbuf-interface* {{{
+------------------------------------------------------------------------------
+KEYMAPPINGS					*regbuf-keymappings* {{{
+
+See
+- |regbuf-registers-window-keymappings|
+- |regbuf-registers-edit-window-keymappings|.
+
+}}}
+------------------------------------------------------------------------------
+VARIABLES					*regbuf-variables* {{{
+
+g:regbuf_open_command				*g:regbuf_open_command*
+								(Default: "new")
+	This Ex command is used for creating new buffer (and window) like: >
+	execute g:regbuf_open_command "buffer name"
+<
+g:regbuf_edit_open_command				*g:regbuf_edit_open_command*
+								(Default: Does not exist)
+	If this variable was defined,
+	this is used for creating new buffer (and window) at
+	|regbuf-registers-edit-window|.
+
+g:regbuf_no_default_keymappings		*g:regbuf_no_default_keymappings*
+								(Default: 0)
+	If true, regbuf does not set up keymappings for |regbuf-registers-window|.
+
+g:regbuf_no_default_edit_autocmd		*g:regbuf_no_default_edit_autocmd*
+								(Default: 0)
+	If true, regbuf does not set up autocmd for |regbuf-registers-edit-window|.
+
+g:regbuf_show_preview					*g:regbuf_show_preview*
+								(Default: 1)
+	If true, show register's content at |preview-window|.
+
+g:regbuf_paste_buffer_noclose			*g:regbuf_paste_buffer_noclose*
+								(Default: 0)
+	If true, |<Plug>(regbuf-paste-buffer)| does not close |regbuf-registers-window|.
+
+g:regbuf_paste_buffer_nodelete			*g:regbuf_paste_buffer_nodelete*
+								(Default: 0)
+	If true, |<Plug>(regbuf-paste-buffer)| does not delete existing text
+	in original buffer.
+
+}}}
+------------------------------------------------------------------------------
+FUNCTIONS					*regbuf-functions* {{{
+
+regbuf#open()				*regbuf#open()*
+	Function version of |:RegbufOpen|.
+	Please see |:RegbufOpen| description instead.
+
+}}}
+------------------------------------------------------------------------------
+COMMANDS					*regbuf-commands* {{{
+
+:RegbufOpen						*:RegbufOpen*
+	Open buffer like |:reg|'s output format.
+	See |regbuf-keymappings-registers| for keymappings.
+	Function version is |regbuf#open()|.
+
+}}}
+------------------------------------------------------------------------------
+REGISTERS WINDOW		*regbuf-registers-window* {{{
+
+|regbuf-registers-window| is buffer like |:reg|'s output format.
+To open this buffer, execute |:RegbufOpen|.
+
+------------------------------------------------------------------------------
+REGISTERS WINDOW KEYMAPPINGS	*regbuf-registers-window-keymappings* {{{
+
+
+<Plug>(regbuf-yank)				*<Plug>(regbuf-yank)*
+	Yank the register's content on cursor to specified register by keymapping.
+	If no register is specified, unnamed register (|quote_quote|) is used.
+
+<Plug>(regbuf-paste)				*<Plug>(regbuf-paste)*
+	Paste specified regbuf by keymapping to the register's content on cursor.
+	See |<Plug>(regbuf-paste-buffer)| for pasting to buffer.
+	If no register is specified, unnamed register (|quote_quote|) is used.
+
+<Plug>(regbuf-swap)				*<Plug>(regbuf-swap)*
+	Paste the register's content on cursor.
+	If no register is specified, unnamed register (|quote_quote|) is used.
+
+<Plug>(regbuf-paste-buffer)				*<Plug>(regbuf-paste-buffer)*
+	Paste the register's content on cursor to the buffer
+	which |regbuf-registers-window| is opened at.
+	If no register is specified, unnamed register (|quote_quote|) is used.
+
+<Plug>(regbuf-paste-buffer-noclose)		*<Plug>(regbuf-paste-buffer-noclose)*
+	This behaves like |<Plug>(regbuf-paste-buffer)|
+	when |g:regbuf_paste_buffer_noclose| is true.
+
+<Plug>(regbuf-paste-buffer-nodelete)		*<Plug>(regbuf-paste-buffer-nodelete)*
+	This behaves like |<Plug>(regbuf-paste-buffer)|
+	when |g:regbuf_paste_buffer_nodelete| is true.
+
+<Plug>(regbuf-edit)				*<Plug>(regbuf-edit)*
+	Start editing the register's content on cursor.
+
+<Plug>(regbuf-close)				*<Plug>(regbuf-close)*
+	Closing |regbuf-registers-window|.
+
+
+Default keymappings
+----------------------
+If |g:regbuf_no_default_keymappings| is true,
+These mappings are not mapped.
+
+y is mapped to |<Plug>(regbuf-yank)|.
+p is mapped to |<Plug>(regbuf-paste)|.
+s is mapped to |<Plug>(regbuf-swap)|.
+bp is mapped to |<Plug>(regbuf-paste-buffer)|.
+e and <CR> is mapped to |<Plug>(regbuf-edit)|.
+q and <Esc> is mapped to |<Plug>(regbuf-close)|.
+
+}}}
+}}}
+------------------------------------------------------------------------------
+REGISTERS EDIT WINDOW		*regbuf-registers-edit-window* {{{
+
+|regbuf-registers-edit-window| is register's content buffer.
+To open this buffer, execute |<Plug>(regbuf-edit)|. (Default is <CR>)
+You can edit and |:write| or do |:RegbufEditApply|.
+If you want |:write| not to work set 1 to |g:regbuf_no_default_edit_autocmd|.
+You can use |:RegbufEditCancel| to cancel edited content.
+
+------------------------------------------------------------------------------
+REGISTERS EDIT WINDOW KEYMAPPINGS	*regbuf-registers-edit-window-keymappings* {{{
+
+<Plug>(regbuf-edit-apply)				*<Plug>(regbuf-edit-apply)*
+	Keymapping version of |:RegbufEditApply|.
+
+<Plug>(regbuf-edit-cancel)				*<Plug>(regbuf-edit-cancel)*
+	Keymapping version of |:RegbufEditCancel|.
+
+
+Default keymappings
+----------------------
+No default keymappings.
+
+}}}
+}}}
+}}}
+==============================================================================
+TODO						*regbuf-todo* {{{
+
+Nothing yet.
+Please request feature/report bug(s) at
+http://github.com/tyru/regbuf.vim/issues or e-mail.
+http://twitter.com/tyru is also welcome :)
+
+}}}
+==============================================================================
+CHANGELOG						*regbuf-changelog* {{{
+
+0.0.0:
+- Initial upload
+
+}}}
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=4:ft=help:norl:noet:fdm=marker:fen
