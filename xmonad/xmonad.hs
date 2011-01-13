@@ -59,17 +59,15 @@ icons_path = "/home/colin/.icons"
 
 -- list of window layouts I use
 -- avoidStruts  $ (tiled |||  reflectTiled ||| Mirror tiled ||| Grid ||| Full)
-layouts = avoidStruts $ (Mirror tiled ||| tiled ||| Full)
+layouts = grid ||| Mirror tiled ||| tiled ||| mosaic ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
-     -- The default number of windows in the master pane
-     nmaster = 1
-     -- Default proportion of screen occupied by master pane
-     ratio   = 1/2
-     -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+     tiled   = Tall 1 (3/100) (1/2)
+     mosaic  = Mirror (MosaicAlt M.empty)
+     grid    = Grid
 
+-- gaps on all edges, except top - that's managed by dynamicLog
+layout_hook = gaps [(R,5),(L,5),(D,5)] $ layoutHints(noBorders(avoidStruts $ (layouts)))
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -84,6 +82,8 @@ key_bindings = [
                , ("M-x",             goToSelected grid_config)
                , ("M-S-h",           sendMessage Shrink)
                , ("M-S-l",           sendMessage Expand)
+               , ("M-h",             prevWS)
+               , ("M-l",             nextWS)
 
                -- Window management
                , ("M-t",             toggleFloat)
@@ -118,36 +118,15 @@ key_bindings = [
 
                -- XMonad control
                , ("M-<Space>",       sendMessage NextLayout)
-               -- IDEA: Pop up an OSD with the new layout's name
-   -- -- Rotate through layouts
-   -- , ((modMask,               xK_grave ), sendMessage NextLayout
-   -- >> (dynamicLogString myPP >>= \d->safeSpawn "gnome-osd-client" [d]))
-               , ("M-q",             spawn "xmonad --recompile; xmonad --restart")
-               , ("M-S-q",           io (exitWith ExitSuccess))
-
--- Restart xmonad
--- , ((modMask              , xK_q     ),)
---       broadcastMessage ReleaseResources >> restart
---       "/home/vince/usr/bin/xmonad" True)
---
---
-
-    -- [ ((modm, xK_p), spawn "krunner")
-    -- , ((modm .|. shiftMask, xK_q), spawn "dbus-send --print-reply --dest=org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout int32:1 int32:0 int32:1")
-    -- , ((modm, xK_a), withFocused (sendMessage . expandWindowAlt))
-
+               , ("M-q",             spawn "xautolock -locknow")
+               , ("M-S-q",           broadcastMessage ReleaseResources >> restart "xmonad" True)
+               , ("M-C-q",           io (exitWith ExitSuccess))
                , ("M-r",             refresh)
-               , ("M-f",             spawn "xautolock -locknow")
-
-                   -- toggle focused window fullscreen
-                   --     , ((modMask,               xK_m     ), sendMessage (Toggle "Full"))
-                   --         >> (dynamicLogString myPP >>= \d->safeSpawn "gnome-osd-client" [d]))"
-
                -- Applications!
                , ("M-<Escape>",      kill)
                , ("M-p",             spawn "dmenu-run")
                , ("M-S-p",           spawn "dmenu-app")
-               , ("M-b",             spawn "keynav \"start, grid 2x2\"")
+               , ("M-y",             spawn "keynav \"start, grid 2x2\"")
                , ("M-o",             runOrRaiseNext "chromium-dev" (className =? "Chromium"))
                , ("M-S-o",           runOrRaiseNext "arora" (className =? "Arora"))
                ]
@@ -353,7 +332,7 @@ main = xmonad =<< dzen_windows the_settings
 --
 the_settings = ewmh kde4Config {
         --terminal    = "$HOME/bin/urxvt.sh",
-        terminal    = "urxvt",
+        terminal    = "urxvtc",
         modMask     = mod4Mask,
         workspaces  = the_workspaces,
         keys        = compiled_bindings,
