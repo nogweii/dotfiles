@@ -455,3 +455,5 @@ au VimLeave * if !v:dying | mksession! ~/.vim/Session.vim | endif
 nmap . .`[
 " Disable vim-as-man-pager within vim (so :Man works)
 let $MANPAGER = ''
+
+autocmd FileType gitcommit normal :DiffGitCached
