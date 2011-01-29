@@ -1,16 +1,21 @@
 # Create my git configuration unless it's already up-to-date.
 ztmpl ~/.gitconfig
 
-#function zle-keymap-select zle-line-init {
-#    VIMODE="${${KEYMAP/vicmd/%#}/(main|viins)/&}"
-#    zle reset-prompt
-#}
-#function zle-line-init {
-#    VIMODE='%#'
-#    #zle -K vicmd
-#}
-#zle -N zle-line-init
-#zle -N zle-keymap-select
+function zle-keymap-select zle-line-init {
+    if [ "$KEYMAP" = 'vicmd' ] ; then
+        VIMODE='%#' # command mode
+    else
+        VIMODE='&'  # insert mode
+    fi
+    zle reset-prompt
+}
+function zle-line-init {
+    VIMODE='&' # zle defaults to insert mode
+    # auto-fu-init
+    #zle -K vicmd
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 if [ -x /usr/bin/keychain ] ; then
     keychain --quiet # Start gpg-agent & ssh-agent, but don't add any keys (yet)
@@ -23,4 +28,7 @@ if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
 
-source ~/.config/zsh/zsh-syntax-highlighting.zsh
+if [ ! -z "$DISPLAY" ] ; then
+    source ~/.config/zsh/plugins/zsh-syntax-highlighting.zsh
+fi
+#source ~/.config/zsh/plugins/auto-fu.zsh
