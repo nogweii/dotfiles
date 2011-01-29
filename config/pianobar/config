@@ -1,0 +1,42 @@
+# This is an example configuration file for pianobar. You may remove the # from
+# lines you need and copy/move this file to ~/.config/pianobar/config
+# See manpage for a description of the config keys
+#
+# User
+user = colin@evaryont.me
+
+# Proxy (for those who are not living in the USA)
+#control_proxy = http://127.0.0.1:9090/
+
+# Keybindings
+#act_help = ?
+#act_songlove = +
+#act_songban = -
+#act_stationaddmusic = a
+#act_stationcreate = c
+#act_stationdelete = d
+#act_songexplain = e
+#act_stationaddbygenre = g
+#act_songinfo = i
+#act_addshared = j
+#act_songmove = m
+#act_songnext = n
+#act_songpause = p
+#act_quit = q
+#act_stationrename = r
+#act_stationchange = s
+#act_songtired = t
+#act_upcoming = u
+#act_stationselectquickmix = x
+#act_voldown = (
+#act_volup = )
+
+# Misc
+# mp3, mp3-hifi or aacplus
+audio_format = aacplus
+autostart_station = 165478110736344848
+event_command = /home/colin/.config/pianobar/eventcmd.sh
+#sort = quickmix_10_name_az
+love_icon = [♥]
+ban_icon = [✘]
+volume = +1
