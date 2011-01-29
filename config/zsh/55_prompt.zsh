@@ -74,7 +74,13 @@ function setprompt () {
     PR_LLCORNER="${altchar[m]:--}"
     PR_LRCORNER="${altchar[j]:--}"
     PR_URCORNER="${altchar[k]:--}"
-    VIMODE="%#" # TODO: Actually show the mode, without breaking the prompt
+    # zle defaults to vi mode
+    # VIMODE="&" # TODO: Actually show the mode, without breaking the prompt
+    if [ "$KEYMAP" = 'vicmd' ] ; then
+        VIMODE='%#' # command mode
+    else
+        VIMODE='&'  # insert mode
+    fi
 
     # Terminal prompt settings
     PROMPT='$PR_NO_COLOUR$PR_SET_CHARSET$PR_GREEN$PR_SHIFT_IN$PR_ULCORNER$PR_GREEN$PR_HBAR\
