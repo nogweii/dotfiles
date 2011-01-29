@@ -275,7 +275,7 @@ settings = {
   core = {
     real_name = "Colin Shea";
     user_name = "colin";
-    nick = "colin";
+    nick = "evaryont";
     cmdchars = "/\\";
   };
   "fe-text" = { actlist_sort = "refnum"; };
@@ -287,6 +287,7 @@ settings = {
     short_url_provider = "Bitly";
   };
   "fe-common/core" = { show_names_on_join = "no"; };
+  "irc/core" = { alternate_nick = "zenix"; };
 };
 hilights = (
   { text = "zenix"; nick = "yes"; word = "yes"; },
