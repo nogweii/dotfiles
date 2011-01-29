@@ -170,4 +170,8 @@ XLock.description: off
 !XLock.mailIcon: 
 !XLock.nomailIcon: 
 
+dzen.background: #000
+dzen.foreground: #ddd
+dzen.font: xft:Liberation Mono:size=7
+
 ! vim: set syn=xdefaults:
