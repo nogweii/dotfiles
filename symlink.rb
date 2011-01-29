@@ -27,3 +27,6 @@ unless File.exists? File.expand_path(File.join(ENV['HOME'], ".xsession"))
     FileUtils.ln_s(File.expand_path(File.join(ENV['HOME'], ".xinitrc")),
               File.expand_path(File.join(ENV['HOME'], ".xsession")), :verbose => true)
 end
+unless File.exists? File.expand_path(File.join(ENV['HOME'], ".config/pianobar/ctl"))
+    system("mkfifo ~/.config/pianobar/ctl")
+end
