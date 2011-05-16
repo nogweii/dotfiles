@@ -585,6 +585,8 @@ TRIGGER:
 		$expands->{'H'} = ((!defined($address)) ? '' : substr($address,index($address,'@')+1));
 		$expands->{'$'} = '$';
 		$expands->{';'} = ';';
+		use POSIX qw(strftime);
+		$expands->{'Z'} = strftime "%H:%M:%S", localtime;
 
 		if (defined($trigger->{'replace'})) { # it's a -replace
 			$message =~ s/$trigger->{'compregexp'}/do_expands($trigger->{'compreplace'},$expands,$message)/ge;
@@ -713,7 +715,7 @@ sub get_flags {
 	my ($chatnet, $channel, $nick, $address) = @_;
 	my $flags;
 	no strict 'refs';
-	if (defined %{ 'Irssi::Script::people::' }) {
+	if (%{ 'Irssi::Script::people::' }) {
 		if (defined ($channel)) {
 			$flags = (&{ 'Irssi::Script::people::find_local_flags' }($chatnet,$channel,$nick,$address));
 		} else {
@@ -722,7 +724,7 @@ sub get_flags {
 		$flags = join('',keys(%{$flags}));
 	} else {
 		my $shasta;
-		if (defined %{ 'Irssi::Script::friends_shasta::' }) {
+		if (%{ 'Irssi::Script::friends_shasta::' }) {
 			$shasta = 'friends_shasta';
 		} elsif (defined &{ 'Irssi::Script::friends::get_idx' }) {
 			$shasta = 'friends';
