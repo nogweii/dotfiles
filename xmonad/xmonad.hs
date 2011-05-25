@@ -63,12 +63,12 @@ key_bindings = [ ("M-x",             pandoraSelect) ]
 --             , ()
 --]
     where
-        stringList = [("||", pianobarCmd "p"),
-                      ("X8", pianobarCmd "-"),
-                      (">>", pianobarCmd "n"),
-                      ("..", pianobarCmd "t"),
-                      ("<3", pianobarCmd "+")]
-        pandoraSelect = gridselect pandoraGSConfig stringList >>= maybe (return ()) io
+        stringList = [("||", io $ (pianobarCmd "p")),
+                      ("X8", io $ (pianobarCmd "-")),
+                      (">>", io $ (pianobarCmd "n")),
+                      ("..", io $ (pianobarCmd "t")),
+                      ("<3", io $ (pianobarCmd "+"))]
+        pandoraSelect = runSelectedAction pandoraGSConfig stringList
 --compiled_bindings = \c -> mkKeymap c $ key_bindings
 
 -- main = xmonad gnomeConfig {
