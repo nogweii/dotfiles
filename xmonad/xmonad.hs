@@ -36,7 +36,7 @@ pandoraNavigation = makeXEventhandler $ shadowWithKeymap navKeyMap navDefaultHan
        -- The navigation handler ignores unknown key symbols
        navDefaultHandler = const pandoraNavigation
 
--- A green monochrome colorizer based on window class
+-- A monochrome colorizer based on window class
 monoColorizer = colorRangeFromClassName
                      black  -- lowest inactive bg
                      black  -- highest inactive bg
@@ -46,7 +46,7 @@ monoColorizer = colorRangeFromClassName
   where black = minBound
         white = maxBound
 
-pandoraGSConfig = (buildDefaultGSConfig monoColorizer) {
+pandoraGSConfig = defaultGSConfig {
       gs_cellheight = 30
     , gs_cellwidth  = 100
     , gs_navigate   = pandoraNavigation
