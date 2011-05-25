@@ -18,20 +18,9 @@ import XMonad.Darcs.GridSelect
 
 import Data.Foldable
 import qualified Data.Map as M
-
-controlPandora :: (Integral a) => a -> String
-controlPandora 1 = controlPandora 0 ++ ""
-controlPandora 2 = controlPandora 0 ++ "LoveCurrentSong"
-controlPandora 3 = controlPandora 0 ++ "BanCurrentSong"
-controlPandora 4 = controlPandora 0 ++ "SkipSong"
-controlPandora 5 = controlPandora 0 ++ "TiredCurrentSong"
-controlPandora x = "qdbus net.kevinmehall.Pithos /net/kevinmehall/Pithos"
-
-xdg_config :: String
-xdg_config = fmap ("/" ++) (getEnv "XDG_CONFIG_HOME")
-
-pianobarCommand :: Char -> String
-pianobarCommand x = "echo '" ++ [x] ++ "' >" ++ xdg_config ++ "/pianobar/ctl"
+-- Arch users: install haskell-xdg-basedir from AUR
+import System.Environment.XDG.BaseDir
+import System.IO
 
 pandoraNavigation :: TwoD a (Maybe a)
 pandoraNavigation = makeXEventhandler $ shadowWithKeymap navKeyMap navDefaultHandler
@@ -48,20 +37,24 @@ pandoraNavigation = makeXEventhandler $ shadowWithKeymap navKeyMap navDefaultHan
        navDefaultHandler = const pandoraNavigation
 
 -- A green monochrome colorizer based on window class
-greenColorizer = colorRangeFromClassName
-                     black            -- lowest inactive bg
-                     (0x70,0xFF,0x70) -- highest inactive bg
-                     black            -- active bg
-                     white            -- inactive fg
-                     white            -- active fg
+monoColorizer = colorRangeFromClassName
+                     black  -- lowest inactive bg
+                     black  -- highest inactive bg
+                     black  -- active bg
+                     white  -- inactive fg
+                     white  -- active fg
   where black = minBound
         white = maxBound
 
-gsconfig2 pandoraGSConfig = (buildDefaultGSConfig greenColorizer) {
+pandoraGSConfig = (buildDefaultGSConfig monoColorizer) {
       gs_cellheight = 30
     , gs_cellwidth  = 100
     , gs_navigate   = pandoraNavigation
 }
+
+pianobarCmd :: Char -> IO ()
+pianobarCmd x = do path <- getUserConfigFile "pianobar" "ctl"
+                   writeFile path [x]
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -70,11 +63,11 @@ key_bindings = [ ("M-x",             pandoraSelect) ]
 --             , ()
 --]
     where
-        pandoraSelect = gridselect defaultGSConfig [("||", controlPandora 1),
-                                                    ("X8", controlPandora 3),
-                                                    (">>", controlPandora 4),
-                                                    ("..", controlPandora 5),
-                                                    ("<3", controlPandora 2)]
+        pandoraSelect = gridselect pandoraGSConfig [("||", io $ (pianobarCmd 'p')),
+                                                    ("X8", io $ (pianobarCmd '-')),
+                                                    (">>", io $ (pianobarCmd 'n')),
+                                                    ("..", io $ (pianobarCmd 't')),
+                                                    ("<3", io $ (pianobarCmd '+'))]
                         >>= foldMap spawn
 --compiled_bindings = \c -> mkKeymap c $ key_bindings
 
