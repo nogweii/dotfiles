@@ -26,7 +26,9 @@ controlPandora x = "qdbus net.kevinmehall.Pithos /net/kevinmehall/Pithos"
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
-key_bindings = [ ("M-x",             spawn pandoraSelect) ]
+key_bindings = [ ("M-x",             pandoraSelect) ]
+--             , ()
+--]
     where
         pandoraSelect = gridselect defaultGSConfig [("||", controlPandora 1),
                                                     ("<3", controlPandora 2),
@@ -34,42 +36,26 @@ key_bindings = [ ("M-x",             spawn pandoraSelect) ]
                                                     (">>", controlPandora 4),
                                                     ("..", controlPandora 5)]
                         >>= foldMap spawn
---             , ()
---]
-compiled_bindings = \c -> mkKeymap c $ key_bindings
+--compiled_bindings = \c -> mkKeymap c $ key_bindings
 
 -- main = xmonad gnomeConfig {
 --        modMask     = mod4Mask,
 --        terminal    = "urxvt"
 -- }
-main = do
-    env <- getEnvironment
-    case lookup "DESKTOP_AUTOSTART_ID" env of
-        Just id -> do
-            forkIO $ (>> return ()) $ rawSystem "dbus-send"
-                             ["--session",
-                              "--print-reply=string",
-                              "--dest=org.gnome.SessionManager",
-                              "/org/gnome/SessionManager",
-                              "org.gnome.SessionManager.RegisterClient",
-                              "string:xmonad",
-                              "string:"++id]
-            return ()
-        Nothing -> return ()
-    xmonad $ gnomeConfig {
-         terminal           = "urxvt"
-       , borderWidth        = 2
-       , normalBorderColor  = "black"
-       , focusedBorderColor = "orange"
-       , focusFollowsMouse  = True
-       , modMask            = mod4Mask
-       , keys               = compiled_bindings >> (keys gnomeConfig)
---     , mouseBindings      = myMouseBindings
---     , layoutHook         = myLayout
-       , handleEventHook    = ewmhDesktopsEventHook
-       , startupHook        = ewmhDesktopsStartup
---     , logHook            = myLogHook
---     , manageHook         = myManageHook
-    }
+main = xmonad $ gnomeConfig {
+       terminal           = "urxvt"
+     , borderWidth        = 2
+     , normalBorderColor  = "black"
+     , focusedBorderColor = "orange"
+     , focusFollowsMouse  = True
+     , modMask            = mod4Mask
+     , keys               = keys gnomeConfig
+--   , mouseBindings      = myMouseBindings
+--   , layoutHook         = myLayout
+     , handleEventHook    = ewmhDesktopsEventHook
+     , startupHook        = ewmhDesktopsStartup
+--   , logHook            = myLogHook
+--   , manageHook         = myManageHook
+    } `additionalKeysP` key_bindings
 
 --- vim: set syn=haskell nospell:
