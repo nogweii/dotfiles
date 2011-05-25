@@ -31,10 +31,10 @@ key_bindings = [ ("M-x",             pandoraSelect) ]
 --]
     where
         pandoraSelect = gridselect defaultGSConfig [("||", controlPandora 1),
-                                                    ("<3", controlPandora 2),
                                                     ("X8", controlPandora 3),
                                                     (">>", controlPandora 4),
-                                                    ("..", controlPandora 5)]
+                                                    ("..", controlPandora 5),
+                                                    ("<3", controlPandora 2)]
                         >>= foldMap spawn
 --compiled_bindings = \c -> mkKeymap c $ key_bindings
 
