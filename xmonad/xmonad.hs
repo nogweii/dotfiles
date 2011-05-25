@@ -68,7 +68,7 @@ key_bindings = [ ("M-x",             pandoraSelect) ]
                                                     (">>", io $ (pianobarCmd 'n')),
                                                     ("..", io $ (pianobarCmd 't')),
                                                     ("<3", io $ (pianobarCmd '+'))]
-                        >>= foldMap spawn
+--                      >>= foldMap spawn
 --compiled_bindings = \c -> mkKeymap c $ key_bindings
 
 -- main = xmonad gnomeConfig {
