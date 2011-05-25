@@ -52,9 +52,9 @@ pandoraGSConfig = (buildDefaultGSConfig monoColorizer) {
     , gs_navigate   = pandoraNavigation
 }
 
-pianobarCmd :: Char -> IO ()
+pianobarCmd :: String -> IO ()
 pianobarCmd x = do path <- getUserConfigFile "pianobar" "ctl"
-                   writeFile path [x]
+                   writeFile path x
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -63,12 +63,12 @@ key_bindings = [ ("M-x",             pandoraSelect) ]
 --             , ()
 --]
     where
-        pandoraSelect = gridselect pandoraGSConfig [("||", io $ (pianobarCmd 'p')),
-                                                    ("X8", io $ (pianobarCmd '-')),
-                                                    (">>", io $ (pianobarCmd 'n')),
-                                                    ("..", io $ (pianobarCmd 't')),
-                                                    ("<3", io $ (pianobarCmd '+'))]
---                      >>= foldMap spawn
+        stringList = [("||", pianobarCmd "p"),
+                      ("X8", pianobarCmd "-"),
+                      (">>", pianobarCmd "n"),
+                      ("..", pianobarCmd "t"),
+                      ("<3", pianobarCmd "+")]
+        pandoraSelect = gridselect pandoraGSConfig stringList >>= maybe (return ()) io
 --compiled_bindings = \c -> mkKeymap c $ key_bindings
 
 -- main = xmonad gnomeConfig {
