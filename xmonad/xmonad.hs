@@ -13,12 +13,14 @@ import Control.Concurrent
 import XMonad.Actions.GridSelect
 import XMonad.Util.EZConfig
 
-controlPandora :: String -> String
-controlPandora "||" = controlPandora "x" ++ "PlayPause"
-controlPandora "<3" = controlPandora "x" ++ "LoveCurrentSong"
-controlPandora "X8" = controlPandora "x" ++ "BanCurrentSong"
-controlPandora ">>" = controlPandora "x" ++ "SkipSong"
-controlPandora ".." = controlPandora "x" ++ "TiredCurrentSong"
+import Data.Foldable
+
+controlPandora :: (Integral a) => a -> String
+controlPandora 1 = controlPandora 0 ++ "PlayPause"
+controlPandora 2 = controlPandora 0 ++ "LoveCurrentSong"
+controlPandora 3 = controlPandora 0 ++ "BanCurrentSong"
+controlPandora 4 = controlPandora 0 ++ "SkipSong"
+controlPandora 5 = controlPandora 0 ++ "TiredCurrentSong"
 controlPandora x = "qdbus net.kevinmehall.Pithos /net/kevinmehall/Pithos"
 
 ------------------------------------------------------------------------
@@ -26,7 +28,12 @@ controlPandora x = "qdbus net.kevinmehall.Pithos /net/kevinmehall/Pithos"
 --
 key_bindings = [ ("M-x",             spawn pandoraSelect) ]
     where
-        pandoraSelect = controlPandora (["||", "<3", "X8", ">>", ".."] >>= gridselect defaultGSConfig)
+        pandoraSelect = gridselect defaultGSConfig [("||", controlPandora 1),
+                                                    ("<3", controlPandora 2),
+                                                    ("X8", controlPandora 3),
+                                                    (">>", controlPandora 4),
+                                                    ("..", controlPandora 5)]
+                        >>= foldMap spawn
 --             , ()
 --]
 compiled_bindings = \c -> mkKeymap c $ key_bindings
