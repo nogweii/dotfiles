@@ -1,0 +1,68 @@
+import XMonad
+import XMonad.Config.Gnome
+
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+
+-- for dbus (gnome-session hang)
+import System.Environment
+import System.Cmd
+import Control.Concurrent
+
+import XMonad.Actions.GridSelect
+import XMonad.Util.EZConfig
+
+controlPandora :: String -> String
+controlPandora "||" = controlPandora "x" ++ "PlayPause"
+controlPandora "<3" = controlPandora "x" ++ "LoveCurrentSong"
+controlPandora "X8" = controlPandora "x" ++ "BanCurrentSong"
+controlPandora ">>" = controlPandora "x" ++ "SkipSong"
+controlPandora ".." = controlPandora "x" ++ "TiredCurrentSong"
+controlPandora x = "qdbus net.kevinmehall.Pithos /net/kevinmehall/Pithos"
+
+------------------------------------------------------------------------
+-- Key bindings. Add, modify or remove key bindings here.
+--
+key_bindings = [ ("M-x",             spawn pandoraSelect) ]
+    where
+        pandoraSelect = controlPandora (["||", "<3", "X8", ">>", ".."] >>= gridselect defaultGSConfig)
+--             , ()
+--]
+compiled_bindings = \c -> mkKeymap c $ key_bindings
+
+-- main = xmonad gnomeConfig {
+--        modMask     = mod4Mask,
+--        terminal    = "urxvt"
+-- }
+main = do
+    env <- getEnvironment
+    case lookup "DESKTOP_AUTOSTART_ID" env of
+        Just id -> do
+            forkIO $ (>> return ()) $ rawSystem "dbus-send"
+                             ["--session",
+                              "--print-reply=string",
+                              "--dest=org.gnome.SessionManager",
+                              "/org/gnome/SessionManager",
+                              "org.gnome.SessionManager.RegisterClient",
+                              "string:xmonad",
+                              "string:"++id]
+            return ()
+        Nothing -> return ()
+    xmonad $ gnomeConfig {
+         terminal           = "urxvt"
+       , borderWidth        = 2
+       , normalBorderColor  = "black"
+       , focusedBorderColor = "orange"
+       , focusFollowsMouse  = True
+       , modMask            = mod4Mask
+       , keys               = compiled_bindings >> (keys gnomeConfig)
+--     , mouseBindings      = myMouseBindings
+--     , layoutHook         = myLayout
+       , handleEventHook    = ewmhDesktopsEventHook
+       , startupHook        = ewmhDesktopsStartup
+--     , logHook            = myLogHook
+--     , manageHook         = myManageHook
+    }
+
+--- vim: set syn=haskell nospell:
