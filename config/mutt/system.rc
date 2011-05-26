@@ -1,0 +1,19 @@
+ignore *
+unignore from: subject to cc date x-mailer x-url user-agent
+hdr_order date from to cc subject
+macro index \eb "<search>~b " "search in message bodies"
+macro index,pager,attach,compose \cb "\
+<enter-command> set my_pipe_decode=\$pipe_decode pipe_decode<Enter>\
+<pipe-message> urlview<Enter>\
+<enter-command> set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<Enter>" \
+"call urlview to extract URLs out of a message"
+macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt/manual.txt<Enter>" "show Mutt documentation"
+macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
+bind browser y exit
+mime_lookup application/octet-stream
+attachments   +A */.*
+attachments   -A text/x-vcard application/pgp.*
+attachments   -A application/x-pkcs7-.*
+attachments   +I text/plain
+attachments   -A message/external-body
+attachments   -I message/external-body
