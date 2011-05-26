@@ -111,8 +111,4 @@ alias extr=extract_archive
 # sudo the previous command
 alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
-alias mandb="mandb $DYNAMIC_MANPATH"
-alias man="man -M$DYNAMIC_MANPATH"
-alias whatis="whatis -M$DYNAMIC_MANPATH"
-alias apropos="apropos -M$DYNAMIC_MANPATH"
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
