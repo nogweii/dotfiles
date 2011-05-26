@@ -1,6 +1,5 @@
 [github]
     user = evaryont
-    token = $(< ~/.github-token)
 [user]
     name = Colin Shea
     email = colin@evaryont.me
@@ -22,22 +21,22 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = $(readlink -f ~/.gitignore)
+    excludesfile = ~/.gitignore
 [branch]
     autosetupmerge = true
 [alias]
     a = add
     br = branch
     st = status
-    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\\\"vim git_diff_staged.diff -c ':bnext' -c ':1'\\\" git commit -e ; rm git_diff_staged.diff"
+    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
     co = checkout
     unpushed = log origin..HEAD
     graph = log --oneline --graph
-    lg = log --graph --pretty=format:'%%Cred%%h%%Creset -%%C(yellow)%%d%%Creset %%s %%Cgreen(%%cr)%%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     ls-ignored = ls-files --others -i --exclude-standard
-    up = !"git pull && git log --pretty=format:'%%Cred%%ae %%Creset- %%C(yellow)%%s %%Creset(%%ar)' HEAD@{1}.."
+    up = !"git pull && git log --pretty=format:'%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)' HEAD@{1}.."
     keep = !"find . ( -type d -empty ) -and ( -not -regex ./.git.* ) -exec touch {}/.gitkeep ; ; git commit -am 'Keep all directories'"
-    diff-reset = !"git diff -R \\\$1 | patch -up1 -i-"
+    diff-reset = !"git diff -R $1 | patch -up1 -i-"
     reset-head = diff-reset
     pu = push
 [web]
@@ -53,8 +52,3 @@
     smtpserverport = 587
     smtpencryption = tls
     smtpuser = colin@evaryont.me
-
-
-# This is just a template parsed by zsh
-
-# vim: set syn=gitconfig:
