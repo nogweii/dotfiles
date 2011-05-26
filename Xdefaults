@@ -1,10 +1,10 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-urxvt*font:               xft:Liberation Mono:size=10,             xft:Dejavu Sans Mono:size=10
-urxvt*boldFont:           xft:Liberation Mono:bold:size=10,        xft:Dejavu Sans Mono:bold:size=10
-urxvt*italicFont:         xft:Liberation Mono:italic:size=10,      xft:Dejavu Sans Mono:italic:size=10
-urxvt*boldItalicFont:     xft:Liberation Mono:italic:bold:size=10, xft:Dejavu Sans Mono:italic:bold:size=10
+urxvt*font:               xft:Dejavu Sans Mono:size=10
+urxvt*boldFont:           xft:Dejavu Sans Mono:bold:size=10
+urxvt*italicFont:         xft:Dejavu Sans Mono:italic:size=10
+urxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:size=10
 urxvt*scrollBar:          false
 urxvt.urlLauncher:        xdg-open
 urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
@@ -12,10 +12,10 @@ urxvt.foreground:         grey80
 urxvt.colorBD:            white
 urxvt.saveLines:          4096
 !! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-!urxvt*background:         rgba:0000/0000/0000/7fff
-!urxvt*depth:              32
+urxvt*background:         rgba:0000/0000/0000/7fff
+urxvt*depth:              32
 !! Pseudo-transparent
-urxvt*background:         black
+!urxvt*background:         black
 !URxvt*transparent:        true
 !URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
