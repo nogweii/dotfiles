@@ -11,7 +11,8 @@ require 'fileutils'
     file =~ /README/ or
     file == $0 or
     file =~ %r[^config/?$] or
-    file =~ /website/
+    file =~ /website/ or
+    file =~ /symlink\.rb/
 end.sort.each do |file|
     dotfile = File.expand_path(File.join(ENV['HOME'], ".#{file}"))
 
