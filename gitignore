@@ -4,3 +4,5 @@
 git_diff_staged.diff
 *.exe
 ~/.vim/bundle/*/doc/tags
+*.o
+*.hi
