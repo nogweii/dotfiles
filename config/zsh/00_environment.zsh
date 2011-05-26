@@ -91,19 +91,5 @@ export          HISTSIZE="5000000"
 export          SAVEHIST="${HISTSIZE}"
 
 unset MANPATH
-DYNAMIC_MANPATH="$(
-  gemdir=$(ruby -e"puts Gem.dir")
-  gem man -a | tail -n+3 | sort -r | awk '{ print $2, $1 }' | uniq -f1 \
-      | awk "{ print \"$gemdir\" \"/\" \$2 \"-\" \$1 }" | tr '\n' ':'
-  unset gemdir
-  echo -n $(manpath)
-)"
 
 fpath=(~/.data/zsh $fpath)
-
-if [ -n "$DISPLAY" ] ; then
-    if [ -x /usr/lib/openssh/x11-ssh-askpass ] ; then
-        export SSH_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
-        export SUDO_ASKPASS="/usr/lib/openssh/x11-ssh-askpass"
-    fi
-fi
