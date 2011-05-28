@@ -457,3 +457,4 @@ nmap . .`[
 let $MANPAGER = ''
 
 autocmd FileType gitcommit normal :DiffGitCached
+au FileType haskell set wildignore+=*.hi " Ignore more haskell compiled files
