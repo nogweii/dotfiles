@@ -7,23 +7,13 @@ while read L; do
 	export "$k=$v"
 done < <(grep -e '^\(title\|artist\|album\|stationName\|pRet\|pRetStr\|wRet\|wRetStr\|songDuration\|songPlayed\|rating\|coverArt\|stationCount\|station[0-9]*\)=' /dev/stdin) # don't overwrite $1...
 
+logger -t "pianobar" "eventcmd.sh: $@"
+
 case "$1" in
 	songstart)
 		notify-send "Pandora Radio" "Now playing: $title by $artist"
+		logger -t "pianobar" "new song: $title by $artist"
 		;;
-
-#	songfinish)
-#		# scrobble if 75% of song have been played, but only if the song hasn't
-#		# been banned
-#		if [ -n "$songDuration" ] &&
-#				[ $(echo "scale=4; ($songPlayed/$songDuration*100)>50" | bc) -eq 1 ] &&
-#				[ "$rating" -ne 2 ]; then
-#			# scrobbler-helper is part of the Audio::Scrobble package at cpan
-#			# "pia" is the last.fm client identifier of "pianobar", don't use
-#			# it for anything else, please
-#			scrobbler-helper -P pia -V 1.0 "$title" "$artist" "$album" "" "" "" "$((songDuration/1000))" &
-#		fi
-#		;;
 
 	*)
 		if [ "$pRet" -ne 1 ]; then
