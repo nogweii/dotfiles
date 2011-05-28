@@ -1,39 +1,65 @@
 #!/bin/zsh
 
+cd ~
+
 # Startup applications for X
 # Cross-WM, anything put in here will start immediately with X
 
+export PATH="$PATH:$HOME/bin:"
+
+# Let xmonad start first, then the related background processes. Just an
+# attempt at making some stuff run in parallel.
+#xmonad &
+#wmpid=$!
+#cairo-compmgr &
+dbus-monitor --session &> dbus_monitor_session &
+gnome-session --session=xmonad &>>.xsession-errors &
+wait $wmpid
+exit 0
+
 # Check if dbus has already started, and if it hasn't, start it.
 dbuslaunch="`which dbus-launch 2>/dev/null`"
-if [ -n "$dbuslaunch" ] && [ -x "$dbuslaunch" ] && [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-  eval "`$dbuslaunch --sh-syntax --exit-with-session`"
+if [ -n "$dbuslaunch" ] &&
+   [ -x "$dbuslaunch" ] &&
+   [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  dbussession="`$dbuslaunch --sh-syntax --exit-with-session`"
+  echo $dbussession
+  eval "$dbussession"
   export DBUS_SESSION_BUS_PID
   echo "DBUS session pid: ${DBUS_SESSION_BUS_PID}"
 fi
 
-# Load the fonts in ~/.fonts/
-test -d "~/.fonts/" && (mkfontdir "~/.fonts/" ; xset fp+ "~/.fonts/")
-# Ask X11 to rebuild its font list.
-xset fp rehash
+{
+  # Load the fonts in ~/.fonts/
+  test -d "~/.fonts/" && (mkfontdir "~/.fonts/" ; xset fp+ "~/.fonts/")
+  # Ask X11 to rebuild its font list.
+  xset fp rehash
+} &
 
 ######################################
 #     Make it pretty
 ######################################
-unclutter -display $DISPLAY -jitter 5 -idle 5 & # Hide the mouse
+#unclutter -display $DISPLAY -jitter 5 -idle 5 & # Hide the mouse
 eval $(cat ~/.fehbg) # Background
-xcompmgr -fFD 5 & # Special effects (requires Composite extension)
+xcompmgr -cnF & # Special effects (requires Composite extension)
 xsetroot -cursor_name left_ptr # Set the X cursor, not all WM's (Xmonad!) set it
+stalonetray &
+dzen-batt-mon &
+dzen-network &
 
 #######################################
 ##     Keyboard stuff
 #######################################
-xrdb -DHOME=$HOME $(echo $(xrdb -symbols | grep -Ev "\"|'")) -all -load ~/.Xdefaults
+xrdb-load &
 # Only enable numlock when I'm not on my laptop, 'gryphon'
 if [ "$HOSTNAME" != "gryphon" ] ; then
   numlockx on # Enable numlock
 else
+  # Enable some extra features
+  synclient VertTwoFingerScroll=1 HorizTwoFingerScroll=1 HorizEdgeScroll=1 \
+            PalmDetect=1 CircularScrolling=1
   # Disable tapping/scrolling during keyboard press
-  syndaemon -i2 -d -t -k -p /tmp/syndaemon.pid &
+  syndaemon -i1 -d -k -p /tmp/syndaemon.pid &
 fi
 ## setxkbmap should always run before xmodmap!
 setxkbmap -option terminate:ctrl_alt_bksp
@@ -43,26 +69,24 @@ autocutsel -selection CLIPBOARD -fork
 cuteinformer &
 
 # Manage the internet connection
-# which wicd-gtk &>/dev/null && wicd-gtk -o &
+which wicd-gtk &>/dev/null && wicd-gtk &
 
-# Change monitor gamma over time, to avoid blue in my eyes @ night.
-# latitude (DC) == 39.2:-77.2
-# latitude (Tempe) == 33.4:111.93
-redshift -l 33.4:-111.93 -m vidmode -t 6000:3500 &
+#redshift-toggle & # Launch redshift for the first time
 
 # Just in case something happens with the configuration, hopefully a terminal
 # will spawn so there is still some control and the situation is salvageable
 # without requiring a hard reboot.
-urxvtd -q -o -f &
+urxvtd -o -f
 (sleep 1; urxvtc) &
 
-## Social application tracking / discovery
-#echo "Wakoopa launched, see /tmp/wakoopa.log for output"
-# wakoopa &> /dev/null &
-#WhatPulse & # Keyboard & Mouse tracking
+# I don't care, these apps give out a lot of random verbose output...block it.
+LD_PRELOAD="" wakoopa 1> /dev/null &
+LD_PRELOAD="" WhatPulse 1>/dev/null & # Keyboard & Mouse tracking
+LD_PRELOAD="" skype 1>/dev/null &
 
-# Thanks to http://totherme.livejournal.com/4154.html for this trick!
-(which xmonad &>/dev/null) && export KDEWM="$(which xmonad)"
+#dropbox start &
 
-exec xmonad
-#exec ck-launch-session startkde
+# lock the server after 10 mins, configured via Xdefaults
+xautolock &
+
+wait $wmpid
