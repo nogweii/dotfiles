@@ -26,3 +26,4 @@ mutt/.index
 vim/Session.vim
 vim/tmp/
 config/mutt/mailboxes
+config/pianobar/pid
