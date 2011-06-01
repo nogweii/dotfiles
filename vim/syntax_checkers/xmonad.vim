@@ -12,7 +12,7 @@
 "
 "
 "============================================================================
-if exists("loaded_haskell_syntax_checker") && expand("%:h") != "xmonad.hs"
+if exists("loaded_haskell_syntax_checker") || expand("%:t") != "xmonad.hs"
     finish
 endif
 let loaded_haskell_syntax_checker = 1
