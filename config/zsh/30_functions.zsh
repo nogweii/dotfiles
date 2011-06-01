@@ -13,14 +13,10 @@ _rake_does_task_list_need_generating () {
 _rake () {
   if [ -f Rakefile ]; then
     if _rake_does_task_list_need_generating; then
-      rake --silent --tasks | cut -d " " -f 2 > .rake_tasks
+      rake --silent --tasks | cut -d " " -f >/dev/null 2>.rake_tasks
     fi
     compadd `cat .rake_tasks`
   fi
-}
-
-_cheat () {
-  compadd `ls -1 ~/.cheat/ | sed s/\.yml$//`
 }
 
 # A simple zsh-based bookmarks system (kinda)
@@ -35,13 +31,6 @@ _force_rehash() {
   return 1 # Because we didn't really complete anything
 }
 
-function ztmpl {
-    if [[ $1.tmpl -nt $1 || (! -f $1 && -f $1.tmpl) ]] ; then
-        local foo="$(print -bP "$(cat $1.tmpl)")"
-        echo ${(e)foo} > $1
-    fi
-}
-
 # Based off http://gist.github.com/172292. Idea by @defunkt
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby_or_irb() {
@@ -54,7 +43,8 @@ function ruby_or_irb() {
 alias ruby=ruby_or_irb
 
 function detach() {
-    # Create the directory where we store the sockets, if it doesn't already exist
+    # Create the directory where we store the sockets, if it doesn't already
+    # exist
     if [[ ! -d "$XDG_CACHE_HOME/dtach/" ]] ; then
         mkdir -p "$XDG_CACHE_HOME/dtach/"
     fi
@@ -64,19 +54,6 @@ function detach() {
     #         does not exist, running the specified command.
     dtach -A "$XDG_CACHE_HOME/dtach/$1.socket" -z -e "" $@
 }
-
-#function autobg() {
-#    jobs -s >| /tmp/j$$
-#    while read jnum jdesc
-#    do
-#        bg %${${jnum#\[}%\]}
-#    done < /tmp/j$$
-#    \rm -f /tmp/j$$
-#}
-#
-#function precmd() {
-#    autobg
-#}
 
 function smart_cd () {
   if [[ -f $1 ]] ; then
@@ -193,20 +170,24 @@ function nicename() {
   done
 }
 
-function error_log() {
+function errors() {
+  # this monster is an awesome regular expression, yeah? Finds lot of errors in
+  # a bunch of log formats!
   regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
-  # If the parameter is a file, search only that one
-  if [ -f "$1" ] ; then
-    s find "$1" -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+
-    return $?
-  fi
-  # Otherwise just output the regex
-  if [ "x$1" != "x" ] ; then
-    echo $regexp
-    return 0;
-  fi
+
   # Default case: No parameters passed, so search all of /var/log
-  s find /var/log -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
+  path="/var/log"
+  if [ -n "$1" ] ; then
+    # If the parameter is a file, search only that one
+    if [ -f "$1" ] ; then
+      path="$1"
+    else
+      echo $regexp
+      return 0;
+    fi
+  fi
+
+  s find $path -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
 }
 
 function cawk {
@@ -233,8 +214,8 @@ done
 
 autoload colors zsh/terminfo
 
-# source from, or add to ~/.zshrc
-# go opens zsh at the current location, and on exit, cd into ranger's last location.
+# source from, or add to ~/.zshrc. Go opens zsh at the current location, and on
+# exit, cd into ranger's last location.
 ranger_open () {
      ranger "$(pwd)" <$TTY
      print -n "\033[A"
@@ -247,3 +228,5 @@ ranger_open () {
 }
 zle -N ranger_open
 bindkey -a "go" ranger_open
+
+dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
