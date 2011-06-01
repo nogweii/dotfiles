@@ -54,7 +54,7 @@ alias yrm='yes | rm -rvf'
 alias startxl="startx &>/tmp/startx.log"
 
 alias PS="ps wwaux"
-alias PSG="PS G -v grep G"
+alias psg="PS G -v grep G"
 
 alias makepkg="makepkg -s"
 
@@ -112,3 +112,4 @@ alias extr=extract_archive
 alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias wc='wc -l'
