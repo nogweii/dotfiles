@@ -1,6 +1,3 @@
-# Create my git configuration unless it's already up-to-date.
-ztmpl ~/.gitconfig
-
 function zle-keymap-select zle-line-init {
     if [ "$KEYMAP" = 'vicmd' ] ; then
         VIMODE='%#' # command mode
@@ -29,6 +26,6 @@ if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
 fi
 
 if [ ! -z "$DISPLAY" ] ; then
-    source ~/.config/zsh/plugins/zsh-syntax-highlighting.zsh
+    source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 #source ~/.config/zsh/plugins/auto-fu.zsh
