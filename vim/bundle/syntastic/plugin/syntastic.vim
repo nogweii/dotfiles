@@ -39,7 +39,7 @@ endif
 runtime! syntax_checkers/*.vim
 
 "refresh and redraw all the error info for this buf when saving or reading
-autocmd bufreadpost,bufwritepost * call s:UpdateErrors()
+autocmd bufwritepost * call s:UpdateErrors()
 function! s:UpdateErrors()
     call s:CacheErrors()
 
