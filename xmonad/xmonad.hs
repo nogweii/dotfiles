@@ -67,7 +67,7 @@ dzen_windows conf = statusBar ("dzen2 " ++ flags) customPP toggleStrutsKey conf
  where -- n.b quoting in the following lines
     colors  = "-fg '#a8a3f7' -bg '#3f3c6d'"
     font    = " -fn 'xft:Liberation Mono:size=8'" -- n.b. leading space
-    flags   = "-e 'onstart=lower' -h 32 -w 1920 -ta l "
+    flags   = "-dock -e 'onstart=lower' -h 32 -w 1920 -ta l "
 
 myWorkspaces            :: [String]
 myWorkspaces            = clickable . (map dzenEscape) $ ["1","2","3","4","5"]
