@@ -36,20 +36,18 @@ set simple_search = '~f %s | ~s %s | ^~t %s | ~b %s'
 set spoolfile = '+INBOX'
 set wait_key = no
 
-source $XDG_CONFIG_HOME/mutt/smime.rc
-source $XDG_CONFIG_HOME/mutt/vim_keys.rc
-# source $XDG_CONFIG_HOME/mutt/devolved.theme.rc
-source $XDG_CONFIG_HOME/mutt/mailboxes
+source $XDG_CONFIG_HOME/mutt/smime.rc          # S/MIME & PGP encryption
+source $XDG_CONFIG_HOME/mutt/vim_keys.rc       # make mutt more vim-like
+source $XDG_CONFIG_HOME/mutt/devolved.theme.rc # devolved color scheme
+source $XDG_CONFIG_HOME/mutt/mailboxes         # offlineimap generated mailboxes
 
-# How to sort email in the index
-set sort=threads
+
+set sort=threads # show mail threads
 # Sub-sorting with threads
 set sort_aux=last-date-sent
 
 # Collapse all threads by default
 folder-hook . 'push <collapse-all>'
-
-set hide_thread_subject
 
 # Cache headers & bodies, to speed up mutt
 set header_cache=$XDG_CACHE_HOME/mutt/headers/
@@ -59,6 +57,14 @@ ifdef news_server "source $XDG_CONFIG_HOME/mutt/great_dane.rc"
 
 set sleep_time=0 # No delay between showing stuff.
 
-set pager ="/usr/bin/vim"
+set pager = builtin
+set pager_context = 9
+set pager_index_lines = 9
 set prompt_after = no
-set pager_format = "> vim :set nospell nolist ft=mail:"
+#set pager_format = "> vim :set nospell nolist ft=mail:"
+set implicit_autoview
+auto_view text/html application/x-gunzip application/postscript image/gif \
+          application/x-tar-gz
+
+set xterm_leave = "`test x$DISPLAY != x && xprop -id $WINDOWID | grep WM_NAME | cut -d '"' -f 2`"
+set xterm_set_titles = yes
