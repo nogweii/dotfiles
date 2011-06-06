@@ -1,0 +1,5 @@
+text/html;      lynx -width=1024 -nomargins -nonumbers -dump %s; copiousoutput; nametemplate=%s.html
+image/*;        anytopnm %s | pnmscale -xsize 80 -ysize 50 | ppmtopgm | pgmtopbm | pbmtoascii ; copiousoutput
+application/x-gunzip;   gzcat; copiousoutput
+application/x-tar-gz; gunzip -c %s | tar -tf - ; copiousoutput
+application/postscript; ps2ascii %s; copiousoutput
