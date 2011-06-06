@@ -1,30 +1,30 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-urxvt*font:               xft:Dejavu Sans Mono:size=10
-urxvt*boldFont:           xft:Dejavu Sans Mono:bold:size=10
-urxvt*italicFont:         xft:Dejavu Sans Mono:italic:size=10
-urxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:size=10
-urxvt*scrollBar:          false
-urxvt.urlLauncher:        xdg-open
-urxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-urxvt.foreground:         grey80
-urxvt.colorBD:            white
-urxvt.saveLines:          4096
+URxvt*font:               xft:Dejavu Sans Mono:size=10
+URxvt*boldFont:           xft:Dejavu Sans Mono:bold:size=10
+URxvt*italicFont:         xft:Dejavu Sans Mono:italic:size=10
+URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:size=10
+URxvt*scrollBar:          false
+URxvt.urlLauncher:        xdg-open
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.foreground:         grey80
+URxvt.colorBD:            white
+URxvt.saveLines:          4096
 !! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-urxvt*background:         rgba:0000/0000/0000/7fff
-urxvt*depth:              32
+URxvt*background:         rgba:0000/0000/0000/7fff
+URxvt*depth:              32
 !! Pseudo-transparent
-!urxvt*background:         black
+!Urxvt*background:         black
 !URxvt*transparent:        true
 !URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
-urxvt.scrollTtyOutput:    false
-urxvt.scrollWithBuffer:   false
-urxvt.scrollTtyKeypress:  true
+URxvt.scrollTtyOutput:    false
+URxvt.scrollWithBuffer:   false
+URxvt.scrollTtyKeypress:  true
 ! Green cursor, with black highlighted text
-urxvt.cursorColor:        green
-urxvt.cursorColor2:       black
+URxvt.cursorColor:        green
+URxvt.cursorColor2:       black
 
 URxvt*borderless:         1
 URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
