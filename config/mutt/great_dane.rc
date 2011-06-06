@@ -1,10 +1,14 @@
 set news_server="news://news.gwene.org"
 
-color index_number color49 default
-color index_date color49 default
-color index_flags color49 default
-color index_label color49 default
-color index_size color49 default
-color index_subject color49 default ~A
+set sidebar_width=20
+set sidebar_visible=yes
+set sidebar_delim='|'
+
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
 
 # vim: set filetype=muttrc:
