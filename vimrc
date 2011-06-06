@@ -458,3 +458,4 @@ let $MANPAGER = ''
 
 autocmd FileType gitcommit normal :DiffGitCached
 au FileType haskell set wildignore+=*.hi " Ignore more haskell compiled files
+au BufReadPost /tmp/mutt-* set nospell nolist ft=mail
