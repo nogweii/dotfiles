@@ -1,10 +1,10 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-URxvt*font:               xft:Dejavu Sans Mono:size=10
-URxvt*boldFont:           xft:Dejavu Sans Mono:bold:size=10
-URxvt*italicFont:         xft:Dejavu Sans Mono:italic:size=10
-URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:size=10
+URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
+URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=12
+URxvt*italicFont:         xft:Dejavu Sans Mono:italic:pixelsize=12
+URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:pixelsize=12
 URxvt*scrollBar:          false
 URxvt.urlLauncher:        xdg-open
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
@@ -27,151 +27,21 @@ URxvt.cursorColor:        green
 URxvt.cursorColor2:       black
 
 URxvt*borderless:         1
-URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+!URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
-URxvt.perl-lib: /home/colin/.data/urxvt/
-URxvt.perl-ext-common: clipboard,url-select,keyboard-select
-URxvt.keysym.M-C-c: perl:clipboard:copy
-URxvt.keysym.M-C-v: perl:clipboard:paste
-URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
-URxvt.keysym.M-C-u: perl:url-select:select_next
-URxvt.keysym.M-C-y: perl:keyboard-select:activate
-URxvt.keysym:M-C-s: perl:keyboard-select:search
+!URxvt.perl-lib: /home/colin/.local/data/urxvt/
+!URxvt.perl-ext-common: clipboard,url-select,keyboard-select
+!URxvt.keysym.M-C-c: perl:clipboard:copy
+!URxvt.keysym.M-C-v: perl:clipboard:paste
+!URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
+!URxvt.keysym.M-C-u: perl:url-select:select_next
+!URxvt.keysym.M-C-y: perl:keyboard-select:activate
+!URxvt.keysym:M-C-s: perl:keyboard-select:search
 
 URxvt.termName: rxvt-256color
 
-x11-ssh-askpass.Dialog.font: -adobe-helvetica-bold-r-normal-*-*-120-*-*-*-*-iso8859-1
-x11-ssh-askpass.Dialog.title: OpenSSH Authentication Passphrase Request
-x11-ssh-askpass.Dialog.label: Please enter your authentication passphrase:
-x11-ssh-askpass.Indicator.foreground: rgb:9b/ff/9b
-x11-ssh-askpass.Indicator.background: rgb:cc/cc/cc
-x11-ssh-askpass.Indicator.shadowThickness: 0
-x11-ssh-askpass.Indicator.borderWidth: 1
-x11-ssh-askpass.Indicator.height: 5
-x11-ssh-askpass.Indicator.width: 10
-x11-ssh-askpass.Indicator.horizontalSpacing: 4
-x11-ssh-askpass.Indicator.verticalSpacing: 2
-x11-ssh-askpass.Indicator.minimumCount: 3
-x11-ssh-askpass.Indicator.maximumCount: 5
-x11-ssh-askpass.Button.font: -adobe-helvetica-bold-r-normal-*-*-120-*-*-*-*-iso8859-1
-x11-ssh-askpass.Button.shadowThickness: 0
-x11-ssh-askpass.Button.borderWidth: 0
-x11-ssh-askpass.Button.horizontalSpacing: 5
-x11-ssh-askpass.Button.verticalSpacing: 2
-x11-ssh-askpass.okButton.label:
-x11-ssh-askpass.cancelButton.label:
-! '?' is replaced any one item, the following will match 'Button', 'Indicator',
-! 'Dialog', 'okButton', & 'cancelButton' all at once
-x11-ssh-askpass.?.foreground: rgb:00/00/00
-x11-ssh-askpass.?.background: rgb:cc/cc/cc
-x11-ssh-askpass.topShadowColor: rgb:ff/ff/ff
-x11-ssh-askpass.bottomShadowColor: rgb:7f/7f/7f
-x11-ssh-askpass.borderColor: rgb:20/20/20
-x11-ssh-askpass.shadowThickness: 2
-x11-ssh-askpass.borderWidth: 1
-x11-ssh-askpass.horizontalSpacing: 5
-x11-ssh-askpass.verticalSpacing: 6
-x11-ssh-askpass.inputTimeout: 5
-x11-ssh-askpass.grabKeyboard: true
-x11-ssh-askpass.grabPointer: true
-x11-ssh-askpass.grabServer: false
-
-!--------------------------------------
-!              Xautolock
-!--------------------------------------
-Xautolock.time: 3
-Xautolock.locker: xlock
-!Xautolock.killtime: 20
-!Xautolock.killer: /sbin/shutdown -h now
-!Xautolock.notify: 1
-!Xautolock.notifier: 1
-!Xautolock.bell: 1
-! Move the mouse to: top right corner: lock, bottom left corner: disable
-Xautolock.corners: 0+-0
-Xautolock.cornersize: 15
-!Xautolock.cornerdelay: 1
-Xautolock.cornerredelay: 30
-!Xautolock.resetsaver: 1
-!Xautolock.nocloseout: 1
-!Xautolock.nocloseerr: 1
-!Xautolock.noclose: 1
-
-!--------------------------------------
-!                XLock
-!--------------------------------------
-XLock.mode: blank
-!XLock.erasemode: 
-!XLock.erasedelay: 400
-!XLock.erasetime: 2
-!XLock.allowaccess: off
-!XLock.debug: off
-XLock.description: off
-!XLock.echokeys: off
-!XLock.echokey: ?
-!XLock.enablesaver: off
-!XLock.resetsaver: on
-!XLock.grabmouse: on
-!XLock.grabserver: off
-!XLock.hide: on
-!XLock.install: on
-!XLock.mousemotion: off
-!XLock.mono: off
-!XLock.sound: off
-!XLock.showfps: off
-!XLock.fpstop: on
-!XLock.fpsfont: -*-helvetica-medium-r-*-*-24-*-*-*-*-*-*
-!XLock.showdate: on
-!XLock.timeelapsed: off
-!XLock.usefirst: on
-!XLock.verbose: off
-!XLock.visual: 
-!XLock.nice: 10
-!XLock.lockdelay: 0
-!XLock.unlockdelay: 0
-!XLock.timeout: 30
-!XLock.font: -*-helvetica-medium-r-*-*-24-*-*-*-*-*-*
-!XLock.planfont: -*-fixed-medium-r-*-*-14-*-*-*-*-*-*
-!XLock.background: White
-!XLock.foreground: Black
-!XLock.username: Name: 
-!XLock.password: Password: 
-!XLock.info: Enter password to unlock; select icon to lock.
-!XLock.validate: Validating login...
-!XLock.invalid: Invalid login.
-!XLock.invalidCapsLock: Invalid login, Caps Lock on.
-!XLock.attempt:  failed attempt.
-!XLock.attempts:  failed attempts.
-!XLock.geometry: 
-!XLock.icongeometry: 
-!XLock.wireframe: off
-!XLock.use3d: off
-!XLock.delta3d: 1.5
-!XLock.none3d: Black
-!XLock.right3d: Blue
-!XLock.left3d: Red
-!XLock.both3d: Magenta
-!XLock.program: fortune -s
-!XLock.messagesfile: 
-!XLock.messagefile: 
-!XLock.message: 
-!XLock.messagefont: -*-times-*-*-*-*-18-*-*-*-*-*-*-*
-!XLock.locksound: thank-you.au
-!XLock.infosound: identify-please.au
-!XLock.validsound: complete.au
-!XLock.invalidsound: not-programmed.au
-!XLock.startCmd: 
-!XLock.endCmd: 
-!XLock.pipepassCmd: 
-!XLock.logoutCmd: 
-!XLock.dpmsstandby: -1
-!XLock.dpmssuspend: -1
-!XLock.dpmsoff: -1
-!XLock.mailCmd: 
-!XLock.mailIcon: 
-!XLock.nomailIcon: 
-
-dzen.background: #000
-dzen.foreground: #ddd
-dzen.font: xft:Liberation Mono:size=7
+!dzen.background: #000
+!dzen.foreground: #ddd
+!dzen.font: xft:Liberation Mono:size=7
 
 ! vim: set syn=xdefaults:
