@@ -52,3 +52,8 @@
     smtpserverport = 587
     smtpencryption = tls
     smtpuser = colin@evaryont.me
+
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "ssh://git@git.kde.org/"]
+    pushInsteadOf = kde:
