@@ -30,10 +30,14 @@ pacman-sudo() {
             $binary "$@"
         ;;
         (-S* | -R* | -U | *)
-            # we're doing sudo, so this is when pacmatic behaves
-            binary="pacmatic"
-            /usr/bin/sudo pacman_program=$pacman_program \
-                $binary --needed "$@" || return $?
+            if [ -x /usr/bin/pacmatic ] ; then
+                # we're doing sudo, so this is when pacmatic behaves
+                binary="pacmatic"
+                /usr/bin/sudo pacman_program=$pacman_program \
+                    $binary --needed "$@" || return $?
+            else
+                /usr/bin/sudo $binary --needed "$@" || return $?
+            fi
         ;;
     esac
 }
