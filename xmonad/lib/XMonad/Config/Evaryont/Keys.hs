@@ -5,6 +5,7 @@ module XMonad.Config.Evaryont.Keys (
 
 import XMonad
 import XMonad.Config.Evaryont.Utils
+import XMonad.Config.Evaryont.Logout
 import Music.Pandora
 import XMonad.Actions.CycleWS
 import XMonad.Actions.CycleWS
@@ -16,10 +17,10 @@ import XMonad.Actions.GridSelect
 key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
                , ("M-<Escape>",    kill) -- close current window
                , ("M-S-<Escape>",  spawn "xkill") -- click to kill an application
-               , ("M-q",           spawn "gnome-screensaver-command -l") -- lock the screen
+               , ("M-q",           spawn lockScreen) -- lock the screen
             -- , ("M-S-q",         broadcastMessage ReleaseResources >> restart "xmonad" True) -- restart XMonad
                , ("M-S-q",         restart "xmonad" True) -- restart XMonad
-               , ("M-C-q",         spawn "gnome-session-quit") -- shutdown/hibernate/suspend dialog
+               , ("M-C-q",         logoutDialog) -- shutdown/hibernate/suspend dialog
                , ("M-l",           moveTo Next NonEmptyWS) -- go to next workspace
                , ("M-h",           moveTo Prev NonEmptyWS) -- go to previous workspace
                , ("M-S-l",         moveTo Next EmptyWS) -- create a new, empty, workspace
