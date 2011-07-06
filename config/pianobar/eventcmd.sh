@@ -11,7 +11,8 @@ logger -t "pianobar" "eventcmd.sh: $@"
 
 case "$1" in
 	songstart)
-		notify-send "Pandora Radio" "Now playing: $title by $artist"
+		[ -n "$DISPLAY" ] && \
+			notify-send "Pandora Radio" "Now playing: $title by $artist"
 		logger -t "pianobar" "new song: $title by $artist"
 		;;
 
