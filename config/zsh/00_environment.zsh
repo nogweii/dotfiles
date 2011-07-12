@@ -50,26 +50,26 @@ export TERMINAL="urxvt.sh"
 export TMOUT=3600
 
 # XDG-related stuff
-export XDG_CACHE_HOME="${HOME}/.cache/"
+export XDG_CACHE_HOME="${HOME}/.local/cache/"
 if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
     mkdir -p $XDG_CACHE_HOME/zsh
 fi
 
-export XDG_CONFIG_HOME="${HOME}/.config/"
+export XDG_CONFIG_HOME="${HOME}/.local/config/"
 if [ ! -d $XDG_CONFIG_HOME/zsh ] ; then
     mkdir -p $XDG_CONFIG_HOME/zsh
 fi
 
-export XDG_DATA_HOME="${HOME}/.data/"
+export XDG_DATA_HOME="${HOME}/.local/share/"
 if [ ! -d $XDG_DATA_HOME/zsh ] ; then
     mkdir -p $XDG_DATA_HOME/zsh
 fi
+export XDG_DATA_DIRS="${HOME}/.local/share/:${XDG_DATA_DIRS}"
+export XDG_CONFIG_DIRS="${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
 
 # MAILDIR
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
-export     XDG_DATA_DIRS="${HOME}/.data/:${HOME}/.local/share/:${XDG_DATA_DIRS}"
-export   XDG_CONFIG_DIRS="${HOME}/.config/:${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
 export            LOCALE="en_US.utf8"
 export              LANG="en_US.utf8"
 export          LC_CTYPE="en_US.utf8"
