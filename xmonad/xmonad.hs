@@ -42,8 +42,8 @@ settings = kde4Config {
 
 main :: IO ()
 main = do
-       replace
-       h <- spawnPipe "startkde"
+--     replace
+--     h <- spawnPipe "startkde"
        xmonad settings
 
 --- vim: set syn=haskell nospell:
