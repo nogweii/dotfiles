@@ -93,3 +93,8 @@ export          SAVEHIST="${HISTSIZE}"
 unset MANPATH
 
 fpath=(~/.data/zsh $fpath)
+export FBCMD="${XDG_CONFIG_HOME}/fbcmd/"
+export KDEHOME="${XDG_CONFIG_HOME}/kde/"
+export WINEARCH="win32"
+export WINEPREFIX="${XDG_DATA_HOME}/wine/"
+export ACKRC="${XDG_CONFIG_HOME}/ackrc"
