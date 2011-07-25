@@ -1,0 +1,11 @@
+[Favorites]
+FavoriteURLs=/usr/share/applications/firefox.desktop,/usr/share/applications/kde4/konsole.desktop,/usr/share/applications/kde4/dolphin.desktop,/usr/share/applications/kde4/systemsettings.desktop
+
+[KRunner]
+loadAll=false
+
+[KRunner][PlasmaRunnerManager]
+pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations
+
+[RecentlyUsed]
+Applications=libreoffice-writer.desktop,kde4-dolphin.desktop,firefox.desktop,kde4-konsole.desktop,spotify.desktop
