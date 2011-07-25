@@ -40,3 +40,7 @@ xmonad/lib/XMonad/Darcs/GridSelect.o
 config/fbcmd/sessionkeys.txt
 cache/
 share/
+config/ipython3
+config/Trolltech.conf
+config/user-dirs.dirs
+config/user-dirs.locale
