@@ -227,3 +227,4 @@ pam
 nologin
 svn
 linux
+Hyperthreading
