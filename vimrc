@@ -431,7 +431,7 @@ let g:showmarks_enable = 1
 
 " Falls back to 'grepprg' when the Ack plugin is not installed
 function! AckSearch()
-    let string = input("Ack: ")
+    let string = input("Search: ")
     if exists(":Ack")
         execute ":Ack" string
     else
