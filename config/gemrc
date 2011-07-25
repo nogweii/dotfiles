@@ -1,0 +1,3 @@
+# don't build the docs for gems as I install them
+install: --no-rdoc --no-ri
+update: --no-rdoc --no-ri
