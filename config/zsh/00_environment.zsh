@@ -42,8 +42,6 @@ export TERMINFO="~/.terminfo"
 
 [ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
 
-eval `dircolors -b $HOME/.dir_colors`
-
 export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 
 export TERMINAL="urxvt.sh"
@@ -98,3 +96,5 @@ export KDEHOME="${XDG_CONFIG_HOME}/kde/"
 export WINEARCH="win32"
 export WINEPREFIX="${XDG_DATA_HOME}/wine/"
 export ACKRC="${XDG_CONFIG_HOME}/ackrc"
+
+eval `dircolors -b ${XDG_CONFIG_HOME}/dircolors`
