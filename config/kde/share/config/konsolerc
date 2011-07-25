@@ -1,0 +1,16 @@
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Favorite Profiles]
+Favorites=/home/colin/.local/config/kde/share/apps/konsole/Shell.profile
+
+[MainWindow]
+Height 1080=571
+Height 480=481
+State=AAAA/wAAAAD9AAAAAAAAA78AAAImAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+Width 1920=959
+Width 640=641

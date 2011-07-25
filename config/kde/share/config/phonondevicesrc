@@ -1,0 +1,72 @@
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:03.0/0000:01:00.1/sound/card1/pcmC1D3p:playback]
+cardName=HDA NVidia (HDMI 0) #3
+deleted=false
+deviceNumber=3
+hotpluggable=false
+iconName=audio-card
+index=-2
+initialPreference=33
+isAdvanced=true
+
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:03.0/0000:01:00.1/sound/card1/pcmC1D7p:playback]
+cardName=HDA NVidia (HDMI 0) #7
+deleted=false
+deviceNumber=7
+hotpluggable=false
+iconName=audio-card
+index=-4
+initialPreference=29
+isAdvanced=true
+
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:03.0/0000:01:00.1/sound/card1/pcmC1D8p:playback]
+cardName=HDA NVidia (HDMI 0) #8
+deleted=false
+deviceNumber=8
+hotpluggable=false
+iconName=audio-card
+index=-5
+initialPreference=28
+isAdvanced=true
+
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:03.0/0000:01:00.1/sound/card1/pcmC1D9p:playback]
+cardName=HDA NVidia (HDMI 0) #9
+deleted=false
+deviceNumber=9
+hotpluggable=false
+iconName=audio-card
+index=-6
+initialPreference=27
+isAdvanced=true
+
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1b.0/sound/card0/pcmC0D0c:capture]
+cardName=HDA Intel (CONEXANT Analog)
+deleted=false
+deviceNumber=0
+hotpluggable=false
+iconName=audio-card
+index=-7
+initialPreference=36
+isAdvanced=false
+
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1b.0/sound/card0/pcmC0D0p:playback]
+cardName=HDA Intel (CONEXANT Analog)
+deleted=false
+deviceNumber=0
+hotpluggable=false
+iconName=audio-card
+index=-1
+initialPreference=36
+isAdvanced=false
+
+[AudioDevice_HDA NVidia, HDMI 0\nHDMI Audio Output_playback]
+cardName=HDA NVidia, HDMI 0 (HDMI Audio Output)
+deleted=false
+deviceNumber=-1
+hotpluggable=false
+iconName=audio-card
+index=-3
+initialPreference=30
+isAdvanced=false
+
+[Globals]
+nextIndex=8

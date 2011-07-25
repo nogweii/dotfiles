@@ -1,0 +1,43 @@
+[BackgroundConfigDialog]
+Height 1080=719
+Width 1920=649
+
+[KFileDialog Settings]
+Height 1080=527
+Recent Files[$e]=balsamia_Paint_What_You_See.jpg,$HOME/media/balsamia_Paint_What_You_See.jpg
+Width 1920=960
+
+[KPropertiesDialog]
+Height 1080=375
+Width 1920=383
+
+[PlasmaViews][1]
+panelVisibility=2
+
+[PlasmaViews][1][Horizontal1920]
+offset=0
+
+[PlasmaViews][1][Sizes]
+lastsize=1920
+
+[PlasmaViews][1][Sizes][Horizontal1920]
+max=1920,27
+min=1920,27
+offset=0
+size=1920,27
+
+[PlasmaViews][1][Sizes][Horizontal640]
+max=640,27
+min=640,27
+offset=0
+size=640,27
+
+[Runners][bookmarks]
+dbfile=/home/colin/.mozilla/firefox/gn57q03c.default/places.sqlite
+
+[Updates]
+performed=/usr/share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
+
+[ViewIds]
+1=2
+3=1

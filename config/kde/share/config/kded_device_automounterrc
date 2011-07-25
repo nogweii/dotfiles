@@ -1,0 +1,17 @@
+[Devices][/org/freedesktop/UDisks/devices/sda2]
+EverMounted=true
+Icon=drive-harddisk
+LastNameSeen=home
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks/devices/sdb2]
+EverMounted=true
+Icon=drive-harddisk
+LastNameSeen=arch
+LastSeenMounted=true
+
+[Devices][/org/freedesktop/UDisks/devices/sdc1]
+EverMounted=true
+Icon=drive-removable-media-usb
+LastNameSeen=Kindle
+LastSeenMounted=false

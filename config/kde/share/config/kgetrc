@@ -1,0 +1,38 @@
+[Advanced]
+EnableKUIServerIntegration=true
+ExportGlobalJob=true
+ExportSingleTransfer=false
+HistoryBackend=2
+KonquerorIntegration=true
+
+[Appearance]
+HeaderState=AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArsAAAAGAQEAAQAAAAAAAAAAAAAAAGQAAABQAAAAhAAAAAAAAAACAAAB9AAAAAUAAAAAAAAAxwAAAAEAAAAA
+ShowSplashscreen=true
+
+[Groups]
+DirectoriesAsSuggestion=true
+
+[Internal]
+DropPosition=0,0
+FirstRun=false
+LastDirectory[$e]=$HOME/tmp
+
+[KFileDialog Settings]
+Height 1080=540
+Recent Files[$e]=$HOME/tmp/pocketmod.pdf,$HOME/tmp/pocketmod.pdf
+Width 1920=960
+
+[MainWindow]
+Height 1080=380
+State=AAAA/wAAAAD9AAAAAAAAAtAAAAFHAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAYAGsAZwBlAHQAXwB0AG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1920=720
+
+[Plugins]
+kget_bittorrent_pluginEnabled=true
+kget_checksumsearch_pluginEnabled=true
+kget_contentfetch_pluginEnabled=true
+kget_kio_pluginEnabled=true
+kget_metalink_pluginEnabled=true
+kget_mirrorsearch_pluginEnabled=true
+kget_multisegkio_pluginEnabled=true
