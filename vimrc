@@ -347,7 +347,7 @@ endif
 " Vim 7.3 only settings.
 if v:version >= 703
     " undo settings
-    set undodir=~/.vim/tmp//
+    set undodir=~/.vim/tmp/
     set undofile
 endif
 " }}}
