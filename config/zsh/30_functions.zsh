@@ -208,7 +208,7 @@ function title {
   esac
 }
 
-for i in ~/.data/zsh/*(*) ; do
+for i in ${XDG_DATA_HOME}/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
 
