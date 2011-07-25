@@ -1,0 +1,12 @@
+[Layout]
+DisplayNames=
+LayoutList=
+LayoutLoopCount=-1
+Model=pc101
+Options=,caps:swapescape,compose:menu,terminate:ctrl_alt_bksp,shift:both_capslock_cancel,shift:breaks_caps,keypad:pointerkeys
+ResetOldOptions=true
+ShowFlag=false
+ShowLayoutIndicator=true
+ShowSingle=false
+SwitchMode=Global
+Use=false

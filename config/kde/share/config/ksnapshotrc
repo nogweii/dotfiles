@@ -1,0 +1,15 @@
+[GENERAL]
+delay=0
+filename[$e]=file://$HOME/mem_usage1.png
+includeDecorations=true
+includePointer=false
+mode=2
+
+[KFileDialog Settings]
+Height 1080=540
+Recent Files[$e]=$HOME/mem_usage.png,$HOME/mem_usage.png
+Width 1920=960
+
+[MainWindow]
+Height 1080=499
+Width 1920=426
