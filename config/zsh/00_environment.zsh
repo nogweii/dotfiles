@@ -98,3 +98,5 @@ export WINEPREFIX="${XDG_DATA_HOME}/wine/"
 export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 
 eval `dircolors -b ${XDG_CONFIG_HOME}/dircolors`
+export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
+export GIT_CONFIG="${XDG_CONFIG_HOME}/git/config"
