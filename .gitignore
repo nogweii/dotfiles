@@ -38,3 +38,4 @@ xmonad/lib/XMonad/Config/Evaryont/Utils.o
 xmonad/lib/XMonad/Darcs/GridSelect.hi
 xmonad/lib/XMonad/Darcs/GridSelect.o
 config/fbcmd/sessionkeys.txt
+cache/
