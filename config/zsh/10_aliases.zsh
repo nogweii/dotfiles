@@ -114,3 +114,5 @@ alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias wc='wc -l'
 alias gem="gem --config-file=${XDG_CONFIG_HOME}/gemrc"
+alias irssi="irssi --config=${XDG_CONFIG_HOME}/irssi/config --home=${XDG_CONFIG_HOME}/irssi"
+alias mutt="mutt -F ${XDG_CONFIG_HOME}/mutt/muttrc"
