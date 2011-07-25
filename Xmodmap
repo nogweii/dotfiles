@@ -2,4 +2,14 @@
 remove Lock = Caps_Lock
 keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
-add Lock = Caps_Lock
+add    Lock = Caps_Lock
+add Control = Escape
+
+! And static maps
+keycode   9 = Caps_Lock NoSymbol Caps_Lock
+keycode  22 = BackSpace Terminate_Server BackSpace Terminate_Server
+keycode  50 = Shift_L Caps_Lock Shift_L Caps_Lock
+keycode  62 = Shift_R Caps_Lock Shift_R Caps_Lock
+keycode  66 = Escape NoSymbol Escape
+keycode  77 = Num_Lock Pointer_EnableKeys Num_Lock Pointer_EnableKeys
+keycode 135 = Multi_key Multi_key Multi_key Multi_key
