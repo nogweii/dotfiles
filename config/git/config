@@ -21,7 +21,7 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.local/config/git/ignores
 [branch]
     autosetupmerge = true
 [alias]
