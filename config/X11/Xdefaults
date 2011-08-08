@@ -1,14 +1,23 @@
-!URxvt.font:               xft:Droid Sans Mono:pixelsize=14
-URxvt.font:               xft:Terminus:pixelsize=14
-URxvt.scrollBar:          false
+!--------------------------------------
+!                urxvt
+!--------------------------------------
+URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
+URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=12
+URxvt*italicFont:         xft:Dejavu Sans Mono:italic:pixelsize=12
+URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+URxvt*scrollBar:          false
 URxvt.urlLauncher:        xdg-open
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt.foreground:         grey80
 URxvt.colorBD:            white
 URxvt.saveLines:          4096
-!! Black background
-URxvt.background:         rgb:000/000/000
-URxvt.depth:              24
+!! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
+URxvt*background:         rgba:0000/0000/0000/7fff
+URxvt*depth:              32
+!! Pseudo-transparent
+!Urxvt*background:         black
+!URxvt*transparent:        true
+!URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
 URxvt.scrollTtyOutput:    false
 URxvt.scrollWithBuffer:   false
@@ -16,7 +25,23 @@ URxvt.scrollTtyKeypress:  true
 ! Green cursor, with black highlighted text
 URxvt.cursorColor:        green
 URxvt.cursorColor2:       black
-URxvt*borderless:         1
 
-Xft.dpi: 96
+URxvt*borderless:         1
+!URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+URxvt.underlineURLs: true
+!URxvt.perl-lib: /home/colin/.local/data/urxvt/
+!URxvt.perl-ext-common: clipboard,url-select,keyboard-select
+!URxvt.keysym.M-C-c: perl:clipboard:copy
+!URxvt.keysym.M-C-v: perl:clipboard:paste
+!URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
+!URxvt.keysym.M-C-u: perl:url-select:select_next
+!URxvt.keysym.M-C-y: perl:keyboard-select:activate
+!URxvt.keysym:M-C-s: perl:keyboard-select:search
+
+URxvt.termName: rxvt-256color
+
+!dzen.background: #000
+!dzen.foreground: #ddd
+!dzen.font: xft:Liberation Mono:size=7
+
 ! vim: set syn=xdefaults:
