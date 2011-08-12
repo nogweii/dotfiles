@@ -47,6 +47,7 @@ mute=Volume Mute,Volume Mute,Mute
 
 [krunner]
 Lock Session=Ctrl+Alt+L,Ctrl+Alt+L,Lock Session
+PowerDevil=none,none,Run Command (runner "PowerDevil" only)
 Run Command=Alt+F2,Alt+F2,Run Command
 Run Command on clipboard contents=Alt+Shift+F2,Alt+Shift+F2,Run Command on clipboard contents
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
@@ -55,8 +56,15 @@ _k_friendly_name=Run Command Interface
 bookmarks=none,none,Run Command (runner "Bookmarks" only)
 desktopsessions=none,none,Run Command (runner "Desktop Sessions" only)
 kabccontacts=none,none,Run Command (runner "Contacts" only)
+locations=none,none,Run Command (runner "Locations" only)
+nepomuksearch=none,none,Run Command (runner "Nepomuk Desktop Search Runner" only)
+org.kde.activities=none,none,Run Command (runner "Activities" only)
 org.kde.windowedwidgets=none,none,Run Command (runner "Windowed widgets" only)
+recentdocuments=none,none,Run Command (runner "Recent Documents" only)
+services=none,none,Run Command (runner "Applications" only)
+shell=none,none,Run Command (runner "Command Line" only)
 solid=none,none,Run Command (runner "Devices" only)
+webshortcuts=none,none,Run Command (runner "Web Shortcuts" only)
 wikipedia=none,none,Run Command (runner "Wikipedia" only)
 windows=none,none,Run Command (runner "Windows" only)
 
@@ -172,8 +180,12 @@ Window Pack Down=none,none,Pack Window Down
 Window Pack Left=none,none,Pack Window to the Left
 Window Pack Right=none,none,Pack Window to the Right
 Window Pack Up=none,none,Pack Window Up
+Window Quick Tile Bottom Left=none,none,Quick Tile Window to the Bottom Left
+Window Quick Tile Bottom Right=none,none,Quick Tile Window to the Bottom Right
 Window Quick Tile Left=none,none,Quick Tile Window to the Left
 Window Quick Tile Right=none,none,Quick Tile Window to the Right
+Window Quick Tile Top Left=none,none,Quick Tile Window to the Top Left
+Window Quick Tile Top Right=none,none,Quick Tile Window to the Top Right
 Window Raise=none,none,Raise Window
 Window Resize=none,none,Resize Window
 Window Screenshot to Clipboard=Alt+Print,Alt+Print,Window Screenshot to Clipboard

@@ -58,6 +58,26 @@ index=-1
 initialPreference=36
 isAdvanced=false
 
+[AudioDevice_HDA Intel, CONEXANT Analog\nDefault Audio Device_capture]
+cardName=HDA Intel, CONEXANT Analog (Default Audio Device)
+deleted=false
+deviceNumber=-1
+hotpluggable=false
+iconName=audio-card
+index=-9
+initialPreference=30
+isAdvanced=false
+
+[AudioDevice_HDA Intel, CONEXANT Analog\nDefault Audio Device_playback]
+cardName=HDA Intel, CONEXANT Analog (Default Audio Device)
+deleted=false
+deviceNumber=-1
+hotpluggable=false
+iconName=audio-card
+index=-8
+initialPreference=30
+isAdvanced=false
+
 [AudioDevice_HDA NVidia, HDMI 0\nHDMI Audio Output_playback]
 cardName=HDA NVidia, HDMI 0 (HDMI Audio Output)
 deleted=false
@@ -69,4 +89,14 @@ initialPreference=30
 isAdvanced=false
 
 [Globals]
-nextIndex=8
+nextIndex=11
+
+[VideoDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.6/1-1.6:1.0/video4linux/video0]
+cardName=Integrated Camera
+deleted=false
+deviceNumber=-1
+hotpluggable=true
+iconName=camera-web
+index=-10
+initialPreference=50
+isAdvanced=false
