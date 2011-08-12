@@ -1,0 +1,56 @@
+" {{{ GUI fiddling
+" Add the urlbar icons to the bottom status bar too
+javascript <<EOF
+(function(){
+    var panel = document.createElement("statusbarpanel");
+    panel.setAttribute("id", "urlbar-icons-clone");
+
+    var urlbar = document.getElementById("urlbar-icons");
+
+    var allicons = [];
+    for(var i=0; i<urlbar.childNodes.length; ++i)
+        allicons.push(urlbar.childNodes[i].id);
+
+    for(var i=0; i<allicons.length; ++i) {
+        var icon = document.getElementById(allicons[i]);
+
+        if(icon.id == "go-button") continue;
+
+        icon.setAttribute("style", "padding: 0; max-height: 16px;");
+        panel.appendChild(icon);
+    }
+
+    var statbar = document.getElementById("status-bar");
+    statbar.appendChild(panel);
+})();
+EOF
+
+style -name tabs chrome://* <<EOF
+/* Remove these stupid buttons */
+.tabs-newtab-button,
+.tabs-alltabs-button,
+.tabs-container > stack,
+.tabs-bottom {
+    display: none !important;
+}
+EOF
+" }}}
+
+" {{{ Key mappings
+
+noremap <bs> <nop>
+noremap <f1> <nop>
+
+" Make up/dn work in completion lists
+cnoremap <up> <s-tab>
+cnoremap <c-up> <up>
+cnoremap <down> <tab>
+cnoremap <c-down> <down>
+
+" Remove keys so that built in keys work for Google sites
+"autocmd LocationChange google\.com\/(reader|calendar|mail|a|ccc|Doc) -js modes.set(modes.PASS_THROUGH)
+" }}}
+
+autocmd LocationChange reddit.com set hinttags-=[onclick]
+
+" vim: set ft=vim:
