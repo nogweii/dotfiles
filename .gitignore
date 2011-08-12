@@ -51,3 +51,4 @@
 /config/kde/tmp-gryphon
 /config/kde/share/config/session/
 irssi/saved_colors
+config/akonadi/*.dat
