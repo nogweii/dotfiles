@@ -1,0 +1,12 @@
+[MainWindow]
+Geometry=2,838,496,144
+ProjectNavigatorArea=left
+PropertyEditorArea=right
+PropertyEditorSize=100,30
+
+[Recent Dirs]
+OpenExistingOrCreateNewProject[$e]=file://$HOME/docs/,$HOME/docs
+
+[Startup]
+OpenExistingType=File
+ShowStartupDialog=true

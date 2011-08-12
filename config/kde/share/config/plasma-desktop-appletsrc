@@ -6,47 +6,6 @@ wheel:Vertical;NoModifier=switchdesktop
 [AppletGlobals][plasma_applet_pager]
 rows=2
 
-[Containments][1]
-ActionPluginsSource=Global
-activity=New Activity
-activityId=721effd1-0abb-4e22-9910-b9db305f393a
-desktop=-1
-formfactor=0
-geometry=0,0,1920,1080
-immutability=1
-lastDesktop=-1
-lastScreen=0
-location=0
-plugin=desktop
-screen=0
-wallpaperplugin=image
-wallpaperpluginmode=SingleImage
-zvalue=0
-
-[Containments][1][Applets][2]
-geometry=29,57,701,219
-immutability=2
-plugin=folderview
-zvalue=5
-
-[Containments][1][Applets][2][Configuration]
-geometry=29,57,701,219
-immutability=2
-plugin=folderview
-sortDirsFirst=true
-url=desktop:/
-wallpaperplugin=image
-wallpaperpluginmode=SingleImage
-zvalue=5
-
-[Containments][1][Wallpaper][image]
-slideTimer=10
-slidepaths=/usr/share/wallpapers/
-userswallpapers=/home/colin/media/balsamia_Paint_What_You_See.jpg
-wallpaper=/home/colin/media/balsamia_Paint_What_You_See.jpg
-wallpapercolor=0,0,0
-wallpaperposition=0
-
 [Containments][3]
 activity=
 activityId=
@@ -83,8 +42,8 @@ zvalue=0
 Order=1
 
 [Containments][3][Applets][6]
-geometry=78,2,1654,25
-immutability=2
+geometry=78,2,1602,25
+immutability=1
 plugin=tasks
 zvalue=0
 
@@ -92,8 +51,8 @@ zvalue=0
 Order=2
 
 [Containments][3][Applets][7]
-geometry=1736,2,130,25
-immutability=2
+geometry=1684,2,158,25
+immutability=1
 plugin=systemtray
 zvalue=0
 
@@ -115,7 +74,7 @@ plugin=notifications
 zvalue=0
 
 [Containments][3][Applets][7][Configuration][Applets][41][Configuration]
-customPosition=-5,-8
+customPosition=-13,-20
 customPositionAffinityHoriz=r
 customPositionAffinityVert=b
 
@@ -131,13 +90,13 @@ sourceAppletPluginName=notifications
 
 [Containments][3][Applets][7][Configuration][Applets][41][PopupApplet]
 DialogHeight=148
-DialogWidth=368
+DialogWidth=354
 
 [Containments][3][Applets][7][Configuration][Applets][41][Shortcuts]
 global=
 
 [Containments][3][Applets][7][Configuration][Applets][43]
-geometry=4,116,24,24
+geometry=85,0.5,24,24
 immutability=1
 plugin=battery
 zvalue=0
@@ -152,8 +111,8 @@ sourceAppletId=43
 sourceAppletPluginName=battery
 
 [Containments][3][Applets][7][Configuration][Applets][43][PopupApplet]
-DialogHeight=229
-DialogWidth=377
+DialogHeight=225
+DialogWidth=369
 
 [Containments][3][Applets][7][Configuration][Applets][43][Shortcuts]
 global=
@@ -165,12 +124,12 @@ Systemtray-Klipper-7=Ctrl+Alt+V
 Order=3
 
 [Containments][3][Applets][7][PopupApplet]
-DialogHeight=158
-DialogWidth=233
+DialogHeight=200
+DialogWidth=218
 
 [Containments][3][Applets][8]
-geometry=1870,2,50,25
-immutability=2
+geometry=1846,2,50,25
+immutability=1
 plugin=digital-clock
 zvalue=0
 
@@ -187,8 +146,8 @@ sourceAppletPluginName=digital-clock
 Order=4
 
 [Containments][3][Applets][8][PopupApplet]
-DialogHeight=261
-DialogWidth=262
+DialogHeight=305
+DialogWidth=468
 
 [Containments][3][Configuration]
 maximumSize=1920,27
@@ -200,7 +159,7 @@ activity=New Activity
 activityId=721effd1-0abb-4e22-9910-b9db305f393a
 desktop=-1
 formfactor=0
-geometry=1926,0,1920,1080
+geometry=0,0,1920,1080
 immutability=1
 lastDesktop=-1
 lastScreen=1
@@ -219,5 +178,71 @@ wallpaper=/usr/share/wallpapers/Horos
 wallpapercolor=0,0,0
 wallpaperposition=0
 
+[Containments][52]
+ActionPluginsSource=Global
+EnabledEntries=plasma-sal-bookmarks.desktop,plasma-sal-contacts.desktop,plasma-sal-multimedia.desktop,plasma-sal-internet.desktop,plasma-sal-graphics.desktop,plasma-sal-games.desktop,plasma-sal-office.desktop
+activity=New Activity
+activityId=1ed28271-9859-439d-91b3-c27c7e476833
+desktop=-1
+formfactor=0
+geometry=1926,0,1920,1080
+immutability=1
+lastDesktop=-1
+lastScreen=0
+location=0
+plugin=desktop
+screen=-1
+wallpaperplugin=image
+wallpaperpluginmode=SingleImage
+zvalue=0
+
+[Containments][52][Wallpaper][image]
+slideTimer=10
+slidepaths=/usr/share/wallpapers/
+userswallpapers=
+wallpaper=
+wallpapercolor=0,0,0
+wallpaperposition=0
+
+[Containments][54]
+ActionPluginsSource=Global
+EnabledEntries=plasma-sal-bookmarks.desktop,plasma-sal-contacts.desktop,plasma-sal-multimedia.desktop,plasma-sal-internet.desktop,plasma-sal-graphics.desktop,plasma-sal-games.desktop,plasma-sal-office.desktop
+activity=New Activity
+activityId=721effd1-0abb-4e22-9910-b9db305f393a
+desktop=-1
+filter=0
+filterFiles=*
+formfactor=0
+geometry=0,1236,1920,1080
+immutability=1
+lastDesktop=-1
+lastScreen=0
+location=0
+mainGroup=2
+mimeFilter=
+plugin=desktop
+screen=0
+url=file:///home/colin
+wallpaperplugin=image
+wallpaperpluginmode=SingleImage
+zvalue=0
+
+[Containments][54][Groups][2]
+geometry=0,0,1920,1080
+plugin=floating
+zvalue=0
+
+[Containments][54][ToolBox]
+corner=1
+offset=0
+
+[Containments][54][Wallpaper][image]
+slideTimer=10
+slidepaths=/usr/share/wallpapers/
+userswallpapers=/home/colin/media/balsamia_Paint_What_You_See.jpg
+wallpaper=/home/colin/media/balsamia_Paint_What_You_See.jpg
+wallpapercolor=0,0,0
+wallpaperposition=0
+
 [General]
-immutability=2
+immutability=1

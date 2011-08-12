@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin3_plugin.upd:kde3.2,kwin_focus2.upd:kwin_focus2,kwin.upd:kde3.0r1,kwin.upd:kde3.2Xinerama,kwin_focus1.upd:kwin_focus1,kwin_on_off.upd:kwin_on_off
+update_info=kwin3_plugin.upd:kde3.2,kwin_focus2.upd:kwin_focus2,kwin.upd:kde3.0r1,kwin.upd:kde3.2Xinerama,kwin_focus1.upd:kwin_focus1,kwin_on_off.upd:kwin_on_off,kwin_remove_effects.upd:kwin4.7_effects
 
 [Compositing]
 AnimationSpeed=3

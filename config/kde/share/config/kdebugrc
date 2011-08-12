@@ -3,6 +3,12 @@ InfoOutput=4
 [AkonadiAgentServer]
 InfoOutput=4
 
+[KPasswdServer]
+InfoOutput=2
+
+[KSharedDataCache]
+InfoOutput=4
+
 [LibreOffice]
 InfoOutput=4
 
@@ -15,7 +21,31 @@ InfoOutput=2
 [Polkit1AuthAgent]
 InfoOutput=4
 
+[akonadi_birthdays_resource]
+InfoOutput=4
+
+[akonadi_facebook_resource_0]
+InfoOutput=4
+
+[akonadi_gcal_resource_0]
+InfoOutput=4
+
+[akonadi_gcal_resource_1]
+InfoOutput=4
+
+[akonadi_googledata_resource_0]
+InfoOutput=4
+
+[akonadi_imap_resource_0]
+InfoOutput=4
+
 [akonadi_maildispatcher_agent]
+InfoOutput=4
+
+[akonadi_microblog_resource_0]
+InfoOutput=4
+
+[akonadi_microblog_resource_1]
 InfoOutput=4
 
 [akonadi_nepomuk_calendar_feeder]
@@ -69,6 +99,9 @@ InfoOutput=4
 [kdesu (kdelibs)]
 InfoOutput=2
 
+[kdeui (KConfigDialogManager)]
+InfoOutput=2
+
 [kdostartupconfig4]
 InfoOutput=4
 
@@ -114,6 +147,12 @@ InfoOutput=4
 [konqueror]
 InfoOutput=4
 
+[kontact]
+InfoOutput=4
+
+[korgac]
+InfoOutput=4
+
 [korganizer]
 InfoOutput=4
 
@@ -129,26 +168,50 @@ InfoOutput=4
 [kuiserver]
 InfoOutput=4
 
+[kwalletd]
+InfoOutput=2
+
 [kwin]
 InfoOutput=4
 
 [kwrited]
 InfoOutput=4
 
+[nepomukbackupsync]
+InfoOutput=4
+
+[nepomukfilewatch]
+InfoOutput=4
+
 [nepomukremovablestorageservice]
+InfoOutput=4
+
+[nepomukstorage]
 InfoOutput=4
 
 [nepomukstrigiservice]
 InfoOutput=4
 
+[okular]
+InfoOutput=4
+
 [plasma-desktop]
 InfoOutput=4
 
+[plasma-overlay]
+InfoOutput=4
+
 [spotify]
+InfoOutput=4
+
+[startkdeinitlock]
 InfoOutput=4
 
 [systemsettings]
 InfoOutput=4
 
 [unnamed app]
+InfoOutput=4
+
+[zanshin]
 InfoOutput=4

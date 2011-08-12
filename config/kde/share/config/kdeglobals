@@ -10,13 +10,13 @@ BrowserApplication=firefox
 XftAntialias=true
 XftHintStyle=hintmedium
 XftSubPixel=rgb
-desktopFont=Ubuntu,9,-1,5,50,0,0,0,0,0
-fixed=DejaVu Sans Mono,9,-1,5,50,0,0,0,0,0
-font=Ubuntu,10,-1,5,50,0,0,0,0,0
-menuFont=Ubuntu,9,-1,5,50,0,0,0,0,0
-smallestReadableFont=Ubuntu,8,-1,5,50,0,0,0,0,0
-taskbarFont=Ubuntu,9,-1,5,50,0,0,0,0,0
-toolBarFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+desktopFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+fixed=Droid Sans Mono,8,-1,5,50,0,0,0,0,0
+font=Ubuntu,9,-1,5,50,0,0,0,0,0
+menuFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+smallestReadableFont=Ubuntu,7,-1,5,50,0,0,0,0,0
+taskbarFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+toolBarFont=Ubuntu,7,-1,5,50,0,0,0,0,0
 
 [KDE]
 ShowDeleteCommand=false
@@ -34,11 +34,11 @@ Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
 Show Speedbar=true
-Show hidden files=true
+Show hidden files=false
 Sort by=Name
 Sort directories first=false
 Sort reversed=false
-Speedbar Width=99
+Speedbar Width=103
 View Style=Simple
 
 [KShortcutsDialog Settings]
@@ -49,4 +49,4 @@ MaximumRemoteSize=0
 MaximumSize=5242880
 
 [WM]
-activeFont=Ubuntu,8,-1,5,50,0,0,0,0,0
+activeFont=Ubuntu,7,-1,5,50,0,0,0,0,0
