@@ -81,9 +81,9 @@ set statusline+=%{StatuslineTrailingSpaceWarning()}
 
 set statusline+=%{StatuslineLongLineWarning()}
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "display a warning if &paste is set
 set statusline+=%#error#
@@ -99,10 +99,15 @@ set textwidth=80
 " }}}
 
 " {{{ Mappings
+
+" Unbind G, and make gG go to the bottom of the file
 noremap  gG G
 onoremap gG G
 map      G <Nop>
-let mapleader="G"                       " Use 'G' as map leader instead of '\'
+" Set semicolon to map leader, and comma repeats the last f/t/F/T
+nnoremap , ;
+map      ; <Nop>
+let mapleader = ";"
 map      zp 1z=
 map      <silent> <c-l> <c-l>:nohlsearch<CR>
 nmap     gp :.!xclip -out<CR>
@@ -128,8 +133,9 @@ imap     <C-j> <Down>
 imap     <C-k> <Up>
 imap     <C-h> <Left>
 imap     <C-l> <Right>
-nnoremap <silent> <Leader>T :TlistToggle<CR>
-nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
+"nnoremap <silent> <Leader>T :TlistToggle<CR>
+"nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
+nmap     <silent> ZW :update<CR>
 map      <F10> :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
      \   . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
      \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -359,38 +365,19 @@ let g:ruby_fold=1                       " Enable folding in Ruby files
 let g:ruby_operators=1                  " Highlight ruby operators
 let g:ruby_no_expensive=0               " Enable CPU expensive stuff
 let g:rubycomplete_classes_in_global=1  " Add local classes to completion
-let g:Tlist_Auto_Highlight_Tag=1        " Track where I am in the file
-let g:Tlist_Auto_Open=0                 " Open up on vim start
-let g:Tlist_Enable_Fold_Column=0        " Don't show the fold column in TagList
-let g:Tlist_Exit_OnlyWindow=1           " Exit vim when TagList is the only one
-let g:Tlist_Highlight_Tag_on_BufEnter=1 " On BufEnter, highlight the correct tag
-let g:Tlist_Sort_Type="order"           " Sort by location in code
-let g:Tlist_Show_One_File = 1           " Only show the current file
-let g:Tlist_Use_Horiz_Window = 1
 let g:SuperTabDefaultCompletionType="context"
-let snippets_dir = substitute(globpath(&rtp,'snipmate-snippets/'),"\n",',','g')
-" Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore  = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;"
-let g:fuzzy_ignore += "coverage/**;tmp/**;rdoc/**"
-let g:tcommentMapLeader1 = ''
-let g:tcommentMapLeader2 = ''
-let g:bufExplorerDefaultHelp=0       " Do not show default help.
-let g:bufExplorerDetailedHelp=0      " Do not show detailed help.
 let g:SuperTabCrMapping=0
 let g:delimitMate_expand_space=0
 let g:delimitMate_expand_cr=0
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_quiet_warnings = 0
 " }}}
 
 " {{{ Autocommands
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 "au BufWinLeave * mkview
 "au BufWinEnter * silent loadview
-au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
+"au FileType * if &ft != 'help' | call GetSnippets(snippets_dir, &ft) | endif
 " Delay calling GetSnippets 'til after vim has loaded all the plugins
-au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
+"au VimEnter * call GetSnippets(snippets_dir, '_') " Get global snippets
 au BufReadPost *.pacmans set nospell
 " Return to the last line you were editing in a file
 autocmd BufReadPost *
@@ -402,7 +389,7 @@ autocmd BufReadPost *
 " {{{ Call commands
 command! -nargs=1 SwitchToBuffer call SwitchToNextBuffer(<args>)
 call pathogen#runtime_append_all_bundles()
-command! MathBar call Sidebar("~/.vim/math_bar.txt")
+"command! MathBar call Sidebar("~/.vim/math_bar.txt")
 
 " Turn filetype on *now*, with extra ftdetect paths added, so vim actually
 " sees them!
@@ -425,10 +412,6 @@ autocmd FileType man set textwidth=0
 autocmd FileType diff set nospell textwidth=0
 autocmd FileType jproperties set nospell
 
-" Limit showmarks to the user-controlled marks
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-let g:showmarks_enable = 1
-
 " Falls back to 'grepprg' when the Ack plugin is not installed
 function! AckSearch()
     let string = input("Search: ")
@@ -443,14 +426,6 @@ nmap <silent> ZG :call AckSearch()<CR>
 nmap ZA :A<CR>
 nmap GR :Include<CR>
 
-let g:nosession = 0
-"if argc() < 1
-"    " If we're loading a file manually, or via stdin, don't restore session
-"    au VimEnter * if !g:nosession | so ~/.vim/Session.vim | endif
-"endif
-au StdinReadPre * let g:nosession = 1 " on stdin, don't load the session file
-au VimLeave * if !v:dying | mksession! ~/.vim/Session.vim | endif
-
 " Return to the previous location after repeating a change
 nmap . .`[
 " Disable vim-as-man-pager within vim (so :Man works)
@@ -459,3 +434,20 @@ let $MANPAGER = ''
 autocmd FileType gitcommit normal :DiffGitCached
 au FileType haskell set wildignore+=*.hi " Ignore more haskell compiled files
 au BufReadPost /tmp/mutt-* set nospell nolist ft=mail
+
+autocmd FileType python setl omnifunc=pythoncomplete#Complete
+au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
+autocmd FileType ruby,eruby setl omnifunc=rubycomplete#Complete
+autocmd FileType c,cpp,objc,objcpp setl omnifunc=ClangComplete
+
+" don't outdent hashes
+inoremap # #
+
+" Ctrl-A & Ctrl-X are awesome now!
+nmap <Plug>SwapItFallbackIncrement <Plug>SpeedDatingUp
+nmap <Plug>SwapItFallbackDecrement <Plug>SpeedDatingDown
