@@ -8,4 +8,4 @@ loadAll=false
 pluginWhiteList=places,shell,services,bookmarks,recentdocuments,locations
 
 [RecentlyUsed]
-Applications=libreoffice-writer.desktop,kde4-dolphin.desktop,firefox.desktop,kde4-konsole.desktop,spotify.desktop
+Applications=kde4-kcalc.desktop,spotify.desktop,kde4-konsole.desktop,gvim.desktop,firefox.desktop

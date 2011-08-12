@@ -4,16 +4,22 @@ update_info=korganizer.upd:korganizer_3.4_GroupwareCleanup,korganizer.upd:korgan
 [Calendar]
 Default Calendar=-1
 
+[Category Colors2]
+Birthday=invalid
+
+[Default Datetimes]
+Reminder Audio File[$e]=/usr/share/sounds/KDE-Sys-Warning.ogg
+
 [General]
 CalendarFilters=
 Current Filter=
 Current View=Agenda
 Custom Categories=Appointment,Birthday,Business,Education,Holiday,Meeting,Miscellaneous,Personal,Phone Call,Special Occasion,Travel,Vacation
-Range Mode=5
+Range Mode=3
 
 [GlobalCollectionSelection]
 Current=x-1
-Selection=
+Selection=c47,c45,c2,c28,c27,c43
 
 [GlobalCollectionView]
 Expansion=
@@ -21,11 +27,11 @@ HorizontalScroll=0
 VerticalScroll=0
 
 [Internal Settings]
-DefaultResourceColorSeed=1
+DefaultResourceColorSeed=7
 
 [KOrganizer Geometry]
-Separator1=441,656
-Separator2=136,0,189,189
+Separator1=424,630
+Separator2=170,0,236,236
 
 [MainWindow]
 Height 1080=596
@@ -53,6 +59,14 @@ Timescale Timezones=
 [TipOfDay]
 RunOnStart=false
 
+[Todo View]
+ColumnOrder=0,1,2,3,4,5,6,7
+ColumnVisibility=true,false,true,true,true,true,true,true
+ColumnWidths=87,0,100,100,123,100,100,417
+FlatView=false
+SortAscending=1
+SortColumn=0
+
 [Views]
-Separator AgendaView=70,427
-ShownDatesCount=7
+Separator AgendaView=93,533
+ShownDatesCount=1

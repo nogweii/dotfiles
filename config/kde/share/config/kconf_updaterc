@@ -1,74 +1,74 @@
 updateInfoAdded=true
 
 [audiocd.upd]
-ctime=1311219917
+ctime=1312959103
 done=1
-mtime=1295475814
+mtime=1308775235
 
 [cervisia.upd]
-ctime=1310441060
+ctime=1312959314
 done=kde3.2/20021228,kde3.2/20021229,kde3.2/20030116,kde3.2/20030117,kde3.2/20030205,kde3.2/20030210,kde3.2/20030211,kde3.2/20030212,kde3.2/20030216,kde3.2/20030725,kde3.2/20030730,kde3.2/20030829,kde3.2/20031014,kde3.4/20041112,kde3.4/20041207
-mtime=1295474902
+mtime=1199491073
 
 [devicepreference.upd]
-ctime=1310440798
+ctime=1312958280
 done=DevicesMovedToPlatformPlugin,DevicesUIDsChanged
-mtime=1298670852
+mtime=1305923546
 
 [favicons.upd]
-ctime=1310440846
+ctime=1312958509
 done=kde3_2
-mtime=1298670912
+mtime=1305923610
 
 [kaccel.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3.3/r1
-mtime=1298670888
+mtime=1305923526
 
 [kalarm.upd]
-ctime=1310441023
+ctime=1312959193
 done=1.9.5,1.9.9,1.9.12,2.0.0,2.0.2,2.1.5,2.3.2
-mtime=1309890431
+mtime=1305933045
 
 [kate-2.4.upd]
-ctime=1310441069
+ctime=1312959340
 done=kate2.4
-mtime=1295474866
+mtime=1305932851
 
 [katomic-levelset.upd]
-ctime=1310440918
+ctime=1312958794
 done=katomic_levelset_config_update
-mtime=1295385746
+mtime=1256550656
 
 [kcalcrc.upd]
-ctime=1310441093
+ctime=1312959421
 done=KDE_3_2_0,KDE_4_3_0
-mtime=1295385902
+mtime=1233771467
 
 [kcharselect.upd]
-ctime=1310441093
+ctime=1312959421
 done=1
-mtime=1295385895
+mtime=1199490803
 
 [kcmcddb-emailsettings.upd]
-ctime=1311219917
+ctime=1312959103
 done=kcmcddb_emailsettings
-mtime=1295475804
+mtime=1308775228
 
 [kcmdisplayrc.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3
-mtime=1298670888
+mtime=1305923526
 
 [kcookiescfg.upd]
-ctime=1311219833
+ctime=1312958207
 done=kde2.2/b1,kde3.1/cvs
-mtime=1301666151
+mtime=1305923094
 
 [kded.upd]
-ctime=1311219833
+ctime=1312958207
 done=kde3.0
-mtime=1301666150
+mtime=1305923094
 
 [kdesvnpartrc-use-external.upd]
 ctime=1309215486
@@ -76,204 +76,209 @@ done=0.14.0-1
 mtime=1187623891
 
 [kfmclient_3_2.upd]
-ctime=1310440848
+ctime=1312958518
 done=kfmclient_3_2
-mtime=1298670912
+mtime=1305923610
 
 [kio_help.upd]
-ctime=1311219833
+ctime=1312958207
 done=kde3_2
-mtime=1301666150
+mtime=1305923094
 
 [kioslave.upd]
-ctime=1311219833
+ctime=1312958207
 done=kde2.2/r2,kde2.2/r3
-mtime=1301666151
+mtime=1305923094
 
 [klickety.upd]
-ctime=1310440943
+ctime=1312958891
 done=klickety-2.0-inherit-ksame-highscore
-mtime=1295385735
+mtime=1288953973
 
 [klipper-kconfigxt.upd]
-ctime=1310440832
+ctime=1312958315
 done=KlipperNoSpacesInKeyNames
-mtime=1298670888
+mtime=1305923527
 
 [kmail.upd]
-ctime=1310441029
+ctime=1312959208
 done=1,4,5,6,7,8,9,3.1-update-identities,3.1-use-identity-uoids,3.1-new-mail-notification,3.2-update-loop-on-goto-unread-settings,3.1.4-dont-use-UOID-0-for-any-identity,3.2-misc,3.2-moves,3.3-use-ID-for-accounts,3.3-update-filter-rules,3.3-move-identities-to-own-file,3.3-aegypten-kpgprc-to-kmailrc,3.3-aegypten-kpgprc-to-libkleopatrarc,3.3-aegypten-emailidentities-split-sign-encr-keys,3.3-misc,3.3b1-misc,3.4,3.4a,3.4b,3.4.1,3.5.4,3.5.7-imap-flag-migration,4.0-misc,4.2,4.4-akonadi,4.6-akonadi,4.6-before-migrate-akonadi
-mtime=1309890431
+mtime=1305933046
 
 [knode.upd]
-ctime=1310441031
+ctime=1312959216
 done=001
-mtime=1309890431
+mtime=1305933046
 
 [kopete-account-kconf_update.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.7/r1,kopete0.10/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-gaim_to_pidgin_style.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.70.85/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-initialstatus.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.60.80/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-jabberpriorityaddition-kconf_update.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.9/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-jabberproxytype-kconf_update.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.9/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-nameTracking.upd]
-ctime=1310441008
-mtime=1295475636
+ctime=1312959134
+mtime=1308913447
 
 [kopete-pluginloader.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.7/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-pluginloader2.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete0.8/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-update_icq_server.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete-update-icq-server/r1
-mtime=1295475636
+mtime=1308913447
 
 [kopete-update_yahoo_server.upd]
-ctime=1310441008
+ctime=1312959134
 done=kopete-update-yahoo-server/r1
-mtime=1295475636
+mtime=1308913447
 
 [korganizer.upd]
-ctime=1310441037
+ctime=1312959237
 done=korganizer_3.4_GroupwareCleanup,korganizer_3.4_WebExport,korganizer_3.4_FilterAction,korganizer_3.4_HolidayPlugin,korganizer_4.3_ShowTodos,korganizer_4.4_MoveFreeBusy
-mtime=1309890431
+mtime=1305933046
 
 [kpgp.upd]
-ctime=1310441013
+ctime=1312959157
 done=preKDE3_a,3.1-1
-mtime=1309890431
+mtime=1305933046
 
 [krdb_libpathwipe.upd]
-ctime=1310440832
+ctime=1312958315
 done=LibraryPathWipeOut
-mtime=1298670888
+mtime=1305923526
 
 [ksmserver.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3
-mtime=1298670888
+mtime=1305923527
 
 [ksmserver_shortcuts.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde45
-mtime=1298670888
+mtime=1305923527
 
 [ksslcertificatemanager.upd]
-ctime=1311219833
+ctime=1312958207
 done=kde4.2
-mtime=1301666151
+mtime=1305923094
 
 [kuriikwsfilter.upd]
-ctime=1310440798
+ctime=1312958280
 done=post-kde3.1/cvs
-mtime=1298670852
+mtime=1305923545
 
 [kwin.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3.0r1,kde3.2Xinerama
-mtime=1298670888
+mtime=1305923527
 
 [kwin3_plugin.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3.2
-mtime=1298670888
+mtime=1305923527
 
 [kwin_focus1.upd]
-ctime=1310440832
+ctime=1312958315
 done=kwin_focus1
-mtime=1298670888
+mtime=1305923527
 
 [kwin_focus2.upd]
-ctime=1310440832
+ctime=1312958315
 done=kwin_focus2
-mtime=1298670888
+mtime=1305923527
 
 [kwin_fsp_workarounds_1.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde351
-mtime=1298670888
+mtime=1305923527
 
 [kwin_on_off.upd]
-ctime=1310440832
+ctime=1312958315
 done=kwin_on_off
-mtime=1298670888
+mtime=1305923527
+
+[kwin_remove_effects.upd]
+ctime=1312958315
+done=kwin4.7_effects
+mtime=1305923527
 
 [kwin_update_tabbox_settings.upd]
-ctime=1310440832
+ctime=1312958315
 done=Kwin-4.4
-mtime=1298670888
+mtime=1305923527
 
 [kwin_window_shortcuts.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde414
-mtime=1298670888
+mtime=1305923527
 
 [kwiniconify.upd]
-ctime=1310440832
+ctime=1312958315
 done=iconifyupd3.1
-mtime=1298670888
+mtime=1305923527
 
 [kwinsticky.upd]
-ctime=1310440832
+ctime=1312958315
 done=stickyupd3.1
-mtime=1298670888
+mtime=1305923527
 
 [kwinupdatewindowsettings.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde33b1
-mtime=1298670888
+mtime=1305923527
 
 [mailtransports.upd]
-ctime=1310440813
+ctime=1312958231
 done=initial-kmail-migration,initial-knode-migration
-mtime=1298655907
+mtime=1305923483
 
 [mouse_cursor_theme.upd]
-ctime=1310440832
+ctime=1312958315
 done=kde3.4.99
-mtime=1298670888
+mtime=1305923526
 
 [plasma-add-shortcut-to-menu.upd]
-ctime=1310440832
-mtime=1298670889
+ctime=1312958315
+mtime=1305923528
 
 [plasma-to-plasmadesktop-shortcuts.upd]
-ctime=1310440832
+ctime=1312958315
 done=4.3plasma-desktop-shortcuts
-mtime=1298670889
+mtime=1305923528
 
 [plasma_popupapplet_fix_groups.upd]
-ctime=1311219833
+ctime=1312958207
 done=PlasmaPopupAppletFixGroups1,PlasmaPopupAppletFixGroups2,PlasmaPopupAppletFixGroups3
-mtime=1301666151
+mtime=1305923094
 
 [plasmarc-to-plasmadesktoprc.upd]
-ctime=1310440832
+ctime=1312958315
 done=4.3plasma-desktop
-mtime=1298670889
+mtime=1305923528

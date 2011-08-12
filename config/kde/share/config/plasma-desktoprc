@@ -1,6 +1,9 @@
 [BackgroundConfigDialog]
 Height 1080=719
-Width 1920=649
+Width 1920=677
+
+[Colors]
+CurrentPalette=Forty Colors
 
 [KFileDialog Settings]
 Height 1080=527
@@ -10,6 +13,9 @@ Width 1920=960
 [KPropertiesDialog]
 Height 1080=375
 Width 1920=383
+
+[Phonon::AudioOutput]
+Plasma Desktop Shell_Volume=99
 
 [PlasmaViews][1]
 panelVisibility=2
@@ -32,12 +38,48 @@ min=640,27
 offset=0
 size=640,27
 
+[Plugins]
+CharacterRunnerEnabled=true
+PowerDevilEnabled=true
+audioplayercontrolEnabled=true
+bookmarksEnabled=true
+browserhistoryEnabled=true
+calculatorEnabled=true
+desktopsessionsEnabled=true
+kabccontactsEnabled=true
+katesessionsEnabled=true
+killEnabled=true
+konquerorsessionsEnabled=true
+konsolesessionsEnabled=true
+kopete_runnerEnabled=true
+krunner_kgetEnabled=true
+krunner_spellcheckEnabled=false
+krunner_vboxEnabled=false
+locationsEnabled=true
+nepomuksearchEnabled=false
+org.kde.datetimeEnabled=true
+org.kde.events_runnerEnabled=true
+org.kde.windowedwidgetsEnabled=true
+org.kde.zanshinEnabled=true
+placesEnabled=true
+plasma-desktopEnabled=true
+recentdocumentsEnabled=true
+servicesEnabled=true
+shellEnabled=true
+solidEnabled=true
+techbaseEnabled=false
+unitconverterEnabled=true
+webshortcutsEnabled=true
+wikipediaEnabled=false
+wikitravelEnabled=false
+windowsEnabled=true
+
 [Runners][bookmarks]
 dbfile=/home/colin/.mozilla/firefox/gn57q03c.default/places.sqlite
 
 [Updates]
-performed=/usr/share/apps/plasma-desktop/updates/systray-to-notifications-widget.js
+performed=/usr/share/apps/plasma-desktop/updates/systray-to-notifications-widget.js,/usr/share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
 
 [ViewIds]
-1=2
 3=1
+54=2
