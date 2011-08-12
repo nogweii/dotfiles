@@ -1,2 +1,22 @@
 [$Version]
 update_info=cervisia.upd:kde3.2/20021228,cervisia.upd:kde3.2/20021229,cervisia.upd:kde3.2/20030116,cervisia.upd:kde3.2/20030117,cervisia.upd:kde3.2/20030118,cervisia.upd:kde3.2/20030205,cervisia.upd:kde3.2/20030210,cervisia.upd:kde3.2/20030211,cervisia.upd:kde3.2/20030212,cervisia.upd:kde3.2/20030216,cervisia.upd:kde3.2/20030725,cervisia.upd:kde3.2/20030730,cervisia.upd:kde3.2/20030829,cervisia.upd:kde3.2/20031014,cervisia.upd:kde3.4/20041207
+
+[Session]
+Commit Recursive=false
+Create Dirs=true
+Do cvs edit=false
+Hide Empty Directories=false
+Hide Files=false
+Hide Non CVS Files=false
+Hide Removed Files=false
+Hide UpToDate Files=false
+Prune Dirs=true
+Splitter Pos 1=216
+Splitter Pos 2=191
+Update Recursive=false
+
+[UpdateView]
+ColumnOrder=0,1,2,3,4
+ColumnWidths=280,90,70,90,120
+SortAscending=true
+SortColumn=0

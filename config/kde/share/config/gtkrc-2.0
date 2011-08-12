@@ -1,47 +1,48 @@
-# created by KDE, Fri Jul 22 12:44:20 2011
+# created by KDE, Thu Aug 11 01:02:47 2011
 #
 # If you do not want KDE to override your GTK settings, select
 # Appearance -> Colors in the System Settings and disable the checkbox
 # "Apply colors to non-KDE4 applications"
 #
 #
+
+gtk-alternative-button-order = 1
+
 style "default"
 {
-  bg[NORMAL] = { 0.835, 0.820, 0.812 }
+  bg[NORMAL] = { 0.839, 0.824, 0.816 }
   bg[SELECTED] = { 0.263, 0.675, 0.910 }
-  bg[INSENSITIVE] = { 0.835, 0.820, 0.812 }
-  bg[ACTIVE] = { 0.690, 0.663, 0.647 }
-  bg[PRELIGHT] = { 0.835, 0.820, 0.812 }
+  bg[INSENSITIVE] = { 0.839, 0.824, 0.816 }
+  bg[ACTIVE] = { 0.702, 0.671, 0.655 }
+  bg[PRELIGHT] = { 0.839, 0.824, 0.816 }
 
   base[NORMAL] = { 1.000, 1.000, 1.000 }
   base[SELECTED] = { 0.263, 0.675, 0.910 }
-  base[INSENSITIVE] = { 0.835, 0.820, 0.812 }
+  base[INSENSITIVE] = { 0.839, 0.824, 0.816 }
   base[ACTIVE] = { 0.263, 0.675, 0.910 }
   base[PRELIGHT] = { 0.263, 0.675, 0.910 }
 
-  text[NORMAL] = { 0.094, 0.086, 0.082 }
+  text[NORMAL] = { 0.122, 0.110, 0.106 }
   text[SELECTED] = { 1.000, 1.000, 1.000 }
-  text[INSENSITIVE] = { 0.690, 0.663, 0.647 }
+  text[INSENSITIVE] = { 0.702, 0.671, 0.655 }
   text[ACTIVE] = { 1.000, 1.000, 1.000 }
   text[PRELIGHT] = { 1.000, 1.000, 1.000 }
 
-  fg[NORMAL] = { 0.106, 0.098, 0.094 }
+  fg[NORMAL] = { 0.133, 0.122, 0.118 }
   fg[SELECTED] = { 1.000, 1.000, 1.000 }
-  fg[INSENSITIVE] = { 0.690, 0.663, 0.647 }
-  fg[ACTIVE] = { 0.106, 0.098, 0.094 }
-  fg[PRELIGHT] = { 0.106, 0.098, 0.094 }
+  fg[INSENSITIVE] = { 0.702, 0.671, 0.655 }
+  fg[ACTIVE] = { 0.133, 0.122, 0.118 }
+  fg[PRELIGHT] = { 0.133, 0.122, 0.118 }
 }
 
 class "*" style "default"
 
-gtk-alternative-button-order = 1
-
 style "ToolTip"
 {
-  bg[NORMAL] = { 0.835, 0.820, 0.812 }
+  bg[NORMAL] = { 0.839, 0.824, 0.816 }
   base[NORMAL] = { 1.000, 1.000, 1.000 }
-  text[NORMAL] = { 0.094, 0.086, 0.082 }
-  fg[NORMAL] = { 0.106, 0.098, 0.094 }
+  text[NORMAL] = { 0.122, 0.110, 0.106 }
+  fg[NORMAL] = { 0.133, 0.122, 0.118 }
 }
 
 widget "gtk-tooltip" style "ToolTip"
