@@ -35,7 +35,7 @@ user = colin@evaryont.me
 # mp3, mp3-hifi or aacplus
 audio_format = aacplus
 autostart_station = 165478110736344848
-event_command = /home/colin/.config/pianobar/eventcmd.sh
+event_command = /home/colin/.local/config/pianobar/eventcmd.sh
 #sort = quickmix_10_name_az
 love_icon = [♥]
 ban_icon = [✘]
