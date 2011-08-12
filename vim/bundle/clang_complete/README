@@ -1,0 +1,7 @@
+This plugin use clang for accurately completing C and C++ code.
+
+How-to use it? Simply put it on ~/.vim/
+It should work immediately.
+
+See doc/clang_complete.txt for help and LICENSE for license (also read a note
+in License section of the help file).
