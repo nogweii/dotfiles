@@ -13,7 +13,7 @@ _rake_does_task_list_need_generating () {
 _rake () {
   if [ -f Rakefile ]; then
     if _rake_does_task_list_need_generating; then
-      rake --silent --tasks | cut -d " " -f >/dev/null 2>.rake_tasks
+      rake --silent --tasks | cut -d' ' -f2 2>/dev/null >.rake_tasks
     fi
     compadd `cat .rake_tasks`
   fi
@@ -35,7 +35,7 @@ _force_rehash() {
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby_or_irb() {
     if [[ "$1" == "" ]]; then
-        irb -f -I ~/.config/irb -r irb_conf
+        irb -f -I$XDG_CONFIG_DIR/irb -r irb_conf
     else
         ruby $@
     fi
@@ -208,7 +208,7 @@ function title {
   esac
 }
 
-for i in ${XDG_DATA_HOME}/*(*) ; do
+for i in ${XDG_DATA_HOME}/zsh/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
 
