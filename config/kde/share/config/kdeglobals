@@ -29,7 +29,7 @@ Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/docs/,$HOME/.local/,$HOME/media/
+Recent URLs[$e]=$HOME/docs/,$HOME/.local/,$HOME/media/,$HOME/media/vids/,$HOME/Dropbox/Travel Documents/
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -38,11 +38,11 @@ Show hidden files=false
 Sort by=Name
 Sort directories first=false
 Sort reversed=false
-Speedbar Width=103
+Speedbar Width=106
 View Style=Simple
 
 [KShortcutsDialog Settings]
-Dialog Size=600,480
+Dialog Size=634,480
 
 [PreviewSettings]
 MaximumRemoteSize=0
