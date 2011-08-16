@@ -76,11 +76,13 @@ Word Completion=true
 Word Completion Minimal Word Length=3
 
 [MainWindow]
-State=AAAA/wAAAAD9AAAAAAAAArwAAAGYAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAArwAAAGOAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 
 [Recent Files]
 File1[$e]=$HOME/Dropbox/0guipsk.txt
 File2[$e]=$HOME/Dropbox/.dropbox
+File3[$e]=$HOME/docs/csc275.txt
 Name1[$e]=0guipsk.txt
 Name2[$e]=.dropbox
+Name3[$e]=csc275.txt

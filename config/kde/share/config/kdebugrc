@@ -57,6 +57,9 @@ InfoOutput=4
 [akonadi_nepomuk_email_feeder]
 InfoOutput=4
 
+[ark]
+InfoOutput=4
+
 [blogilo]
 InfoOutput=4
 
@@ -70,6 +73,9 @@ InfoOutput=4
 InfoOutput=4
 
 [kaddressbookmigrator]
+InfoOutput=4
+
+[kate]
 InfoOutput=4
 
 [kate-filetree]
@@ -140,6 +146,9 @@ InfoOutput=4
 
 [kmixctrl]
 InfoOutput=4
+
+[kmozillahelper]
+InfoOutput=2
 
 [knotify]
 InfoOutput=4
@@ -212,6 +221,9 @@ InfoOutput=4
 
 [unnamed app]
 InfoOutput=4
+
+[wicd-kde]
+InfoOutput=2
 
 [zanshin]
 InfoOutput=4

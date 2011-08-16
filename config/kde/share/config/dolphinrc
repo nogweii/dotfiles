@@ -11,25 +11,37 @@ FontWeight=50
 
 [General]
 FirstRun=false
+GlobalViewProps=true
 HomeUrl=file:///home/colin
-ViewPropsTimestamp=2011,7,12,14,23,20
+RenameInline=true
+ShowFullPath=true
+ShowSpaceInfo=true
+ShowToolTips=true
+ViewPropsTimestamp=2011,8,13,13,39,49
 
 [IconsMode]
+Arrangement=0
 FontWeight=50
+ItemHeight=32
+ItemWidth=224
 
 [KPropertiesDialog]
 Height 1080=409
 Width 1920=424
 
 [MainWindow]
-Height 1080=582
-State=AAAA/wAAAAD9AAAAAwAAAAAAAAB+AAACE/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAABwBAAAF+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAzAAACEwAAAFgBAAAFAAAAAQAAALoAAAG//AIAAAAC+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAAHAEAAAX7AAAAFABmAGkAbAB0AGUAcgBEAG8AYwBrAAAAADUAAAG/AAAAHAEAAAUAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAE0BAAAFAAAC2wAAAhMAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Height 1080=643
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAB+AAACS/wCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAgBAAAF+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAA4AAACSwAAAFABAAAFAAAAAQAAALoAAAIO/AIAAAAD+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACAEAAAX7AAAAFABmAGkAbAB0AGUAcgBEAG8AYwBrAAAAADUAAAG/AAAAAAAAAAD7AAAAFABzAGUAYQByAGMAaABEAG8AYwBrAAAAADgAAAIOAAAACAEAAAUAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAgBAAAFAAADOgAAAksAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1920=860
+Width 1920=955
 
 [PreviewSettings]
-Plugins=cursorthumbnail,desktopthumbnail,directorythumbnail,imagethumbnail,jpegrotatedthumbnail,kofficethumbnail,windowsimagethumbnail,designerthumbnail,svgthumbnail,textthumbnail,videopreview
+Plugins=cursorthumbnail,desktopthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kofficethumbnail,windowsimagethumbnail,mobithumbnail,gsthumbnail,designerthumbnail,svgthumbnail,textthumbnail,videopreview
 
 [SettingsDialog]
-Height 1080=459
-Width 1920=512
+Height 1080=565
+Width 1920=593
+
+[ViewPropertiesDialog]
+Height 1080=442
+Width 1920=444
