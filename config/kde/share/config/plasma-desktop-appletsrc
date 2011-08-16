@@ -42,7 +42,7 @@ zvalue=0
 Order=1
 
 [Containments][3][Applets][6]
-geometry=78,2,1602,25
+geometry=78,2,1515,25
 immutability=1
 plugin=tasks
 zvalue=0
@@ -51,7 +51,7 @@ zvalue=0
 Order=2
 
 [Containments][3][Applets][7]
-geometry=1684,2,158,25
+geometry=1597,2,245,25
 immutability=1
 plugin=systemtray
 zvalue=0
@@ -65,7 +65,7 @@ ShowHardware=true
 ShowSystemServices=true
 ShowUnknown=true
 alwaysShown=
-hidden=dropbox,kfilebox
+hidden=
 
 [Containments][3][Applets][7][Configuration][Applets][41]
 geometry=0,0.5,24,24
@@ -74,7 +74,7 @@ plugin=notifications
 zvalue=0
 
 [Containments][3][Applets][7][Configuration][Applets][41][Configuration]
-customPosition=-13,-20
+customPosition=-14,-13
 customPositionAffinityHoriz=r
 customPositionAffinityVert=b
 
@@ -89,14 +89,14 @@ sourceAppletId=41
 sourceAppletPluginName=notifications
 
 [Containments][3][Applets][7][Configuration][Applets][41][PopupApplet]
-DialogHeight=148
-DialogWidth=354
+DialogHeight=167
+DialogWidth=336
 
 [Containments][3][Applets][7][Configuration][Applets][41][Shortcuts]
 global=
 
 [Containments][3][Applets][7][Configuration][Applets][43]
-geometry=85,0.5,24,24
+geometry=167,0.5,24,24
 immutability=1
 plugin=battery
 zvalue=0
@@ -124,7 +124,7 @@ Systemtray-Klipper-7=Ctrl+Alt+V
 Order=3
 
 [Containments][3][Applets][7][PopupApplet]
-DialogHeight=200
+DialogHeight=172
 DialogWidth=218
 
 [Containments][3][Applets][8]

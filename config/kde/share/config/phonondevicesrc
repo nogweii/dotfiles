@@ -38,6 +38,16 @@ index=-6
 initialPreference=27
 isAdvanced=true
 
+[AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.6/1-1.6:1.0/video4linux/video0]
+cardName=Integrated Camera
+deleted=false
+deviceNumber=-1
+hotpluggable=true
+iconName=camera-web
+index=-12
+initialPreference=50
+isAdvanced=false
+
 [AudioDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1b.0/sound/card0/pcmC0D0c:capture]
 cardName=HDA Intel (CONEXANT Analog)
 deleted=false
@@ -89,7 +99,7 @@ initialPreference=30
 isAdvanced=false
 
 [Globals]
-nextIndex=11
+nextIndex=13
 
 [VideoDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.6/1-1.6:1.0/video4linux/video0]
 cardName=Integrated Camera
@@ -98,5 +108,15 @@ deviceNumber=-1
 hotpluggable=true
 iconName=camera-web
 index=-10
+initialPreference=50
+isAdvanced=false
+
+[VideoDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1a.0/usb3/3-1/3-1.6/3-1.6:1.0/video4linux/video0]
+cardName=Integrated Camera
+deleted=false
+deviceNumber=-1
+hotpluggable=true
+iconName=camera-web
+index=-11
 initialPreference=50
 isAdvanced=false

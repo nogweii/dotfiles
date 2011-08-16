@@ -6,3 +6,6 @@ FileManager=dolphin
 IconSet=monochrome
 ShowNotifications=true
 StartDaemon=true
+
+[Notification Messages]
+systemtrayquitkfilebox=false

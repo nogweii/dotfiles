@@ -2,13 +2,13 @@
 Screen0=750,0
 
 [General]
-PastQueries=urxv,gvim,urxvt,eclipse,,kont,kons,fonts,alg,calc,spot,writer,blog,kad,konta,drop,firefo,keyboard,kon,font,konso,urx,htop,nvidia,eclip,konsole,/home/colin/docs/,desktop,multi,nvi,desktop ef,system settings,firefox,monitor,keyb,keyboar
+PastQueries=power,urxvt,firefox,spot,\x06,urxv,\x06,eclipse,,gvim,kont,kons,fonts,alg,calc,writer,blog,kad,konta,drop,firefo,keyboard,kon,font,konso,urx,htop,nvidia,eclip,konsole,/home/colin/docs/,desktop,multi,nvi,desktop ef,system settings,monitor,keyb,keyboar
 
 [Interface]
 Size=420,500
 
 [PlasmaRunnerManager]
-LaunchCounts=1 shell_htop,1 services_kde4-kcalc.desktop,3 services_firefox.desktop,3 services_kde4-Kontact.desktop,26 services_kde4-konsole.desktop,2 services_kde4-kaddressbook.desktop,2 services_xinerama.desktop,3 shell_urxvt,4 services_nvidia-settings.desktop,3 services_rxvt-unicode.desktop,7 services_fonts.desktop,1 services_libreoffice-writer.desktop,1 shell_gvim,3 services_fontinst.desktop,7 services_eclipse.desktop,2 services_kde4-blogilo.desktop,1 services_kde4-kalgebra.desktop,2 services_kwincompositing.desktop,1 locations_opendir,1 services_kde4-systemsettings.desktop,1 services_spotify.desktop,1 services_dropbox.desktop,1 services_gvim.desktop,3 services_kcm_keyboard.desktop
+LaunchCounts=1 shell_htop,1 services_kde4-kcalc.desktop,4 services_firefox.desktop,3 services_kde4-Kontact.desktop,26 services_kde4-konsole.desktop,2 services_kde4-kaddressbook.desktop,2 services_xinerama.desktop,12 shell_urxvt,4 services_nvidia-settings.desktop,9 services_rxvt-unicode.desktop,7 services_fonts.desktop,1 services_libreoffice-writer.desktop,1 shell_gvim,3 services_fontinst.desktop,8 services_eclipse.desktop,1 services_powerdevilprofilesconfig.desktop,2 services_kde4-blogilo.desktop,1 services_kde4-kalgebra.desktop,2 services_kwincompositing.desktop,1 locations_opendir,1 services_kde4-systemsettings.desktop,2 services_spotify.desktop,1 services_dropbox.desktop,1 services_gvim.desktop,3 services_kcm_keyboard.desktop
 
 [Plugins]
 CharacterRunnerEnabled=true
