@@ -4,11 +4,11 @@ update_info=kate-2.4.upd:kate2.4
 [Document 0]
 Bookmarks=
 Encoding=UTF-8
-Highlighting=None
+Highlighting=HTML
 Indentation Mode=
-Mode=
+Mode=HTML
 ReadWrite=true
-URL=file:///home/colin/notes/irssi_scripts.txt
+URL=file:///home/colin/Dropbox/Travel Documents/agent.html
 
 [Filelist]
 Sort Type=
@@ -75,6 +75,7 @@ kategdbplugin=false
 katemailfilesplugin=false
 kateopenheaderplugin=false
 katequickdocumentswitcherplugin=false
+katesearchplugin=false
 katesnippets_tngplugin=false
 katesqlplugin=false
 katesymbolviewerplugin=false
@@ -111,7 +112,7 @@ Persistent Selection=false
 Replacement Text History=
 Scroll Bar Marks=false
 Scroll Past End=false
-Search Pattern History=
+Search Pattern History=Alaska Airlines,img,departuretime,hotw,adve,ad,Itin%23,Itin,Itin#,#
 Search/Replace Flags=140
 Smart Copy Cut=false
 Vi Input Mode=false
@@ -125,7 +126,7 @@ State=AAAA/wAAAAD9AAAAAAAAArwAAAGrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG
 ToolBarsMovable=Disabled
 
 [MainWindow0]
-Kate-MDI-H-Splitter=200,672,200
+Kate-MDI-H-Splitter=200,668,200
 Kate-MDI-Sidebar-0-Splitter=0
 Kate-MDI-Sidebar-3-Splitter=0,0
 Kate-MDI-Sidebar-Style=2
@@ -141,28 +142,40 @@ Kate-MDI-ToolView-katefindinfilesplugin_1-Persistent=false
 Kate-MDI-ToolView-katefindinfilesplugin_1-Position=3
 Kate-MDI-ToolView-katefindinfilesplugin_1-Sidebar-Position=1
 Kate-MDI-ToolView-katefindinfilesplugin_1-Visible=false
-Kate-MDI-V-Splitter=150,401,200
-State=AAAA/wAAAAD9AAAAAAAAArwAAAGrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+Kate-MDI-V-Splitter=150,394,200
+State=AAAA/wAAAAD9AAAAAAAAArwAAAGoAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
 
 [MainWindow0 Settings]
-State=AAAA/wAAAAD9AAAAAAAAArwAAAGrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAArwAAAGoAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAADGgAAAAAAAAAA
 WindowState=8
 
 [MainWindow0-Splitter 0]
-Sizes=672
+Sizes=668
 
 [MainWindow0-ViewSpace 0]
-Active View=file:///home/colin/notes/irssi_scripts.txt
+Active View=file:///home/colin/Dropbox/Travel Documents/agent.html
 Count=1
-View 0=file:///home/colin/notes/irssi_scripts.txt
+View 0=file:///home/colin/Dropbox/Travel Documents/agent.html
 
 [MainWindow0-ViewSpace 0 file:///home/colin/Desktop/Team Fortress 2.url]
 CursorColumn=0
 CursorLine=0
 
+[MainWindow0-ViewSpace 0 file:///home/colin/Dropbox/Travel Documents/Expedia travel confirmation - Vancouver BC Canada - Aug 15 2011 - (Itin 138037682915).htm]
+CursorColumn=101
+CursorLine=47
+
+[MainWindow0-ViewSpace 0 file:///home/colin/Dropbox/Travel Documents/agent.html]
+CursorColumn=0
+CursorLine=2930
+
 [MainWindow0-ViewSpace 0 file:///home/colin/notes/irssi_scripts.txt]
 CursorColumn=13
 CursorLine=46
+
+[MainWindow0-ViewSpace 0 http://gbatemp.net/index.php?showtopic=280544]
+CursorColumn=0
+CursorLine=0
 
 [Open Documents]
 Count=1
@@ -179,6 +192,14 @@ LastSearchItems=
 LastSearchPaths=
 Recursive=true
 RegExp=false
+
+[Recent Files]
+File1[$e]=http://gbatemp.net/index.php?showtopic=280544
+File2[$e]=$HOME/Dropbox/Travel Documents/Expedia travel confirmation - Vancouver BC Canada - Aug 15 2011 - (Itin 138037682915).htm
+File3[$e]=$HOME/Dropbox/Travel Documents/agent.html
+Name1[$e]=index.php
+Name2[$e]=Expedia travel confirmation - Vancouver BC Canada - Aug 15 2011 - (Itin 138037682915).htm
+Name3[$e]=agent.html
 
 [TipOfDay]
 RunOnStart=false

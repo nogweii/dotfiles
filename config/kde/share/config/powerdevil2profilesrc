@@ -18,6 +18,10 @@ powerButtonAction=16
 idleTime=300000
 suspendType=1
 
+[Battery Hog]
+icon=battery-040
+name=Battery Hog
+
 [Performance]
 icon=preferences-system-performance
 

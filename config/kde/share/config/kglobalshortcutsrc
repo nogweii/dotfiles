@@ -234,8 +234,6 @@ Previous Activity=Meta+Shift+Tab,Meta+Shift+Tab,Previous Activity
 Show Dashboard=Ctrl+F12,Ctrl+F12,Show Dashboard
 Systemtray-Klipper-7=Ctrl+Alt+V,Ctrl+Alt+V,
 _k_friendly_name=Plasma Desktop Shell
-activate widget 41=none,none,Activate Notifications Widget
-activate widget 43=none,none,Activate Battery Monitor Widget
 manage activities=Meta+Q,Meta+Q,Activities...
 
 [spokify]

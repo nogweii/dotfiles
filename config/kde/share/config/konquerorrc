@@ -5,5 +5,17 @@ update_info=kfmclient_3_2.upd:kfmclient_3_2
 AutomaticDetectionLanguage=1
 DownloadManager=kget
 
+[KFileDialog Settings]
+Height 1080=600
+Recent Files[$e]=$HOME/Dropbox/Travel Documents/agent.html,$HOME/Dropbox/Travel Documents/agent.html
+Width 1920=960
+
+[SearchBar]
+CompletionMode=5
+CurrentEngine=google
+History list=alaska airlines boarding pass,phx airport print boarding pass,
+Mode=1
+SuggestionEnabled=true
+
 [Undo]
-Number of Closed Windows=4
+Number of Closed Windows=9

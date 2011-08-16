@@ -1,0 +1,14 @@
+[Dlg Performance]
+MemoryLevel=Aggressive
+
+[Dlg Presentation]
+SlidesShowSummary=true
+
+[General]
+ObeyDRM=false
+
+[Identity]
+IdentityAuthor=Colin
+
+[Main View]
+ShowBottomBar=false

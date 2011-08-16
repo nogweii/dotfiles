@@ -1,7 +1,7 @@
 [Cache /usr/share/apps/katepart/script/cstyle.js]
 author=Dominik Haumann <dhdev@gmx.de>, Milian Wolff <mail@milianw.de>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=C Style
 revision=1
@@ -10,7 +10,7 @@ type=indentation
 [Cache /usr/share/apps/katepart/script/haskell.js]
 author=Erlend Hamberg <ehamberg@gmail.com>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=Haskell
 revision=2
@@ -20,7 +20,7 @@ type=indentation
 author=Wilbert Berendsen <info@wilbertberendsen.nl>
 indent-languages=lilypond
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=LilyPond
 required-syntax-style=lilypond
@@ -30,7 +30,7 @@ type=indentation
 [Cache /usr/share/apps/katepart/script/lisp.js]
 author=Dominik Haumann <dhdev@gmx.de>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=LISP
 revision=2
@@ -39,7 +39,7 @@ type=indentation
 [Cache /usr/share/apps/katepart/script/lua.js]
 author=Jonathan Schmidt-Dominé <devel@the-user.org>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=Lua
 revision=1
@@ -48,7 +48,7 @@ type=indentation
 [Cache /usr/share/apps/katepart/script/python.js]
 author=Paul Giannaros <paul@giannaros.org>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=Python
 revision=1
@@ -58,7 +58,7 @@ type=indentation
 author=Robin Pedersen <robinpeder@gmail.com>
 indent-languages=ruby
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=Ruby
 priority=0
@@ -70,7 +70,7 @@ type=indentation
 author=Dominik Haumann <dhdev@gmx.de>, Milian Wolff <mail@milianw.de>
 functions=sort, moveLinesDown, moveLinesUp, natsort, uniq, rtrim, ltrim, trim, join, rmblank, unwrap, each, filter, map, duplicateLinesUp, duplicateLinesDown
 kate-version=3.4
-last-modified=1301666178
+last-modified=1308753968
 license=LGPL
 revision=3
 type=commands
@@ -78,11 +78,11 @@ type=commands
 [Cache /usr/share/apps/katepart/script/xml.js]
 author=Milian Wolff <mail@milianw.de>
 kate-version=3.4
-last-modified=1301666178
+last-modified=1305932851
 license=LGPL
 name=XML Style
 revision=1
 type=indentation
 
 [General]
-kate-version=3.6
+kate-version=3.7
