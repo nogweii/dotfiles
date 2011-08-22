@@ -31,8 +31,8 @@ volumeRCapture=61
 is_muted=false
 is_recsrc=false
 name=Master
-volumeL=74
-volumeR=74
+volumeL=68
+volumeR=68
 
 [MixerALSA::HDA_Intel:1.DevPCM:0]
 is_muted=false

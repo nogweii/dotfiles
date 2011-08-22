@@ -1,6 +1,8 @@
 [Alarms]
-CalendarsLastChecked=2011,8,16,0,6,46
+CalendarsLastChecked=2011,8,19,23,52,28
 
 [General]
 Autostart=true
 Enabled=true
+Position=670,376
+Reminders=0

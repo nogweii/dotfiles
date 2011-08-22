@@ -42,7 +42,7 @@ zvalue=0
 Order=1
 
 [Containments][3][Applets][6]
-geometry=78,2,1520,25
+geometry=78,2,1548,25
 immutability=1
 plugin=tasks
 zvalue=0
@@ -51,7 +51,7 @@ zvalue=0
 Order=2
 
 [Containments][3][Applets][7]
-geometry=1602,2,240,25
+geometry=1630,2,212,25
 immutability=1
 plugin=systemtray
 zvalue=0
@@ -74,7 +74,7 @@ plugin=notifications
 zvalue=0
 
 [Containments][3][Applets][7][Configuration][Applets][41][Configuration]
-customPosition=-14,-13
+customPosition=-13,-13
 customPositionAffinityHoriz=r
 customPositionAffinityVert=b
 
@@ -89,7 +89,7 @@ sourceAppletId=41
 sourceAppletPluginName=notifications
 
 [Containments][3][Applets][7][Configuration][Applets][41][PopupApplet]
-DialogHeight=148
+DialogHeight=374
 DialogWidth=368
 
 [Containments][3][Applets][7][Configuration][Applets][41][Shortcuts]
@@ -124,7 +124,7 @@ Systemtray-Klipper-7=Ctrl+Alt+V
 Order=3
 
 [Containments][3][Applets][7][PopupApplet]
-DialogHeight=130
+DialogHeight=172
 DialogWidth=218
 
 [Containments][3][Applets][8]
