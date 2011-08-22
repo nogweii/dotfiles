@@ -1,10 +1,10 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
-URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=12
-URxvt*italicFont:         xft:Dejavu Sans Mono:italic:pixelsize=12
-URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:pixelsize=12
+URxvt*font:               xft:Dejavu Sans Mono:pixelsize=14
+URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=14
+URxvt*italicFont:         xft:Dejavu Sans Mono:italic:pixelsize=14
+URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:pixelsize=14
 URxvt*scrollBar:          false
 URxvt.urlLauncher:        xdg-open
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
@@ -12,8 +12,8 @@ URxvt.foreground:         grey80
 URxvt.colorBD:            white
 URxvt.saveLines:          4096
 !! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-URxvt*background:         rgba:0000/0000/0000/7fff
-URxvt*depth:              32
+URxvt*background:         rgb:0000/0000/0000
+!URxvt*depth:              32
 !! Pseudo-transparent
 !Urxvt*background:         black
 !URxvt*transparent:        true
