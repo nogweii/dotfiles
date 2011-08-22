@@ -150,6 +150,9 @@ InfoOutput=4
 [kmozillahelper]
 InfoOutput=2
 
+[knetwalk]
+InfoOutput=4
+
 [knotify]
 InfoOutput=4
 

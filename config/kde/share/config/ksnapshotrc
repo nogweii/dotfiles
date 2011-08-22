@@ -1,15 +1,15 @@
 [GENERAL]
 delay=0
-filename[$e]=file://$HOME/mem_usage1.png
+filename[$e]=file://$HOME/docs/PC.DEfense_screenshot1.png
 includeDecorations=true
 includePointer=false
-mode=2
+mode=1
 
 [KFileDialog Settings]
 Height 1080=540
-Recent Files[$e]=$HOME/mem_usage.png,$HOME/mem_usage.png
+Recent Files[$e]=$HOME/mem_usage.png,$HOME/docs/knetwalk_screenshot1.png,$HOME/docs/knetwalk_screenshot.png,$HOME/docs/PC.DEfense_screenshot.png
 Width 1920=960
 
 [MainWindow]
 Height 1080=499
-Width 1920=426
+Width 1920=498
