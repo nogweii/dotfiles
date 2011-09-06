@@ -1,2 +1,16 @@
 [$Version]
 update_info=mailtransports.upd:initial-kmail-migration,mailtransports.upd:initial-knode-migration
+
+[General]
+default-transport=477072751
+
+[Transport 477072751]
+auth=true
+authtype=1
+encryption=TLS
+host=evaryont.me
+id=477072751
+name=evaryont.me
+port=465
+storepass=true
+user=colin

@@ -21,7 +21,7 @@ _k_friendly_name=khotkeys
 
 [klipper]
 _k_friendly_name=Klipper
-clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
+clipboard_action=none,Ctrl+Alt+X,Enable Clipboard Actions
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 
 [kmix]
@@ -44,6 +44,12 @@ _k_friendly_name=KMix
 decrease_volume=Volume Down,Volume Down,Decrease Volume
 increase_volume=Volume Up,Volume Up,Increase Volume
 mute=Volume Mute,Volume Mute,Mute
+
+[kopete]
+ReadMessage=Ctrl+Shift+I,Ctrl+Shift+I,Read Message
+Set_Away_Back=Ctrl+Shift+W,Ctrl+Shift+W,Set Away/Back
+ShowContactList=Ctrl+Shift+S,Ctrl+Shift+S,Show/Hide Contact List
+_k_friendly_name=Kopete
 
 [krunner]
 Lock Session=Ctrl+Alt+L,Ctrl+Alt+L,Lock Session
@@ -232,6 +238,7 @@ view_zoom_out=Meta+-,Meta+-,Zoom Out
 Next Activity=Meta+Tab,Meta+Tab,Next Activity
 Previous Activity=Meta+Shift+Tab,Meta+Shift+Tab,Previous Activity
 Show Dashboard=Ctrl+F12,Ctrl+F12,Show Dashboard
+Systemtray-Klipper-63=,Ctrl+Alt+V,
 Systemtray-Klipper-7=Ctrl+Alt+V,Ctrl+Alt+V,
 _k_friendly_name=Plasma Desktop Shell
 manage activities=Meta+Q,Meta+Q,Activities...
