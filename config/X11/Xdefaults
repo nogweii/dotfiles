@@ -1,10 +1,10 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-URxvt*font:               xft:Dejavu Sans Mono:pixelsize=14
-URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=14
-URxvt*italicFont:         xft:Dejavu Sans Mono:italic:pixelsize=14
-URxvt*boldItalicFont:     xft:Dejavu Sans Mono:italic:bold:pixelsize=14
+URxvt*font:               xft:Droid Sans Mono:pixelsize=14
+URxvt*boldFont:           xft:Droid Sans Mono:bold:pixelsize=14
+URxvt*italicFont:         xft:Droid Sans Mono:italic:pixelsize=14
+URxvt*boldItalicFont:     xft:Droid Sans Mono:italic:bold:pixelsize=14
 URxvt*scrollBar:          false
 URxvt.urlLauncher:        xdg-open
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
