@@ -22,23 +22,37 @@
     untracked = cyan
 [core]
     excludesfile = ~/.local/config/git/ignores
+    attributesfile = ~/.local/config/git/attributes
 [branch]
     autosetupmerge = true
 [alias]
+    # svn style
     a = add
     br = branch
     st = status
-    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
     co = checkout
+    pu = push
+    # commit window in vim, along with a 2nd file that shows the diff
+    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
+    # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     graph = log --oneline --graph
+    # pretty log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    # show all the files that are ignored
     ls-ignored = ls-files --others -i --exclude-standard
+    # show the changes that are pulled in (calls `git pull` as well)
     up = !"git pull && git log --pretty=format:'%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)' HEAD@{1}.."
+    # find all empty directories, add a file within them, and commit it.
     keep = !"find . ( -type d -empty ) -and ( -not -regex ./.git.* ) -exec touch {}/.gitkeep ; ; git commit -am 'Keep all directories'"
+    # reset all of HEAD, or just the 1 file (passed as a parameter)
     diff-reset = !"git diff -R $1 | patch -up1 -i-"
-    reset-head = diff-reset
-    pu = push
+    # Initializes & updates all submodules
+    subup = "!git submodule init; git submodule update; git submodule foreach \"git siu\""
+    # Pushs all submodules to origin master
+    subpush = submodule foreach "git push origin master"
+    # Pull submodules from origin master
+    subpull = submodule foreach "git pull origin master"
 [web]
     browser = open
 [browser "open"]
@@ -48,12 +62,14 @@
 [help]
     autocorrect = 1
 [sendemail]
-    smtpserver = smtp.gmail.com
+    smtpserver = evaryont.me
     smtpserverport = 587
     smtpencryption = tls
-    smtpuser = colin@evaryont.me
-
+    smtpuser = colin
 [url "git://anongit.kde.org/"]
     insteadOf = kde:
 [url "ssh://git@git.kde.org/"]
     pushInsteadOf = kde:
+[merge "merge-changelog"]
+    name = GNU-style ChangeLog merge driver
+    driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
