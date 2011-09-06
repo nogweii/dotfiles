@@ -9,8 +9,10 @@ Recent Files[$e]=$HOME/Tolkien_Collection.pdf,$HOME/MBW_150_User_Guide.pdf
 Width 1920=960
 
 [MainWindow]
-State=AAAA/wAAAAD9AAAAAAAABQAAAAKYAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+Height 1080=1081
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAPyAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
+Width 1920=1921
 
 [Notification Messages]
 presentationInfo=false
@@ -19,6 +21,8 @@ presentationInfo=false
 File1[$e]=$HOME/tmp/pocketmod.pdf
 File2[$e]=$HOME/docs/Cloud_Computing_needs_to_die.pdf
 File3[$e]=$HOME/docs/Cloud_Computing_Game_Design_Document.pdf
+File4[$e]=$HOME/docs/UAT/2011_2013_On_Campus_Catalog.pdf
 Name1[$e]=pocketmod.pdf
 Name2[$e]=Cloud_Computing_needs_to_die.pdf
 Name3[$e]=Cloud_Computing_Game_Design_Document.pdf
+Name4[$e]=2011_2013_On_Campus_Catalog.pdf
