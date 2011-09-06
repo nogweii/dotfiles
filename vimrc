@@ -19,7 +19,6 @@ set smartcase                  " Case-sensitive if there any capital letters
 set hidden                     " Allow changing buffers even with modifications
 set spell                      " Enable spell check
 set title                      " Modify the terminal title
-set number                     " Number lines
 set cursorline                 " Emphasize the current line the cursor is on
 set laststatus=2               " Always show the status bar
 set ruler                      " Always show the position of the cursor
@@ -435,8 +434,8 @@ autocmd FileType gitcommit normal :DiffGitCached
 au FileType haskell set wildignore+=*.hi " Ignore more haskell compiled files
 au BufReadPost /tmp/mutt-* set nospell nolist ft=mail
 
+" omnifunc autocompete settings
 autocmd FileType python setl omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
@@ -445,9 +444,17 @@ autocmd FileType php setl omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby,eruby setl omnifunc=rubycomplete#Complete
 autocmd FileType c,cpp,objc,objcpp setl omnifunc=ClangComplete
 
-" don't outdent hashes
+" python-specific settings
+au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+
+" don't remove indents when typing a hash
 inoremap # #
 
 " Ctrl-A & Ctrl-X are awesome now!
 nmap <Plug>SwapItFallbackIncrement <Plug>SpeedDatingUp
 nmap <Plug>SwapItFallbackDecrement <Plug>SpeedDatingDown
+
+" Strip trailing whitespace just before saving a file
+autocmd BufWritePre * :%s/\s\+$//e
+
+au FileType man set nolist
