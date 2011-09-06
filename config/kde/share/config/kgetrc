@@ -1,7 +1,10 @@
 [Advanced]
 EnableKUIServerIntegration=true
+ExpertMode=true
 ExportGlobalJob=true
 ExportSingleTransfer=false
+FilesAlwaysAsk=false
+FilesAutomaticRename=true
 HistoryBackend=2
 KonquerorIntegration=true
 
@@ -29,6 +32,9 @@ State=AAAA/wAAAAD9AAAAAAAAAtAAAAFKAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAYAG
 ToolBarsMovable=Disabled
 Width 1920=720
 
+[Network]
+LimitDownloads=false
+
 [Plugins]
 kget_bittorrent_pluginEnabled=true
 kget_checksumsearch_pluginEnabled=true
@@ -36,4 +42,5 @@ kget_contentfetch_pluginEnabled=true
 kget_kio_pluginEnabled=true
 kget_metalink_pluginEnabled=true
 kget_mirrorsearch_pluginEnabled=true
+kget_mms_pluginEnabled=true
 kget_multisegkio_pluginEnabled=true

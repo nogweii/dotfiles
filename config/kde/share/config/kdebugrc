@@ -39,6 +39,15 @@ InfoOutput=4
 [akonadi_imap_resource_0]
 InfoOutput=4
 
+[akonadi_imap_resource_1]
+InfoOutput=4
+
+[akonadi_imap_resource_2]
+InfoOutput=4
+
+[akonadi_imap_resource_3]
+InfoOutput=4
+
 [akonadi_maildispatcher_agent]
 InfoOutput=4
 
@@ -68,6 +77,9 @@ InfoOutput=4
 
 [fontinst]
 InfoOutput=4
+
+[gwenview]
+InfoOutput=2
 
 [kactivitymanagerd]
 InfoOutput=4
@@ -129,6 +141,9 @@ InfoOutput=4
 [kio_desktop]
 InfoOutput=4
 
+[kio_ftp]
+InfoOutput=4
+
 [kio_network]
 InfoOutput=4
 
@@ -139,6 +154,9 @@ InfoOutput=4
 InfoOutput=4
 
 [klipper]
+InfoOutput=4
+
+[kmail2]
 InfoOutput=4
 
 [kmix]
@@ -159,7 +177,13 @@ InfoOutput=4
 [konqueror]
 InfoOutput=4
 
+[konsole]
+InfoOutput=2
+
 [kontact]
+InfoOutput=4
+
+[kopete]
 InfoOutput=4
 
 [korgac]

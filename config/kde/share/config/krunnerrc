@@ -2,13 +2,13 @@
 Screen0=750,0
 
 [General]
-PastQueries=cloud computing design,knetw,knetwa,ksnap,spot,libreo,openoffice,rxvt,rxv,urxv,urxvt,irssi,,power,firefox,\x06,\x06,eclipse,gvim,kont,kons,fonts,alg,calc,writer,blog,kad,konta,drop,firefo,keyboard,kon,font,konso,urx,htop,nvidia,eclip,konsole,/home/colin/docs/,desktop,multi,nvi,desktop ef,system settings,monitor,keyb,keyboar
+PastQueries=virtual,kget,dol,rxv,vir,urxv,virt,rxvt,,urxvt,chrom,kma,kwal,spot,fire,firefo,scree,firefox,removable,klip,scre,kmail,screensaver,chro,cloud computing design,knetw,knetwa,ksnap,libreo,openoffice,irssi,power,\x06,\x06,eclipse,gvim,kont,kons,fonts,alg,calc,writer,blog,kad,konta,drop,keyboard,kon,font,konso
 
 [Interface]
 Size=420,500
 
 [PlasmaRunnerManager]
-LaunchCounts=1 shell_htop,1 services_kde4-kcalc.desktop,4 services_firefox.desktop,3 services_kde4-Kontact.desktop,1 shell_irssi,1 nepomuksearch_nepomuk:/res/7a34cd7b-1721-471e-bf0b-e699685b65e4,26 services_kde4-konsole.desktop,2 services_kde4-kaddressbook.desktop,2 services_xinerama.desktop,1 services_kde4-ksnapshot.desktop,13 shell_urxvt,4 services_nvidia-settings.desktop,2 services_kde4-knetwalk.desktop,14 services_rxvt-unicode.desktop,7 services_fonts.desktop,1 nepomuksearch_http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Presentation,2 services_libreoffice-writer.desktop,1 shell_gvim,3 services_fontinst.desktop,8 services_eclipse.desktop,1 services_powerdevilprofilesconfig.desktop,2 services_kde4-blogilo.desktop,1 services_kde4-kalgebra.desktop,2 services_kwincompositing.desktop,1 locations_opendir,1 services_kde4-systemsettings.desktop,3 services_spotify.desktop,1 services_dropbox.desktop,1 services_gvim.desktop,3 services_kcm_keyboard.desktop
+LaunchCounts=3 services_virtualbox.desktop,2 services_kde4-knetwalk.desktop,1 services_device_automounter_kcm.desktop,15 shell_urxvt,3 services_kde4-KMail2.desktop,8 services_firefox.desktop,2 services_xinerama.desktop,1 services_kde4-klipper.desktop,2 services_chromium.desktop,1 nepomuksearch_nepomuk:/res/7a34cd7b-1721-471e-bf0b-e699685b65e4,1 shell_gvim,7 services_spotify.desktop,1 nepomuksearch_http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Presentation,8 services_eclipse.desktop,1 services_kde4-kget.desktop,2 services_kde4-dolphin.desktop,2 services_kwincompositing.desktop,7 services_fonts.desktop,1 windows_0_94371849,4 services_nvidia-settings.desktop,1 services_gvim.desktop,46 services_rxvt-unicode.desktop,3 services_fontinst.desktop,1 services_kde4-kcalc.desktop,3 services_kde4-Kontact.desktop,3 services_screensaver.desktop,1 services_kde4-systemsettings.desktop,26 services_kde4-konsole.desktop,1 services_kde4-kwalletmanager.desktop,1 services_kde4-kalgebra.desktop,1 shell_htop,1 shell_irssi,1 services_kde4-ksnapshot.desktop,2 services_libreoffice-writer.desktop,1 locations_opendir,2 services_kde4-kaddressbook.desktop,3 services_kcm_keyboard.desktop,2 services_kde4-blogilo.desktop,1 services_dropbox.desktop,1 services_powerdevilprofilesconfig.desktop
 
 [Plugins]
 CharacterRunnerEnabled=true

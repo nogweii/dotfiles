@@ -1,0 +1,16 @@
+[cache]
+KnownMailBoxes=,Sent,INBOX,Trash
+TrashCollection=61
+
+[idle]
+IdleRidPath=/INBOX,imap://colin@evaryont.me/
+
+[network]
+ImapPort=143
+ImapServer=evaryont.me
+Safety=STARTTLS
+UserName=colin
+
+[siever]
+SievePort=4190
+SieveSupport=true
