@@ -48,17 +48,17 @@ export TERMINAL="urxvt.sh"
 export TMOUT=3600
 
 # XDG-related stuff
-export XDG_CACHE_HOME="${HOME}/.local/cache/"
+export XDG_CACHE_HOME="${HOME}/.local/cache"
 if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
     mkdir -p $XDG_CACHE_HOME/zsh
 fi
 
-export XDG_CONFIG_HOME="${HOME}/.local/config/"
+export XDG_CONFIG_HOME="${HOME}/.local/config"
 if [ ! -d $XDG_CONFIG_HOME/zsh ] ; then
     mkdir -p $XDG_CONFIG_HOME/zsh
 fi
 
-export XDG_DATA_HOME="${HOME}/.local/share/"
+export XDG_DATA_HOME="${HOME}/.local/share"
 if [ ! -d $XDG_DATA_HOME/zsh ] ; then
     mkdir -p $XDG_DATA_HOME/zsh
 fi
@@ -90,7 +90,7 @@ export          SAVEHIST="${HISTSIZE}"
 
 unset MANPATH
 
-fpath=(~/.data/zsh $fpath)
+fpath=($XDG_DATA_HOME/zsh $fpath)
 export FBCMD="${XDG_CONFIG_HOME}/fbcmd/"
 export KDEHOME="${XDG_CONFIG_HOME}/kde/"
 export WINEARCH="win32"
