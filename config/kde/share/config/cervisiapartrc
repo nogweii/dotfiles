@@ -11,8 +11,8 @@ Hide Non CVS Files=false
 Hide Removed Files=false
 Hide UpToDate Files=false
 Prune Dirs=true
-Splitter Pos 1=216
-Splitter Pos 2=191
+Splitter Pos 1=226
+Splitter Pos 2=200
 Update Recursive=false
 
 [UpdateView]

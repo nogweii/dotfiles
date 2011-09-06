@@ -1,14 +1,18 @@
 [Auto Allow]
-kdewallet=Blogilo,Firefox KWallet Plugin
+kdewallet=Blogilo,Firefox KWallet Plugin,Akonadi Agent,Akonadi Resource,KMail,Kopete
+
+[Auto Deny]
+kdewallet=
 
 [Wallet]
-Close When Idle=false
+Close When Idle=true
 Close on Screensaver=true
+Default Wallet=kdewallet
 Enabled=true
 First Use=false
-Idle Timeout=10
+Idle Timeout=5
 Launch Manager=true
-Leave Manager Open=false
-Leave Open=false
+Leave Manager Open=true
+Leave Open=true
 Prompt on Open=true
 Use One Wallet=true

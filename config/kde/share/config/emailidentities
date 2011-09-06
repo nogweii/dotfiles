@@ -6,10 +6,10 @@ Default Identity=1236159683
 
 [Identity #0]
 Dictionary=English (United States of America)
-Drafts=31
+Drafts=33
 Email Address=colin@evaryont.me
 Email Aliases=colin.p.shea@gmail.com,evaryont@gmx.us
-Fcc=26
+Fcc=23
 Identity=Primary (evaryont.me)
 Image Location=
 Inline Signature=Regards,\nColin Shea\n\n-- \nColin 'Evaryont' Shea\nhttps://evaryont.me
@@ -17,6 +17,6 @@ Inlined Html=false
 Name=Colin Shea
 Preferred Crypto Message Format=auto
 Signature Type=inline
-Templates=32
+Templates=35
 X-FaceEnabled=false
 uoid=1236159683
