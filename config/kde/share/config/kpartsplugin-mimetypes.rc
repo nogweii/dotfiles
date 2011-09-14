@@ -1,2 +1,4 @@
 [PreferredService]
+application/x-perl=Embedded Advanced Text Editor
+application/x-ruby=Embedded Advanced Text Editor
 text/x-python=Embedded Advanced Text Editor

@@ -1,0 +1,5 @@
+[StoredApplets][1]
+geometry=0,0,450,250
+immutability=1
+plugin=org.kde.telepathy-presence
+zvalue=0

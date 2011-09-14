@@ -7,7 +7,7 @@ CurrentPalette=Forty Colors
 
 [KFileDialog Settings]
 Height 1080=527
-Recent Files[$e]=balsamia_Paint_What_You_See.jpg,$HOME/media/pictures/gvcd2_boat.jpg,$HOME/media/balsamia_Paint_What_You_See.jpg
+Recent Files[$e]=balsamia_Paint_What_You_See.jpg,$HOME/Dropbox/Photos/fuzzy_macbeth.png,$HOME/media/pictures/gvcd2_boat.jpg,$HOME/media/balsamia_Paint_What_You_See.jpg
 Width 1920=960
 
 [KPropertiesDialog]
@@ -69,6 +69,19 @@ dbfile=/home/colin/.mozilla/firefox/gn57q03c.default/places.sqlite
 performed=/usr/share/apps/plasma-desktop/updates/systray-to-notifications-widget.js,/usr/share/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
 
 [ViewIds]
-3=1
 54=2
 58=3
+
+[setAvatar]
+__file=
+rawdata=
+url=/home/colin/Dropbox/Photos/fuzzy_macbeth.png
+
+[setNickname]
+__file=
+nickname=Evaryont
+
+[setPresence]
+__file=
+status_message=Set personal status here
+type_id=5
