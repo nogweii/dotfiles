@@ -49,7 +49,7 @@ mute=Volume Mute,Volume Mute,Mute
 ReadMessage=Ctrl+Shift+I,Ctrl+Shift+I,Read Message
 Set_Away_Back=Ctrl+Shift+W,Ctrl+Shift+W,Set Away/Back
 ShowContactList=Ctrl+Shift+S,Ctrl+Shift+S,Show/Hide Contact List
-_k_friendly_name=Kopete
+_k_friendly_name=kopete
 
 [krunner]
 Lock Session=Ctrl+Alt+L,Ctrl+Alt+L,Lock Session

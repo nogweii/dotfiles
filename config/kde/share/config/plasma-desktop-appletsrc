@@ -125,7 +125,7 @@ activity=
 activityId=
 desktop=-1
 formfactor=2
-geometry=10206,-206,1920,35
+geometry=0,-41,1920,35
 immutability=1
 lastDesktop=-1
 lastScreen=0
@@ -143,15 +143,21 @@ immutability=1
 plugin=launcher
 zvalue=0
 
+[Containments][58][Applets][59][LayoutInformation]
+Order=0
+
 [Containments][58][Applets][61]
 geometry=36,3,58,32
 immutability=1
 plugin=pager
 zvalue=0
 
+[Containments][58][Applets][61][LayoutInformation]
+Order=1
+
 [Containments][58][Applets][62]
-geometry=98,3,1505,32
-immutability=2
+geometry=98,3,1507,32
+immutability=1
 plugin=tasks
 zvalue=0
 
@@ -159,9 +165,12 @@ zvalue=0
 browser=preferred://browser, , ,\s
 filemanager=preferred://filemanager, , ,\s
 
+[Containments][58][Applets][62][LayoutInformation]
+Order=2
+
 [Containments][58][Applets][63]
-geometry=1607,3,245,32
-immutability=2
+geometry=1609,3,219,32
+immutability=1
 plugin=systemtray
 zvalue=0
 
@@ -169,20 +178,30 @@ zvalue=0
 DefaultAppletsAdded=true
 
 [Containments][58][Applets][63][Configuration][Applets][65]
-geometry=4,4,24,24
+geometry=4,32,24,24
 immutability=1
 plugin=notifier
 zvalue=0
 
+[Containments][58][Applets][63][Configuration][Applets][65][PopupApplet]
+DialogHeight=352
+DialogWidth=276
+
 [Containments][58][Applets][63][Configuration][Applets][66]
-geometry=5.32907051820075e-15,4,24,24
+geometry=5.74769453136233,4,24,24
 immutability=1
 plugin=notifications
 zvalue=0
 
+[Containments][58][Applets][63][Configuration][Applets][66][Configuration]
+customPosition=-13,-13
+customPositionAffinityHoriz=r
+customPositionAffinityVert=b
+
 [Containments][58][Applets][63][Configuration][Applets][66][Configuration][ExtenderItems][63]
 extenderIconName=dialog-information
 extenderItemName=jobGroup
+extenderItemPosition=0
 extenderTitle=Jobs
 isCollapsed=true
 isGroup=true
@@ -190,11 +209,11 @@ sourceAppletId=66
 sourceAppletPluginName=notifications
 
 [Containments][58][Applets][63][Configuration][Applets][66][PopupApplet]
-DialogHeight=97
-DialogWidth=199
+DialogHeight=148
+DialogWidth=368
 
 [Containments][58][Applets][63][Configuration][Applets][67]
-geometry=195,4,24,24
+geometry=154.243110216314,4,24,24
 immutability=1
 plugin=battery
 zvalue=0
@@ -202,30 +221,57 @@ zvalue=0
 [Containments][58][Applets][63][Configuration][Shortcuts]
 Systemtray-Klipper-63=Ctrl+Alt+V
 
+[Containments][58][Applets][63][LayoutInformation]
+Order=3
+
 [Containments][58][Applets][63][PopupApplet]
-DialogHeight=200
-DialogWidth=233
+DialogHeight=186
+DialogWidth=218
 
 [Containments][58][Applets][64]
-geometry=1856,3,64,32
-immutability=2
+geometry=1832,3,64,32
+immutability=1
 plugin=digital-clock
 zvalue=0
+
+[Containments][58][Applets][64][Configuration]
+Share=false
+announceInterval=0
+calendarType=locale
+dateStyle=0
+defaultTimezone=Local
+displayEvents=true
+displayHolidays=true
+holidaysRegions=us_en-us
+holidaysRegionsDaysOff=us_en-us
+plainClockDrawShadow=true
+plainClockFont=Ubuntu,32,-1,5,50,0,0,0,0,0
+showSeconds=false
+showTimezone=false
+timeZones=America/New_York,America/Phoenix,UTC
+timezone=America/Phoenix
+useCustomColor=false
+useCustomShadowColor=false
 
 [Containments][58][Applets][64][Configuration][ExtenderItems][62]
 extenderIconName=view-pim-calendar
 extenderItemName=calendar
+extenderItemPosition=0
 extenderTitle=Calendar
+isCollapsed=false
 sourceAppletId=64
 sourceAppletPluginName=digital-clock
 
+[Containments][58][Applets][64][LayoutInformation]
+Order=4
+
 [Containments][58][Applets][64][PopupApplet]
-DialogHeight=305
-DialogWidth=468
+DialogHeight=291
+DialogWidth=440
 
 [Containments][58][Configuration]
 maximumSize=1920,35
 minimumSize=1920,35
 
 [General]
-immutability=2
+immutability=1

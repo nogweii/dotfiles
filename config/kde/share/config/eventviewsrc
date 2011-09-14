@@ -1,3 +1,9 @@
+[Agenda View]
+agendaViewItemIcons=\x01\x01\x01\x01\x01\x01\x00\x00\x00\x00
+
+[Month View]
+monthViewItemIcons=\x01\x01\x01\x00\x00\x01\x00\x00\x00\x00
+
 [Resources Colors]
 2=231,193,230
 27=54,188,188
