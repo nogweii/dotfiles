@@ -8,9 +8,9 @@ DefaultProfile=Shell.profile
 Favorites=/home/colin/.local/config/kde/share/apps/konsole/Shell.profile
 
 [MainWindow]
-Height 1080=1081
+Height 1080=693
 Height 480=481
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAQSAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAABPwAAAKjAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1920=1921
+Width 1920=1276
 Width 640=641

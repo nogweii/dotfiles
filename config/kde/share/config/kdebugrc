@@ -75,6 +75,9 @@ InfoOutput=4
 [dolphin]
 InfoOutput=4
 
+[dragonplayer]
+InfoOutput=4
+
 [fontinst]
 InfoOutput=4
 
@@ -147,6 +150,9 @@ InfoOutput=4
 [kio_network]
 InfoOutput=4
 
+[kio_thumbnail]
+InfoOutput=4
+
 [kio_trash]
 InfoOutput=4
 
@@ -159,6 +165,9 @@ InfoOutput=4
 [kmail2]
 InfoOutput=4
 
+[kmenuedit]
+InfoOutput=4
+
 [kmix]
 InfoOutput=4
 
@@ -169,6 +178,9 @@ InfoOutput=4
 InfoOutput=2
 
 [knetwalk]
+InfoOutput=4
+
+[knotes]
 InfoOutput=4
 
 [knotify]
@@ -190,6 +202,9 @@ InfoOutput=4
 InfoOutput=4
 
 [korganizer]
+InfoOutput=4
+
+[krdc]
 InfoOutput=4
 
 [krunner]
@@ -237,6 +252,9 @@ InfoOutput=4
 [plasma-overlay]
 InfoOutput=4
 
+[plasma-windowed]
+InfoOutput=4
+
 [spotify]
 InfoOutput=4
 
@@ -244,6 +262,12 @@ InfoOutput=4
 InfoOutput=4
 
 [systemsettings]
+InfoOutput=4
+
+[telepathy-kde-contactlist]
+InfoOutput=4
+
+[telepathy-kde-text-ui]
 InfoOutput=4
 
 [unnamed app]

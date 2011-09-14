@@ -3,7 +3,7 @@ update_info=mouse_cursor_theme.upd:kde3.4.99,kwin.upd:kde3.2Xinerama,kded.upd:kd
 
 [DirSelect Dialog]
 DirSelectDialog Size=797,578
-History Items[$e]=file://$HOME/tmp,file://$HOME/Dropbox
+History Items[$e]=file://$HOME,file://$HOME/tmp,file://$HOME/Dropbox
 
 [General]
 BrowserApplication=firefox
@@ -24,12 +24,12 @@ SingleClick=true
 
 [KFileDialog Settings]
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
 Previews=false
-Recent URLs[$e]=$HOME/docs/,$HOME/.local/,$HOME/media/,$HOME/media/vids/,$HOME/Dropbox/Travel Documents/,$HOME/tmp/,$HOME/media/pictures/
+Recent URLs[$e]=$HOME/docs/,$HOME/.local/,$HOME/media/,$HOME/media/vids/,$HOME/Dropbox/Travel Documents/,$HOME/tmp/,$HOME/.minecraft/saves/Vanilla/region/,$HOME/Dropbox/Photos/
 Show Bookmarks=false
 Show Full Path=false
 Show Preview=false
@@ -38,7 +38,7 @@ Show hidden files=false
 Sort by=Name
 Sort directories first=false
 Sort reversed=false
-Speedbar Width=109
+Speedbar Width=110
 View Style=Simple
 
 [KShortcutsDialog Settings]

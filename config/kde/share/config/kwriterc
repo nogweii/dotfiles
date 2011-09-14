@@ -82,11 +82,11 @@ ToolBarsMovable=Disabled
 [Recent Files]
 File1[$e]=$HOME/Dropbox/0guipsk.txt
 File2[$e]=$HOME/Dropbox/.dropbox
-File3[$e]=/media/PENDRIVE/arch/checksum.md5
-File4[$e]=/media/PENDRIVE/syslinux/syslinux.cfg
-File5[$e]=/media/PENDRIVE/arch/boot/syslinux/syslinux.cfg
+File3[$e]=/media/PE_BOOT/menu.lst
+File4[$e]=/media/PE_BOOT/config.sys
+File5[$e]=/media/PE_BOOT/default
 Name1[$e]=0guipsk.txt
 Name2[$e]=.dropbox
-Name3[$e]=checksum.md5
-Name4[$e]=syslinux.cfg
-Name5[$e]=syslinux.cfg
+Name3[$e]=menu.lst
+Name4[$e]=config.sys
+Name5[$e]=default

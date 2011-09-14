@@ -31,7 +31,7 @@ EverMounted=true
 ForceAttachAutomount=true
 ForceLoginAutomount=false
 Icon=drive-removable-media-usb
-LastNameSeen=PENDRIVE
+LastNameSeen=PE_BOOT
 LastSeenMounted=false
 
 [General]

@@ -1,0 +1,28 @@
+[General]
+FullscreenOnConnect=true
+ResizeOnConnect=false
+TabPosition=3
+
+[MainWindow]
+Height 1080=1053
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAEOAAAEC/wCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAABIAAAQLAAAAigEAAAUAAAUAAAAECwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1280
+
+[Plugins]
+krdc_rdppluginEnabled=true
+krdc_testpluginEnabled=false
+krdc_vncpluginEnabled=true
+
+[hostpreferences][rdp://conint.uat.edu]
+colorDepth=1
+console=false
+extraOptions=
+grabAllKeys=true
+height=1024
+keyboardLayout=7
+showConfigAgain=true
+sound=0
+viewOnly=false
+walletSupport=false
+width=1280

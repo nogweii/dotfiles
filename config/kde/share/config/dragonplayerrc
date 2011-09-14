@@ -1,0 +1,20 @@
+[General]
+Recent Urls[$e]=file://$HOME/.minecraft/bin/Minecraft_How_to_Install_Mod_Loader_AudioMod_by_Risugami-nFY94W2vHmc.mp4
+TimeFormat=1
+Volume=1
+
+[MainWindow]
+Height 1080=720
+State=AAAA/wAAAAD9AAAAAAAABQAAAAKIAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=1280
+
+[Phonon::AudioOutput]
+Dragon Player_Volume=1
+
+[file:///home/colin/.minecraft/bin/Minecraft_How_to_Install_Mod_Loader_AudioMod_by_Risugami-nFY94W2vHmc.mp4]
+Brightness=0
+Contrast=0
+Hue=0
+IsVideo=true
+Saturation=0
