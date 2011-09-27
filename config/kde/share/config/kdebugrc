@@ -156,6 +156,12 @@ InfoOutput=4
 [kio_trash]
 InfoOutput=4
 
+[kjots]
+InfoOutput=4
+
+[kjotsmigrator]
+InfoOutput=4
+
 [klauncher]
 InfoOutput=4
 

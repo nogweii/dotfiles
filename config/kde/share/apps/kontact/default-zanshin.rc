@@ -1,0 +1,33 @@
+<!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
+<kpartgui version="1" name="zanshin">
+ <MenuBar>
+  <Menu name="file">
+   <Action name="sidebar_new"/>
+   <Action name="sidebar_remove"/>
+   <Separator/>
+   <Action name="editor_add_action"/>
+   <Action name="editor_remove_action"/>
+   <Action name="editor_move_action"/>
+   <Action name="editor_promote_action"/>
+   <Separator/>
+   <Action name="synchronize_all"/>
+   <Action name="sidebar_synchronize"/>
+   <Separator/>
+  </Menu>
+  <Menu name="go">
+   <text>&amp;Go</text>
+   <Action name="project_mode"/>
+   <Action name="categories_mode"/>
+   <Separator/>
+   <Action name="sidebar_go_next"/>
+   <Action name="sidebar_go_previous"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar noMerge="1" name="mainToolBar">
+  <text context="@title:menu">Main Toolbar</text>
+  <Action name="project_mode"/>
+  <Action name="categories_mode"/>
+  <Separator name="separator_0"/>
+  <Action name="editor_add_action"/>
+ </ToolBar>
+</kpartgui>

@@ -1,0 +1,18 @@
+[Colors]
+CurrentPalette=Forty Colors
+
+[General]
+AutoCreateResourceOnStart=true
+
+[MainWindow]
+Height 1080=551
+State=AAAA/wAAAAD9AAAAAAAAAhgAAAHjAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAFgB0AGUAeAB0AFQAbwBvAGwAQgBhAHIBAAAA7/////8AAAAAAAAAAAAAABoAZgBvAHIAbQBhAHQAVABvAG8AbABCAGEAcgEAAAHn/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=536
+
+[TreeState]
+Current=i1183
+Expansion=c76,c78,c77
+HorizontalScroll=0
+Selection=i1183
+VerticalScroll=0
