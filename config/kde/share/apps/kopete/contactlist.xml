@@ -1,0 +1,233 @@
+<kopete-contact-list version="1.2">
+    <kopete-group groupId="1" view="expanded" type="top-level">
+        <display-name>Top Level</display-name>
+    </kopete-group>
+    <meta-contact kabcId="z0LZhiVqZA" contactId="{8d39b933-ccde-48ba-adf4-2765f51c8d16}">
+        <display-name>Tom Shea</display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="thristhart@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="thristhart@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">thristhart@gmail.com</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">thristhart@gmail.com</plugin-data-field>
+            <plugin-data-field key="displayName">Tom Shea</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-05T21:51:31</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see this contact's status, but he/she cannot see your status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:32</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">Tom Shea</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">Tom Shea</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/thristhart@gmail.com_8575265b06959e5d46ff515fd01712c5.png</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:007@jabber.ccc.de" contactId="{9f0ee459-e620-4830-8807-6d89d03b4105}">
+        <display-name></display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="007@jabber.ccc.de" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="007@jabber.ccc.de" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">007@jabber.ccc.de</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">007@jabber.ccc.de</plugin-data-field>
+            <plugin-data-field key="displayName"></plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-05T21:51:31</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see this contact's status, but he/she cannot see your status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:36</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/007@jabber.ccc.de_f0185fe1adca1d92fb1a9bcbbdc5b630.png</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:abarahc@jabber.org" contactId="{a8d4d017-ee72-400b-876c-a6bc93984051}">
+        <display-name>abarahc</display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="abarahc@jabber.org" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="abarahc@jabber.org" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">abarahc@jabber.org</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">abarahc@jabber.org</plugin-data-field>
+            <plugin-data-field key="displayName">abarahc</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberAuthorizationStatus">Waiting for authorization</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You cannot see each others' status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-04T18:52:05</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">abarahc</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">abarahc</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/abarahc@jabber.org_f0b70c3ed5bfb001d021239ccf9eb792.png</plugin-data-field>
+        </plugin-contact-data>
+        <custom-icons use="0">
+            <icon state="none"></icon>
+        </custom-icons>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:me@ell.io" contactId="{ea9404e9-ed32-42d2-84e1-f1fd83b7ac55}">
+        <display-name>Elliott Cable</display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="me@ell.io" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="me@ell.io" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">me@ell.io</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">me@ell.io</plugin-data-field>
+            <plugin-data-field key="displayName">Elliott Cable</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-05T21:51:31</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see this contact's status, but he/she cannot see your status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:42</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">Elliott Cable</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">Elliott Cable</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/me@ell.io_f3f546d44d501947f1d7588e98e15a68.png</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:vic@demuzere.be" contactId="{127ab329-f53b-4c1f-9ed6-4133eca44e3a}">
+        <display-name>Vic Demuzere</display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="vic@demuzere.be" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="vic@demuzere.be" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">vic@demuzere.be</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">vic@demuzere.be</plugin-data-field>
+            <plugin-data-field key="displayName">Vic Demuzere</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-04T15:58:11</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see this contact's status, but he/she cannot see your status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:46</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">Vic Demuzere</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">Vic Demuzere</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/vic@demuzere.be_bc09af570fdbe73c00156dcce2016427.png</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:rtyler@jabber.org" contactId="{b29bd441-8e2e-4dbd-a252-1585ea8c9ef4}">
+        <display-name></display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="rtyler@jabber.org" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="rtyler@jabber.org" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">rtyler@jabber.org</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">rtyler@jabber.org</plugin-data-field>
+            <plugin-data-field key="displayName">rtyler@jabber.org</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberAuthorizationStatus">Waiting for authorization</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You cannot see each others' status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:50</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCompanyRole">Developer</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardWorkEmailAddress">tyler@freebsd.org</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">rtyler</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">rtyler@jabber.org</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="JabberProtocol:colin@evaryont.me:kaitycoop@gmail.com" contactId="{524a6cd7-735c-4420-a105-2c92788da4fb}">
+        <display-name>Kaitlin Cooper</display-name>
+        <photo syncWithKABC="false"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="kaitycoop@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="kaitycoop@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">kaitycoop@gmail.com</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">kaitycoop@gmail.com</plugin-data-field>
+            <plugin-data-field key="displayName">Kaitlin Cooper</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-05T21:51:31</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see this contact's status, but he/she cannot see your status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:54</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">Kaitlin Cooper</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">Kaitlin Cooper</plugin-data-field>
+        </plugin-contact-data>
+    </meta-contact>
+    <meta-contact kabcId="771IeX6Z3Y" contactId="{8c11d566-f960-4626-9b06-180217dcf401}">
+        <display-name>Jeremy Frady</display-name>
+        <photo syncWithKABC="true"></photo>
+        <property-sources>
+            <name source="custom">
+                <contact-source nameSourceContactId="jeremy.j.frady@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </name>
+            <photo source="contact">
+                <contact-source nameSourceContactId="jeremy.j.frady@gmail.com" nameSourcePluginId="JabberProtocol" nameSourceAccountId="colin@evaryont.me"/>
+            </photo>
+        </property-sources>
+        <groups>
+            <group id="1"/>
+        </groups>
+        <plugin-contact-data plugin-id="JabberProtocol">
+            <plugin-data-field key="JID">jeremy.j.frady@gmail.com</plugin-data-field>
+            <plugin-data-field key="accountId">colin@evaryont.me</plugin-data-field>
+            <plugin-data-field key="contactId">jeremy.j.frady@gmail.com</plugin-data-field>
+            <plugin-data-field key="displayName">Jeremy Frady</plugin-data-field>
+            <plugin-data-field key="groups">Top Level</plugin-data-field>
+            <plugin-data-field key="prop_QDateTime_lastSeen">2011-09-05T21:51:31</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberSubscriptionStatus">You can see each others' status.</plugin-data-field>
+            <plugin-data-field key="prop_QString_jabberVCardCacheTimeStamp">2011-09-05T18:16:58</plugin-data-field>
+            <plugin-data-field key="prop_QString_lastName">Jeremy Frady</plugin-data-field>
+            <plugin-data-field key="prop_QString_nickName">Jeremy Frady</plugin-data-field>
+            <plugin-data-field key="prop_QString_photo">/home/colin/.local/config/kde/share/apps/kopete/avatars/Contacts/JabberProtocol/colin@evaryont.me/jeremy.j.frady@gmail.com_e365fbfae3ed7d22b54db067c0fe862e.png</plugin-data-field>
+        </plugin-contact-data>
+        <custom-icons use="0">
+            <icon state="none"></icon>
+        </custom-icons>
+    </meta-contact>
+</kopete-contact-list>

@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr">
+<head>
+<title>Main Page - CGSecurity</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="MediaWiki" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/mw/opensearch_desc.php" title="CGSecurity (en)" />
+<link title="Creative Commons" type="application/rdf+xml" href="/mw/index.php?title=Main_Page&amp;action=creativecommons" rel="meta" />
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html" />
+<link rel="alternate" type="application/atom+xml" title="CGSecurity Atom feed" href="/mw/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="/mw/skins/common/shared.css?270" media="screen" />
+<link rel="stylesheet" href="/mw/skins/common/commonPrint.css?270" media="print" />
+<link rel="stylesheet" href="/mw/skins/monobook/main.css?270" media="screen" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/mw/skins/monobook/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/mw/skins/monobook/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/mw/skins/monobook/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/mw/skins/monobook/IE70Fixes.css?270" media="screen" /><![endif]-->
+<link rel="stylesheet" href="/mw/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=176400&amp;action=raw&amp;maxage=176400" />
+<link rel="stylesheet" href="/mw/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=176400&amp;action=raw&amp;maxage=176400" media="print" />
+<link rel="stylesheet" href="/mw/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=176400&amp;action=raw&amp;maxage=176400" />
+<link rel="stylesheet" href="/mw/index.php?title=-&amp;action=raw&amp;maxage=176400&amp;gen=css" />
+<script>
+var skin="monobook",
+stylepath="/mw/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/mw",
+wgScriptExtension=".php",
+wgScript="/mw/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://www.cgsecurity.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Main_Page",
+wgTitle="Main Page",
+wgAction="view",
+wgArticleId=1,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=6468,
+wgVersion="1.16.5",
+wgEnableAPI=false,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "CGSecurity", "5": "CGSecurity talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "cgsecurity": 4, "cgsecurity_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "image": 6, "image_talk": 7},
+wgSiteName="CGSecurity",
+wgCategories=[],
+wgRestrictionEdit=["sysop"],
+wgRestrictionMove=["sysop"];
+</script><script src="/mw/skins/common/wikibits.js?270"></script>
+<script src="/mw/skins/common/ajax.js?270"></script>
+<script src="/mw/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook&amp;270"></script>
+
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Main_Page skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" >
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading">Main Page</h1>
+	<div id="bodyContent">
+		<h3 id="siteSub">From CGSecurity</h3>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<p><a href="/wiki/TestDisk" title="TestDisk">TestDisk</a> and <a href="/wiki/PhotoRec" title="PhotoRec">PhotoRec</a> 6.12 have been released! Read the <a href="/wiki/TestDisk_6.12_Release" title="TestDisk 6.12 Release">released notes</a> for more information.
+</p>
+<h2> <span class="mw-headline" id="Data_recovery"> Data recovery </span></h2>
+<table>
+<tr>
+<td><a href="/wiki/TestDisk" title="TestDisk"><img alt="Testdisklogo clear 100.png" src="/mw/images/thumb/Testdisklogo_clear_100.png/50px-Testdisklogo_clear_100.png" width="50" height="50" /></a>
+</td><td>If you have lost partition or strange problem with your hard disk partitions, run <a href="/wiki/TestDisk" title="TestDisk">TestDisk</a> to recover your data. TestDisk can also undelete files from <a href="/wiki/TestDisk:_undelete_file_for_FAT" title="TestDisk: undelete file for FAT">FAT</a>, <a href="/wiki/TestDisk:_undelete_file_for_NTFS" title="TestDisk: undelete file for NTFS">NTFS</a>, <a href="/wiki/TestDisk:_undelete_file_for_FAT" title="TestDisk: undelete file for FAT">exFAT</a> and <a href="/wiki/TestDisk:_undelete_file_for_ext2" title="TestDisk: undelete file for ext2">ext2</a> filesystem.
+</td></tr>
+<tr>
+<td><a href="/wiki/PhotoRec" title="PhotoRec"><img alt="Photorec 64x64.png" src="/mw/images/thumb/Photorec_64x64.png/50px-Photorec_64x64.png" width="50" height="50" /></a>
+</td><td>To recover your lost <a href="/wiki/Digital_Photos_Recovery_Using_PhotoRec" title="Digital Photos Recovery Using PhotoRec">digital pictures</a> or <a href="/wiki/File_Formats_Recovered_By_PhotoRec" title="File Formats Recovered By PhotoRec">lost files</a>, try <a href="/wiki/PhotoRec" title="PhotoRec">PhotoRec</a>.
+</td></tr></table>
+<h2> <span class="mw-headline" id="Password_recovery"> Password recovery </span></h2>
+<table>
+<tr>
+<td><a href="/wiki/CmosPwd" title="CmosPwd"><img alt="Cmospwd.png" src="/mw/images/Cmospwd.png" width="40" height="40" /></a>
+</td><td> BIOS setup can be password protected. You can get back your password with <a href="/wiki/CmosPwd" title="CmosPwd">CmosPwd</a>.
+</td></tr></table>
+<h2> <span class="mw-headline" id="Security"> Security </span></h2>
+<table>
+<tr>
+<td><a href="/wiki/Articles" title="Articles"><img alt="Tux.png" src="/mw/images/thumb/Tux.png/50px-Tux.png" width="50" height="59" /></a>
+</td><td>I have written some <a href="/wiki/Articles" title="Articles">articles</a> about buffer overflow, DNS configuration, IDS, firewalling under Linux, computer forensics...
+</td></tr></table>
+<hr />
+<p><a href="mailto:grenier@cgsecurity.org" class="external text">Christophe GRENIER</a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 11/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+#ifexist count: 0/100
+-->
+		<div id='catlinks' class='catlinks catlinks-allhidden'></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="/wiki/Main_Page" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-viewsource"><a href="/mw/index.php?title=Main_Page&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/testdisklogo-clear-100.png);" href="/" title="Visit the main page"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-Data_Recovery'>
+		<h5>Data Recovery</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-TestDisk"><a href="/wiki/TestDisk">TestDisk</a></li>
+				<li id="n-PhotoRec"><a href="/wiki/PhotoRec">PhotoRec</a></li>
+				<li id="n-Download"><a href="/wiki/TestDisk_Download">download</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Password_recovery'>
+		<h5>Password recovery</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-CmosPwd"><a href="/wiki/CmosPwd">CmosPwd</a></li>
+				<li id="n-Lilo-Password"><a href="/wiki/LiloPwd">Lilo Password</a></li>
+				<li id="n-chntpw-for-dos"><a href="/wiki/Chntpw_for_Dos">chntpw for dos</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Security'>
+		<h5>Security</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Publications"><a href="/wiki/Articles">Publications</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Misc'>
+		<h5>Misc</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Donation"><a href="/wiki/Donation">Donation</a></li>
+				<li id="n-Mon-CV-.28FR.29"><a href="/wiki/CV_Christophe_GRENIER">Mon CV (FR)</a></li>
+				<li id="n-PGP-Public-Key"><a href="http://www.cgsecurity.org/grenier.asc">PGP Public Key</a></li>
+				<li id="n-Euro-coins"><a href="http://www.cgsecurity.org/euro/">Euro coins</a></li>
+				<li id="n-Roller"><a href="/wiki/Roller">Roller</a></li>
+				<li id="n-Links"><a href="/wiki/Links">Links</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+<h5><label for="searchInput">Search</label></h5>
+
+<style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-9753209298218671:1590919361" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="15" />
+        <input type="submit" name="sa" value="Search" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+</div>
+	</div>
+	<div id="p-ads" class="portlet">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9753209298218671";
+/* Sidebar */
+google_ad_slot = "6031202876";
+google_ad_width = 125;
+google_ad_height = 125;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+<div style="position: absolute; top: -250px; left: -250px;"><a href="http://www.cgsecurity.org/ignorancesided.php">nutty-preachers</a></div>
+	<div id="f-copyrightico"><a href="http://www.gnu.org/copyleft/fdl.html"><img src="/mw/skins/common/images/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31" /></a></div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 28 July 2011, at 20:14.</li>
+		<li id="copyright">Content is available under <a href="http://www.gnu.org/copyleft/fdl.html" class="external ">GNU Free Documentation License 1.2</a>.</li>
+		<li id="about"><a href="/wiki/CGSecurity:About" title="CGSecurity:About">About CGSecurity</a></li>
+	</ul>
+</div>
+</div>
+
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+</body></html>

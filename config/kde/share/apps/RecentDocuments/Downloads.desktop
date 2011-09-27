@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=Downloads
+Type=Link
+URL[$e]=file://$HOME/Downloads
+X-KDE-LastOpenedWith=dolphin
