@@ -1,0 +1,205 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="422" name="korganizer">
+ <MenuBar>
+  <Menu name="file">
+   <text>&amp;File</text>
+   <Merge/>
+   <Action append="print_merge" name="print_setup"/>
+   <Action name="korganizer_print"/>
+   <Action name="korganizer_print_preview"/>
+   <Action name="korganizer_quickprint"/>
+   <Separator/>
+   <Menu name="import">
+    <text>&amp;Import</text>
+    <Action name="import_icalendar"/>
+    <Action name="import_ical"/>
+    <Merge/>
+    <Separator/>
+    <Action name="downloadnewstuff"/>
+   </Menu>
+   <Menu name="export">
+    <text>&amp;Export</text>
+    <Action name="export_web"/>
+    <Action name="export_icalendar"/>
+    <Action name="export_vcalendar"/>
+    <Merge/>
+    <Separator/>
+    <Action name="uploadnewstuff"/>
+   </Menu>
+   <Separator/>
+   <Action name="file_archive"/>
+   <Action name="purge_completed"/>
+   <Separator/>
+   <Action name="korganizer_close"/>
+  </Menu>
+  <Menu name="edit">
+   <text>&amp;Edit</text>
+   <Action name="korganizer_undo"/>
+   <Action name="korganizer_redo"/>
+   <Separator/>
+   <Action name="korganizer_cut"/>
+   <Action name="korganizer_copy"/>
+   <Action name="korganizer_paste"/>
+   <Separator/>
+   <Action append="edit_paste_merge" name="edit_delete"/>
+   <Separator/>
+   <Action name="korganizer_find"/>
+  </Menu>
+  <Menu name="view">
+   <text>&amp;View</text>
+   <Action name="view_agenda"/>
+   <Action name="view_month"/>
+   <Action name="view_timeline"/>
+   <Action name="view_todo"/>
+   <Action name="view_list"/>
+   <Action name="view_whatsnext"/>
+   <Action name="view_timespent"/>
+   <Action name="view_journal"/>
+   <Merge/>
+   <Separator/>
+   <Action name="update"/>
+   <Separator/>
+   <Action name="hide_completed_todos"/>
+   <Separator/>
+   <Action append="save_merge" name="filter_select"/>
+   <Separator/>
+   <Menu name="zoom">
+    <text>&amp;Zoom</text>
+    <Action name="zoom_in_horizontally"/>
+    <Action name="zoom_out_horizontally"/>
+    <Separator/>
+    <Action name="zoom_in_vertically"/>
+    <Action name="zoom_out_vertically"/>
+   </Menu>
+  </Menu>
+  <Menu name="go">
+   <text>&amp;Go</text>
+   <Action name="go_previous"/>
+   <Action name="go_next"/>
+   <Separator/>
+   <Action name="go_today"/>
+   <Separator/>
+   <Action name="select_day"/>
+   <Action name="select_nextx"/>
+   <Action name="select_workweek"/>
+   <Action name="select_week"/>
+   <Action name="select_newmonth"/>
+  </Menu>
+  <Menu name="actions">
+   <text>&amp;Actions</text>
+   <Action name="new_event"/>
+   <Action name="new_todo"/>
+   <Action name="new_subtodo"/>
+   <Action name="new_journal"/>
+   <Separator/>
+   <Action name="show_incidence"/>
+   <Action name="edit_incidence"/>
+   <Action name="delete_incidence"/>
+   <Separator/>
+   <Action name="unsub_todo"/>
+   <Separator/>
+   <Action name="assign_resource"/>
+   <Action name="activate_alarm"/>
+  </Menu>
+  <Menu name="schedule">
+   <text>S&amp;chedule</text>
+   <Action name="schedule_publish"/>
+   <Action name="schedule_request"/>
+   <Action name="schedule_reply"/>
+   <Action name="schedule_cancel"/>
+   <Action name="schedule_refresh"/>
+   <Action name="schedule_counter"/>
+   <Action name="schedule_forward"/>
+   <Separator/>
+   <Action name="mail_freebusy"/>
+   <Action name="upload_freebusy"/>
+  </Menu>
+  <Menu name="settings">
+   <text>&amp;Settings</text>
+   <Menu append="show_merge" name="sidebar">
+    <text>&amp;Sidebar</text>
+    <Action name="show_datenavigator"/>
+    <Action name="show_todoview"/>
+    <Action name="show_eventviewer"/>
+    <Action name="show_resourceview"/>
+    <Action append="show_merge" name="show_resourcebuttons"/>
+   </Menu>
+   <Separator/>
+   <Action append="save_merge" name="conf_datetime"/>
+   <Action append="save_merge" name="conf_resources"/>
+   <Separator/>
+   <Action append="save_merge" name="edit_filters"/>
+   <Action append="save_merge" name="edit_categories"/>
+   <Separator/>
+   <Action group="settings_configure" name="options_configure_keybinding"/>
+   <Action group="settings_configure" name="options_configure_toolbars"/>
+   <Action group="settings_configure" name="korganizer_configure"/>
+  </Menu>
+  <Menu name="help">
+   <text>&amp;Help</text>
+   <Action name="show_intro"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar noMerge="1" fullWidth="true" name="mainToolBar">
+  <text context="main toolbar">Main</text>
+  <!--
+    <Separator/>
+    <Action name="edit_find"/>
+    -->
+  <Separator/>
+  <Action name="go_previous"/>
+  <Action name="go_next"/>
+  <Action name="go_today"/>
+  <Action name="select_day"/>
+  <Action name="select_week"/>
+ </ToolBar>
+ <ToolBar noMerge="1" name="korganizer_toolbar">
+  <text>Views</text>
+  <Action name="view_agenda"/>
+  <Merge/>
+ </ToolBar>
+ <ToolBar noMerge="1" hidden="true" name="schedule_toolbar">
+  <text>Schedule</text>
+  <Action name="schedule_publish"/>
+  <Action name="schedule_request"/>
+  <Action name="schedule_reply"/>
+ </ToolBar>
+ <ToolBar noMerge="1" hidden="true" name="filter_toolbar">
+  <text>Filters Toolbar</text>
+  <Action name="filter_select"/>
+  <Action name="edit_filters"/>
+ </ToolBar>
+ <Menu name="rmb_selection_popup">
+  <Action name="new_event"/>
+  <Action name="new_todo"/>
+  <Action name="new_journal"/>
+  <Separator/>
+  <Action name="korganizer_paste"/>
+  <Separator/>
+  <Action name="configure_view"/>
+  <Merge/>
+ </Menu>
+ <Menu name="akonadi_collectionview_contextmenu">
+  <Action name="akonadi_collection_create"/>
+  <Action name="akonadi_collection_delete"/>
+  <Separator/>
+  <Menu name="calendar_color">
+   <text>Calendar Colors</text>
+   <Action name="assign_color"/>
+   <Action name="disable_color"/>
+  </Menu>
+  <Separator/>
+  <Action name="set_standard_calendar"/>
+  <Separator/>
+  <Action name="akonadi_collection_cut"/>
+  <Action name="akonadi_collection_copy"/>
+  <Action name="akonadi_paste"/>
+  <Separator/>
+  <Action name="akonadi_resource_create"/>
+  <Action name="akonadi_resource_delete"/>
+  <Action name="akonadi_collection_sync"/>
+  <Separator/>
+  <Action name="akonadi_collection_properties"/>
+  <Action name="akonadi_resource_properties"/>
+ </Menu>
+</kpartgui>
