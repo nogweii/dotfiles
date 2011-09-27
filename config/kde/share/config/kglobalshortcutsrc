@@ -45,6 +45,9 @@ decrease_volume=Volume Down,Volume Down,Decrease Volume
 increase_volume=Volume Up,Volume Up,Increase Volume
 mute=Volume Mute,Volume Mute,Mute
 
+[knotes]
+_k_friendly_name=KNotes
+
 [kopete]
 ReadMessage=Ctrl+Shift+I,Ctrl+Shift+I,Read Message
 Set_Away_Back=Ctrl+Shift+W,Ctrl+Shift+W,Set Away/Back

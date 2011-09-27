@@ -31,7 +31,7 @@ EverMounted=true
 ForceAttachAutomount=true
 ForceLoginAutomount=false
 Icon=drive-removable-media-usb
-LastNameSeen=PE_BOOT
+LastNameSeen=phazon
 LastSeenMounted=false
 
 [General]

@@ -1,0 +1,195 @@
+<capabilities>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="1.1">
+  <identity category="client" type="pc" name=""/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="camera-v1">
+  <feature node="http://www.google.com/xmpp/protocol/camera/v1"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="pmuc-v1">
+  <feature node="http://www.google.com/xmpp/protocol/pmuc/v1"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="sms-v1">
+  <feature node="http://www.google.com/xmpp/protocol/sms/v1"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="vavinvite-v1">
+  <feature node="http://www.google.com/xmpp/protocol/vavinvite/v1"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="video-v1">
+  <feature node="http://www.google.com/xmpp/protocol/video/v1"/>
+ </info>
+ <info node="http://mail.google.com/xmpp/client/caps" ver="1.1" ext="voice-v1">
+  <feature node="http://www.google.com/xmpp/protocol/voice/v1"/>
+ </info>
+ <info node="http://pidgin.im/" ver="71LAP/wlWGfun7j+Q4FCSSuAhQw=" ext=""/>
+ <info node="http://pidgin.im/" ver="71LAP/wlWGfun7j+Q4FCSSuAhQw=" ext="71LAP/wlWGfun7j+Q4FCSSuAhQw=">
+  <identity category="client" type="pc" name="Pidgin"/>
+  <feature node="jabber:iq:last"/>
+  <feature node="jabber:iq:oob"/>
+  <feature node="urn:xmpp:time"/>
+  <feature node="jabber:iq:version"/>
+  <feature node="jabber:x:conference"/>
+  <feature node="http://jabber.org/protocol/bytestreams"/>
+  <feature node="http://jabber.org/protocol/caps"/>
+  <feature node="http://jabber.org/protocol/chatstates"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+  <feature node="http://jabber.org/protocol/muc"/>
+  <feature node="http://jabber.org/protocol/muc#user"/>
+  <feature node="http://jabber.org/protocol/si"/>
+  <feature node="http://jabber.org/protocol/si/profile/file-transfer"/>
+  <feature node="http://jabber.org/protocol/xhtml-im"/>
+  <feature node="urn:xmpp:ping"/>
+  <feature node="urn:xmpp:attention:0"/>
+  <feature node="urn:xmpp:bob"/>
+  <feature node="urn:xmpp:jingle:1"/>
+  <feature node="urn:xmpp:avatar:metadata+notify"/>
+  <feature node="http://jabber.org/protocol/mood+notify"/>
+  <feature node="http://jabber.org/protocol/tune+notify"/>
+  <feature node="http://jabber.org/protocol/nick+notify"/>
+  <feature node="http://jabber.org/protocol/ibb"/>
+ </info>
+ <info node="http://pidgin.im/" ver="AcN1/PEN8nq7AHD+9jpxMV4U6YM=" ext="AcN1/PEN8nq7AHD+9jpxMV4U6YM=">
+  <identity category="client" type="pc" name="Pidgin"/>
+  <feature node="jabber:iq:last"/>
+  <feature node="jabber:iq:oob"/>
+  <feature node="urn:xmpp:time"/>
+  <feature node="jabber:iq:version"/>
+  <feature node="jabber:x:conference"/>
+  <feature node="http://jabber.org/protocol/bytestreams"/>
+  <feature node="http://jabber.org/protocol/caps"/>
+  <feature node="http://jabber.org/protocol/chatstates"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+  <feature node="http://jabber.org/protocol/muc"/>
+  <feature node="http://jabber.org/protocol/muc#user"/>
+  <feature node="http://jabber.org/protocol/si"/>
+  <feature node="http://jabber.org/protocol/si/profile/file-transfer"/>
+  <feature node="http://jabber.org/protocol/xhtml-im"/>
+  <feature node="urn:xmpp:ping"/>
+  <feature node="urn:xmpp:attention:0"/>
+  <feature node="urn:xmpp:bob"/>
+  <feature node="urn:xmpp:jingle:1"/>
+  <feature node="http://www.google.com/xmpp/protocol/session"/>
+  <feature node="http://www.google.com/xmpp/protocol/voice/v1"/>
+  <feature node="http://www.google.com/xmpp/protocol/video/v1"/>
+  <feature node="http://www.google.com/xmpp/protocol/camera/v1"/>
+  <feature node="urn:xmpp:jingle:apps:rtp:1"/>
+  <feature node="urn:xmpp:jingle:apps:rtp:audio"/>
+  <feature node="urn:xmpp:jingle:apps:rtp:video"/>
+  <feature node="urn:xmpp:jingle:transports:raw-udp:1"/>
+  <feature node="urn:xmpp:jingle:transports:ice-udp:1"/>
+  <feature node="urn:xmpp:avatar:metadata"/>
+  <feature node="urn:xmpp:avatar:data"/>
+  <feature node="urn:xmpp:avatar:metadata+notify"/>
+  <feature node="http://jabber.org/protocol/mood"/>
+  <feature node="http://jabber.org/protocol/mood+notify"/>
+  <feature node="http://jabber.org/protocol/tune"/>
+  <feature node="http://jabber.org/protocol/tune+notify"/>
+  <feature node="http://jabber.org/protocol/nick"/>
+  <feature node="http://jabber.org/protocol/nick+notify"/>
+  <feature node="http://jabber.org/protocol/ibb"/>
+ </info>
+ <info node="http://pidgin.im/" ver="AcN1/PEN8nq7AHD+9jpxMV4U6YM=" ext="camera-v1">
+  <feature node="http://www.google.com/xmpp/protocol/camera/v1"/>
+ </info>
+ <info node="http://pidgin.im/" ver="AcN1/PEN8nq7AHD+9jpxMV4U6YM=" ext="video-v1">
+  <feature node="http://www.google.com/xmpp/protocol/video/v1"/>
+ </info>
+ <info node="http://pidgin.im/" ver="AcN1/PEN8nq7AHD+9jpxMV4U6YM=" ext="voice-v1">
+  <feature node="http://www.google.com/xmpp/protocol/voice/v1"/>
+ </info>
+ <info node="http://www.android.com/gtalk/client/caps" ver="1.1" ext="1.1">
+  <identity category="account" type="registered" name="Google Talk User Account"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+ </info>
+ <info node="http://www.android.com/gtalk/client/caps" ver="1.1" ext="pmuc-v1">
+  <identity category="account" type="registered" name="Google Talk User Account"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+ </info>
+ <info node="http://www.android.com/gtalk/client/caps" ver="1.1" ext="video-v1">
+  <identity category="account" type="registered" name="Google Talk User Account"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+ </info>
+ <info node="http://www.android.com/gtalk/client/caps" ver="1.1" ext="voice-v1">
+  <identity category="account" type="registered" name="Google Talk User Account"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://jabber.org/protocol/disco#items"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="800">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="http://jabber.org/protocol/xhtml-im"/>
+  <feature node="vcard-temp:x:update"/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="jabber:iq:version"/>
+  <feature node="http://jabber.org/protocol/si"/>
+  <feature node="http://jabber.org/protocol/sipub"/>
+  <feature node="http://jabber.org/protocol/bytestreams"/>
+  <feature node="apple:profile:efh-transfer"/>
+  <feature node="http://jabber.org/protocol/si/profile/file-transfer"/>
+  <feature node="apple:profile:transfer-extensions:rsrcfork"/>
+  <feature node="http://www.apple.com/xmpp/message-attachments"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="audio">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:audio"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="auxvideo">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:auxvideo"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="avavail">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:available"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="avcap">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:capable"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="ice">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:ice"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="maudio">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:multiaudio"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="mvideo">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:multivideo"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="rdclient">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:rd:client"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="rdmuxing">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:rd:muxing"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="rdserver">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:rd:server"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="recauth">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:recauth"/>
+ </info>
+ <info node="http://www.apple.com/ichat/caps" ver="800" ext="video">
+  <identity category="client" type="pc" name="imagent"/>
+  <feature node="apple:iq:vc:video"/>
+ </info>
+ <info node="http://www.google.com/xmpp/client/caps" ver="1.0.0.104" ext="1.0.0.104">
+  <identity category="client" type="pc" name=""/>
+  <feature node="http://jabber.org/protocol/disco#info"/>
+  <feature node="http://www.google.com/xmpp/protocol/session"/>
+ </info>
+ <info node="http://www.google.com/xmpp/client/caps" ver="1.0.0.104" ext="share-v1">
+  <feature node="http://www.google.com/xmpp/protocol/share/v1"/>
+ </info>
+ <info node="http://www.google.com/xmpp/client/caps" ver="1.0.0.104" ext="voice-v1">
+  <feature node="http://www.google.com/xmpp/protocol/voice/v1"/>
+ </info>
+</capabilities>

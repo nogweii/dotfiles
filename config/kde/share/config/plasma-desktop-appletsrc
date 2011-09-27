@@ -109,7 +109,7 @@ activity=New Activity
 activityId=91391bde-4ba1-43ef-8d63-24c0bdc47d4a
 desktop=-1
 formfactor=0
-geometry=1926,1236,800,600
+geometry=1926,1236,1920,1080
 immutability=1
 lastDesktop=-1
 lastScreen=0
@@ -119,6 +119,14 @@ screen=-1
 wallpaperplugin=image
 wallpaperpluginmode=SingleImage
 zvalue=0
+
+[Containments][56][Wallpaper][image]
+slideTimer=10
+slidepaths=/usr/share/wallpapers/
+userswallpapers=
+wallpaper=
+wallpapercolor=0,0,0
+wallpaperposition=0
 
 [Containments][58]
 activity=
@@ -156,7 +164,7 @@ zvalue=0
 Order=1
 
 [Containments][58][Applets][62]
-geometry=98,3,1507,32
+geometry=98,3,1488,32
 immutability=1
 plugin=tasks
 zvalue=0
@@ -169,7 +177,7 @@ filemanager=preferred://filemanager, , ,\s
 Order=2
 
 [Containments][58][Applets][63]
-geometry=1609,3,219,32
+geometry=1590,3,238,32
 immutability=1
 plugin=systemtray
 zvalue=0
@@ -188,7 +196,7 @@ DialogHeight=352
 DialogWidth=276
 
 [Containments][58][Applets][63][Configuration][Applets][66]
-geometry=5.74769453136233,4,24,24
+geometry=0,4,24,24
 immutability=1
 plugin=notifications
 zvalue=0
@@ -213,7 +221,7 @@ DialogHeight=148
 DialogWidth=368
 
 [Containments][58][Applets][63][Configuration][Applets][67]
-geometry=154.243110216314,4,24,24
+geometry=165,4,24,24
 immutability=1
 plugin=battery
 zvalue=0
@@ -225,7 +233,7 @@ Systemtray-Klipper-63=Ctrl+Alt+V
 Order=3
 
 [Containments][58][Applets][63][PopupApplet]
-DialogHeight=186
+DialogHeight=200
 DialogWidth=218
 
 [Containments][58][Applets][64]

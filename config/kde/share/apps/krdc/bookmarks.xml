@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel>
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv" dbusName="krdc">
+ <folder>
+  <title>History</title>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <krdc-history>historyfolder</krdc-history>
+   </metadata>
+  </info>
+  <bookmark href="rdp://conint.uat.edu">
+   <title>rdp://conint.uat.edu</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name="krdc"/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1315855032</time_added>
+     <time_visited>1315860150</time_visited>
+     <visit_count>10</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+ </folder>
+</xbel>

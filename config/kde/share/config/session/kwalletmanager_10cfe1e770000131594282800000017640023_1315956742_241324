@@ -1,9 +1,0 @@
-[Number]
-NumberOfWindows=1
-
-[WindowProperties1]
-ClassName=KWalletManager
-Height 1080=218
-ObjectName=MainWindow#1
-State=AAAA/wAAAAD9AAAAAAAAAUAAAADIAAAABAAAAAQAAAAIAAAACPwAAAAA
-Width 1920=320
