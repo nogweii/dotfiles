@@ -28,7 +28,7 @@ volumeLCapture=61
 volumeRCapture=61
 
 [MixerALSA::HDA_Intel:1.DevMaster:0]
-is_muted=true
+is_muted=false
 is_recsrc=false
 name=Master
 volumeL=74
