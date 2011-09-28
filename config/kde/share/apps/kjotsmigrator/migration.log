@@ -1,8 +1,0 @@
-[Wed Sep 21 17:04:45 2011] Info   : Starting migration...
-[Wed Sep 21 17:04:45 2011] Info   : Beginning KJots migration...
-[Wed Sep 21 17:04:45 2011] Info   : Creating instance of type akonadi_akonotes_resource
-[Wed Sep 21 17:04:46 2011] Info   : Created local notes resource.
-[Wed Sep 21 17:04:46 2011] Info   : Instance "akonadi_akonotes_resource_1" synchronized
-[Wed Sep 21 17:04:46 2011] Info   : New resource is rooted at Collection(76)
-[Wed Sep 21 17:04:46 2011] Info   : KJots notes migration finished
-[Wed Sep 21 17:04:46 2011] Info   : Migration finished.
