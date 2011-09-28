@@ -164,7 +164,7 @@ zvalue=0
 Order=1
 
 [Containments][58][Applets][62]
-geometry=98,3,1488,32
+geometry=98,3,1514,32
 immutability=1
 plugin=tasks
 zvalue=0
@@ -177,7 +177,7 @@ filemanager=preferred://filemanager, , ,\s
 Order=2
 
 [Containments][58][Applets][63]
-geometry=1590,3,238,32
+geometry=1616,3,212,32
 immutability=1
 plugin=systemtray
 zvalue=0
@@ -217,11 +217,11 @@ sourceAppletId=66
 sourceAppletPluginName=notifications
 
 [Containments][58][Applets][63][Configuration][Applets][66][PopupApplet]
-DialogHeight=148
-DialogWidth=368
+DialogHeight=374
+DialogWidth=460
 
 [Containments][58][Applets][63][Configuration][Applets][67]
-geometry=165,4,24,24
+geometry=139,4,24,24
 immutability=1
 plugin=battery
 zvalue=0
