@@ -11,7 +11,7 @@ Hibernate=Hibernate,Hibernate,Hibernate
 Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase Screen Brightness
 PowerOff=Power Off,Power Off,
 Sleep=Sleep,Sleep,Sleep
-_k_friendly_name=KDE Daemon
+_k_friendly_name=kded
 display=Display,Display,Switch Display
 
 [khotkeys]
@@ -20,7 +20,7 @@ _k_friendly_name=khotkeys
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=Search,none,Search
 
 [klipper]
-_k_friendly_name=Klipper
+_k_friendly_name=klipper
 clipboard_action=none,Ctrl+Alt+X,Enable Clipboard Actions
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 
@@ -40,13 +40,10 @@ Toggle mute  - Capture, HDA Intel=none,none,Toggle Mute - Capture\\, HDA Intel
 Toggle mute  - Digital, HDA Intel=none,none,Toggle Mute - Digital\\, HDA Intel
 Toggle mute  - Master, HDA Intel=none,none,Toggle Mute - Master\\, HDA Intel
 Toggle mute  - PCM, HDA Intel=none,none,Toggle Mute - PCM\\, HDA Intel
-_k_friendly_name=KMix
+_k_friendly_name=kmix
 decrease_volume=Volume Down,Volume Down,Decrease Volume
 increase_volume=Volume Up,Volume Up,Increase Volume
 mute=Volume Mute,Volume Mute,Mute
-
-[knotes]
-_k_friendly_name=KNotes
 
 [kopete]
 ReadMessage=Ctrl+Shift+I,Ctrl+Shift+I,Read Message
@@ -82,7 +79,7 @@ Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Halt Witho
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
 Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Log Out Without Confirmation
 Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Reboot Without Confirmation
-_k_friendly_name=The KDE Session Manager
+_k_friendly_name=ksmserver
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
@@ -232,7 +229,7 @@ Window to Screen 4=none,none,Window to Screen 4
 Window to Screen 5=none,none,Window to Screen 5
 Window to Screen 6=none,none,Window to Screen 6
 Window to Screen 7=none,none,Window to Screen 7
-_k_friendly_name=KWin
+_k_friendly_name=kwin
 view_actual_size=Meta+0,Meta+0,Actual Size
 view_zoom_in=Meta+=,Meta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
@@ -243,7 +240,7 @@ Previous Activity=Meta+Shift+Tab,Meta+Shift+Tab,Previous Activity
 Show Dashboard=Ctrl+F12,Ctrl+F12,Show Dashboard
 Systemtray-Klipper-63=,Ctrl+Alt+V,
 Systemtray-Klipper-7=Ctrl+Alt+V,Ctrl+Alt+V,
-_k_friendly_name=Plasma Desktop Shell
+_k_friendly_name=plasma-desktop
 manage activities=Meta+Q,Meta+Q,Activities...
 
 [spokify]
@@ -255,4 +252,4 @@ previous-track=Media Previous,Media Previous,Previous
 [wacomtablet]
 Toggle stylus mode=Meta+Ctrl+S,Meta+Ctrl+S,Toggle the Stylus Tool Relative/Absolute
 Toggle touch tool=Meta+Ctrl+T,Meta+Ctrl+T,Enable/Disable the Touch Tool
-_k_friendly_name=Graphic Tablet Configuration daemon
+_k_friendly_name=wacomtablet

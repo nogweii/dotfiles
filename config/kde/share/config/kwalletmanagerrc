@@ -4,6 +4,9 @@ State=AAAA/wAAAAD9AAAAAAAAAUAAAADIAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1920=320
 
+[Notification Messages]
+systemtrayquitKDE Wallet Manager=false
+
 [WalletEditor]
 Height 1080=460
 SplitterSize=421,488

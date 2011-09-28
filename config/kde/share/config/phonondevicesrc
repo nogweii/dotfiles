@@ -44,7 +44,7 @@ deleted=false
 deviceNumber=-1
 hotpluggable=true
 iconName=camera-web
-index=-29
+index=-31
 initialPreference=50
 isAdvanced=false
 
@@ -99,7 +99,7 @@ initialPreference=30
 isAdvanced=false
 
 [Globals]
-nextIndex=30
+nextIndex=32
 
 [VideoDevice_/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:1a.0/usb1/1-1/1-1.6/1-1.6:1.0/video4linux/video0]
 cardName=Integrated Camera
