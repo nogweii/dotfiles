@@ -40,8 +40,15 @@ URxvt.underlineURLs: true
 
 URxvt.termName: rxvt-256color
 
-!dzen.background: #000
-!dzen.foreground: #ddd
-!dzen.font: xft:Liberation Mono:size=7
+dzen.background: #000
+dzen.foreground: #ddd
+dzen.font: xft:Liberation Mono:size=7
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: full
+! hintslight, hintsmedium, hintsfull
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
 
 ! vim: set syn=xdefaults:
