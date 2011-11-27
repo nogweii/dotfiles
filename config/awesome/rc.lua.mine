@@ -1,3 +1,4 @@
+-- {{{ Requires
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
@@ -6,20 +7,21 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
-require("extra.eminent")
-require("extra.freedesktop.utils")
-require("extra.freedesktop.menu")
-require("extra.cal")
+-- DBus handling
+require("awful.dbus")
+local dbus = dbus
+-- Extras
+-- require("utils.rodentbane") -- Control cursor with keyboard
+-- require("utils.eminent")    -- Magic dynamic workspaces.
+-- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init(awful.util.getdir("config") .. "/hobbin/theme.lua")
+beautiful.init(table.concat({awful.util.getdir("config"), "awesome",
+                    "default", "theme.lua"}, "/"))
 
 -- This is used later as the default terminal and editor to run.
-freedesktop.utils.terminal = "urxvt"
-freedesktop.utils.icon_theme = {"oxygen", "nuvola"}
 terminal = "urxvt"
-local terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -30,10 +32,17 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
+-- applications menu
+require('freedesktop.utils')
+-- What to launch terminal applications with (just use awesome's config)
+freedesktop.utils.terminal = terminal
+ -- look inside /usr/share/icons/, default: nil (don't use icon theme)
+freedesktop.utils.icon_theme = 'oxygen'
+require('freedesktop.menu')
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.fair.horizontal,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -54,7 +63,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.fair.horizontal)
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
 
@@ -64,7 +73,7 @@ menuitems = freedesktop.menu.new()
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome",
-     freedesktop.utils.lookup_icon({ icon = 'help' })
+    freedesktop.utils.lookup_icon({ icon = 'help' })
    },
    { "edit config", editor_cmd.." "..awful.util.getdir("config").."/rc.lua",
      freedesktop.utils.lookup_icon({ icon = 'package_settings' })
@@ -88,12 +97,35 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
-cal.register(mytextclock, "<span color='green'>%s</span>")
--- Run an update *now*, so the calendar is ready immediately.
-mytextclock:emit_signal("mouse::enter")
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+-- Wicd Dbus Client {{{
+wicd_client = widget({type = "textbox", name = "wicd_client"})
+wicd_client.text = "LOL"
+
+-- Tell awesome what to look for in the mess of dbus stuffs
+--dbus.request_name("system", "org.wicd.daemon")
+dbus.add_match("system", "interface='org.wicd.daemon,member=StatusChanged'")
+-- What function to execute on the matches
+dbus.add_signal("org.wicd.daemon", function(...)
+    local data = {...}
+    -- Grab the status code
+    local status_code = data[0]
+    if status_code == 0 then
+        wicd_client.text = "Disconnected!"
+    elseif status_code == 1 then
+        wicd_client.text = "Connecting..."
+    elseif status_code == 2 then
+        wicd_client.text = "Connected to wireless"
+    elseif status_code == 3 then
+        wicd_client.text = "Connected to wired"
+    elseif status_code == 4 then
+        wicd_client.text = "Suspended."
+    end
+end)
+-- }}}
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -108,6 +140,7 @@ mytaglist.buttons = awful.util.table.join(
                     awful.button({ }, 4, awful.tag.viewnext),
                     awful.button({ }, 5, awful.tag.viewprev)
                     )
+
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
@@ -140,30 +173,17 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
--- {{{ Battery widget
-require("extra.battery")
-
-batterywidget = widget({ type = "textbox" })
-bat_clo = battery.batclosure("BAT0")
-batterywidget.text = bat_clo()
--- }}}
-
--- {{{ Volume Widget
-require("extra.volume")
-volume.update()
--- }}}
-
--- {{{ Update timer
-widget_update_timer = timer({ timeout = 20 })
-widget_update_timer:add_signal("timeout", function()
-    batterywidget.text = bat_clo()
-    volume.update()
-end)
-widget_update_timer:start()
--- }}}
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
+    -- Create an imagebox widget which will contains an icon indicating which layout we're using.
+    -- We need one layoutbox per screen.
+    mylayoutbox[s] = awful.widget.layoutbox(s)
+    mylayoutbox[s]:buttons(awful.util.table.join(
+                           awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
+                           awful.button({ }, 3, function () awful.layout.inc(layouts, -1) end),
+                           awful.button({ }, 4, function () awful.layout.inc(layouts, 1) end),
+                           awful.button({ }, 5, function () awful.layout.inc(layouts, -1) end)))
     -- Create a taglist widget
     mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, mytaglist.buttons)
 
@@ -182,16 +202,17 @@ for s = 1, screen.count() do
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        volume.widget,
-        batterywidget,
+        mylayoutbox[s],
+        s == 1 and wicd_client or nil,
         mytextclock,
-        mysystray or nil,
+        s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end
 -- }}}
 
+-- {{{ Bindings
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
     awful.button({ }, 3, function () mymainmenu:toggle() end),
@@ -201,6 +222,7 @@ root.buttons(awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
+-- {{{ Global keys
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -243,8 +265,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-    -- awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-    -- awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -257,11 +279,11 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end),
-
-    awful.key({ modkey, "Control" }, "x",      function () awful.util.spawn("xscreensaver-command -lock") end)
+              end)
 )
+-- }}}
 
+-- {{{ Client Keys
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
@@ -282,7 +304,9 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end)
 )
+-- }}}
 
+-- {{{ Tag jumps
 -- Compute the maximum number of digit we need, limited to 9
 keynumber = 0
 for s = 1, screen.count() do
@@ -321,6 +345,7 @@ for i = 1, keynumber do
                       end
                   end))
 end
+-- }}}
 
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
@@ -329,6 +354,7 @@ clientbuttons = awful.util.table.join(
 
 -- Set keys
 root.keys(globalkeys)
+-- }}}
 -- }}}
 
 -- {{{ Rules
@@ -339,13 +365,8 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     buttons = clientbuttons },
-      callback = function(c)
-          if not c.icon then
-              -- Set an icon if the application doesn't have one already.
-              c.icon = image(freedesktop.utils.lookup_icon({ icon = 'window' }))
-          end
-      end },
+                     buttons = clientbuttons,
+                     size_hints_honor = true } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
@@ -353,8 +374,8 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][2] } },
 }
 -- }}}
 
@@ -385,15 +406,7 @@ client.add_signal("manage", function (c, startup)
     end
 end)
 
-client.add_signal("focus", function(c)
-    c.border_color = beautiful.border_focus
-    c.opacity = 1
-end)
-client.add_signal("unfocus", function(c)
-    c.border_color = beautiful.border_normal
-    c.opacity = 0.7
-end)
-
-
+client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 -- vim:foldmethod=marker:
