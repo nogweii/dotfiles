@@ -1,5 +1,0 @@
-[TimeZones]
-LocalZone=America/Phoenix
-ZoneinfoDir=/usr/share/zoneinfo
-Zonetab=/usr/share/zoneinfo/zone.tab
-ZonetabCache=
