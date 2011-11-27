@@ -1,23 +1,24 @@
 !--------------------------------------
 !                urxvt
 !--------------------------------------
-URxvt*font:               xft:Droid Sans Mono:pixelsize=14
-URxvt*boldFont:           xft:Droid Sans Mono:bold:pixelsize=14
-URxvt*italicFont:         xft:Droid Sans Mono:italic:pixelsize=14
-URxvt*boldItalicFont:     xft:Droid Sans Mono:italic:bold:pixelsize=14
-URxvt*scrollBar:          false
+! Font: 16 point Ubuntu Mono
+URxvt.font:               xft:Ubuntu Mono:size=16
+URxvt.boldFont:           xft:Ubuntu Mono:bold:size=16
+URxvt.italicFont:         xft:Ubuntu Mono:italic:size=16
+URxvt.boldItalicFont:     xft:Ubuntu Mono:italic:bold:size=16
+! Hide the scroll bar
+URxvt.scrollBar:          false
+! What does urxvt use to launch applications?
 URxvt.urlLauncher:        xdg-open
+! This matches urls. Not perfect, but good enough.
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt.foreground:         grey80
-URxvt.colorBD:            white
+! Make the text just off-white so not as to be a stark contrast, and therefore
+! hurt just a little, when on top of the black, or shifting away from black.
+URxvt.foreground:         #babdb6
+Urxvt.background:         #111111
+! Save only a few thousand lines, but not too much to be a memory hog. (4K
+! sounds about right)
 URxvt.saveLines:          4096
-!! Black background: 32 bit (24 bits + 8 for alpha), partially transparent
-URxvt*background:         rgb:0000/0000/0000
-!URxvt*depth:              32
-!! Pseudo-transparent
-!Urxvt*background:         black
-!URxvt*transparent:        true
-!URxvt*shading:            50
 !! Only automatically scroll when I type a key, not when something is outputted
 URxvt.scrollTtyOutput:    false
 URxvt.scrollWithBuffer:   false
@@ -25,30 +26,89 @@ URxvt.scrollTtyKeypress:  true
 ! Green cursor, with black highlighted text
 URxvt.cursorColor:        green
 URxvt.cursorColor2:       black
-
-URxvt*borderless:         1
+! Disable urxvt drawing a border (tiling WMs do that for us)
+URxvt.borderless:         1
 !URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
-URxvt.underlineURLs: true
-!URxvt.perl-lib: /home/colin/.local/data/urxvt/
-!URxvt.perl-ext-common: clipboard,url-select,keyboard-select
-!URxvt.keysym.M-C-c: perl:clipboard:copy
-!URxvt.keysym.M-C-v: perl:clipboard:paste
-!URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
-!URxvt.keysym.M-C-u: perl:url-select:select_next
-!URxvt.keysym.M-C-y: perl:keyboard-select:activate
-!URxvt.keysym:M-C-s: perl:keyboard-select:search
+URxvt.underlineURLs: false
+
+URxvt.perl-lib: /home/colin/.local/share/urxvt/
+URxvt.perl-ext: default,matcher,font-size,clipboard,url-select,keyboard-select
+URxvt.keysym.M-C-c: perl:clipboard:copy
+URxvt.keysym.M-C-v: perl:clipboard:paste
+URxvt.keysym.M-C-b: perl:clipboard:paste_escaped
+URxvt.keysym.M-C-u: perl:url-select:select_next
+URxvt.keysym.M-C-y: perl:keyboard-select:activate
+URxvt.keysym:M-C-s: perl:keyboard-select:search
+URxvt.keysym.Mod4-plus: perl:font:increase
+URxvt.keysym.Mod4-minus: perl:font:decrease
 
 URxvt.termName: rxvt-256color
+URxvt.skipBuiltinGlyphs: true
+
+! Use the nuvola terminal icon for urxvt
+URxvt.iconFile: /usr/share/icons/nuvola/32x32/apps/terminal.png
 
 dzen.background: #000
 dzen.foreground: #ddd
 dzen.font: xft:Liberation Mono:size=7
 
+!--------------------------------------
+!          Xft Configuration
+!--------------------------------------
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: full
 ! hintslight, hintsmedium, hintsfull
 Xft.hintstyle: hintfull
 Xft.rgba: rgb
+
+!--------------------------------------
+!         Tango-esque theme
+!--------------------------------------
+*background: #111111
+*foreground: #babdb6
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMangenta + Mangenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff
+
+! 3 minutes before the screen locks
+Xautolock.time: 3
+Xautolock.locker: slock
+Xautolock.nowlocker: slock
+!Xautolock.killtime: 20 minutes
+!Xautolock.killer: none
+!Xautolock.notify: do not notify
+!Xautolock.notifier: none
+!Xautolock.bell: 40%
+! Move the mouse into the lower left to activate the locker, lower right to
+! prevent it from ever locking.
+Xautolock.corners: 00+-
+! Activate the corner after 3 seconds
+Xautolock.cornerdelay: 3
+! Wait 8 seconds before activating the corner again
+Xautolock.cornerredelay: 8
+! How far away from the corner can I go? (pixels)
+Xautolock.cornersize: 5
 
 ! vim: set syn=xdefaults:
