@@ -178,6 +178,7 @@ settings = {
     user_name = "colin";
     nick = "evaryont";
     cmdchars = "/\\";
+    timestamp_format = "%H:%M";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = {
@@ -219,6 +220,7 @@ hilights = (
 ignores = (
   { level = "JOINS PARTS QUITS MODES NICKS"; },
   { mask = "MODES"; level = "ALL"; pattern = "+o"; exception = "yes"; },
-  { mask = "MODES"; level = "ALL"; pattern = "-o"; exception = "yes"; }
+  { mask = "MODES"; level = "ALL"; pattern = "-o"; exception = "yes"; },
+  { mask = "DaemonFC"; level = "ALL"; }
 );
 logs = { };
