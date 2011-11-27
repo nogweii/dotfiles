@@ -1,6 +1,0 @@
-[Templates #IDENTITY_1236159683]
-QuoteString=>\s
-TemplateForward=%REM="Default forward template"%-\n\n----------  Forwarded Message  ----------\n\nSubject: %OFULLSUBJECT\nDate: %ODATE, %OTIMELONG\nFrom: %OFROMADDR\n%OADDRESSEESADDR\n\n%TEXT\n-----------------------------------------
-TemplateNewMessage=%REM="Default new message template"%-\n%BLANK
-TemplateReply=%REM="Default reply template"%-\nOn %ODATE %OTIMELONG you wrote:\n%QUOTE\n%CURSOR
-TemplateReplyAll=%REM="Default reply all template"%-\nOn %ODATE %OTIMELONG %OFROMNAME wrote:\n%QUOTE\n%CURSOR
