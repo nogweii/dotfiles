@@ -3,6 +3,9 @@
 [user]
     name = Colin Shea
     email = colin@evaryont.me
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[apply]
+  whitespace = fix
 [color]
     branch = auto
     diff = auto
@@ -25,20 +28,22 @@
     attributesfile = ~/.local/config/git/attributes
 [branch]
     autosetupmerge = true
+    autosetuprebase = always
 [alias]
     # svn style
     a = add
     br = branch
-    st = status
+    st = status -sb
     co = checkout
     pu = push
     # commit window in vim, along with a 2nd file that shows the diff
-    ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
+    #ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
+    ci = !vim -c "Gcommit"
     # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     graph = log --oneline --graph
     # pretty log
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log --decorate --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     # show all the files that are ignored
     ls-ignored = ls-files --others -i --exclude-standard
     # show the changes that are pulled in (calls `git pull` as well)
@@ -56,20 +61,72 @@
 [web]
     browser = open
 [browser "open"]
-    cmd = $(whence open-browser)
+    cmd = xdg-open
 [push]
     default = current
 [help]
     autocorrect = 1
 [sendemail]
     smtpserver = evaryont.me
-    smtpserverport = 587
+    smtpserverport = 465
     smtpencryption = tls
     smtpuser = colin
 [url "git://anongit.kde.org/"]
     insteadOf = kde:
 [url "ssh://git@git.kde.org/"]
     pushInsteadOf = kde:
+[url "ssh://git@github.com/"]
+    pushInsteadOf = gh:
+    insteadOf = gh:
 [merge "merge-changelog"]
     name = GNU-style ChangeLog merge driver
     driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
+[merge]
+    tool = fugitive
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[mergetool "vimdiff3"]
+    cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[status]
+    submodulesummary = true
+[pack]
+    threads = 0
+[init]
+    templatedir = ~/.local/share/git
+[submodule "doc/wiki"]
+	url = git://github.com/ajaxorg/ace.wiki.git
+[submodule "support/cockpit"]
+	url = git://github.com/ajaxorg/cockpit.git
+[submodule "support/dryice"]
+	url = git://github.com/ajaxorg/dryice.git
+[submodule "support/jsdom"]
+	url = git://github.com/ajaxorg/jsdom.git
+[submodule "support/pilot"]
+	url = git://github.com/ajaxorg/pilot.git
+[submodule "emscripten"]
+	url = git://github.com/max99x/emscripten.git
+[submodule "extern/Javathcript"]
+	url = git://github.com/replit/Javathcript.git
+[submodule "extern/bfjs"]
+	url = git://github.com/replit/bfjs.git
+[submodule "extern/biwascheme"]
+	url = git://github.com/replit/biwascheme.git
+[submodule "extern/emoticoffee"]
+	url = git://github.com/replit/emoticoffee.git
+[submodule "extern/jtalk"]
+	url = git://github.com/replit/jtalk.git
+[submodule "extern/lol-coffee"]
+	url = git://github.com/replit/lol-coffee.git
+[submodule "extern/unlambda-coffee"]
+	url = git://github.com/replit/unlambda-coffee.git
+[submodule "assets/bootstrap"]
+	url = https://github.com/twitter/bootstrap.git
+[submodule "assets/ggs"]
+	url = https://github.com/jonikorpi/Golden-Grid-System.git
+[submodule "assets/vendor/ggs"]
+	url = https://github.com/jonikorpi/Golden-Grid-System.git
+[submodule "assets/vendor/bootstrap"]
+	url = https://github.com/twitter/bootstrap.git
+[svn-remote "svn"]
+	url = http://conint.uat.edu/svn/Fall2011/Phil Hartley/CSC413 FA11267/Students/pythonBee
+	fetch = :refs/remotes/git-svn
