@@ -1,7 +1,0 @@
-[ScreenSaver]
-Enabled=true
-Lock=true
-LockGrace=20000
-PlasmaEnabled=false
-Saver=asciiquarium.desktop
-Timeout=180
