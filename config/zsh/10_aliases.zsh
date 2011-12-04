@@ -119,3 +119,4 @@ alias mutt="mutt -F ${XDG_CONFIG_HOME}/mutt/muttrc"
 # Given a list of DNS servers in /etc/resolv.conf, ping each one.
 alias ping-dns='echo Nameservers: $(grep "nameserver" /etc/resolv.conf | tr -d "namesrv\n"); for dserver in $(grep "nameserver" /etc/resolv.conf | cut -d" " -f2); do echo -n "${dserver} "; ping -q -c4 $dserver | grep "time"; done | column -t)'
 alias xf=extract_archive
+alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
