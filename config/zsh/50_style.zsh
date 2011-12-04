@@ -7,7 +7,8 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/compcache"
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:::::' completer _force_rehash _complete _approximate
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX:t+$#SUFFIX:h)/3 )) )'
+zstyle ':completion:*' accept-exact-dirs 'yes'
 zstyle ':completion:*:descriptions' format "- %d -"
 zstyle ':completion:*:corrections' format "- %d - (errors %e})"
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
