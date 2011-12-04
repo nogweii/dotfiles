@@ -19,7 +19,7 @@ set smartcase                  " Case-sensitive if there any capital letters
 set hidden                     " Allow changing buffers even with modifications
 set spell                      " Enable spell check
 set title                      " Modify the terminal title
-set cursorline                 " Emphasize the current line the cursor is on
+"set cursorline                 " Emphasize the current line the cursor is on
 set laststatus=2               " Always show the status bar
 set ruler                      " Always show the position of the cursor
 set showcmd                    " Show incomplete commands in the status bar
@@ -51,7 +51,7 @@ set complete+=k,kspell         " Scan dictionaries for completion as well
 set completeopt=menuone,longest,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 execute 'set scrolloff='.(&lines-2)
-set list                       " Show certain chars for tabs & trailing chars
+"set list                       " Show certain chars for tabs & trailing chars
 execute 'set listchars=trail:'.nr2char(183)
 " statusline setup
 set statusline=%f "tail of the filename
@@ -104,7 +104,7 @@ noremap  gG G
 onoremap gG G
 map      G <Nop>
 " Set semicolon to map leader, and comma repeats the last f/t/F/T
-nnoremap , ;
+noremap  , ;
 map      ; <Nop>
 let mapleader = ";"
 map      zp 1z=
@@ -303,7 +303,7 @@ function! StatuslineLongLineWarning()
             let b:statusline_long_line_warning = "[>".len(long_line_lens)."]"
             " Only highlight the column if there are any long lines
             if v:version >= 703
-                execute "set colorcolumn=".&tw
+                "execute "set colorcolumn=".&tw
             endif
         else
             let b:statusline_long_line_warning = ""
@@ -423,10 +423,10 @@ endfunction
 
 nmap <silent> ZG :call AckSearch()<CR>
 nmap ZA :A<CR>
-nmap GR :Include<CR>
+nmap <leader>r :Include<CR>
 
 " Return to the previous location after repeating a change
-nmap . .`[
+"nmap . .`[
 " Disable vim-as-man-pager within vim (so :Man works)
 let $MANPAGER = ''
 
@@ -458,3 +458,56 @@ nmap <Plug>SwapItFallbackDecrement <Plug>SpeedDatingDown
 autocmd BufWritePre * :%s/\s\+$//e
 
 au FileType man set nolist
+
+nnoremap zG zug
+nnoremap zW zuw
+
+au FileType sshconfig setl nospell
+
+inoremap <expr> <C-e> pumvisible() ? "\<c-e>" : "\<c-o>A"
+imap     <expr> <C-a> "\<c-o>H"
+
+cnoremap <C-x> <C-r>=<SID>PasteEscaped()<cr>
+function! s:PasteEscaped()
+    echo "\\".getcmdline()."\""
+    let char = getchar()
+    if char == "\<esc>"
+        return ''
+    else
+        let register_content = getreg(nr2char(char))
+        let escaped_register = escape(register_content, '\'.getcmdtype())
+        return subsitute(escaped_register, '\m', '\\n', 'g')
+endfunction
+
+" Open a Quickfix window for the last search.
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+" Ack for the last search.
+nnoremap <silent> <leader>? :execute "Ack! '" .  substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
+
+nnoremap / /\v
+vnoremap / /\v
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+au BufRead,BufNewFile *.wiki           set filetype=mediawiki
+au BufRead,BufNewFile *.wikipedia.org* set filetype=mediawiki
+au BufRead,BufNewFile *.wikibooks.org* set filetype=mediawiki
+au BufRead,BufNewFile *.wikimedia.org* set filetype=mediawiki
+
+" Disable a lot of gui stuffs.
+set guioptions-=T
+set guioptions-=M
+set guioptions-=R
+set guioptions-=m
+set guioptions-=a
+set guioptions-=L
+set guioptions-=r
+
+" Good bye netrw, I hate you.
+let g:loaded_netrwPlugin = 1
+" I use git submodules to manage updates to my vim scripts
+let g:loaded_getscriptPlugin = 1
+" Don't need vimball loaded, either.
+let g:loaded_vimballPlugin = 1
