@@ -1,7 +1,7 @@
 " Vim color file:  devolved.vim
-" Last Change: 21. Aug 2007
+" Last Change: 31. Oct 2011
 " License: public domain
-" Maintainer:: evaryont <colin@evaryont.me>
+" Maintainer: evaryont <colin@evaryont.me>
 "
 " {{{ for a 256 color capable terminal like xterm-256color, ... or gvim as well
 " it only works in such a terminal and when you have:
@@ -48,20 +48,11 @@ endif
 " http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 
 "}}}
-"============================================================
-"             EDIT/ADD your style/colors below
-"------------------------------------------------------------
 
-" Format:   \ ["color-group",
-"                               "term-style",
-"                                       "foreground-color",
-"                                                "background-color",
-"                                                       "gui-style",
-"                                                                   "under-curl-color" ],
-
+" The fill-in-the-blanks for anything else that's missing.
+let s:standardC = ["Normal",        "NONE",       "253",  "233",  "NONE",     "NONE"]
 " Color arrays {{{
 let s:colors256 = [
-                \ ["Normal",        "",           "253",  "",     "",         ""   ],
                 \ ["Cursor",        "",           "255",  "33",   "",         ""   ],
                 \ ["CursorLine",    "underline",   "",    "",     "",         ""   ],
                 \ ["CursorColumn",  "",            "",    "223",  "",         ""   ],
@@ -123,10 +114,6 @@ let s:colorvim7 = [
                 \ ["TabLineSel",    "bold",      "247",  "16",   "",         ""   ],
                 \ ["TabLineFill",   "",          "247",  "16",   "",         ""   ]]
 
-" The ruby specific colors. Don't include the `ruby' prefix, that is automatically prepended
-let s:rubyColors = [
-                \ ["StringDelimiter", "",        "162",  "",    "",          ""]]
-
 let s:otherColors = [
                 \ ["diffRemoved",   "",           "",     "124",     "",         ""   ],
                 \ ["ShowMarksHLl",  "bold",       "18",   "43",      "",         ""   ],
@@ -134,6 +121,7 @@ let s:otherColors = [
                 \ ["ShowMarksHLo",  "bold",       "11",   "3",       "",         ""   ],
                 \ ["ShowMarksHLm",  "bold",       "2",    "20",      "",         ""   ],
                 \ ["cppSTL",        "",           "130",  "",        "",         ""   ],
+                \ ["rubyStringDelimiter", "",        "162",  "",    "",          ""   ],
                 \ ["diffAdded",     "",           "",     "22",      "",         ""   ]]
 " }}}
 
@@ -141,18 +129,6 @@ let s:otherColors = [
 "        * NO NEED * to edit below (unless bugfixing)
 "============================================================
 "
-" {{{ change empty fields to "NONE"
-
-for s:var in [s:colors256, s:colorvim7, s:rubyColors, s:otherColors]
-    for s:col in s:var
-        for i in  [1, 2, 3, 4, 5]
-            if s:col[i] == ""
-                let s:col[i] = "NONE"
-            endif
-        endfor
-    endfor
-endfor
-" }}}
 " {{{ check args helper function
 function! s:checkargs(arg)
     if a:arg+0 == 0 && a:arg != "0"  "its a string
@@ -178,24 +154,6 @@ function! s:guisetcolor(colarg)
 
         exec "hi ".a:colarg[0]." gui=".guival." guifg=".fg." guibg=".bg." guisp=".sp
 endfunction
-" }}}
-" {{{ color setup for terminal
-if ! has("gui_running")
-    for s:col in s:colors256
-        exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
-    endfor
-    if v:version >= 700
-        for s:col in s:colorvim7
-            exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
-        endfor
-    endif
-    for s:col in s:rubyColors
-        exec "hi ruby".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
-    endfor
-    for s:col in s:otherColors
-        exec "hi ".s:col[0]." cterm=".s:col[1]." ctermfg=".s:col[2]." ctermbg=".s:col[3]
-    endfor
-else
 " }}}
     " color-mapping array {{{
     " number of vim colors and #html colors equivalent for gui
@@ -247,16 +205,28 @@ else
                 \ "#808080", "#8a8a8a", "#949494", "#9e9e9e", "#a8a8a8", "#b2b2b2",
                 \ "#bcbcbc", "#c6c6c6", "#d0d0d0", "#dadada", "#e4e4e4", "#eeeeee" ]
     " }}}
-" {{{ color setup for gvim
-    for s:col in s:colors256
-        call s:guisetcolor(s:col)
-    endfor
-    if v:version >= 700
-        for s:col in s:colorvim7
-            call s:guisetcolor(s:col)
+" {{{ color loop
+
+" Step one: Highlight normal mode.
+exec "hi ".s:standardC[0]." cterm=".s:standardC[1]." ctermfg=".s:standardC[2]." ctermbg=".s:standardC[3]
+call s:guisetcolor(s:standardC)
+
+" Step two: Loop through each block of colors...
+for s:colorBlock in [s:colors256, s:colorvim7, s:otherColors]
+    for s:colorRow in s:colorBlock
+        " change empty fields to "NONE", or the normal background/foreground colors.
+        for i in  [1, 2, 3, 4, 5]
+            if s:colorRow[i] == ""
+                " Empty, so pull the value from the Normal highlight.
+                let s:colorRow[i] = s:standardC[i]
+            endif
         endfor
-    endif
-endif
+        " Missing values filled in, do the hilighting.
+        exec "hi ".s:colorRow[0]." cterm=".s:colorRow[1]." ctermfg=".s:colorRow[2]." ctermbg=".s:colorRow[3]
+        " And do it for the GUI, as well.
+        call s:guisetcolor(s:colorRow)
+    endfor
+endfor
 " }}}
 let &cpo = s:save_cpo   " restoring &cpo value
 " vim: set fdm=marker fileformat=unix nospell:
