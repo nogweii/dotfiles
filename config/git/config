@@ -38,7 +38,7 @@
     pu = push
     # commit window in vim, along with a 2nd file that shows the diff
     #ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
-    ci = !vim -c "Gcommit"
+    ci = !vim -f -c \"Gcommit\"
     # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     graph = log --oneline --graph
@@ -93,40 +93,3 @@
     threads = 0
 [init]
     templatedir = ~/.local/share/git
-[submodule "doc/wiki"]
-	url = git://github.com/ajaxorg/ace.wiki.git
-[submodule "support/cockpit"]
-	url = git://github.com/ajaxorg/cockpit.git
-[submodule "support/dryice"]
-	url = git://github.com/ajaxorg/dryice.git
-[submodule "support/jsdom"]
-	url = git://github.com/ajaxorg/jsdom.git
-[submodule "support/pilot"]
-	url = git://github.com/ajaxorg/pilot.git
-[submodule "emscripten"]
-	url = git://github.com/max99x/emscripten.git
-[submodule "extern/Javathcript"]
-	url = git://github.com/replit/Javathcript.git
-[submodule "extern/bfjs"]
-	url = git://github.com/replit/bfjs.git
-[submodule "extern/biwascheme"]
-	url = git://github.com/replit/biwascheme.git
-[submodule "extern/emoticoffee"]
-	url = git://github.com/replit/emoticoffee.git
-[submodule "extern/jtalk"]
-	url = git://github.com/replit/jtalk.git
-[submodule "extern/lol-coffee"]
-	url = git://github.com/replit/lol-coffee.git
-[submodule "extern/unlambda-coffee"]
-	url = git://github.com/replit/unlambda-coffee.git
-[submodule "assets/bootstrap"]
-	url = https://github.com/twitter/bootstrap.git
-[submodule "assets/ggs"]
-	url = https://github.com/jonikorpi/Golden-Grid-System.git
-[submodule "assets/vendor/ggs"]
-	url = https://github.com/jonikorpi/Golden-Grid-System.git
-[submodule "assets/vendor/bootstrap"]
-	url = https://github.com/twitter/bootstrap.git
-[svn-remote "svn"]
-	url = http://conint.uat.edu/svn/Fall2011/Phil Hartley/CSC413 FA11267/Students/pythonBee
-	fetch = :refs/remotes/git-svn
