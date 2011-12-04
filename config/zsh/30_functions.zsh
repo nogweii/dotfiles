@@ -92,7 +92,7 @@ extract_archive () {
     local lower full_path target_dir
     lower=${(L)1} # Used for matching
     full_path=$(readlink -f $1) # The real path, expanded & absolute
-    target_dir=$(echo $1 | sed 's/(\.tar)?\.[^.]*$//') # new directory name
+    target_dir=$(echo $1 | sed 's/(\.tar|\.zip)?\.[^.]*$//') # new directory name
     md $target_dir # mkdir && cd combo
     case "$lower" in
         *.tar.gz) tar xzf "$full_path" ;;
@@ -119,7 +119,6 @@ extract_archive () {
     if [[ ${#current_dirs} = 1 ]]; then
         cd $current_dirs[1]
         ls
-        break
     fi
 }
 
