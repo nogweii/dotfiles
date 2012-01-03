@@ -7,6 +7,10 @@ elif [ -d '/usr/lib/cw' ] ; then
     export PATH="/usr/lib/cw:$PATH"
     export NOCOLOR_PIPE=1
 fi
+# Local cabal install.
+if [ -d "${HOME}/.cabal/bin" ] ; then
+    export PATH="$PATH:${HOME}/.cabal/bin"
+fi
 typeset -U path # Remove duplicate entries
 
 # Personal preferences. XDG uses these, among other applications
