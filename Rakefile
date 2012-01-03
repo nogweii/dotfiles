@@ -46,3 +46,8 @@ task :submodules do
   run 'git submodule foreach git submodule init'
   run 'git submodule foreach git submodule update'
 end
+
+desc "Prepare extra directories"
+task :prepare do
+    mkdir here("vim/tmp")
+end
