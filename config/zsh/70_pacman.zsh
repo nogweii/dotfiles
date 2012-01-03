@@ -2,7 +2,7 @@
 # Pacman
 
 # default, fall-back.
-pacman_program=/usr/bin/pacman
+pacman_program=pacman
 
 if [ -x /usr/bin/clyde ] ; then
     pacman_program=clyde
@@ -29,14 +29,17 @@ pacman-sudo() {
         (-Si | -Sg | -Q* | -T | -*h* | --help)
             $binary "$@"
         ;;
-        (-S* | -R* | -U | *)
+        (-S*)
+            pacman_opts="$pacman_opts --needed"
+        ;& # Fall through
+        (-S* | -R* | -U* | *)
             if [ -x /usr/bin/pacmatic ] ; then
                 # we're doing sudo, so this is when pacmatic behaves
                 binary="pacmatic"
                 /usr/bin/sudo pacman_program=$pacman_program \
-                    $binary --needed "$@" || return $?
+                    $binary $pacman_opts $@ || return $?
             else
-                /usr/bin/sudo $binary --needed "$@" || return $?
+                /usr/bin/sudo $binary $pacman_opts $@ || return $?
             fi
         ;;
     esac
