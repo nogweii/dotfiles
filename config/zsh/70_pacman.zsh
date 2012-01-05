@@ -26,7 +26,7 @@ pacman-sudo() {
             fi
             $binary "$@"
         ;;
-        (-Si | -Sg | -Q* | -T | -*h* | --help)
+        (-Si | -Sg | -Sl | -Q* | -T | -*h* | --help)
             $binary "$@"
         ;;
         (-S*)
