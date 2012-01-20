@@ -4,6 +4,12 @@
 # default, fall-back.
 pacman_program=/usr/bin/pacman
 
+if [[ ! -x $pacman_program ]] ; then
+    # We are running on a not-arch machine, skip setting up pacman.
+    unset pacman_program
+    return
+fi
+
 if [ -x /usr/bin/clyde ] ; then
     pacman_program=clyde
 fi
