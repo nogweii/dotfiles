@@ -7,13 +7,18 @@ elif [ -d '/usr/lib/cw' ] ; then
     export PATH="/usr/lib/cw:$PATH"
     export NOCOLOR_PIPE=1
 fi
+if [ -d "$HOME/.gem/ruby/1.9.1/bin" ]; then
+    export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
+fi
 typeset -U path # Remove duplicate entries
 
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
 export BROWSER="elinks"
 export PAGER="less"
-export MANPAGER="vim.man"
+if [[ ! -z $commands[vim.man] ]]; then
+    export MANPAGER="vim.man"
+fi
 
 # CLI default parameters
 export GREP_DEFAULTS="-RPiI"
@@ -97,6 +102,6 @@ export WINEARCH="win32"
 export WINEPREFIX="${XDG_DATA_HOME}/wine/"
 export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 
-eval `dircolors -b ${XDG_CONFIG_HOME}/dircolors`
+eval `dircolors -b ${dot_path}/config/dircolors`
 export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/config"
