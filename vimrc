@@ -511,3 +511,8 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_getscriptPlugin = 1
 " Don't need vimball loaded, either.
 let g:loaded_vimballPlugin = 1
+
+" Detect gnome-terminal, and if so, force 256-color support
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
