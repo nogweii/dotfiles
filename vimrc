@@ -138,6 +138,11 @@ nmap     <silent> ZW :update<CR>
 map      <F10> :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
      \   . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
      \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+nmap <silent> <leader>cm
+ \ :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
+ \ . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+ \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
+ \ <CR>:execute "highlight " . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")<CR>
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
@@ -511,3 +516,12 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_getscriptPlugin = 1
 " Don't need vimball loaded, either.
 let g:loaded_vimballPlugin = 1
+
+au BufRead ~/.yaourtrc setlocal filetype=sh
+au FileType haskell setl nospell
+autocmd BufWritePre */xmonad.hs setl syntax=haskell
+autocmd FileType help setl nospell
+
+au BufRead,BufNewFile ~/.local/share/zsh/* setlocal filetype=zsh nospell
+au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/robocode/robots/gui/compile.sh | nmap ZM :make %<CR>
+au FileType tagbar setl nospell
