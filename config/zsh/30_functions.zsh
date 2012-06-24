@@ -175,11 +175,11 @@ function errors() {
   regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
 
   # Default case: No parameters passed, so search all of /var/log
-  path="/var/log"
+  log_path="/var/log"
   if [ -n "$1" ] ; then
     # If the parameter is a file, search only that one
     if [ -f "$1" ] ; then
-      path="$1"
+      log_path="$1"
     else
       echo $regexp
       return 0;
@@ -229,3 +229,11 @@ zle -N ranger_open
 bindkey -a "go" ranger_open
 
 dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
+
+df() {
+  if [ $commands[dfc] -a $# -eq 0 ]; then
+    command dfc -a -T -w -W -o -i
+  else
+    command df $@
+  fi
+}
