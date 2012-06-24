@@ -11,6 +11,8 @@ fi
 if [ -d "${HOME}/.cabal/bin" ] ; then
     export PATH="$PATH:${HOME}/.cabal/bin"
 fi
+# Append the gem installation directory, if it exists.
+[ -d ~/.gem/ruby/1.9.1/bin ] && export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 typeset -U path # Remove duplicate entries
 
 # Personal preferences. XDG uses these, among other applications
@@ -20,7 +22,7 @@ export PAGER="less"
 export MANPAGER="vim.man"
 
 # CLI default parameters
-export GREP_DEFAULTS="-RPiI"
+export GREP_DEFAULTS="-E -i -I -n --color=auto"
 export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
@@ -104,3 +106,5 @@ export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 eval `dircolors -b ${XDG_CONFIG_HOME}/dircolors`
 export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/config"
+export INPUTRC="${XDG_CONFIG_HOME}/inputrc"
+export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
