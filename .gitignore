@@ -15,6 +15,7 @@ vim/undo
 mutt/.index
 vim/Session.vim
 vim/tmp/
+vim/doc/tags
 gitconfig
 config/kde/share/config/session/
 config/kde/share/apps
