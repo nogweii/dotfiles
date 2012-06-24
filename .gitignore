@@ -26,3 +26,6 @@ config/akonadi/*.dat
 config/irssi/away.log
 config/irssi/saved_colors
 share/
+allfileshas.txt
+bigobjects.txt
+bigtosmall.txt

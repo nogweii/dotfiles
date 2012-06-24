@@ -101,7 +101,9 @@ alias portstat="s netstat -tunelp"
 
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
 
-eval `hub alias -s zsh`
+if [[ ! -z $commands[hub] ]]; then
+    eval `hub alias -s zsh`
+fi
 
 alias  m="$EDITOR"
 alias  g="git"
