@@ -19,7 +19,9 @@ typeset -U path # Remove duplicate entries
 export EDITOR="vim"
 export BROWSER="elinks"
 export PAGER="less"
-export MANPAGER="vim.man"
+if [[ ! -z $commands[vim.man] ]]; then
+    export MANPAGER="vim.man"
+fi
 
 # CLI default parameters
 export GREP_DEFAULTS="-E -i -I -n --color=auto"
@@ -108,3 +110,4 @@ export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/config"
 export INPUTRC="${XDG_CONFIG_HOME}/inputrc"
 export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
+export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'

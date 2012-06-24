@@ -2,8 +2,14 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-for zshrc_snipplet in ~/.local/config/zsh/*.zsh ; do
-    source $zshrc_snipplet
+local dot_path="~/.local"
+local host_config=~/.zshrc-$(hostname)
+if [[ -r $host_config ]]; then
+        source $host_config
+fi
+
+for zshrc_snipplet in $dot_path/config/zsh/*.zsh ; do
+        source $zshrc_snipplet
 done
 
 if [ "$COLORTERM" = "gnome-terminal" ]; then

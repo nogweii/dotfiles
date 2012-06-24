@@ -412,9 +412,9 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
-autocmd FileType man set textwidth=0
-autocmd FileType diff set nospell textwidth=0
-autocmd FileType jproperties set nospell
+autocmd FileType man setlocal textwidth=0
+autocmd FileType diff setlocal nospell textwidth=0
+autocmd FileType jproperties setlocal nospell
 
 " Falls back to 'grepprg' when the Ack plugin is not installed
 function! AckSearch()
@@ -437,7 +437,7 @@ let $MANPAGER = ''
 
 autocmd FileType gitcommit normal :DiffGitCached
 au FileType haskell set wildignore+=*.hi " Ignore more haskell compiled files
-au BufReadPost /tmp/mutt-* set nospell nolist ft=mail
+au BufReadPost /tmp/mutt-* setlocal nospell nolist ft=mail
 
 " omnifunc autocompete settings
 autocmd FileType python setl omnifunc=pythoncomplete#Complete
@@ -462,7 +462,7 @@ nmap <Plug>SwapItFallbackDecrement <Plug>SpeedDatingDown
 " Strip trailing whitespace just before saving a file
 autocmd BufWritePre * :%s/\s\+$//e
 
-au FileType man set nolist
+au FileType man setlocal nolist
 
 nnoremap zG zug
 nnoremap zW zuw
@@ -496,10 +496,10 @@ vnoremap / /\v
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-au BufRead,BufNewFile *.wiki           set filetype=mediawiki
-au BufRead,BufNewFile *.wikipedia.org* set filetype=mediawiki
-au BufRead,BufNewFile *.wikibooks.org* set filetype=mediawiki
-au BufRead,BufNewFile *.wikimedia.org* set filetype=mediawiki
+au BufRead,BufNewFile *.wiki           setlocal filetype=mediawiki
+au BufRead,BufNewFile *.wikipedia.org* setlocal filetype=mediawiki
+au BufRead,BufNewFile *.wikibooks.org* setlocal filetype=mediawiki
+au BufRead,BufNewFile *.wikimedia.org* setlocal filetype=mediawiki
 
 " Disable a lot of gui stuffs.
 set guioptions-=T
@@ -525,3 +525,11 @@ autocmd FileType help setl nospell
 au BufRead,BufNewFile ~/.local/share/zsh/* setlocal filetype=zsh nospell
 au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/robocode/robots/gui/compile.sh | nmap ZM :make %<CR>
 au FileType tagbar setl nospell
+
+" Detect gnome-terminal, and if so, force 256-color support
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
+au FileType puppet setlocal nospell

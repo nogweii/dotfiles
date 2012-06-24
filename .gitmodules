@@ -1,6 +1,9 @@
 [submodule "bundle/buffergator"]
 	path = bundle/buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = https://github.com/rodjek/vim-puppet.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
