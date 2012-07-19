@@ -104,5 +104,5 @@ export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 
 eval `dircolors -b ${dot_path}/config/dircolors`
 export SCREENRC="${dot_path}/config/screenrc"
-export GIT_CONFIG="${dot_path}/config/git/config"
+#export GIT_CONFIG="${dot_path}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
