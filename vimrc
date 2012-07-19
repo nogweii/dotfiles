@@ -407,7 +407,7 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 
-autocmd FileType man setlocal textwidth=0
+autocmd FileType man setlocal textwidth=0 nospell
 autocmd FileType diff setlocal nospell textwidth=0
 autocmd FileType jproperties setlocal nospell
 
