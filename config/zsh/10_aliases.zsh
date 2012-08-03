@@ -122,3 +122,7 @@ alias mutt="mutt -F ${XDG_CONFIG_HOME}/mutt/muttrc"
 alias ping-dns='echo Nameservers: $(grep "nameserver" /etc/resolv.conf | tr -d "namesrv\n"); for dserver in $(grep "nameserver" /etc/resolv.conf | cut -d" " -f2); do echo -n "${dserver} "; ping -q -c4 $dserver | grep "time"; done | column -t)'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
+if [ -n "${commands[mvn]}" ]; then
+    alias maven="mvn"
+    alias maven_notest="mvn -Dmaven.test.skip=true"
+fi
