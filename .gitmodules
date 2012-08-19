@@ -1,9 +1,12 @@
-[submodule "bundle/buffergator"]
-	path = bundle/buffergator
-	url = https://github.com/jeetsukumaran/vim-buffergator.git
 [submodule "vim/bundle/puppet"]
 	path = vim/bundle/puppet
-	url = https://github.com/rodjek/vim-puppet.git
+	url = git@github.com:evaryont/vim-puppet.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/signature"]
+	path = vim/bundle/signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
