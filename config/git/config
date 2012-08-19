@@ -36,9 +36,8 @@
     st = status -sb
     co = checkout
     pu = push
-    # commit window in vim, along with a 2nd file that shows the diff
-    #ci = !"git diff --staged > git_diff_staged.diff && GIT_EDITOR=\"vim git_diff_staged.diff -c ':bnext' -c ':1'\" git commit -e ; rm git_diff_staged.diff"
-    ci = !vim -f -c \"Gcommit\"
+    ci = commit -v
+    ca = commit -v --amend
     # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     graph = log --oneline --graph
@@ -53,11 +52,13 @@
     # reset all of HEAD, or just the 1 file (passed as a parameter)
     diff-reset = !"git diff -R $1 | patch -up1 -i-"
     # Initializes & updates all submodules
-    subup = "!git submodule init; git submodule update; git submodule foreach \"git siu\""
+    subup = "!git submodule init; git submodule update; git submodule foreach \"git subup\""
     # Pushs all submodules to origin master
     subpush = submodule foreach "git push origin master"
     # Pull submodules from origin master
     subpull = submodule foreach "git pull origin master"
+    # Push the current branch for review
+    push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
 [web]
     browser = open
 [browser "open"]
@@ -93,3 +94,10 @@
     threads = 0
 [init]
     templatedir = ~/.local/share/git
+[advice]
+    pushNonFastForward = false
+    #statusHints = false
+    commitBeforeMerge = false
+    resolveConflict = false
+    implicitIdentity = false
+    detachedHead = false

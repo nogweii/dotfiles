@@ -105,9 +105,9 @@ export WINEARCH="win32"
 export WINEPREFIX="${XDG_DATA_HOME}/wine/"
 export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 
-eval `dircolors -b ${XDG_CONFIG_HOME}/dircolors`
-export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
-export GIT_CONFIG="${XDG_CONFIG_HOME}/git/config"
-export INPUTRC="${XDG_CONFIG_HOME}/inputrc"
-export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
+eval `dircolors -b ${dot_path}/config/dircolors`
+export SCREENRC="${dot_path}/config/screenrc"
+export INPUTRC="${dot_path}/inputrc"
+export MPLAYER_HOME="${dot_path}/mplayer"
+#export GIT_CONFIG="${dot_path}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
