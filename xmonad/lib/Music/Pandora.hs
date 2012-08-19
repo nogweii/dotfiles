@@ -12,7 +12,7 @@ import System.Environment.XDG.BaseDir
 import System.IO
 -- This is an xmonad module
 import XMonad
-import XMonad.Darcs.GridSelect
+import XMonad.Actions.GridSelect
 
 -- custom navigation map that only lasts for one key press. Vim style is
 -- used. (h/j/k/l)

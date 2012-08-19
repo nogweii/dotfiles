@@ -533,3 +533,5 @@ endif
 
 au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 au FileType puppet setlocal nospell
+
+nmap <silent> ZB :LustyBufferExplorer<CR>

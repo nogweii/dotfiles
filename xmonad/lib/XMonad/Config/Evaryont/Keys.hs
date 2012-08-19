@@ -10,6 +10,7 @@ import Music.Pandora
 import XMonad.Actions.CycleWS
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
+import XMonad.Config.Evaryont.Settings (settings)
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -31,6 +32,7 @@ key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
                , ("M-p",           spawn "/home/colin/bin/dmenu-run") -- application launcher
                , ("M-S-p",         spawn "gnome-panel-screenshot -i") -- take a screenshot
                , ("M-x",           goToSelected defaultGSConfig) -- application launcher
+               , ("M-<Return>",    spawn $ XMonad.terminal settings) -- Launch the default terminal
                ]
 
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)

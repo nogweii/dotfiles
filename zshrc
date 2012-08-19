@@ -2,7 +2,7 @@
 #
 # From the many uploaded zshrc's on the 'net.
 
-local dot_path="~/.local"
+local dot_path="$HOME/.local"
 local host_config=~/.zshrc-$(hostname)
 if [[ -r $host_config ]]; then
         source $host_config

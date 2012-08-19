@@ -3,7 +3,7 @@
 ! natart_pairs: 65:255 36:254 23:253 66:252
 
 keycode 65 = Shift_R
-keycode 255 = Space
+keycode 255 = space
 
 keycode 36 = Hyper_R
 keycode 254 = Return
