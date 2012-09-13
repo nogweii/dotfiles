@@ -59,6 +59,8 @@
     subpull = submodule foreach "git pull origin master"
     # Push the current branch for review
     push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
+    # Same as push-review, but target master rather than the develop branch.
+    push-review-master = !git push origin HEAD:refs/for/master/$(git name-rev --name-only HEAD)
 [web]
     browser = open
 [browser "open"]
