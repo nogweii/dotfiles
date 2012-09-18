@@ -13,10 +13,7 @@ import System.IO
 import XMonad
 import XMonad.Actions.GridSelect
 import XMonad.Util.Run
-
-dbusCommand :: String -> String -> String -> String
-dbusCommand dest interface method = "qdbus " ++ dest ++ " " ++
-                                    interface ++ " " ++ method
+import XMonad.Config.Evaryont.Utils
 
 sessionManager :: String -> String
 sessionManager x = dbusCommand "org.freedesktop.PowerManagement"
