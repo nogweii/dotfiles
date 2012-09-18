@@ -1,0 +1,8 @@
+# Use pulseaudio output all the time
+ao=pulse
+# No remote control set up, so turn off lirc
+nolirc=true
+# much quieter mplayer, by default
+msglevel=all=5:demuxer=2:decaudio=3:decvideo=3:cplayer=3:subreader=3:demux=3:statusline=6:codeccfg=3
+msgcolor=true
+msgmodule=true
