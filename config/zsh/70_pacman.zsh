@@ -4,14 +4,14 @@
 # default, fall-back.
 pacman_program=pacman
 
-if [[ ! -x $pacman_program ]] ; then
+if [[ ! -z "${commands[$pacman_program]}" ]] ; then
     # We are running on a not-arch machine, skip setting up pacman.
     unset pacman_program
     return
 fi
 
-if [ -x /usr/bin/clyde ] ; then
-    pacman_program=clyde
+if [ -x /usr/bin/yaourt ] ; then
+    pacman_program=yaourt
 fi
 
 export pacman_program
@@ -26,7 +26,7 @@ pacman-sudo() {
     binary=$pacman_program
     case $1 in
         (-Ss) # getting pretty colors regardless if clyde has been installed
-            if [ "$binary" != "clyde" -a -x /usr/bin/pacsearch ] ; then
+            if [ "$binary" != "yaourt" -a -x /usr/bin/pacsearch ] ; then
                 shift ; # pop the `-Ss`
                 binary="pacsearch"
             fi
@@ -54,4 +54,4 @@ pacman-sudo() {
 compdef pacman-sudo=$pacman_program
 compdef pacman=$pacman_program
 alias pacman="pacman-sudo"
-alias clyde="pacman-sudo"
+alias yaourt="pacman-sudo"
