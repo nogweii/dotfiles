@@ -180,13 +180,12 @@ function errors() {
     # If the parameter is a file, search only that one
     if [ -f "$1" ] ; then
       log_path="$1"
+      smart_sudo find $log_path -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
     else
       echo $regexp
       return 0;
     fi
   fi
-
-  s find $path -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
 }
 
 function cawk {
