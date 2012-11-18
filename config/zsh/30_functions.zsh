@@ -230,9 +230,14 @@ bindkey -a "go" ranger_open
 dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
 
 df() {
-  if [ $commands[dfc] -a $# -eq 0 ]; then
-    command dfc -a -T -w -W -o -i
+  # Is dfc installed & did I not pass any arguments to df?
+  if [ -n "${commands[dfc]}" -a $# -eq 0 ]; then
+    # Add 64 so that sed won't delete the ANSI color codes. Why 64? Just guessed
+    # 50-60, then kept incrementing until the lines got too long. 64 works
+    # perfectly.
+    command dfc -a -T -w -W -o -i -f -c always | sed "s/^\(.\{,$(($COLUMNS+64))\}\).*/\\1/"
   else
+    # Just run df like normal, passing along any parameters
     command df $@
   fi
 }
