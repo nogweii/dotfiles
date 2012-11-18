@@ -1,22 +1,26 @@
 import XMonad
 import XMonad.Util.EZConfig
-import DBus.Client.Simple
+--import DBus.Client.Simple
 import XMonad.Hooks.DynamicLog
-import qualified System.Taffybar.XMonadLog as TaffyLog
+--import qualified System.Taffybar.XMonadLog as TaffyLog
 
 -- from ~/.xmonad/lib/
-import Music.Pandora
-import XMonad.Config.Evaryont.Keys
 -- This does a lot of the real connecting
-import XMonad.Config.Evaryont.Settings
+import XMonad.Config.Evaryont.Config
+-- Just need to pull the coulbe of static string entries to pass to spawnPipe
+import XMonad.Config.Evaryont.Statusbar (workspace_dzen_command)
+-- xmonad-screenshot, a neat-o tool that will take a screenshot of every
+-- workspace in one go.
+import XMonad.Util.WorkspaceScreenshot
 
--- Apply my keys on top of the default set (any conflicts? Mine win.)
-final_settings = settings `additionalKeysP` key_bindings
+import XMonad.Util.Run (spawnPipe)
 
 main :: IO ()
 main = do
-       client <- connectSession -- Connect XMonad to DBus
-       let pp = defaultPP
-       xmonad final_settings { -- And...GO!
-              logHook = TaffyLog.dbusLog client pp <+> logHook settings
-       }
+       -- Launch the two status bars that build the complete DZen bar
+       workspace_bar_spawn   <- spawnPipe workspace_dzen_command
+       --status_bar_spawn      <- spawnPipe status_bar
+       -- Start the GTK event handler, for xmonad-screenshot
+       initCapturing
+       -- Run xmonad with my settings
+       xmonad (evaryontConfig workspace_bar_spawn)
