@@ -72,6 +72,8 @@ URxvt.iconFile: /usr/share/icons/nuvola/32x32/apps/terminal.png
 !dzen.foreground: c_background
 dzen.font: xft:Liberation Mono:size=7
 
+Xcursor.theme: ComixCursor-White-Small
+
 !!--------------------------------------
 !!         Tomorrow Night Theme
 !!--------------------------------------
