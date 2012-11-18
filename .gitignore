@@ -1,7 +1,6 @@
 config/zsh/history
 ./zsh/
 vim/spell/en.utf-8.add.spl
-xmonad/
 mozilla/
 vim/ruby/command-t/Makefile
 vim/ruby/command-t/ext.o
@@ -36,3 +35,5 @@ config/kde/tmp-*
 config/kde4/cache-*
 config/kde4/socket-*
 config/kde4/tmp-*
+xmonad/xmonad-*-linux
+xmonad/xmonad.errors
