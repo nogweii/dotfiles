@@ -23,6 +23,7 @@ import XMonad.Layout.NoBorders (smartBorders)
 --import XMonad.Util.EZConfig
 --import XMonad.Util.WindowProperties (getProp32s)
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
+import XMonad.Util.Cursor
 
 import XMonad.Config.Evaryont.Utils
 
@@ -33,7 +34,7 @@ layout_hook = avoidStruts $ layoutHintsToCenter $ smartBorders $ layoutHook kde4
 
 log_hook = takeTopFocus >> updatePointer (Relative 0.5 0.5)
 
-startup_hook = adjustEventInput
+startup_hook = adjustEventInput >> setDefaultCursor xC_left_ptr
 handle_events = hintsEventHook <+> focusOnMouseMove
 
 -- apps such as chrome emit correct ewmh events and are handled properly
