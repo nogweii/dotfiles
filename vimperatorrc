@@ -1,66 +1,5 @@
-set guioptions-=rb
-
-" AwesomeBar like completion (automatic, uses history & bookmarks as possible
-" completer)
-set wildoptions=auto
-set complete=l
-"set wildmode="list:longest"
-
-" Focus the window, not any inputs/etc
-set focuscontent
-
-" Add the RSS/Atom feed button to the address bar
-javascript <<EOF
-(function(){
-    var feedPanel = document.createElement("statusbarpanel");
-    feedPanel.setAttribute("id", "feed-panel-clone");
-    feedPanel.appendChild(document.getElementById("feed-button"));
-    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
-    document.getElementById("status-bar")
-            .insertBefore(feedPanel, document.getElementById("security-button"));
-})();
-EOF
-
-" Yanking the selected text saves to the X selection buffer (e.g. Edit->Copy)
-js <<EOF
-mappings.addUserMap([modes.NORMAL], ["Y"],
-    "Yank the currently selected text",
-    function () {
-        buffer.getCurrentWord();
-        events.feedkeys("<C-v>" + (/^Mac/.test(navigator.platform) ? "<M-c>" : "<C-c>"), true);
-        setTimeout( function () {
-          liberator.echo("Yanked " + util.readFromClipboard(), commandline.FORCE_SINGLELINE);
-        }, 20 );
-    });
-EOF
-
-" hi CmdLine <<EOF
-" background-color: black;
-" EOF
-
-command! dominspector :js inspectDOMDocument(document)
-
 map <silent> gs :stop<CR>
 map <silent> ga :addons<CR>
-
-"map <silent> gb :javascript "if(document.getSelection){s=document.getSelection();}else{s='';};document.location='http://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)"
-
-"let g:maine_coon_default = "ac"
-
-"cabbrev open_sidebar  sidebar Bookmarks " <Esc>:execute 'map <C-b> ' + close_sidebar<CR>
-"cabbrev close_sidebar sbclose ":execute 'map <C-b> ' + open_sidebar<CR>
-"map <C-b> :open_sidebar <CR>
-
-"map <C-l> :nohlsearch<CR>:redraw<CR>
-"set defsearch=duck
-
-" todo plugin: http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/splitBrowser.js?rev=11323
-
-" Firefox settings related to Duck Duck Go
-"browser.search.selectedEngine;Duck Duck Go
-"keyword.URL;http://duckduckgo.com/?q=
-" XML file with the search engine info
-" ~/.mozilla/firefox/dotfiles.git/searchplugins/duck-duck-go.xml
 
 " How many pixels each j and k will move
 let g:smooziee_scroll_amount="80"
@@ -68,55 +7,12 @@ let g:smooziee_scroll_amount="80"
 let g:smooziee_scroll_interval="8"
 
 " when using f, it's less nosier on reddit
-autocmd LocationChange reddit.com set hinttags-=[onclick]
-
-" Make up/dn work in completion lists
-cnoremap <up> <s-tab>
-cnoremap <c-up> <up>
-cnoremap <down> <tab>
-cnoremap <c-down> <down>
+autocmd LocationChange reddit.com setlocal hinttags-=[onclick]
 
 " Disable backspace
 noremap <bs> <nop>
 " Disable the quick-help key.
 noremap <f1> <nop>
-
-" {{{ GUI fiddling
-" Add the urlbar icons to the bottom status bar too
-javascript <<EOF
-(function(){
-    var panel = document.createElement("statusbarpanel");
-    panel.setAttribute("id", "urlbar-icons-clone");
-
-    var urlbar = document.getElementById("urlbar-icons");
-
-    var allicons = [];
-    for(var i=0; i<urlbar.childNodes.length; ++i)
-        allicons.push(urlbar.childNodes[i].id);
-
-    for(var i=0; i<allicons.length; ++i) {
-        var icon = document.getElementById(allicons[i]);
-
-        if(icon.id == "go-button") continue;
-
-        icon.setAttribute("style", "padding: 0; max-height: 16px;");
-        panel.appendChild(icon);
-    }
-
-    var statbar = document.getElementById("status-bar");
-    statbar.appendChild(panel);
-})();
-EOF
-
-style -name tabs chrome://* <<EOF
-/* Remove these stupid buttons */
-.tabs-newtab-button,
-.tabs-alltabs-button,
-.tabs-container > stack,
-.tabs-bottom {
-    display: none !important;
-}
-EOF
 
 " Support paging through a document.
 javascript <<EOF
