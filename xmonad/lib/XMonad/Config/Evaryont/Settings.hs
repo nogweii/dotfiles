@@ -1,37 +1,33 @@
 module XMonad.Config.Evaryont.Settings (
-      settings
+      layout_hook,
+      log_hook,
+      startup_hook,
+      handle_events,
+      event_hook,
+      iconspaces,
+      terminal_choice
       ) where
 
+import System.Environment
 import XMonad
 import XMonad.Actions.UpdateFocus
 import XMonad.Actions.UpdatePointer
-import XMonad.Config.Evaryont.Utils
 import XMonad.Config.Kde
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Util.EZConfig
-import XMonad.Util.WindowProperties (getProp32s)
+--import XMonad.Util.EZConfig
+--import XMonad.Util.WindowProperties (getProp32s)
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
 
-manage_hook = composeAll [
-       isKDETrayWindow               --> doIgnore
-     , isFullscreen                  --> doFullFloat
-     , resource  =? "gxmessage"      --> doCenterFloat
-     , resource  =? "xmessage"       --> doCenterFloat
-     , resource  =? "kdesktop"       --> doIgnore
-     , className =? "plasma-desktop" --> doIgnore
-     , className =? "Plasma"         --> doIgnore
-     , className =? "Klipper"        --> doFloat
-       ]
-     <+> manageDocks
-     <+> transience'
-     <+> (kdeOverride --> doFloat)
+import XMonad.Config.Evaryont.Utils
+
+terminal_choice :: String
+terminal_choice = "urxvt"
 
 layout_hook = avoidStruts $ layoutHintsToCenter $ smartBorders $ layoutHook kde4Config
 
@@ -56,15 +52,22 @@ plcplcConfig = kde4Config {
                        <+> (kdeOverride --> doFloat)
            }
 
--- XMonad's reason d'etierre
-settings = kde4Config {
-           terminal        = "konsole"
-         , modMask         = mod4Mask
-         , manageHook      = manage_hook   <+> manageHook      kde4Config
-         , logHook         = log_hook      <+> logHook         kde4Config
-         , startupHook     = startup_hook  <+> startupHook     kde4Config
-         , handleEventHook = handle_events <+> handleEventHook kde4Config
-         , layoutHook      = layout_hook
-         }
+-- Build a path to the directory based on the home directory
+bitmaps_path :: String -> String
+bitmaps_path home = home ++ "/.local/share/dzen/"
+
+--iconspaces :: String -> [WorkspaceId]
+iconspaces = [ wrapBitmap "arch_10x10.xbm"
+             , wrapBitmap "fox.xbm"
+             , wrapBitmap "dish.xbm"
+             , wrapBitmap "cat.xbm"
+             , wrapBitmap "empty.xbm"
+             , wrapBitmap "mail.xbm"
+             , wrapBitmap "bug_02.xbm"
+             , wrapBitmap "eye_l.xbm"
+             , wrapBitmap "eye_r.xbm"
+             ]
+             where
+                wrapBitmap bitmap = "^p(5)^i(" ++ bitmaps_path "/home/colin" ++ bitmap ++ ")^p(5)"
 
 -- vim: set nospell:
