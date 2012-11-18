@@ -15,16 +15,6 @@ mutt/.index
 vim/Session.vim
 vim/tmp/
 vim/doc/tags
-gitconfig
-config/kde/share/config/session/
-config/kde/share/apps
-share/.local-mail.directory/
-config/user-dirs.dirs
-config/user-dirs.locale
-config/akonadi/*.dat
-config/irssi/away.log
-config/irssi/saved_colors
-share/
 allfileshas.txt
 bigobjects.txt
 bigtosmall.txt
@@ -37,3 +27,5 @@ config/kde4/socket-*
 config/kde4/tmp-*
 xmonad/xmonad-*-linux
 xmonad/xmonad.errors
+share/Trash/
+share/webkit/databases/*.localstorage
