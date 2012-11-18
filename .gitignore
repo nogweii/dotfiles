@@ -30,3 +30,9 @@ allfileshas.txt
 bigobjects.txt
 bigtosmall.txt
 cache/
+config/kde/cache-*
+config/kde/socket-*
+config/kde/tmp-*
+config/kde4/cache-*
+config/kde4/socket-*
+config/kde4/tmp-*
