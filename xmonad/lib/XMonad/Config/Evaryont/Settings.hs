@@ -55,7 +55,7 @@ plcplcConfig = kde4Config {
 
 -- Build a path to the directory based on the home directory
 bitmaps_path :: String -> String
-bitmaps_path home = home ++ "/.local/share/dzen/"
+bitmaps_path home = home ++ "/.icons/dzen/"
 
 --iconspaces :: String -> [WorkspaceId]
 iconspaces = [ wrapBitmap "arch_10x10.xbm"
