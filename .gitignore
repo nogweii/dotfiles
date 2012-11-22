@@ -29,3 +29,5 @@ xmonad/xmonad-*-linux
 xmonad/xmonad.errors
 share/Trash/
 share/webkit/databases/*.localstorage
+config/aurvote
+config/chromium/
