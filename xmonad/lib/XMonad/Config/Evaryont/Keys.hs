@@ -38,6 +38,7 @@ key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
                , ("M-<Return>",    spawn terminal_choice) -- Launch the default terminal
                , ("M-<Print>",     captureWorkspacesWhen defaultPredicate captureHook horizontally) -- Screenshot all the workspaces
                , ("M-?",           spawn "show-xmonad-keys") -- List all keys configured in xmonad
+               , ("M-S-?",         spawn "show-xmonad-keys") -- List all keys configured in xmonad
                ]
 
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
