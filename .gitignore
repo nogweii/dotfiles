@@ -31,3 +31,4 @@ share/Trash/
 share/webkit/databases/*.localstorage
 config/aurvote
 config/chromium/
+config/gedit/

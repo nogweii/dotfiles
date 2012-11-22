@@ -30,7 +30,7 @@ logOutput xsetroot -bg '#000'
 
 logOutput xrdb-load
 
-logOutput mpd ~/.local/config/mpd.conf
+logOutput mpd ${XDG_CONFIG_HOME}/mpd.conf
 
 logOutput conky &
 
