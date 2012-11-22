@@ -15,3 +15,6 @@ if [ -e $file ] ; then
 fi
 
 bindkey '^W' backward-kill-word-match
+bindkey . rationalise-dot
+# without this, typing a . aborts incremental history search
+bindkey -M isearch . self-insert
