@@ -30,6 +30,8 @@ logOutput xsetroot -bg '#000'
 
 logOutput xrdb-load
 
+logOutput mpd ~/.local/config/mpd.conf
+
 logOutput conky &
 
 logOutput xscreensaver &
