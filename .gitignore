@@ -32,3 +32,8 @@ share/webkit/databases/*.localstorage
 config/aurvote
 config/chromium/
 config/gedit/
+share/mpd/
+config/user-dirs.dirs
+config/user-dirs.locale
+config/irssi/away.log
+config/irssi/saved_colors
