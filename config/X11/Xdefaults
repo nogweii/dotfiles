@@ -12,14 +12,17 @@
 #define c_blue	        #81a2be
 #define c_purple        #b294bb
 
+!#define FONTSIZE 12
+#define FONTSIZE 8
+
 !--------------------------------------
 !                urxvt
 !--------------------------------------
 ! Font: 16 point Ubuntu Mono
-URxvt.font:               xft:Liberation Mono:size=12
-URxvt.boldFont:           xft:Liberation Mono:bold:size=12
-URxvt.italicFont:         xft:Liberation Mono:italic:size=12
-URxvt.boldItalicFont:     xft:Liberation Mono:italic:bold:size=12
+URxvt.font:               xft:Liberation Mono:size=FONTSIZE
+URxvt.boldFont:           xft:Liberation Mono:bold:size=FONTSIZE
+URxvt.italicFont:         xft:Liberation Mono:italic:size=FONTSIZE
+URxvt.boldItalicFont:     xft:Liberation Mono:italic:bold:size=FONTSIZE
 ! Hide the scroll bar
 URxvt.scrollBar:          false
 ! What does urxvt use to launch applications?
