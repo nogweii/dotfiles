@@ -34,14 +34,15 @@ workspace_bar h = dynamicLogWithPP $ defaultPP
     , ppVisible         = dzenColor "gray20"  "black" . wrapClickWorkSpace . (\a -> (a,a))
     , ppHidden          = dzenColor "gray80"  "black" . wrapClickWorkSpace . (\a -> (a,a))
     , ppHiddenNoWindows = dzenColor "gray20"  "black" . wrapClickWorkSpace . (\a -> (a,a))
-    , ppLayout          = dzenColor "blue"    "black" . wrapClickLayout . "lol"
+    , ppLayout          = dzenColor "blue"    "black" . wrapClickLayout -- . "lol"
     , ppTitle           = dzenColor "gray80"  "black" . wrapClickTitle . titleText . dzenEscape
     }
     where
         orderText (ws:l:t:_)         = [ws,l,t]
         titleText []                 = dzenColor "gray20" "black" "(desktop)"
         titleText x                  = shorten 82 x
-        wrapClickLayout content      = "^ca(1,xdotool key super+space)" ++ content ++ "^ca()"  -- clickable layout
+        --wrapClickLayout content      = "^ca(1,xdotool key super+space)" ++ content ++ "^ca()"  -- clickable layout
+        wrapClickLayout content      = "^ca(1,xdotool key super+space)lol^ca()"  -- clickable layout
         wrapClickTitle content       = "^ca(1,xdotool key super+j)" ++ content ++ "^ca()"      -- clickable title
         -- clickable workspaces
         wrapClickWorkSpace (idx,str) = "^ca(1,xdotool key super+" ++ index ++ ")" ++ "^ca(3,xdotool key super+shift+" ++ index ++ ")" ++ str ++ "^ca()^ca()"
