@@ -22,7 +22,6 @@ zstyle ':completion:*' verbose yes
 compdef _rake rake
 compdef _cheat cheat
 
-
 # cygwin only: commands that auto-complete with and without .exe or .dll suffixes are annoying.
 # thanks Thorsten Kampe & Bart Schaefer (and 'Atom Smasher' for his zshrc)
 # http://www.zsh.org/mla/users/2009/threads.html#00391
@@ -32,4 +31,7 @@ compdef _cheat cheat
 [[ -x $(whence -p manpath) ]] && export MANPATH=$(manpath 2> /dev/null)
 
 compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lzma *.lha *.rpm *.deb"' extract_archive
+compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lzma *.lha *.rpm *.deb"' xf # A shorter alias for extract_archive
 compdef _sudo smart_sudo
+
+zstyle -e ':completion:*:(ssh|scp|sftp|ssh-copy-id):*' hosts 'reply=(${(s: :)${${${(M)${(f)"$(<~/.ssh/config)"}:#Host*}#Host }:#*\**}} ${${${${(f)"$(<~/.ssh/known_hosts)"}:#[|0-9]*}%%\ *}%%,*} )'
