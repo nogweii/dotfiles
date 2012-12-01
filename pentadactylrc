@@ -38,19 +38,17 @@ EOF
 
 " {{{ Key mappings
 
-noremap <bs> <nop>
-noremap <f1> <nop>
+"map -builtin <bs> <nop>
+"map -builtin <f1> <nop>
 
 " Make up/dn work in completion lists
-cnoremap <up> <s-tab>
-cnoremap <c-up> <up>
-cnoremap <down> <tab>
-cnoremap <c-down> <down>
+"cmap -bulitin <up> <s-tab>
+"cmap -bulitin <c-up> <up>
+"cmap -bulitin <down> <tab>
+"cmap -bulitin <c-down> <down>
 
 " Remove keys so that built in keys work for Google sites
 "autocmd LocationChange google\.com\/(reader|calendar|mail|a|ccc|Doc) -js modes.set(modes.PASS_THROUGH)
 " }}}
 
-autocmd LocationChange reddit.com set hinttags-=[onclick]
-
-" vim: set ft=vim:
+autocmd LocationChange reddit.com setlocal hinttags-=[onclick]
