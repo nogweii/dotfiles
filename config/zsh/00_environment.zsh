@@ -19,10 +19,11 @@ fi
 # Rubygems
 if [ -d "$HOME/.rubygems/bin" ]; then
     export PATH="$PATH:$HOME/.rubygems/bin"
+fi
 
 # Local cabal install.
-if [ -d "${HOME}/.cabal/bin" ] ; then
-    export PATH="$PATH:${HOME}/.cabal/bin"
+if [ -d "$HOME/.cabal/bin" ] ; then
+    export PATH="$PATH:$HOME/.cabal/bin"
 fi
 # Append the gem installation directory, if it exists.
 [ -d ~/.gem/ruby/1.9.1/bin ] && export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
@@ -126,7 +127,7 @@ export ACKRC="${dot_path}/ackrc"
 export SCREENRC="${dot_path}/config/screenrc"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
-eval `dircolors -b ${dot_path}/config/dircolors`
+eval $(dircolors -b ${dot_path}/config/dircolors)
 export SCREENRC="${dot_path}/config/screenrc"
 export INPUTRC="${dot_path}/inputrc"
 export MPLAYER_HOME="${dot_path}/config/mplayer"

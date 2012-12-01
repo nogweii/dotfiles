@@ -4,7 +4,7 @@
 # default, fall-back.
 pacman_program=pacman
 
-if [[ ! -z "${commands[$pacman_program]}" ]] ; then
+if [[ ! -x "${commands[$pacman_program]}" ]] ; then
     # We are running on a not-arch machine, skip setting up pacman.
     unset pacman_program
     return
