@@ -181,18 +181,17 @@ function errors() {
   regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
 
   # Default case: No parameters passed, so search all of /var/log
-  path="/var/log"
+  log_path="/var/log"
   if [ -n "$1" ] ; then
     # If the parameter is a file, search only that one
     if [ -f "$1" ] ; then
-      path="$1"
+      log_path="$1"
+      smart_sudo find $log_path -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
     else
       echo $regexp
       return 0;
     fi
   fi
-
-  s find $path -type f -regex '[^0-9]+$' -exec grep -Eni $regexp {} \+ | $PAGER
 }
 
 function cawk {
@@ -235,3 +234,16 @@ zle -N ranger_open
 bindkey -a "go" ranger_open
 
 dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
+
+df() {
+  # Is dfc installed & did I not pass any arguments to df?
+  if [ -n "${commands[dfc]}" -a $# -eq 0 ]; then
+    # Add 64 so that sed won't delete the ANSI color codes. Why 64? Just guessed
+    # 50-60, then kept incrementing until the lines got too long. 64 works
+    # perfectly.
+    command dfc -a -T -w -W -o -i -f -c always | sed "s/^\(.\{,$(($COLUMNS+64))\}\).*/\\1/"
+  else
+    # Just run df like normal, passing along any parameters
+    command df $@
+  fi
+}

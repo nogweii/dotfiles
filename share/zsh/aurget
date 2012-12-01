@@ -1,4 +1,4 @@
-wget -q http://aur.archlinux.org/packages/$1/$1.tar.gz || return $?
+wget -q https://aur.archlinux.org/packages/${1:0:2}/$1/$1.tar.gz || return $?
 bsdtar xf $1.tar.gz || return $?
 rm $1.tar.gz || return $?
 cd $1 || return $?
