@@ -35,9 +35,9 @@ _force_rehash() {
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby_or_irb() {
     if [[ "$1" == "" ]]; then
-        irb -f -I$XDG_CONFIG_DIR/irb -r irb_conf
+        command irb -f -I$XDG_CONFIG_DIR/irb -r irb_conf
     else
-        ruby $@
+        command ruby $@
     fi
 }
 alias ruby=ruby_or_irb
