@@ -1,0 +1,9 @@
+FriendlyName:ruby
+CTagsName:ruby
+PythonExtensionMatcher:rb
+VimExtensionMatcher:rb
+Suffix:ruby
+VimSyntaxes:ruby
+VimFileTypes:ruby
+
+# vim: ff=unix:noet

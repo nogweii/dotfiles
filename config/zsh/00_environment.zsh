@@ -15,10 +15,17 @@ fi
 if [ -d "/usr/local/heroku/bin" ]; then
     export PATH="/usr/local/bin:$PATH"
 fi
+
 # Rubygems
 if [ -d "$HOME/.rubygems/bin" ]; then
     export PATH="$PATH:$HOME/.rubygems/bin"
+
+# Local cabal install.
+if [ -d "${HOME}/.cabal/bin" ] ; then
+    export PATH="$PATH:${HOME}/.cabal/bin"
 fi
+# Append the gem installation directory, if it exists.
+[ -d ~/.gem/ruby/1.9.1/bin ] && export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 typeset -U path # Remove duplicate entries
 
 # Personal preferences. XDG uses these, among other applications
@@ -30,8 +37,10 @@ if [[ ! -z $commands[vim.man] ]]; then
 fi
 
 # CLI default parameters
-export GREP_DEFAULTS="-RPiI"
+export GREP_DEFAULTS="-E -i -I -n --color=auto"
 export LESS="-RSMwi"
+
+export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
 # Enviornment variables that affect Zsh
@@ -120,6 +129,9 @@ export SCREENRC="${dot_path}/config/screenrc"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
 eval `dircolors -b ${dot_path}/config/dircolors`
+export SCREENRC="${dot_path}/config/screenrc"
+export INPUTRC="${dot_path}/inputrc"
+export MPLAYER_HOME="${dot_path}/config/mplayer"
 #export GIT_CONFIG="${dot_path}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 

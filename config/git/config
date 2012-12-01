@@ -124,8 +124,8 @@
     submodulesummary = true
 [pack]
     threads = 0
-[init]
-    templatedir = ~/.local/share/git
+#[init]
+#    templatedir = ~/.local/share/git
 [advice]
     pushNonFastForward = false
     #statusHints = false

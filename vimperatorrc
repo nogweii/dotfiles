@@ -1,69 +1,18 @@
-"set guioptions-=rb
+map <silent> gs :stop<CR>
+map <silent> ga :addons<CR>
 
-" AwesomeBar like completion (automatic, uses history & bookmarks as possible
-" completer)
-"set wildoptions=auto
-"set complete=l
-"set wildmode="list:longest"
+" How many pixels each j and k will move
+let g:smooziee_scroll_amount="80"
+" How fast smoozie will scroll, in milliseconds
+let g:smooziee_scroll_interval="8"
 
-" Clicking the url bar selects it entirely
-"set! browser.urlbar.clickSelectsAll=true
-"set! browser.urlbar.doubleClickSelectsAll=true
-" set! network.image.imageBehavior: 2
-" set! browser.blink_allowed=false
-" set! security.dialog_enable_delay=0
-" set! browser.tabs.closeWindowWithLastTab=true
-"set! liberator.saved.browser.tabs.autoHide=true
-"set! browser.tabs.autoHide=true
-"set showtabline=0
+" when using f, it's less nosier on reddit
+autocmd LocationChange reddit.com setlocal hinttags-=[onclick]
 
-" Focus the window, not any inputs/etc
-"set focuscontent
-
-" Add the RSS/Atom feed button to the address bar
-"javascript <<EOF
-"(function(){
-"    var feedPanel = document.createElement("statusbarpanel");
-"    feedPanel.setAttribute("id", "feed-panel-clone");
-"    feedPanel.appendChild(document.getElementById("feed-button"));
-"    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
-"    document.getElementById("status-bar")
-"            .insertBefore(feedPanel, document.getElementById("security-button"));
-"})();
-"EOF
-
-" Yanking the selected text saves to the X selection buffer (e.g. Edit->Copy)
-"js <<EOF
-"mappings.addUserMap([modes.NORMAL], ["Y"],
-"    "Yank the currently selected text",
-"    function () {
-"        buffer.getCurrentWord();
-"        events.feedkeys("<C-v>" + (/^Mac/.test(navigator.platform) ? "<M-c>" : "<C-c>"), true);
-"        setTimeout( function () {
-"          liberator.echo("Yanked " + util.readFromClipboard(), commandline.FORCE_SINGLELINE);
-"        }, 20 );
-"    });
-"EOF
-
-" hi CmdLine <<EOF
-" background-color: black;
-" EOF
-
-"command! dominspector :js inspectDOMDocument(document)
-
-"map <silent> gs :stop<CR>
-"map <silent> ga :addons<CR>
-
-"map <silent> gb :javascript "if(document.getSelection){s=document.getSelection();}else{s='';};document.location='http://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)"
-
-"map <silent> <C-j> 15j
-"map <silent> <C-k> 15k
-
-"let g:maine_coon_default = "ac"
-
-"cabbrev open_sidebar  sidebar Bookmarks " <Esc>:execute 'map <C-b> ' + close_sidebar<CR>
-"cabbrev close_sidebar sbclose ":execute 'map <C-b> ' + open_sidebar<CR>
-"map <C-b> :open_sidebar <CR>
+" Disable backspace
+noremap <bs> <nop>
+" Disable the quick-help key.
+noremap <f1> <nop>
 
 "map <C-l> :nohlsearch<CR>:redraw<CR>
 "set defsearch=duck
@@ -75,3 +24,33 @@
 "keyword.URL;http://duckduckgo.com/?q=
 " XML file with the search engine info
 " ~/.mozilla/firefox/dotfiles.git/searchplugins/duck-duck-go.xml
+
+" Support paging through a document.
+javascript <<EOF
+  mappings.addUserMap(
+    [modes.NORMAL],
+    ["}"],
+    "Smooth scroll some down",
+    function(count){
+      // 1600 is 80 (the normal scroll amount) * 20, a rough number I found to
+      // work.
+      self.smoothScrollBy(1600 * (count || 1));
+    },
+    {
+      count: true
+    }
+  );
+  mappings.addUserMap(
+    [modes.NORMAL],
+    ["{"],
+    "Smooth scroll some down",
+    function(count){
+      // 1600 is 80 (the normal scroll amount) * 20, a rough number I found to
+      // work. Negative means go up.
+      self.smoothScrollBy(-1600 * (count || 1));
+    },
+    {
+      count: true
+    }
+  );
+EOF

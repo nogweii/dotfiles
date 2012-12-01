@@ -1,49 +1,26 @@
 import XMonad
-import XMonad.Config.Kde
 import XMonad.Util.EZConfig
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers
-import XMonad.Layout.LayoutHints (layoutHintsToCenter)
-import XMonad.Layout.NoBorders (smartBorders)
+--import DBus.Client.Simple
 import XMonad.Hooks.DynamicLog
-import XMonad.Util.Loggers
-import XMonad.Util.Font (Align (AlignCenter))
-import XMonad.Util.Run (spawnPipe, hPutStrLn)
-import XMonad.Util.Replace
+--import qualified System.Taffybar.XMonadLog as TaffyLog
 
 -- from ~/.xmonad/lib/
-import Music.Pandora
-import XMonad.Config.Evaryont.Keys
+-- This does a lot of the real connecting
+import XMonad.Config.Evaryont.Config
+-- Just need to pull the coulbe of static string entries to pass to spawnPipe
+import XMonad.Config.Evaryont.Statusbar (workspace_dzen_command)
+-- xmonad-screenshot, a neat-o tool that will take a screenshot of every
+-- workspace in one go.
+import XMonad.Util.WorkspaceScreenshot
 
-manage_hook = composeAll [
-       isKDETrayWindow --> doIgnore
-     , isFullscreen --> doFullFloat
-     , resource =? "stalonetray" --> doIgnore
-     , resource =? "gxmessage" --> doCenterFloat
-     , resource =? "xmessage" --> doCenterFloat
-     , className =? "Plasma" --> doFloat
-     -- redirect a window to some workspace.
--- , className =? "Firefox"  --> doF (W.shift (myWorkspaces !! 1)))
-       ]
-     <+> manageDocks
-     <+> manageHook kde4Config
-     <+> transience'
-
-layout_hook = smartBorders $ layoutHintsToCenter $ avoidStruts $ layoutHook kde4Config
-
--- pretty much every piece of the config is in lib/XMonad/Config/Evaryont - go
--- check that out instead of this boring main function!
-settings = kde4Config {
-           terminal   = "urxvt"
-         , modMask    = mod4Mask
-         , manageHook = manage_hook <+> manageHook kde4Config
-         , layoutHook = layout_hook
-         } `additionalKeysP` key_bindings
+import XMonad.Util.Run (spawnPipe)
 
 main :: IO ()
 main = do
---     replace
---     h <- spawnPipe "startkde"
-       xmonad settings
-
---- vim: set syn=haskell nospell:
+       -- Launch the two status bars that build the complete DZen bar
+       workspace_bar_spawn   <- spawnPipe workspace_dzen_command
+       --status_bar_spawn      <- spawnPipe status_bar
+       -- Start the GTK event handler, for xmonad-screenshot
+       initCapturing
+       -- Run xmonad with my settings
+       xmonad (evaryontConfig workspace_bar_spawn)

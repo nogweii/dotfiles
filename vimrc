@@ -139,6 +139,11 @@ nmap     <silent> ZW :update<CR>
 map      <F10> :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
      \   . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
      \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+nmap <silent> <leader>cm
+ \ :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
+ \ . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+ \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
+ \ <CR>:execute "highlight " . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")<CR>
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:h")<CR>/
@@ -514,10 +519,21 @@ let g:loaded_getscriptPlugin = 1
 " Don't need vimball loaded, either.
 let g:loaded_vimballPlugin = 1
 
+au BufRead ~/.yaourtrc setlocal filetype=sh
+au FileType haskell setl nospell
+autocmd BufWritePre */xmonad.hs setl syntax=haskell
+autocmd FileType help setl nospell
+
+au BufRead,BufNewFile ~/.local/share/zsh/* setlocal filetype=zsh nospell
+au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/robocode/robots/gui/compile.sh | nmap ZM :make %<CR>
+au FileType tagbar setl nospell
+
 " Detect gnome-terminal, and if so, force 256-color support
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
 au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
-au FileType puppet,gitrebase setlocal nospell
+au FileType puppet setlocal nospell
+
+nmap <silent> ZB :LustyBufferExplorer<CR>

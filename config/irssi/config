@@ -188,7 +188,7 @@ settings = {
     niq_color_char = "yes";
     short_url_provider = "Bitly";
   };
-  "fe-common/core" = { show_names_on_join = "no"; };
+  "fe-common/core" = { show_names_on_join = "no"; theme = "analog"; };
   "irc/core" = { alternate_nick = "zenix"; };
 };
 hilights = (

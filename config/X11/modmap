@@ -1,0 +1,79 @@
+! vim: set ft=xmodmap:
+
+! natart_pairs: 65:255 36:254 23:253 66:252
+
+keycode 65 = Shift_R
+keycode 255 = space
+
+keycode 36 = Hyper_R
+keycode 254 = Return
+
+keycode 23 = Mode_switch
+keycode 253 = Tab
+
+keycode 66 = Control_R
+keycode 252 = Escape
+
+! keydouble over writes the key's original code with it's variation. e.g., the
+! space will become a Control in normal circumstances, until keydouble is
+! running. Therefore, the syntax you need is the following:
+!
+!   keycode <ORIGINAL KEY CODE> = NEW_SIG ON KEY DOWN
+!   keycode <NEW NON-CONFLICTING CODE> = OLD_SIG ON KEY UP
+!
+! With the addition of <original>:<new> to the natart_pairs at the head of the
+! file.
+
+! 9 is the escape key, which is transformed into a caps-lock
+!keycode   9 = Caps_Lock NoSymbol Caps_Lock
+! 22 is backspace, this enables Ctrl-Alt-Backspace support
+keycode  22 = BackSpace NoSymbol BackSpace Terminate_Server
+
+! Pressing both shifts together will toggle caps_lock, however just one by
+! itself will cancel it.
+keycode  50 = Shift_L Caps_Lock Shift_L Caps_Lock
+keycode  62 = Shift_R Caps_Lock Shift_R Caps_Lock
+! Caps-Lock is a control, but Shift-Caps_Lock is Escape
+!keycode  66 = Control_L Escape Control_L Escape
+! Shift-NumLock will toggle numpad-based Pointer Keys
+keycode  77 = Num_Lock Pointer_EnableKeys Num_Lock Pointer_EnableKeys
+! Menu is the multi-key, allowing XCompose
+keycode 135 = Multi_key Multi_key Multi_key Multi_key
+
+! Nuke the control keys, force me to learn to use the caps lock
+keycode  37 = NoSymbol
+keycode 105 = NoSymbol
+
+! Extra typographic characters
+keycode  10 = 1 exclam 1 exclam onesuperior NoSymbol onesuperior
+keycode  11 = 2 at 2 at twosuperior onehalf twosuperior
+keycode  12 = 3 numbersign 3 numbersign threesuperior onethird threesuperior
+keycode  13 = 4 dollar 4 dollar dollar onequarter dollar
+keycode  14 = 5 percent 5 percent U2030 NoSymbol U2030
+keycode  16 = 7 ampersand 7 ampersand ampersand NoSymbol ampersand
+keycode  17 = 8 asterisk 8 asterisk enfilledcircbullet oneeighth enfilledcircbullet
+keycode  20 = minus underscore minus underscore emdash hyphen emdash
+keycode  21 = equal plus equal plus notequal plusminus notequal
+keycode  22 = BackSpace BackSpace BackSpace BackSpace NoSymbol NoSymbol Terminate_Server
+keycode  26 = e E e E EuroSign NoSymbol EuroSign
+keycode  27 = r R r R registered NoSymbol registered
+keycode  28 = t T t T trademark NoSymbol trademark
+keycode  29 = y Y y Y yen NoSymbol yen
+keycode  33 = p P p P acute doubleacute acute
+keycode  34 = bracketleft braceleft bracketleft braceleft bracketleft braceleft bracketleft
+keycode  35 = bracketright braceright bracketright braceright bracketright braceright bracketright
+keycode  38 = a A a A U0301 NoSymbol U0301
+keycode  39 = s S s S section NoSymbol section
+keycode  40 = d D d D degree division degree
+keycode  41 = f F f F sterling NoSymbol sterling
+keycode  44 = j J j J doublelowquotemark singlelowquotemark doublelowquotemark
+keycode  45 = k K k K leftdoublequotemark leftsinglequotemark leftdoublequotemark
+keycode  46 = l L l L rightdoublequotemark rightsinglequotemark rightdoublequotemark
+keycode  47 = semicolon colon semicolon colon leftsinglequotemark minutes leftsinglequotemark
+keycode  48 = apostrophe quotedbl apostrophe quotedbl rightsinglequotemark seconds rightsinglequotemark
+keycode  49 = grave asciitilde grave asciitilde NoSymbol approxeq
+keycode  53 = x X x X multiply U22C5 multiply
+keycode  54 = c C c C copyright cent copyright
+keycode  59 = comma less comma less guillemotleft less guillemotleft
+keycode  60 = period greater period greater guillemotright greater guillemotright
+keycode  61 = slash question slash question ellipsis NoSymbol ellipsis
