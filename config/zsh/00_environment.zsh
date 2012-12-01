@@ -39,8 +39,6 @@ fi
 # CLI default parameters
 export GREP_DEFAULTS="-E -i -I -n --color=auto"
 export LESS="-RSMwi"
-
-export LESS="-r"
 export VI_OPTIONS="--servername VIM -p"
 
 # Enviornment variables that affect Zsh
