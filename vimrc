@@ -140,9 +140,10 @@ map      <F10> :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
      \   . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
      \   . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 nmap     ZD :call CleanClose(0)<CR>
-nmap     ZE :e <C-R>=expand("%:p:h")<CR>/
-nmap     ZS :split <C-R>=expand("%:p:h")<CR>/
-nmap     ZV :vnew <C-R>=expand("%:p:h")<CR>/
+nmap     ZE :e <C-R>=expand("%:h")<CR>/
+nmap     ZS :split <C-R>=expand("%:h")<CR>/
+nmap     ZV :vnew <C-R>=expand("%:h")<CR>/
+nmap     ZB :ls<CR>:b<Space>
 nnoremap gf gF
 nnoremap <silent> gF :CommandT<CR>
 nmap     <Leader>gt :GundoToggle<CR>
