@@ -14,6 +14,7 @@ case "$1" in
 		[ -n "$DISPLAY" ] && \
 			notify-send "Pandora Radio" "Now playing: $title by $artist"
 		logger -t "pianobar" "new song: $title by $artist"
+		set-telepathy-status "♫ Pandora: ${title} by ${artist}"
 		;;
 
 	*)
