@@ -89,7 +89,7 @@ alias myip="catw http://icanhazip.com"
 ########################
 # 'special' character aliases.
 alias --      -="cd - &>/dev/null"  # Go to the last directory
-alias         .='cd .'              # Have '.' match behaviour of .[.]+
+alias         .='cd'
 alias -g    ...='cd ../..'
 alias -g   ....='cd ../../..'
 alias -g  .....='cd ../../../..'
