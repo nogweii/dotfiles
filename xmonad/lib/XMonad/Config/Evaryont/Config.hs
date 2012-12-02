@@ -3,9 +3,11 @@ module XMonad.Config.Evaryont.Config (
       evaryontConfig
       ) where
 
+import System.IO (Handle, hPutStrLn)
+
 import XMonad
 import XMonad.Config.Kde
-import System.IO (Handle, hPutStrLn)
+import XMonad.Util.EZConfig
 
 import XMonad.Config.Evaryont.Keys (key_bindings)
 import XMonad.Config.Evaryont.Management (management_hook)
@@ -24,4 +26,4 @@ evaryontConfig workspace_pipe = defaultConfig {
          , handleEventHook = handle_events
          , layoutHook      = layout_hook
          , workspaces      = iconspaces
-         }
+         } `additionalKeysP` key_bindings
