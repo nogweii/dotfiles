@@ -36,11 +36,11 @@ syn match uzblKeyword /\.\@<!sh\s\+/
 
 " Comments
 syn match uzblTodo /TODO:/
-syn region uzblComment start=/^#/ end=/$/ contains=uzblTodo
+syn region uzblComment start=/^#/ end=/$/ contains=uzblTodo,@Spell
 
 " Comment headings
-syn region uzblSection start=/^# ===/ end=/$/
-syn region uzblSubSection start=/^# ---/ end=/$/
+syn region uzblSection start=/^# ===/ end=/$/ contains=@Spell
+syn region uzblSubSection start=/^# ---/ end=/$/ contains=@Spell
 
 " Integer and float matching
 syn match uzblInt /\d\+/
@@ -85,8 +85,8 @@ syn region uzblJSExec start=+@<+ end=+>@+ end=+$+
 syn region uzblEscape start=+\\@<+ end=+>\\@+
 
 " Match quoted regions
-syn region uzblString start=+'+ end=+'+ end=+$+ contains=uzblExpand,uzblEscape,uzblHexCol,uzblArgs
-syn region uzblString start=+"+ end=+"+ end=+$+ contains=uzblExpand,uzblEscape,uzblHexCol,uzblArgs
+syn region uzblString start=+'+ end=+'+ end=+$+ contains=uzblExpand,uzblEscape,uzblHexCol,uzblArgs,@Spell
+syn region uzblString start=+"+ end=+"+ end=+$+ contains=uzblExpand,uzblEscape,uzblHexCol,uzblArgs,@Spell
 
 if version >= 508 || !exists("did_uzbl_syn_inits")
     if version <= 508
@@ -99,7 +99,7 @@ if version >= 508 || !exists("did_uzbl_syn_inits")
     HiLink uzblComment Comment
     HiLink uzblTodo Todo
 
-    HiLink uzblSection Folded
+    HiLink uzblSection SpecialComment
     HiLink uzblSubSection SpecialComment
 
     HiLink uzblKeyword Keyword
