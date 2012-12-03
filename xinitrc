@@ -1,4 +1,4 @@
-#!/bin/zsh -l
+#!/bin/zsh
 
 #exec startkde
 #exit 0
@@ -6,7 +6,7 @@
 cd ~
 
 echo "------------------------------------------------" >>~/.xsession-errors
-date >>~/.xsession-errors
+echo "New X running on $(date)" >>~/.xsession-errors
 
 logOutput() {
     echo "----- Running $@" >> ~/.xsession-errors
