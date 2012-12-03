@@ -39,4 +39,5 @@ config/irssi/away.log
 config/irssi/saved_colors
 config/Trolltech.conf
 share/user-places.xbel
+share/recently-used.xbel
 share/uzbl/
