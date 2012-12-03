@@ -35,9 +35,9 @@ _force_rehash() {
 # gist it! http://gist.github.com/172323 (zsh fork)
 function ruby_or_irb() {
     if [[ "$1" == "" ]]; then
-        irb -f -I$XDG_CONFIG_DIR/irb -r irb_conf
+        command irb -f -I$XDG_CONFIG_DIR/irb -r irb_conf
     else
-        ruby $@
+        command ruby $@
     fi
 }
 alias ruby=ruby_or_irb
@@ -67,8 +67,14 @@ function smart_cd () {
 function cd () {
   local approx1 ; approx1=()
   local approx2 ; approx2=()
+  # No parameters, or the first one begins with a '+' or '-'
   if (( ${#*} == 0 )) || [[ ${1} = [+-]* ]] ; then
-    builtin cd "$@"
+    # Are we in a VCS dir? (git only, relies on vcs_info) + no parameters?
+    if [[ -n $vcs_info_msg_0_ ]] && (( ${#*} == 0 )); then
+      builtin cd $(git rev-parse --show-toplevel)
+    else
+      builtin cd "$@"
+    fi
   elif (( ${#*} == 1 )) ; then
     approx1=( (#a1)${1}(N) )
     approx2=( (#a2)${1}(N) )

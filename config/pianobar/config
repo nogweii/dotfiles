@@ -1,9 +1,6 @@
-# This is an example configuration file for pianobar. You may remove the # from
-# lines you need and copy/move this file to ~/.config/pianobar/config
-# See manpage for a description of the config keys
-#
 # User
 user = colin@evaryont.me
+password_command = ~/bin/pianobar-password
 
 # Proxy (for those who are not living in the USA)
 #control_proxy = http://127.0.0.1:9090/
@@ -32,11 +29,35 @@ user = colin@evaryont.me
 #act_volup = )
 
 # Misc
-# mp3, mp3-hifi or aacplus
-audio_format = aacplus
+#audio_quality = high
 autostart_station = 165478110736344848
-event_command = /home/colin/.local/config/pianobar/eventcmd.sh
+#autostart_station = 123456
+#event_command = /home/user/.config/pianobar/eventcmd
+#fifo = /tmp/pianobar
 #sort = quickmix_10_name_az
-love_icon = [♥]
-ban_icon = [✘]
+love_icon = ♥
+ban_icon = ☠
 volume = +1
+
+# Format strings
+format_nowplaying_song = [32m%t[0m by [34m%a[0m on [33m%l[0m [31m%r[0m%@%s]2;pianobar - %t by %a
+format_nowplaying_station = Station [35m%n[0m [1;30m(%i)[0m
+format_list_song = [1;30m%i[0m [32m%t[0m by [34m%a[0m [31m%r[0m
+#format_msg_none
+#format_msg_info
+#format_msg_nowplaying
+#format_msg_time
+#format_msg_err
+#format_msg_question
+#format_msg_list
+
+# high-quality audio (192k mp3, for Pandora One subscribers only!)
+audio_quality = high
+#rpc_host = internal-tuner.pandora.com
+#partner_user = pandora one
+#partner_password = TVCKIBGS9AO9TSYLNNFUML0743LH82D
+#device = D01
+#encrypt_password = 2%3WCL*JU$MP]4
+#decrypt_password = U#IO$RZPAB%VX2
+#tls_fingerprint = 394067EECB420E3911985C2CC02C12AE89BB09B2
+

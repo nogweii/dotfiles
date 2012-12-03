@@ -89,7 +89,7 @@ alias myip="catw http://icanhazip.com"
 ########################
 # 'special' character aliases.
 alias --      -="cd - &>/dev/null"  # Go to the last directory
-alias         .='cd .'              # Have '.' match behaviour of .[.]+
+alias         .='cd'
 
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
@@ -101,7 +101,7 @@ if [ ! -z "${commands[hub]}" -a ! -z "${commands[git]}"  ]; then
     eval `hub alias -s zsh`
 fi
 
-alias  m="$EDITOR"
+alias  e="$EDITOR"
 alias  g="git"
 
 alias s=smart_sudo
@@ -111,10 +111,15 @@ alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias wc='wc -l'
-alias gem="gem --config-file=${XDG_CONFIG_HOME}/gemrc"
-alias irssi="irssi --config=${XDG_CONFIG_HOME}/irssi/config --home=${XDG_CONFIG_HOME}/irssi"
-alias mutt="mutt -F ${XDG_CONFIG_HOME}/mutt/muttrc"
 # Given a list of DNS servers in /etc/resolv.conf, ping each one.
 alias ping-dns='echo Nameservers: $(grep "nameserver" /etc/resolv.conf | tr -d "namesrv\n"); for dserver in $(grep "nameserver" /etc/resolv.conf | cut -d" " -f2); do echo -n "${dserver} "; ping -q -c4 $dserver | grep "time"; done | column -t)'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
+if [ -n "${commands[mvn]}" ]; then
+    alias maven="mvn"
+    alias maven_notest="mvn -Dmaven.test.skip=true"
+fi
+
+# A quick utility that generates a nice, long password. Pulls from /dev/random,
+# not urandom, so make sure there's plenty of entropy!
+alias gen-sha-pwd='head -c512 /dev/random | sha512sum'

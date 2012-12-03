@@ -246,6 +246,10 @@ ted
 sit
 postgresql
 Debian
+virtualized
+stdlib
+provisioners
+SHA
 XDG
 X11
 usr
