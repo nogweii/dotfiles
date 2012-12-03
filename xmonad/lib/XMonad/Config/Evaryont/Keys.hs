@@ -32,7 +32,7 @@ key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
                , ("M-<Backspace>", toggleWS) -- toggle which workspace you're on
                , ("M-t",           toggleFloat) -- toggle wether a window is floating
                , ("M-e",           nextScreen) -- go to the next physical screen (Xinerama)
-               , ("M-p",           spawn "dmenu-run") -- application launcher
+               , ("M-p",           spawn "~/bin/dmenu-run") -- application launcher
                , ("M-S-p",         spawn "gnome-panel-screenshot -i") -- take a screenshot
                , ("M-x",           goToSelected defaultGSConfig) -- application launcher
                , ("M-<Return>",    spawn terminal_choice) -- Launch the default terminal
