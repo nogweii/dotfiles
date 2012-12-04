@@ -19,7 +19,7 @@ terminus_font :: String
 terminus_font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-*"
 
 workspace_dzen_command :: String
-workspace_dzen_command = "dzen2 -x '0' -y '0' -h '16' -w '956' -ta 'l' -fg 'gray80' -bg 'brown' -fn '"++terminus_font++"' -p -e ''"
+workspace_dzen_command = "dzen2 -x '0' -y '0' -h '16' -w '956' -ta 'l' -fg 'gray80' -bg 'black' -fn '"++terminus_font++"' -p -e ''"
 
 workspace_bar :: Handle -> X ()
 workspace_bar h = dynamicLogWithPP $ defaultPP
@@ -27,19 +27,19 @@ workspace_bar h = dynamicLogWithPP $ defaultPP
     , ppSort            = fmap (namedScratchpadFilterOutWorkspace.) (ppSort defaultPP) -- hide "NSP" from workspace list
     , ppOrder           = orderText
     , ppExtras          = []
-    , ppSep             = "^fg(" ++ "gray20" ++ ")|"
-    , ppWsSep           = ""
-    , ppCurrent         = dzenColor "blue"    "black" . pad
-    , ppUrgent          = dzenColor "green"   "black" . pad . wrapClickWorkSpace . (\a -> (a,a))
-    , ppVisible         = dzenColor "gray20"  "black" . pad . wrapClickWorkSpace . (\a -> (a,a))
-    , ppHidden          = dzenColor "gray80"  "black" . pad . wrapClickWorkSpace . (\a -> (a,a))
-    , ppHiddenNoWindows = dzenColor "gray20"  "black" . pad . wrapClickWorkSpace . (\a -> (a,a))
-    , ppLayout          = dzenColor "blue"    "black" . pad . wrapClickLayout -- . "lol"
-    , ppTitle           = dzenColor "gray80"  "black" . pad . wrapClickTitle . titleText . dzenEscape
+    , ppSep             = "^p(5)" -- "^fg(" ++ "gray20" ++ ")|"
+    , ppWsSep           = "^p(-2)"
+    , ppCurrent         = dzenColor "blue"    "black"
+    , ppUrgent          = dzenColor "green"   "black" . wrapClickWorkSpace . (\a -> (a,a))
+    , ppVisible         = dzenColor "gray20"  "black" . wrapClickWorkSpace . (\a -> (a,a))
+    , ppHidden          = dzenColor "gray80"  "black" . wrapClickWorkSpace . (\a -> (a,a))
+    , ppHiddenNoWindows = dzenColor "gray20"  "black" . wrapClickWorkSpace . (\a -> (a,a))
+    , ppLayout          = dzenColor "blue"    "black" . wrapClickLayout -- . "lol"
+    , ppTitle           = dzenColor "gray80"  "black" . wrapClickTitle . titleText . dzenEscape
     }
     where
         orderText (ws:l:t:_)         = [ws,l,t]
-        titleText []                 = "(desktop)"
+        titleText []                 = dzenColor "gray20" "black" "(desktop)"
         titleText x                  = shorten 82 x
         --wrapClickLayout content      = "^ca(1,xdotool key super+space)" ++ content ++ "^ca()"  -- clickable layout
         wrapClickLayout content      = "^ca(1,xdotool key super+space)lol^ca()"  -- clickable layout

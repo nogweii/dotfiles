@@ -29,3 +29,15 @@ xmonad/xmonad-*-linux
 xmonad/xmonad.errors
 share/Trash/
 share/webkit/databases/*.localstorage
+config/aurvote
+config/chromium/
+config/gedit/
+share/mpd/
+config/user-dirs.dirs
+config/user-dirs.locale
+config/irssi/away.log
+config/irssi/saved_colors
+config/Trolltech.conf
+share/user-places.xbel
+share/recently-used.xbel
+share/uzbl/

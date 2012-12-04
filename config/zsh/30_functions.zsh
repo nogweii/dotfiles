@@ -247,3 +247,16 @@ df() {
     command df $@
   fi
 }
+
+# just type '...' to get '../..'
+rationalise-dot() {
+  local MATCH
+  if [[ $LBUFFER =~ '(^|/| |	|'$'\n''|\||;|&)\.\.$' ]]; then
+    LBUFFER+=/
+    zle self-insert
+    zle self-insert
+  else
+    zle self-insert
+  fi
+}
+zle -N rationalise-dot
