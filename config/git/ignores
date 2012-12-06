@@ -6,3 +6,4 @@ git_diff_staged.diff
 ~/.vim/bundle/*/doc/tags
 *.o
 *.hi
+.vagrant
