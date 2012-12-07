@@ -43,14 +43,7 @@ function precmd {
         PR_PWD_COLOR=$PR_BRIGHT_RED
     fi
 
-}
-
-function preexec () {
-    # Screen window titles as currently running programs
-    if [[ "${TERM}" == "screen-256color" ]]; then
-        local CMD="${1[(wr)^(*=*|sudo|-*)]}"
-        echo -n "\ek$CMD\e\\"
-    fi
+    termtitle "%n@%M:%~"
 }
 
 function setprompt () {
