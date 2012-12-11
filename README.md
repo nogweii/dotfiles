@@ -1,5 +1,7 @@
 # Evaryont's dotfiles
 
+> It just wouldn't be ~/:home: without these.
+
 ## Installation
 
     rake
