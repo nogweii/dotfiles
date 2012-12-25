@@ -71,7 +71,7 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
 
 
 layout_hook = modWorkspaces iconspaces (avoidStruts $ layoutHintsToCenter $ smartBorders) $
-              onWorkspace (iconspaces !! 2) simpleTabbed $
+              onWorkspace (iconspaces !! 1) simpleTabbed $
               layoutHook kde4Config
 
 -- vim: set nospell:
