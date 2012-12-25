@@ -20,6 +20,8 @@ import XMonad.Hooks.SetWMName
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Tabbed
 --import XMonad.Util.EZConfig
 --import XMonad.Util.WindowProperties (getProp32s)
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
@@ -29,8 +31,6 @@ import XMonad.Config.Evaryont.Utils
 
 terminal_choice :: String
 terminal_choice = "urxvt"
-
-layout_hook = avoidStruts $ layoutHintsToCenter $ smartBorders $ layoutHook kde4Config
 
 log_hook = takeTopFocus >> updatePointer (Relative 0.5 0.5)
 
@@ -53,10 +53,6 @@ plcplcConfig = kde4Config {
                        <+> (kdeOverride --> doFloat)
            }
 
--- Build a path to the directory based on the home directory
-bitmaps_path :: String -> String
-bitmaps_path home = home ++ "/.icons/dzen/"
-
 --iconspaces :: String -> [WorkspaceId]
 iconspaces = [ wrapBitmap "arch_10x10.xbm"
              , wrapBitmap "fox.xbm"
@@ -69,6 +65,13 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
              , wrapBitmap "eye_r.xbm"
              ]
              where
-                wrapBitmap bitmap = "^p(5)^i(" ++ bitmaps_path "/home/colin" ++ bitmap ++ ")^p(5)"
+                wrapBitmap bitmap = "^p(" ++ spacing ++ ")^i(" ++ bitmaps_path ++ bitmap ++ ")^p(" ++ spacing ++ ")"
+                bitmaps_path      = "/home/colin/.icons/dzen" -- Location of dzen icon
+                spacing           = 5 -- # of pixels padding on left & right
+
+
+layout_hook = modWorkspaces iconspaces (avoidStruts $ layoutHintsToCenter $ smartBorders) $
+              onWorkspace (iconspaces !! 2) simpleTabbed $
+              layoutHook kde4Config
 
 -- vim: set nospell:
