@@ -41,6 +41,8 @@
     co = checkout
     # quick shortcut for push
     pu = push
+    # quick shortcut for pull
+    pl = pull
     # quick shortcut for commit, but also shows the diff in the commit message
     ci = commit -v
     # Easy amending of commit messages
