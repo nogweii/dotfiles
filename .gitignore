@@ -41,3 +41,4 @@ config/Trolltech.conf
 share/user-places.xbel
 share/recently-used.xbel
 share/uzbl/
+config/burp/aur.cookies
