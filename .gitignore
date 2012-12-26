@@ -42,3 +42,7 @@ share/user-places.xbel
 share/recently-used.xbel
 share/uzbl/
 config/burp/aur.cookies
+share/yeganesh/
+config/pulse/cookie
+share/webkit/databases/*.localstorage
+share/webkit/icondatabase/WebpageIcons.db
