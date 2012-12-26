@@ -40,7 +40,10 @@ config/irssi/saved_colors
 config/Trolltech.conf
 share/user-places.xbel
 share/recently-used.xbel
-share/uzbl/
+share/uzbl/cookies.txt
+share/uzbl/dforms/
+share/uzbl/history
+share/uzbl/session-cookies.txt
 config/burp/aur.cookies
 share/yeganesh/
 config/pulse/cookie
