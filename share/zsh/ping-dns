@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# an array of the configured name servers
+declare -A nameservers=($(grep "nameserver" /etc/resolv.conf | tr -d "namesrv\n"))
+
+# list all of the name servers
+echo "DNS servers: ${nameservers[@]}"
+
+# for each one, ping it 4 times
+for dserver in $nameservers; do
+  echo -n "${dserver} " # prefix the line with what IP we are pinging
+  ping -q -c4 $dserver | grep "time" # limit the output some, to just the averages
+done | column -t # prettier output, all nice & aligned.

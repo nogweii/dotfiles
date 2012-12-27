@@ -107,8 +107,6 @@ alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 alias wc='wc -l'
-# Given a list of DNS servers in /etc/resolv.conf, ping each one.
-alias ping-dns='echo Nameservers: $(grep "nameserver" /etc/resolv.conf | tr -d "namesrv\n"); for dserver in $(grep "nameserver" /etc/resolv.conf | cut -d" " -f2); do echo -n "${dserver} "; ping -q -c4 $dserver | grep "time"; done | column -t)'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
 if [ -n "${commands[mvn]}" ]; then
