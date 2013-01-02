@@ -67,7 +67,7 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
              where
                 wrapBitmap bitmap = "^p(" ++ spacing ++ ")^i(" ++ bitmaps_path ++ bitmap ++ ")^p(" ++ spacing ++ ")"
                 bitmaps_path      = "/home/colin/.icons/dzen" -- Location of dzen icon
-                spacing           = 5 -- # of pixels padding on left & right
+                spacing           = "5" -- # of pixels padding on left & right
 
 
 layout_hook = modWorkspaces iconspaces (avoidStruts $ layoutHintsToCenter $ smartBorders) $
