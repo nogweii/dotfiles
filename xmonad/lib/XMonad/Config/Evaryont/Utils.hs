@@ -6,7 +6,6 @@ module XMonad.Config.Evaryont.Utils (
     --printWindowTitle,
       captureHook,
       capturePredicate,
-      capPredicate2
       ) where
 
 import XMonad
