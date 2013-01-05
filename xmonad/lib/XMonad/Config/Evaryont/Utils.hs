@@ -44,21 +44,8 @@ kdeOverride = ask >>= \w -> liftX $ do
 -- is not the named scratchpads workspace.
 capturePredicate x = return $ x `notElem` ["NSP"]
 
-capPredicate2 x = return $ x `notElem` ["blacklistedWorkspace1", "blacklistedWorkspace2"]
-
 -- A hook used by WorkspaceCapture, moves the generated screenshot file to a
 -- different directory.
 captureHook scrotPath =
   do homeDirectory <- getHomeDirectory
      renameFile scrotPath (homeDirectory </> "media/pictures/xmonad" </> scrotPath)
-
---fromMaybe :: a -> Maybe a ->
---fromMaybe defaultValue wrapperdObject =
---    case wrapperdObject of
---      Nothing -> defaultValue
---      Just y  -> y
---
---printWindowTitle :: Handle -> Window -> X ()
---printWindowTitle din window = do wname <- getName $ window
---                                 catchIO $ hPutStrLn din (show wname)
---
