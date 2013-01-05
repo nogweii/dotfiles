@@ -43,6 +43,7 @@ handle_events = hintsEventHook
 -- Handle various events, automatically. (Instead of the usual
 -- wait-for-next-focus-event).
 event_hook = docksEventHook
+         <+> serverModeEventHook
          <+> fullscreenEventHook
 
 --iconspaces :: String -> [WorkspaceId]
