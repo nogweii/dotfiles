@@ -16,6 +16,7 @@ import XMonad.Actions.UpdatePointer
 import XMonad.Config.Kde
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.PositionStoreHooks
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Fullscreen
@@ -26,7 +27,6 @@ import XMonad.Layout.Tabbed
 import XMonad.Util.Cursor
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
 
-
 import XMonad.Config.Evaryont.Utils
 
 terminal_choice :: String
@@ -35,7 +35,10 @@ terminal_choice = "urxvt"
 log_hook = updatePointer (Relative 0.5 0.5)
 
 startup_hook = adjustEventInput >> setDefaultCursor xC_left_ptr
-handle_events = hintsEventHook <+> focusOnMouseMove
+
+handle_events = hintsEventHook
+            <+> focusOnMouseMove
+            <+> positionStoreEventHook
 
 -- Handle various events, automatically. (Instead of the usual
 -- wait-for-next-focus-event).

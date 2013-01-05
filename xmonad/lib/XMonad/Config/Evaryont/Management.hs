@@ -4,9 +4,9 @@ module XMonad.Config.Evaryont.Management (
 
 import XMonad
 import XMonad.Config.Kde
---import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.PositionStoreHooks
 import XMonad.Util.Scratchpad
 import qualified XMonad.StackSet as W
 
@@ -35,6 +35,7 @@ management_hook = (composeAll . concat $
   ]) <+> manageScratchPad
      <+> manageDocks
      <+> transience'
+     <+> positionStoreManageHook Nothing
      <+> (kdeOverride --> doFloat)
     where
     doShiftAndGo ws          = doF (W.greedyView ws) <+> doShift ws
