@@ -25,5 +25,5 @@ evaryontConfig dbus = ewmh defaultConfig {
          , handleEventHook   = handle_events <+> fullscreenEventHook
          , layoutHook        = layout_hook
          , workspaces        = iconspaces
-         , focusFollowsMouse = true
+         , focusFollowsMouse = True
          } `additionalKeysP` key_bindings
