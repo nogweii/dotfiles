@@ -30,11 +30,17 @@ logOutput xsetroot -bg '#000'
 
 logOutput xrdb-load
 
+logOutput xfce4-panel &
+
 logOutput mpd ${XDG_CONFIG_HOME}/mpd.conf
 
 logOutput conky &
 
 logOutput xscreensaver &
+
+logOutput nm-applet &
+
+logOutput batti &
 
 #####################
 # TrackPoint settings
