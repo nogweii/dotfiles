@@ -15,7 +15,7 @@ import XMonad.Actions.UpdatePointer
 import XMonad.Config.Kde
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ICCCMFocus
+--import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.LayoutHints
@@ -32,7 +32,7 @@ import XMonad.Config.Evaryont.Utils
 terminal_choice :: String
 terminal_choice = "urxvt"
 
-log_hook = takeTopFocus >> updatePointer (Relative 0.5 0.5)
+log_hook = updatePointer (Relative 0.5 0.5)
 
 startup_hook = adjustEventInput >> setDefaultCursor xC_left_ptr
 handle_events = hintsEventHook <+> focusOnMouseMove
@@ -70,7 +70,7 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
                 spacing           = "5" -- # of pixels padding on left & right
 
 
-layout_hook = modWorkspaces iconspaces (avoidStruts $ layoutHintsToCenter $ smartBorders) $
+layout_hook = avoidStruts $ layoutHintsToCenter $ smartBorders $
               onWorkspace (iconspaces !! 1) simpleTabbed $
               layoutHook kde4Config
 
