@@ -17,12 +17,13 @@ import XMonad.Config.Evaryont.Logger
 
 -- XMonad's reason d'etierre
 evaryontConfig dbus = ewmh defaultConfig {
-           terminal        = terminal_choice
-         , modMask         = mod4Mask
-         , manageHook      = management_hook
-         , logHook         = (appletLogger dbus) <+> log_hook
-         , startupHook     = startup_hook
-         , handleEventHook = handle_events <+> fullscreenEventHook
-         , layoutHook      = layout_hook
-         , workspaces      = iconspaces
+           terminal          = terminal_choice
+         , modMask           = mod4Mask
+         , manageHook        = management_hook
+         , logHook           = (appletLogger dbus) <+> log_hook
+         , startupHook       = startup_hook
+         , handleEventHook   = handle_events <+> fullscreenEventHook
+         , layoutHook        = layout_hook
+         , workspaces        = iconspaces
+         , focusFollowsMouse = true
          } `additionalKeysP` key_bindings
