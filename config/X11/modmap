@@ -5,21 +5,43 @@
 ! This comment is used by ~/.xinitrc to pass to keydouble itself. (Since key
 ! double doesn't have a 'real' configuration file.)
 !
-! Key doubles: 65:255 36:254 23:253 66:252
+! Key doubles: 65:255 36:254 66:252
+
+!keysym Escape    = Caps_Lock
+!keysym Caps_Lock = Escape
+!add    Lock      = Caps_Lock
+!add    Control   = Escape
+
+! Tab
+!keycode 23 = NoSymbol
+! Enter
+!keycode 36 = NoSymbol
+! Space
+!keycode 65 = NoSymbol
+! Caps lock
+!keycode 66 = NoSymbol
 
 ! Match the list prior with the appropriate key maps:
 ! The space bar is space on key up, shift on key down
-keycode 65 = Shift_R
-keycode 255 = space
+keycode 65 = Shift_R Shift_R Shift_R
+keycode 255 = space space space
+
+add Shift = 65
 ! The enter key is the hyper/meta key on key up, return on key down
-keycode 36 = Hyper_R
-keycode 254 = Return
+keycode 36 = Super_R Super_R Super_R
+keycode 254 = Return Return Return
+
+remove Mod4 = Super_R
+add Mod4 = 36
 ! The tab key is mode switch on key up, tab on key down
-keycode 23 = Mode_switch
-keycode 253 = Tab
+!keycode 23 = Mode_switch
+!keycode 253 = Tab
 ! The caps lock is escape on key up, control on key down
-keycode 66 = Control_R
+keycode 66 = Control_L Control_L Control_L
 keycode 252 = Escape
+
+remove Lock = Caps_Lock
+add Control = 66
 
 ! keydouble overwrites the key's original code with it's variation. e.g., the
 ! space will become a Shift in normal circumstances, until keydouble is
@@ -53,36 +75,36 @@ keycode 252 = Escape
 !keycode 105 = NoSymbol
 
 ! {{{ Extra typographic characters
-keycode  10 = 1 exclam 1 exclam onesuperior NoSymbol onesuperior
+keycode  10 = 1 exclam 1 exclam onesuperior exclam onesuperior
 keycode  11 = 2 at 2 at twosuperior onehalf twosuperior
 keycode  12 = 3 numbersign 3 numbersign threesuperior onethird threesuperior
 keycode  13 = 4 dollar 4 dollar dollar onequarter dollar
-keycode  14 = 5 percent 5 percent U2030 NoSymbol U2030
-keycode  16 = 7 ampersand 7 ampersand ampersand NoSymbol ampersand
+keycode  14 = 5 percent 5 percent U2030 percent U2030
+keycode  16 = 7 ampersand 7 ampersand ampersand ampersand ampersand
 keycode  17 = 8 asterisk 8 asterisk enfilledcircbullet oneeighth enfilledcircbullet
 keycode  20 = minus underscore minus underscore emdash hyphen emdash
 keycode  21 = equal plus equal plus notequal plusminus notequal
-keycode  22 = BackSpace BackSpace BackSpace BackSpace NoSymbol NoSymbol Terminate_Server
-keycode  26 = e E e E EuroSign NoSymbol EuroSign
-keycode  27 = r R r R registered NoSymbol registered
-keycode  28 = t T t T trademark NoSymbol trademark
-keycode  29 = y Y y Y yen NoSymbol yen
+keycode  22 = BackSpace BackSpace BackSpace BackSpace BackSpace BackSpace Terminate_Server
+keycode  26 = e E e E EuroSign E EuroSign
+keycode  27 = r R r R registered R registered
+keycode  28 = t T t T trademark T trademark
+keycode  29 = y Y y Y yen Y yen
 keycode  33 = p P p P acute doubleacute acute
 keycode  34 = bracketleft braceleft bracketleft braceleft bracketleft braceleft bracketleft
 keycode  35 = bracketright braceright bracketright braceright bracketright braceright bracketright
-keycode  38 = a A a A U0301 NoSymbol U0301
-keycode  39 = s S s S section NoSymbol section
+keycode  38 = a A a A U0301 A U0301
+keycode  39 = s S s S section S section
 keycode  40 = d D d D degree division degree
-keycode  41 = f F f F sterling NoSymbol sterling
+keycode  41 = f F f F sterling F sterling
 keycode  44 = j J j J doublelowquotemark singlelowquotemark doublelowquotemark
 keycode  45 = k K k K leftdoublequotemark leftsinglequotemark leftdoublequotemark
 keycode  46 = l L l L rightdoublequotemark rightsinglequotemark rightdoublequotemark
 keycode  47 = semicolon colon semicolon colon leftsinglequotemark minutes leftsinglequotemark
 keycode  48 = apostrophe quotedbl apostrophe quotedbl rightsinglequotemark seconds rightsinglequotemark
-keycode  49 = grave asciitilde grave asciitilde NoSymbol approxeq
+keycode  49 = grave asciitilde grave asciitilde asciitilde approxeq
 keycode  53 = x X x X multiply U22C5 multiply
 keycode  54 = c C c C copyright cent copyright
 keycode  59 = comma less comma less guillemotleft less guillemotleft
 keycode  60 = period greater period greater guillemotright greater guillemotright
-keycode  61 = slash question slash question ellipsis NoSymbol ellipsis
+keycode  61 = slash question slash question ellipsis question ellipsis
 ! }}}
