@@ -23,25 +23,25 @@
 
 ! Match the list prior with the appropriate key maps:
 ! The space bar is space on key up, shift on key down
-keycode 65 = Shift_R Shift_R Shift_R
+keysym space = Shift_R Shift_R Shift_R
 keycode 255 = space space space
 
-add Shift = 65
+add Shift = space
 ! The enter key is the hyper/meta key on key up, return on key down
-keycode 36 = Super_R Super_R Super_R
+keysym Return = Super_R Super_R Super_R
 keycode 254 = Return Return Return
 
 remove Mod4 = Super_R
-add Mod4 = 36
+add Mod4 = Return
 ! The tab key is mode switch on key up, tab on key down
 !keycode 23 = Mode_switch
 !keycode 253 = Tab
 ! The caps lock is escape on key up, control on key down
-keycode 66 = Control_L Control_L Control_L
+keysym Caps_Lock = Control_L Control_L Control_L
 keycode 252 = Escape
 
 remove Lock = Caps_Lock
-add Control = 66
+add Control = Caps_Lock
 
 ! keydouble overwrites the key's original code with it's variation. e.g., the
 ! space will become a Shift in normal circumstances, until keydouble is
