@@ -23,6 +23,7 @@ import XMonad.Layout.Fullscreen
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Util.Cursor
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
@@ -63,7 +64,7 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
                 spacing           = "5" -- # of pixels padding on left & right
 
 
-layout_hook = avoidStruts $ layoutHintsToCenter $ smartBorders $
+layout_hook = spacing 10 $ avoidStruts $ layoutHintsToCenter $ smartBorders $
               onWorkspace (iconspaces !! 1) simpleTabbed $
               layoutHook kde4Config
 
