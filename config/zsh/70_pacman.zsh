@@ -51,7 +51,6 @@ pacman-sudo() {
     esac
 }
 
-compdef pacman-sudo=$pacman_program
-compdef pacman=$pacman_program
+compdef pacman-sudo=pacman
 alias pacman="pacman-sudo"
 alias yaourt="pacman-sudo"

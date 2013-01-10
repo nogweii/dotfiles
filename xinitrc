@@ -30,11 +30,26 @@ logOutput xsetroot -bg '#000'
 
 logOutput xrdb-load
 
+logOutput xfce4-panel &
+
 logOutput mpd ${XDG_CONFIG_HOME}/mpd.conf
 
 logOutput conky &
 
 logOutput xscreensaver &
+
+logOutput nm-applet &
+
+logOutput batti &
+
+# Find the xmodmap configuration file
+xmodmap_conf="${XDG_CONFIG_HOME}/X11/modmap"
+# parse out the 'Key doubles' list
+keydouble_pairs=$(grep -i '^![[:space:]]*Key doubles:' "$xmodmap_conf" | sed 's/^[^:]\+:[[:space:]]*//')
+# Run xmodmap first, to register the 250+ key codes first
+#logOutput xmodmap $xmodmap_conf
+# Then lauch keydouble with the list of keys
+#logOutput ~/keydouble/keydouble $keydouble_pairs &
 
 #####################
 # TrackPoint settings
