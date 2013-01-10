@@ -3,7 +3,6 @@ module XMonad.Config.Evaryont.Settings (
       log_hook,
       startup_hook,
       handle_events,
-      event_hook,
       iconspaces,
       terminal_choice
       ) where
@@ -37,15 +36,14 @@ log_hook = updatePointer (Relative 0.5 0.5)
 
 startup_hook = adjustEventInput >> setDefaultCursor xC_left_ptr
 
+-- Handle various events, automatically. (Instead of the usual
+-- wait-for-next-focus to parse any changed events).
 handle_events = hintsEventHook
             <+> focusOnMouseMove
             <+> positionStoreEventHook
-
--- Handle various events, automatically. (Instead of the usual
--- wait-for-next-focus-event).
-event_hook = docksEventHook
-         <+> serverModeEventHook
-         <+> fullscreenEventHook
+            <+> serverModeEventHook
+            <+> fullscreenEventHook
+            <+> docksEventHook
 
 --iconspaces :: String -> [WorkspaceId]
 iconspaces = [ wrapBitmap "arch_10x10.xbm"
