@@ -49,3 +49,7 @@ share/yeganesh/
 config/pulse/cookie
 share/webkit/databases/*.localstorage
 share/webkit/icondatabase/WebpageIcons.db
+config/menus/applications-merged/xdg-desktop-menu-dummy.menu
+config/gtk-2.0/gtkfilechooser.ini
+config/gtk-3.0/bookmarks
+config/gnome-control-center/backgrounds/last-edited.xml
