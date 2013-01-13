@@ -135,3 +135,4 @@ export MPLAYER_HOME="${dot_path}/config/mplayer"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 
 export GEM_HOME="${HOME}/.rubygems"
+export UZBL_UTIL_DIR="${XDG_DATA_HOME}/uzbl/scripts/util"
