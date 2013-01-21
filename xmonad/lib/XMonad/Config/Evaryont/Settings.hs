@@ -62,7 +62,7 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
                 spacing           = "5" -- # of pixels padding on left & right
 
 
-layout_hook = spacing 10 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
+layout_hook = smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
               onWorkspace (iconspaces !! 1) simpleTabbed $
               layoutHook kde4Config
 
