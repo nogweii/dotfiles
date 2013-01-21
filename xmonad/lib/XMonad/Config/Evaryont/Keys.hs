@@ -34,7 +34,8 @@ key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
                , ("M-e",           nextScreen) -- go to the next physical screen (Xinerama)
                , ("M-p",           spawn "~/bin/dmenu-run") -- application launcher
                , ("M-S-p",         spawn "gnome-panel-screenshot -i") -- take a screenshot
-               , ("M-x",           goToSelected defaultGSConfig) -- application launcher
+            -- , ("M-x",           goToSelected defaultGSConfig) -- application launcher
+               , ("M-x",           spawn "xwinmosaic") -- window switcher
                , ("M-<Return>",    spawn terminal_choice) -- Launch the default terminal
                , ("M-<Print>",     captureWorkspacesWhen defaultPredicate captureHook horizontally) -- Screenshot all the workspaces
                , ("M-?",           spawn "show-xmonad-keys") -- List all keys configured in xmonad
