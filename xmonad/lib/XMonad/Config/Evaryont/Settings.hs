@@ -26,6 +26,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Util.Cursor
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
+import Data.List
 
 import XMonad.Config.Evaryont.Utils
 
@@ -62,8 +63,16 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
                 spacing           = "5" -- # of pixels padding on left & right
 
 
-layout_hook = smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
+layout_hook = avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
+              modWorkspacesBut [(iconspaces !! 1)] smartSpacing 5 $
               onWorkspace (iconspaces !! 1) simpleTabbed $
               layoutHook kde4Config
+              where
+                modWorkspacesBut :: (LayoutClass l a)
+                                 => [WorkspaceId]
+                                 -> (l a -> ModifiedLayout lm l a)
+                                 -> l a
+                                 -> PerWorkspace (ModifiedLayout lm l) l a
+                modWorkspacesBut excludedWorkspaces f l = modWorkspaces (iconspaces \\ excludedWorkspaces) False (f l) l
 
 -- vim: set nospell:
