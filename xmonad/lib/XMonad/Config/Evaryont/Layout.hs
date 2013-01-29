@@ -15,7 +15,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 
-import Data.List
+import Data.List  ((\\))
 import Data.Ratio ((%))
 
 import XMonad.Config.Evaryont.Settings (iconspaces)
@@ -48,4 +48,12 @@ import XMonad.Config.Evaryont.Settings (iconspaces)
 
 
 --layout_hook = avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $ Grid
-layout_hook = Grid
+--layout_hook = Grid
+
+layout_hook = smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
+              onWorkspace  (iconspaces !! 1) simpleTabbed $
+              onWorkspace  (iconspaces !! 4) im $
+              standardLayouts
+              where
+                im              = withIM (1%7) (Role "buddy_list") (standardLayouts)
+                standardLayouts = Grid ||| Full
