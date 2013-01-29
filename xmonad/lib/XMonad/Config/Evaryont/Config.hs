@@ -13,6 +13,7 @@ import XMonad.Util.EZConfig
 import XMonad.Config.Evaryont.Keys (key_bindings)
 import XMonad.Config.Evaryont.Management (management_hook)
 import XMonad.Config.Evaryont.Settings
+import XMonad.Config.Evaryont.Layout
 
 -- XMonad's reason d'etierre
 evaryontConfig = ewmh defaultConfig {

@@ -1,5 +1,4 @@
 module XMonad.Config.Evaryont.Settings (
-      layout_hook,
       log_hook,
       startup_hook,
       handle_events,
@@ -12,21 +11,15 @@ import XMonad
 import XMonad.Actions.Commands
 import XMonad.Actions.UpdateFocus
 import XMonad.Actions.UpdatePointer
-import XMonad.Config.Kde
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.PositionStoreHooks
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
-import XMonad.Layout.Fullscreen
-import XMonad.Layout.LayoutHints
-import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Layout.PerWorkspace
-import XMonad.Layout.Spacing
-import XMonad.Layout.Tabbed
 import XMonad.Util.Cursor
+import XMonad.Layout.Fullscreen (fullscreenEventHook)
+import XMonad.Layout.LayoutHints (hintsEventHook)
 import qualified XMonad.Hooks.EwmhDesktops as Ewmh
-import Data.List
 
 import XMonad.Config.Evaryont.Utils
 
@@ -62,17 +55,5 @@ iconspaces = [ wrapBitmap "arch_10x10.xbm"
                 bitmaps_path      = "/home/colin/.icons/dzen" -- Location of dzen icon
                 spacing           = "5" -- # of pixels padding on left & right
 
-
-layout_hook = avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
-              modWorkspacesBut [(iconspaces !! 1)] smartSpacing 5 $
-              onWorkspace (iconspaces !! 1) simpleTabbed $
-              layoutHook kde4Config
-              where
-                modWorkspacesBut :: (LayoutClass l a)
-                                 => [WorkspaceId]
-                                 -> (l a -> ModifiedLayout lm l a)
-                                 -> l a
-                                 -> PerWorkspace (ModifiedLayout lm l) l a
-                modWorkspacesBut excludedWorkspaces f l = modWorkspaces (iconspaces \\ excludedWorkspaces) False (f l) l
 
 -- vim: set nospell:
