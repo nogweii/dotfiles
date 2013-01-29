@@ -12,6 +12,7 @@ import XMonad.Layout.LayoutHints
 import XMonad.Layout.LayoutModifier
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Reflect
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 
@@ -19,6 +20,10 @@ import Data.List  ((\\))
 import Data.Ratio ((%))
 
 import XMonad.Config.Evaryont.Settings (iconspaces)
+
+-- The size of the 'sidebar' in whatever layout it's part of. e.g. the size of
+-- the gimp toolbox, or buddy list from Pidgin
+magicRatio = (1%7)
 
 --layout_hook = -- The following modify every workspace
 --              modWorkspaces    iconspaces          avoidStruts                         |||
@@ -50,10 +55,13 @@ import XMonad.Config.Evaryont.Settings (iconspaces)
 --layout_hook = avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $ Grid
 --layout_hook = Grid
 
+gimpLayout = withIM (magicRatio) (Role "gimp-toolbox") $
+             reflectHoriz Full
+
 layout_hook = smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
               onWorkspace  (iconspaces !! 1) simpleTabbed $
               onWorkspace  (iconspaces !! 4) im $
               standardLayouts
               where
-                im              = withIM (1%7) (Role "buddy_list") (standardLayouts)
+                im              = withIM (magicRatio) (Role "buddy_list") (standardLayouts)
                 standardLayouts = Grid ||| Full
