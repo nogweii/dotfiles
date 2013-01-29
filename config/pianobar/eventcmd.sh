@@ -5,39 +5,42 @@ while read L; do
 	k="`echo "$L" | cut -d '=' -f 1`"
 	v="`echo "$L" | cut -d '=' -f 2`"
 	export "$k=$v"
-done < <(grep -e '^\(artist\|title\|album\|coverArt\|stationName\|songStationName\|pRet\|pRetStr\|wRet\|wRetStr\|songDuration\|songPlayed\|rating\|detailUrl\|stationCount\|station[0-9]*\)=' /dev/stdin) # don't overwrite $1...
+done < <(grep -e '^\(title\|artist\|album\|stationName\|songStationName\|pRet\|pRetStr\|wRet\|wRetStr\|songDuration\|songPlayed\|rating\|coverArt\|stationCount\|station[0-9]*\|audioUrl\)=' /dev/stdin) # don't overwrite $1...
 
-# artist - Current song's artist
-# title - Current song's title
-# album - Current song's album
-# coverArt - The album cover, URL to JPG
-# rating - 0 for no rating, 1 for a loved song, 2 for a banned one.
-# detailUrl - Link to the individual song's page on Pandora
-# pRet - 1 on OK, otherwise specific error Pandora error
-# pRetStr - A human-readable description of the error message
-# wRet - 1 on OK, otherwise a network error
-# wRetStr - A human-readable description of the network error
-# songDuration - How long the song is, in seconds
-# songPlayed - How many seconds of the song have played
-# stationName - the name of the current station
-# songStationName - the name of the station the song belongs to (QuickMix)
-# stationCount - How many stations the user has. NB: Can be 0!
-# station0..stationN (N == stationCount) - Each of the user's stations, by name
+logger -t "pianobar" "eventcmd.sh: $@"
 
 case "$1" in
 	songstart)
+		# Download cover art
+		wget $coverArt -O /tmp/pandora >/dev/null 2>&1 && convert /tmp/pandora /tmp/pandora.png
+		# Use the cover art to when displaying a GUI notification
 		[ -n "$DISPLAY" ] && \
-			notify-send "Pandora Radio" "Now playing: $title by $artist"
-		logger -t "pianobar" "new song: $title by $artist"
-		set-telepathy-status "♫ Pandora: ${title} by ${artist}"
+			notify-send -i /tmp/pandora.png "Pandora Radio" "Now playing: $title by $artist"
+		# Update my pidgin status, only if it looks like dbus is running
+		[ -n "$DBUS_SESSION_BUS_ADDRESS" ] && \
+			~/bin/set-pidgin-status "♫ Pandora: ${title} by ${artist}"
+		# System logger. Cause why not? (And a little debugging)
+		logger -t "pianobar" "song playing: $title by $artist"
+		# Delete the cover art
+		rm /tmp/pandora /tmp/pandora.png &>/dev/null
+		# Update the terminal's title (this is only set when the information is
+		# displayed, which is *not* redrawn after unlocking the pause mutex, so
+		# we need to update the titlebar to reflect the 'Now Playing' status
+		# instead of paused as set by the songpause action)
+		echo -ne "\e]2;pianobar ♫ ${title} by ${artist}\x07"
 		;;
 
-	*)
+	*)  # Generic handler, for when things break.
 		if [ "$pRet" -ne 1 ]; then
-			notify-send "Pandora Raido" "$1 failed: $pRetStr"
+			# pRet == error code from libpiano
+			notify-send "Pandora Radio" "$1 failed: $pRetStr"
 		elif [ "$wRet" -ne 1 ]; then
-			notify-send "Pandora Raido" "$1 failed: Network error: $wRetStr"
+			# wRet == error code from libwaitress
+			notify-send "Pandora Radio" "$1 failed: Network error: $wRetStr"
 		fi
+
+		# Make sure to clear my status in case of anything unexpected
+		[ -n "$DBUS_SESSION_BUS_ADDRESS" ] && ~/bin/set-pidgin-status ""
 		;;
 esac
 
