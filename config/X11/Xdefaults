@@ -65,7 +65,7 @@ URxvt.keysym:M-C-s: perl:keyboard-select:search
 URxvt.keysym.Mod4-plus: perl:font:increase
 URxvt.keysym.Mod4-minus: perl:font:decrease
 
-URxvt.termName: rxvt-256color
+URxvt.termName: rxvt-unicode-256color
 URxvt.skipBuiltinGlyphs: true
 
 ! Use the nuvola terminal icon for urxvt
