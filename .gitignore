@@ -43,6 +43,7 @@ share/recently-used.xbel
 share/uzbl/cookies.txt
 share/uzbl/dforms/
 share/uzbl/history
+share/uzbl/search_history
 share/uzbl/session-cookies.txt
 config/burp/aur.cookies
 share/yeganesh/
