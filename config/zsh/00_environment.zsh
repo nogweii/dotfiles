@@ -27,6 +27,7 @@ if [ -d "$HOME/.cabal/bin" ] ; then
 fi
 # Append the gem installation directory, if it exists.
 [ -d ~/.gem/ruby/1.9.1/bin ] && export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
+
 typeset -U path # Remove duplicate entries
 
 # Personal preferences. XDG uses these, among other applications
@@ -60,13 +61,11 @@ export QT_XFT=true
 if [ -e /usr/lib/libtrash.so ] ; then
     export LD_PRELOAD="/usr/lib/libtrash.so ${LD_PRELOAD}"
 fi
-export TERMINFO="~/.terminfo"
 
 [ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
 
 export RECOLL_CONFDIR=$dot_path/recoll
 
-export TERMINAL="urxvt.sh"
 export TMOUT=3600
 
 # XDG-related stuff
