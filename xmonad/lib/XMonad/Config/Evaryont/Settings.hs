@@ -28,7 +28,8 @@ terminal_choice = "urxvt"
 
 log_hook = updatePointer (Relative 0.5 0.5)
 
-startup_hook = adjustEventInput >> setDefaultCursor xC_left_ptr
+startup_hook = adjustEventInput
+            >> setDefaultCursor xC_left_ptr
 
 -- Handle various events, automatically. (Instead of the usual
 -- wait-for-next-focus to parse any changed events).
