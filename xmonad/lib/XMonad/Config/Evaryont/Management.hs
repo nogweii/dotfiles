@@ -16,7 +16,7 @@ import Data.List
 
 -- Scratchpad
 manageScratchPad :: ManageHook
-manageScratchPad = scratchpadManageHook (W.RationalRect (0) (1/50) (1) (3/4))
+manageScratchPad = scratchpadManageHook (W.RationalRect 0 (1/50) 1 (3/4))
 scratchPad = scratchpadSpawnActionCustom "urxvtc -name scratchpad"
 
 -- Manage hook

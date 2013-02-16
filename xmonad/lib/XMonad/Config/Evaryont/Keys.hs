@@ -4,16 +4,15 @@ module XMonad.Config.Evaryont.Keys (
       ) where
 
 import System.Environment
+
 import XMonad
-import XMonad.Config.Evaryont.Utils
-import XMonad.Config.Evaryont.Logout
-import Music.Pandora
-import XMonad.Actions.CycleWS
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
+import XMonad.Config.Evaryont.Logout
 import XMonad.Config.Evaryont.Settings
-import XMonad.Config.Evaryont.Utils (captureHook, capturePredicate)
+import XMonad.Config.Evaryont.Utils
 import XMonad.Util.WorkspaceScreenshot
+import Music.Pandora
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.

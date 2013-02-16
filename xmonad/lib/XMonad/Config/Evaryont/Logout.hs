@@ -41,7 +41,7 @@ stringList = [("Logout",         unsafeSpawn (kdeSession "logout")),
               ("Suspend",        unsafeSpawn (sessionManager "Suspend")),
               ("Reboot",         unsafeSpawn (kdeSession "reboot")),
               ("Restart XMonad", restart "xmonad" True),
-              ("Lock Screen",    unsafeSpawn (lockScreen)),
+              ("Lock Screen",    unsafeSpawn lockScreen),
               ("Shutdown",       unsafeSpawn (kdeSession "shutdown"))]
 
 -- The interface to this module. Add this as a keybind in XMonad
