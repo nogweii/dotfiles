@@ -12,6 +12,7 @@ import qualified XMonad.StackSet as W
 
 import XMonad.Config.Evaryont.Utils
 import XMonad.Config.Evaryont.Settings (iconspaces)
+import Data.List
 
 -- Scratchpad
 manageScratchPad :: ManageHook
@@ -34,7 +35,7 @@ management_hook = (composeAll . concat $
   , [isKDETrayWindow       --> doIgnore                                                          ]
   -- If I launch gvim from Luakit, it'll have the title "blah.txt - LUAKIT",
   -- center only those gvims.
-  , [className  =? "Gvim" <&&> isSuffixOf title "LUAKIT" --> doCenterFloat]
+  , [className  =? "Gvim" <&&> fmap ("LUAKIT" `isSuffixOf`) title --> doCenterFloat]
   ]) <+> manageScratchPad
      <+> manageDocks
      <+> transience'
