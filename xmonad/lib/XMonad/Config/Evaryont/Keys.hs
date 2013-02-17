@@ -25,28 +25,13 @@ import System.Exit
 --   [
 --    ("M-d a", addName "useless message" $ spawn "xmessage foo"),
 --    ("M-c", sendMessage' Expand)]
---    ^++^
---   [("<XF86AudioPlay>", spawn "mpc toggle" :: X ()),
---    ("<XF86AudioNext>", spawn "mpc next")]
---    ^++^
---   [ ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
 --   , ("M-<Escape>",    addName "Close the current window"             $ kill)
 --   , ("M-S-<Escape>",  addName "Close target window"                  $ spawn "xkill")
 --   , ("M-q",           addName "Lock the screen"                      $ spawn lockScreen)
 --   , ("M-S-q",         addName "Restart XMonad"                       $ restart "xmonad" True)
 --   , ("M-C-q",         addName "Magic KDE dialog"                     $ logoutDialog)
---   , ("M-l",           addName "Go to next non-empty workspace"       $ moveTo Next NonEmptyWS)
---   , ("M-h",           addName "Go to previous non-empty workspace"   $ moveTo Prev NonEmptyWS)
---   , ("M-S-l",         addName "Go to next empty workspace"           $ moveTo Next EmptyWS)
---   , ("M-S-h",         addName "Go to previous empty workspace"       $ moveTo Prev EmptyWS)
---   , ("M-<Backspace>", addName "Toggle the last workspace you're on"  $ toggleWS)
---   , ("M-t",           addName "Toggle current window's float status" $ toggleFloat)
---   , ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
---   , ("M-p",           addName "Launch dmenu"                         $ spawn "~/bin/dmenu-run")
 --   , ("M-S-p",         addName "Take a screenshot (gnome-panel)"      $ spawn "gnome-panel-screenshot -i")
---   , ("M-x",           addName "Switch windows"                       $ spawn "xwinmosaic")
---   , ("M-<Return>",    addName "Launch default terminal"              $ spawn terminal_choice)
---   , ("M-<Print>",     addName "Screenshot every workspace"           $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
+--   , ("M-t",           addName "Toggle current window's float status" $ toggleFloat)
 --   , ("M-?",           addName "Show the configured keys"             $ spawn "show-xmonad-keys")
 --   , ("M-S-?",         addName "Show the configured keys"             $ spawn "show-xmonad-keys")
 --   ]
@@ -70,6 +55,16 @@ key_bindings conf =
     , ("M-h",           addName "Go to previous non-empty workspace"   $ moveTo Prev NonEmptyWS)
     , ("M-S-l",         addName "Go to next empty workspace"           $ moveTo Next EmptyWS)
     , ("M-S-h",         addName "Go to previous empty workspace"       $ moveTo Prev EmptyWS)
+    , ("M-<Backspace>", addName "Toggle the last workspace you're on"  $ toggleWS)
+
+    , subtitle' "Music control"
+    , ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
+    , ("<XF86AudioPlay>", spawn "mpc toggle")
+    , ("<XF86AudioNext>", spawn "mpc next")
+
+    , subtitle' "Uncategorized"
+    , ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
+    , ("M-<Print>",     addName "Screenshot every workspace"           $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
     ]
 
 subtitle' :: String -> (String, NamedAction)
