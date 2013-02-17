@@ -30,9 +30,9 @@ import XMonad.Config.Evaryont.Layout
 --    ("<XF86AudioNext>", spawn "mpc next")]
 
 
-configTwo = withUrgencyHook NoUrgencyHook
---        $ withNavigation2DConfig myNavigation2DConfig
-          $ addDescrKeys ((mod4Mask, xK_F1), xMessage) key_bindings configOne
+evaryontConfig = withUrgencyHook NoUrgencyHook
+--             $ withNavigation2DConfig myNavigation2DConfig
+               $ addDescrKeys ((mod4Mask, xK_F1), showKeybindings) key_bindings configOne
 
 configOne = defaultConfig
     { terminal          = terminal_choice
@@ -43,34 +43,13 @@ configOne = defaultConfig
     , layoutHook        = layout_hook
     , workspaces        = iconspaces
     , focusFollowsMouse = True
+    , startupHook       = startup_hook
     }
 
-evaryontConfig = configTwo
-
--- XMonad's reason d'etierre
---evaryontConfig = addDescrKeys ((mod4Mask, xK_F1), showKeybindings) key_bindings defaultConfig
---    { terminal          = terminal_choice
---    , modMask           = mod4Mask
---    , manageHook        = management_hook
---    , logHook           = log_hook
---    , handleEventHook   = handle_events <+> fullscreenEventHook
---    , layoutHook        = layout_hook
---    , workspaces        = iconspaces
---    , focusFollowsMouse = True
---    -- mkNamedKeymap supports inline descriptions for the keybinds!
---    -- *AWESOME*. Press M-? for magic.
---    , keys              = \c -> mkNamedKeymap c key_bindings
---    -- The return() may not be entirely necessary, but it introduces
---    -- enough laziness to avoid a potential recursion error. So says a
---    -- friend... yeah, that.
---    --, startupHook       = return () >> startup_hook >> checkKeymap evaryontConfig key_bindings
---    , startupHook       = startup_hook
---    }
---    where 
---      -- | Display keyboard mappings using zenity
---      showKeybindings :: [((KeyMask, KeySym), NamedAction)] -> NamedAction
---      showKeybindings x = addName "Show Keybindings" $ io $ do
---        h <- spawnPipe "zenity --text-info"
---        System.IO.UTF8.hPutStr h (unlines $ showKm x)
---        hClose h
---        return () 
+-- | Display keyboard mappings using zenity
+showKeybindings :: [((KeyMask, KeySym), NamedAction)] -> NamedAction
+showKeybindings x = addName "Show Keybindings" $ io $ do
+  h <- spawnPipe "zenity --text-info"
+  System.IO.UTF8.hPutStr h (unlines $ showKm x)
+  hClose h
+  return () 
