@@ -68,7 +68,7 @@ key_bindings conf =
     ]
 
 subtitle' :: String -> (String, NamedAction)
-subtitle' str = ("", NamedAction $ str ++ ":")
+subtitle' str = ([], NamedAction $ str ++ ":")
 
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
