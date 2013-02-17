@@ -3,27 +3,74 @@ module XMonad.Config.Evaryont.Config (
       evaryontConfig
       ) where
 
-import System.IO (Handle, hPutStrLn)
+import System.IO (Handle, hPutStrLn, hClose)
+import qualified System.IO.UTF8
 
 import XMonad
 import XMonad.Config.Kde
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.EZConfig
+import XMonad.Util.NamedActions
+import XMonad.Util.Run (spawnPipe)
+import XMonad.Hooks.UrgencyHook
 
 import XMonad.Config.Evaryont.Keys (key_bindings)
 import XMonad.Config.Evaryont.Management (management_hook)
 import XMonad.Config.Evaryont.Settings
 import XMonad.Config.Evaryont.Layout
 
+--main = xmonad $ addDescrKeys ((mod4Mask, xK_F1), xMessage) myKeys
+--                   defaultConfig { modMask = mod4Mask }
+--
+--myKeys c = (subtitle "Custom Keys":) $ mkNamedKeymap c $
+--   [("M-x a", addName "useless message" $ spawn "xmessage foo"),
+--    ("M-c", sendMessage' Expand)]
+--    ^++^
+--   [("<XF86AudioPlay>", spawn "mpc toggle" :: X ()),
+--    ("<XF86AudioNext>", spawn "mpc next")]
+
+
+configTwo = withUrgencyHook NoUrgencyHook
+--        $ withNavigation2DConfig myNavigation2DConfig
+          $ addDescrKeys ((mod4Mask, xK_F1), xMessage) key_bindings configOne
+
+configOne = defaultConfig
+    { terminal          = terminal_choice
+    , modMask           = mod4Mask
+    , manageHook        = management_hook
+    , logHook           = log_hook
+    , handleEventHook   = handle_events <+> fullscreenEventHook
+    , layoutHook        = layout_hook
+    , workspaces        = iconspaces
+    , focusFollowsMouse = True
+    }
+
+evaryontConfig = configTwo
+
 -- XMonad's reason d'etierre
-evaryontConfig = ewmh defaultConfig {
-           terminal          = terminal_choice
-         , modMask           = mod4Mask
-         , manageHook        = management_hook
-         , logHook           = log_hook
-         , startupHook       = startup_hook >> checkKeymap evaryontConfig key_bindings
-         , handleEventHook   = handle_events <+> fullscreenEventHook
-         , layoutHook        = layout_hook
-         , workspaces        = iconspaces
-         , focusFollowsMouse = True
-         } `additionalKeysP` key_bindings
+--evaryontConfig = addDescrKeys ((mod4Mask, xK_F1), showKeybindings) key_bindings defaultConfig
+--    { terminal          = terminal_choice
+--    , modMask           = mod4Mask
+--    , manageHook        = management_hook
+--    , logHook           = log_hook
+--    , handleEventHook   = handle_events <+> fullscreenEventHook
+--    , layoutHook        = layout_hook
+--    , workspaces        = iconspaces
+--    , focusFollowsMouse = True
+--    -- mkNamedKeymap supports inline descriptions for the keybinds!
+--    -- *AWESOME*. Press M-? for magic.
+--    , keys              = \c -> mkNamedKeymap c key_bindings
+--    -- The return() may not be entirely necessary, but it introduces
+--    -- enough laziness to avoid a potential recursion error. So says a
+--    -- friend... yeah, that.
+--    --, startupHook       = return () >> startup_hook >> checkKeymap evaryontConfig key_bindings
+--    , startupHook       = startup_hook
+--    }
+--    where 
+--      -- | Display keyboard mappings using zenity
+--      showKeybindings :: [((KeyMask, KeySym), NamedAction)] -> NamedAction
+--      showKeybindings x = addName "Show Keybindings" $ io $ do
+--        h <- spawnPipe "zenity --text-info"
+--        System.IO.UTF8.hPutStr h (unlines $ showKm x)
+--        hClose h
+--        return () 
