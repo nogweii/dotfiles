@@ -59,8 +59,8 @@ key_bindings conf =
 
     , subtitle' "Music control"
     , ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
-    , ("<XF86AudioPlay>", spawn "mpc toggle")
-    , ("<XF86AudioNext>", spawn "mpc next")
+    , ("<XF86AudioPlay>", addName "Toggle MPD" $ spawn "mpc toggle")
+    , ("<XF86AudioNext>", addName "Next song in the playlist" $ spawn "mpc next")
 
     , subtitle' "Uncategorized"
     , ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
