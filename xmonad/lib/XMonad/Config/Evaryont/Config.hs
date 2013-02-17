@@ -34,7 +34,7 @@ evaryontConfig = withUrgencyHook NoUrgencyHook
 --             $ withNavigation2DConfig myNavigation2DConfig
                $ addDescrKeys ((mod4Mask, xK_F1), showKeybindings) key_bindings configOne
 
-configOne = defaultConfig
+configOne = ewmh defaultConfig
     { terminal          = terminal_choice
     , modMask           = mod4Mask
     , manageHook        = management_hook
