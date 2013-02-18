@@ -27,6 +27,7 @@ echo "DBUS pid: ${DBUS_SESSION_BUS_PID}"
 export DBUS_SESSION_BUS_PID
 
 logOutput xsetroot -bg '#000'
+logOutput eval $(cat ~/.fehbg)
 
 logOutput xrdb-load
 
@@ -54,6 +55,8 @@ keydouble_pairs=$(grep -i '^![[:space:]]*Key doubles:' "$xmodmap_conf" | sed 's/
 logOutput autocutsel -fork &
 logOutput autocutsel -selection PRIMARY -fork &
 
+# Pretty effects, like shadows & transparency
+logOutput compton -f -G -c --dbus --detect-transient --detect-client-leader --shadow-ignore-shaped -b
 
 #####################
 # TrackPoint settings
