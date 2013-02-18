@@ -1,0 +1,15 @@
+[default]
+vim_mode = false
+box_width = 200
+box_height = 40
+colorize = true
+color_offset = 0
+show_icons = true
+show_desktop = true
+icon_size = 16
+font = Sans 10
+screenshot = false
+screenshot_offset_x = 0
+screenshot_offset_y = 0
+at_pointer = false
+# color_file = /path/to/file

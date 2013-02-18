@@ -56,3 +56,7 @@ config/gtk-3.0/bookmarks
 config/gnome-control-center/backgrounds/last-edited.xml
 weechat/logs
 weechat/weechat.log
+config/conkywx/conkywx_internal/
+config/pavucontrol.ini
+config/beets/state.pickle
+config/Skype/Skype.conf
