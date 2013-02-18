@@ -37,38 +37,53 @@ import System.Exit
 --   ]
 
 
-key_bindings conf =
-    mkNamedKeymap conf $
-    [ subtitle' "Killing & Restarting"
-    , ("M-<Escape>", addName "Kill current window" $ kill1)
+key_bindings c =
+       key_killing c
+    ++ key_apps c
+    ++ key_workspace c
+    ++ key_music c
+    ++ key_misc c
+
+key_killing conf =
+    (subtitle "Killing & Restarting":) $ mkNamedKeymap conf $
+    [ ("M-<Escape>", addName "Kill current window" $ kill1)
+    , ("M-S-c", addName "Kill current window (alternative bind)" $ kill1)
     , ("M-S-<Escape>", addName "Kill all windows on workspace" $ killAll)
     , ("M-C-<Escape>", addName "Restart XMonad" $ spawn "xmonad --restart")
     , ("M-S-C-<Escape>", addName "Quit XMonad" $ io (exitWith ExitSuccess))
+    ]
 
-    , subtitle' "Application launching"
-    , ("M-<Enter>", addName "Launch terminal" $ spawn terminal_choice)
+key_apps conf =
+    (subtitle "Application launching":) $ mkNamedKeymap conf $
+    [ ("M-<Enter>", addName "Launch terminal" $ spawn terminal_choice)
     , ("M-p", addName "Run dmenu to launch an application" $ spawn "~/bin/dmenu-run")
     , ("M-x", addName "Switch to another window" $ spawn "xwinmosaic")
+    ]
 
-    , subtitle' "Workspace movement"
-    , ("M-l",           addName "Go to next non-empty workspace"       $ moveTo Next NonEmptyWS)
+key_workspace conf =
+    (subtitle "Workspace movement":) $ mkNamedKeymap conf $
+    [ ("M-l",           addName "Go to next non-empty workspace"       $ moveTo Next NonEmptyWS)
     , ("M-h",           addName "Go to previous non-empty workspace"   $ moveTo Prev NonEmptyWS)
     , ("M-S-l",         addName "Go to next empty workspace"           $ moveTo Next EmptyWS)
     , ("M-S-h",         addName "Go to previous empty workspace"       $ moveTo Prev EmptyWS)
     , ("M-<Backspace>", addName "Toggle the last workspace you're on"  $ toggleWS)
+    ]
 
-    , subtitle' "Music control"
-    , ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
+key_music conf =
+    (subtitle "Music control":) $ mkNamedKeymap conf $
+    [ ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
     , ("<XF86AudioPlay>", addName "Toggle MPD" $ spawn "mpc toggle")
     , ("<XF86AudioNext>", addName "Next song in the playlist" $ spawn "mpc next")
+    ]
 
-    , subtitle' "Uncategorized"
-    , ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
+key_misc conf =
+    (subtitle "Uncategorized":) $ mkNamedKeymap conf $
+    [ ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
     , ("M-<Print>",     addName "Screenshot every workspace"           $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
     ]
 
-subtitle' :: String -> (String, NamedAction)
-subtitle' str = ([], NamedAction $ str ++ ":")
+--subtitle' :: String -> (String, NamedAction)
+--subtitle' str = ([], NamedAction $ str ++ ":")
 
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
