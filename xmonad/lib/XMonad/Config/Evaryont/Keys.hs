@@ -11,8 +11,8 @@ import XMonad.Actions.GridSelect
 import XMonad.Config.Evaryont.Logout
 import XMonad.Config.Evaryont.Settings
 import XMonad.Config.Evaryont.Utils
-import XMonad.Util.EZConfig
-import XMonad.Util.NamedActions
+import XMonad.Darcs.Util.EZConfig
+import XMonad.Darcs.Util.NamedActions
 import XMonad.Util.WorkspaceScreenshot
 
 import XMonad.Actions.WithAll (killAll)

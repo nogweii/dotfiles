@@ -9,8 +9,8 @@ import qualified System.IO.UTF8
 import XMonad
 import XMonad.Config.Kde
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Util.EZConfig
-import XMonad.Util.NamedActions
+import XMonad.Darcs.Util.EZConfig
+import XMonad.Darcs.Util.NamedActions
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Hooks.UrgencyHook
 
@@ -32,7 +32,7 @@ import XMonad.Config.Evaryont.Layout
 
 evaryontConfig = withUrgencyHook NoUrgencyHook
 --             $ withNavigation2DConfig myNavigation2DConfig
-               $ addDescrKeys ((mod4Mask, xK_F1), showKeybindings) key_bindings configOne
+               $ addDescrKeys' ((mod4Mask, xK_F1), showKeybindings) key_bindings configOne
 
 configOne = ewmh defaultConfig
     { terminal          = terminal_choice
