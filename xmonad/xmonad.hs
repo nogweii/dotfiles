@@ -1,6 +1,4 @@
 import XMonad
-import XMonad.Util.EZConfig
-import XMonad.Hooks.DynamicLog
 
 -- from ~/.xmonad/lib/
 -- This does a lot of the real connecting

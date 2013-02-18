@@ -3,44 +3,87 @@ module XMonad.Config.Evaryont.Keys (
       toggleStrutsKey
       ) where
 
+import Music.Pandora
 import System.Environment
 import XMonad
-import XMonad.Config.Evaryont.Utils
-import XMonad.Config.Evaryont.Logout
-import Music.Pandora
-import XMonad.Actions.CycleWS
 import XMonad.Actions.CycleWS
 import XMonad.Actions.GridSelect
+import XMonad.Config.Evaryont.Logout
 import XMonad.Config.Evaryont.Settings
-import XMonad.Config.Evaryont.Utils (captureHook, capturePredicate)
+import XMonad.Config.Evaryont.Utils
+import XMonad.Darcs.Util.EZConfig
+import XMonad.Darcs.Util.NamedActions
 import XMonad.Util.WorkspaceScreenshot
 
-------------------------------------------------------------------------
+import XMonad.Actions.WithAll (killAll)
+import XMonad.Actions.CopyWindow (kill1)
+import System.Exit
+
 -- Key bindings. Add, modify or remove key bindings here.
 --
-key_bindings = [ ("M-a",           pandoraSelect) -- control pianobar
-               , ("M-<Escape>",    kill) -- close current window
-               , ("M-S-<Escape>",  spawn "xkill") -- click to kill an application
-               , ("M-q",           spawn lockScreen) -- lock the screen
-            -- , ("M-S-q",         broadcastMessage ReleaseResources >> restart "xmonad" True) -- restart XMonad
-               , ("M-S-q",         restart "xmonad" True) -- restart XMonad
-               , ("M-C-q",         logoutDialog) -- shutdown/hibernate/suspend dialog
-               , ("M-l",           moveTo Next NonEmptyWS) -- go to next workspace
-               , ("M-h",           moveTo Prev NonEmptyWS) -- go to previous workspace
-               , ("M-S-l",         moveTo Next EmptyWS) -- create a new, empty, workspace
-               , ("M-S-h",         moveTo Prev EmptyWS)
-               , ("M-<Backspace>", toggleWS) -- toggle which workspace you're on
-               , ("M-t",           toggleFloat) -- toggle wether a window is floating
-               , ("M-e",           nextScreen) -- go to the next physical screen (Xinerama)
-               , ("M-p",           spawn "~/bin/dmenu-run") -- application launcher
-               , ("M-S-p",         spawn "gnome-panel-screenshot -i") -- take a screenshot
-            -- , ("M-x",           goToSelected defaultGSConfig) -- application launcher
-               , ("M-x",           spawn "xwinmosaic") -- window switcher
-               , ("M-<Return>",    spawn terminal_choice) -- Launch the default terminal
-               , ("M-<Print>",     captureWorkspacesWhen defaultPredicate captureHook horizontally) -- Screenshot all the workspaces
-               , ("M-?",           spawn "show-xmonad-keys") -- List all keys configured in xmonad
-               , ("M-S-?",         spawn "show-xmonad-keys") -- List all keys configured in xmonad
-               ]
+--key_bindings = 
+--   [
+--    ("M-d a", addName "useless message" $ spawn "xmessage foo"),
+--    ("M-c", sendMessage' Expand)]
+--   , ("M-<Escape>",    addName "Close the current window"             $ kill)
+--   , ("M-S-<Escape>",  addName "Close target window"                  $ spawn "xkill")
+--   , ("M-q",           addName "Lock the screen"                      $ spawn lockScreen)
+--   , ("M-S-q",         addName "Restart XMonad"                       $ restart "xmonad" True)
+--   , ("M-C-q",         addName "Magic KDE dialog"                     $ logoutDialog)
+--   , ("M-S-p",         addName "Take a screenshot (gnome-panel)"      $ spawn "gnome-panel-screenshot -i")
+--   , ("M-t",           addName "Toggle current window's float status" $ toggleFloat)
+--   , ("M-?",           addName "Show the configured keys"             $ spawn "show-xmonad-keys")
+--   , ("M-S-?",         addName "Show the configured keys"             $ spawn "show-xmonad-keys")
+--   ]
+
+
+key_bindings c =
+       key_killing c
+    ++ key_apps c
+    ++ key_workspace c
+    ++ key_music c
+    ++ key_misc c
+
+key_killing conf =
+    (subtitle "Killing & Restarting":) $ mkNamedKeymap conf $
+    [ ("M-<Escape>", addName "Kill current window" $ kill1)
+    , ("M-S-c", addName "Kill current window (alternative bind)" $ kill1)
+    , ("M-S-<Escape>", addName "Kill all windows on workspace" $ killAll)
+    , ("M-C-<Escape>", addName "Restart XMonad" $ spawn "xmonad --restart")
+    , ("M-S-C-<Escape>", addName "Quit XMonad" $ io (exitWith ExitSuccess))
+    ]
+
+key_apps conf =
+    (subtitle "Application launching":) $ mkNamedKeymap conf $
+    [ ("M-<Enter>", addName "Launch terminal" $ spawn terminal_choice)
+    , ("M-p", addName "Run dmenu to launch an application" $ spawn "~/bin/dmenu-run")
+    , ("M-x", addName "Switch to another window" $ spawn "xwinmosaic")
+    ]
+
+key_workspace conf =
+    (subtitle "Workspace movement":) $ mkNamedKeymap conf $
+    [ ("M-l",           addName "Go to next non-empty workspace"       $ moveTo Next NonEmptyWS)
+    , ("M-h",           addName "Go to previous non-empty workspace"   $ moveTo Prev NonEmptyWS)
+    , ("M-S-l",         addName "Go to next empty workspace"           $ moveTo Next EmptyWS)
+    , ("M-S-h",         addName "Go to previous empty workspace"       $ moveTo Prev EmptyWS)
+    , ("M-<Backspace>", addName "Toggle the last workspace you're on"  $ toggleWS)
+    ]
+
+key_music conf =
+    (subtitle "Music control":) $ mkNamedKeymap conf $
+    [ ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
+    , ("<XF86AudioPlay>", addName "Toggle MPD" $ spawn "mpc toggle")
+    , ("<XF86AudioNext>", addName "Next song in the playlist" $ spawn "mpc next")
+    ]
+
+key_misc conf =
+    (subtitle "Uncategorized":) $ mkNamedKeymap conf $
+    [ ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
+    , ("M-<Print>",     addName "Screenshot every workspace"           $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
+    ]
+
+--subtitle' :: String -> (String, NamedAction)
+--subtitle' str = ([], NamedAction $ str ++ ":")
 
 toggleStrutsKey :: XConfig Layout -> (KeyMask, KeySym)
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)

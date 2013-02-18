@@ -13,6 +13,7 @@ import XMonad.Core (WindowSpace, WorkspaceId)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 import XMonad.Util.WindowProperties (getProp32s)
+import XMonad.Darcs.Util.NamedActions
 
 import Control.Monad.Trans
 import System.FilePath

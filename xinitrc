@@ -51,6 +51,10 @@ keydouble_pairs=$(grep -i '^![[:space:]]*Key doubles:' "$xmodmap_conf" | sed 's/
 # Then lauch keydouble with the list of keys
 #logOutput ~/keydouble/keydouble $keydouble_pairs &
 
+logOutput autocutsel -fork &
+logOutput autocutsel -selection PRIMARY -fork &
+
+
 #####################
 # TrackPoint settings
 #####################
