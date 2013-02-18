@@ -88,7 +88,7 @@
     # aliases)
     simple-serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
     # Edit every file that hasn't been merged in your $EDITOR
-    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f`"
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f` +/======"
     # Add every file that hasn't been merged
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     # Generate a graphviz directed graph of the history
