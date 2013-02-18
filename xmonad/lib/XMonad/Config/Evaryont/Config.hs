@@ -43,7 +43,7 @@ configOne = ewmh defaultConfig
     , layoutHook        = layout_hook
     , workspaces        = iconspaces
     , focusFollowsMouse = True
-    , startupHook       = startup_hook
+    , startupHook       = startup_hook >> checkNamedKeymap (key_bindings configOne)
     }
 
 -- | Display keyboard mappings using zenity
