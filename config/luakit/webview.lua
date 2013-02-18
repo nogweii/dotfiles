@@ -80,20 +80,16 @@ webview.init_funcs = {
     end,
 
     -- Display hovered link in statusbar
-    link_hover_display = function (view, window)
+    link_hover_display = function (view, w)
         view:add_signal("link-hover", function (v, link)
-            if window.view == v and link then
-                window:update_uri(link)
+            if w.view == v and link then
+                w:update_uri(link)
             end
-            window.sbar.ebox:show()
-            window.sbar.hidden = false
         end)
         view:add_signal("link-unhover", function (v)
-            if window.view == v then
-                window:update_uri()
+            if w.view == v then
+                w:update_uri()
             end
-            window.sbar.ebox:hide()
-            window.sbar.hidden = true
         end)
     end,
 
