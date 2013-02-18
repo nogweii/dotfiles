@@ -55,3 +55,4 @@ config/gtk-2.0/gtkfilechooser.ini
 config/gtk-3.0/bookmarks
 config/gnome-control-center/backgrounds/last-edited.xml
 weechat/logs
+weechat/weechat.log
