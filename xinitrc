@@ -56,7 +56,7 @@ logOutput autocutsel -fork &
 logOutput autocutsel -selection PRIMARY -fork &
 
 # Pretty effects, like shadows & transparency
-logOutput compton -f -G -c --dbus --detect-transient --detect-client-leader --shadow-ignore-shaped -b
+logOutput compton --dbus -b
 
 #####################
 # TrackPoint settings
