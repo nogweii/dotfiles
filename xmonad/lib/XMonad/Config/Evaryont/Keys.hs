@@ -14,6 +14,7 @@ import XMonad.Config.Evaryont.Utils
 import XMonad.Darcs.Util.EZConfig
 import XMonad.Darcs.Util.NamedActions
 import XMonad.Util.WorkspaceScreenshot
+import qualified XMonad.StackSet as W
 
 import XMonad.Actions.WithAll (killAll)
 import XMonad.Actions.CopyWindow (kill1)
@@ -40,6 +41,7 @@ import System.Exit
 key_bindings c =
        key_killing c
     ++ key_apps c
+    ++ key_windows c
     ++ key_workspace c
     ++ key_music c
     ++ key_misc c
@@ -49,15 +51,21 @@ key_killing conf =
     [ ("M-<Escape>", addName "Kill current window" $ kill1)
     , ("M-S-c", addName "Kill current window (alternative bind)" $ kill1)
     , ("M-S-<Escape>", addName "Kill all windows on workspace" $ killAll)
-    , ("M-C-<Escape>", addName "Restart XMonad" $ spawn "xmonad --restart")
+    , ("M-C-<Escape>", addName "Restart XMonad" $ spawn "xmonad --recompile && xmonad --restart")
     , ("M-S-C-<Escape>", addName "Quit XMonad" $ io (exitWith ExitSuccess))
     ]
 
 key_apps conf =
     (subtitle "Application launching":) $ mkNamedKeymap conf $
-    [ ("M-<Enter>", addName "Launch terminal" $ spawn terminal_choice)
+    [ ("M-<Return>", addName "Launch terminal" $ spawn terminal_choice)
     , ("M-p", addName "Run dmenu to launch an application" $ spawn "~/bin/dmenu-run")
     , ("M-x", addName "Switch to another window" $ spawn "xwinmosaic")
+    ]
+
+key_windows conf = 
+    (subtitle "Focus changing":) $ mkNamedKeymap conf $
+    [ ("M-j", addName "Focus next"     $ windows W.focusDown)
+    , ("M-k", addName "Focus previous" $ windows W.focusUp  )
     ]
 
 key_workspace conf =
@@ -78,8 +86,9 @@ key_music conf =
 
 key_misc conf =
     (subtitle "Uncategorized":) $ mkNamedKeymap conf $
-    [ ("M-e",           addName "Go to next Xinerama screen"           $ nextScreen)
-    , ("M-<Print>",     addName "Screenshot every workspace"           $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
+    [ ("M-e",           addName "Go to next Xinerama screen"     $ nextScreen)
+    , ("M-<Print>",     addName "Screenshot every workspace"     $ captureWorkspacesWhen defaultPredicate captureHook horizontally)
+    , ("M-t",           addName "Toggle floating current window" $ toggleFloat)
     ]
 
 --subtitle' :: String -> (String, NamedAction)
