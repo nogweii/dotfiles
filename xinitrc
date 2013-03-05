@@ -13,19 +13,33 @@ logOutput() {
     $@ 2>>~/.xsession-errors
 }
 
-if [ -d /etc/X11/xinit/xinitrc.d ]; then
-    for f in /etc/X11/xinit/xinitrc.d/*; do
-        if [ -x "$f" ]; then
-            echo "Loading ${f}"
-            source "$f"
-        fi
-    done
-    unset f
-fi
+# A basic shell function that checks if a program exists, and if it does & is
+# executable, executes it, via logOutput
+maybeExec() {
+  [ -x $1 ] && logOutput $1
+}
 
+# Launch dbus session instance
+dbuslaunch="`which dbus-launch 2>/dev/null`"
+if [ -n "$dbuslaunch" ] && [ -x "$dbuslaunch" ] && [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+  eval `$dbuslaunch --sh-syntax --exit-with-session`
+fi
 echo "DBUS pid: ${DBUS_SESSION_BUS_PID}"
 export DBUS_SESSION_BUS_PID
 
+# Load canberra & overlay-scrollbar GTK modules
+if [[ -z $GTK_MODULES ]]; then
+  GTK_MODULES="canberra-gtk-module:overlay-scrollbar"
+else
+  GTK_MODULES="$GTK_MODULES:canberra-gtk-module:overlay-scrollbar"
+fi
+export GTK_MODULES
+export UBUNTU_MENUPROXY="libappmenu.so"
+
+maybeExec /usr/bin/start-pulseaudio-x11
+maybeExec /usr/bin/xdg-user-dirs-update
+
+# Background
 logOutput xsetroot -bg '#000'
 logOutput eval $(cat ~/.fehbg)
 
