@@ -69,7 +69,7 @@ URxvt.termName: rxvt-unicode-256color
 URxvt.skipBuiltinGlyphs: true
 
 ! Use the nuvola terminal icon for urxvt
-URxvt.iconFile: /usr/share/icons/nuvola/32x32/apps/terminal.png
+URxvt.iconFile: /usr/share/icons/Faenza/apps/32/utilities-terminal.png
 
 !dzen.background: c_foreground
 !dzen.foreground: c_background
