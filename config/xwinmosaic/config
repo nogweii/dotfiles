@@ -1,13 +1,13 @@
 [default]
-vim_mode = false
-box_width = 200
-box_height = 40
+vim_mode = true
+box_width = 250
+box_height = 70
 colorize = true
 color_offset = 0
 show_icons = true
 show_desktop = true
-icon_size = 16
-font = Sans 10
+icon_size = 32
+font = Roboto Light 12
 screenshot = false
 screenshot_offset_x = 0
 screenshot_offset_y = 0
