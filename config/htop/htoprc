@@ -15,6 +15,7 @@ tree_view=1
 header_margin=0
 detailed_cpu_time=0
 cpu_count_from_zero=0
+update_process_names=1
 color_scheme=0
 delay=15
 left_meters=AllCPUs 
