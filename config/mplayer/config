@@ -3,6 +3,11 @@ ao=pulse
 # No remote control set up, so turn off lirc
 nolirc=true
 # much quieter mplayer, by default
-msglevel=all=5:cplayer=3:decaudio=3:demux=3:codeccfg=3
+msglevel=all=5:cplayer=3:decaudio=3:demux=3:codeccfg=3:network=3
 msgcolor=true
-msgmodule=false
+msgmodule=true
+
+# super-mega-mondo-cache! (12MB, in kB)
+cache=12582912
+# Must have 10% (~1.2MB) downloaded before mplayer begins
+cache-min=10
