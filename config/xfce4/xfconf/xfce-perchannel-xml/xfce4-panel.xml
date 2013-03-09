@@ -66,6 +66,7 @@
         <value type="string" value="vmware-tray"/>
         <value type="string" value="batti"/>
       </property>
+      <property name="show-frame" type="bool" value="false"/>
     </property>
     <property name="plugin-7" type="string" value="indicator"/>
     <property name="plugin-10" type="string" value="xfce4-mpc-plugin"/>
