@@ -236,8 +236,10 @@ bindkey -a "go" ranger_open
 dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
 
 df() {
-  # Is dfc installed & did I not pass any arguments to df?
-  if [ -n "${commands[dfc]}" -a $# -eq 0 ]; then
+  # Is dfc installed & did I not pass any arguments to df? Also, make sure that
+  # there are >85 columns. Less than/equal to that, things go wonky. 85 is the
+  # width of a terminal when it is 50% of the screen.
+  if [ -n "${commands[dfc]}" -a $# -eq 0 -a $COLUMNS -gt 85 ]; then
     # Add 64 so that sed won't delete the ANSI color codes. Why 64? Just guessed
     # 50-60, then kept incrementing until the lines got too long. 64 works
     # perfectly.
