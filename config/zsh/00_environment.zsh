@@ -135,3 +135,7 @@ export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 
 export GEM_HOME="${HOME}/.rubygems"
 export UZBL_UTIL_DIR="${XDG_DATA_HOME}/uzbl/scripts/util"
+
+# A few applications (like osc) still expect GNOME_DESKTOP_SESSION_ID to exist,
+# so define a value if it hasn't already.
+[ -z "$GNOME_DESKTOP_SESSION_ID" ] && GNOME_DESKTOP_SESSION_ID='this-is-deprecated'
