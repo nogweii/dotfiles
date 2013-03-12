@@ -68,7 +68,7 @@ export RECOLL_CONFDIR=$dot_path/recoll
 
 export TMOUT=3600
 
-# XDG-related stuff
+# XDG-related stuff# {{{
 export XDG_CACHE_HOME="${HOME}/.local/cache"
 if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
     mkdir -p $XDG_CACHE_HOME/zsh
@@ -83,8 +83,20 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 if [ ! -d $XDG_DATA_HOME/zsh ] ; then
     mkdir -p $XDG_DATA_HOME/zsh
 fi
-export XDG_DATA_DIRS="${HOME}/.local/share/:${XDG_DATA_DIRS}"
-export XDG_CONFIG_DIRS="${HOME}/.local/config/:${XDG_CONFIG_DIRS}"
+
+# Arch doesn't set XDG_DATA_DIRS or XDG_CONFIG_DIRS by default any more, so
+# assume the default directories for both.
+if [ -z "${XDG_DATA_DIRS}" ]; then
+    export XDG_DATA_DIRS="${HOME}/.local/share:/usr/local/share:/usr/share"
+else
+    export XDG_DATA_DIRS="${HOME}/.local/share:${XDG_DATA_DIRS}"
+fi
+if [ -z $XDG_CONFIG_DIRS ]; then
+    export XDG_CONFIG_DIRS="${HOME}/.local/config:/etc/xdg"
+else
+	export XDG_CONFIG_DIRS="${HOME}/.local/config:${XDG_CONFIG_DIRS}"
+fi
+# }}}
 
 # MAILDIR & new mail alerts
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
