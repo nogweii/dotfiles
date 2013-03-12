@@ -8,7 +8,6 @@ import qualified System.IO.UTF8
 
 import XMonad
 import XMonad.Config.Kde
-import XMonad.Hooks.EwmhDesktops
 import XMonad.Darcs.Util.EZConfig
 import XMonad.Darcs.Util.NamedActions
 import XMonad.Util.Run (spawnPipe)
@@ -34,12 +33,12 @@ evaryontConfig = withUrgencyHook NoUrgencyHook
 --             $ withNavigation2DConfig myNavigation2DConfig
                $ addDescrKeys' ((mod4Mask, xK_F1), showKeybindings) key_bindings configOne
 
-configOne = ewmh defaultConfig
+configOne = defaultConfig
     { terminal          = terminal_choice
     , modMask           = mod4Mask
     , manageHook        = management_hook
     , logHook           = log_hook
-    , handleEventHook   = handle_events <+> fullscreenEventHook
+    , handleEventHook   = handle_events
     , layoutHook        = layout_hook
     , workspaces        = iconspaces
     , focusFollowsMouse = True
