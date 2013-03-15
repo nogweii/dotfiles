@@ -27,7 +27,6 @@
     excludesfile = ~/.local/config/git/ignores
     attributesfile = ~/.local/config/git/attributes
 [branch]
-    autosetupmerge = true
     autosetuprebase = always
 [alias]
     # quick shortcut for add
