@@ -45,7 +45,7 @@ logOutput eval $(cat ~/.fehbg)
 
 logOutput xrdb-load
 
-logOutput xfce4-panel &
+logOutput tint2 -c ${XDG_CONFIG_HOME}/tintrc >/dev/null &
 
 logOutput mpd ${XDG_CONFIG_HOME}/mpd.conf
 
