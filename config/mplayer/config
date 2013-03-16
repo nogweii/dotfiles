@@ -5,7 +5,7 @@ nolirc=true
 # much quieter mplayer, by default
 msglevel=all=5:cplayer=3:decaudio=3:demux=3:codeccfg=3:network=3
 msgcolor=true
-msgmodule=true
+msgmodule=false
 
 # super-mega-mondo-cache! (12MB, in kB)
 cache=12582912
