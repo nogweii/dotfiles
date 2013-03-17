@@ -1,9 +1,0 @@
-FriendlyName:c#
-CTagsName:c#
-PythonExtensionMatcher:cs
-VimExtensionMatcher:cs
-Suffix:cs
-VimSyntaxes:cs
-VimFileTypes:cs
-
-# vim: ff=unix:noet

@@ -1,3 +1,0 @@
-release_clean:1
-release_revid:aaf685e03cd2894bd7898f10ca7e3d82be6499a9
-release_date:2011-12-15 09:17:23 +0000
