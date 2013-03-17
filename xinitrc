@@ -27,15 +27,6 @@ fi
 echo "DBUS pid: ${DBUS_SESSION_BUS_PID}"
 export DBUS_SESSION_BUS_PID
 
-# Load canberra & overlay-scrollbar GTK modules
-if [[ -z $GTK_MODULES ]]; then
-  GTK_MODULES="canberra-gtk-module:overlay-scrollbar"
-else
-  GTK_MODULES="$GTK_MODULES:canberra-gtk-module:overlay-scrollbar"
-fi
-export GTK_MODULES
-export UBUNTU_MENUPROXY="libappmenu.so"
-
 maybeExec /usr/bin/start-pulseaudio-x11
 maybeExec /usr/bin/xdg-user-dirs-update
 
