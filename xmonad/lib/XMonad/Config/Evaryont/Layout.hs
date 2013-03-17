@@ -15,6 +15,7 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
+import XMonad.Layout.ShowWName
 
 import Data.List  ((\\))
 import Data.Ratio ((%))
@@ -58,7 +59,7 @@ magicRatio = 1%7
 gimpLayout = withIM magicRatio (Role "gimp-toolbox") $
              reflectHoriz Full
 
-layout_hook = smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
+layout_hook = showWName $ smartSpacing 5 $ avoidStruts $ layoutHintsWithPlacement (0.5, 0.5) $ smartBorders $
               onWorkspace  (iconspaces !! 1) simpleTabbed $
               onWorkspace  (iconspaces !! 4) im
               standardLayouts
