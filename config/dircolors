@@ -1,7 +1,6 @@
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996, 1999-2008
-# Free Software Foundation, Inc.
+# Copyright (C) 1996-2013 Free Software Foundation, Inc.
 # Copying and distribution of this file, with or without modification,
 # are permitted provided the copyright notice and this notice are preserved.
 # The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
@@ -36,15 +35,24 @@ TERM mach-color
 TERM mlterm
 TERM putty
 TERM rxvt
+TERM rxvt-256color
 TERM rxvt-cygwin
 TERM rxvt-cygwin-native
 TERM rxvt-unicode
+TERM rxvt-unicode-256color
+TERM rxvt-unicode256
 TERM rxvt-256color
 TERM screen
 TERM screen-256color
+TERM screen-256color-bce
 TERM screen-bce
 TERM screen-w
+TERM screen.Eterm
+TERM screen.rxvt
 TERM screen.linux
+TERM st
+TERM st-256color
+TERM terminator
 TERM vt100
 TERM xterm
 TERM xterm-16color
@@ -60,27 +68,25 @@ TERM xterm-debian
 # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
-RESET 0 # reset to "normal" color
-#HARDLINK 44;37 # regular file with more than one link
-CAPABILITY 30;41 # file with capability
-
-NORMAL 00          # global default, although everything should be something.
-FILE 00            # normal file
-DIR 01;38;5;27     # directory
-LINK 01;38;5;51    # symbolic link (If you set this to 'target' instead of a
-                   # numerical value, the color is as for the file pointed to.)
-FIFO 40;38;5;11    # pipe
-SOCK 01;38;5;13    # socket
-DOOR 01;38;5;5     # door
-BLK 01;48;5;232;38;5;11  # block device driver
-CHR 01;48;5;232;38;5;3   # character device driver
-ORPHAN 01;48;5;232;38;5;9  # symlink to nonexistent file, or non-stat'able file
-MISSING 01;05;48;5;232;38;5;15 # ... And the files they point to
-SETUID 48;5;196;38;5;15  # file that is setuid (u+s)
-SETGID 48;5;11;38;5;16   # file that is setgid (g+s)
-STICKY_OTHER_WRITABLE 48;5;10;38;5;16 # dir is sticky & other-writable (+t,o+w)
-OTHER_WRITABLE 48;5;10;38;5;21 # dir that is other-writable (o+w)
-STICKY 48;5;21;38;5;15  # dir with the sticky bit set (+t)
+NORMAL                 00                     # global default, although everything should be something.
+FILE                   00                     # normal file
+RESET                  00                     # reset to "normal" color
+DIR                    01;38;5;27             # directory
+LINK                   01;38;5;51             # symbolic link (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
+MULTIHARDLINK          44;37                  # regular file with more than one link
+FIFO                   40;38;5;11             # pipe
+SOCK                   01;38;5;13             # socket
+DOOR                   01;38;5;5              # door
+BLK                    01;48;5;232;38;5;11    # block device driver
+CHR                    01;48;5;232;38;5;3     # character device driver
+ORPHAN                 01;48;5;232;38;5;9     # symlink to nonexistent file, or non-stat'able file
+MISSING                01;05;48;5;232;38;5;15 # ... And the files they point to
+SETUID                 48;5;196;38;5;15       # file that is setuid (u+s)
+SETGID                 48;5;11;38;5;16        # file that is setgid (g+s)
+CAPABILITY             30;41                  # file with capability
+STICKY_OTHER_WRITABLE  48;5;10;38;5;16        # dir is sticky & other-writable (+t,o+w)
+OTHER_WRITABLE         48;5;10;38;5;21        # dir that is other-writable (o+w)
+STICKY                 48;5;21;38;5;15        # dir with the sticky bit set (+t)
 
 # This is for files with execute permission:
 EXEC 01;38;5;34
@@ -107,13 +113,19 @@ EXEC 01;38;5;34
 .Z 01;31
 .dz 01;31
 .gz 01;31
+.lz 01;31
+.xz 01;31
 .bz2 01;31
 .bz 01;31
+.tbz 01;31
 .tbz2 01;31
 .tz 01;31
 .deb 01;31
 .rpm 01;31
 .jar 01;31
+.war 01;31
+.ear 01;31
+.sar 01;31
 .rar 01;31
 .ace 01;31
 .zoo 01;31
@@ -143,6 +155,7 @@ EXEC 01;38;5;34
 .mpeg 01;35
 .m2v 01;35
 .mkv 01;35
+.webm 01;35
 .ogm 01;35
 .mp4 01;35
 .m4v 01;35
@@ -163,6 +176,8 @@ EXEC 01;38;5;34
 .xcf 01;35
 .xwd 01;35
 .yuv 01;35
+.cgm 01;35
+.emf 01;35
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
 .axv 01;35
 .anx 01;35
@@ -185,3 +200,4 @@ EXEC 01;38;5;34
 .oga 00;36
 .spx 00;36
 .xspf 00;36
+#.pdf 01;33
