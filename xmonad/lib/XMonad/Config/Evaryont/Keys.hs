@@ -44,6 +44,7 @@ key_bindings c =
     ++ key_windows c
     ++ key_workspace c
     ++ key_music c
+    ++ key_volume c
     ++ key_misc c
 
 key_killing conf =
@@ -82,6 +83,13 @@ key_music conf =
     [ ("M-a",           addName "Music control (pandora only)"         $ pandoraSelect)
     , ("<XF86AudioPlay>", addName "Toggle MPD" $ spawn "mpc toggle")
     , ("<XF86AudioNext>", addName "Next song in the playlist" $ spawn "mpc next")
+    ]
+
+key_volume conf =
+    (subtitle "Volume control":) $ mkNamedKeymap conf $
+    [ ("<XF86AudioRaiseVolume>", addName "Raise volume" $ spawn "ponymix -N increase 5")
+    , ("<XF86AudioLowerVolume>", addName "Lower volume" $ spawn "ponymix -N decrease 5")
+    , ("<XF86AudioMute>",        addName "Toggle mute"  $ spawn "ponymix -N toggle")
     ]
 
 key_misc conf =
