@@ -63,6 +63,9 @@ logOutput autocutsel -selection PRIMARY -fork &
 # Pretty effects, like shadows & transparency
 logOutput compton --dbus -b
 
+# Color transitions for the screen.
+logOutput redshift &
+
 #####################
 # TrackPoint settings
 #####################
