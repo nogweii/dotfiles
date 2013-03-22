@@ -32,7 +32,7 @@ terminal_choice :: String
 terminal_choice = "urxvt"
 
 log_hook = updatePointer (Relative 0.5 0.5)
-        >> fadeInactiveLogHook 0xdddddddd 
+        >> fadeInactiveLogHook 0xbbbbbbbb
         >> Ewmh.ewmhDesktopsLogHook
            -- Abuse function needs to come after ewmh, so that it will overwrite
            -- the _NET_CLIENT_LIST atom
