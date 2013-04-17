@@ -1,4 +1,3 @@
-" {{{ GUI fiddling
 " Add the urlbar icons to the bottom status bar too
 javascript <<EOF
 (function(){
@@ -25,30 +24,25 @@ javascript <<EOF
 })();
 EOF
 
-style -name tabs chrome://* <<EOF
-/* Remove these stupid buttons */
-.tabs-newtab-button,
-.tabs-alltabs-button,
-.tabs-container > stack,
-.tabs-bottom {
-    display: none !important;
+autocmd LocationChange reddit.com setlocal hinttags-=[onclick]
+
+set showstatuslinks=status
+
+" When loading a Lwn article, and it's subscriber-only, use Google's I'm Feeling
+" Lucky search to try to find a shared version of the article (leaking it from
+" behind the paywall)
+autocmd -javascript PageLoad 'https://lwn.net/Articles/*' <<EOF
+if (doc.title.match(/subscription/i)) {
+    var title = doc.getElementsByClassName("ArticleText")[0].getElementsByTagName("a")[0].innerHTML;
+    dactyl.open('https://encrypted.google.com/search?q=site:lwn.net/SubscriberLink "' + title + '"&btnI=');
 }
 EOF
-" }}}
 
-" {{{ Key mappings
+"set passkeys+=^duckduckgo.com:hjklrstm1!vd<Return>
+set passkeys+=^duckduckgo.com:hjkl<Return>
 
-"map -builtin <bs> <nop>
-"map -builtin <f1> <nop>
+" Hide the 'give gold' link from comments
+style -append reddit.com .give-gold { display: none !important; }
 
-" Make up/dn work in completion lists
-"cmap -bulitin <up> <s-tab>
-"cmap -bulitin <c-up> <up>
-"cmap -bulitin <down> <tab>
-"cmap -bulitin <c-down> <down>
-
-" Remove keys so that built in keys work for Google sites
-"autocmd LocationChange google\.com\/(reader|calendar|mail|a|ccc|Doc) -js modes.set(modes.PASS_THROUGH)
-" }}}
-
-autocmd LocationChange reddit.com setlocal hinttags-=[onclick]
+" Force the class list links to show
+style -append intranet.known-universe.com #classListDiv { display: block !important; }
