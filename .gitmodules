@@ -25,3 +25,6 @@
 [submodule "vim/bundle/characterize"]
 	path = vim/bundle/characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule "icons/Faenza"]
+	path = icons/Faenza
+	url = https://github.com/zhelyabuzhsky/faenza
