@@ -17,16 +17,17 @@ if [ -d "/usr/local/heroku/bin" ]; then
 fi
 
 # Rubygems
-if [ -d "$HOME/.rubygems/bin" ]; then
-    export PATH="$PATH:$HOME/.rubygems/bin"
+if [ -d "${HOME}/.rubygems/bin" ]; then
+    export PATH="$HOME/.rubygems/bin:$PATH"
+elif [ -d "${HOME}/.gem/ruby/1.9.1/bin" ]; then
+    # Append the gem installation directory, if it exists.
+    export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 fi
 
 # Local cabal install.
 if [ -d "$HOME/.cabal/bin" ] ; then
     export PATH="$PATH:$HOME/.cabal/bin"
 fi
-# Append the gem installation directory, if it exists.
-[ -d ~/.gem/ruby/1.9.1/bin ] && export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
 
 typeset -U path # Remove duplicate entries
 
