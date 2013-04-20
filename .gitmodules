@@ -28,3 +28,6 @@
 [submodule "icons/Faenza"]
 	path = icons/Faenza
 	url = https://github.com/zhelyabuzhsky/faenza
+[submodule "config/zsh/plugins/zsh-syntax-highlighting"]
+	path = config/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
