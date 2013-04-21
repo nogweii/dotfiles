@@ -25,7 +25,7 @@ if [ -x "$(which fortune 2>&1)" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
 
-if [ ! -z "$DISPLAY" ] ; then
-    source ${dot_path}/config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+#if [ ! -z "$DISPLAY" ] ; then
+#    source ${dot_path}/config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#fi
 #source ${XDG_CONFIG_HOME}/zsh/plugins/auto-fu.zsh

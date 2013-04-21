@@ -129,6 +129,8 @@ unset MANPATH
 # Include my scripts/functions in the normal function search path
 fpath=($XDG_DATA_HOME/zsh $fpath)
 
+ppl_gem_dir=~/.rubygems/gems/ppl-[0-9]*(oc[1])
+
 # Various configuration files can be pointed to different places via environment
 # variables, so take advantage of that to add 'XDG support'
 export FBCMD="${dot_path}/fbcmd/"
@@ -154,3 +156,7 @@ export UZBL_UTIL_DIR="${XDG_DATA_HOME}/uzbl/scripts/util"
 [ -z "$GNOME_DESKTOP_SESSION_ID" ] && GNOME_DESKTOP_SESSION_ID='this-is-deprecated'
 
 export WGETRC="${XDG_CONFIG_HOME}/wgetrc"
+
+if [ "$COLORTERM" = "gnome-terminal" ]; then
+    export TERM="xterm-256color"
+fi
