@@ -1,0 +1,54 @@
+emulate [ -LR ] [ {zsh|sh|ksh|csh} [ flags ... ] ]
+       Without any argument print current emulation mode.
+
+       With single argument set up zsh options to emulate the specified shell as much as possible.  csh will never be fully e
+       of  the shells listed above, zsh will be used as a default; more precisely, the tests performed on the argument are th
+       emulation at startup based on the shell name, see the section COMPATIBILITY in zsh(1) .
+
+       If the emulate command occurs inside a function that has been marked for execution tracing with functions -t then the 
+       regardless of emulation mode or other options.  Note that code executed inside the function by the ., source, or eval 
+       ning directly from the function, hence does not provoke this behaviour.
+
+       If the -R switch is given, all settable options are reset to their default value corresponding to the specified emulat
+       describing the interactive environment; otherwise, only those options likely to cause portability problems in scripts 
+       switch is given, the options LOCAL OPTIONS and LOCAL TRAPS will be set as well, causing the effects of the emulate com
+       to  be  local to the immediately surrounding shell function, if any; normally these options are turned off in all emul
+       is mutually exclusive with the use of -c in flags.
+
+       The flags may be any of the invocation-time flags described in the section INVOCATION in zsh(1), except that `-o EMACS
+       such as `+r'/`+o RESTRICTED' may be prohibited in some circumstances.
+
+       If  -c  arg appears in flags, arg is evaluated while the requested emulation is temporarily in effect.  In this case t
+       restored to their previous values before emulate returns.  The -R switch may precede the name of the shell to emulate;
+       from including -R in flags.
+
+       Use  of  -c  enables  `sticky'  emulation mode for functions defined within the evaluated expression:  the emulation m
+       function so that whenever the function is executed the emulation (respecting the -R switch, if present) and all option
+       tion, and restored after exit.  If the function is called when the sticky emulation is already in effect, either withi
+       within another function with the same sticky emulation, entry and exit from the function do not cause options to be al
+       cessing  such as the LOCAL OPTIONS option).  This also applies to functions marked for autoload within the sticky emul
+       will be applied at the point the function is loaded as well as when it is run.
+
+       For example:
+
+              emulate sh -c 'fni() { setopt cshnullglob; }
+              fno() { fni; }'
+              fno
+
+       The two functions fni and fno are defined with sticky sh emulation.  fno is then executed, causing options associated 
+       values in sh.  fni then calls fno; because fno is also marked for sticky sh emulation, no option changes take place on
+       option cshnullglob, turned off by sh emulation, will be turned on within fni and remain on on return to fno.  On exit 
+       options will be restored to the state they were in before entry to the temporary emulation.
+
+       The  documentation  above  is  typically  sufficient  for the intended purpose of executing code designed for other sh
+       detailed rules follow.
+       1.     The sticky emulation environment provided by `emulate shell -c' is identical to that provided by entry to a fun
+              a  consequence  of being defined in such an environment.  Hence, for example, the sticky emulation is inherited
+              tions with sticky emulation.
+       2.     No change of options takes place on entry to or exit from functions that are not marked for sticky emulation, o
+              take place, even if those functions are called within sticky emulation.
+       3.     No special handling is provided for functions marked for autoload nor for functions present in wordcode created
+       4.     The  presence or absence of the -R switch to emulate corresponds to different sticky emulation modes, so for ex
+              -c' and `emulate csh -c' are treated as three distinct sticky emulations.
+       5.     Difference in shell options supplied in addition to the basic emulation also mean the sticky emulations are dif
+              -c' and `emulate zsh -o cbases -c' are treated as distinct sticky emulations.

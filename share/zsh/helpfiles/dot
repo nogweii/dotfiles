@@ -1,0 +1,10 @@
+. file [ arg ... ]
+       Read commands from file and execute them in the current shell environment.
+
+       If  file  does not contain a slash, or if PATH DIRS is set, the shell looks in the components of $path to find the dir
+       current directory are not read unless `.' appears somewhere in $path.  If a file named `file.zwc' is found, is newer t
+       (created with the zcompile builtin) of file, then commands are read from that file instead of file.
+
+       If any arguments arg are given, they become the positional parameters; the old positional parameters are restored when
+       was not found the return status is 127; if file was found but contained a syntax error the return status is 126; else 
+       of the last command executed.

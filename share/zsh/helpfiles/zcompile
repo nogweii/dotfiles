@@ -1,0 +1,57 @@
+zcompile [ -U ] [ -z | -k ] [ -R | -M ] file [ name ... ]
+zcompile -ca [ -m ] [ -R | -M ] file [ name ... ]
+zcompile -t file [ name ... ]
+       This  builtin  command can be used to compile functions or scripts, storing the compiled form in a file, and to examin
+       This allows faster autoloading of functions and execution of scripts by avoiding parsing of the text when the files ar
+
+       The first form (without the -c, -a or -t options) creates a compiled file.  If only the file argument is given, the ou
+       will  be  placed  in  the  same  directory  as  the  file.   The shell will load the compiled file instead of the norm
+       autoloaded; see the section `Autoloading Functions' in zshmisc(1) for a description of how autoloaded functions are se
+       for `zsh word code'.
+
+       If  there  is at least one name argument, all the named files are compiled into the output file given as the first arg
+       this extension is automatically appended.  Files containing multiple compiled functions are called `digest' files, and
+       of the FPATH/fpath special array.
+
+       The  second  form,  with  the -c or -a options, writes the compiled definitions for all the named functions into file.
+       currently defined in the shell, not those marked for autoloading.  Undefined functions that are marked for autoloading
+       option, in which case the fpath is searched and the contents of the definition files for those functions, if found, ar
+       -a are given, names of both defined functions and functions marked for autoloading may be given.  In either case, the 
+       -c or -a option will be autoloaded as if the KSH AUTOLOAD option were unset.
+
+       The reason for handling loaded and not-yet-loaded functions with different options is that some definition files for a
+       including the function with the same name as the file, and, at the end, call that function.  In such cases the output 
+       additional functions defined in the file, and any other initialization code in the file is lost.  Using `zcompile -a' 
+
+       If the -m option is combined with -c or -a, the names are used as patterns and all functions whose names match one of 
+       name is given, the definitions of all functions currently defined or marked as autoloaded will be written.
+
+       The third form, with the -t option, examines an existing compiled file.  Without further arguments, the names of the o
+       listed.   The  first line of output shows the version of the shell which compiled the file and how the file will be us
+       mapping it into memory).  With arguments, nothing is output and the return status is set to zero if definitions for al
+       file, and non-zero if the definition for at least one name was not found.
+
+       Other options:
+
+       -U     Aliases are not expanded when compiling the named files.
+
+       -R     When  the compiled file is read, its contents are copied into the shell's memory, rather than memory-mapped (se
+              systems that do not support memory mapping.
+
+              When compiling scripts instead of autoloadable functions, it is often desirable to use this option; otherwise t
+              define functions which have already been defined, will remain mapped, consequently wasting memory.
+
+       -M     The  compiled  file is mapped into the shell's memory when read. This is done in such a way that multiple insta
+              host will share this mapped file.  If neither -R nor -M is given, the zcompile builtin decides what to do based
+
+       -k
+       -z     These options are used when the compiled file contains functions which are to be autoloaded. If -z is given, th
+              the  KSH AUTOLOAD  option is not set, even if it is set at the time the compiled file is read, while if the -k 
+              as if KSH AUTOLOAD is set.  These options also take precedence over any -k or -z options specified to the autol
+              options is given, the function will be loaded as determined by the setting of the KSH AUTOLOAD option at the ti
+
+              These options may also appear as many times as necessary between the listed names to specify the loading style 
+              next -k or -z.
+
+              The created file always contains two versions of the compiled format, one for big-endian machines and one for s
+              this is that the compiled file is machine independent and if it is read or mapped, only one half of the file is

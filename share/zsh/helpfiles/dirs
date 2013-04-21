@@ -1,0 +1,13 @@
+dirs [ -c ] [ arg ... ]
+dirs [ -lpv ]
+       With  no arguments, print the contents of the directory stack.  Directories are added to this stack with the pushd com
+       commands.  If arguments are specified, load them onto the directory stack, replacing anything that was there, and  pus
+       stack.
+
+       -c     clear the directory stack.
+
+       -l     print directory names in full instead of using of using ~ expressions.
+
+       -p     print directory entries one per line.
+
+       -v     number the directories in the stack when printing.

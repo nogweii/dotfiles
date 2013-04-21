@@ -1,0 +1,3 @@
+export [ name[=value] ... ]
+       The specified names are marked for automatic export to the environment of subsequently executed commands.  Equivalent 
+       ified does not already exist, it is created in the global scope.

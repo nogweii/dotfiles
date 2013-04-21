@@ -1,0 +1,3 @@
+exec [ -cl ] [ -a argv0 ] simple command
+       Replace the current shell with an external command rather than forking.  With -c clear the environment; with -l prepen
+       mand executed (to simulate a login shell); with -a argv0 set the argv[0] string of the command executed.  See the sect

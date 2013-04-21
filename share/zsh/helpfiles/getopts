@@ -1,0 +1,16 @@
+getopts optstring name [ arg ... ]
+       Checks  the args for legal options.  If the args are omitted, use the positional parameters.  A valid option argument 
+       ment not beginning with a `+' or a `-', or the argument `--', ends the options.  Note that a single `-' is not conside
+       string  contains  the  letters  that getopts recognizes.  If a letter is followed by a `:', that option requires an ar
+       from the argument by blanks.
+
+       Each time it is invoked, getopts places the option letter it finds in the shell parameter name, prepended with a `+' w
+       of the next arg is stored in OPTIND.  The option argument, if any, is stored in OPTARG.
+
+       The  first  option to be examined may be changed by explicitly assigning to OPTIND.  OPTIND has an initial value of 1,
+       from a shell function.  OPTARG is not reset and retains its value from the most recent call to getopts.  If either of 
+       it remains unset, and the index or option argument is not stored.  The option itself is still stored in name in this c
+
+       A leading `:' in optstring causes getopts to store the letter of any invalid option in OPTARG, and to set name to `?' 
+       a required argument is missing.  Otherwise, getopts sets name to `?' and prints an error message when an option is inv
+       when there are no more options.

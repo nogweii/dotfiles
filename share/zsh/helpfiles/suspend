@@ -1,0 +1,3 @@
+suspend [ -f ]
+       Suspend the execution of the shell (send it a SIGTSTP) until it receives a SIGCONT.  Unless the -f option is given, th
+       shell.

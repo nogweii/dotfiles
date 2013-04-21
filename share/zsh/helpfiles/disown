@@ -1,0 +1,9 @@
+disown [ job ... ]
+job ... &|
+job ... &!
+       Remove the specified jobs from the job table; the shell will no longer report their status, and will not complain if y
+       with them running or stopped.  If no job is specified, disown the current job.
+
+       If the jobs are currently stopped and the AUTO CONTINUE option is not set, a warning is printed containing information
+       they have been disowned.  If one of the latter two forms is used, the jobs will automatically be made running, indepen
+       TINUE option.
