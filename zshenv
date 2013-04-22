@@ -2,7 +2,7 @@
 
 # Hard-coded path to the checkout of my dotfiles, derived from the zshenv
 # symlink (this file).
-local DOTSDIR="${${:-~/.zshenv}:A:h}"
+local DOTSDIR="${${:-$HOME/.zshenv}:A:h}"
 
 # Make sure the arrays only contain unique values
 typeset -gU cdpath fpath mailpath manpath path
