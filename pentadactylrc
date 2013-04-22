@@ -38,6 +38,10 @@ if (doc.title.match(/subscription/i)) {
 }
 EOF
 
+" Quora feature: When sharing the page, all the filtering/blocking is disabled.
+" Woot! This is a fragile method, though. Not that I visit often, of course.
+autocmd PageLoad '^https?://quora\.com/.*[^1]$' :open <url>?share=1
+
 "set passkeys+=^duckduckgo.com:hjklrstm1!vd<Return>
 set passkeys+=^duckduckgo.com:hjkl<Return>
 
