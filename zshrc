@@ -22,4 +22,4 @@ for zshrc_snipplet in $dot_path/config/zsh/*.zsh ; do
 done
 
 # And load local configuration overrides
-[[ -r ~/.zshrc.local ]] && source $host_config
+[[ -r ~/.zshrc.local ]] && source $host_config ||:
