@@ -11,3 +11,11 @@ msgmodule=false
 cache=12582912
 # Must have 10% (~1.2MB) downloaded before mplayer begins
 cache-min=10
+
+# Prefer IPv4 only at the moment. (Mplayer will gladly fall back to IPv6 if that
+# fails...)
+prefer-ipv4=true
+
+# Disable LIRC & Joystick support by default
+nolirc=1
+nojoystick=1
