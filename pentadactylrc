@@ -50,3 +50,9 @@ style -append reddit.com .give-gold { display: none !important; }
 
 " Force the class list links to show
 style -append intranet.known-universe.com #classListDiv { display: block !important; }
+
+" I have my own DNS caching solution, Firefox. I will use that instead of yours,
+" tyvm.
+set! network.dnsCacheExpiration=0
+set! network.dnsCacheEntries=0
+set! network.disablePrefetch=true
