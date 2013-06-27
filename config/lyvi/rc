@@ -73,7 +73,7 @@ key_volup = =
 lang = en
 
 # Path to MPD config file.
-mpd_config_file = $HOME/.mpdconf
+mpd_config_file = /home/colin/.local/config/mpd.conf
 # MPD host.
 mpd_host = localhost
 # MPD port.
