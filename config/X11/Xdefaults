@@ -54,7 +54,7 @@ URxvt.borderless:         1
 !URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: false
 
-URxvt.perl-lib: /home/colin/.local/share/urxvt/
+URxvt.perl-lib: DATA/urxvt/
 URxvt.perl-ext: default,matcher,font-size,clipboard,url-select,keyboard-select
 URxvt.keysym.M-C-c: perl:clipboard:copy
 URxvt.keysym.M-C-v: perl:clipboard:paste
