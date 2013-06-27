@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-#exec startkde
-#exit 0
+exec startkde
+exit 0
 
 cd ~
 
@@ -81,6 +81,12 @@ logOutput xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Tim
 # move in any direction to scroll in that ways
 logOutput xinput set-int-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 8 6 7 4 5
 
+# Disable the mouse emulation in the joystick. Only ran once, though :-/
+xinput disable "Logitech Logitech Dual Action (keys)"
+xinput set-prop "Logitech Logitech Dual Action" "Button Mapping" 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+xinput set-prop "Logitech Logitech Dual Action" "Button Number" 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+xinput set-prop "Logitech Logitech Dual Action" "Axis Mapping" 0, 0, 0, 0, 0, 0
+xinput set-prop "Logitech Logitech Dual Action" "Axis Type" 0, 0, 0, 0, 0, 0
 
 echo "----- Nvidia Settings" >> ~/.xsession-errors
 
