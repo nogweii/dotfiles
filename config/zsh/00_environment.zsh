@@ -99,18 +99,17 @@ fpath=($XDG_DATA_HOME/zsh $fpath)
 
 # Various configuration files can be pointed to different places via environment
 # variables, so take advantage of that to add 'XDG support'
-export FBCMD="${dot_path}/fbcmd/"
-export KDEHOME="${dot_path}/kde/"
+export FBCMD="${XDG_DATA_HOME}/fbcmd/"
+export KDEHOME="${XDG_DATA_HOME}/kde/"
 export WINEARCH="win32"
 export WINEPREFIX="${XDG_DATA_HOME}/wine/"
-export ACKRC="${dot_path}/ackrc"
-export SCREENRC="${dot_path}/config/screenrc"
+export ACKRC="${XDG_CONFIG_HOME}/ackrc"
+export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
 eval $(dircolors -b ${dot_path}/config/dircolors)
-export SCREENRC="${dot_path}/config/screenrc"
 export INPUTRC="${dot_path}/inputrc"
-export MPLAYER_HOME="${dot_path}/config/mplayer"
+export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
 #export GIT_CONFIG="${dot_path}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 
