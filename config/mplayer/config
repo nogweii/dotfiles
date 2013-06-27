@@ -1,7 +1,6 @@
 # Use pulseaudio output all the time
 ao=pulse
-# No remote control set up, so turn off lirc
-nolirc=true
+
 # much quieter mplayer, by default
 msglevel=all=5:cplayer=3:decaudio=3:demux=3:codeccfg=3:network=3
 msgcolor=true
@@ -19,3 +18,8 @@ prefer-ipv4=true
 # Disable LIRC & Joystick support by default
 nolirc=1
 nojoystick=1
+
+# Enable VDPAU support in mplayer. NB: Trailing commas is important, to signal
+# to mplayer to fall back to other codecs
+vo=vdpau,
+vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,
