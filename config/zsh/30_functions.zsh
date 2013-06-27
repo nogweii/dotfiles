@@ -115,7 +115,7 @@ extract_archive () {
         *.xz) xz -d "$full_path" ;;
         *.lzma) unlzma -vk "$full_path" ;;
         *.lha) lha e "$full_path" ;;
-        *.rpm) rpm2cpio "$full_path" | tar xf - ;;
+        *.rpm) rpm2cpio "$full_path" | cpio -idmv ;;
         *.deb) ar p "$full_path" data.tar.gz | tar zx ;;
         *) print "Unknown archive type: $1" ; return 1 ;;
     esac
