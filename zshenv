@@ -37,22 +37,21 @@ manpath=(
 )
 
 # Given a list of arrays, delete any values from each that don't point to a
-# directory
-function _env_trim_nonexistant_from {
+# real directory. It will also resolve any symlinks. (Also, yay anonymous
+# functions!)
+function {
   local a
   for a in "$@"; do
     integer i
     for (( i=1; i<=${(P)#a}; i++ )); do
       if [[ ! -d ${(P)${a}[i]} ]]; then
         eval "${(q)a}[${i}]=()"
+      elif [[ -h ${(P)${a}[i]} ]]; then
+        eval "${(q)a}[${i}]=(${(P)${a}[i]:A})"
       fi
     done
   done
-}
-
-# Make sure the variables only have paths that exist within
-_env_trim_nonexistant_from path fpath manpath
-unfunction _env_trim_nonexistant_from
+} path fpath manpath
 
 # Make sure we have a language set
 if ! (( $+LANG )) || [[ -z "$LANG" ]]; then
