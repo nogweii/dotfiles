@@ -1,35 +1,5 @@
-# Extra places which doesn't seem to be added to the normal paths, or buggy
-# profile.d scripts that don't do their job.
-export PATH="${HOME}/bin:${PATH}:/usr/local/bin:/usr/local/sbin:/opt/java/bin"
-# Optional: Pretty colorized versions of various core utilities (time, free,
-# etc..)
-if [ -x '/usr/bin/cope_path' ] ; then
-    export PATH="$(cope_path):$PATH"
-elif [ -d '/usr/lib/cw' ] ; then
-    export PATH="/usr/lib/cw:$PATH"
-    export NOCOLOR_PIPE=1
-fi
-# Heroku Toolbelt, via a package. NB: This should be in the path before the
-# rubygems directory so that the old gem won't take precedence in the PATH over
-# the packaged version!
-if [ -d "/usr/local/heroku/bin" ]; then
-    export PATH="/usr/local/bin:$PATH"
-fi
-
-# Rubygems
-if [ -d "${HOME}/.rubygems/bin" ]; then
-    export PATH="$HOME/.rubygems/bin:$PATH"
-elif [ -d "${HOME}/.gem/ruby/1.9.1/bin" ]; then
-    # Append the gem installation directory, if it exists.
-    export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
-fi
-
-# Local cabal install.
-if [ -d "$HOME/.cabal/bin" ] ; then
-    export PATH="$PATH:$HOME/.cabal/bin"
-fi
-
-typeset -U path # Remove duplicate entries
+# Tell cw programs not to send ANSI color codes to piped outputs
+export NOCOLOR_PIPE=1
 
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
@@ -124,12 +94,8 @@ export          HISTFILE="${XDG_CACHE_HOME}/zsh/history"
 export          HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export          SAVEHIST="${HISTSIZE}"
 
-unset MANPATH
-
 # Include my scripts/functions in the normal function search path
 fpath=($XDG_DATA_HOME/zsh $fpath)
-
-ppl_gem_dir=~/.rubygems/gems/ppl-[0-9]*(oc[1])
 
 # Various configuration files can be pointed to different places via environment
 # variables, so take advantage of that to add 'XDG support'
