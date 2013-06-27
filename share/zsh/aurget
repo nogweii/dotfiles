@@ -1,4 +1,6 @@
-wget -q https://aur.archlinux.org/packages/${1:0:2}/$1/$1.tar.gz || return $?
-bsdtar xf $1.tar.gz || return $?
-rm $1.tar.gz || return $?
-cd $1 || return $?
+local aurdir=${SRCDEST:-~/tmp/aur}
+mkdir -p $aurdir
+wget -q https://aur.archlinux.org/packages/${1:0:2}/$1/$1.tar.gz -P $aurdir || return $?
+bsdtar xf $aurdir/$1.tar.gz -C $aurdir || return $?
+rm $aurdir/$1.tar.gz || return $?
+cd $aurdir/$1 || return $?
