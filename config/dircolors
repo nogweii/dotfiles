@@ -73,23 +73,23 @@ NORMAL                  00                  # global default, although everythin
 FILE                    00                  # normal file
 RESET                   00                  # reset to "normal" color
 #DIR                    01;38;5;27          # directory
-DIR                     01;34               # directory
+DIR                     34                  # directory
 #LINK                   01;38;5;51          # symbolic link (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
-LINK                    01;36               # symbolic link. (If you set this to 'target' instead of a
+LINK                    36                  # symbolic link. (If you set this to 'target' instead of a
 #MULTIHARDLINK          44;37               # regular file with more than one link
 MULTIHARDLINK           00                  # regular file with more than one link
 #FIFO                   40;38;5;11          # pipe
 FIFO                    40;33               # pipe
 #SOCK                   01;38;5;13          # socket
-SOCK                    01;35               # socket
+SOCK                    35                  # socket
 #DOOR                   01;38;5;5           # door
-DOOR                    01;35               # door
+DOOR                    35                  # door
 #BLK                    01;48;5;232;38;5;11 # block device driver
-BLK                     40;33;01            # block device driver
+BLK                     33;01               # block device driver
 #CHR                    01;48;5;232;38;5;3  # character device driver
-CHR                     40;33;01            # character device driver
+CHR                     33;01               # character device driver
 #ORPHAN                 01;48;5;232;38;5;9  # symlink to nonexistent file, or non-stat'able file
-ORPHAN                  40;31;01            # symlink to nonexistent file, or non-stat'able file
+ORPHAN                  31;01               # symlink to nonexistent file, or non-stat'able file
 #SETUID                 48;5;196;38;5;15    # file that is setuid (u+s)
 SETUID                  37;41               # file that is setuid (u+s)
 #SETGID                 48;5;11;38;5;16     # file that is setgid (g+s)
@@ -103,7 +103,7 @@ OTHER_WRITABLE          34;42               # dir that is other-writable (o+w) a
 #STICKY                 48;5;21;38;5;15     # dir with the sticky bit set (+t)
 STICKY                  37;44               # dir with the sticky bit set (+t) and not other-writable
 #EXEC                   01;38;5;34          # This is for files with execute permission:
-EXEC                    01;32
+EXEC                    32
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
