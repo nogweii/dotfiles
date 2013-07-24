@@ -1,5 +1,5 @@
 case $TERM in
-  termite|*xterm*|rxvt*|(dt|k|E)term|gnome*)
+  termite|*xterm*|rxvt*|(dt|k|E)term|gnome*|konsole*)
     termtitle () { print -Pn "\e]0;${@}\a" }
   ;;
 
