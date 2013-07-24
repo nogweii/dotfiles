@@ -117,3 +117,7 @@ fi
 # A quick utility that generates a nice, long password. Pulls from /dev/random,
 # not urandom, so make sure there's plenty of entropy!
 alias gen-sha-pwd='head -c512 /dev/random | sha512sum'
+
+# Get a bit Mac-like here, with a magic open command. Functionality provided by
+# KDE :-)
+alias open=kde-open
