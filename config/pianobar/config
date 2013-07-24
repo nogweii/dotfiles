@@ -1,6 +1,6 @@
 # User
 user = colin@evaryont.me
-password_command = ~/bin/pianobar-password
+password_command = /usr/bin/ksshaskpass "Pandora password:"
 
 # Proxy (for those who are not living in the USA)
 #control_proxy = http://127.0.0.1:9090/
