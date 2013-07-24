@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/zsh -l
 
 exec startkde
 exit 0
