@@ -7,3 +7,4 @@ git_diff_staged.diff
 *.o
 *.hi
 .vagrant
+.directory
