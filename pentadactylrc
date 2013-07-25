@@ -56,3 +56,7 @@ style -append intranet.known-universe.com #classListDiv { display: block !import
 set! network.dnsCacheExpiration=0
 set! network.dnsCacheEntries=0
 set! network.disablePrefetch=true
+
+" Hide the Flickr disable-download element. *THIS IS NOT FOR REDISTRIBUTION!*
+" Y'all just take the most wonderful photos for backgrounds.
+style -append flickr.com #allsizes-photo .spaceball { display: none !important; }
