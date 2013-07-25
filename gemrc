@@ -1,0 +1,6 @@
+gem: --no-rdoc --no-ri
+rdoc: --inline-source --line-numbers
+# Negate the following to empty value, letting the environment ($GEM_HOME) take over
+gemhome: #
+install: --no-rdoc --no-ri 
+update:  --no-rdoc --no-ri
