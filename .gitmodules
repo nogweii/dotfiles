@@ -37,3 +37,6 @@
 [submodule "config/zsh/plugins/users-completions"]
 	path = config/zsh/plugins/users-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule "share/rbenv/plugins/ruby-build"]
+	path = share/rbenv/plugins/ruby-build
+	url = https://github.com/sstephenson/ruby-build.git
