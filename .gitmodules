@@ -40,3 +40,21 @@
 [submodule "share/rbenv/plugins/ruby-build"]
 	path = share/rbenv/plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "share/rbenv/plugins/gemset"]
+	path = share/rbenv/plugins/gemset
+	url = https://github.com/jf/rbenv-gemset
+[submodule "share/rbenv/plugins/ctags"]
+	path = share/rbenv/plugins/ctags
+	url = https://github.com/tpope/rbenv-ctags
+[submodule "share/rbenv/plugins/use"]
+	path = share/rbenv/plugins/use
+	url = https://github.com/rkh/rbenv-use
+[submodule "share/rbenv/plugins/whatis"]
+	path = share/rbenv/plugins/whatis
+	url = https://github.com/rkh/rbenv-whatis
+[submodule "share/rbenv/plugins/rbx"]
+	path = share/rbenv/plugins/rbx
+	url = https://github.com/rmm5t/rbenv-rbx
+[submodule "share/rbenv/plugins/gem-rehash"]
+	path = share/rbenv/plugins/gem-rehash
+	url = https://github.com/sstephenson/rbenv-gem-rehash
