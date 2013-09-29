@@ -98,7 +98,6 @@ alias portstat="s netstat -tunelp"
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
 
 alias  e="$EDITOR"
-alias  g="git"
 
 alias s=smart_sudo
 alias extr=extract_archive
@@ -121,3 +120,9 @@ alias gen-sha-pwd='head -c512 /dev/random | sha512sum'
 # Get a bit Mac-like here, with a magic open command. Functionality provided by
 # KDE :-)
 alias open=kde-open
+
+if [ -x "${commands[systemctl]}" ]; then
+    alias reboot='sudo systemctl reboot'
+    alias shutdown='sudo systemctl poweroff'
+    alias suspend='sudo systemctl suspend'
+fi

@@ -9,6 +9,7 @@ setopt   bg_nice                # run jobs (foo &) at a lower priority
 setopt   brace_ccl              # failed {} expansions are expanded into words
 unsetopt case_glob              # globs are not case-sensitive
 setopt   cdable_vars            # try expanding '~foo' when 'cd foo' fails
+setopt   chase_links            # (implies chase_dots), resolve symlinks on cd
 setopt   check_jobs             # warn me when jobs are running on exit
 setopt   extended_glob          # Advanced shell globs
 setopt   extended_history       # Save time related information to history

@@ -262,3 +262,16 @@ rationalise-dot() {
   fi
 }
 zle -N rationalise-dot
+
+# A smarter(ish) g alias: By default, 'g' alone will show the status. 'g blah'
+# still works.
+function g {
+  if [[ $# > 0 ]]; then
+    if [[ "$@" = "st" ]]; then
+      echo "${FG[214]}stop doing that! just use 'g'${FX[reset]}"
+    fi
+    git "$@"
+  else
+    git status --short --branch
+  fi
+}

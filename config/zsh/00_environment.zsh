@@ -125,3 +125,7 @@ export WGETRC="${XDG_CONFIG_HOME}/wgetrc"
 if [ "$COLORTERM" = "gnome-terminal" ]; then
     export TERM="xterm-256color"
 fi
+
+# Development environment stuff.
+export MYDRIVEADVISOR_DB_PWD="mysqlroot"
+export MYSQL_LOCAL_SOCKET="/run/mysqld/mysqld.sock"
