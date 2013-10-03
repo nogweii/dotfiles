@@ -275,3 +275,16 @@ function g {
     git status --short --branch
   fi
 }
+
+# Uses xdotool & the environment variable $WINDOWID to check if the current
+# window is focused in X11. Also requires $DISPLAY to be set (used as a signal
+# that X11 is indeed running).
+#
+# Returns 1 or 0, so you can easily to __is-my-window-focused && notify-send or
+# similar.
+function __is-my-window-focused() {
+  [[ -n "${WINDOWID}" ]] || return 1
+  [[ -n "${commands[xdotool]}" ]] || return 1
+  [[ -n "${DISPLAY}" ]] || return 1
+  [[ "$(xdotool getwindowfocus)" -eq "${WINDOWID}" ]]
+}
