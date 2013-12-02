@@ -1,6 +1,6 @@
 library: ~/audio/beets.db
 directory: ~/audio/
-art_filename: cover.jpg
+art_filename: cover
 
 import:
     # Do we copy the files when importing?
@@ -12,7 +12,23 @@ import:
     # Automatically resume from where we left off.
     resume: true
 
-plugins: mpdupdate importfeeds mbcollection lastgenre fetchart replaygain chroma web
+plugins:
+ - mpdupdate
+ - importfeeds
+ - mbcollection
+ - lastgenre
+ - fetchart
+ - replaygain
+ - chroma
+ - web
+ - missing
+ - duplicates
+ - info
+ - discogs
+ - beatport
+ - lyrics
+ - echonest_tempo
+ - scrub
 
 paths:
     default: '%asciify{$albumartist}/%asciify{$album%aunique{}}/$track-%asciify{$title}'
@@ -33,6 +49,7 @@ musicbrainz:
 
 lastgenre:
     fallback_str: ''
+    auto: true
 
 fetchart:
     auto: true

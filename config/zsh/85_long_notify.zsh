@@ -24,7 +24,7 @@ if [ "${commands[notify-send]}" != "" -a "${DBUS_SESSION_BUS_ADDRESS}" != "" ]; 
 
     # precmd can execute many times (like every time I hit enter, regardless if
     # I typed a new command) so only notify when there's something 'interesting'
-    if [ "${__reporttime_about}" != "" -a ! __is-my-window-focused ]; then
+    if [ "${__reporttime_about}" != "" ]; then
       time_taken=$(($SECONDS-$__reporttime_start))
       if (( $time_taken > $REPORTTIME )); then
         if [[ "$(print -P '%?')" = '0' ]]; then

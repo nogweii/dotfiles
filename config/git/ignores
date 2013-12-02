@@ -8,3 +8,5 @@ git_diff_staged.diff
 *.hi
 .vagrant
 .directory
+tags
+.ruby-version

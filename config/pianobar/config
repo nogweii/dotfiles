@@ -31,7 +31,6 @@ password_command = /usr/bin/ksshaskpass "Pandora password:"
 # Misc
 #audio_quality = high
 autostart_station = 165478110736344848
-#autostart_station = 123456
 #event_command = /home/user/.config/pianobar/eventcmd
 #fifo = /tmp/pianobar
 #sort = quickmix_10_name_az
@@ -50,14 +49,3 @@ format_list_song = [1;30m%i[0m [32m%t[0m by [34m%a[0m [31m%r[0m
 #format_msg_err
 #format_msg_question
 #format_msg_list
-
-# high-quality audio (192k mp3, for Pandora One subscribers only!)
-audio_quality = high
-#rpc_host = internal-tuner.pandora.com
-#partner_user = pandora one
-#partner_password = TVCKIBGS9AO9TSYLNNFUML0743LH82D
-#device = D01
-#encrypt_password = 2%3WCL*JU$MP]4
-#decrypt_password = U#IO$RZPAB%VX2
-#tls_fingerprint = 394067EECB420E3911985C2CC02C12AE89BB09B2
-

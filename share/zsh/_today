@@ -1,0 +1,13 @@
+#compdef today
+#
+# Completion script for my little date format script (~/bin/today)
+
+args=(
+    ":Use your local machine settings"
+    'unix:Current time in seconds since UNIX epoch'
+    "iso:Today's date in ISO 8601 format"
+    "world:Today's date formatted as international countries"
+    "us:Today's date formatted as in the USA"
+)
+
+_describe -t commands "date format" args

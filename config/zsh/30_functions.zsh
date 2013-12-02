@@ -268,9 +268,10 @@ zle -N rationalise-dot
 function g {
   if [[ $# > 0 ]]; then
     if [[ "$@" = "st" ]]; then
-      echo "${FG[214]}stop doing that! just use 'g'${FX[reset]}"
+      echo "\e[33mstop doing that! just use 'g'"
+    else
+      git "$@"
     fi
-    git "$@"
   else
     git status --short --branch
   fi
