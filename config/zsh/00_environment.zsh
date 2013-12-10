@@ -5,9 +5,6 @@ export NOCOLOR_PIPE=1
 export EDITOR="vim"
 export BROWSER="elinks"
 export PAGER="less"
-if [[ ! -z $commands[vim.man] ]]; then
-    export MANPAGER="vim.man"
-fi
 
 # CLI default parameters
 export GREP_DEFAULTS="-E -i -I -n --color=auto"
@@ -35,7 +32,7 @@ fi
 
 [ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
 
-export RECOLL_CONFDIR=$dot_path/recoll
+export RECOLL_CONFDIR=$DOTSDIR/recoll
 
 export TMOUT=3600
 
@@ -107,10 +104,10 @@ export ACKRC="${XDG_CONFIG_HOME}/ackrc"
 export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
-eval $(dircolors -b ${dot_path}/config/dircolors)
-export INPUTRC="${dot_path}/inputrc"
+eval $(dircolors -b ${DOTSDIR}/config/dircolors)
+export INPUTRC="${DOTSDIR}/inputrc"
 export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
-#export GIT_CONFIG="${dot_path}/config/git/config"
+#export GIT_CONFIG="${DOTSDIR}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 
 export GEM_HOME="${HOME}/.rubygems"

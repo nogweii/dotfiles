@@ -212,7 +212,7 @@ function title {
   esac
 }
 
-for i in ${dot_path}/share/zsh/*(*) ; do
+for i in ${DOTSDIR}/share/zsh/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
 
