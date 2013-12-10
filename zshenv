@@ -26,6 +26,7 @@ path=(
 
 fpath=(
   $DOTSDIR/config/zsh/plugins/users-completions/src/
+  $DOTSDIR/share/zsh/
   $fpath
 )
 

@@ -32,39 +32,37 @@ fi
 
 [ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
 
-export RECOLL_CONFDIR=$DOTSDIR/recoll
-
 export TMOUT=3600
 
-# XDG-related stuff# {{{
+## XDG-related stuff# {{{
 export XDG_CACHE_HOME="${HOME}/.local/cache"
-if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
-    mkdir -p $XDG_CACHE_HOME/zsh
-fi
-
-export XDG_CONFIG_HOME="${HOME}/.local/config"
-if [ ! -d $XDG_CONFIG_HOME/zsh ] ; then
-    mkdir -p $XDG_CONFIG_HOME/zsh
-fi
-
-export XDG_DATA_HOME="${HOME}/.local/share"
-if [ ! -d $XDG_DATA_HOME/zsh ] ; then
-    mkdir -p $XDG_DATA_HOME/zsh
-fi
-
-# Arch doesn't set XDG_DATA_DIRS or XDG_CONFIG_DIRS by default any more, so
-# assume the default directories for both.
-if [ -z "${XDG_DATA_DIRS}" ]; then
-    export XDG_DATA_DIRS="${HOME}/.local/share:/usr/local/share:/usr/share"
-else
-    export XDG_DATA_DIRS="${HOME}/.local/share:${XDG_DATA_DIRS}"
-fi
-if [ -z $XDG_CONFIG_DIRS ]; then
-    export XDG_CONFIG_DIRS="${HOME}/.local/config:/etc/xdg"
-else
-	export XDG_CONFIG_DIRS="${HOME}/.local/config:${XDG_CONFIG_DIRS}"
-fi
-# }}}
+#if [ ! -d $XDG_CACHE_HOME/zsh ] ; then
+#    mkdir -p $XDG_CACHE_HOME/zsh
+#fi
+#
+#export XDG_CONFIG_HOME="${HOME}/.local/config"
+#if [ ! -d $XDG_CONFIG_HOME/zsh ] ; then
+#    mkdir -p $XDG_CONFIG_HOME/zsh
+#fi
+#
+#export XDG_DATA_HOME="${HOME}/.local/share"
+#if [ ! -d $XDG_DATA_HOME/zsh ] ; then
+#    mkdir -p $XDG_DATA_HOME/zsh
+#fi
+#
+## Arch doesn't set XDG_DATA_DIRS or XDG_CONFIG_DIRS by default any more, so
+## assume the default directories for both.
+#if [ -z "${XDG_DATA_DIRS}" ]; then
+#    export XDG_DATA_DIRS="${HOME}/.local/share:/usr/local/share:/usr/share"
+#else
+#    export XDG_DATA_DIRS="${HOME}/.local/share:${XDG_DATA_DIRS}"
+#fi
+#if [ -z $XDG_CONFIG_DIRS ]; then
+#    export XDG_CONFIG_DIRS="${HOME}/.local/config:/etc/xdg"
+#else
+#	export XDG_CONFIG_DIRS="${HOME}/.local/config:${XDG_CONFIG_DIRS}"
+#fi
+## }}}
 
 # MAILDIR & new mail alerts
 test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
@@ -91,17 +89,11 @@ export          HISTFILE="${XDG_CACHE_HOME}/zsh/history"
 export          HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export          SAVEHIST="${HISTSIZE}"
 
-# Include my scripts/functions in the normal function search path
-fpath=($XDG_DATA_HOME/zsh $fpath)
-
 # Various configuration files can be pointed to different places via environment
 # variables, so take advantage of that to add 'XDG support'
-export FBCMD="${XDG_DATA_HOME}/fbcmd/"
-export KDEHOME="${XDG_DATA_HOME}/kde/"
 export WINEARCH="win32"
 export WINEPREFIX="${XDG_DATA_HOME}/wine/"
 export ACKRC="${XDG_CONFIG_HOME}/ackrc"
-export SCREENRC="${XDG_CONFIG_HOME}/screenrc"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
 eval $(dircolors -b ${DOTSDIR}/config/dircolors)
@@ -126,3 +118,6 @@ fi
 # Development environment stuff.
 export MYDRIVEADVISOR_DB_PWD="mysqlroot"
 export MYSQL_LOCAL_SOCKET="/run/mysqld/mysqld.sock"
+
+export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
+export LESSHISTSIZE=2000

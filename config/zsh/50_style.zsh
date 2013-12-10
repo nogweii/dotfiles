@@ -1,6 +1,6 @@
 zstyle ':compinstall' filename "${XDG_CONFIG_HOME}/zsh/50_style.zsh"
 zmodload zsh/complist
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME}/zsh/compdump"
 
 # Use a cache
 zstyle ':completion:*' use-cache on
@@ -21,6 +21,8 @@ zstyle ':completion:*' verbose yes
 
 compdef _rake rake
 compdef _cheat cheat
+
+compdef g=git
 
 # cygwin only: commands that auto-complete with and without .exe or .dll suffixes are annoying.
 # thanks Thorsten Kampe & Bart Schaefer (and 'Atom Smasher' for his zshrc)
