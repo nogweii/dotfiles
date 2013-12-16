@@ -243,9 +243,10 @@ zle -N rationalise-dot
 function g {
   if [[ $# > 0 ]]; then
     if [[ "$@" = "st" ]]; then
-      echo "${FG[214]}stop doing that! just use 'g'${FX[reset]}"
+      echo "\e[33mstop doing that! just use 'g'"
+    else
+      git "$@"
     fi
-    git "$@"
   else
     git status --short --branch
   fi
@@ -257,3 +258,15 @@ function _ls-on-cd() {
 }
 add-zsh-hook chpwd _ls-on-cd
 
+# Uses xdotool & the environment variable $WINDOWID to check if the current
+# window is focused in X11. Also requires $DISPLAY to be set (used as a signal
+# that X11 is indeed running).
+#
+# Returns 1 or 0, so you can easily to __is-my-window-focused && notify-send or
+# similar.
+function __is-my-window-focused() {
+  [[ -n "${WINDOWID}" ]] || return 1
+  [[ -n "${commands[xdotool]}" ]] || return 1
+  [[ -n "${DISPLAY}" ]] || return 1
+  [[ "$(xdotool getwindowfocus)" -eq "${WINDOWID}" ]]
+}
