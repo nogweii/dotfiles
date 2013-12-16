@@ -2,6 +2,11 @@
 # more neckbeard-y so that I can move the root directory. (Avoiding yet another
 # dotfile in $HOME)
 
+# Early return to skip sourcing the rest of the file if rbenv isn't installed
+if [[ -z $commands[rbenv] ]]; then
+   return 
+fi
+
 export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
 
 export PATH="${RBENV_ROOT}/shims:${PATH}"

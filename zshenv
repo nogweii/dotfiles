@@ -26,11 +26,12 @@ path=(
 
 fpath=(
   $DOTSDIR/config/zsh/plugins/users-completions/src/
+  $DOTSDIR/share/zsh/
   $fpath
 )
 
 manpath=(
-  ${${:-~/.rubygems/gems/*/man/*.[0-9]}:A:h} # Gem-installed man pages
+  #${${:-~/.rubygems/gems/*/man/*.[0-9]}:A:h} # Gem-installed man pages
   /usr/local/share/man
   /usr/share/man
   $manpath

@@ -21,7 +21,7 @@ setopt   hist_ignore_space      # Don't record commands that begin with a space
 setopt   hist_no_store          # Don't store invocations of `history`
 setopt   hist_reduce_blanks     # Remove superfluous blanks before recording
 setopt   hist_verify            # Expand history expansions instead of executing
-setopt   ignore_eof             # Ignore ^D to exit zsh
+unsetopt ignore_eof             # Ignore ^D to exit zsh
 setopt   inc_append_history     # immediately write lines to the history
 setopt   interactive_comments   # Allow comments in interactive mode
 setopt   pushd_ignore_dups      # ignore duplicate directories

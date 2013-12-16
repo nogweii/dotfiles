@@ -212,28 +212,11 @@ function title {
   esac
 }
 
-for i in ${dot_path}/share/zsh/*(*) ; do
+for i in ${DOTSDIR}/share/zsh/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
 
 autoload colors zsh/terminfo
-
-# source from, or add to ~/.zshrc. Go opens zsh at the current location, and on
-# exit, cd into ranger's last location.
-ranger_open () {
-     ranger "$(pwd)" <$TTY
-     print -n "\033[A"
-     zle && zle -I
-     cd "$(grep \^\' ~/.config/ranger/bookmarks | cut -b3-)"
-     # Redo the prompt, to fit any new data from the new directory
-     setprompt
-     precmd
-     _zsh_highlight-zle-buffer
-}
-zle -N ranger_open
-bindkey -a "go" ranger_open
-
-dh(){ `fc -lnr 0 | perl -nwe 's/\s*\d+\s+//; print unless eof' | dmenu -b` }
 
 df() {
   # Is dfc installed & did I not pass any arguments to df? Also, make sure that
