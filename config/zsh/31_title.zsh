@@ -16,8 +16,14 @@ case $TERM in
   ;;
 esac
 
-function preexec () {
+function _update_termtitle_preexec () {
   local CMD="${1[(wr)^(*=*|sudo|-*|s)]}"
   termtitle "%n@%M:%~ ($CMD)"
 }
 
+function _update_termtitle_precmd () {
+  termtitle "%n@%M:%~"
+}
+
+add-zsh-hook preexec _update_termtitle_preexec
+add-zsh-hook precmd _update_termtitle_precmd

@@ -1,4 +1,7 @@
 #!/bin/zsh
+
+autoload -Uz add-zsh-hook
+
 # rake autocompletion from:
 # http://weblog.rubyonrails.org/2006/3/9/fast-rake-task-completion-for-zsh
 _rake_does_task_list_need_generating () {
@@ -247,3 +250,10 @@ function g {
     git status --short --branch
   fi
 }
+
+function _ls-on-cd() {
+  emulate -L zsh
+  ls
+}
+add-zsh-hook chpwd _ls-on-cd
+
