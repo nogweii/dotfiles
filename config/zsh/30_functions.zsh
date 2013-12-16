@@ -201,17 +201,6 @@ function cawk {
     eval $cmd
 }
 
-function title {
-  case $TERM in
-      *xterm*|rxvt|rxvt-unicode|rxvt-256color|(dt|k|E)term)
-        print -Pn "\e]0;$1\a"
-      ;;
-      screen)
-        print -Pn "\ek$1\e\\"
-      ;;
-  esac
-}
-
 for i in ${DOTSDIR}/share/zsh/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
