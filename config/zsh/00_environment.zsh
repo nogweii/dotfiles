@@ -21,7 +21,7 @@ export USERID="${UID}"
 export ME="${UID}"
 
 # Application settings
-export SUDO_PROMPT="Your Password:"
+export SUDO_PROMPT="[38;5;5m%p[00m's password:"
 export GDK_USE_XFT=1
 export QT_XFT=true
 
@@ -121,3 +121,5 @@ export MYSQL_LOCAL_SOCKET="/run/mysqld/mysqld.sock"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export LESSHISTSIZE=2000
+
+export KDE_SESSION_ID=$KDE_SESSION_UID
