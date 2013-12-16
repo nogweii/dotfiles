@@ -1,0 +1,122 @@
+#
+# A theme that displays only relevant information in one line. Derived from the
+# nicoulaj prompt with inspiration from Ph!l's Zsh prompt.
+#
+# Authors:
+#   NoGUI <nogui@evaryont.me>
+#
+# Features:
+#   - One line.
+#   - VCS information in the right prompt.
+#   - Only shows the path on the left prompt by default.
+#   - Crops the path to a defined length and only shows the path relative to
+#     the current VCS repository root.
+#   - Uses a different color & exit code depending on if the last command
+#     succeeded/failed.
+#   - Shows user if not the 'normal' user name.
+#   - Shows user@hostname if connected through SSH.
+#   - Shows if logged in as root or not.
+#
+# Screenshots:
+#   (none yet)
+#
+
+function prompt_evaryont_precmd {
+  vcs_info
+}
+
+function prompt_evaryont_help {
+  cat <<'EOF'
+  prompt evaryont
+
+  A theme that displays only relevant information in one line. Derived from the
+  nicoulaj prompt with inspiration from Ph!l's Zsh prompt.
+EOF
+  [[ $ZSH_VERSION < 5.0.2 ]] &&
+    print '  Designed using Zsh version 5.0.2. No guarentees it will work.'
+
+  cat <<EOF
+
+  Supports configuration using various styles in stead of passing parameters.
+  The zsh style mechanism using the zstyle command is describe in zshmodules(1).
+  This is the same mechanism used in the completion system.
+
+  The styles below are all examined in the context :prompt:evaryont.
+
+  * normal_user
+      The name of the username you are normally associated with. If the current
+      user is not the same as this value, then it will be displayed in the
+      prompt. This is also known as the logname(1).
+
+      Default: $LOGNAME
+
+  * path_length
+      The maximum length of the current directory displayed in the prompt.
+
+      Default: 30
+EOF
+}
+
+function prompt_evaryont_setup {
+  # All setopt's are local to this function only
+  setopt LOCAL_OPTIONS
+  # Disable shell tracing (zsh -x, for instance)
+  unsetopt XTRACE
+  # promptinit will setopt various PROMPT_* options according to this array:
+  prompt_opts=(cr percent subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  # Customizable parameters.
+  local max_path_chars normal_user
+  zstyle -s ':prompt:evaryont' normal_user 'normal_user' || \
+    normal_user="$LOGNAME"
+  zstyle -s ':prompt:evaryont' path_length 'max_path_chars' || \
+    max_path_chars=30
+
+  # %<..< "specifies truncation behaviour for the remainder of the prompt
+  # string.", which includes the final character demonstrating privilege or not.
+  # This is not part of the path, of course, so add 2 to make room in the
+  # prompt. (Includes the trailing space.)
+  (( max_path_chars = $max_path_chars + 2 ))
+
+  # Set vcs_info parameters.
+  zstyle -d ':vcs_info:*'
+  zstyle ':vcs_info:*' enable bzr git hg svn
+  zstyle ':vcs_info:*' check-for-changes true
+  # Set colors based on stage/unstaged files
+  zstyle ':vcs_info:*' unstagedstr '%F{076}'
+  zstyle ':vcs_info:*' stagedstr '%F{154}'
+  # Show the branch, a colored symbol & the current action
+  zstyle ':vcs_info:*' actionformats "%b%u%co (%a)"
+  # Show the branch and a colored symbol
+  zstyle ':vcs_info:*' formats "%b%u%co"
+  # And now, the same thing as above, but with the symbol replaced by
+  # VCS-specific variation, for neato's sake.
+  zstyle ':vcs_info:git:*' actionformats "%b%u%c± (%a)"
+  zstyle ':vcs_info:git:*' formats "%b%u%c±"
+  zstyle ':vcs_info:hg:*' actionformats "%b%u%c☿ (%a)"
+  zstyle ':vcs_info:hg:*' formats "%b%u%c☿"
+  zstyle ':vcs_info:*' nvcsformats ''
+
+  local exitstatus="$(print -P '%?')" exitstring="SIG"
+  [[ $exitstatus -gt 128 ]] && exitstring="SIG${signals[${exitstatus}-127]}"
+  [[ $exitstring == "SIG" ]] && exitstring=$exitstatus
+
+  local user_and_host
+  if [[ "${USER}" != "${normal_user}" ]]; then
+    user_and_host="%n "
+  elif [[ -n "${SSH_TTY}" ]]; then
+    user_and_host="%n@%m "
+  fi
+
+  # Define prompts.
+  PROMPT="${user_and_host}%${max_path_chars}<...<%~%<<%(!.#.>)%b%f "
+  RPROMPT="%(?..%F{124}${exitstring}%f! )"'${vcs_info_msg_0_}%f'
+
+  add-zsh-hook precmd prompt_evaryont_precmd
+}
+
+prompt_evaryont_setup "$@"

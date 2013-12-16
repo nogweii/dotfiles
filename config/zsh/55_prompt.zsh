@@ -1,4 +1,4 @@
 autoload -Uz promptinit
 promptinit
 
-prompt nicoulaj
+prompt evaryont
