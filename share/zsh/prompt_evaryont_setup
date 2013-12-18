@@ -11,8 +11,7 @@
 #   - Only shows the path on the left prompt by default.
 #   - Crops the path to a defined length and only shows the path relative to
 #     the current VCS repository root.
-#   - Uses a different color & exit code depending on if the last command
-#     succeeded/failed.
+#   - Shows the exit code/signal if the last command failed.
 #   - Shows user if not the 'normal' user name.
 #   - Shows user@hostname if connected through SSH.
 #   - Shows if logged in as root or not.
@@ -22,6 +21,14 @@
 #
 
 function prompt_evaryont_precmd {
+  local exitstatus=$?
+  setopt localoptions noxtrace noksharrays
+
+  # Show the signal name if available in the prompt
+  psvar=(SIG)
+  [[ $exitstatus -gt 128 ]] && psvar[1]=SIG$signals[$exitstatus-127]
+  [[ $psvar[1] = SIG ]] && psvar[1]=$exitstatus
+
   vcs_info
 }
 
@@ -70,7 +77,6 @@ function prompt_evaryont_setup {
   autoload -Uz vcs_info
 
   # Customizable parameters.
-  local max_path_chars normal_user
   zstyle -s ':prompt:evaryont' normal_user 'normal_user' || \
     normal_user="$LOGNAME"
   zstyle -s ':prompt:evaryont' path_length 'max_path_chars' || \
@@ -88,22 +94,20 @@ function prompt_evaryont_setup {
   zstyle ':vcs_info:*' check-for-changes true
   # Set colors based on stage/unstaged files
   zstyle ':vcs_info:*' unstagedstr '%F{076}'
-  zstyle ':vcs_info:*' stagedstr '%F{154}'
+  zstyle ':vcs_info:*' stagedstr '%F{208}'
   # Show the branch, a colored symbol & the current action
-  zstyle ':vcs_info:*' actionformats "%b%u%co (%a)"
+  zstyle ':vcs_info:*' actionformats "%b%u%c⚪ (%a)"
   # Show the branch and a colored symbol
-  zstyle ':vcs_info:*' formats "%b%u%co"
+  zstyle ':vcs_info:*' formats "%b%u%c⚪"
   # And now, the same thing as above, but with the symbol replaced by
   # VCS-specific variation, for neato's sake.
   zstyle ':vcs_info:git:*' actionformats "%b%u%c± (%a)"
   zstyle ':vcs_info:git:*' formats "%b%u%c±"
   zstyle ':vcs_info:hg:*' actionformats "%b%u%c☿ (%a)"
   zstyle ':vcs_info:hg:*' formats "%b%u%c☿"
+  zstyle ':vcs_info:bzr:*' actionformats "%b%u%c⚑ (%a)"
+  zstyle ':vcs_info:bzr:*' formats "%b%u%c⚑"
   zstyle ':vcs_info:*' nvcsformats ''
-
-  local exitstatus="$(print -P '%?')" exitstring="SIG"
-  [[ $exitstatus -gt 128 ]] && exitstring="SIG${signals[${exitstatus}-127]}"
-  [[ $exitstring == "SIG" ]] && exitstring=$exitstatus
 
   local user_and_host
   if [[ "${USER}" != "${normal_user}" ]]; then
@@ -113,8 +117,8 @@ function prompt_evaryont_setup {
   fi
 
   # Define prompts.
-  PROMPT="${user_and_host}%${max_path_chars}<...<%~%<<%(!.#.>)%b%f "
-  RPROMPT="%(?..%F{124}${exitstring}%f! )"'${vcs_info_msg_0_}%f'
+  PROMPT="${user_and_host}%${max_path_chars}<...<%~%<<%(!.⚡.>)%b%f "
+  RPROMPT="%(?..%F{124}%1v%f! )"'${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
 }
