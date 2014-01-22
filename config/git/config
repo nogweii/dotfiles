@@ -24,8 +24,8 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = ~/.local/config/git/ignores
-    attributesfile = ~/.local/config/git/attributes
+    excludesfile = ~/dotfiles/config/git/ignores
+    attributesfile = ~/dotfiles/config/git/attributes
 [branch]
     autosetuprebase = always
 [alias]
@@ -49,7 +49,7 @@
     # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     # pretty log
-    lg = log --decorate --graph --pretty=format:'%Cred%h%Creset - %C(blue)%cN%Creset:%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lg = log --decorate --graph --pretty=format:'%Cred%h%Creset - %C(blue)%cN%Creset:%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
     # show all the files that are ignored
     ls-ignored = ls-files --others -i --exclude-standard
     # show the changes that are pulled in (calls `git pull` as well)
