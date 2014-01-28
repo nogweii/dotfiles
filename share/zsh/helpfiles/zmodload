@@ -1,0 +1,167 @@
+zmodload [ -dL ] [ ... ]
+zmodload -F [ -lLme -P param ] module [+-]feature...
+zmodload -e [ -A ] [ ... ]
+zmodload [ -a [ -bcpf [ -I ] ] ] [ -iL ] ...
+zmodload -u [ -abcdpf [ -I ] ] [ -iL ] ...
+zmodload -A [ -L ] [ modalias[=module] ... ]
+zmodload -R modalias ...
+       Performs  operations relating to zsh's loadable modules.  Loading of modules while the shell is running (`dynamical lo
+       ating systems, or on all installations on a particular operating system, although the zmodload command itself is alway
+       ulate modules built into versions of the shell executable without dynamical loading.
+
+       Without  arguments  the names of all currently loaded binary modules are printed.  The -L option causes this list to b
+       commands.  Forms with arguments are:
+
+       zmodload [ -i ] name ...
+       zmodload -u [ -i ] name ...
+              In the simplest case, zmodload loads a binary module.  The module must be in a file with a name consisting of t
+              dard  suffix,  usually `.so' (`.sl' on HPUX).  If the module to be loaded is already loaded the duplicate modul
+              inconsistency, such as an invalid module name or circular dependency list, the current code block is aborted.  
+              is  sufficient to test whether a module is available.  If it is available, the module is loaded if necessary, w
+              status is silently returned.  The option -i is accepted for compatibility but has no effect.
+
+              The named module is searched for in the same way a command is, using $module path instead of $path.  However, t
+              the module name contains a `/', which it usually does.  There is no way to prevent the path search.
+
+              If the module supports features (see below), zmodload tries to enable all features when loading a module.  If t
+              not all features could be enabled, zmodload returns status 2.
+
+              With -u, zmodload unloads modules.  The same name must be given that was given when the module was loaded, but 
+              exist in the file system.  The -i option suppresses the error if the module is already unloaded (or was never l
+
+              Each  module  has a boot and a cleanup function.  The module will not be loaded if its boot function fails.  Si
+              if its cleanup function runs successfully.
+
+       zmodload -F [ -almLe -P param ] module [+-]feature...
+              zmodload -F allows more selective control over the features provided by modules.  With no options apart from -F
+              if  it was not already loaded, and the list of features is set to the required state.  If no features are speci
+              not already loaded, but the state of features is unchanged.  Each feature may be preceded by a + to turn the fe
+              is  assumed  if  neither  character is present.  Any feature not explicitly mentioned is left in its current st
+              loaded this means any such features will remain disabled.  The return status is zero if all features were set, 
+              if some features could not be set (for example, a parameter couldn't be added because there was a different par
+              ule was loaded.
+
+              The standard features are builtins, conditions, parameters and math functions; these are indicated by the prefi
+              dition),  `p:' and `f:', respectively, followed by the name that the corresponding feature would have in the sh
+              cates a builtin named strftime and p:EPOCHSECONDS indicates a parameter named EPOCHSECONDS.  The module may pro
+              its own as indicated by its documentation; these have no prefix.
+
+              With  -l  or -L, features provided by the module are listed.  With -l alone, a list of features together with t
+              line.  With -L alone, a zmodload -F command that would cause enabled features of the module to be turned on is 
+              mand  that  would  cause all the features to be set to their current state is shown.  If one of these combinati
+              the parameter param is set to an array of features, either features together with their state or (if -L alone i
+
+              With the option -L the module name may be omitted; then a list of all enabled features for all modules providin
+              zmodload -F commands.  If -l is also given, the state of both enabled and disabled features is output in that f
+
+              A  set of features may be provided together with -l or -L and a module name; in that case only the state of tho
+              ture may be preceded by + or - but the character has no effect.  If no set of features is provided, all feature
+
+              With -e, the command first tests that the module is loaded; if it is not, status 1 is returned.  If the module 
+              as  an  argument is examined.  Any feature given with no prefix is simply tested to see if the module provides 
+              or - is tested to see if is provided and in the given state.  If the tests on all features in the list succeed,
+
+              With -m, each entry in the given list of features is taken as a pattern to be matched against the list of featu
+              tial + or - must be given explicitly.  This may not be combined with the -a option as autoloads must be specifi
+
+              With  -a, the given list of features is marked for autoload from the specified module, which may not yet be loa
+              the feature name.  If the feature is prefixed with -, any existing autoload is removed.  The options -l and  -L
+              Autoloading is specific to individual features; when the module is loaded only the requested feature is enabled
+              the module is subsequently unloaded until an explicit `zmodload -Fa module -feature' is issued.  It is not an e
+              feature of a module that is already loaded.
+
+              When the module is loaded each autoload is checked against the features actually provided by the module; if the
+              request is deleted.  A warning message is output; if the module is being loaded to provide a different feature,
+              there  is no effect on the status of the current command.  If the module is already loaded at the time when zmo
+              printed and status 1 returned.
+
+              zmodload -Fa can be used with the -l, -L, -e and -P options for listing and testing the existence of autoloadab
+              ignored if -L is specified.  zmodload -FaL with no module name lists autoloads for all modules.
+
+              Note that only standard features as described above can be autoloaded; other features require the module to be 
+
+       zmodload -d [ -L ] [ name ]
+       zmodload -d name dep ...
+       zmodload -ud name [ dep ... ]
+              The -d option can be used to specify module dependencies.  The modules named in the second and subsequent argum
+              named in the first argument.
+
+              With -d and one argument, all dependencies for that module are listed.  With -d and no arguments, all module de
+              is by default in a Makefile-like format.  The -L option changes this format to a list of zmodload -d commands.
+
+              If -d and -u are both used, dependencies are removed.  If only one argument is given, all dependencies for that
+
+       zmodload -ab [ -L ]
+       zmodload -ab [ -i ] name [ builtin ... ]
+       zmodload -ub [ -i ] builtin ...
+              The  -ab  option defines autoloaded builtins.  It defines the specified builtins.  When any of those builtins i
+              first argument is loaded and all its features are enabled (for selective control of features use `zmodload -F -
+              name  is  given, one builtin is defined, with the same name as the module.  -i suppresses the error if the buil
+              but not if another builtin of the same name is already defined.
+
+              With -ab and no arguments, all autoloaded builtins are listed, with the module name (if different) shown in par
+              -L option changes this format to a list of zmodload -a commands.
+
+              If -b is used together with the -u option, it removes builtins previously defined with -ab.  This is only possi
+              -i suppresses the error if the builtin is already removed (or never existed).
+
+              Autoload requests are retained if the module is subsequently unloaded until an explicit `zmodload -ub builtin' 
+
+       zmodload -ac [ -IL ]
+       zmodload -ac [ -iI ] name [ cond ... ]
+       zmodload -uc [ -iI ] cond ...
+              The -ac option is used to define autoloaded condition codes. The cond strings give the names of the conditions 
+              -I option is used to define infix condition names. Without this option prefix condition names are defined.
+
+              If given no condition names, all defined names are listed (as a series of zmodload commands if the -L option is
+
+              The -uc option removes definitions for autoloaded conditions.
+
+       zmodload -ap [ -L ]
+       zmodload -ap [ -i ] name [ parameter ... ]
+       zmodload -up [ -i ] parameter ...
+              The -p option is like the -b and -c options, but makes zmodload work on autoloaded parameters instead.
+
+       zmodload -af [ -L ]
+       zmodload -af [ -i ] name [ function ... ]
+       zmodload -uf [ -i ] function ...
+              The -f option is like the -b, -p, and -c options, but makes zmodload work on autoloaded math functions instead.
+
+       zmodload -a [ -L ]
+       zmodload -a [ -i ] name [ builtin ... ]
+       zmodload -ua [ -i ] builtin ...
+              Equivalent to -ab and -ub.
+
+       zmodload -e [ -A ] [ string ... ]
+              The  -e  option  without arguments lists all loaded modules; if the -A option is also given, module aliases cor
+              shown.  If arguments are provided, nothing is printed; the return status is set to zero if all strings given as
+              ules  and  to  one if at least on string is not the name of a loaded module.  This can be used to test for the 
+              modules.  In this case, any aliases are automatically resolved and the -A flag is not used.
+
+       zmodload -A [ -L ] [ modalias[=module] ... ]
+              For each argument, if both modalias and module are given, define modalias to be an alias for the module module.
+              sequently  requested,  either via a call to zmodload or implicitly, the shell will attempt to load module inste
+              definition of modalias.  If no arguments are given, list all defined module aliases.  When listing, if the -L f
+              tion as a zmodload command to recreate the alias.
+
+              The  existence of aliases for modules is completely independent of whether the name resolved is actually loaded
+              loading and unloading the module under any alias has exactly the same effect as using the resolved name, and do
+              the  alias  and  the  resolved  name which can be removed either by zmodload -R or by redefining the alias.  Ch
+              resolved name is itself an alias) are valid so long as these are not circular.  As the aliases take the  same  
+              include  path  separators:   in this case, there is no requirement for any part of the path named to exist as t
+              example, `any/old/alias' is always a valid alias.
+
+              Dependencies added to aliased modules are actually added to the resolved module; these remain if the alias is r
+              alias  whose name is one of the standard shell modules and which resolves to a different module.  However, if a
+              be possible to use the module name as an alias as the module will already be marked as a loadable module in its
+
+              Apart from the above, aliases can be used in the zmodload command anywhere module names are required.  However,
+              of loaded modules with a bare `zmodload'.
+
+       zmodload -R modalias ...
+              For  each  modalias  argument  that was previously defined as a module alias via zmodload -A, delete the alias.
+              caused and the remainder of the line is ignored.
+
+       Note that zsh makes no distinction between modules that were linked into the shell and modules that are loaded dynamic
+       mand has to be used to make available the builtins and other things defined by modules (unless the module is autoloade
+       even for systems that don't support dynamic loading of modules.
