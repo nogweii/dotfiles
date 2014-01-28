@@ -60,7 +60,7 @@ EOF
   * path_length
       The maximum length of the current directory displayed in the prompt.
 
-      Default: 30
+      Default: $(( $COLUMNS / 3 ))
 EOF
 }
 
@@ -80,7 +80,7 @@ function prompt_evaryont_setup {
   zstyle -s ':prompt:evaryont' normal_user 'normal_user' || \
     normal_user="$LOGNAME"
   zstyle -s ':prompt:evaryont' path_length 'max_path_chars' || \
-    max_path_chars=30
+    max_path_chars=$(( $COLUMNS / 3 ))
 
   # %<..< "specifies truncation behaviour for the remainder of the prompt
   # string.", which includes the final character demonstrating privilege or not.
@@ -117,7 +117,7 @@ function prompt_evaryont_setup {
   fi
 
   # Define prompts.
-  PROMPT="${user_and_host}%${max_path_chars}<...<%~%<<%(!.⚡.>)%b%f "
+  PROMPT="${user_and_host}%F{014}%${max_path_chars}<...<\$(_current_dir_path)%F{002}%1~%(!.%F{052}⚡.%F{015})%b%f "
   RPROMPT="%(?..%F{124}%1v%f! )"'${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd

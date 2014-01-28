@@ -270,3 +270,17 @@ function __is-my-window-focused() {
   [[ -n "${DISPLAY}" ]] || return 1
   [[ "$(xdotool getwindowfocus)" -eq "${WINDOWID}" ]]
 }
+
+# Prints the current directory hierarchy, excluding the present directory's
+# name. e.g. If you are in '/opt/vagrant/bin', this prints out '/opt/vagrant/'.
+# (Note the trailing slash!) This is useful, for instance, when you want to
+# color the current directory name differently than the rest of the path.
+_current_dir_path() {
+  if [[ $PWD = '/' ]]; then
+    echo ""
+  elif [[ $PWD = $HOME ]]; then
+    echo ""
+  else
+    echo "${$(print -P %~)%/*}/"
+  fi
+}
