@@ -1,6 +1,11 @@
-gem: --no-rdoc --no-ri
-rdoc: --inline-source --line-numbers
-# Negate the following to empty value, letting the environment ($GEM_HOME) take over
-gemhome: #
-install: --no-rdoc --no-ri 
-update:  --no-rdoc --no-ri
+--- 
+:benchmark: false
+install: --no-format-executable --user-install --no-document
+:backtrace: true
+:update_sources: true
+format_executable: true
+:verbose: true
+update: --no-format-executable --user-install --no-document
+:bulk_threshold: 1000
+:sources: 
+- https://rubygems.org

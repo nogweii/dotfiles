@@ -12,16 +12,17 @@ typeset -x PATH MANPATH
 # And now, set them
 path=(
   $HOME/bin             # My own scripts, programs, etc
+  $HOME/.local/share/cabal/bin # User-installed haskell packages
+  $HOME/.gem/ruby/*/bin # Binaries provided by user installed gems
   /usr/lib/cw           # Colorized versions of GNU coreutils
   /usr/{bin,sbin}       # Most programs & binaries
   /{bin,sbin}           # Lower-level, "basic" commands
   $path                 # System-provided paths
   /usr/local/{bin,sbin} # Local administrator installed/odd-ball commands
   /opt/java/bin         # Some java installations
+  $HOME/.heroku/client/bin # Heroku toolbelt, as installed via `heroku update`
   /usr/local/heroku/bin # Heroku toolbelt, as installed from a package
-  $HOME/.cabal/bin      # User-installed haskell packages
-  $HOME/.rubygems/bin   # Binaries provided by user installed gems
-  ${HOME}/.gem/ruby/1.9.1/bin
+  $DOTSDIR/share/rbenv/bin # rbenv install
 )
 
 fpath=(

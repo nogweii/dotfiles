@@ -102,14 +102,12 @@ export MPLAYER_HOME="${XDG_CONFIG_HOME}/mplayer"
 #export GIT_CONFIG="${DOTSDIR}/config/git/config"
 export RVC_READLINE='/usr/lib/ruby/1.8/x86_64-linux/readline.so'
 
-export GEM_HOME="${HOME}/.rubygems"
-export UZBL_UTIL_DIR="${XDG_DATA_HOME}/uzbl/scripts/util"
-
 # A few applications (like osc) still expect GNOME_DESKTOP_SESSION_ID to exist,
 # so define a value if it hasn't already.
-[ -z "$GNOME_DESKTOP_SESSION_ID" ] && GNOME_DESKTOP_SESSION_ID='this-is-deprecated'
+[ -z "$GNOME_DESKTOP_SESSION_ID" ] && export GNOME_DESKTOP_SESSION_ID='this-is-deprecated'
+[ -z "$KDE_SESSION_ID" ] && export KDE_SESSION_ID=$KDE_SESSION_UID
 
-export WGETRC="${XDG_CONFIG_HOME}/wgetrc"
+export WGETRC="${DOTSDIR}/config/wgetrc"
 
 if [ "$COLORTERM" = "gnome-terminal" ]; then
     export TERM="xterm-256color"
@@ -117,9 +115,17 @@ fi
 
 # Development environment stuff.
 export MYDRIVEADVISOR_DB_PWD="mysqlroot"
-export MYSQL_LOCAL_SOCKET="/run/mysqld/mysqld.sock"
+export MYSQL_LOCAL_SOCKET="/var/run/mysql/mysql.sock"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export LESSHISTSIZE=2000
 
-export KDE_SESSION_ID=$KDE_SESSION_UID
+if [ -x /usr/lib/ssh/ksshaskpass ]; then
+    export SSH_ASKPASS="/usr/lib/ssh/ksshaskpass"
+elif [ -x "${commands[ksshaskpass]}" ]; then
+    export SSH_ASKPASS="${commands[ksshaskpass]}"
+fi
+
+export GEMRC="${DOTSDIR}/gemrc"
+export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"

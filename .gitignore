@@ -77,3 +77,5 @@ weechat/weechat.log
 xmonad/xmonad-*-linux
 xmonad/xmonad.errors
 config/zsh/01_private.zsh
+share/rbenv/
+config/pianobar/state
