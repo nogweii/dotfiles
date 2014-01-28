@@ -7,11 +7,24 @@ if [[ -z $commands[rbenv] ]]; then
    return 
 fi
 
-export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
+# Get the directory rbenv is in (e.g. installed to /usr/local/rbenv/? The full
+# path to the rbenv command is /usr/local/rbenv/bin/rbenv and I want just just
+# '/usr/local/rbenv')
+local rbenv_parent_path=${${:-$commands[rbenv]/../../}:A}
+
+# If the parent path is writable by me, use that. (For when rbenv is installed
+# in my home directory)
+if [[ -w $rbenv_parent_path ]]; then
+  export RBENV_ROOT="${rbenv_parent_path}"
+else
+  # Failing that, use $XDG_DATA_HOME
+  export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
+fi
 
 export PATH="${RBENV_ROOT}/shims:${PATH}"
 
-source "/usr/lib/rbenv/completions/rbenv.zsh"
+# The completions are shipped in the same parent directory as the command
+source "${rbenv_parent_path}/completions/rbenv.zsh"
 
 rbenv rehash 2>/dev/null
 
@@ -39,7 +52,7 @@ rbenv() {
 function _update_ruby_version()
 {
     typeset -g ruby_version=''
-    if which rbenv &> /dev/null; then
+    if [[ -z $commands[rbenv] ]]; then
       # Strip the specific version information (i.e. jruby-1.7.4 becomes just
       # 'jruby')
       ruby_version="${$(command rbenv version-name)%%-*}"
@@ -55,3 +68,6 @@ chpwd_functions+=(_update_ruby_version)
 
 # And initialize $ruby_version 
 _update_ruby_version
+
+# Don't need this variable any more
+unset rbenv_parent_path
