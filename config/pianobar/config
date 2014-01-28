@@ -1,6 +1,6 @@
 # User
 user = colin@evaryont.me
-password_command = /usr/bin/ksshaskpass "Pandora password:"
+password_command = /bin/bash -c 'exec $SSH_ASKPASS "Pandora password:"'
 
 # Proxy (for those who are not living in the USA)
 #control_proxy = http://127.0.0.1:9090/
@@ -30,7 +30,7 @@ password_command = /usr/bin/ksshaskpass "Pandora password:"
 
 # Misc
 #audio_quality = high
-autostart_station = 165478110736344848
+autostart_station = 144767460607452944
 #event_command = /home/user/.config/pianobar/eventcmd
 #fifo = /tmp/pianobar
 #sort = quickmix_10_name_az
