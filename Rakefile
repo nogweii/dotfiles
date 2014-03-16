@@ -1,53 +1,70 @@
+require 'rake/clean'
+
 def here(*paths)
-    File.expand_path(File.join(File.dirname(__FILE__), *paths))
+  File.expand_path(File.join(File.dirname(__FILE__), *paths))
 end
 
 def dotfiles
-    Dir[here('*')].map do |path|
-        File.basename(path)
-    end.reject do |path|
-        path == "Rakefile" or path =~ /^README/
-    end
+  Dir[here('*')].map do |path|
+    File.basename(path)
+  end.reject do |path|
+    path == "Rakefile" or path =~ /^README/
+  end.sort
+end
+p dotfiles
+
+DOTFILES = []
+
+dotfiles.each do |dotfile|
+  # Absolute path to the symlink in $HOME
+  link_path = File.expand_path "~/.#{dotfile}"
+
+  # Override the path. I hope you didn't have anything important there!
+  file link_path do
+    rm link_path if File.exists? link_path
+    symlink here(dotfile), link_path
+  end
+
+  # This is a file we're managing, so append it to the list of files that we
+  # can clean
+  DOTFILES << link_path
 end
 
-def run(cmd)
-    puts cmd
-    system cmd
-end
-
-task :default => [:dotfiles, :submodules]
+task :default => :dotfiles
 
 desc "Symlinks all my dotfiles"
-task :dotfiles do
-    dotfiles.each do |dotfile|
-        link = File.expand_path("~/.#{dotfile}")
-        unless File.exists?(link)
-            run %Q{ln -s "#{here(dotfile)}" "#{link}"}
-        end
-    end
+task :dotfiles => [:submodules, :prepare, DOTFILES].flatten do
 end
 
 desc "Removes all my dotfile symlinks"
 task :clean do
   dotfiles.each do |dotfile|
     link = File.expand_path("~/.#{dotfile}")
+
     if File.symlink?(link)
-      run %Q{rm "#{link}"}
+      rm link
     end
   end
 end
 
-desc "Update each submodule (up to two layers deep)"
+desc "Initialize all submodules"
 task :submodules do
-  run 'git submodule sync'
-  run 'git submodule init'
-  run 'git submodule update'
-  run 'git submodule foreach git pull origin master'
-  run 'git submodule foreach git submodule init'
-  run 'git submodule foreach git submodule update'
+  sh 'git submodule update --init --recursive'
 end
 
+MAKE_DIRS = [here("vim/tmp"), File.expand_path("~/.local/cache")]
+
+MAKE_DIRS.each do |dir|
+  directory dir do
+    mkdir_p dir
+  end
+end
+
+CLOBBER << [DOTFILES].flatten
+CLEAN << [MAKE_DIRS].flatten
+
 desc "Prepare extra directories"
-task :prepare do
-    mkdir here("vim/tmp")
+task :prepare => MAKE_DIRS do
+  # compile youcompleteme
+  # compile command-t
 end
