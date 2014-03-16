@@ -82,3 +82,12 @@
 [submodule "vim/bundle/yaifa"]
 	path = vim/bundle/yaifa
 	url = https://github.com/Raimondi/YAIFA
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/swapit"]
+	path = vim/bundle/swapit
+	url = https://github.com/mjbrownie/swapit
+[submodule "vim/bundle/ruby"]
+	path = vim/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby
