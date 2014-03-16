@@ -91,3 +91,12 @@
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule "vim/bundle/space"]
+	path = vim/bundle/space
+	url = https://github.com/spiiph/vim-space
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired
