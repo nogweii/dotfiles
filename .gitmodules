@@ -100,3 +100,63 @@
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/reimin"]
+	path = vim/bundle/reimin
+	url = https://github.com/wilhelmtell/reimin
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = https://github.com/sjl/gundo.vim
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule "vim/bundle/dispatch"]
+	path = vim/bundle/dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "vim/bundle/rails"]
+	path = vim/bundle/rails
+	url = https://github.com/tpope/vim-rails
+[submodule "vim/bundle/rake"]
+	path = vim/bundle/rake
+	url = https://github.com/tpope/vim-rake
+[submodule "vim/bundle/eunuch"]
+	path = vim/bundle/eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "vim/bundle/rsi"]
+	path = vim/bundle/rsi
+	url = https://github.com/tpope/vim-rsi
+[submodule "vim/bundle/rbenv"]
+	path = vim/bundle/rbenv
+	url = https://github.com/tpope/vim-rbenv
+[submodule "vim/bundle/jdaddy"]
+	path = vim/bundle/jdaddy
+	url = https://github.com/tpope/vim-jdaddy
+[submodule "vim/bundle/vinegar"]
+	path = vim/bundle/vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "vim/bundle/bundler"]
+	path = vim/bundle/bundler
+	url = https://github.com/tpope/vim-bundler
+[submodule "vim/bundle/tbone"]
+	path = vim/bundle/tbone
+	url = https://github.com/tpope/vim-tbone
+[submodule "vim/bundle/LargeFile"]
+	path = vim/bundle/LargeFile
+	url = https://github.com/vim-scripts/LargeFile
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag
+	url = https://github.com/rking/ag.vim
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "vim/bundle/endwise"]
+	path = vim/bundle/endwise
+	url = https://github.com/tpope/vim-endwise
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
