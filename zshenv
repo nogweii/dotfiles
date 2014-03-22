@@ -9,6 +9,8 @@ typeset -gU cdpath fpath mailpath manpath path
 # And make sure these variables are exported to subcommands
 typeset -x PATH MANPATH
 
+setopt CSH_NULL_GLOB # Don't error on failed matches, just skip 'em
+
 # And now, set them
 path=(
   $HOME/bin             # My own scripts, programs, etc
