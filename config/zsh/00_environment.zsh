@@ -127,5 +127,5 @@ elif [ -x "${commands[ksshaskpass]}" ]; then
 fi
 
 export GEMRC="${DOTSDIR}/gemrc"
-export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+[ -x "${commands[ruby]}" ] && export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
