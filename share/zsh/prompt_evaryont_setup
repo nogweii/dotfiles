@@ -12,7 +12,7 @@
 #   - Crops the path to a defined length and only shows the path relative to
 #     the current VCS repository root.
 #   - Shows the exit code/signal if the last command failed.
-#   - Shows user if not the 'normal' user name.
+#   - Shows user name if not the 'normal' one.
 #   - Shows user@hostname if connected through SSH.
 #   - Shows if logged in as root or not.
 #
@@ -109,11 +109,17 @@ function prompt_evaryont_setup {
   zstyle ':vcs_info:bzr:*' formats "%b%u%c⚑"
   zstyle ':vcs_info:*' nvcsformats ''
 
+  local user_color='105' # non-normal account name
+  if [[ "${USER}" != "root" ]]; then
+    # If we're root, let's have the prompt warn us with colors as well
+    user_color='052'
+  fi
+
   local user_and_host
   if [[ "${USER}" != "${normal_user}" ]]; then
-    user_and_host="%F{102}%n%f "
+    user_and_host="%F{${user_color}}%n%f "
   elif [[ -n "${SSH_TTY}" ]]; then
-    user_and_host="%F{102}%n%f@%F{093}%m%f "
+    user_and_host="%F{${user_color}}%n%f@%F{093}%m%f "
   fi
 
   # Define prompts.
