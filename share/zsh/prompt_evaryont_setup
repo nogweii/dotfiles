@@ -111,9 +111,9 @@ function prompt_evaryont_setup {
 
   local user_and_host
   if [[ "${USER}" != "${normal_user}" ]]; then
-    user_and_host="%n "
+    user_and_host="%F{102}%n%f "
   elif [[ -n "${SSH_TTY}" ]]; then
-    user_and_host="%n@%m "
+    user_and_host="%F{102}%n%f@%F{093}%m%f "
   fi
 
   # Define prompts.
