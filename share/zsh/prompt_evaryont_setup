@@ -110,7 +110,7 @@ function prompt_evaryont_setup {
   zstyle ':vcs_info:*' nvcsformats ''
 
   local user_color='105' # non-normal account name
-  if [[ "${USER}" != "root" ]]; then
+  if [[ "${USER}" == "root" ]]; then
     # If we're root, let's have the prompt warn us with colors as well
     user_color='052'
   fi
