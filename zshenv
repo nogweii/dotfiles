@@ -9,7 +9,7 @@ typeset -gU cdpath fpath mailpath manpath path
 # And make sure these variables are exported to subcommands
 typeset -x PATH MANPATH
 
-setopt CSH_NULL_GLOB # Don't error on failed matches, just skip 'em
+unsetopt NO_MATCH # Don't error on failed matches
 
 # And now, set them
 path=(
