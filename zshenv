@@ -41,9 +41,8 @@ manpath=(
 )
 
 # Given a list of arrays, delete any values from each that don't point to a
-# real directory. It will also resolve any symlinks. (Also, yay anonymous
-# functions!)
-function {
+# real directory. It will also resolve any symlinks.
+function _strip_fakes {
   local a
   for a in "$@"; do
     integer i
@@ -55,7 +54,9 @@ function {
       fi
     done
   done
-} path fpath manpath
+}
+_strip_fakes path fpath manpath
+unfunction _strip_fakes
 
 # Make sure we have a language set
 if ! (( $+LANG )) || [[ -z "$LANG" ]]; then
