@@ -124,9 +124,6 @@
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "vim/bundle/rsi"]
-	path = vim/bundle/rsi
-	url = https://github.com/tpope/vim-rsi
 [submodule "vim/bundle/rbenv"]
 	path = vim/bundle/rbenv
 	url = https://github.com/tpope/vim-rbenv
