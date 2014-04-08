@@ -29,17 +29,17 @@ source "${rbenv_parent_path}/completions/rbenv.zsh"
 rbenv rehash 2>/dev/null
 
 rbenv() {
-  typeset command
-  command="$1"
+  local rbenv_subcommand
+  rbenv_subcommand="$1"
   if [ "$#" -gt 0 ]; then
     shift
   fi
 
-  case "$command" in
+  case "$rbenv_subcommand" in
   rehash|shell|use)
-    eval `rbenv "sh-$command" "$@"`;;
+    eval `rbenv "sh-$rbenv_subcommand" "$@"`;;
   *)
-    command rbenv "$command" "$@";;
+    command rbenv "$rbenv_subcommand" "$@";;
   esac
 
   # Update the version string for the prompt every time I call rbenv (i.e. rbenv
