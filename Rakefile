@@ -86,7 +86,7 @@ end
 task :default => :dotfiles
 
 desc "Symlinks all my dotfiles"
-task :dotfiles => [:submodules, :prepare, DOTFILES].flatten
+task :dotfiles => [:submodules, :prepare, DOTFILES, ].flatten
 
 desc "Removes all my dotfile symlinks"
 task :clean do
@@ -121,6 +121,7 @@ CLEAN << [MAKE_DIRS].flatten
 
 desc "Prepare extra directories"
 task :prepare => MAKE_DIRS do
+  symlink "#{$gitdir}/share/rbenv-plugins", "share/rbenv/plugins"
   # compile youcompleteme
   # compile command-t
 end

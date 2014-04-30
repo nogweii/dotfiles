@@ -10,3 +10,4 @@ git_diff_staged.diff
 .directory
 tags
 .ruby-version
+.bundle

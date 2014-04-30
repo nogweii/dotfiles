@@ -14,5 +14,4 @@ vim/undo
 weechat/logs
 weechat/weechat.log
 config/zsh/01_private.zsh
-share/rbenv/
 config/pianobar/state

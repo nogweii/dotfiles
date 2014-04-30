@@ -129,3 +129,5 @@ fi
 export GEMRC="${DOTSDIR}/gemrc"
 [ -x "${commands[ruby]}" ] && export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
+
+export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
