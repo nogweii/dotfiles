@@ -3,7 +3,7 @@ export NOCOLOR_PIPE=1
 
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
-export BROWSER="elinks"
+export BROWSER="kde-open"
 export PAGER="less"
 
 # CLI default parameters
