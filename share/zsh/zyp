@@ -1,4 +1,4 @@
-zypper $@
+zypper --no-refresh $@
 if [ $? -eq 5 ]; then
   sudo zypper $@
 fi
