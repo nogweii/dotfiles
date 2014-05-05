@@ -14,7 +14,7 @@ AddTabularPattern! rb_hash /^[^=]*\zs=>
 "vnoremap <silent> <Leader>ahs  :Tabularize rbshash<CR>
 
 " Nice alignment for | based tables
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+"inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
  
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'

@@ -151,12 +151,9 @@
 [submodule "vim/bundle/search_objects"]
 	path = vim/bundle/search_objects
 	url = https://github.com/Raimondi/vim_search_objects
-[submodule "share/rbenv-plugins/communal-gems"]
-	path = share/rbenv-plugins/communal-gems
-	url = https://github.com/tpope/rbenv-communal-gems
 [submodule "share/rbenv"]
 	path = share/rbenv
 	url = https://github.com/sstephenson/rbenv
-[submodule "share/rbenv-plugins/binstubs"]
-	path = share/rbenv-plugins/binstubs
-	url = https://github.com/ianheggie/rbenv-binstubs
+[submodule "vim/bundle/table-mode"]
+	path = vim/bundle/table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode
