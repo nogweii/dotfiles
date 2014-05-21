@@ -157,3 +157,6 @@
 [submodule "vim/bundle/table-mode"]
 	path = vim/bundle/table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git@github.com:mileszs/ack.vim.git
