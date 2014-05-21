@@ -15,7 +15,7 @@ unsetopt NO_MATCH # Don't error on failed matches
 path=(
   $HOME/bin             # My own scripts, programs, etc
   $HOME/.local/share/cabal/bin # User-installed haskell packages
-  $HOME/.gem/ruby/*/bin # Binaries provided by user installed gems
+# $HOME/.gem/ruby/*/bin # Binaries provided by user installed gems
   /usr/lib/cw           # Colorized versions of GNU coreutils
   /usr/{bin,sbin}       # Most programs & binaries
   /{bin,sbin}           # Lower-level, "basic" commands
