@@ -55,7 +55,8 @@ export LC_IDENTIFICATION="en_US.utf8"
 export     HARDWARECLOCK="UTC"
 export          TIMEZONE="America/New_York"
 # History location.
-export          HISTFILE="${XDG_CACHE_HOME}/zsh_history"
+#export          HISTFILE="${XDG_CACHE_HOME}/zsh_history"
+export          HISTFILE="${HOME}/.local/cache/zsh_history"
 export          HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export          SAVEHIST="${HISTSIZE}"
 
@@ -97,6 +98,7 @@ elif [ -x "${commands[ksshaskpass]}" ]; then
 fi
 
 export GEMRC="${DOTSDIR}/gemrc"
+export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
 
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
