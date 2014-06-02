@@ -19,7 +19,6 @@ c
 Cafe
 charset
 cli
-#olin
 conf
 config
 cpp
@@ -280,15 +279,12 @@ malware
 Tv/!
 TV
 hacktivist
-#acktvisits
 hacktvisits/!
 hacktvists
 hacktivists
 WikiLeaks
 Obama
-#upresssion
 supresssion/!
-#rls
 urls/!
 SQLite
 PostgreSQL
@@ -302,13 +298,10 @@ smurf
 ICMP
 Aggregators
 composeable
-#okemon./!
 Pokemon/!
 Pokémon
-#okemon
 isn’t
 Wi-Fi
-#ifi
 VM
 config
 GPL
@@ -316,3 +309,4 @@ app's
 inline
 VirtualBox
 Heroku
+sibiling/!
