@@ -15,9 +15,11 @@ iabbrev lemme           let me
 iabbrev defnitly        definitely
 iabbrev im              I'm
 iabbrev ofcourse        of course
+iabbrev ofc             of course
 iabbrev headsup         heads up
-iabbrev instead         in stead
 iabbrev forcably        forcibly
+
+iabbrev cafe            café
 
 " a subset from http://simple.wikipedia.org/wiki/List_of_common_misspellings_in_English
 iabbrev abberration     aberration
