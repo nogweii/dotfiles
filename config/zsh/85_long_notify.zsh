@@ -20,14 +20,15 @@ if [ "${commands[notify-send]}" != "" -a "${DBUS_SESSION_BUS_ADDRESS}" != "" ]; 
   }
 
   __reporttime-precmd-hook() {
+    local cmd_exit_status=$?
     local time_taken
 
     # precmd can execute many times (like every time I hit enter, regardless if
     # I typed a new command) so only notify when there's something 'interesting'
     if [ "${__reporttime_about}" != "" ]; then
       time_taken=$(($SECONDS-$__reporttime_start))
-      if (( $time_taken > $REPORTTIME )); then
-        if [[ "$(print -P '%?')" = '0' ]]; then
+      if (( $time_taken > $REPORTTIME )) && ! __is-my-window-focused; then
+        if [[ $cmd_exit_status -eq 0 ]]; then
           __reporttime_status='succeded'
         else
           __reporttime_status='failed'

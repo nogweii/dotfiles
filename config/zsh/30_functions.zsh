@@ -266,9 +266,8 @@ add-zsh-hook chpwd _ls-on-cd
 # similar.
 function __is-my-window-focused() {
   [[ -n "${WINDOWID}" ]] || return 1
-  [[ -n "${commands[xdotool]}" ]] || return 1
   [[ -n "${DISPLAY}" ]] || return 1
-  [[ "$(xdotool getwindowfocus)" -eq "${WINDOWID}" ]]
+  [[ ${$(xprop -root -notype -format _NET_ACTIVE_WINDOW 32i ' $0\n' _NET_ACTIVE_WINDOW):1} = $WINDOWID ]]
 }
 
 # Prints the current directory hierarchy, excluding the present directory's
