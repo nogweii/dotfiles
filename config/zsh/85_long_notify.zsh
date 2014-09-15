@@ -22,6 +22,8 @@ if [ "${commands[notify-send]}" != "" -a "${DBUS_SESSION_BUS_ADDRESS}" != "" ]; 
   __reporttime-precmd-hook() {
     local cmd_exit_status=$?
     local time_taken
+    local __reporttime_status
+    local __reporttime_icon
 
     # precmd can execute many times (like every time I hit enter, regardless if
     # I typed a new command) so only notify when there's something 'interesting'
@@ -30,8 +32,10 @@ if [ "${commands[notify-send]}" != "" -a "${DBUS_SESSION_BUS_ADDRESS}" != "" ]; 
       if (( $time_taken > $REPORTTIME )) && ! __is-my-window-focused; then
         if [[ $cmd_exit_status -eq 0 ]]; then
           __reporttime_status='succeded'
+          __reporttime_icon='utilities-terminal'
         else
           __reporttime_status='failed'
+          __reporttime_icon='script-error'
         fi
 
         # Quick math to make larger times easier to understand (though not
@@ -43,7 +47,7 @@ if [ "${commands[notify-send]}" != "" -a "${DBUS_SESSION_BUS_ADDRESS}" != "" ]; 
           time_taken="$time_taken s"
         fi
 
-        notify-send "Command Finished" \
+        notify-send "Command Finished" -i $__reporttime_icon \
           "'${__reporttime_about}' ${__reporttime_status} after ${time_taken}"
       fi
     fi
