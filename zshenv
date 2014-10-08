@@ -25,6 +25,7 @@ path=(
   $HOME/.heroku/client/bin # Heroku toolbelt, as installed via `heroku update`
   /usr/local/heroku/bin # Heroku toolbelt, as installed from a package
   $DOTSDIR/share/rbenv/bin # rbenv install
+  $HOME/.local/bin      # User-installed Python packages
 )
 
 fpath=(
