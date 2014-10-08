@@ -131,3 +131,6 @@ fi
 # device and connect it to my home's wifi (UUID found by running my nm-list
 # script)
 alias nm-force-eternalalchmey="nmcli c up uuid a8b26b44-155c-41d4-8df5-f7c30b27c612"
+
+alias be='bundle exec'
+alias berks="SSL_CERT_FILE=~/.chef/trusted_certs/gourmet.evogihub.com.crt berks"
