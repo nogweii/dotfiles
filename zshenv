@@ -13,19 +13,19 @@ unsetopt NO_MATCH # Don't error on failed matches
 
 # And now, set them
 path=(
-  $HOME/bin             # My own scripts, programs, etc
+  $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/share/cabal/bin # User-installed haskell packages
-# $HOME/.gem/ruby/*/bin # Binaries provided by user installed gems
-  /usr/lib/cw           # Colorized versions of GNU coreutils
-  /usr/{bin,sbin}       # Most programs & binaries
-  /{bin,sbin}           # Lower-level, "basic" commands
-  $path                 # System-provided paths
-  /usr/local/{bin,sbin} # Local administrator installed/odd-ball commands
-  /opt/java/bin         # Some java installations
-  $HOME/.heroku/client/bin # Heroku toolbelt, as installed via `heroku update`
-  /usr/local/heroku/bin # Heroku toolbelt, as installed from a package
-  $DOTSDIR/share/rbenv/bin # rbenv install
-  $HOME/.local/bin      # User-installed Python packages
+  $HOME/.heroku/client/bin     # Heroku toolbelt, via `heroku update`
+  $DOTSDIR/share/rbenv/bin     # rbenv install
+  $HOME/.local/bin             # User-installed Python packages
+  $HOME/.local/node/bin        # User-installed npm packages
+  /usr/lib/cw                  # Colorized versions of GNU coreutils
+  /usr/{bin,sbin}              # Most programs & binaries
+  /{bin,sbin}                  # Lower-level, "basic" commands
+  $path                        # System-provided paths
+  /usr/local/{bin,sbin}        # Local administrator installed/odd-ball commands
+  /usr/local/heroku/bin        # Heroku toolbelt, as installed from a package
+  /opt/java/bin                # Some java installations
 )
 
 fpath=(
