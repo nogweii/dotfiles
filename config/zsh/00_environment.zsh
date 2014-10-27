@@ -102,3 +102,4 @@ export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
 
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
+export npm_config_prefix=$HOME/.local/node
