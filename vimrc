@@ -137,14 +137,6 @@ imap     <C-l> <Right>
 "nnoremap <silent> <Leader>T :TlistToggle<CR>
 "nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 nmap     <silent> ZW :update<CR>
-" A slightly improved version of the common highlight display, this one will
-" also show the current highlight rule
-nmap <silent> <leader>hi
- \ :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
- \ . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
- \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
- \ <CR>:execute "highlight " .
- \ synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")<CR>
 nmap     ZD :call CleanClose(0)<CR>
 nmap     ZE :e <C-R>=expand("%:h")<CR>/
 nmap     ZS :split <C-R>=expand("%:h")<CR>/
