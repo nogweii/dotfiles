@@ -19,6 +19,7 @@ path=(
   $DOTSDIR/share/rbenv/bin     # rbenv install
   $HOME/.local/bin             # User-installed Python packages
   $HOME/.local/node/bin        # User-installed npm packages
+  $HOME/.local/elixir/bin      # Manually installed elixir 1.0 binaries
   /usr/lib/cw                  # Colorized versions of GNU coreutils
   /usr/{bin,sbin}              # Most programs & binaries
   /{bin,sbin}                  # Lower-level, "basic" commands
