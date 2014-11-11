@@ -160,3 +160,9 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/bundle/elixir"]
+	path = vim/bundle/elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/dockerfile"]
+	path = vim/bundle/dockerfile
+	url = https://github.com/honza/dockerfile.vim.git
