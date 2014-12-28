@@ -18,11 +18,11 @@ esac
 
 function _update_termtitle_preexec () {
   local CMD="${1[(wr)^(*=*|sudo|-*|s)]}"
-  termtitle "%n@%M:%~ ($CMD)"
+  termtitle "%~ ($CMD)"
 }
 
 function _update_termtitle_precmd () {
-  termtitle "%n@%M:%~"
+  termtitle "%~"
 }
 
 add-zsh-hook preexec _update_termtitle_preexec

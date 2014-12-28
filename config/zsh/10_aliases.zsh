@@ -51,6 +51,7 @@ alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the parent process
 alias nhclean='rm ./**/nohup.out'
 alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias yrm='yes | rm -rvf'
+alias nrm='yrm &>/dev/null'
 alias startxl="startx &>/tmp/startx.log"
 
 alias PS="ps wwaux"
