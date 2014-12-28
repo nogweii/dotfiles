@@ -159,7 +159,7 @@
 	url = https://github.com/dhruvasagar/vim-table-mode
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
-	url = git@github.com:mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/elixir"]
 	path = vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
