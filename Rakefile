@@ -26,7 +26,7 @@ module Rake
                   ! File.exist?(name) ||
                   out_of_date?(timestamp)
 
-      warn "#{name} exists! Not touching it" if is_needed && !File.symlink?(name)
+      log "#{name} exists! Not touching it" if is_needed && !File.symlink?(name)
 
       return is_needed && ! File.directory?(name)
     end
@@ -101,7 +101,7 @@ end
 
 desc "Initialize all submodules"
 task :submodules do
-  sh 'git submodule update --init --recursive'
+  sh 'git submodule update --init --recursive >/dev/null'
 end
 
 # All the submodules
