@@ -89,7 +89,7 @@ function prompt_evaryont_setup {
 
   # Set vcs_info parameters.
   zstyle -d ':vcs_info:*'
-  zstyle ':vcs_info:*' enable bzr git hg svn
+  zstyle ':vcs_info:*' enable git hg svn
   zstyle ':vcs_info:*' check-for-changes true
   # Set colors based on stage/unstaged files
   zstyle ':vcs_info:*' unstagedstr '%F{076}'
