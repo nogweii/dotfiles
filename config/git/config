@@ -64,6 +64,8 @@
     subpush = submodule foreach "git push origin master"
     # Pull submodules from origin master
     subpull = submodule foreach "git pull origin master"
+    # Delete a submodule
+    subrm = !cd ${GIT_PREFIX:-.} && git submodule deinit $1 && git rm $1
     # Push the current branch for review
     push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
     # Same as push-review, but target master rather than the develop branch
