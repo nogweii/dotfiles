@@ -28,15 +28,6 @@
 [submodule "config/zsh/plugins/users-completions"]
 	path = config/zsh/plugins/users-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "share/rbenv-plugins/ruby-build"]
-	path = share/rbenv-plugins/ruby-build
-	url = https://github.com/sstephenson/ruby-build.git
-[submodule "share/rbenv-plugins/ctags"]
-	path = share/rbenv-plugins/ctags
-	url = https://github.com/tpope/rbenv-ctags
-[submodule "share/rbenv-plugins/gem-rehash"]
-	path = share/rbenv-plugins/gem-rehash
-	url = https://github.com/sstephenson/rbenv-gem-rehash
 [submodule "vim/bundle/airline"]
 	path = vim/bundle/airline
 	url = https://github.com/bling/vim-airline
@@ -151,9 +142,6 @@
 [submodule "vim/bundle/search_objects"]
 	path = vim/bundle/search_objects
 	url = https://github.com/Raimondi/vim_search_objects
-[submodule "share/rbenv"]
-	path = share/rbenv
-	url = https://github.com/sstephenson/rbenv
 [submodule "vim/bundle/table-mode"]
 	path = vim/bundle/table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
