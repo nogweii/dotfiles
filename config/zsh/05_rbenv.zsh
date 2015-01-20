@@ -21,7 +21,16 @@ else
   export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
 fi
 
-export PATH="${RBENV_ROOT}/shims:${PATH}"
+_rbenv_plugins="${XDG_DATA_HOME}/rbenv-plugins"
+PATH="${RBENV_ROOT}/shims:${PATH}"
+
+for plugin_bin in ${_rbenv_plugins}/*/bin; do
+  PATH="${PATH}:${plugin_bin}"
+done
+for plugin_hook in ${_rbenv_plugins}/*/etc/rbenv.d; do
+  RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
+done
+export RBENV_HOOK_PATH PATH
 
 # The completions are shipped in the same parent directory as the command
 source "${rbenv_parent_path}/completions/rbenv.zsh"

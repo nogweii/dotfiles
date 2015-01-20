@@ -157,3 +157,6 @@
 [submodule "share/rbenv"]
 	path = share/rbenv
 	url = https://github.com/sstephenson/rbenv
+[submodule "share/rbenv-plugins/ruby-build"]
+	path = share/rbenv-plugins/ruby-build
+	url = https://github.com/sstephenson/ruby-build
