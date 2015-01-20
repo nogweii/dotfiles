@@ -86,7 +86,7 @@ fi
 
 # Development environment stuff.
 export MYDRIVEADVISOR_DB_PWD="mysqlroot"
-export MYSQL_LOCAL_SOCKET="/var/run/mysql/mysql.sock"
+export MYSQL_LOCAL_SOCKET="/var/run/mysqld/mysqld.sock"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export LESSHISTSIZE=2000
@@ -102,4 +102,5 @@ export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
 
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
+export BUNDLE_PATH="${HOME}/.gem/ruby/2.2.0/"
 export npm_config_prefix=$HOME/.local/node
