@@ -21,13 +21,14 @@ else
   export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
 fi
 
-_rbenv_plugins="${XDG_DATA_HOME}/rbenv-plugins"
+_rbenv_plugins=${${:-${RBENV_ROOT}/../rbenv-plugins}:A}
 PATH="${RBENV_ROOT}/shims:${PATH}"
 
-for plugin_bin in ${_rbenv_plugins}/*/bin; do
+echo "rbenv plugins are installed in ${_rbenv_plugins}"
+for plugin_bin in "${_rbenv_plugins}"/*/bin; do
   PATH="${PATH}:${plugin_bin}"
 done
-for plugin_hook in ${_rbenv_plugins}/*/etc/rbenv.d; do
+for plugin_hook in "${_rbenv_plugins}"/*/etc/rbenv.d; do
   RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
 done
 export RBENV_HOOK_PATH PATH

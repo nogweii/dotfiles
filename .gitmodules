@@ -160,3 +160,12 @@
 [submodule "share/rbenv-plugins/ruby-build"]
 	path = share/rbenv-plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build
+[submodule "share/rbenv-plugins/user-gems"]
+	path = share/rbenv-plugins/user-gems
+	url = https://github.com/mislav/rbenv-user-gems
+[submodule "share/rbenv-plugins/ctags"]
+	path = share/rbenv-plugins/ctags
+	url = https://github.com/tpope/rbenv-ctags
+[submodule "share/rbenv-plugins/communal-gems"]
+	path = share/rbenv-plugins/communal-gems
+	url = https://github.com/tpope/rbenv-communal-gems
