@@ -116,7 +116,7 @@ function prompt_evaryont_setup {
 
   # Define prompts.
   PROMPT="%F{014}%${max_path_chars}<...<\$(_current_dir_path)%F{002}%1~%(!.%F{052}⚡.%F{015})%b%f "
-  RPROMPT="%(?..%F{124}%1v%f! )"'${vcs_info_msg_0_}%f'
+  RPROMPT="%(?..%F{124}%1v%f! )"'${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
 }

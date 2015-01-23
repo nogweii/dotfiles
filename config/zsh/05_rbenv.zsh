@@ -24,14 +24,13 @@ fi
 _rbenv_plugins=${${:-${RBENV_ROOT}/../rbenv-plugins}:A}
 PATH="${RBENV_ROOT}/shims:${PATH}"
 
-echo "rbenv plugins are installed in ${_rbenv_plugins}"
 for plugin_bin in "${_rbenv_plugins}"/*/bin; do
   PATH="${PATH}:${plugin_bin}"
 done
 for plugin_hook in "${_rbenv_plugins}"/*/etc/rbenv.d; do
   RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
 done
-export RBENV_HOOK_PATH PATH
+typeset -x RBENV_HOOK_PATH PATH
 
 # The completions are shipped in the same parent directory as the command
 source "${rbenv_parent_path}/completions/rbenv.zsh"
@@ -61,17 +60,20 @@ rbenv() {
 # currently targeted rbenv ruby.
 function _update_ruby_version()
 {
-    typeset -g ruby_version=''
-    if [[ -z $commands[rbenv] ]]; then
-      # Strip the specific version information (i.e. jruby-1.7.4 becomes just
-      # 'jruby')
-      ruby_version="${$(command rbenv version-name)%%-*}"
+  typeset -g ruby_version=''
+  if [[ -n $commands[rbenv] ]]; then
+    # Strip the specific version information (i.e. jruby-1.7.4 becomes just
+    # 'jruby')
+    ruby_version="${$(command rbenv version-name)%%-*}"
 
-      # If we're using the system ruby, then don't report anything
-      if [ "${ruby_version}" = "system" ]; then
-        ruby_version=""
-      fi
+    # If we're using the system ruby, then don't report anything
+    if [ "${ruby_version}" = "system" ]; then
+      ruby_version=""
+    else
+      gem_char="%{💎%G%}" 
+      ruby_version="%F{88}${gem_char}${ruby_version}%f"
     fi
+  fi
 }
 # Update the version string every time I change directories
 chpwd_functions+=(_update_ruby_version)
