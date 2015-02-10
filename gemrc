@@ -1,11 +1,11 @@
 --- 
 :benchmark: false
-install: --no-document --env-shebang
+install: --no-document --env-shebang --user-install
 :backtrace: true
 :update_sources: true
 format_executable: false
 :verbose: true
-update: --no-document --env-shebang
+update: --no-document --env-shebang --user-install
 :bulk_threshold: 1000
 :sources: 
 - https://rubygems.org
