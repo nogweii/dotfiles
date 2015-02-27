@@ -169,3 +169,6 @@
 [submodule "share/rbenv-plugins/communal-gems"]
 	path = share/rbenv-plugins/communal-gems
 	url = https://github.com/tpope/rbenv-communal-gems
+[submodule "vim/bundle/elm"]
+	path = vim/bundle/elm
+	url = https://github.com/lambdatoast/elm.vim
