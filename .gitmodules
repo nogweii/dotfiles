@@ -172,3 +172,9 @@
 [submodule "vim/bundle/elm"]
 	path = vim/bundle/elm
 	url = https://github.com/lambdatoast/elm.vim
+[submodule "vim/bundle/tmux"]
+	path = vim/bundle/tmux
+	url = https://github.com/tmux-plugins/vim-tmux
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
