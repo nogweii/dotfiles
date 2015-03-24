@@ -102,4 +102,5 @@ desc "Prepare extra directories"
 task :prepare => MAKE_DIRS do
   # compile youcompleteme
   # compile command-t
+  sh 'tic terminfo/screen-256color-italitc.terminfo'
 end
