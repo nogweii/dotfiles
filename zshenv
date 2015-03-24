@@ -15,6 +15,7 @@ unsetopt NO_MATCH # Don't error on failed matches
 path=(
   $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/share/cabal/bin # User-installed haskell packages
+  $HOME/.cabal/bin
   $HOME/.heroku/client/bin     # Heroku toolbelt, via `heroku update`
   $DOTSDIR/share/rbenv/bin     # rbenv install
   $HOME/.local/bin             # User-installed Python packages

@@ -65,40 +65,25 @@ alias edit="${EDITOR}"
 alias s=`whence -p sudo`
 
 alias git-branch-name="git branch | sed '/^\*/!d; s/^\* //'"
-#alias vinny='vim --cmd "let g:vimMode = \"notes\""'
 
 alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "let html_use_css = 1" -c "TOhtml" -c "set nu" -c "syntax on" -c "wq" -c "q" &>/dev/null'
 
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.config/acronyms.wtf"
 
-alias ssh-me="ssh me -t 'screen -R'"
-
-########################
-# Web & 'catw'
-#
-# catw is a simple
-if [ -z "$(whence curl)" ] ; then
-    alias catw="wget -qO - "
-else
-    alias catw="curl -s "
-fi
-alias meme="catw meme.boxofjunk.ws/moar.txt?lines=1"
-alias myip="catw http://icanhazip.com"
-
-
 ########################
 # 'special' character aliases.
-alias --      -="cd - &>/dev/null; ls"  # Go to the last directory
-alias         .='cd'
+alias --  -="cd - &>/dev/null; ls"  # Go to the last directory
+alias     .='cd'
 
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
 alias portstat="s netstat -tunelp"
 
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
-
-alias  e="$EDITOR"
+if [ -n "${commands[hub]}" ]; then
+    alias git=hub
+fi
 
 alias s=smart_sudo
 alias extr=extract_archive
@@ -134,4 +119,5 @@ fi
 alias nm-force-eternalalchmey="nmcli c up uuid a8b26b44-155c-41d4-8df5-f7c30b27c612"
 
 alias be='bundle exec'
+alias ber='bundle exec rake'
 alias berks="SSL_CERT_FILE=~/.chef/trusted_certs/gourmet.evogihub.com.crt berks"

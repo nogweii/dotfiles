@@ -99,7 +99,7 @@ fi
 
 export GEMRC="${DOTSDIR}/gemrc"
 export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
-export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
+#export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
 
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
 #export BUNDLE_PATH="${HOME}/.gem/ruby/2.2.0/"
