@@ -519,6 +519,7 @@ autocmd FileType help setl nospell
 au BufRead,BufNewFile ~/.local/share/zsh/* setlocal filetype=zsh
 au BufRead,BufNewFile ~/dotfiles/share/zsh/* setlocal filetype=zsh
 au BufRead,BufNewFile /usr/share/zsh/* setlocal filetype=zsh
+au BufRead,BufNewFile ~/code/shinken-configs/*.cfg setlocal filetype=nagios
 au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/robocode/robots/gui/compile.sh | nmap ZM :make %<CR>
 au FileType tagbar setl nospell
 
