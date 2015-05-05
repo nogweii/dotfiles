@@ -613,3 +613,6 @@ let g:markdown_fenced_languages = ['ruby', 'erb=eruby', 'python', 'bash=sh', 'zs
 let g:airline_powerline_fonts = 1
 " Nifty auto completion for some basic mustache syntax
 let g:mustache_abbreviations = 1
+
+set concealcursor=nc
+set conceallevel=2
