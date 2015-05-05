@@ -41,3 +41,11 @@ zstyle -e ':completion:*:(ssh|scp|sftp|ssh-copy-id):*' hosts 'reply=(${(s: :)${$
 compdef g=git
 
 zstyle ':completion::*:ssh-master-exit:*:*' file-patterns '~/.ssh/master-*(=):all-files'
+
+zstyle ':completion:*:*:task:*' verbose yes
+zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
+
+zstyle ':completion:*:*:task:*' group-name ''
+
+alias t=task
+compdef _task t=task
