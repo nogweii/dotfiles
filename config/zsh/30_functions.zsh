@@ -283,3 +283,23 @@ _current_dir_path() {
     echo "${$(print -P %~)%/*}/"
   fi
 }
+
+# Get the environment variables for a particular process ID.
+pidenv() {
+  local env_path="/proc/${1:-self}/environ"
+  if [[ ! -f $env_path ]] ; then
+    echo "pidenv: No such process id ${1:-self}"
+    return 2
+  fi
+
+  # I don't think this qualifies for the "Useless Use of Cat" award since I'm
+  # trying to read a file that the current user may or may not have permission
+  # to read.
+  local cat_cmd
+  if [[ -r $env_path ]] ; then
+    cat_cmd="cat"
+  else
+    cat_cmd="sudo cat"
+  fi
+  $cat_cmd $env_path | xargs -n 1 -0 | sort
+}
