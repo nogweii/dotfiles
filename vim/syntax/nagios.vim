@@ -23,19 +23,19 @@ if version >= 600
 else
 endif
 
-syn match nagiosLineComment '^[\s]*#.*'
-syn match nagiosComment ';.*$' contained
+syn match nagiosLineComment '^\s*#.*' contains=@Spell
+syn match nagiosComment ';.*$' contained contains=@Spell
 
 syn match nagiosConstant '\<[0-9]\+%\?\>'
 syn match nagiosConstant '\<[a-z]\>'
 
-syn region nagiosString  start=+"+ end=+"+ contains=nagiosMacro
-syn region nagiosString  start=+'+ end=+'+ contains=nagiosMacro
+syn region nagiosString  start=+"+ end=+"+ contains=nagiosMacro,@Spell 
+syn region nagiosString  start=+'+ end=+'+ contains=nagiosMacro,@Spell
 
-syn match nagiosDef 'define[ \t]\+\(\(host\|service\)extinfo\|host\|service\|timeperiod\|contact\|command\)'
-syn match nagiosDef 'define[ \t]\+\(host\|contact\|service\)group'
-syn match nagiosDef 'define[ \t]\+\(service\|host\)dependency'
-syn match nagiosDef 'define[ \t]\+\(service\|host\|hostgroup\)escalation'
+syn match nagiosDef 'define\s\+\(\(host\|service\)extinfo\|host\|service\|timeperiod\|contact\|command\)'
+syn match nagiosDef 'define\s\+\(host\|contact\|service\)group'
+syn match nagiosDef 'define\s\+\(service\|host\)dependency'
+syn match nagiosDef 'define\s\+\(service\|host\|hostgroup\)escalation'
 
 syn match nagiosMacro  '\$CONTACT\(NAME\|ALIAS\|EMAIL\|PAGER\)\$'
 syn match nagiosMacro  '\$HOST\(NAME\|ALIAS\|ADDRESS\|STATE\|OUTPUT\|PERFDATA\|STATETYPE\|EXECUTIONTIME\)\$'
