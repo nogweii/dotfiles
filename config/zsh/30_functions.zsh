@@ -301,5 +301,18 @@ pidenv() {
   else
     cat_cmd="sudo cat"
   fi
-  $cat_cmd $env_path | xargs -n 1 -0 | sort
+
+  eval "${cat_cmd} ${env_path} | xargs -n 1 -0 | sort"
+}
+
+# Get the time the process was started. (This works by investigating the
+# timestamp for the per-process directory in /proc.)
+pidstarted() {
+  local pid_path="/proc/${1:-self}"
+  if [[ ! -d $pid_path ]] ; then
+    echo "pidstarted: No such process id ${1:-self}"
+    return 2
+  fi
+
+  date --date="@$(stat -c '%Z' ${pid_path})" +'%d %b %Y, %H:%M'
 }

@@ -53,7 +53,6 @@ export      LC_TELEPHONE="en_US.utf8"
 export    LC_MEASUREMENT="en_US.utf8"
 export LC_IDENTIFICATION="en_US.utf8"
 export     HARDWARECLOCK="UTC"
-export          TIMEZONE="America/New_York"
 # History location.
 #export          HISTFILE="${XDG_CACHE_HOME}/zsh_history"
 export          HISTFILE="${HOME}/.local/cache/zsh_history"
