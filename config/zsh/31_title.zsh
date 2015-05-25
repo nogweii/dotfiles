@@ -1,12 +1,20 @@
 case $TERM in
   termite|*xterm*|rxvt*|(dt|k|E)term|gnome*|konsole*)
-    termtitle () { print -Pn "\e]0;${@}\a" }
+    termtitle () {
+      if [[ -n "${SSH_TTY}" ]]; then
+        ssh_host="<%m> "
+      fi
+      print -Pn "\e]0;$ssh_host${@}\a"
+    }
   ;;
 
   screen*|tmux*)
     termtitle () {
-      print -Pn "\e]83;title \"${@}\"\a"
-      print -Pn "\e]0;${@}\a"
+      if [[ -n "${SSH_TTY}" ]]; then
+        ssh_host="<%m> "
+      fi
+      print -Pn "\e]83;title \"$ssh_host${@}\"\a"
+      print -Pn "\e]0;$ssh_host${@}\a"
     }
   ;;
 
