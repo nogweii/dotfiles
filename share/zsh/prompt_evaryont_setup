@@ -114,8 +114,12 @@ function prompt_evaryont_setup {
     user_color='052'
   fi
 
+  if [[ -n "${SSH_TTY}" ]]; then
+    ssh_host="%F{202}%m%f "
+  fi
+
   # Define prompts.
-  PROMPT="%F{014}%${max_path_chars}<...<\$(_current_dir_path)%F{002}%1~%(!.%F{052}⚡.%F{015})%b%f "
+  PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<\$(_current_dir_path)%F{002}%1~%(!.%F{052}⚡.%F{015})%b%f "
   RPROMPT="%(?..%F{124}%1v%f! )"'${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
