@@ -10,6 +10,7 @@ typeset -gU cdpath fpath mailpath manpath path
 typeset -x PATH MANPATH
 
 unsetopt NO_MATCH # Don't error on failed matches
+unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 
 # And now, set them
 path=(
