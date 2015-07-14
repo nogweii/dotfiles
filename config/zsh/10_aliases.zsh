@@ -122,3 +122,5 @@ alias be='bundle exec'
 alias ber='bundle exec rake'
 
 alias pwgen='pwgen -cny 36 1'
+
+alias aursearch='cower -cauto -s'
