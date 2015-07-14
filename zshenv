@@ -12,6 +12,9 @@ typeset -x PATH MANPATH
 unsetopt NO_MATCH # Don't error on failed matches
 unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 
+# Pull in settings from /etc/profile, like the path to java, etc.
+emulate sh -c 'source /etc/profile'
+
 # And now, set them
 path=(
   $HOME/bin                    # My own scripts, programs, etc
