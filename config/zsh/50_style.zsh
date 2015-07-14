@@ -29,9 +29,6 @@ compdef g=git
 # http://www.zsh.org/mla/users/2009/threads.html#00391
 [[ ${OSTYPE} == cygwin ]] && zstyle ':completion:*:-command-:*' ignored-patterns '(#i)*.exe' '(#i)*.dll'
 
-## if there's a `manpath` command, use it
-[[ -x $(whence -p manpath) ]] && export MANPATH=$(manpath 2> /dev/null)
-
 compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lzma *.lha *.rpm *.deb"' extract_archive
 compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lzma *.lha *.rpm *.deb"' xf # A shorter alias for extract_archive
 compdef _sudo smart_sudo

@@ -120,6 +120,5 @@ alias nm-force-eternalalchmey="nmcli c up uuid a8b26b44-155c-41d4-8df5-f7c30b27c
 
 alias be='bundle exec'
 alias ber='bundle exec rake'
-alias berks="SSL_CERT_FILE=~/.chef/trusted_certs/gourmet.evogihub.com.crt berks"
 
 alias pwgen='pwgen -cny 36 1'
