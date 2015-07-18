@@ -35,9 +35,6 @@ pacman-sudo() {
         (-Si | -Sg | -Sl | -Q* | -T | -*h* | --help)
             $binary "$@"
         ;;
-        (-S*)
-            pacman_opts="$pacman_opts --needed"
-        ;& # Fall through
         (-S* | -R* | -U* | *)
             if [ -x /usr/bin/pacmatic ] ; then
                 # we're doing sudo, so this is when pacmatic behaves
