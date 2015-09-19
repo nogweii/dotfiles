@@ -26,6 +26,7 @@ path=(
   $HOME/.local/node/bin        # User-installed npm packages
   $HOME/.local/elixir/bin      # Manually installed elixir 1.0 binaries
   $HOME/.gem/ruby/*/bin        # 'Normal' gem-installed packages
+  $HOME/go/bin                 # go packages
   /usr/lib/cw                  # Colorized versions of GNU coreutils
   /usr/{bin,sbin}              # Most programs & binaries
   /{bin,sbin}                  # Lower-level, "basic" commands

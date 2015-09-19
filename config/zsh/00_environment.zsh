@@ -110,3 +110,5 @@ export RAILS_ENV=development
 # Don't switch to VT100 mode for line drawing characters when in a UTF-8
 # terminal. This fixes 'lqqk' showing up in PuTTY
 export NCURSES_NO_UTF8_ACS=1
+
+[ -d ~/go ] && export GOPATH=~/go
