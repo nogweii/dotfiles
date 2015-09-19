@@ -616,3 +616,11 @@ let g:mustache_abbreviations = 1
 
 set concealcursor=nc
 set conceallevel=2
+
+" magic maker map! will call :make but silently -- this will skip the 'Press
+" ENTER to continue' message which is really nice. However, this is may leave
+" the screen blank so we need to have vim send itself the Ctrl-L keybind to
+" force it to redraw the screen (:redraw doesn't cut it). And because this is
+" all silenced, it isn't included into the command history keeping it cleaner of
+" repeated calls to make
+nnoremap gm :silent :make<CR>:silent :exe "normal \<c-l>"<CR>
