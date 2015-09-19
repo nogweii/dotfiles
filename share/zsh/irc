@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+weechat_unit="weechat@${USER}"
+if systemctl is-active --quiet $weechat_unit; then
+  tmux attach -t irc
+else
+  echo "${weechat_unit} unit is not working! Check \`systemctl status ${weechat_unit}\`"
+fi
