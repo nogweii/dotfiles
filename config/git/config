@@ -45,7 +45,7 @@
     # quick shortcut for commit, but also shows the diff in the commit message
     ci = commit -v
     # Easy amending of commit messages
-    ca = commit -v --amend
+    ca = commit -v --amend -C HEAD
     # Easily create a new branch based off mater
     cb = "!f() { git checkout -b $1 master; }; f"
     # show a log of changes that haven't been pushed upstream yet.
