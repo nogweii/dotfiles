@@ -72,3 +72,6 @@ if ! (( $+LANG )) || [[ -z "$LANG" ]]; then
   export LC_ALL="en_US.UTF-8"
   emulate -R sh -c "$(locale)"
 fi
+
+# Tell SSH about gpg-agent's SSH socket
+[[ -S ~/.gnupg/S.gpg-agent.ssh ]] && export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh

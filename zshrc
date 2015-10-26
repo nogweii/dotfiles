@@ -20,5 +20,11 @@ for zshrc_snipplet in $DOTSDIR/config/zsh/*.zsh ; do
         source $zshrc_snipplet
 done
 
+# GPG agent isn't running, start it! But only on configured boxes, so that the
+# servers aren't running an instance
+if [[ ! -S ~/.gnupg/S.gpg-agent && -f ~/.gnupg/gpg-agent.conf ]]; then
+  gpg-connect-agent /bye
+fi
+
 # And load local configuration overrides
-[[ -r ~/.zshrc.local ]] && source $host_config ||:
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
