@@ -178,6 +178,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "vim/bundle/javascript"]
-	path = vim/bundle/javascript
-	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/bundle/javascript-syntax"]
+	path = vim/bundle/javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax
