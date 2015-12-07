@@ -178,3 +178,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "vim/bundle/es6"]
+	path = vim/bundle/es6
+	url = https://github.com/isRuslan/vim-es6.git
