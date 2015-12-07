@@ -116,15 +116,19 @@ let s:colorvim7 = [
                 \ ["TabLineFill",   "",          "247",  "16",   "",         ""   ]]
 
 let s:otherColors = [
-                \ ["diffRemoved",   "",           "",     "124",     "",         ""   ],
-                \ ["ShowMarksHLl",  "bold",       "18",   "43",      "",         ""   ],
-                \ ["ShowMarksHLu",  "bold",       "9",    "1",       "",         ""   ],
-                \ ["ShowMarksHLo",  "bold",       "11",   "3",       "",         ""   ],
-                \ ["ShowMarksHLm",  "bold",       "2",    "20",      "",         ""   ],
-                \ ["cppSTL",        "",           "130",  "",        "",         ""   ],
-                \ ["rubyRegexpEscape", "",        "162",  "234",     "",         ""   ],
-                \ ["rubyStringDelimiter", "",     "162",  "",        "",         ""   ],
-                \ ["diffAdded",     "",           "",     "22",      "",         ""   ]]
+                \ ["diffRemoved",              "",      "",     "124",     "",         ""   ],
+                \ ["ShowMarksHLl",             "bold",  "18",   "43",      "",         ""   ],
+                \ ["ShowMarksHLu",             "bold",  "9",    "1",       "",         ""   ],
+                \ ["ShowMarksHLo",             "bold",  "11",   "3",       "",         ""   ],
+                \ ["ShowMarksHLm",             "bold",  "2",    "20",      "",         ""   ],
+                \ ["cppSTL",                   "",      "130",  "",        "",         ""   ],
+                \ ["rubyRegexpEscape",         "",      "162",  "234",     "",         ""   ],
+                \ ["rubyStringDelimiter",      "",      "162",  "",        "",         ""   ],
+                \ ["diffAdded",                "",      "",     "22",      "",         ""   ],
+                \ ["javaScriptTemplateVar",    "",      "172",  "",        "",         ""   ],
+                \ ["javaScriptTemplateDelim",  "bold",  "166",  "",        "",         ""   ],
+                \ ["javaScriptTemplateString", "",      "162",  "",        "",         ""   ]]
+
 " }}}
 
 "============================================================
