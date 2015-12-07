@@ -624,3 +624,5 @@ set conceallevel=2
 " all silenced, it isn't included into the command history keeping it cleaner of
 " repeated calls to make
 nnoremap gm :silent :make<CR>:silent :exe "normal \<c-l>"<CR>
+
+au BufRead,BufNewFile .eslintrc setlocal filetype=json
