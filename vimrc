@@ -626,3 +626,6 @@ set conceallevel=2
 nnoremap gm :silent :make<CR>:silent :exe "normal \<c-l>"<CR>
 
 au BufRead,BufNewFile .eslintrc setlocal filetype=json
+
+" Enable some additional syntax highlighting for javascript in the browser
+let g:javascript_enable_domhtmlcss = 1
