@@ -1,3 +1,4 @@
-sudo systemctl stop pcscd
+systemctl is-active --quiet pcscd.service && sudo systemctl stop pcscd
 killall scdaemon
+sleep 2
 gpg --card-status
