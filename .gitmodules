@@ -28,9 +28,6 @@
 [submodule "config/zsh/plugins/users-completions"]
 	path = config/zsh/plugins/users-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
-	url = https://github.com/bling/vim-airline
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar

@@ -54,8 +54,8 @@ let s:standardC = ["Normal",        "NONE",       "253",  "233",  "NONE",     "N
 " Color arrays {{{
 let s:colors256 = [
                 \ ["Cursor",        "",           "255",  "33",   "",         ""   ],
-                \ ["CursorLine",    "underline",   "",    "",     "",         ""   ],
-                \ ["CursorColumn",  "",            "",    "223",  "",         ""   ],
+                \ ["CursorLine",    "underline",  "",     "",     "",         ""   ],
+                \ ["CursorColumn",  "",           "",     "223",  "",         ""   ],
                 \ ["Incsearch",     "bold",       "195",  "124",  "",         ""   ],
                 \ ["Search",        "",           "232",  "184",  "",         ""   ],
                 \ ["ErrorMsg",      "bold",       "16",   "202",  "",         ""   ],
@@ -64,7 +64,7 @@ let s:colors256 = [
                 \ ["MoreMsg",       "bold",       "16",   "154",  "",         ""   ],
                 \ ["Question",      "bold",       "70",   "",     "",         ""   ],
                 \ ["StatusLine",    "bold",       "84",   "234",  "",         ""   ],
-                \ ["StatusLineNC",  "",           "41",   "234",  "",         ""   ],
+                \ ["StatusLineNC",  "",           "41",   "233",  "",         ""   ],
                 \ ["User1",         "bold",       "28",   "",     "",         ""   ],
                 \ ["User2",         "bold",       "39",   "",     "",         ""   ],
                 \ ["VertSplit",     "",           "84",   "22",   "",         ""   ],
@@ -77,7 +77,7 @@ let s:colors256 = [
                 \ ["FoldedColumn",  "",           "39",   "190",  "",         ""   ],
                 \ ["FoldColumn",    "",           "38",   "234",  "",         ""   ],
                 \ ["Directory",     "",           "28",   "",     "",         ""   ],
-                \ ["LineNr",        "NONE",       "23",   "232",  "",         ""   ],
+                \ ["LineNr",        "NONE",       "23",   "233",  "",         ""   ],
                 \ ["NonText",       "",           "244",  "",     "",         ""   ],
                 \ ["SpecialKey",    "",           "190",  "",     "",         ""   ],
                 \ ["Title",         "bold",       "98",   "",     "",         ""   ],
@@ -85,13 +85,13 @@ let s:colors256 = [
                 \ ["Comment",       "italic",     "240",  "",     "",         ""   ],
                 \ ["Constant",      "",           "75",   "",     "",         ""   ],
                 \ ["Include",       "",           "67",   "",     "",         ""   ],
-                \ ["String",        "",           "162",  "234",  "",         ""   ],
+                \ ["String",        "",           "198",  "234",  "",         ""   ],
                 \ ["Error",         "",           "69",   "",     "",         ""   ],
-                \ ["Identifier",    "bold",       "124",   "",    "",         ""   ],
+                \ ["Identifier",    "",           "196",  "",     "",         ""   ],
                 \ ["Ignore",        "",           "",     "",     "",         ""   ],
                 \ ["Number",        "",           "50",   "",     "",         ""   ],
                 \ ["PreProc",       "",           "62",   "",     "",         ""   ],
-                \ ["SignColumn",    "NONE",       "",     "232",  "",         ""   ],
+                \ ["SignColumn",    "NONE",       "",     "233",  "",         ""   ],
                 \ ["Special",       "",           "15",   "234",  "",         ""   ],
                 \ ["SpecialChar",   "",           "155",  "",     "",         ""   ],
                 \ ["Statement",     "",           "69",   "",     "",         ""   ],
@@ -101,9 +101,9 @@ let s:colors256 = [
                 \ ["TaglistTagName","bold",       "48",   "124",  "",         ""   ]]
 
 let s:colorvim7 = [
-                \ ["ColorColumn",   "",          "",     "232",  "",         ""   ],
+                \ ["ColorColumn",   "",          "",     "233",  "",         ""   ],
                 \ ["Pmenu",         "",          "228",  "236",  "",         ""   ],
-                \ ["PmenuSel",      "bold",      "226",  "232",  "",         ""   ],
+                \ ["PmenuSel",      "bold",      "226",  "233",  "",         ""   ],
                 \ ["PmenuSbar",     "",          "119",  "16",   "",         ""   ],
                 \ ["PmenuThumb",    "",          "11",   "16",   "",         ""   ],
                 \ ["SpellBad",      "underline", "88",   "",     "undercurl","160"],
@@ -116,6 +116,12 @@ let s:colorvim7 = [
                 \ ["TabLineFill",   "",          "247",  "16",   "",         ""   ]]
 
 let s:otherColors = [
+                \ ["statusColNr",              "NONE",  "233",  "23",      "",         ""   ],
+                \ ["statusColNrPowerline",     "NONE",  "23",   "234",     "",         ""   ],
+                \ ["statusColNcPowerline",     "NONE",  "23",   "233",     "",         ""   ],
+                \ ["statusFileName",           "NONE",  "214",  "234",     "",         ""   ],
+                \ ["statusBranch",             "NONE",  "202",  "234",     "",         ""   ],
+                \ ["statusFlag",               "NONE",  "200",  "234",     "",         ""   ],
                 \ ["diffRemoved",              "",      "",     "124",     "",         ""   ],
                 \ ["ShowMarksHLl",             "bold",  "18",   "43",      "",         ""   ],
                 \ ["ShowMarksHLu",             "bold",  "9",    "1",       "",         ""   ],
