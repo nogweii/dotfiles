@@ -317,3 +317,4 @@ OpenSSH
 Ed25519
 performant
 unhandled
+symlink
