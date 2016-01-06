@@ -4,7 +4,44 @@
 
 " Includes integration with a slightly modified version of buftabs.
 " Uses custom highlights, all beginning with 'status'. See my personal color
-" scheme, devolved.
+" scheme, devolved. Assumes you have a "nerd font" installed, uses the private
+" use unicode section to display file types.
+
+" Generic file type icons
+let s:filetype_to_icon = {
+   \  'html'        : "\ue736",
+   \  'ruby'        : "\ue791",
+   \  'markdown'    : "\ue73e",
+   \  'vim'         : "\ue7c5",
+   \  'bash'        : "\ue614",
+   \  'sh'          : "\ue614",
+   \  'zsh'         : "\ue614",
+   \  'python'      : "\ue606",
+   \  'gitconfig'   : "\ue702",
+   \  'javascript'  : "\ue781",
+   \  'css'         : "\ue74a",
+   \  'php'         : "\ue608",
+   \  'java'        : "\ue738",
+   \  'go'          : "\ue724",
+   \  'c'           : "\ue61e",
+   \  'cpp'         : "\ue61d",
+   \  'netrw'       : "\ue5fe",
+   \  'haskell'     : "\ue61f",
+   \  'coffee'      : "\ue751",
+   \  'dockerfile'  : "\ue7b0",
+   \  'erlang'      : "\ue7b1",
+   \  'xml'         : "\ue618",
+   \  'text'        : "\uf0f6",
+   \ }
+
+" Some file names are so well-known there are icons just for them. Let's use
+" them! Equal matches only, and case-sensitive!
+let s:filename_to_icon = {
+   \  'Gulpfile.js'  : "\ue763",
+   \  'bower.json'   : "\ue61a",
+   \  'package.json' : "\ue71e",
+   \  'LICENSE'      : "\uf43d",
+   \ }
 
 function! Status(winnum, buftabs)
   let active = a:winnum == winnr()
@@ -91,6 +128,18 @@ function! Status(winnum, buftabs)
   " file name
   let stat .= Color(active, 'statusFileName', ' %<%f')
 
+  " file type icon or plain word
+  let file_type = getbufvar(bufnum, '&filetype')
+  let file_name = fnamemodify(name, ':t')
+  if has_key(s:filename_to_icon, file_name)
+    let fileicon = s:filename_to_icon[file_name]
+  elseif has_key(s:filetype_to_icon, file_type)
+    let fileicon = s:filetype_to_icon[file_type]
+  else
+    let fileicon = file_type
+  end
+  let stat .= Color(active, 'statusFileType', ' ' . fileicon)
+
   " file modified
   let modified = getbufvar(bufnum, '&modified')
   let stat .= Color(active, 'statusFlag', modified ? ' +' : '')
@@ -113,6 +162,14 @@ function! Status(winnum, buftabs)
   " right side
   let stat .= '%='
 
+  " line format
+  let line_ending = getbufvar(bufnum, '&fileformat')
+  if line_ending ==# 'dos'
+    let stat .= Color(active, 'statusFlag', "\ue62a ")
+  elseif line_ending ==# 'mac'
+    let stat .= Color(active, 'statusFlag', "mac ")
+  endif
+
   " git branch
   if exists('*fugitive#head')
     let head = fugitive#head()
@@ -124,7 +181,7 @@ function! Status(winnum, buftabs)
   endif
 
   if !empty(head)
-    let stat .= Color(active, 'statusBranch', " \ue0a0 " . head) . ' '
+    let stat .= Color(active, 'statusBranch', " \ue725 " . head) . ' '
   endif
 
   return stat

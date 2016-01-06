@@ -120,6 +120,7 @@ let s:otherColors = [
                 \ ["statusColNrPowerline",     "NONE",  "23",   "234",     "",         ""   ],
                 \ ["statusColNcPowerline",     "NONE",  "23",   "233",     "",         ""   ],
                 \ ["statusFileName",           "NONE",  "214",  "234",     "",         ""   ],
+                \ ["statusFileType",           "NONE",  "39",   "234",     "",         ""   ],
                 \ ["statusBranch",             "NONE",  "202",  "234",     "",         ""   ],
                 \ ["statusFlag",               "NONE",  "200",  "234",     "",         ""   ],
                 \ ["diffRemoved",              "",      "",     "124",     "",         ""   ],
