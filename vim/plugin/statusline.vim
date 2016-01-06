@@ -18,6 +18,7 @@ let s:filetype_to_icon = {
    \  'zsh'         : "\ue614",
    \  'python'      : "\ue606",
    \  'gitconfig'   : "\ue702",
+   \  'gitcommit'   : "\ue702",
    \  'javascript'  : "\ue781",
    \  'css'         : "\ue74a",
    \  'php'         : "\ue608",
