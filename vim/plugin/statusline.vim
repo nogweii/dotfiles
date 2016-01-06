@@ -32,6 +32,9 @@ let s:filetype_to_icon = {
    \  'erlang'      : "\ue7b1",
    \  'xml'         : "\ue618",
    \  'text'        : "\uf0f6",
+   \  'sass'        : "\ue74b",
+   \  'scss'        : "\ue74b",
+   \  'yaml'        : "\uf03a",
    \ }
 
 " Some file names are so well-known there are icons just for them. Let's use
@@ -151,7 +154,7 @@ function! Status(winnum, buftabs)
   " paste
   if active
     if !getwinvar(a:winnum, '&spell')
-      let stat .= Color(active, 'statusFlag', ' ⌀')
+      let stat .= Color(active, 'statusFlag', " \uf0cc")
     endif
 
     if getwinvar(a:winnum, '&paste')
