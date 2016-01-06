@@ -44,7 +44,7 @@ let s:filename_to_icon = {
    \  'Gulpfile.js'  : "\ue763",
    \  'bower.json'   : "\ue61a",
    \  'package.json' : "\ue71e",
-   \  'LICENSE'      : "\uf43d",
+   \  'LICENSE'      : "\uf0e3",
    \ }
 
 function! Status(winnum, buftabs)
