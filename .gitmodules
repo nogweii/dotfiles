@@ -163,3 +163,9 @@
 [submodule "vim/bundle/javascript-syntax"]
 	path = vim/bundle/javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax
+[submodule "vim/bundle/salt"]
+	path = vim/bundle/salt
+	url = https://github.com/saltstack/salt-vim
+[submodule "vim/bundle/jinja"]
+	path = vim/bundle/jinja
+	url = https://github.com/chase/Vim-Jinja2-Syntax
