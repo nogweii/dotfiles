@@ -118,9 +118,17 @@ fi
 # script)
 alias nm-force-eternalalchmey="nmcli c up uuid a8b26b44-155c-41d4-8df5-f7c30b27c612"
 
-alias be='bundle exec'
+alias be='bundle exec '
 alias ber='bundle exec rake'
 
 alias pwgen='pwgen -cny 36 1'
 
 alias aursearch='cower -cauto -s'
+
+if [ -n "${commands[ag]}" ]; then
+    alias gr=ag
+elif [ -n "${commands[ack]}" ]; then
+    alias gr=ack
+else
+    alias gr='grep -r'
+fi
