@@ -89,7 +89,8 @@ end
 
 MAKE_DIRS = ["vim/tmp",
              File.expand_path("~/.local/cache"),
-             File.expand_path("~/.local")]
+             File.expand_path("~/.local"),
+             File.expand_path("~/media")]
 
 File.open("config/user-dirs.dirs").readlines.each do |user_dir|
   next if user_dir =~ /^#/
@@ -102,6 +103,9 @@ File.open("profile").readlines.each do |profile_line|
   expand_path = profile_line.gsub(/.*="\$\{HOME\}\/(.*)".*\n/, "#{ENV['HOME']}/\\1")
   MAKE_DIRS << expand_path
 end
+
+MAKE_DIRS.sort!
+MAKE_DIRS.uniq!
 
 MAKE_DIRS.each do |dir|
   directory dir do
