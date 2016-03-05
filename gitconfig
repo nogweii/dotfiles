@@ -24,8 +24,8 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = ~/dotfiles/config/git/ignores
-    attributesfile = ~/dotfiles/config/git/attributes
+    excludesfile = ~/dotfiles/git/ignores
+    attributesfile = ~/dotfiles/git/attributes
 [branch]
     autosetuprebase = always
 [alias]
@@ -134,7 +134,7 @@
 [pack]
     threads = 0
 [init]
-    templatedir = ~/.local/share/git
+    templatedir = ~/dotfiles/git
 [advice]
     pushNonFastForward = false
     #statusHints = false
