@@ -182,10 +182,10 @@ function! Status(winnum, buftabs)
       call fugitive#detect(getcwd())
       let head = fugitive#head()
     endif
-  endif
 
-  if !empty(head)
-    let stat .= Color(active, 'statusBranch', " \ue725 " . head) . ' '
+    if !empty(head)
+      let stat .= Color(active, 'statusBranch', " \ue725 " . head) . ' '
+    endif
   endif
 
   return stat
