@@ -16,7 +16,7 @@ if [[ "$TERM" == 'dumb' || "$TERM" == "linux" ]]; then
 fi
 
 # Hard coded path since we don't know what kind of environment we're in
-for zshrc_snipplet in $DOTSDIR/config/zsh/*.zsh ; do
+for zshrc_snipplet in $DOTSDIR/zsh/*.zsh ; do
         source $zshrc_snipplet
 done
 
