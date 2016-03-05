@@ -89,6 +89,18 @@ end
 
 MAKE_DIRS = ["vim/tmp", File.expand_path("~/.local/cache")]
 
+File.open("config/user-dirs.dirs").readlines.each do |user_dir|
+  next if user_dir =~ /^#/
+  expand_path = user_dir.gsub(/.*="\$HOME\/(.*)"\n/, "#{ENV['HOME']}/\\1")
+  MAKE_DIRS << expand_path
+end
+
+File.open("profile").readlines.each do |profile_line|
+  next unless profile_line =~ / # dir-make/
+  expand_path = profile_line.gsub(/.*="\$\{HOME\}\/(.*)".*\n/, "#{ENV['HOME']}/\\1")
+  MAKE_DIRS << expand_path
+end
+
 MAKE_DIRS.each do |dir|
   directory dir do
     mkdir_p dir
@@ -103,4 +115,13 @@ task :prepare => MAKE_DIRS do
   # compile youcompleteme
   # compile command-t
   sh 'tic terminfo/screen-256color-italitc.terminfo'
+end
+
+desc "List of everything this rake file will try managing"
+task :list do
+  require 'pp'
+  puts "Symlink these files:"
+  pp DOTFILES
+  puts "Create these directories:"
+  pp MAKE_DIRS
 end
