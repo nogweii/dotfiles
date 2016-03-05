@@ -14,6 +14,7 @@ unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 
 # Pull in settings from /etc/profile, like the path to java, etc.
 emulate sh -c 'source /etc/profile'
+emulate sh -c "source ${DOTSDIR}/profile"
 
 # And now, set them
 path=(

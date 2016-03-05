@@ -87,7 +87,9 @@ end
 # File.foreach('.gitmodules') {|line| print $1 if line =~ /^\[submodule
 # \"(.*)\"\]/ }
 
-MAKE_DIRS = ["vim/tmp", File.expand_path("~/.local/cache")]
+MAKE_DIRS = ["vim/tmp",
+             File.expand_path("~/.local/cache"),
+             File.expand_path("~/.local")]
 
 File.open("config/user-dirs.dirs").readlines.each do |user_dir|
   next if user_dir =~ /^#/
@@ -112,9 +114,10 @@ CLEAN << [MAKE_DIRS].flatten
 
 desc "Prepare extra directories"
 task :prepare => MAKE_DIRS do
-  # compile youcompleteme
-  # compile command-t
-  sh 'tic terminfo/screen-256color-italitc.terminfo'
+  ENV['TERMINFO'] = File.expand_path('~/.local/terminfo')
+  unless File.exists? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
+    sh 'tic terminfo/screen-256color-italitc.terminfo'
+  end
 end
 
 desc "List of everything this rake file will try managing"
