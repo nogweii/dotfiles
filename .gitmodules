@@ -19,14 +19,14 @@
 [submodule "icons/Faenza"]
 	path = icons/Faenza
 	url = https://github.com/zhelyabuzhsky/faenza
-[submodule "config/zsh/plugins/zsh-syntax-highlighting"]
-	path = config/zsh/plugins/zsh-syntax-highlighting
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "config/zsh/plugins/zsh-history-substring-search"]
-	path = config/zsh/plugins/zsh-history-substring-search
+[submodule "zsh/plugins/zsh-history-substring-search"]
+	path = zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
-[submodule "config/zsh/plugins/users-completions"]
-	path = config/zsh/plugins/users-completions
+[submodule "zsh/plugins/users-completions"]
+	path = zsh/plugins/users-completions
 	url = https://github.com/zsh-users/zsh-completions
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
