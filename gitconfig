@@ -1,1 +1,144 @@
-config/git/config
+[github]
+    user = evaryont
+[user]
+    name = Colin Shea
+    email = colin@evaryont.me
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[apply]
+    whitespace = fix
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    excludesfile = ~/dotfiles/config/git/ignores
+    attributesfile = ~/dotfiles/config/git/attributes
+[branch]
+    autosetuprebase = always
+[alias]
+    # quick shortcut for add
+    a = add
+    # quick shortcut for branch
+    br = branch
+    # quick shortcut for status, using the short codes without any helper
+    # messages
+    st = status -sb
+    # quick shortcut for checkout
+    co = checkout
+    # quick shortcut for push
+    pu = push
+    # quick shortcut for pull
+    pl = pull
+    # quick shortcut for commit, but also shows the diff in the commit message
+    ci = commit -v
+    # Easy amending of commit messages
+    ca = commit -v --amend -c HEAD
+    # Easily create a new branch based off mater
+    cb = "!f() { git checkout -b $1 master; }; f"
+    # show a log of changes that haven't been pushed upstream yet.
+    unpushed = log origin..HEAD
+    # pretty log
+    lg = log --decorate --graph --pretty=format:'%Cred%h%Creset - %C(blue)%aN%Creset:%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
+    # show all the files that are ignored
+    ls-ignored = ls-files --others -i --exclude-standard
+    # show the changes that are pulled in (calls `git pull` as well)
+    up = !"git pull && git log --pretty=format:'%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)' HEAD@{1}.."
+    # find all empty directories, add a file within them, and commit it
+    keep = !"find . ( -type d -empty ) -and ( -not -regex ./.git.* ) -exec touch {}/.gitkeep ; ; git commit -am 'Keep all directories'"
+    # reset all of HEAD, or just the 1 file (passed as a parameter)
+    diff-reset = !"git diff -R $1 | patch -up1 -i-"
+    # Initializes & updates all submodules
+    subup = submodule update --init --recursive
+    # Push all submodules to origin master
+    subpush = submodule foreach "git push origin master"
+    # Pull submodules from origin master
+    subpull = submodule foreach "git pull origin master"
+    # Delete a submodule
+    subrm = !cd ${GIT_PREFIX:-.} && git submodule deinit $1 && git rm $1
+    # Push the current branch for review
+    push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
+    # Same as push-review, but target master rather than the develop branch
+    push-review-master = !git push origin HEAD:refs/for/master/$(git name-rev --name-only HEAD)
+    # A list of the environment variables git sets (+ any it inherits)
+    env = !env
+    # Execute a command relative to the root of the repository. (Non-shell git
+    # aliases are executed in the current directory, no matter where that may
+    # be)
+    exec = !exec
+    # A pretty tree which shows the branch's relationships to each other
+    branch-tree = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+    # This a well-known SHA1, which is useful for various scripting stuffs
+    empty-tree-sha1 = hash-object -t tree /dev/null
+    # Find any trailing whitespace (the SHA? It's the empty tree SHA!)
+    whitespace = diff --check 4b825dc642cb6eb9a060e54bf8d69288fbee4904
+    # Create a patch that creates a position of your working tree; a poor man's
+    # squash (though useful for mailing lists)
+    diff-slice = diff -p 4b825dc642cb6eb9a060e54bf8d69288fbee4904
+    # A stupid-simple git serving daemon (see git-exec for the trick with !git
+    # aliases)
+    simple-serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+    # Edit every file that hasn't been merged in your $EDITOR
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f` +/======"
+    # Add every file that hasn't been merged
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    # Generate a graphviz directed graph of the history
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    # Delete a branch from the remote
+    push-deleted-branch = "!f() { [[ -z $2 ]] && git push origin :$1 || git push $1 :$2}; f"
+    # This is funny to me, I like keeping the same commit message for this file
+    commit-vim-vocab = "!cd ${GIT_WORK_TREE} && git add vim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
+[web]
+    browser = kde-open
+[browser "kde-open"]
+    cmd = kde-open
+[push]
+    default = current
+[help]
+    autocorrect = 1
+[sendemail]
+    smtpserver = evaryont.me
+    smtpserverport = 465
+    smtpencryption = tls
+    smtpuser = colin
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "ssh://git@git.kde.org/"]
+    pushInsteadOf = kde:
+[url "ssh://git@github.com/"]
+    pushInsteadOf = gh:
+    insteadOf = gh:
+[merge "merge-changelog"]
+    name = GNU-style ChangeLog merge driver
+    driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
+[merge]
+    tool = fugitive
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[mergetool "vimdiff3"]
+    cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[status]
+    submodulesummary = true
+[pack]
+    threads = 0
+[init]
+    templatedir = ~/.local/share/git
+[advice]
+    pushNonFastForward = false
+    #statusHints = false
+    commitBeforeMerge = false
+    resolveConflict = false
+    implicitIdentity = false
+    detachedHead = false
