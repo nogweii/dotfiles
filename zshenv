@@ -39,7 +39,7 @@ path=(
 
 fpath=(
   $DOTSDIR/zsh/plugins/users-completions/src/
-  $DOTSDIR/share/zsh/
+  $DOTSDIR/zsh/functions/
   $fpath
 )
 

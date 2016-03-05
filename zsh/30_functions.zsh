@@ -204,7 +204,7 @@ function cawk {
     eval $cmd
 }
 
-for i in ${DOTSDIR}/share/zsh/*(*) ; do
+for i in ${DOTSDIR}/zsh/functions/*(*) ; do
   alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
 done
 
