@@ -1,4 +1,0 @@
-eval [ arg ... ]
-       Read  the  arguments as input to the shell and execute the resulting command(s) in the current shell process.  The ret
-       mands had been executed directly by the shell; if there are no args or they contain no commands (i.e. are an empty str
-       is zero.

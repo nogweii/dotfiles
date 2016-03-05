@@ -1,8 +1,0 @@
-exit [ n ]
-       Exit the shell with the exit status specified by n; if none is specified, use the exit status from the last command ex
-       cause the shell to exit, unless the IGNORE EOF option is set.
-
-bye    Same as exit.
-
-logout [ n ]
-       Same as exit, except that it only works in a login shell.

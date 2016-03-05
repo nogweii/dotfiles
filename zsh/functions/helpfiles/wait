@@ -1,3 +1,0 @@
-wait [ job ... ]
-       Wait for the specified jobs or processes.  If job is not given then all currently active child processes are waited fo
-       specification or the process ID of a job in the job table.  The exit status from this command is that of the job waite

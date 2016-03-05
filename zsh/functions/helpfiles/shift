@@ -1,3 +1,0 @@
-shift [ n ] [ name ... ]
-       The positional parameters ${n+1} ... are renamed to $1 ..., where n is an arithmetic expression that defaults to 1.  I
-       with these names are shifted instead of the positional parameters.

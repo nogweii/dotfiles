@@ -1,7 +1,0 @@
-popd [ [-q] {+|-}n ]
-       Remove an entry from the directory stack, and perform a cd to the new top directory.  With no argument, the current to
-       the  form  `+n'  identifies  a stack entry by counting from the left of the list shown by the dirs command, starting w
-       counts from the right.  If the PUSHD MINUS option is set, the meanings of `+' and `-' in this context are swapped.
-
-       If the -q (quiet) option is specified, the hook function chpwd and the functions in the array $chpwd functions are not
-       is not printed.  This is useful for calls to popd that do not change the environment seen by an interactive user.

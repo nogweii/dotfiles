@@ -1,4 +1,0 @@
-ttyctl -fu
-       The  -f  option  freezes the tty, and -u unfreezes it.  When the tty is frozen, no changes made to the tty settings by
-       the shell, except for changes in the size of the screen; the shell will simply reset the settings to their previous va
-       is suspended.  Thus, stty and similar programs have no effect when the tty is frozen.  Without options it reports whet
