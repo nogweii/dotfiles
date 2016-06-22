@@ -18,3 +18,7 @@ bindkey '^W' backward-kill-word-match
 bindkey . rationalise-dot
 # without this, typing a . aborts incremental history search
 bindkey -M isearch . self-insert
+
+# Support smarter pasting in terminals with bracketed paste support
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste-magic bracketed-paste
