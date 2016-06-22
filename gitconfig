@@ -99,7 +99,7 @@
     # Delete a branch from the remote
     push-deleted-branch = "!f() { [[ -z $2 ]] && git push origin :$1 || git push $1 :$2}; f"
     # This is funny to me, I like keeping the same commit message for this file
-    commit-vim-vocab = "!cd ${GIT_WORK_TREE} && git add vim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
+    commit-vim-vocab = "!git add vim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
 [web]
     browser = kde-open
 [browser "kde-open"]
