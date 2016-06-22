@@ -302,18 +302,6 @@ au FileType sshconfig setl nospell
 inoremap <expr> <C-e> pumvisible() ? "\<c-e>" : "\<c-o>A"
 imap     <expr> <C-a> "\<c-o>H"
 
-cnoremap <C-x> <C-r>=<SID>PasteEscaped()<cr>
-function! s:PasteEscaped()
-    echo "\\".getcmdline()."\""
-    let char = getchar()
-    if char == "\<esc>"
-        return ''
-    else
-        let register_content = getreg(nr2char(char))
-        let escaped_register = escape(register_content, '\'.getcmdtype())
-        return subsitute(escaped_register, '\m', '\\n', 'g')
-endfunction
-
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
