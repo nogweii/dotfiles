@@ -19,6 +19,7 @@ bindkey . rationalise-dot
 # without this, typing a . aborts incremental history search
 bindkey -M isearch . self-insert
 
-# Support smarter pasting in terminals with bracketed paste support
+# Support smarter/safer pasting in terminals with bracketed paste support
+# See also: https://cirw.in/blog/bracketed-paste
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste-magic bracketed-paste
