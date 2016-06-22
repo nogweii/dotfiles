@@ -323,3 +323,6 @@ virtualization
 Gemfile
 Vagrantfile
 whitespace
+LDAP
+TLS
+#eccessarily
