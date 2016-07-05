@@ -453,3 +453,5 @@ au BufRead,BufNewFile .eslintrc setlocal filetype=json
 let g:javascript_enable_domhtmlcss = 1
 
 au BufRead,BufNewFile ~/dotfiles/gitconfig setlocal filetype=gitconfig
+
+set mouse=a
