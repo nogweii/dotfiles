@@ -426,10 +426,6 @@ endf
 
 set foldtext=CustomFoldText() " }}}
 
-" Fix italics in most terminals (that support it)
-let &t_ZH = "\<Esc>[3m"
-let &t_ZR = "\<Esc>[23m"
-
 let g:markdown_fenced_languages = ['ruby', 'erb=eruby', 'python', 'bash=sh', 'zsh', 'javascript']
 " I did install the powerline version of the font, so let's use it!
 let g:airline_powerline_fonts = 1

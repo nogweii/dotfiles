@@ -1,0 +1,14 @@
+# A TERMINFO based on screen-256color that adds the escape sequences for italic.
+# This terminfo must begin with the name "tmux" to avoid triggering code in tmux
+# itself whenever it sees a TERM beginning with 'screen'. If it sees that, it
+# will disable italics support entirely, which is wrong.
+#
+# Since italics is properly set, fix standout mode as well. This generally
+# means reverse video mode. Back color erase support is also indicated.
+tmux-italics|screen with 256 colors and italic,
+  back_color_erase,
+  enter_italics_mode=\E[3m,
+  exit_italics_mode=\E[23m,
+  enter_standout_mode=\E[7m,
+  exit_standout_mode=\E[27m,
+  use=screen-256color,

@@ -122,6 +122,9 @@ task :prepare => MAKE_DIRS do
   unless File.exists? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
     sh 'tic terminfo/screen-256color-italitc.terminfo'
   end
+  unless File.exists? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
+    sh 'tic terminfo/tmux-italics.terminfo'
+  end
 end
 
 desc "List of everything this rake file will try managing"
