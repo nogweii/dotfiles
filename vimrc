@@ -450,4 +450,21 @@ let g:javascript_enable_domhtmlcss = 1
 
 au BufRead,BufNewFile ~/dotfiles/gitconfig setlocal filetype=gitconfig
 
-set mouse=a
+" A few dumb key bindings to test if the terminal I'm using supports a full
+" variety of extra modifiers
+map <M-u> :echo 'hi'<CR>
+map <M-U> :echo 'bye'<CR>
+map <C-u> :echo 'controlled response'<CR>
+map <M-Enter> :echo 'alternate confirm'<CR>
+map <C-Enter> :echo 'controlling question'<CR>
+map <S-Enter> :echo 'shify person'<CR>
+map <M-C-S-Enter> :echo 'why would you ever do this to me'<CR>
+map <S-Home> :echo 'early riser'<CR>
+map <C-End> :echo 'night owl'<CR>
+map <S-F1> :echo 'big question'<CR>
+map <M-F1> :echo 'alternate question'<CR>
+map <C-F1> :echo 'questioning question'<CR>
+map <S-C-F1> :echo 'questing knight'<CR>
+map <S-M-F1> :echo 'magical girl function key!'<CR>
+map <C-S-M-F1> :echo 'there be dragons here'<CR>
+map <C-S-M-Down> :echo "don't look at me"<CR>
