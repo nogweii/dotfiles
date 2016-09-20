@@ -103,9 +103,12 @@ fi
 # not urandom, so make sure there's plenty of entropy!
 alias gen-sha-pwd='head -c512 /dev/random | sha512sum'
 
-# Get a bit Mac-like here, with a magic open command. Functionality provided by
-# KDE :-)
-alias open=kde-open
+# Lazy open command
+if [ $XDG_SESSION_DESKTOP = "gnome" ]; then
+    alias open=gvfs-open
+elif [ $XDG_SESSION_DESKTOP = "kde" ]; then
+    alias open=kde-open
+fi
 
 if [ -x "${commands[systemctl]}" ]; then
     alias reboot='sudo systemctl reboot'
