@@ -132,3 +132,7 @@ elif [ -n "${commands[ack]}" ]; then
 else
     alias gr='grep -r'
 fi
+
+# npm's search is absolutely atrocious, it loads the entire index of ~300k
+# packages into memory
+alias npm8gb='node --max-old-space-size=8192 /usr/bin/npm'
