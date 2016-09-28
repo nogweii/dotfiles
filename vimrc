@@ -345,11 +345,6 @@ au BufRead,BufNewFile ~/code/shinken-configs/*.cfg setlocal filetype=nagios
 au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/robocode/robots/gui/compile.sh | nmap ZM :make %<CR>
 au FileType tagbar setl nospell
 
-" Detect gnome-terminal, and if so, force 256-color support
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
 au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 au FileType puppet,yaml setlocal nospell
 
