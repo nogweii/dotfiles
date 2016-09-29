@@ -1,0 +1,51 @@
+#!/bin/zsh
+# prj is a function to start a tmux session dedicated to a particular project.
+# A project is defined as a directory underneath ~/code
+
+local project_home=~/code
+
+if [ -z "${1}" ]; then
+  echo "Er, what project did you want to open? Specify the first parameter."
+  return 2
+fi
+
+if [ ! -d "${project_home}/${1}" ]; then
+  echo "What you told me is not a project directory (${project_home}/${1})"
+  return 3
+fi
+
+if tmux has -t $1 2>/dev/null; then
+  # the session already exists, load it
+  if [ -z "$TMUX" ]; then
+    # not within tmux yet, so start it with the old session
+    tmux -u attach-session -t $1
+  else
+    # within tmux already, so switch to the project session
+    tmux -u switch-client -t $1
+  fi
+  return
+fi
+
+# At this point, the project session does not exist, so set up the basics
+tmux start-server
+
+local oldpwd=$PWD
+
+# Create the session in the background and the first window, the editor
+TMUX= tmux new-session -d -s $1 -n editor -c $project_home/$1 'vim'
+
+# Let the shell know it's within a project environment
+tmux set-environment -t $1 PRJ_PROJECT "${1}"
+
+# Create a generic console window next
+tmux new-window -t $1:2 -n console -c $project_home/$1
+
+# and then switch back to the first window
+tmux select-window -t editor
+
+# Same consideration as earlier: Are we already within a tmux session or not?
+if [ -z "$TMUX" ]; then
+  tmux -u attach-session -t $1
+else
+  tmux -u switch-client -t $1
+fi
