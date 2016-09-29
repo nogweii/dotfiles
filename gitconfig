@@ -102,6 +102,8 @@
     commit-vim-vocab = "!git add vim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
     # Clone only the latest commit, to minimize the download size (and therefore increase speed)
     shallow-clone = clone --depth=1
+    # Lazy git initialization with initial commit
+    lazy-init = "!git init . && git add . && git commit -m 'Initial commit'"
 [web]
     browser = kde-open
 [browser "kde-open"]
