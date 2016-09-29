@@ -254,7 +254,11 @@ function g {
 
 function _ls-on-cd() {
   emulate -L zsh
-  ls
+  if [ -z "$_quiet_cd" ]; then
+    ls
+  else
+    unset _quiet_cd
+  fi
 }
 add-zsh-hook chpwd _ls-on-cd
 
