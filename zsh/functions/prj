@@ -2,15 +2,13 @@
 # prj is a function to start a tmux session dedicated to a particular project.
 # A project is defined as a directory underneath ~/code
 
-local project_home=~/code
-
 if [ -z "${1}" ]; then
   echo "Er, what project did you want to open? Specify the first parameter."
   return 2
 fi
 
-if [ ! -d "${project_home}/${1}" ]; then
-  echo "What you told me is not a project directory (${project_home}/${1})"
+if [ ! -d "${PROJECT_DIR}/${1}" ]; then
+  echo "What you told me is not a project directory (${PROJECT_DIR}/${1})"
   return 3
 fi
 
@@ -32,13 +30,13 @@ tmux start-server
 local oldpwd=$PWD
 
 # Create the session in the background and the first window, the editor
-TMUX= tmux new-session -d -s $1 -n editor -c $project_home/$1 'vim'
+TMUX= tmux new-session -d -s $1 -n editor -c $PROJECT_DIR/$1 'vim'
 
 # Let the shell know it's within a project environment
 tmux set-environment -t $1 PRJ_PROJECT "${1}"
 
 # Create a generic console window next
-tmux new-window -t $1:2 -n console -c $project_home/$1
+tmux new-window -t $1:2 -n console -c $PROJECT_DIR/$1
 
 # and then switch back to the first window
 tmux select-window -t editor
