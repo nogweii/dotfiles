@@ -133,3 +133,6 @@
 [submodule "vim/bundle/fzf"]
 	path = vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/polyglot"]
+	path = vim/bundle/polyglot
+	url = https://github.com/sheerun/vim-polyglot
