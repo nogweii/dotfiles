@@ -320,3 +320,11 @@ pidstarted() {
 
   date --date="@$(stat -c '%Z' ${pid_path})" +'%d %b %Y, %H:%M'
 }
+
+function vg-ssh() {
+  # List all vagrant boxes available in the system including its status, and try to access the selected one via ssh
+  local target_machine=($(cat ~/.vagrant.d/data/machine-index/index | jq -r '.machines[] | {name, vagrantfile_path, state} | .name + " " + .state + " " +.vagrantfile_path' | column -t | sort | fzf))
+  [ $? -gt 0 ] && return 130
+  _quiet_cd=1; cd ${target_machine[3]}
+  vagrant ssh ${target_machine[1]}
+}
