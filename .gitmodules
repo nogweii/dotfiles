@@ -7,9 +7,6 @@
 [submodule "vim/bundle/signature"]
 	path = vim/bundle/signature
 	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/bundle/coffee-script"]
-	path = vim/bundle/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script
 [submodule "vim/bundle/indent-object"]
 	path = vim/bundle/indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object
@@ -64,9 +61,6 @@
 [submodule "vim/bundle/swapit"]
 	path = vim/bundle/swapit
 	url = https://github.com/mjbrownie/swapit
-[submodule "vim/bundle/ruby"]
-	path = vim/bundle/ruby
-	url = https://github.com/vim-ruby/vim-ruby
 [submodule "vim/bundle/speeddating"]
 	path = vim/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating
@@ -91,27 +85,15 @@
 [submodule "vim/bundle/dispatch"]
 	path = vim/bundle/dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule "vim/bundle/rails"]
-	path = vim/bundle/rails
-	url = https://github.com/tpope/vim-rails
-[submodule "vim/bundle/rake"]
-	path = vim/bundle/rake
-	url = https://github.com/tpope/vim-rake
 [submodule "vim/bundle/eunuch"]
 	path = vim/bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "vim/bundle/rbenv"]
-	path = vim/bundle/rbenv
-	url = https://github.com/tpope/vim-rbenv
 [submodule "vim/bundle/jdaddy"]
 	path = vim/bundle/jdaddy
 	url = https://github.com/tpope/vim-jdaddy
 [submodule "vim/bundle/vinegar"]
 	path = vim/bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "vim/bundle/bundler"]
-	path = vim/bundle/bundler
-	url = https://github.com/tpope/vim-bundler
 [submodule "vim/bundle/tbone"]
 	path = vim/bundle/tbone
 	url = https://github.com/tpope/vim-tbone
@@ -133,33 +115,15 @@
 [submodule "vim/bundle/delimitMate"]
 	path = vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule "vim/bundle/slim"]
-	path = vim/bundle/slim
-	url = https://github.com/slim-template/vim-slim
 [submodule "vim/bundle/search_objects"]
 	path = vim/bundle/search_objects
 	url = https://github.com/Raimondi/vim_search_objects
-[submodule "vim/bundle/table-mode"]
-	path = vim/bundle/table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/elixir"]
-	path = vim/bundle/elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
-[submodule "vim/bundle/dockerfile"]
-	path = vim/bundle/dockerfile
-	url = https://github.com/honza/dockerfile.vim.git
-[submodule "vim/bundle/elm"]
-	path = vim/bundle/elm
-	url = https://github.com/lambdatoast/elm.vim
 [submodule "vim/bundle/tmux"]
 	path = vim/bundle/tmux
 	url = https://github.com/tmux-plugins/vim-tmux
-[submodule "vim/bundle/javascript-syntax"]
-	path = vim/bundle/javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax
 [submodule "vim/bundle/salt"]
 	path = vim/bundle/salt
 	url = https://github.com/saltstack/salt-vim
