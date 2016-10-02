@@ -1,0 +1,6 @@
+[Unit]
+Description=Send a dumb text message via notify-send
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/notify-send -i help-faq "systemd for %u says hello"
