@@ -11,6 +11,7 @@ unsetopt case_glob              # globs are not case-sensitive
 setopt   cdable_vars            # try expanding '~foo' when 'cd foo' fails
 setopt   chase_links            # (implies chase_dots), resolve symlinks on cd
 setopt   check_jobs             # warn me when jobs are running on exit
+setopt   correct                # if I typo a command name, offer suggestions
 setopt   extended_glob          # Advanced shell globs
 setopt   extended_history       # Save time related information to history
 setopt   hash_cmds              # faster command execution, save a $PATH search
