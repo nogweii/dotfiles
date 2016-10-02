@@ -116,17 +116,13 @@ if [ -x "${commands[systemctl]}" ]; then
     alias suspend='sudo systemctl suspend'
 fi
 
-# A quick alias that tells NetworkManager to immediately bring up the WiFi
-# device and connect it to my home's wifi (UUID found by running my nm-list
-# script)
-alias nm-force-eternalalchmey="nmcli c up uuid a8b26b44-155c-41d4-8df5-f7c30b27c612"
-
 alias be='bundle exec '
 alias ber='bundle exec rake'
 
 alias pwgen='pwgen -cny 36 1'
 
 alias aursearch='cower -cauto -s'
+alias aurinfo='cower -cauto -i'
 
 if [ -n "${commands[ag]}" ]; then
     alias gr=ag
