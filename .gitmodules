@@ -136,3 +136,9 @@
 [submodule "vim/bundle/polyglot"]
 	path = vim/bundle/polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/bundle/snippets"]
+	path = vim/bundle/snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
