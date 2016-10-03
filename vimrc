@@ -97,12 +97,16 @@ imap     <C-l> <Right>
 "nmap     <silent> ZW :update<CR>:TlistUpdate<CR>
 nmap     <silent> ZW :update<CR>
 nmap     ZD :call CleanClose(0)<CR>
-nmap     ZE :e <C-R>=expand("%:h")<CR>/
-nmap     ZS :split <C-R>=expand("%:h")<CR>/
-nmap     ZV :vnew <C-R>=expand("%:h")<CR>/
+if executable('fzf')
+  nmap   ZE :call fzf#run(fzf#wrap({'sink': 'e'}, 0))<CR>
+  nmap   ZS :call fzf#run(fzf#wrap({'sink': 'split'}))<CR>
+  nmap   ZV :call fzf#run(fzf#wrap({'sink': 'vnew'}))<CR>
+else
+  nmap   ZE :e <C-R>=expand("%:h")<CR>/
+  nmap   ZS :split <C-R>=expand("%:h")<CR>/
+  nmap   ZV :vnew <C-R>=expand("%:h")<CR>/
+endif
 nmap     ZB :ls<CR>:b<Space>
-nnoremap gf gF
-nnoremap <silent> gF :CommandT<CR>
 nmap     <Leader>gt :GundoToggle<CR>
 " }}}
 
@@ -167,7 +171,6 @@ function! CleanClose(tosave)
   endif
 
   exe "bd ".todelbufNr
-  call Buftabs_show()
 endfunction
 " }}}
 
@@ -348,7 +351,6 @@ au FileType tagbar setl nospell
 au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
 au FileType puppet,yaml setlocal nospell
 
-nmap <silent> ZB :LustyBufferExplorer<CR>
 au BufRead,BufNewFile */uzbl/config setlocal filetype=uzbl
 au BufRead,BufNewFile */conkywx/conkywx.conf setlocal filetype=sh
 
