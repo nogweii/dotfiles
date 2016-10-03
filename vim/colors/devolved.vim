@@ -138,6 +138,41 @@ let s:otherColors = [
 
 " }}}
 
+" {{{ Convert specific entries from $LS_COLORS (therefore, dircolors)
+" into useful highlight strings for netrw
+let s:ansi_styles = { 0: 'NONE', 1: 'bold', 4: 'underline', 7: 'reverse' }
+
+function! s:append_ls_color(syntax_name, formatter)
+    let styling = []
+    let fg_color = ""
+    let bg_color = ""
+
+    for color in split(a:formatter, ';')
+        let colorn = color + 0
+        if colorn > 30 && colorn < 40
+            let fg_color = colorn - 30
+        elseif colorn > 40 && colorn < 50
+            let bg_color = colorn - 40
+        elseif colorn < 10
+            call add(styling, s:ansi_styles[colorn])
+        endif
+    endfor
+    call add(s:otherColors, [a:syntax_name, join(styling, ','), fg_color,  bg_color, "", ""])
+endfunction
+
+let s:ls_colors = split($LS_COLORS, ':')
+for desc in s:ls_colors
+    let s:ls_color_split = split(desc, '=')
+    if s:ls_color_split[0] == 'di'
+        call s:append_ls_color("Directory", s:ls_color_split[1])
+    elseif s:ls_color_split[0] == 'ln'
+        call s:append_ls_color("netrwSymlink", s:ls_color_split[1])
+    elseif s:ls_color_split[0] == 'ex'
+        call s:append_ls_color("netrwExe", s:ls_color_split[1])
+    endif
+endfor
+" }}}
+
 "============================================================
 "        * NO NEED * to edit below (unless bugfixing)
 "============================================================
