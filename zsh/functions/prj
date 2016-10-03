@@ -32,6 +32,10 @@ local oldpwd=$PWD
 # Create the session in the background and the first window, the editor
 TMUX= tmux new-session -d -s $1 -n editor -c $PROJECT_DIR/$1 'vim'
 
+# closing vim will restart vim. Vim always, forever!
+tmux set-hook -t $1 pane-died respawn-window
+tmux set-window-option -t editor remain-on-exit on
+
 # Let the shell know it's within a project environment
 tmux set-environment -t $1 PRJ_PROJECT "${1}"
 
