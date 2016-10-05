@@ -4,4 +4,12 @@ export XDG_DATA_HOME="${HOME}/.local/share" # dir-make
 export TERMINFO="${HOME}/.local/terminfo" # dir-make
 export PROJECT_DIR="${HOME}/code" # dir-make
 
+# Ensure that we have a sane (not-empty) umask. This might happen is umask is
+# not called in /etc/profile or if pam_umask hasn't had a chance yet
+if [ ! $(( $(umask) + 0 )) -gt 0 ]; then
+  # Nope, an empty umask this time around. Fix it with one that works well for
+  # me:
+  umask 022
+fi
+
 # vim: set syn=sh:
