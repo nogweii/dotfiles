@@ -54,3 +54,7 @@ export RAILS_ENV=development
 export NCURSES_NO_UTF8_ACS=1
 
 [ -d ~/go ] && export GOPATH=~/go
+
+# Set an environment variable if we think we're running within Linux for
+# Windows subsystem (aka Bash on windows)
+[ -d /mnt/c/Windows ] && export LXSS=yep
