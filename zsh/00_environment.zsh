@@ -1,9 +1,9 @@
 # Personal preferences. XDG uses these, among other applications
 export EDITOR="vim"
 export PAGER="less"
-if [ $XDG_SESSION_DESKTOP = "gnome" ]; then
+if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
     export BROWSER="gvfs-open"
-elif [ $XDG_SESSION_DESKTOP = "kde" ]; then
+elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
     export BROWSER="kde-open"
 fi
 
