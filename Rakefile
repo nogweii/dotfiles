@@ -120,10 +120,10 @@ desc "Prepare extra directories"
 task :prepare => MAKE_DIRS do
   ENV['TERMINFO'] = File.expand_path('~/.local/terminfo')
   unless File.exists? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
-    sh 'tic terminfo/screen-256color-italitc.terminfo'
+    sh 'tic terminfo/screen-256color-italitc.termcap'
   end
   unless File.exists? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
-    sh 'tic terminfo/tmux-italics.terminfo'
+    sh 'tic terminfo/tmux-italics.termcap'
   end
 end
 
