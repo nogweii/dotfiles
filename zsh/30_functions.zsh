@@ -211,16 +211,15 @@ done
 autoload colors zsh/terminfo
 
 df() {
-  # Is dfc installed & did I not pass any arguments to df? Also, make sure that
-  # there are >85 columns. Less than/equal to that, things go wonky. 85 is the
-  # width of a terminal when it is 50% of the screen.
-  if [ -n "${commands[dfc]}" -a $# -eq 0 -a $COLUMNS -gt 85 ]; then
-    # Add 64 so that sed won't delete the ANSI color codes. Why 64? Just guessed
-    # 50-60, then kept incrementing until the lines got too long. 64 works
-    # perfectly.
-    command dfc -a -T -w -W -o -i -f -c always | sed "s/^\(.\{,$(($COLUMNS+64))\}\).*/\\1/"
+  # Is dfc installed & did I not pass any arguments to df? 
+  if [ -n "${commands[dfc]}" -a $# -eq 0 ]; then
+    # '-TbW' means to show the type not the graph, and don't truncate
+    command dfc -TbW -q name
+  elif [ $# -eq 0 ]; then
+    # dfc isn't installed, but I did not pass any parameters
+    command df -hT
   else
-    # Just run df like normal, passing along any parameters
+    # Just run df like normal, passing along any parameters I specified
     command df $@
   fi
 }
