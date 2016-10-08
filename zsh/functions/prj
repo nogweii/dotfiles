@@ -30,7 +30,7 @@ tmux start-server
 local oldpwd=$PWD
 
 # Create the session in the background and the first window, the editor
-TMUX= tmux new-session -d -s $1 -n editor -c $PROJECT_DIR/$1 'vim'
+TMUX= tmux new-session -d -s $1 -n editor -c $PROJECT_DIR/$1 "vim --servername ${1}"
 
 # closing vim will restart vim. Vim always, forever!
 tmux set-hook -t $1 pane-died respawn-window

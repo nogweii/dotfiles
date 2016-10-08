@@ -321,9 +321,21 @@ pidstarted() {
 }
 
 function vg-ssh() {
-  # List all vagrant boxes available in the system including its status, and try to access the selected one via ssh
+  # List all vagrant boxes available in the system including its status, and
+  # try to access the selected one via ssh
   local target_machine=($(cat ~/.vagrant.d/data/machine-index/index | jq -r '.machines[] | {name, vagrantfile_path, state} | .name + " " + .state + " " +.vagrantfile_path' | column -t | sort | fzf))
   [ $? -gt 0 ] && return 130
   _quiet_cd=1; cd ${target_machine[3]}
   vagrant ssh ${target_machine[1]}
+}
+
+# A project-aware vim command. If we're within a project context (initiated by
+# prj) then use the main editor. Otherwise, vim as normal.
+function vim() {
+  if [ -n "${PRJ_PROJECT}" ]; then
+    command vim --servername "${PRJ_PROJECT}" --remote $@
+    tmux select-window -t editor # focus vim
+  else
+    command vim $@
+  fi
 }
