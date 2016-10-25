@@ -47,3 +47,6 @@ zstyle ':completion:*:*:task:*' group-name ''
 
 alias t=task
 compdef _task t=task
+
+# travis completion integration via the gem
+[ -f ${TRAVIS_CONFIG_PATH}/travis.sh ] && source ${TRAVIS_CONFIG_PATH}/travis.sh

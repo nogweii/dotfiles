@@ -45,6 +45,7 @@ export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
 export BUNDLE_PATH="${HOME}/.gem/ruby/2.3.0/"
 export npm_config_prefix=$HOME/.local/node
+export TRAVIS_CONFIG_PATH="${HOME}/.config/travis"
 
 export RACK_ENV=development
 export RAILS_ENV=development
