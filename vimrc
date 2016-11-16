@@ -51,6 +51,7 @@ set complete+=k,kspell         " Scan dictionaries for completion as well
 set completeopt=menuone,longest,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 set viminfo+=n~/.vim/tmp/viminfo
+set modelines=3                " Search the top and bottom 3 lines
 execute 'set scrolloff='.(&lines-2)
 "set list                       " Show certain chars for tabs & trailing chars
 execute 'set listchars=trail:'.nr2char(183)

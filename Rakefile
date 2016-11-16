@@ -11,7 +11,7 @@ Dir.chdir $gitdir
 RakeFileUtils.verbose_flag = false unless extra_information
 
 def dotfiles
-  (Dir['*'] - %w[Rakefile README.md config]).sort
+  (Dir['*'] - %w[Rakefile README.md config Brewfile]).sort
 end
 
 DOTFILES = []
