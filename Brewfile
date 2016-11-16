@@ -42,6 +42,9 @@ brew 'koekeishiya/kwm/kwm'
 # Various applications that are packaged as .app
 cask 'karabiner-elements'
 cask 'vlc'
+cask 'iterm2'
+cask 'firefox'
+cask 'slack'
 
 # And the apps I've installed from the Apple Store
 mas 'iMovie', id: 408981434
