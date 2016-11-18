@@ -46,6 +46,11 @@ cask 'iterm2'
 cask 'firefox'
 cask 'slack'
 
+# Vagrant and virtual machine management
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
+cask 'vagrant'
+
 # And the apps I've installed from the Apple Store
 mas 'iMovie', id: 408981434
 mas 'Keynote', id: 409183694
