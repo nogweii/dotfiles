@@ -29,13 +29,23 @@ path=(
   $HOME/.gem/ruby/*/bin(On)    # rubygems installed, newest first
   $HOME/go/bin                 # go packages
   /usr/lib/cw                  # Colorized versions of GNU coreutils
-  /usr/{bin,sbin}              # Most programs & binaries
-  /{bin,sbin}                  # Lower-level, "basic" commands
-  $path                        # System-provided paths
   /usr/local/{bin,sbin}        # Local administrator installed/odd-ball commands
   /usr/local/heroku/bin        # Heroku toolbelt, as installed from a package
+  /usr/{bin,sbin}              # Most programs & binaries
+  /{bin,sbin}                  # Lower-level, "basic" commands
   /opt/java/bin                # Some java installations
+  $path                        # System-provided paths
 )
+
+if [ -n "${IS_OSX}" ]; then
+  # On OSX systems, prepend the GNU userland to path
+  path=(
+    /usr/local/opt/gnu-tar/libexec/gnubin/
+    /usr/local/opt/gnu-sed/libexec/gnubin/
+    /usr/local/opt/coreutils/libexec/gnubin/
+    $path
+  )
+fi
 
 fpath=(
   $DOTSDIR/zsh/plugins/users-completions/src/
