@@ -45,6 +45,7 @@ cask 'vlc'
 cask 'iterm2'
 cask 'firefox'
 cask 'slack'
+cask 'google-play-music-desktop-player'
 
 # Vagrant and virtual machine management
 cask 'virtualbox'
