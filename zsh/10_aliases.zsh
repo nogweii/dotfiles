@@ -137,3 +137,5 @@ fi
 # npm's search is absolutely atrocious, it loads the entire index of ~300k
 # packages into memory
 alias npm8gb='node --max-old-space-size=8192 /usr/bin/npm'
+
+alias server-ports="sudo ss -lntup | sed 's/users:((\"\([^\"]*\)\",pid.*$/\1/' | tail -n+2 | awk '{ printf \"%-17s %s/%s\n\", \$7, \$5, \$1 }' | sort"
