@@ -28,7 +28,14 @@ fi
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
-#if [ ! -z "$DISPLAY" ] ; then
-#    source ${DOTSDIR}/config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#fi
-#source ${XDG_CONFIG_HOME}/zsh/plugins/auto-fu.zsh
+# Enable syntax highlighting:
+source ${DOTSDIR}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Enable fish-shell style history search:
+source ${DOTSDIR}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
