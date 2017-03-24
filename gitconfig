@@ -104,6 +104,10 @@
     shallow-clone = clone --depth=1
     # Lazy git initialization with initial commit
     lazy-init = "!git init . && git add . && git commit -m 'Initial commit'"
+    # Push everything, including tags
+    push-all = "!git push --all && git push --tags"
+    # Rapidly add a file to the previous commit that I forgot from before
+    cazz = "!f() { git add $1 && git commit --amend -c HEAD --allow-empty-message \"\" }; f"
 [web]
     browser = kde-open
 [browser "kde-open"]
