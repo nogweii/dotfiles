@@ -142,21 +142,40 @@ let s:otherColors = [
 " into useful highlight strings for netrw
 let s:ansi_styles = { 0: 'NONE', 1: 'bold', 4: 'underline', 7: 'reverse' }
 
+" Given a syntax highlighting name and a ASNI format string (like '01;35' or
+" '38;5;39'), parse the format string into vim's syntax
 function! s:append_ls_color(syntax_name, formatter)
     let styling = []
     let fg_color = ""
     let bg_color = ""
 
+    " Split up the format string
     for color in split(a:formatter, ';')
-        let colorn = color + 0
-        if colorn > 30 && colorn < 40
+        let colorn = color + 0 " convert it to a number for easy comparisons
+
+        " Regular ol' 8 colors for foreground and background
+        if colorn > 30 && colorn < 38
             let fg_color = colorn - 30
-        elseif colorn > 40 && colorn < 50
+        elseif colorn > 40 && colorn < 48
             let bg_color = colorn - 40
+
+        " Extended range (256) color support. Those are in the format of
+        " '38;5;n', where n is 0..256
+        elseif colorn == 38
+            let fg_color = split(a:formatter, ';')[2]
+            break " we stop iterating through the formatter at this point
+        elseif colorn == 48
+            let bg_color = split(a:formatter, ';')[2]
+            break
+
+        " Format numerics <= 9 are styling indiciators. Use the ansi_styles
+        " dictionary to convert them into vim keywords
         elseif colorn < 10
             call add(styling, s:ansi_styles[colorn])
         endif
     endfor
+
+    " Append the full suite of formatting information to the otherColors array
     call add(s:otherColors, [a:syntax_name, join(styling, ','), fg_color,  bg_color, "", ""])
 endfunction
 
