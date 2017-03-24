@@ -37,16 +37,6 @@ path=(
   $path                        # System-provided paths
 )
 
-if [ -n "${IS_OSX}" ]; then
-  # On OSX systems, prepend the GNU userland to path
-  path=(
-    /usr/local/opt/gnu-tar/libexec/gnubin/
-    /usr/local/opt/gnu-sed/libexec/gnubin/
-    /usr/local/opt/coreutils/libexec/gnubin/
-    $path
-  )
-fi
-
 fpath=(
   $DOTSDIR/zsh/plugins/users-completions/src/
   $DOTSDIR/zsh/functions/
@@ -59,6 +49,23 @@ manpath=(
   /usr/share/man
   $manpath
 )
+
+if [ -n "${IS_OSX}" ]; then
+  # On OSX systems, prepend the GNU userland to path
+  path=(
+    /usr/local/opt/gnu-tar/libexec/gnubin
+    /usr/local/opt/gnu-sed/libexec/gnubin
+    /usr/local/opt/coreutils/libexec/gnubin
+    $path
+    /usr/local/opt/go/libexec/bin
+  )
+  # And get the GNU man pages, not the OSX ones
+  manpath=(
+    /usr/local/opt/coreutils/libexec/gnuman
+    /usr/local/opt/gnu-sed/libexec/gnuman
+    $manpath
+  )
+fi
 
 # Given a list of arrays, delete any values from each that don't point to a
 # real directory. It will also resolve any symlinks.
