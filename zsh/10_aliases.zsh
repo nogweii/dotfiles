@@ -126,7 +126,9 @@ alias pwgen='pwgen -cny 36 1'
 alias aursearch='cower -cauto -s'
 alias aurinfo='cower -cauto -i'
 
-if [ -n "${commands[ag]}" ]; then
+if [ -n "${commands[rg]}" ]; then
+    alias gr=rg
+elif [ -n "${commands[ag]}" ]; then
     alias gr=ag
 elif [ -n "${commands[ack]}" ]; then
     alias gr=ack
