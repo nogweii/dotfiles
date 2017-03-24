@@ -385,6 +385,7 @@ endif
 
 " The return key doesn't activate the unindent in HTML files
 autocmd FileType html setlocal indentkeys-=*<Return>
+autocmd FileType markdown setlocal nocindent
 
 " {{{ Customized version of folded text, derived from
 " https://github.com/chrisbra/vim_dotfiles/blob/master/plugin/CustomFoldText.vim
