@@ -23,3 +23,13 @@ bindkey -M isearch . self-insert
 # See also: https://cirw.in/blog/bracketed-paste
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste-magic bracketed-paste
+
+# A little bit of emacs in my vim...
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+
+# A keybind (<C-x>f) to force completing files
+zle -C complete-file menu-expand-or-complete _generic
+zstyle ':completion:complete-file:*' completer _files
+bindkey -M viins '^Xf' complete-file
+bindkey -M viins '^X^F' complete-file
