@@ -143,6 +143,8 @@
     threads = 0
 [init]
     templatedir = ~/dotfiles/git
+[diff]
+    submodule = diff
 [advice]
     pushNonFastForward = false
     #statusHints = false

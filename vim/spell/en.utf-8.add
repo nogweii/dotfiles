@@ -326,3 +326,5 @@ whitespace
 LDAP
 TLS
 systemd
+homelab
+letsencrypt
