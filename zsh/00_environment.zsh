@@ -33,7 +33,6 @@ export SAVEHIST="${HISTSIZE}"
 # Pretty colors! Used by zstyle & ls (and probably others)
 eval $(dircolors -b ${DOTSDIR}/config/dircolors)
 export INPUTRC="${DOTSDIR}/inputrc"
-export WGETRC="${DOTSDIR}/config/wgetrc"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export LESSHISTSIZE=2000
