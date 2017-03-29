@@ -467,3 +467,8 @@ map <S-C-F1> :echo 'questing knight'<CR>
 map <S-M-F1> :echo 'magical girl function key!'<CR>
 map <C-S-M-F1> :echo 'there be dragons here'<CR>
 map <C-S-M-Down> :echo "don't look at me"<CR>
+
+au BufRead,BufNewFile inventory/*.ini setlocal filetype=ansible_hosts
+au FileType ansible_hosts setl nospell
+" Better indenting & formatting
+autocmd FileType markdown setlocal nocindent autoindent
