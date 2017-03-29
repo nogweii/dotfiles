@@ -15,9 +15,9 @@ if [ -e $file ] ; then
 fi
 
 bindkey '^W' backward-kill-word-match
-bindkey . rationalise-dot
+#bindkey . rationalise-dot
 # without this, typing a . aborts incremental history search
-bindkey -M isearch . self-insert
+#bindkey -M isearch . self-insert
 
 # Support smarter/safer pasting in terminals with bracketed paste support
 # See also: https://cirw.in/blog/bracketed-paste
