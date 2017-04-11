@@ -1,0 +1,18 @@
+# Move the cache location to a sub-subdirectory of ~
+cache=~/.local/cache/npm
+
+# Use vim. TODO: update to nvim when that's more common across my computers
+editor="vim"
+
+# Various defaults specified so I stop repeating myself every time I run npm init
+init-author-name="Evaryont"
+init-author-email="nogui@evaryont.me"
+init-author-url="https://evaryont.me"
+init-license="APSL-2.0"
+init-version="0.1.0"
+
+# A little nicer commit message for npm version
+message="Bump version to v%s"
+
+# Better looking tree drawing
+unicode=true
