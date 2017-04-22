@@ -26,26 +26,13 @@ test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/c
 export LOCALE="en_US.utf8"
 
 # History location.
-export HISTFILE="${HOME}/.local/cache/zsh_history"
 export HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export SAVEHIST="${HISTSIZE}"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
 eval $(dircolors -b ${DOTSDIR}/config/dircolors)
-export INPUTRC="${DOTSDIR}/inputrc"
 
-export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export LESSHISTSIZE=2000
-
-export GEMRC="${DOTSDIR}/gemrc"
-export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
-#export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
-
-export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
-export BUNDLE_PATH="${HOME}/.gem/ruby/2.3.0/"
-export npm_config_prefix=$HOME/.local/node
-export npm_config_userconfig="${DOTSDIR}/config/npmrc"
-export TRAVIS_CONFIG_PATH="${HOME}/.config/travis"
 
 export RACK_ENV=development
 export RAILS_ENV=development
@@ -53,8 +40,6 @@ export RAILS_ENV=development
 # Don't switch to VT100 mode for line drawing characters when in a UTF-8
 # terminal. This fixes 'lqqk' showing up in PuTTY
 export NCURSES_NO_UTF8_ACS=1
-
-[ -d ~/go ] && export GOPATH=~/go
 
 # Set an environment variable if we think we're running within Linux for
 # Windows subsystem (aka Bash on windows)
