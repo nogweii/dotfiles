@@ -1,4 +1,5 @@
 # Move the cache location to a sub-subdirectory of ~
+prefix=~/.local/node
 cache=~/.local/cache/npm
 
 # Use vim. TODO: update to nvim when that's more common across my computers
@@ -16,3 +17,6 @@ message="Bump version to v%s"
 
 # Better looking tree drawing
 unicode=true
+
+# Move node-gyp's temporary directory to the cache folder too
+devdir=~/.local/cache/node-gyp

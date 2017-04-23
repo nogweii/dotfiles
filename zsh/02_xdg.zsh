@@ -6,7 +6,6 @@ export GEMRC="${DOTSDIR}/gemrc"
 export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export GEM_HOME="${HOME}/.local/ruby"
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
-#export CABAL_CONFIG="${DOTSDIR}/config/cabal/config"
 export npm_config_prefix=$HOME/.local/node
 export npm_config_userconfig="${DOTSDIR}/config/npmrc"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
@@ -36,3 +35,4 @@ export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 export RANDFILE="${XDG_CACHE_HOME}/rnd"
 
 export MYSQL_HISTFILE="${XDG_CACHE_HOME}/mysql_history"
+export WGETRC="${DOTSDIR}/config/wgetrc"
