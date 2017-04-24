@@ -1,9 +1,6 @@
-begin
-    # Check if the load path has been properly set.
-    if $LOAD_PATH.grep(Regexp.new(File.join("config", "irb"))).count == 0
-        $LOAD_PATH.unshift File.join(ENV['HOME'], ".config", "irb")
-    end
+require 'logger'
 
+begin
     def tramp_require(what, &block)
         loaded, require_result = false, nil
 
@@ -29,20 +26,24 @@ begin
     tramp_require 'irb/completion' # Tab complete objects/methods
 
     tramp_require 'rubygems'
-    tramp_require 'method_extensions' # Awesome extensions to Method
-    tramp_require 'method_extensions/method/super' # Mods core classes!
+    tramp_require 'rainbow'
+    #tramp_require 'method_extensions' # Awesome extensions to Method
+    #tramp_require 'method_extensions/method/super' # Mods core classes!
     tramp_require 'hirb'
-    tramp_require 'boson' do
-        Boson.start
+    tramp_require 'net-http-spy' do # Spy on Net::HTTP requests
+        # These logger settings need to be redefined
+        # https://github.com/martinbtt/net-http-spy/issues/2
+        if defined? Net::HTTP::Persistent::SSLReuse
+            Net::HTTP::Persistent::SSLReuse.http_logger = Logger.new(STDOUT)
+            Net::HTTP::Persistent::SSLReuse.http_logger_options = {:body => true, :verbose => true, :trace => true}
+        end
     end
-    tramp_require 'net-http-spy' # Spy on Net::HTTP requests
     tramp_require 'wirble' do
         Wirble.init
-        Wirble.colorize
     end
-    tramp_require File.expand_path(File.join((ENV['XDG_CONFIG_DIR'] || "~/.config"), '/irb/irb_rocket'))
+    tramp_require File.join(File.dirname(__FILE__), 'irb_rocket.rb')
     tramp_require "ap"
-    tramp_require "looksee/shortcuts"
+    #tramp_require "looksee/shortcuts"
     if File.exists?(ENV['CONFIG_RU'] || "config.ru")
         tramp_require "racksh/init" do
             ENV['CONFIG_RU'] ||= 'config.ru'
@@ -55,7 +56,6 @@ begin
     ARGV.concat ["--readline", "--prompt-mode", "simple"]
 
     IRB.conf[:USE_READLINE] = true # Use readline
-    IRB.conf[:IGNORE_EOF] = true # Ignore Ctrl-D, require 'exit' (like I have in zsh)
 
     # http://ozmm.org/posts/time_in_irb.html
     def time(times = 1)
@@ -92,7 +92,7 @@ begin
 # Otherwise IRB won't report any error and just stop executing irbrc, leaving me
 # confused as to why some of the RC file hasn't been loaded.
 rescue Exception => e
-    puts "Error! Error! #{e.class} raised!"
+    puts Rainbow("Error!").red.italic.bold + " #{e.class} raised:"
     puts "> #{e.message}"
     puts e.backtrace.join("\n")
 end

@@ -17,3 +17,5 @@ weechat/script/plugins.xml.gz
 config/zsh/01_private.zsh
 config/pianobar/state
 tmux/plugins/
+Gemfile.lock
+.bundle/
