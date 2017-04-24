@@ -1,0 +1,4 @@
+for pid in $(pidof dd); do
+  echo "sending SIGUSR1 to dd process ${pid}..."
+  sudo kill -SIGUSR1 $pid
+done
