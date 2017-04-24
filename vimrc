@@ -472,3 +472,4 @@ au BufRead,BufNewFile inventory/*.ini setlocal filetype=ansible_hosts
 au FileType ansible_hosts setl nospell
 " Better indenting & formatting
 autocmd FileType markdown setlocal nocindent autoindent
+au BufRead,BufNewFile ~/dotfiles/zsh/functions/* setlocal filetype=zsh
