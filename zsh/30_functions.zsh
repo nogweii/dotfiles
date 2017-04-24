@@ -97,40 +97,6 @@ function cd () {
   fi
 }
 
-extract_archive () {
-    local lower full_path target_dir
-    lower=${(L)1} # Used for matching
-    full_path=$(readlink -f $1) # The real path, expanded & absolute
-    target_dir=$(echo $1 | sed 's/(\.tar|\.zip)?\.[^.]*$//') # new directory name
-    md $target_dir # mkdir && cd combo
-    case "$lower" in
-        *.tar.gz) tar xzf "$full_path" ;;
-        *.tgz) tar xzf "$full_path" ;;
-        *.gz) gunzip "$full_path" ;;
-        *.tar.bz2) tar xjf "$full_path" ;;
-        *.tbz2) tar xjf "$full_path" ;;
-        *.bz2) bunzip2 "$full_path" ;;
-        *.tar) tar xf "$full_path" ;;
-        *.rar) unrar e "$full_path" ;;
-        *.zip) unzip "$full_path" ;;
-        *.z) uncompress "$full_path" ;;
-        *.7z) 7z x "$full_path" ;;
-        *.xz) xz -d "$full_path" ;;
-        *.lzma) unlzma -vk "$full_path" ;;
-        *.lha) lha e "$full_path" ;;
-        *.rpm) rpm2cpio "$full_path" | cpio -idmv ;;
-        *.deb) ar p "$full_path" data.tar.gz | tar zx ;;
-        *) print "Unknown archive type: $1" ; return 1 ;;
-    esac
-    # Change in to the newly created directory, and
-    # list the directory contents, if there is one.
-    current_dirs=( *(N/) )
-    if [[ ${#current_dirs} = 1 ]]; then
-        cd $current_dirs[1]
-        ls
-    fi
-}
-
 TRAPINT() {
         zle && [[ $HISTNO -eq $HISTCMD ]] && print -sr -- "$PREBUFFER$BUFFER"
         return $1
@@ -323,7 +289,7 @@ pidstarted() {
 function vg-ssh() {
   # List all vagrant boxes available in the system including its status, and
   # try to access the selected one via ssh
-  local target_machine=($(cat ~/.vagrant.d/data/machine-index/index | jq -r '.machines[] | {name, vagrantfile_path, state} | .name + " " + .state + " " +.vagrantfile_path' | column -t | sort | fzf))
+  local target_machine=($(jq -rS '.machines[] | {name, vagrantfile_path, state} | .name + " " + .state + " " +.vagrantfile_path' ~/.vagrant.d/data/machine-index/index | column -t | fzf))
   [ $? -gt 0 ] && return 130
   _quiet_cd=1; cd ${target_machine[3]}
   vagrant ssh ${target_machine[1]}
