@@ -85,10 +85,8 @@ function _strip_fakes {
       check_dir=${(P)${a}[i]}
 
       if [[ ! -d ${check_dir} ]]; then
-        eval "${(q)a}[${i}]=()"
         continue
       elif [[ -h ${check_dir} ]]; then
-        eval "${(q)a}[${i}]=(${(P)${a}[i]:A})"
         replacement_arr+=${check_dir:A}
       else
         replacement_arr+=${check_dir}
