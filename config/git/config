@@ -24,8 +24,8 @@
     changed = green
     untracked = cyan
 [core]
-    excludesfile = ~/dotfiles/git/ignores
-    attributesfile = ~/dotfiles/git/attributes
+    excludesfile = ~/.local/config/git/ignores
+    attributesfile = ~/.local/config/git/attributes
 [branch]
     autosetuprebase = always
 [alias]
