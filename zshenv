@@ -86,14 +86,18 @@ function _strip_fakes {
       check_dir=${(P)${a}[i]}
 
       if [[ ! -d ${check_dir} ]]; then
+        # It's not a directory! Skip it
         continue
       elif [[ -h ${check_dir} ]]; then
+        # It's a symlink; resolve it
         replacement_arr+=${check_dir:A}
       else
+        # Vanilla folder, add it
         replacement_arr+=${check_dir}
       fi
     done
 
+    # Set the array variable to it's filtered value
     set -A "${(q)a}" $replacement_arr
   done
 }
