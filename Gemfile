@@ -2,6 +2,10 @@
 
 source 'https://rubygems.org'
 
+ruby '2.4.0'
+
+gem 'uniscribe'
+
 # These gems I use within irb. Check config/irb/irb_conf.rb for details.
 group :irb do
   gem 'ruby-terminfo'

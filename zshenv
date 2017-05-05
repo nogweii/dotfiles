@@ -14,6 +14,7 @@ emulate sh -c "source ${DOTSDIR}/profile"
 # And now, set them
 path=(
   $HOME/bin                    # My own scripts, programs, etc
+  $HOME/.local/bin             # Machine-local artisinal scripts
   $HOME/.local/ruby/bin        # User-installed rubygems
   $HOME/.local/pypi/bin        # User-installed pip packages
   $HOME/.local/node/bin        # User-installed npm packages
