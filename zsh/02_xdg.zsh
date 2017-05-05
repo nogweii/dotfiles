@@ -36,3 +36,4 @@ export RANDFILE="${XDG_CACHE_HOME}/rnd"
 
 export MYSQL_HISTFILE="${XDG_CACHE_HOME}/mysql_history"
 export WGETRC="${DOTSDIR}/config/wgetrc"
+export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"

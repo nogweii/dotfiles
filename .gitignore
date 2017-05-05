@@ -19,3 +19,4 @@ config/pianobar/state
 tmux/plugins/
 Gemfile.lock
 .bundle/
+config/git/spindle
