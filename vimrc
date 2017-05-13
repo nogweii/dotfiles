@@ -473,3 +473,8 @@ au FileType ansible_hosts setl nospell
 " Better indenting & formatting
 autocmd FileType markdown setlocal nocindent autoindent
 au BufRead,BufNewFile ~/dotfiles/zsh/functions/* setlocal filetype=zsh
+
+" override the mapping from searchindex to integrate it with the smart space
+" keybindings
+"<SNR>58_setup_space("search", "n")
+"<SNR>58_setup_space("search", "N")
