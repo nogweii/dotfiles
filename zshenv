@@ -80,6 +80,7 @@ function _strip_fakes {
   local check_dir
   local replacement_arr
   for a in "$@"; do
+    [[ -f ${TMPDIR}/zsh_path_debug ]] && echo "${(q)a} before strip_fakes: ${(P)a}"
     replacement_arr=()
     integer i
     for (( i=1; i<=${(P)#a}; i++ )); do
@@ -91,12 +92,21 @@ function _strip_fakes {
       elif [[ -h ${check_dir} ]]; then
         # It's a symlink; resolve it
         replacement_arr+=${check_dir:A}
+      elif [[ ${check_dir} =~ '/$' ]]; then
+        # The given path ends in trailing slash. Homebrew warns about it, and
+        # is generally not advised anyways. Strip that character.
+        replacement_arr+=${check_dir[0,-2]}
       else
         # Vanilla folder, add it
         replacement_arr+=${check_dir}
       fi
+
+      # Now that we've done a bunch of tweaks to the final array, make sure all
+      # the values are unique, again.
+      typeset -gU "${(q)a}"
     done
 
+    [[ -f ${TMPDIR}/zsh_path_debug ]] && echo "${(q)a} after  strip_fakes: ${replacement_arr}"
     # Set the array variable to it's filtered value
     set -A "${(q)a}" $replacement_arr
   done
