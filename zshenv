@@ -4,6 +4,16 @@
 # symlink (this file).
 local DOTSDIR="${${:-$HOME/.zshenv}:A:h}"
 
+if [[ "${PROFILE_STARTUP:-false}" == true ]]; then
+    # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+    PS4=$'%D{%M%S%.} %N:%i> '
+    local startlog_file=$HOME/tmp/startlog.$$
+    exec 3>&2 2>$startlog_file
+    echo "xtrace output being sent to ${startlog_file} for profiling..."
+    setopt xtrace prompt_subst
+    zmodload zsh/zprof
+fi
+
 unsetopt NO_MATCH # Don't error on failed matches
 unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 

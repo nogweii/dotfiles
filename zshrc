@@ -28,3 +28,11 @@ fi
 
 # And load local configuration overrides
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Stop tracing in zsh
+if [[ "$PROFILE_STARTUP" == true ]]; then
+    unsetopt xtrace
+    zprof
+    zmodload -u zsh/zprof
+    exec 2>&3 3>&-
+fi
