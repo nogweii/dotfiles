@@ -106,6 +106,9 @@ function _strip_fakes {
         # The given path ends in trailing slash. Homebrew warns about it, and
         # is generally not advised anyways. Strip that character.
         replacement_arr+=${check_dir[0,-2]}
+      elif [[ ${check_dir} =~ '^/mnt/c/' ]]; then
+        # Skip windows paths, for when I'm in LXSS.
+        continue
       else
         # Vanilla folder, add it
         replacement_arr+=${check_dir}
