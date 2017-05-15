@@ -9,7 +9,7 @@ editor="vim"
 init-author-name="Evaryont"
 init-author-email="nogui@evaryont.me"
 init-author-url="https://evaryont.me"
-init-license="APSL-2.0"
+init-license="Apache-2.0"
 init-version="0.1.0"
 
 # A little nicer commit message for npm version
