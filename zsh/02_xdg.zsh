@@ -37,3 +37,6 @@ export RANDFILE="${XDG_CACHE_HOME}/rnd"
 export MYSQL_HISTFILE="${XDG_CACHE_HOME}/mysql_history"
 export WGETRC="${DOTSDIR}/config/wgetrc"
 export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
+
+# Set `pip install` to install to the user directory rather than system-wide
+export PIP_USER=yes
