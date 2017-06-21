@@ -142,3 +142,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/sslsecure"]
+	path = vim/bundle/sslsecure
+	url = https://github.com/chr4/sslsecure.vim
