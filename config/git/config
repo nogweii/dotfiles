@@ -154,7 +154,7 @@
 [pack]
     threads = 0
 [init]
-    templatedir = ~/dotfiles/git
+    templatedir = ~/dotfiles/config/git
 [diff]
     submodule = diff
 [advice]
