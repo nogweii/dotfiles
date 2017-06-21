@@ -94,9 +94,6 @@
 [submodule "vim/bundle/vinegar"]
 	path = vim/bundle/vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule "vim/bundle/tbone"]
-	path = vim/bundle/tbone
-	url = https://github.com/tpope/vim-tbone
 [submodule "vim/bundle/LargeFile"]
 	path = vim/bundle/LargeFile
 	url = https://github.com/vim-scripts/LargeFile
