@@ -107,7 +107,7 @@ alias gen-sha-pwd='head -c512 /dev/random | sha512sum'
 
 # Lazy open command
 if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
-    alias open=gvfs-open
+    alias open='gio open'
 elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
     alias open=kde-open
 fi
