@@ -70,7 +70,7 @@
     # Pull submodules from origin master
     subpull = submodule foreach "git pull origin master"
     # Delete a submodule
-    subrm = !cd ${GIT_PREFIX:-.} && git submodule deinit $1 && git rm $1
+    subrm = !cd ${GIT_PREFIX:-.} && git submodule deinit --force $1 && git rm --force $1
     # Push the current branch for review
     push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
     # Same as push-review, but target master rather than the develop branch
@@ -98,7 +98,7 @@
     # Add every file that hasn't been merged
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     # Generate a graphviz directed graph of the history
-    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    graphviz = "!f() { echo 'digraph git {\n' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '\n}'; }; f"
     # Delete a branch from the remote
     push-deleted-branch = "!f() { [[ -z $2 ]] && git push origin \":${1}\" || git push $1 \":${2}\" }; f"
     # This is funny to me, I like keeping the same commit message for this file
@@ -119,7 +119,12 @@
     recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
     # All of my commits done today
     today = !git lg --since=00:00:00 --all --no-merges  --author=colin@evaryont.me
-
+    # Get the latest tag in the repo
+    latest-tag = describe --tags --abbrev=0
+    # Checkout the latest tag in every submodule
+    subtag = "!git submodule foreach git fetch --tags && git submodule foreach 'git checkout `git latest-tag`'"
+    # Reset the local state of a submodule. (Useful for backing out of changes)
+    subreset = "!f() { git submodule deinit --force $1 && git subup $1; }; f"
 [web]
     browser = kde-open
 [browser "kde-open"]
