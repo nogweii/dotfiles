@@ -135,3 +135,28 @@ task :list do
   puts "Create these directories:"
   pp MAKE_DIRS
 end
+
+namespace :vim do
+  desc "add a vim plugin as a submodule"
+  task :add do
+    require 'readline'
+    require 'octokit'
+    require 'pp'
+    stty_save = %x`stty -g`.chomp
+    trap("INT") { system "stty", stty_save; exit }
+
+    puts "Creating a new submodule in vim/bundle/ from github"
+    buf = Readline.readline("Github project: ", false)
+    latest_tag = Octokit.tags(buf)[0]
+    bundle_dir_name = buf.split('/')[1].sub(/(^vim-?|[-.]?vim$)/, '')
+    if latest_tag
+      puts "Adding vim project #{bundle_dir_name} v#{latest_tag[:name]}"
+      sh "git submodule add https://github.com/#{buf} vim/bundle/#{bundle_dir_name} --branch #{latest_tag[:name]}"
+    else
+      puts "Adding vim project #{bundle_dir_name} HEAD"
+      sh "git submodule add https://github.com/#{buf} vim/bundle/#{bundle_dir_name}"
+    end
+
+    sh "git commit -m 'New vim plugin: #{buf}'"
+  end
+end
