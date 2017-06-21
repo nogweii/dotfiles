@@ -16,3 +16,7 @@ group :irb do
   gem 'racksh'
   gem 'net-http-spy'
 end
+
+group :development do
+  gem 'octokit', "~> 4.0"
+end
