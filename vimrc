@@ -9,7 +9,7 @@ set nowrap                     " Don't wrap lines
 set noerrorbells               " Disable any error bells
 set visualbell                 " Use a visual notification instead of beeping
 set t_vb=                      " Disable the visual bell termcap
-set foldenable                 " Enable folding, at launch
+set nofoldenable               " Enable folding, at launch
 set foldmethod=syntax          " Default to syntax based folds
 set foldminlines=2             " Require at least 2 lines before closing a fold
 set hlsearch                   " Highlight search results
@@ -350,7 +350,7 @@ au BufRead /var/lib/robocode/*.java compiler javac | setlocal makeprg=/var/lib/r
 au FileType tagbar setl nospell
 
 au BufRead,BufNewFile Vagrantfile setlocal filetype=ruby
-au FileType puppet,yaml setlocal nospell
+au FileType puppet,yaml setlocal nospell nocindent
 
 au BufRead,BufNewFile */uzbl/config setlocal filetype=uzbl
 au BufRead,BufNewFile */conkywx/conkywx.conf setlocal filetype=sh
@@ -432,7 +432,7 @@ let g:airline_powerline_fonts = 1
 let g:mustache_abbreviations = 1
 
 set concealcursor=nc
-set conceallevel=2
+"set conceallevel=2
 
 " magic maker map! will call :make but silently -- this will skip the 'Press
 " ENTER to continue' message which is really nice. However, this is may leave
@@ -478,3 +478,7 @@ au BufRead,BufNewFile ~/dotfiles/zsh/functions/* setlocal filetype=zsh
 " keybindings
 "<SNR>58_setup_space("search", "n")
 "<SNR>58_setup_space("search", "N")
+
+let g:ansible_unindent_after_newline = 1
+let g:ansible_name_highlight = 'd'
+let g:ansible_extra_keywords_highlight = 1
