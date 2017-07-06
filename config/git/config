@@ -125,6 +125,8 @@
     subtag = "!git submodule foreach git fetch --tags && git submodule foreach 'git checkout `git latest-tag`'"
     # Reset the local state of a submodule. (Useful for backing out of changes)
     subreset = "!f() { git submodule deinit --force $1 && git subup $1; }; f"
+    # delete all files that are ignored by git
+    rm-ignored = "!rm -v $(git ls-files --others -i --exclude-standard)"
 [web]
     browser = kde-open
 [browser "kde-open"]
