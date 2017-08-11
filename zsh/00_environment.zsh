@@ -44,3 +44,6 @@ export NCURSES_NO_UTF8_ACS=1
 # Set an environment variable if we think we're running within Linux for
 # Windows subsystem (aka Bash on windows)
 [ -d /mnt/c/Windows ] && export LXSS=yep
+
+# Sorry Ansible, I like the sentiment but that's too much scrolling for me.
+export ANSIBLE_NOCOWS=1

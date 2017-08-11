@@ -14,7 +14,7 @@ export TRAVIS_CONFIG_PATH="${HOME}/.config/travis"
 export DOCKER_CONFIG="${HOME}/.config/docker"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
-export HISTFILE="${HOME}/.local/cache/zsh_history"
+export HISTFILE="${HOME}/.local/cache/zsh/history"
 export INPUTRC="${DOTSDIR}/inputrc"
 
 export ANSIBLE_LOCAL_TEMP="${XDG_CACHE_HOME}/ansible/temp"

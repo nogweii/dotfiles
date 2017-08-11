@@ -54,8 +54,8 @@ alias yrm='yes | rm -rvf'
 alias nrm='yrm &>/dev/null'
 alias startxl="startx &>/tmp/startx.log"
 
-alias PS="ps wwaux"
-alias psg="PS G -v grep G"
+alias PS="ps --ppid 1 -ww -o user:23,pid,pcpu,pmem,rss:7,stat,command | less -SR"
+alias psg="PS G -v '[g]rep' G"
 
 alias makepkg="makepkg -s"
 
