@@ -142,3 +142,6 @@
 [submodule "vim/bundle/sslsecure"]
 	path = vim/bundle/sslsecure
 	url = https://github.com/chr4/sslsecure.vim
+[submodule "zsh/plugins/histdb"]
+	path = zsh/plugins/histdb
+	url = https://github.com/larkery/zsh-histdb
