@@ -145,3 +145,9 @@
 [submodule "vim/bundle/dirvish"]
 	path = vim/bundle/dirvish
 	url = https://github.com/justinmk/vim-dirvish
+[submodule "vim/bundle/gtfo"]
+	path = vim/bundle/gtfo
+	url = https://github.com/justinmk/vim-gtfo
+[submodule "vim/bundle/sneak"]
+	path = vim/bundle/sneak
+	url = https://github.com/justinmk/vim-sneak

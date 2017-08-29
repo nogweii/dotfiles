@@ -134,7 +134,8 @@ let s:otherColors = [
                 \ ["diffAdded",                "",      "",     "22",      "",         ""   ],
                 \ ["javaScriptTemplateVar",    "",      "172",  "",        "",         ""   ],
                 \ ["javaScriptTemplateDelim",  "bold",  "166",  "",        "",         ""   ],
-                \ ["javaScriptTemplateString", "",      "162",  "",        "",         ""   ]]
+                \ ["javaScriptTemplateString", "",      "162",  "",        "",         ""   ],
+                \ ["Sneak",           "underline",      "130",  "237",     "",         ""   ]]
 
 " }}}
 

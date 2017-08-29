@@ -496,3 +496,4 @@ command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args
 nnoremap gx :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<cr>
 autocmd FileType dirvish setl nospell
 
+let g:sneak#s_next = 1
