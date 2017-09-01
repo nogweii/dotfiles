@@ -99,9 +99,9 @@ function cawk {
     eval $cmd
 }
 
-for i in ${DOTSDIR}/zsh/functions/* ; do
-  autoload ${i:t}
-  #alias "${i:t}"="unalias '${i:t}'; autoload -U '${i:t}'; ${i:t}"
+local function_file
+for function_file in ${DOTSDIR}/zsh/functions/* ; do
+  autoload ${function_file:t}
 done
 
 function df() {

@@ -1,9 +1,9 @@
 bindkey -v # Vim mode!
 
 # autoload -U zkdb ; zkdb
-file="${XDG_CONFIG_HOME:-"$HOME/.config"}/zsh/zkdb-$TERM-${DISPLAY:-$VENDOR-$OSTYPE}"
-if [ -e $file ] ; then
-    source $file
+local zkdb_file="${XDG_CONFIG_HOME:-"$HOME/.config"}/zsh/zkdb-$TERM-${DISPLAY:-$VENDOR-$OSTYPE}"
+if [ -e $zkdb_file ] ; then
+    source $zkdb_file
     [[ -n ${key[Left]}      ]] && bindkey "${key[Left]}"      backward-char
     [[ -n ${key[Right]}     ]] && bindkey "${key[Right]}"     forward-char
     [[ -n ${key[Up]}        ]] && bindkey "${key[Up]}"        up-line-or-search

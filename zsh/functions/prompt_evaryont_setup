@@ -19,6 +19,23 @@
 #   (none yet)
 #
 
+# Prints the current directory hierarchy, excluding the present directory's
+# name. e.g. If you are in '/opt/vagrant/bin', this prints out '/opt/vagrant/'.
+# (Note the trailing slash!) This is useful, for instance, when you want to
+# color the current directory name differently than the rest of the path.
+function _current_dir_path() {
+  # Techniques for building the current path:
+  # local gitinfo='${${vcs_info_msg_0_%%.}/$HOME/~}'
+  print -P "%-1~/%1~"
+  if [[ $PWD = '/' ]]; then
+    echo ""
+  elif [[ $PWD = $HOME ]]; then
+    echo ""
+  else
+    echo "${$(print -P %~)%/*}/"
+  fi
+}
+
 function prompt_evaryont_precmd {
   local exitstatus=$?
   setopt localoptions noxtrace noksharrays
@@ -75,17 +92,13 @@ function prompt_evaryont_setup {
   autoload -Uz add-zsh-hook
   autoload -Uz vcs_info
 
+  local normal_user max_path_chars
+
   # Customizable parameters.
   zstyle -s ':prompt:evaryont' normal_user 'normal_user' || \
     normal_user="$LOGNAME"
   zstyle -s ':prompt:evaryont' path_length 'max_path_chars' || \
     max_path_chars=$(( $COLUMNS / 3 ))
-
-  # %<..< "specifies truncation behaviour for the remainder of the prompt
-  # string.", which includes the final character demonstrating privilege or not.
-  # This is not part of the path, of course, so add 2 to make room in the
-  # prompt. (Includes the trailing space.)
-  (( max_path_chars = $max_path_chars + 2 ))
 
   # Set vcs_info parameters.
   zstyle -d ':vcs_info:*'
@@ -119,7 +132,7 @@ function prompt_evaryont_setup {
   fi
 
   # Define prompts.
-  PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<\$(_current_dir_path)%F{002}%1~%(!.%F{052}⚡.%F{015})%b%f "
+  PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<%F{014}\${\${(D)PWD:h}%/}/%<<%F{002}\${PWD:t}%(!.%F{052}⚡.%F{015})%b%f "
   RPROMPT="%(?..%F{124}%1v%f! )"'${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd

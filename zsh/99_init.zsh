@@ -42,6 +42,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh 
 source ${DOTSDIR}/zsh/plugins/histdb/history-timer.zsh
-HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
+local HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
 add-zsh-hook preexec _start_timer
 add-zsh-hook precmd  _stop_timer
