@@ -489,8 +489,8 @@ let g:polyglot_disabled = ['markdown', 'puppet']
 
 let g:loaded_netrwPlugin = 1
 command! VleftDirvish leftabove vsplit | vertical resize 30 | silent Dirvish
-nnoremap <silent> _ :VleftDirvish<CR>
-nnoremap <silent> - :Dirvish<CR>
+nnoremap <silent> _ :VleftDirvish %:h<CR>
+nnoremap <silent> - :Dirvish %:h<CR>
 command! -nargs=? -complete=dir Vexplore leftabove vsplit | silent Dirvish <args>
 command! -nargs=? -complete=dir Sexplore belowright split | silent Dirvish <args>
 nnoremap gx :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<cr>
