@@ -184,3 +184,7 @@ function vim() {
     command vim $@
   fi
 }
+
+function psg {
+  ps wwup $(pgrep -f $1) 2>&-
+}

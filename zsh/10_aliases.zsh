@@ -54,9 +54,6 @@ alias yrm='yes | rm -rvf'
 alias nrm='yrm &>/dev/null'
 alias startxl="startx &>/tmp/startx.log"
 
-alias PS="ps --ppid 1 -ww -o user:23,pid,pcpu,pmem,rss:7,stat,command | less -SR"
-alias psg="PS G -v '[g]rep' G"
-
 alias makepkg="makepkg -s"
 
 alias addme='s gpasswd -a colin'
@@ -78,7 +75,13 @@ alias     .='cd'
 
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
-alias portstat="s netstat -tunelp"
+if [ -n "${commands[ss]}" ]; then
+    alias portstat="command sudo ss -lntup"
+elif [ -n "${commands[netstat]}" ]; then
+    alias portstat="sudo netstat -tunelp"
+else
+    alias portstat="echo missing ss and netstat"
+fi
 
 alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
 if [ -n "${commands[hub]}" ]; then
