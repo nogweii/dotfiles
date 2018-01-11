@@ -22,3 +22,12 @@ end
 group :development do
   gem 'octokit', "~> 4.0"
 end
+
+# These gems I like to have available for my machine or are commonly installed.
+group :common do
+  gem 'faraday'
+  gem 'patron'
+  gem 'typhoeus'
+  gem 'nokogiri'
+  gem 'yard'
+end
