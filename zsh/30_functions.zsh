@@ -188,3 +188,9 @@ function vim() {
 function psg {
   ps wwup $(pgrep -f $1) 2>&-
 }
+
+function ssh-agent-kill {
+  ssh-agent -D
+  kill $SSH_AGENT_PID
+  unset SSH_AGENT_PID SSH_AUTH_SOCK
+}
