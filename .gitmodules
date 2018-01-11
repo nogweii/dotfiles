@@ -16,9 +16,6 @@
 [submodule "icons/Faenza"]
 	path = icons/Faenza
 	url = https://github.com/zhelyabuzhsky/faenza
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
@@ -151,3 +148,6 @@
 [submodule "vim/bundle/sneak"]
 	path = vim/bundle/sneak
 	url = https://github.com/justinmk/vim-sneak
+[submodule "zsh/plugins/fast-syntax-highlighting"]
+	path = zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma/fast-syntax-highlighting

@@ -28,7 +28,7 @@ fi
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 
 # Enable syntax highlighting:
-source ${DOTSDIR}/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Enable fish-shell style history search:
 source ${DOTSDIR}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
