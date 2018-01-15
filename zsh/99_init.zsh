@@ -29,6 +29,7 @@ fi
 
 # Enable syntax highlighting:
 source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+FAST_HIGHLIGHT_STYLES[path]=underline
 
 # Enable fish-shell style history search:
 source ${DOTSDIR}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
