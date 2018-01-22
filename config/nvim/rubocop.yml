@@ -1,0 +1,20 @@
+# Rubocop configuration file for NVim and ALE. Neovim will run rubocop against
+# any ruby buffer, so these are the editor-specific global defaults.
+# 
+# Various cops are tweaked to be less annoying, or outright disabled. I don't
+# expect that all ruby code I submit publicly will only be checked against this
+# config. Indeed, specific projects might already include their own
+# configuration as part of the CI pipeline. So this primarily meant to make a
+# better editing experience.
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/LeadingCommentSpace:
+  Enabled: false
