@@ -51,3 +51,5 @@ export ANSIBLE_NOCOWS=1
 # If the faster/simpler find (https://github.com/sharkdp/fd) is installed, use it for fzf
 [ -n "${commands[fd]}" ] && export FZF_DEFAULT_COMMAND="fd --color always --no-ignore"
 export FZF_DEFAULT_OPTS="--inline-info --ansi"
+
+[ -z "${IS_OSX}" ] && export GEM_EDITOR='gio open'
