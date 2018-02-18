@@ -16,7 +16,7 @@ zle -N zle-keymap-select
 
 if [ -n "${commands[keychain]}" ]; then
     # Use keychain to launch a shared SSH agent across terminals
-    eval $(keychain --eval --quiet --timeout 30 --noask --agents ssh --absolute --dir $XDG_CACHE_HOME/keychain --host localhost)
+    eval $(keychain --eval --quiet --timeout 120 --noask --agents ssh --absolute --dir $XDG_CACHE_HOME/keychain --host localhost)
 fi
 
 # Run fortune only if it's installed and we aren't connected to the machine via ssh
