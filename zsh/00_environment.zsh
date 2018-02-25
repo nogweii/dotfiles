@@ -52,4 +52,5 @@ export ANSIBLE_NOCOWS=1
 [ -n "${commands[fd]}" ] && export FZF_DEFAULT_COMMAND="fd --color always --no-ignore"
 export FZF_DEFAULT_OPTS="--inline-info --ansi"
 
-[ -z "${IS_OSX}" ] && export GEM_EDITOR='gio open'
+# When logged into a GNOME desktop, have gem open work as I expect.
+[ "${XDG_SESSION_DESKTOP}" = "gnome" ] && export GEM_EDITOR='gio open'
