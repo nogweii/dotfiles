@@ -2,7 +2,7 @@
 function! s:AppendModeline()
   let save_cursor = getpos('.')
   " Build the modline out of syntax, tabstop, and shiftwidth settings
-  let l:modeline =  ' vim: set syn='.&syntax.' ts='.&tabstop.' sw='.&shiftwidth.':'
+  let l:modeline =  ' vim: set filetype='.&syntax.' ts='.&tabstop.' sw='.&shiftwidth.':'
   " Use &commentstring so that the vim modeline isn't parsed in the file
   let l:modeline = substitute(&commentstring, '%s', l:modeline, '')
   " Reduce any multiple spaces into 1 (often when commentstring includes a
