@@ -18,6 +18,8 @@ iabbrev ofcourse        of course
 iabbrev ofc             of course
 iabbrev headsup         heads up
 iabbrev forcably        forcibly
+iabbrev algorithims     algorithms
+iabbrev privilge        privilege
 
 iabbrev cafe            café
 
