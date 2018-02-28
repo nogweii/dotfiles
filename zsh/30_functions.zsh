@@ -194,3 +194,10 @@ function ssh-agent-kill {
   kill $SSH_AGENT_PID
   unset SSH_AGENT_PID SSH_AUTH_SOCK
 }
+
+function ssh-control-kill {
+  for c in ~/.ssh/control-*; do
+    ssh -oControlPath=$c -O exit localhost
+    [ -e $c ] && rm -v $c
+  done
+}
