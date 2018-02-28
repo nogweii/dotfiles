@@ -21,6 +21,7 @@ end
 
 group :development do
   gem 'octokit', "~> 4.0"
+  gem 'rubocop'
 end
 
 # These gems I like to have available for my machine or are commonly installed.
