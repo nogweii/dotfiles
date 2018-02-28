@@ -207,6 +207,11 @@ nnoremap <silent> ZW :update<CR>
 " Map gt to a motion that aligns text
 nmap gt <Plug>(EasyAlign)
 xmap gt <Plug>(EasyAlign)
+
+" Map H and L to jump to the beginning or end of the line. H is smarter, in
+" that it jumps between the first non-whitespace character or actual column 0.
+noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
+map             L $
 " }}}
 
 " {{{ Plugin configuration settings
@@ -233,7 +238,7 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 let g:hybrid_custom_term_colors = 1
-colorscheme finished
+colorscheme devolved
 
 "highlight statusColNr gui=NONE guifg=#121212 guibg=#005f5f guisp=NONE
 highlight link statusColNr Number
@@ -243,3 +248,5 @@ highlight link statusColNr Number
 "highlight statusFileType gui=NONE guifg=#00afff guibg=#1c1c1c guisp=NONE
 "highlight statusBranch gui=NONE guifg=#ff5f00 guibg=#1c1c1c guisp=NONE
 "highlight statusFlag gui=NONE guifg=#ff00d7 guibg=#1c1c1c guisp=NONE
+
+highlight link jinjaString String
