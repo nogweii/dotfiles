@@ -182,7 +182,9 @@ endfor
 "
 " {{{ check args helper function
 function! s:checkargs(arg)
-    if a:arg+0 == 0 && a:arg != "0"  "its a string
+    if type(a:arg) == type([]) " its an array, get the second value
+        return s:checkargs(a:arg[1])
+    elseif a:arg+0 == 0 && a:arg != "0"  "its a string
         return a:arg
     else
         return s:cmap[a:arg+0]       "get rgb color based on the number
@@ -203,7 +205,7 @@ function! s:guisetcolor(colarg)
         let bg = s:checkargs(a:colarg[3])
         let sp = s:checkargs(a:colarg[5])
 
-        call <SID>Log2File("highlight ".a:colarg[0]." gui=".guival." guifg=".fg." guibg=".bg." guisp=".sp, '/tmp/devolved_hi.vim')
+        "call <SID>Log2File("highlight ".a:colarg[0]." gui=".guival." guifg=".fg." guibg=".bg." guisp=".sp, '/tmp/devolved_hi.vim')
         exec "hi ".a:colarg[0]." gui=".guival." guifg=".fg." guibg=".bg." guisp=".sp
 endfunction
 
@@ -268,7 +270,7 @@ endfun
 " {{{ color loop
 
 " Step one: Highlight normal mode.
-call <SID>Log2File("highlight ".s:standardC[0]." cterm=".s:standardC[1]." ctermfg=".s:standardC[2]." ctermbg=".s:standardC[3], '/tmp/devolved_hi.vim')
+"call <SID>Log2File("highlight ".s:standardC[0]." cterm=".s:standardC[1]." ctermfg=".s:standardC[2]." ctermbg=".s:standardC[3], '/tmp/devolved_hi.vim')
 exec "hi ".s:standardC[0]." cterm=".s:standardC[1]." ctermfg=".s:standardC[2]." ctermbg=".s:standardC[3]
 call s:guisetcolor(s:standardC)
 
@@ -283,7 +285,7 @@ for s:colorBlock in [s:colors256, s:colorvim7, s:otherColors]
             endif
         endfor
         " Missing values filled in, do the hilighting.
-        call <SID>Log2File("highlight ".s:colorRow[0]." cterm=".s:colorRow[1]." ctermfg=".s:colorRow[2]." ctermbg=".s:colorRow[3], '/tmp/devolved_hi.vim')
+        "call <SID>Log2File("highlight ".s:colorRow[0]." cterm=".s:colorRow[1]." ctermfg=".s:colorRow[2]." ctermbg=".s:colorRow[3], '/tmp/devolved_hi.vim')
         exec "hi ".s:colorRow[0]." cterm=".s:colorRow[1]." ctermfg=".s:colorRow[2]." ctermbg=".s:colorRow[3]
         " And do it for the GUI, as well.
         call s:guisetcolor(s:colorRow)
