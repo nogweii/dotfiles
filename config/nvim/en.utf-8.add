@@ -340,3 +340,14 @@ IDM
 MySQL
 kerberos
 Plugins
+fallback
+dyndns
+umask
+hmac
+sha1
+mit
+ntp
+ansible
+os
+telegraf
+EC2
