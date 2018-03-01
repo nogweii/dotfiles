@@ -30,3 +30,6 @@ Layout/TrailingWhitespace:
 # great, so really only warn on VERY long methods.
 Metrics/MethodLength:
   Max: 25
+
+Style/Not:
+  Enabled: false

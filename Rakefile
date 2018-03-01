@@ -4,14 +4,14 @@ ENV['HOME'] = ENV['DOTFILES_HOME_DIR'] if ENV.key? 'DOTFILES_HOME_DIR'
 extra_information = (verbose == true) || (Rake.application.options.trace == true)
 
 # cd to the top of the git repo
-$gitdir = `git rev-parse --show-toplevel`.strip
-Dir.chdir $gitdir
+gitdir = `git rev-parse --show-toplevel`.strip
+Dir.chdir gitdir
 
 # Only show shell commands if we didn't run rake with -v or -t
 RakeFileUtils.verbose_flag = false unless extra_information
 
 def dotfiles
-  (Dir['*'] - %w[Rakefile README.md config Brewfile] + %w[config/git config/conky config/nvim]).sort
+  (Dir['*'] - %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock] + %w[config/git config/conky config/nvim]).sort
 end
 
 DOTFILES = []
@@ -43,7 +43,7 @@ def dottask(dotfile)
 
   # Build the file task that sets up the symlink
   file home_abs_path do
-    if not File.exists? home_abs_path
+    if not File.exist? home_abs_path
       symlink repo_abs_path, home_abs_path
     elsif File.symlink? home_abs_path
       rm_r home_abs_path
@@ -62,23 +62,21 @@ dotfiles.each do |dotfile|
   dottask dotfile
 end
 
-task :default => :dotfiles
+task default: :dotfiles
 
-desc "Symlinks all my dotfiles"
-task :dotfiles => [:submodules, :prepare, DOTFILES, ].flatten
+desc 'Symlinks all my dotfiles'
+task dotfiles: [:submodules, :prepare, DOTFILES].flatten
 
-desc "Removes all my dotfile symlinks"
+desc 'Removes all my dotfile symlinks'
 task :clean do
   dotfiles.each do |dotfile|
     link = File.expand_path("~/.#{dotfile}")
 
-    if File.symlink?(link)
-      rm link
-    end
+    rm link if File.symlink?(link)
   end
 end
 
-desc "Initialize all submodules"
+desc 'Initialize all submodules'
 task :submodules do
   sh 'git submodule update --init --recursive >/dev/null'
 end
@@ -87,18 +85,18 @@ end
 # File.foreach('.gitmodules') {|line| print $1 if line =~ /^\[submodule
 # \"(.*)\"\]/ }
 
-MAKE_DIRS = ["vim/tmp",
-             File.expand_path("~/.local/cache"),
-             File.expand_path("~/.local"),
-             File.expand_path("~/media")]
+MAKE_DIRS = ['vim/tmp',
+             File.expand_path('~/.local/cache'),
+             File.expand_path('~/.local'),
+             File.expand_path('~/media')]
 
-File.open("config/user-dirs.dirs").readlines.each do |user_dir|
+File.open('config/user-dirs.dirs').readlines.each do |user_dir|
   next if user_dir =~ /^#/
   expand_path = user_dir.gsub(/.*="\$HOME\/(.*)"\n/, "#{ENV['HOME']}/\\1")
   MAKE_DIRS << expand_path
 end
 
-File.open("profile").readlines.each do |profile_line|
+File.open('profile').readlines.each do |profile_line|
   next unless profile_line =~ / # dir-make/
   expand_path = profile_line.gsub(/.*="\$\{HOME\}\/(.*)".*\n/, "#{ENV['HOME']}/\\1")
   MAKE_DIRS << expand_path
@@ -116,37 +114,37 @@ end
 CLOBBER << [DOTFILES].flatten
 CLEAN << [MAKE_DIRS].flatten
 
-desc "Prepare extra directories"
+desc 'Prepare extra directories'
 task :prepare => MAKE_DIRS do
   ENV['TERMINFO'] = File.expand_path('~/.local/terminfo')
-  unless File.exists? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
+  unless File.exist? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
     sh 'tic terminfo/screen-256color-italitc.termcap'
   end
-  unless File.exists? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
+  unless File.exist? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
     sh 'tic terminfo/tmux-italics.termcap'
   end
 end
 
-desc "List of everything this rake file will try managing"
+desc 'List of everything this rake file will try managing'
 task :list do
   require 'pp'
-  puts "Symlink these files:"
+  puts 'Symlink these files:'
   pp DOTFILES
-  puts "Create these directories:"
+  puts 'Create these directories:'
   pp MAKE_DIRS
 end
 
 namespace :vim do
-  desc "add a vim plugin as a submodule"
+  desc 'add a vim plugin as a submodule'
   task :add do
     require 'readline'
     require 'octokit'
     require 'pp'
     stty_save = %x`stty -g`.chomp
-    trap("INT") { system "stty", stty_save; exit }
+    trap('INT') { system 'stty', stty_save; exit }
 
-    puts "Creating a new submodule in vim/bundle/ from github"
-    buf = Readline.readline("Github project: ", false)
+    puts 'Creating a new submodule in vim/bundle/ from github'
+    buf = Readline.readline('Github project: ', false)
     latest_tag = Octokit.tags(buf)[0]
     bundle_dir_name = buf.split('/')[1].sub(/(^vim-?|[-.]?vim$)/, '')
     if latest_tag
