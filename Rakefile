@@ -11,7 +11,14 @@ Dir.chdir gitdir
 RakeFileUtils.verbose_flag = false unless extra_information
 
 def dotfiles
-  (Dir['*'] - %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock] + %w[config/git config/conky config/nvim]).sort
+  (
+    # Start with everything in this directory, but not recursively
+    Dir['*'] -
+    # Don't symlink the following
+    %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock] +
+    # Add these extra to the list to be symlink'd
+    %w[config/git config/conky config/nvim]
+  ).sort
 end
 
 DOTFILES = []
