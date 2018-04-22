@@ -33,3 +33,6 @@ Metrics/MethodLength:
 
 Style/Not:
   Enabled: false
+
+Style/AsciiComments: # fuck that, Unicode is awesome.
+  Enabled: false
