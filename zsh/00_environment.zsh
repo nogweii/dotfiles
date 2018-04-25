@@ -51,3 +51,8 @@ export ANSIBLE_NOCOWS=1
 # If the faster/simpler find (https://github.com/sharkdp/fd) is installed, use it for fzf
 [ -n "${commands[fd]}" ] && export FZF_DEFAULT_COMMAND="fd --color always --no-ignore"
 export FZF_DEFAULT_OPTS="--inline-info --ansi"
+
+# By default, git doesn't have an email set. I use environment variables to
+# control it. Override in ~/.zshrc.local.
+export GIT_AUTHOR_EMAIL="colin@evaryont.me"
+export GIT_COMMITTER_EMAIL="colin@evaryont.me"

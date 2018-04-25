@@ -2,7 +2,6 @@
     user = evaryont
 [user]
     name = Colin Shea
-    email = colin@evaryont.me
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [apply]
     whitespace = fix
