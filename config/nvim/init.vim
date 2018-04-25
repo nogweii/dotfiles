@@ -26,6 +26,7 @@ endif
 call plug#begin($VIMUSERRUNTIME . '/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot', { 'tag': '*' }
+Plug 'nathanielc/vim-tickscript'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale', { 'tag': '*' }
 

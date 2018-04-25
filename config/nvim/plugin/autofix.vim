@@ -21,9 +21,11 @@ iabbrev forcably        forcibly
 iabbrev algorithims     algorithms
 iabbrev privilge        privilege
 
+" Auto-add some accents
 iabbrev cafe            café
+iabbrev naive           naïve
 
-" a subset from http://simple.wikipedia.org/wiki/List_of_common_misspellings_in_English
+" a subset from https://simple.wikipedia.org/wiki/Commonly_misspelled_words
 iabbrev abberration     aberration
 iabbrev accomodation    accommodation
 iabbrev acheive         achieve
