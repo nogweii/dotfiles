@@ -14,6 +14,7 @@ setopt   check_jobs             # warn me when jobs are running on exit
 setopt   correct                # if I typo a command name, offer suggestions
 setopt   extended_glob          # Advanced shell globs
 setopt   extended_history       # Save time related information to history
+unsetopt flow_control           # Disable flow control, opening C-s and C-q keys
 setopt   hash_cmds              # faster command execution, save a $PATH search
 setopt   hist_expire_dups_first # when trimming history, start with duplicates
 setopt   hist_find_no_dups      # when doing history searches, ignore duplicates
