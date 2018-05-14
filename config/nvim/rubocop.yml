@@ -21,3 +21,18 @@ Layout/LeadingCommentSpace:
 
 Style/PercentLiteralDelimiters:
   Enabled: false
+
+# TODO: get vim to highlight trailing spaces instead
+Layout/TrailingWhitespace:
+  Enabled: true
+
+# Bump up the line count limit for methods. Some of my scripts are just not
+# great, so really only warn on VERY long methods.
+Metrics/MethodLength:
+  Max: 25
+
+Style/Not:
+  Enabled: false
+
+Style/AsciiComments: # fuck that, Unicode is awesome.
+  Enabled: false

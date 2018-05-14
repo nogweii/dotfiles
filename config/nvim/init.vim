@@ -213,6 +213,10 @@ xmap gt <Plug>(EasyAlign)
 " that it jumps between the first non-whitespace character or actual column 0.
 noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 map             L $
+
+" Quickly toggle the asynchronous lint engine. It causes a bit of lag in the
+" editor, so it's disabled by default.
+nnoremap <silent> ZY :ALEToggle<CR>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -221,6 +225,9 @@ map             L $
 " Point rubocop at my Vim-specific configuration file, that makes the
 " real-time feedback more pleasant.
 let g:ale_ruby_rubocop_options = "--config " . $VIMUSERRUNTIME . "/rubocop.yml"
+
+" Disable ALE by default
+let g:ale_enabled = 0
 " }}}}
 
 " }}}

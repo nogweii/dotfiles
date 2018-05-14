@@ -56,3 +56,6 @@ export FZF_DEFAULT_OPTS="--inline-info --ansi"
 # control it. Override in ~/.zshrc.local.
 export GIT_AUTHOR_EMAIL="colin@evaryont.me"
 export GIT_COMMITTER_EMAIL="colin@evaryont.me"
+
+# When logged into a GNOME desktop, have gem open work as I expect.
+[ "${XDG_SESSION_DESKTOP}" = "gnome" ] && export GEM_EDITOR='gio open'
