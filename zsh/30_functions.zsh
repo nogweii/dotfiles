@@ -201,3 +201,20 @@ function ssh-control-kill {
     [ -e $c ] && rm -v $c
   done
 }
+
+function pet-prev() {
+  echo "Saving previous command as a snippet"
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+
+function tls-info() {
+   echo | openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null | openssl x509 -text -noout
+}

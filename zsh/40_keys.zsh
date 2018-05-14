@@ -33,3 +33,14 @@ zle -C complete-file menu-expand-or-complete _generic
 zstyle ':completion:complete-file:*' completer _files
 bindkey -M viins '^Xf' complete-file
 bindkey -M viins '^X^F' complete-file
+
+# Quickly search through my snippet collection
+bindkey -M viins '^X^S' pet-select
+
+# Press Alt-S to rapidly prepend sudo to the beginning of the line
+function insert-sudo() {
+    zle beginning-of-line
+    zle -U "sudo "
+}
+zle -N insert-sudo
+bindkey "^[s" insert-sudo
