@@ -4,5 +4,5 @@
 " If we're running in NeoVim-GTK...
 if exists('g:GtkGuiLoaded')
   " Change the font
-  call rpcnotify(1, 'Gui', 'Font', 'DejaVu Sans Mono 12')
+  call rpcnotify(1, 'Gui', 'Font', 'SauceCodePro Nerd Font 14')
 endif
