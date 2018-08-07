@@ -40,3 +40,6 @@ export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
 
 # Set `pip install` to install to the user directory rather than system-wide
 export PIP_USER=yes
+
+# Move the kerberos credentials cache out of /tmp
+export KRB5CCNAME="${XDG_DATA_HOME}/krb5cc"
