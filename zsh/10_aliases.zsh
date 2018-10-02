@@ -68,6 +68,9 @@ alias vim2html='vim -c "let html_number_lines = 1" -c "let use_xhtml =1 " -c "le
 alias mailcount="find $MAILDIR | grep -P new\/.? | sed 's@.*mail/\(.*\)/new.*@\1@' | awk '{a[\$1]++}END{for(i in a){print a[i] \" \" i}}' | sort -rn"
 alias wtf="wtf -f $HOME/.config/acronyms.wtf"
 
+# e will open the editor, whichever that one is
+alias e='$EDITOR'
+
 ########################
 # 'special' character aliases.
 alias --  -="cd - &>/dev/null; ls"  # Go to the last directory
@@ -145,3 +148,6 @@ alias npm8gb='node --max-old-space-size=8192 /usr/bin/npm'
 
 alias server-ports="sudo ss -lntup | sed 's/users:((\"\([^\"]*\)\",pid.*$/\1/' | tail -n+2 | awk '{ printf \"%-17s %s/%s\n\", \$7, \$5, \$1 }' | sort"
 alias vim-plug-update='nvim +PlugInstall +PlugUpdate +PlugUpgrade +3sleep +qa!'
+
+alias vim='echo "Stop that! Use e instead." && sleep 3 && command vim'
+alias nvim='echo "Stop that! Use e instead." && sleep 3 && command nvim'
