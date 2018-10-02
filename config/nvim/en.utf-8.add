@@ -329,7 +329,7 @@ systemd
 homelab
 letsencrypt
 oVirt
-ovirt
+#virt
 FQDN
 Synology
 hypervisor
@@ -351,3 +351,11 @@ ansible
 os
 telegraf
 EC2
+orchestrators
+sysadmin
+Kubernetes
+PaaS
+Versioned
+challenegs
+ovirt/!
+oVirt
