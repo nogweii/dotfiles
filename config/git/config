@@ -126,6 +126,8 @@
     subreset = "!f() { git submodule deinit --force $1 && git subup $1; }; f"
     # delete all files that are ignored by git
     rm-ignored = "!rm -v $(git ls-files --others -i --exclude-standard)"
+    # show the remote url for the current branch
+    remote-url = "!git ls-remote --get-url $(git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD))"
 [web]
     browser = kde-open
 [browser "kde-open"]
