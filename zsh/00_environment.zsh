@@ -1,6 +1,17 @@
 # Personal preferences. XDG uses these, among other applications
-export EDITOR="vim"
 export PAGER="less"
+
+# Find a flavor of vim to use as my editor.
+#if [ -n "${commands[nvim-gtk]}" ]; then
+#    export EDITOR="nvim-gtk"
+if [ -n "${commands[nvim]}" ]; then
+    export EDITOR="nvim"
+elif [ -n "${commands[vim]}" ]; then
+    export EDITOR="vim"
+else
+    export EDITOR="vi"
+fi
+
 if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
     export BROWSER="gvfs-open"
 elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
