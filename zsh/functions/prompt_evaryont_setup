@@ -139,3 +139,5 @@ function prompt_evaryont_setup {
 }
 
 prompt_evaryont_setup "$@"
+
+# vim: set filetype=zsh:
