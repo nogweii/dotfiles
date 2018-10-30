@@ -14,8 +14,13 @@ function zle-line-init {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-if [ -n "${commands[keychain]}" ]; then
-    # Use keychain to launch a shared SSH agent across terminals
+# As of GNOME 3.28, the keyring agent wraps the upstream OpenSSH agent process
+# and so I like it now. Set the AUTH_SOCK variable when it's around
+if [ -S "${XDG_RUNTIME_DIR}/keyring/ssh" ]; then
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/keyring/ssh"
+elif [ -n "${commands[keychain]}" ]; then
+    # Use keychain to launch a shared SSH agent across terminals when there is
+    # no gnome-keyring
     eval $(keychain --eval --quiet --timeout 120 --noask --agents ssh --absolute --dir $XDG_CACHE_HOME/keychain --host localhost)
 fi
 
