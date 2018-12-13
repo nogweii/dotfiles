@@ -196,8 +196,14 @@ function ssh-agent-kill {
 }
 
 function ssh-control-kill {
-  for c in ~/.ssh/control-*; do
+  # don't complain about empty glob matches
+  setopt null_glob
+  unsetopt nomatch
+
+  for c in ~/.ssh/control-*(=) $ANSIBLE_SSH_CONTROL_PATH_DIR/*(=); do
+    echo "Killing $c"
     ssh -oControlPath=$c -O exit localhost
+    sleep 0.5 # give a chance for the background ssh process to exit
     [ -e $c ] && rm -v $c
   done
 }
