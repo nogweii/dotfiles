@@ -70,3 +70,5 @@ export GIT_COMMITTER_EMAIL="colin@evaryont.me"
 
 # When logged into a GNOME desktop, have gem open work as I expect.
 [ "${XDG_SESSION_DESKTOP}" = "gnome" ] && export GEM_EDITOR='gio open'
+
+[ -n "${LXSS}" ] && export WINUSER="$(/mnt/c/Windows/System32/whoami.exe | sed 's/^.*\\//' | tr -d '\n\r')"
