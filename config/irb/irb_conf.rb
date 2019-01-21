@@ -67,9 +67,17 @@ begin
   end
 
   Thread.abort_on_exception = true
-  ARGV.concat ['--readline', '--prompt-mode', 'simple']
+  IRB.conf[:PROMPT][:EVS_CUSTOM] = {
+    :PROMPT_I => "#{Rainbow('ruby' + RUBY_VERSION[0..2]).red}💎 >> ",  # basic prompt
+    :PROMPT_N => "#{Rainbow('ruby' + RUBY_VERSION[0..2]).red}💎  > ",  # indented/nested code
+    :PROMPT_S => "#{Rainbow('ruby' + RUBY_VERSION[0..2]).red} %l .. ",  # string continuation
+    :PROMPT_C => "#{Rainbow('ruby' + RUBY_VERSION[0..2]).red}💎 ?> ",  # statement continuation
+    :RETURN => "=> %s\n"    # return value (irb_rocket overrides this)
+  }
+  IRB.conf[:PROMPT_MODE] = :EVS_CUSTOM
+  IRB.conf[:AUTO_INDENT] = true
 
-  IRB.conf[:USE_READLINE] = true # Use readline
+  IRB.conf[:USE_READLINE] = true # Enable a much more comfortable CLI experience
 
   # http://ozmm.org/posts/time_in_irb.html
   def time(times = 1)
