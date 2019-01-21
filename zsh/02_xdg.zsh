@@ -24,7 +24,7 @@ export GIMP2_DIRECTORY="${XDG_CONFIG_HOME}/gimp"
 
 # Move the user base directory to a subdirectory beneath .local, so the bin,
 # lib, etc directories don't pollute the top level directory
-export PYTHONUSERBASE=~/.local/pypi/
+export PYTHONUSERBASE=~/.local/pypi
 export PYTHON_EGG_CACHE="${XDG_CACHE_HOME}/python-eggs"
 
 export GOPATH=~/.local/go
