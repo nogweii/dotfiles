@@ -17,7 +17,7 @@ def dotfiles
     # Don't symlink the following
     %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock] +
     # Add these extra to the list to be symlink'd
-    %w[config/git config/conky config/nvim]
+    %w[config/git config/conky config/nvim config/krb5_ipa.conf]
   ).sort
 end
 
