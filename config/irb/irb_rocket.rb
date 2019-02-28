@@ -66,7 +66,7 @@ module IRB
     def output_value
       return ' ' if @io.nil?
       last = @context.io.prompt + @last_line.split("\n").last
-      @io.print(rc + cuu1 + (cuf1*(last.length+1)) + " " +
+      @io.print(rc + cuu1 + (cuf1*last.length) + " " +
         Wirble::Colorize::Color.escape(:blue) + "#=>" + sgr0 +
         " " + @context.last_value.ai + cud1)
     end

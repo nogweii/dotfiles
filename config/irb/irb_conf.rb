@@ -74,7 +74,8 @@ begin
     :PROMPT_C => "#{Rainbow('ruby' + RUBY_VERSION[0..2]).red}💎 ?> ",  # statement continuation
     :RETURN => "=> %s\n"    # return value (irb_rocket overrides this)
   }
-  IRB.conf[:PROMPT_MODE] = :EVS_CUSTOM
+  #IRB.conf[:PROMPT_MODE] = :EVS_CUSTOM
+  IRB.conf[:PROMPT_MODE] = :SIMPLE
   IRB.conf[:AUTO_INDENT] = true
 
   IRB.conf[:USE_READLINE] = true # Enable a much more comfortable CLI experience
