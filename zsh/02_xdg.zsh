@@ -30,7 +30,7 @@ export PYTHON_EGG_CACHE="${XDG_CACHE_HOME}/python-eggs"
 export GOPATH=~/.local/go
 
 export TMUX_TMPDIR="${XDG_RUNTIME_DIR}"
-export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
+[ -z "${XAUTHORITY}" ] && export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority"
 
 export RANDFILE="${XDG_CACHE_HOME}/rnd"
 
