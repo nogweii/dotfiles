@@ -20,3 +20,6 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
 
   unset cmds cmd
 fi
+
+# Want a list of commands grc supports?
+# > for i in /usr/share/grc/conf.*; echo ${${i:t}#conf.}
