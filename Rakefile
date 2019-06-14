@@ -165,3 +165,37 @@ namespace :vim do
     sh "git commit -m 'New vim plugin: #{buf}'"
   end
 end
+
+desc 'Check for any extra elements missing from this system'
+task :doctor => ['doctor:binaries', 'doctor:fonts']
+
+namespace :doctor do
+
+  desc 'Find any missing CLI tools to fully make me comfortable'
+  task :binaries do
+
+    %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg wget
+       curl vim nvim yarn irb].each do |binary|
+
+      next if ENV['PATH'].split(':').any? do |path|
+        File.exists? File.join(path, binary)
+      end
+      warn "Missing binary: #{binary}"
+    end
+
+  end
+
+  desc 'Check that all of my favorite fonts are available'
+  task :fonts do
+    all_fonts = `fc-list`.split("\n")
+
+    [
+      /Noto Color Emoji/,
+      /nerd font/i
+    ].each do |font|
+      next if all_fonts.any? font
+      warn "Missing font matching #{font}"
+    end
+  end
+
+end
