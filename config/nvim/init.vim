@@ -88,6 +88,10 @@ Plug 'Shougo/neco-syntax'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'wincent/command-t', {
+  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+  \ }
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
@@ -126,8 +130,15 @@ augroup super_tab_completion
 
   autocmd BufEnter  *  call ncm2#enable_for_buffer()
 
+  " Set mappings for only supported filetypes.
+  autocmd FileType * call LanguageClient_Maps()
   " Run gofmt and goimports on save
-  autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()<Paste>
+  autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+  autocmd CursorHold * call LanguageClient_Hovering()
+
+  autocmd User LanguageClientStarted setlocal signcolumn=yes
+  autocmd User LanguageClientStopped setlocal signcolumn=auto
+  autocmd User LanguageClientStarted :lcd b:LanguageClient_projectRoot
 augroup END
 
 " }}}
@@ -211,9 +222,10 @@ nnoremap gQ gqap
 "   nmap   ZS :split <C-R>=expand("%:h")<CR>/
 "   nmap   ZV :vnew <C-R>=expand("%:h")<CR>/
 " endif
-nnoremap ZE :e <C-R>=expand("%:h")<CR>/
-nnoremap ZS :split <C-R>=expand("%:h")<CR>/
-nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
+"nnoremap ZE <Plug>(CommandT)
+nmap <silent> ZE <Plug>(CommandT)
+"nnoremap ZS :split <C-R>=expand("%:h")<CR>/
+"nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -230,7 +242,7 @@ nnoremap ' `
 nnoremap <silent> zP :set spell!<CR>
 
 " Clear the screen of artifacts, and clear highlighting too.
-map <silent> <c-l> <c-l>:nohlsearch<CR>
+map <silent> <c-l> <c-l>:nohlsearch<CR>:call LanguageClient#clearDocumentHighlight()<CR>
 
 " Immediately select the recommended spelling correction of the word underneath
 nnoremap zp 1z=
@@ -263,10 +275,6 @@ nmap ZK <Plug>ZVKeyDocset
 
 inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 
-nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> Z= :call LanguageClient#textDocument_formatting_sync()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -289,11 +297,13 @@ let g:zv_file_types = {
   \   '\v^(G|g)ulpfile\.js': 'gulp,javascript,nodejs',
   \   '\v^(md|mdown|mkd|mkdn)$': 'markdown',
   \   '\v^(G|g)runt\.': 'grunt,javascript,nodejs',
-  \    '.htaccess': 'apache_http_server',
+  \   '.htaccess': 'apache_http_server',
+  \   'ansible.cfg': 'ansible',
   \ }
 " }}}}
 
 " {{{{ Language server configuration
+" Configure the language servers
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.local/cargo/bin/rls'],
     \ 'ruby': ['~/.local/ruby/bin/solargraph', 'stdio'],
@@ -307,25 +317,17 @@ let g:LanguageClient_serverCommands = {
     \ 'scss': ['~/.local/node/bin/css-languageserver', '--stdio'],
     \ 'html': ['~/.local/node/bin/html-languageserver', '--stdio']
     \ }
+" Only send text updates to the language server every this seconds
+let g:LanguageClient_changeThrottle = 0.5
+" Don't use fzf for the context menu
+let g:LanguageClient_fzfContextMenu = 0
+let g:LanguageClient_hoverPreview = 'Never'
 " }}}}
 
 let g:zv_disable_mapping = 1
 
 " }}}
 
-"untime macros/matchit.vim " Extend % matching
-"runtime ftplugin/man.vim " :Man command
-
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'transparent_background': 1,
-  \       'override' : {
-  \         'color00' : ['#212529', '235'],
-  \       }
-  \     }
-  \   }
-  \ }
 let g:hybrid_custom_term_colors = 1
 colorscheme devolved
 
@@ -340,6 +342,8 @@ highlight link statusColNr Number
 
 highlight link jinjaString String
 
+" {{{ Supporting plugins
+
 function <SID>SmartZeal(is_visual)
   if &keywordprg ==? ':Man'
     if a:is_visual
@@ -351,3 +355,21 @@ function <SID>SmartZeal(is_visual)
     normal! K
   endif
 endfunction
+
+fun LanguageClient_Maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
+    nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <silent> Z=   :call LanguageClient#textDocument_formatting_sync()<CR>
+    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    nnoremap <silent> ZT   :call LanguageClient#textDocument_documentSymbol()<CR>
+  endif
+endf
+
+fun LanguageClient_Hovering()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    call LanguageClient#textDocument_hover()
+  endif
+endf
+
+" }}}
