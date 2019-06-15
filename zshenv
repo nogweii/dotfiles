@@ -25,10 +25,11 @@ emulate sh -c "source ${DOTSDIR}/profile"
 path=(
   $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/bin             # Machine-local artisinal scripts
-  $HOME/.local/ruby/bin        # User-installed rubygems
-  $HOME/.local/pypi/bin        # User-installed pip packages
+  $HOME/.local/ruby/bin        # User-installed ruby gems
+  $HOME/.local/pypi/bin        # User-installed python packages
   $HOME/.local/node/bin        # User-installed npm packages
   $HOME/.local/go/bin          # User-installed go packages
+  $HOME/.local/cargo/bin       # User-installed rust packages
   /usr/local/{bin,sbin}        # Local administrator installed/odd-ball commands
   /usr/{bin,sbin}              # Most programs & binaries
   /{bin,sbin}                  # Lower-level, "basic" commands
