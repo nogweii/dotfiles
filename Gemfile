@@ -34,3 +34,6 @@ group :common do
   gem 'nokogiri'
   gem 'yard'
 end
+
+# This is the ruby Language Server -- brining IDE functionality to every editor
+gem 'solargraph'
