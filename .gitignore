@@ -21,6 +21,7 @@ Gemfile.lock
 .bundle/
 config/git/spindle
 config/nvim/autoload/plug.vim
+config/nvim/autoload/plug.vim.old
 config/nvim/plugged/
 config/nvim/doc/plug.txt
 config/nvim/doc/tags
