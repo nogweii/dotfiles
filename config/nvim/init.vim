@@ -169,7 +169,7 @@ set sidescrolloff=7            " Always show this at least this many columns
 set fileencoding=utf-8         " Default to assuming files are encoded in UTF-8
 set updatetime=2000            " Millisecs idle before calling the CursorHold
 set complete+=k,kspell         " Scan dictionaries for completion as well
-set completeopt=noinsert,menuone,noselect,preview
+set completeopt=noinsert,menuone,noselect
 set virtualedit+=block         " Block movement can go beyond end-of-line
 set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
@@ -350,7 +350,7 @@ highlight link jinjaString String
 " {{{ Supporting plugins
 
 function <SID>SmartZeal(is_visual)
-  if &keywordprg ==? ':Man'
+  if &kywordprg ==? ':Man'
     if a:is_visual
       ZeavimV
     else
@@ -361,7 +361,7 @@ function <SID>SmartZeal(is_visual)
   endif
 endfunction
 
-fun LanguageClient_Maps()
+function LanguageClient_Maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
     nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
     nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
@@ -369,12 +369,12 @@ fun LanguageClient_Maps()
     nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
     nnoremap <silent> ZT   :call LanguageClient#textDocument_documentSymbol()<CR>
   endif
-endf
+endfunction
 
-fun LanguageClient_Hovering()
+function LanguageClient_Hovering()
   if has_key(g:LanguageClient_serverCommands, &filetype)
     call LanguageClient#textDocument_hover()
   endif
-endf
+endfunction
 
 " }}}
