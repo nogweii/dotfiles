@@ -12,27 +12,16 @@ alias -g   U='|uniq'
 
 ########################
 # Listing aliases
-alias      ls='ls --color=auto -F'
-alias     lsa='ls -A'                      # only show dot-files
-alias     lsw='ls -d *(R,W,X.^ND/)'        # world-{readable,writable,executable} files
-alias     lsd='ls -d *(/)'                 # only show directories
-alias     lse='ls -d *(/^F)'               # only show empty directories
-alias     lss='ls *(s,S,t)'                # only files with setgid/setuid/sticky
-alias     lsl='ls *(@)'                    # only symlinks
-alias     lsx='ls *(*)'                    # only executables
-alias   lsnew="ls -rl *(D.om[1,10])"       # display the newest files
-alias   lsold="ls -rtlh *(D.om[1,10])"     # display the oldest files
-alias   lsbig="ls -flh *(.OL[1,10])"       # display the biggest files
-alias lssmall="ls -Srl *(.oL[1,10])"       # display the smallest files
-# `ll' series of listing aliases: More detailed, and more verbose.
-alias      ll='ls -lAh'
-alias     llw='ll -d *(R,W,X.^ND/)'        # world-{readable,writable,executable} files
-alias     lld='ll -d *(/)'                 # only show directories
-alias     lle='ll -d *(/^F)'               # only show empty directories
-alias     lls='ll *(s,S,t)'                # only files with setgid/setuid/sticky
-alias     lll='ll *(@)'                    # only symlinks
-alias     llx='ll *(*)'                    # only executables
-
+if [ -n "${commands[lsd]}" ]; then
+    alias ls='command lsd --icon=auto --color=auto -F'
+else
+    alias ls='ls --color=auto -F'
+fi
+alias    lsa='ls -A'                      # only show dot-files
+alias    lsd='ls -d *(/)'                 # only show directories
+alias    lsx='ls *(*)'                    # only executables
+alias     ll='ls -lAh'
+alias    lld='ll -d *(/)'                 # only show directories
 
 ########################
 # Default aliases
@@ -149,5 +138,7 @@ alias npm8gb='node --max-old-space-size=8192 /usr/bin/npm'
 alias server-ports="sudo ss -lntup | sed 's/users:((\"\([^\"]*\)\",pid.*$/\1/' | tail -n+2 | awk '{ printf \"%-17s %s/%s\n\", \$7, \$5, \$1 }' | sort"
 alias vim-plug-update='nvim +PlugInstall +PlugUpdate +PlugUpgrade +3sleep +qa!'
 
-alias vim='echo "Stop that! Use e instead." && sleep 3 && command vim'
-alias nvim='echo "Stop that! Use e instead." && sleep 3 && command nvim'
+if [ -n "${commands[nvim]}" ]; then
+    alias vi=nvim
+    alias vim=nvim
+fi

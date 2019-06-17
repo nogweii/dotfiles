@@ -69,13 +69,28 @@ Plug 'nlknguyen/papercolor-theme'
 Plug 'w0ng/vim-hybrid'
 Plug 'kristijanhusak/vim-hybrid-material'
 
-" " When I change my init.vim, auto-update everything
-" if getftime($MYVIMRC) > getftime($VIMUSERRUNTIME . '/plugged')
-"   augroup plug_autoupdate
-"     autocmd!
-"     autocmd VimEnter * PlugUpdate | PlugUpgrade | PlugClean!
-"   augroup END
-" endif
+" Integrate with external tools
+Plug 'KabbAmine/zeavim.vim'
+Plug 'junegunn/fzf'
+
+" Super advanced completion!
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-syntax'
+Plug 'ncm2/ncm2-ultisnips'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/neco-syntax'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+Plug 'wincent/command-t', {
+  \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+  \ }
 
 call plug#end() " }}}
 
@@ -97,6 +112,35 @@ augroup recalculate_scrolloffset
   autocmd!
   au VimResized * execute 'set scrolloff='.(&lines-2)
 augroup END
+
+augroup nvim_default_tweaking
+  autocmd!
+" au BufReadPost * if &keywordprg ==? ':Man' | set keywordprg= | endif
+  au FileType css,scss setlocal iskeyword+=-
+augroup END
+
+augroup manual_docset_definitions
+  autocmd!
+  au BufReadPost $MYVIMRC let b:manualDocset = 'vim'
+  au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
+augroup END
+
+augroup super_tab_completion
+  autocmd!
+
+  autocmd BufEnter  *  call ncm2#enable_for_buffer()
+
+  " Set mappings for only supported filetypes.
+  autocmd FileType * call LanguageClient_Maps()
+  " Run gofmt and goimports on save
+  autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+  autocmd CursorHold * call LanguageClient_Hovering()
+
+  autocmd User LanguageClientStarted setlocal signcolumn=yes
+  autocmd User LanguageClientStopped setlocal signcolumn=auto
+  autocmd User LanguageClientStarted :lcd b:LanguageClient_projectRoot
+augroup END
+
 " }}}
 
 " {{{ NeoVim settings
@@ -125,7 +169,7 @@ set sidescrolloff=7            " Always show this at least this many columns
 set fileencoding=utf-8         " Default to assuming files are encoded in UTF-8
 set updatetime=2000            " Millisecs idle before calling the CursorHold
 set complete+=k,kspell         " Scan dictionaries for completion as well
-set completeopt=menuone,longest,preview
+set completeopt=noinsert,menuone,noselect
 set virtualedit+=block         " Block movement can go beyond end-of-line
 set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
@@ -178,9 +222,10 @@ nnoremap gQ gqap
 "   nmap   ZS :split <C-R>=expand("%:h")<CR>/
 "   nmap   ZV :vnew <C-R>=expand("%:h")<CR>/
 " endif
-nnoremap ZE :e <C-R>=expand("%:h")<CR>/
-nnoremap ZS :split <C-R>=expand("%:h")<CR>/
-nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
+"nnoremap ZE <Plug>(CommandT)
+nmap <silent> ZE <Plug>(CommandT)
+"nnoremap ZS :split <C-R>=expand("%:h")<CR>/
+"nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -197,7 +242,7 @@ nnoremap ' `
 nnoremap <silent> zP :set spell!<CR>
 
 " Clear the screen of artifacts, and clear highlighting too.
-map <silent> <c-l> <c-l>:nohlsearch<CR>
+map <silent> <c-l> <c-l>:nohlsearch<CR>:call LanguageClient#clearDocumentHighlight()<CR>
 
 " Immediately select the recommended spelling correction of the word underneath
 nnoremap zp 1z=
@@ -217,6 +262,21 @@ map             L $
 " Quickly toggle the asynchronous lint engine. It causes a bit of lag in the
 " editor, so it's disabled by default.
 nnoremap <silent> ZY :ALEToggle<CR>
+
+" Launch Zeal from vim easily: Press K! (unless you specify a custom keyword
+" program to search for)
+nnoremap <silent> K :call <SID>SmartZeal(0)<CR>
+vnoremap <silent> K :call <SID>SmartZeal(1)<CR>
+nmap ZK <Plug>ZVKeyDocset
+
+" Use <TAB> to select the popup menu
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+"imap <silent> <CR> <CR><Plug>DiscretionaryEnd
+imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
+
 " }}}
 
 " {{{ Plugin configuration settings
@@ -230,21 +290,49 @@ let g:ale_ruby_rubocop_options = "--config " . $VIMUSERRUNTIME . "/rubocop.yml"
 let g:ale_enabled = 0
 " }}}}
 
+" {{{{ Zeal/Vim integration
+let g:zv_file_types = {
+  \   'yaml.ansible': 'ansible',
+  \   'scss': 'css,sass',
+  \   'html': 'html,css,javascript',
+  \   'python': 'python_3',
+  \   '\v^(G|g)ulpfile\.js': 'gulp,javascript,nodejs',
+  \   '\v^(md|mdown|mkd|mkdn)$': 'markdown',
+  \   '\v^(G|g)runt\.': 'grunt,javascript,nodejs',
+  \   '.htaccess': 'apache_http_server',
+  \   'ansible.cfg': 'ansible',
+  \ }
+" }}}}
+
+" {{{{ Language server configuration
+" Configure the language servers
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.local/cargo/bin/rls'],
+    \ 'ruby': ['~/.local/ruby/bin/solargraph', 'stdio'],
+    \ 'go': ['~/.local/go/bin/gopls'],
+    \ 'python': ['~/.local/pypi/bin/pyls'],
+    \ 'dockerfile': ['~/.local/node/bin/docker-langserver', '--stdio'],
+    \ 'sh': ['bash-language-server', 'start'],
+    \ 'javascript': ['~/.local/node/bin/javascript-typescript-stdio'],
+    \ 'vim': ['~/.local/node/bin/vim-language-server', '--stdio'],
+    \ 'css': ['~/.local/node/bin/css-languageserver', '--stdio'],
+    \ 'scss': ['~/.local/node/bin/css-languageserver', '--stdio'],
+    \ 'html': ['~/.local/node/bin/html-languageserver', '--stdio']
+    \ }
+" Only send text updates to the language server every this seconds
+let g:LanguageClient_changeThrottle = 0.5
+" Don't use fzf for the context menu
+let g:LanguageClient_fzfContextMenu = 0
+let g:LanguageClient_hoverPreview = 'Never'
+" }}}}
+
+" {{{{ Disable mappings from various plugins
+let g:zv_disable_mapping = 1
+let g:endwise_no_mappings = 1
+" }}}}
+
 " }}}
 
-runtime macros/matchit.vim " Extend % matching
-runtime ftplugin/man.vim " :Man command
-
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'transparent_background': 1,
-  \       'override' : {
-  \         'color00' : ['#212529', '235'],
-  \       }
-  \     }
-  \   }
-  \ }
 let g:hybrid_custom_term_colors = 1
 colorscheme devolved
 
@@ -258,3 +346,35 @@ highlight link statusColNr Number
 "highlight statusFlag gui=NONE guifg=#ff00d7 guibg=#1c1c1c guisp=NONE
 
 highlight link jinjaString String
+
+" {{{ Supporting plugins
+
+function <SID>SmartZeal(is_visual)
+  if &kywordprg ==? ':Man'
+    if a:is_visual
+      ZeavimV
+    else
+      Zeavim
+    endif
+  else
+    normal! K
+  endif
+endfunction
+
+function LanguageClient_Maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
+    nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <silent> Z=   :call LanguageClient#textDocument_formatting_sync()<CR>
+    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    nnoremap <silent> ZT   :call LanguageClient#textDocument_documentSymbol()<CR>
+  endif
+endfunction
+
+function LanguageClient_Hovering()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    call LanguageClient#textDocument_hover()
+  endif
+endfunction
+
+" }}}
