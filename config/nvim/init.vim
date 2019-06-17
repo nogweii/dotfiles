@@ -37,7 +37,7 @@ Plug 'justinmk/vim-gtfo'
 " Tim Pope series of plugins. Quite a prolific vimscript author!
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-"Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-rsi'
@@ -273,7 +273,9 @@ nmap ZK <Plug>ZVKeyDocset
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+"imap <silent> <CR> <CR><Plug>DiscretionaryEnd
+imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
 
 " }}}
 
@@ -324,7 +326,10 @@ let g:LanguageClient_fzfContextMenu = 0
 let g:LanguageClient_hoverPreview = 'Never'
 " }}}}
 
+" {{{{ Disable mappings from various plugins
 let g:zv_disable_mapping = 1
+let g:endwise_no_mappings = 1
+" }}}}
 
 " }}}
 
