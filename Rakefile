@@ -15,7 +15,7 @@ def dotfiles
     # Start with everything in this directory, but not recursively
     Dir['*'] -
     # Don't symlink the following
-    %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock] +
+    %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock xdg-data] +
     # Add these extra to the list to be symlink'd
     %w[config/git config/conky config/nvim config/krb5_ipa.conf]
   ).sort
@@ -41,9 +41,10 @@ DOTFILES = []
 # prefixing it) to the source file within the repository.
 #
 # @param [String] dotfile The local file in the repo to be symlinked to $HOME
-def dottask(dotfile)
+# @param [String] homoe_path The destination path for the file, guessed from dotfile
+def dottask(dotfile, home_path = nil)
   # Absolute path to where we're going to symlink in $HOME
-  home_abs_path = File.expand_path "~/.#{dotfile}"
+  home_abs_path = File.expand_path (home_path || "~/.#{dotfile}")
 
   # Absolute path to the real file, stored in the repository
   repo_abs_path = File.expand_path "./#{dotfile}"
@@ -68,6 +69,7 @@ end
 dotfiles.each do |dotfile|
   dottask dotfile
 end
+dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
 
 task default: :dotfiles
 
@@ -176,7 +178,8 @@ namespace :doctor do
 
     %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg
     wget curl vim nvim yarn irb fzf fd lsd mutt docker ansible sudo tmux dtach
-    dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags].each do |binary|
+    dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags bundle pry].each do
+      |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exists? File.join(path, binary)
