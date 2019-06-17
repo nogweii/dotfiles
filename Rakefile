@@ -176,7 +176,7 @@ namespace :doctor do
 
     %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg
     wget curl vim nvim yarn irb fzf fd lsd mutt docker ansible sudo tmux dtach
-    dfc ncdu git pet sqlite3 ksshaskpass cryfs].each do |binary|
+    dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exists? File.join(path, binary)
