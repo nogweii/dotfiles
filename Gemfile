@@ -17,6 +17,8 @@ group :irb do
   gem 'hirb'
   gem 'racksh'
   gem 'net-http-spy'
+
+  gem 'pry' # because it's so damn neat and useful
 end
 
 group :development do
