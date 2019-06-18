@@ -96,9 +96,8 @@ if [ -n "${commands[mvn]}" ]; then
     alias maven_notest="mvn -Dmaven.test.skip=true"
 fi
 
-# A quick utility that generates a nice, long password. Pulls from /dev/random,
-# not urandom, so make sure there's plenty of entropy!
-alias gen-sha-pwd='head -c512 /dev/random | sha512sum'
+# A quick utility that generates a nice, long password
+alias gen-sha-pwd='head -c64 /dev/random | sha256sum'
 
 # Lazy open command
 if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
