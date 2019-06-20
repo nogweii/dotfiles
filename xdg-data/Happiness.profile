@@ -10,7 +10,8 @@ Parent=FALLBACK/
 RemoteTabTitleFormat=%w
 StartInCurrentSessionDir=false
 TerminalCenter=true
-TerminalRows=25
+TerminalColumns=79
+TerminalRows=24
 
 [Interaction Options]
 TrimLeadingSpacesInSelectedText=true
@@ -19,7 +20,7 @@ TrimTrailingSpacesInSelectedText=true
 [Scrolling]
 HistoryMode=2
 ScrollBarPosition=2
-ScrollFullPage=1
+ScrollFullPage=true
 
 [Terminal Features]
 UrlHintsModifiers=100663296
