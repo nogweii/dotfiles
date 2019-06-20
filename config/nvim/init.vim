@@ -372,6 +372,11 @@ function LanguageClient_Maps()
 endfunction
 
 function LanguageClient_Hovering()
+  if g:LanguageClient_serverStatusMessage ==# ''
+    " No language server is running (not installed?), don't try to get the
+    " hover text
+    return
+  endif
   if has_key(g:LanguageClient_serverCommands, &filetype)
     call LanguageClient#textDocument_hover()
   endif
