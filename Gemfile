@@ -35,5 +35,8 @@ group :common do
   gem 'yard'
 end
 
-# This is the ruby Language Server -- brining IDE functionality to every editor
+# This is the ruby Language Server -- bringing IDE functionality to every editor
 gem 'solargraph'
+
+# Neovim gem enables ruby support in neovim
+gem 'neovim'
