@@ -179,7 +179,7 @@ namespace :doctor do
     %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg
     wget curl vim nvim yarn irb fzf fd lsd mutt docker ansible sudo tmux dtach
     dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags bundle pry
-    shellcheck neovim-ruby-host].each do |binary|
+    shellcheck neovim-ruby-host nc].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exists? File.join(path, binary)
