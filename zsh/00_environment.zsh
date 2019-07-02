@@ -72,3 +72,6 @@ export GIT_COMMITTER_EMAIL="colin@evaryont.me"
 [ "${XDG_SESSION_DESKTOP}" = "gnome" ] && export GEM_EDITOR='gio open'
 
 [ -n "${LXSS}" ] && export WINUSER="$(/mnt/c/Windows/System32/whoami.exe | sed 's/^.*\\//' | tr -d '\n\r')"
+
+export BAT_THEME="Monokai Extended Bright"
+export BAT_STYLE="full"

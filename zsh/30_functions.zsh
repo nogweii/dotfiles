@@ -224,3 +224,33 @@ zle -N pet-select
 function tls-info() {
    echo | openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null | openssl x509 -text -noout
 }
+
+# a (slightly) smarter cat command, that uses bat when available
+function cat() {
+  if [ -n "${commands[bat]}" ]; then
+    if [[ $# == 1 && -t 0 ]]; then
+      # only use bat in the simplest case: a single file passed in 
+      # an interactive session
+      bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | less
+    else
+      command cat $@
+    fi
+  else
+    command cat $@
+  fi
+}
+
+# a (slightly) smarter less command, that uses bat when available
+function less() {
+  if [ -n "${commands[bat]}" ]; then
+    if [[ $# == 1 && -t 0 ]]; then
+      # only use bat in the simplest case: a single file passed in 
+      # an interactive session
+      bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | less
+    else
+      command less $@
+    fi
+  else
+    command less $@
+  fi
+}
