@@ -141,3 +141,5 @@ if [ -n "${commands[nvim]}" ]; then
     alias vi=nvim
     alias vim=nvim
 fi
+
+alias qrencode-text='qrencode -t ANSIUTF8 -m2 -lm'
