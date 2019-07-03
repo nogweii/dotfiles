@@ -347,10 +347,10 @@ highlight link statusColNr Number
 
 highlight link jinjaString String
 
-" {{{ Supporting plugins
+" {{{ Supporting functions
 
 function <SID>SmartZeal(is_visual)
-  if &kywordprg ==? ':Man'
+  if &keywordprg ==? ':Man'
     if a:is_visual
       ZeavimV
     else
