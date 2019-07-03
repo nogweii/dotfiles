@@ -324,6 +324,11 @@ let g:LanguageClient_changeThrottle = 0.5
 " Don't use fzf for the context menu
 let g:LanguageClient_fzfContextMenu = 0
 let g:LanguageClient_hoverPreview = 'Never'
+let g:LanguageClient_useVirtualText = 0
+
+let g:LanguageClient_settingsPath = $VIMUSERRUNTIME . 'languageservers.json'
+"let g:LanguageClient_loadSettings = ~/.local/share/nvim/languageclient.log
+
 " }}}}
 
 " {{{{ Disable mappings from various plugins
