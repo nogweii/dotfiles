@@ -51,7 +51,7 @@ Plug 'raimondi/yaifa'
 Plug 'machakann/vim-highlightedyank'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'andrewradev/sideways.vim'
-Plug 'mjbrownie/swapit'
+Plug 'inkarkat/swapit' " formerly mjbrownie/swapit
 Plug 'chr4/sslsecure.vim'
 Plug 'tweekmonster/startuptime.vim'
 
