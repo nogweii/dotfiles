@@ -46,6 +46,14 @@ function prompt_evaryont_precmd {
   [[ $psvar[1] = SIG ]] && psvar[1]=$exitstatus
 
   vcs_info
+
+  local mdi_mountain="行" # \ufa08, the mountain icon
+
+  if [[ -f .terraform/environment ]]; then
+    _prompt_tf_workspace="%F{97}${mdi_mountain}$(< .terraform/environment)%f "
+  else
+    _prompt_tf_workspace=""
+  fi
 }
 
 function prompt_evaryont_help {
@@ -133,7 +141,7 @@ function prompt_evaryont_setup {
 
   # Define prompts.
   PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<%F{014}\${\${(D)PWD:h}%/}/%<<%F{002}\${PWD:t}%(!.%F{052}⚡.%F{015})%b%f "
-  RPROMPT="%(?..%F{124}%1v%f! )"'${ruby_version}${vcs_info_msg_0_}%f'
+  RPROMPT="%(?..%F{124}%1v%f! )"'${_prompt_tf_workspace}${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
 }
