@@ -75,5 +75,3 @@ export GIT_COMMITTER_EMAIL="colin@evaryont.me"
 
 export BAT_THEME="Monokai Extended Bright"
 export BAT_STYLE="full"
-
-PROMPT_EOL_MARK="%B%S␤%s%b" # customize zsh's injected newline indicator

@@ -26,8 +26,6 @@ setopt   hist_verify            # Expand history expansions instead of executing
 unsetopt ignore_eof             # Ignore ^D to exit zsh
 setopt   inc_append_history     # immediately write lines to the history
 setopt   interactive_comments   # Allow comments in interactive mode
-setopt   prompt_cr              # Print a carriage return before every prompt
-setopt   prompt_sp              # inverted character to indicate partial lines
 setopt   pushd_ignore_dups      # ignore duplicate directories
 setopt   pushd_silent           # don't output the directory
 setopt   rcquotes               # Lazier/smarter quoting rules
