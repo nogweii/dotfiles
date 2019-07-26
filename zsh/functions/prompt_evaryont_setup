@@ -94,7 +94,8 @@ function prompt_evaryont_setup {
   # Disable shell tracing (zsh -x, for instance)
   unsetopt XTRACE
   # promptinit will setopt various PROMPT_* options according to this array:
-  prompt_opts=(cr percent subst)
+  prompt_opts=(cr percent subst sp)
+  # NB: make sure this matches ../20_options.zsh to prevent confusion. 🤦
 
   # Load required functions.
   autoload -Uz add-zsh-hook
