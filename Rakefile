@@ -69,7 +69,9 @@ end
 dotfiles.each do |dotfile|
   dottask dotfile
 end
-dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
+if File.exists? File.expand_path '~/.local/share/konsole'
+  dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
+end
 
 task default: :dotfiles
 
