@@ -1,14 +1,17 @@
---- 
-:benchmark: false
-install: --no-document
+---
 :backtrace: true
-:update_sources: true
-format_executable: false
-:verbose: false
-update: --no-document
+:benchmark: false
 :bulk_threshold: 50
-:sources: 
-- https://rubygems.org
 :disable_default_gem_server: true
-:ssl_verify_mode: 3 # This is OpenSSL::SSL::VERIFY_PEER|OpenSSL::SSL::VERIFY_FAIL_IF_NO_PEER_CERT
+:sources: ['https://rubygems.org']
+# This is OpenSSL::SSL::VERIFY_PEER|OpenSSL::SSL::VERIFY_FAIL_IF_NO_PEER_CERT
+:ssl_verify_mode: 3
+:update_sources: true
+:verbose: false
+
+install: "--no-document"
+format_executable: false
+update: "--no-document"
+
 gem: ""
+# vim: set filetype=yaml:
