@@ -11,3 +11,4 @@ git_diff_staged.diff
 tags
 .ruby-version
 .bundle
+.mypy_cache

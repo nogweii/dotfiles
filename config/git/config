@@ -128,6 +128,8 @@
     rm-ignored = "!rm -v $(git ls-files --others -i --exclude-standard)"
     # show the remote url for the current branch
     remote-url = "!git ls-remote --get-url $(git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD))"
+    # list all branches that have been merged
+    merged-branches = "!f() { branch=${1:-master}; eval \"git branch --merged $branch | egrep -v '^(. )?$branch$' | sed 's/^. //'\"; }; f"
 [web]
     browser = kde-open
 [browser "kde-open"]
