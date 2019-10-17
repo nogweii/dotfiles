@@ -130,6 +130,8 @@
     remote-url = "!git ls-remote --get-url $(git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD))"
     # list all branches that have been merged
     merged-branches = "!f() { branch=${1:-master}; eval \"git branch --merged $branch | egrep -v '^(. )?$branch$' | sed 's/^. //'\"; }; f"
+    # create an orphaned branch, empty and disconnected from the repo's history
+    ob = "!f() { git checkout --orphan $1 && git rm --quiet -r --cached .; }; f"
 [web]
     browser = kde-open
 [browser "kde-open"]
