@@ -76,7 +76,7 @@ function nicename() {
 function errors() {
   # this monster is an awesome regular expression, yeah? Finds lot of errors in
   # a bunch of log formats!
-  regexp='.*(missing|error|fail|\s(not|no .+) found|(no |not |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\(EE\)|\(WW\))'
+  regexp='(missing|error|fail|\s(not|no .+) (found|present)|(not? |in)valid|fatal|conflict|problem|critical|corrupt|warning|wrong|illegal|segfault|\sfault|caused|\sunable|\((E|W){2}\)|BUG|panic|exception|negative|eek!|den(y|ied))'
 
   # Default case: No parameters passed, so search all of /var/log
   log_path="/var/log"
