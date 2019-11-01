@@ -175,6 +175,7 @@ set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
 set undofile                   " Persist undo history across sessions
 set termguicolors              " Use guifg over ctermfg in true-color terminals
+set backupdir=$XDG_DATA_HOME/nvim/backup
 " Point the spell checker at my additional vocabulary words
 let &spellfile=$VIMUSERRUNTIME . "/en.utf-8.add"
 
