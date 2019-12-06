@@ -5,7 +5,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
       arping blkid cc cvs df diff dig dnf docker du env fdisk findmnt free gcc
       getfacl getsebool gmake hping id ifconfig ioping iostat ip iptables
       ip6tables iwconfig journalctl last lastb lastlog ldap lsattr lsblk lsmod
-      lsof lspci make mount mtr netstat nmap nping ntpdate ping ping6 ps semanage
+      lsof lspci mount mtr netstat nmap nping ntpdate ping ping6 ps semanage
       showmount stat sysctl systemctl tcpdump traceroute traceroute6 tune2fs
       ulimit uptime vmstats w wdiff whois
   "
