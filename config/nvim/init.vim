@@ -188,6 +188,13 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=4
 set expandtab
+
+" Create the backup directory if it doesn't exist already
+set backupdir=$XDG_DATA_HOME/nvim/backup
+if !isdirectory($XDG_DATA_HOME . "/nvim/backup")
+  execute "silent! !mkdir " . $XDG_DATA_HOME . "/nvim/backup"
+endif
+
 " }}}
 
 " {{{ Mappings
