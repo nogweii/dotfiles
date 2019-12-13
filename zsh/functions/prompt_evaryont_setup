@@ -47,12 +47,19 @@ function prompt_evaryont_precmd {
 
   vcs_info
 
-  local mdi_mountain="行" # \ufa08, the mountain icon
+  local icon_mountain="行" # \ufa08, the mountain icon
+  local icon_python=" " # \uf81f, python lang logo
 
   if [[ -f .terraform/environment ]]; then
-    _prompt_tf_workspace="%F{97}${mdi_mountain}$(< .terraform/environment)%f "
+    _prompt_tf_workspace="%F{97}${icon_mountain}$(< .terraform/environment)%f "
   else
     _prompt_tf_workspace=""
+  fi
+
+  if [[ -n "${VIRTUAL_ENV}" ]]; then
+    _prompt_virtualenv="%F{64}${icon_python}active!%f "
+  else
+    _prompt_virtualenv=""
   fi
 }
 
@@ -142,7 +149,7 @@ function prompt_evaryont_setup {
 
   # Define prompts.
   PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<%F{014}\${\${(D)PWD:h}%/}/%<<%F{002}\${PWD:t}%(!.%F{052}⚡.%F{015})%b%f "
-  RPROMPT="%(?..%F{124}%1v%f! )"'${_prompt_tf_workspace}${ruby_version}${vcs_info_msg_0_}%f'
+  RPROMPT="%(?..%F{124}%1v%f! )"'${_prompt_virtualenv}${_prompt_tf_workspace}${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
 }
