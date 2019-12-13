@@ -77,3 +77,5 @@ export BAT_THEME="Monokai Extended Bright"
 export BAT_STYLE="full"
 
 PROMPT_EOL_MARK="%B%S␤%s%b" # customize zsh's injected newline indicator
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
