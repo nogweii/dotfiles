@@ -195,6 +195,10 @@ if !isdirectory($XDG_DATA_HOME . "/nvim/backup")
   execute "silent! !mkdir " . $XDG_DATA_HOME . "/nvim/backup"
 endif
 
+" directly set the path to the system python3, so it avoids using the
+" virtualenv
+let g:python3_host_prog = "/usr/bin/python3"
+
 " }}}
 
 " {{{ Mappings
