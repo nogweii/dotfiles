@@ -12,6 +12,10 @@ else
     export EDITOR="vi"
 fi
 
+if [ "${TERM_PROGRAM}" = "vscode" ]; then
+    export EDITOR='code'
+fi
+
 if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
     export BROWSER="gvfs-open"
 elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
