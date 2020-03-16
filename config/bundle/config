@@ -1,3 +1,4 @@
 ---
 BUNDLE_BIN: ".bundle/bin"
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
+BUNDLE_GEM__TEST: "rspec"
