@@ -56,7 +56,12 @@ begin
     Wirble.init
   end
   tramp_require File.join(File.dirname(__FILE__), 'irb_rocket.rb')
-  tramp_require 'ap'
+  tramp_require 'ap' do
+    # Only load the monkey patch if on version 1.8.0
+    if AwesomePrint.version == '1.8.0'
+      require File.join(File.dirname(__FILE__), 'ap_monkeypatch.rb')
+    end
+  end
   #tramp_require "looksee/shortcuts"
   if File.exists?(ENV['CONFIG_RU'] || 'config.ru')
     tramp_require 'racksh/init' do
