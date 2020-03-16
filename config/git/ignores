@@ -12,3 +12,5 @@ tags
 .ruby-version
 .bundle
 .mypy_cache
+__pycache__
+*.pyc
