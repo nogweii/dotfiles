@@ -256,13 +256,9 @@ function less() {
 }
 
 function mkvenv() {
-  if [[ $# == 0 && -t 0 ]]; then
-    echo "Creates a Python 3 virtualenv at the target directory and activate it."
-    echo "USAGE: $0 path/to/new/venv"
-    return 1
-  fi
-  python3 -m venv $1
+  venv_path="${1:-venv}"
+  python3 -m venv $venv_path
   VIRTUAL_ENV_DISABLE_PROMPT=1
   unset PIP_USER
-  source $1/bin/activate
+  source $venv_path/bin/activate
 }
