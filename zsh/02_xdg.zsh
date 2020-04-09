@@ -46,3 +46,5 @@ export KRB5CCNAME="${XDG_DATA_HOME}/krb5cc"
 export KRB5_CONFIG="${XDG_CONFIG_HOME}/krb5_ipa.conf"
 
 export CARGO_HOME="${HOME}/.local/cargo"
+
+export TF_CLI_CONFIG_FILE="${XDG_CONFIG_HOME}/terraform.rc"
