@@ -47,3 +47,17 @@ function __is-my-window-focused() {
   [[ -n "${DISPLAY}" ]] || return 1
   [[ ${$(xprop -root -notype -format _NET_ACTIVE_WINDOW 32i ' $0\n' _NET_ACTIVE_WINDOW):1} = $WINDOWID ]]
 }
+
+# Passing 1 or 2 args in, test if the first parameter is a subdirectory. If you
+# don't pass in the second parameter, it defaults to testing if the path is a
+# subdirectory of $PWD. Does not read links.
+function is-path-subdirectory() {
+  # Convert both arguments to absolute paths (the :A modifier)
+  full_path_in_question="${1:A}"
+  potential_parent_path="${2:-$PWD:A}"
+
+  # Do a string prefix match of the full path and the potential parent path
+  test_result=$(test "${full_path_in_question:0:${#potential_parent_path}}" = "${potential_parent_path}")
+
+  return $test_result
+}
