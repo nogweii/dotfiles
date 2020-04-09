@@ -132,6 +132,8 @@
     merged-branches = "!f() { branch=${1:-master}; eval \"git branch --merged $branch | egrep -v '^(. )?$branch$' | sed 's/^. //'\"; }; f"
     # create an orphaned branch, empty and disconnected from the repo's history
     ob = "!f() { git checkout --orphan $1 && git rm --quiet -r --cached .; }; f"
+    # locally delete all branches that have been merged into master already
+    branch-cleanup = "!f() { git branch --merged master | egrep -v '\\*? master' | xargs -n 1 git branch -d ;}; f" 
 
 [web]
     browser = kde-open
