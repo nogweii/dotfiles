@@ -136,3 +136,15 @@ fi
 
 # Tell SSH about gpg-agent's SSH socket
 [[ -S ~/.gnupg/S.gpg-agent.ssh ]] && export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
+# Move the user base directory to a subdirectory beneath .local, so the bin,
+# lib, etc directories don't pollute the top level directory
+export PYTHONUSERBASE=~/.local/pypi
+
+export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
+export GEM_HOME="${HOME}/.local/ruby"
+
+# Set `pip install` to install to the user directory rather than system-wide
+export PIP_USER=yes
+
+export CARGO_HOME="${HOME}/.local/cargo"
