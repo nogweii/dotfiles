@@ -24,19 +24,22 @@ endif
 
 " {{{ Use vim-plug to install a bunch of plugins:
 call plug#begin($VIMUSERRUNTIME . '/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'sheerun/vim-polyglot', { 'tag': '*' }
-Plug 'nathanielc/vim-tickscript'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'w0rp/ale', { 'tag': '*' }
 
-"Plug 'junegunn/vim-peekaboo'
+" A package of language support files, like syntax highlighting
+Plug 'sheerun/vim-polyglot'
+" Add TICKscript (Influx Kapacitor 1.x) syntax
+Plug 'nathanielc/vim-tickscript'
+
+" Automatically configure various editor settings in a standard way
+Plug 'editorconfig/editorconfig-vim'
+
+" A nice and quick directory viewer (the '-' keybinding)
 Plug 'justinmk/vim-dirvish'
+" Launch the file manager or new terminal easily from within vim
 Plug 'justinmk/vim-gtfo'
 
 " Tim Pope series of plugins. Quite a prolific vimscript author!
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-characterize'
@@ -45,64 +48,51 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
 
+" Smartly insert the other (), [], '', "", <>
 Plug 'raimondi/delimitmate'
+" Scan the opened file, guess various indentation rules from it
 Plug 'raimondi/yaifa'
 
+" Briefly highlight whatever I yank
 Plug 'machakann/vim-highlightedyank'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'andrewradev/sideways.vim'
-Plug 'inkarkat/swapit' " formerly mjbrownie/swapit
-Plug 'chr4/sslsecure.vim'
-Plug 'tweekmonster/startuptime.vim'
+" Color each level of nested pairs a different color
+Plug 'alok/rainbow_parentheses.vim', {'branch': 'fix-spell'} " use this branch to include https://github.com/alok/rainbow_parentheses.vim/commit/3d1152441c21a03fa9d6302c700e0cb7eb80469c, fixing spell check
 
-" Various color schemes I have tried...
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'dracula/vim'
-Plug 'jnurmine/zenburn'
-Plug 'tpope/vim-vividchalk'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/seoul256.vim'
-Plug 'tomasr/molokai'
-Plug 'chriskempson/base16-vim'
-Plug 'nlknguyen/papercolor-theme'
-Plug 'w0ng/vim-hybrid'
-Plug 'kristijanhusak/vim-hybrid-material'
+" Custom text objects to interact with arguments/parameters in a list, or a
+" few other column/array like arrangements of text
+Plug 'andrewradev/sideways.vim'
+
+" Swap keywords in a list, using <C-a> and <C-x>
+Plug 'inkarkat/swapit'
+
+" Look for OpenSSL protocol and ciphers that are known to be insecure, and
+" highlight them
+Plug 'chr4/sslsecure.vim'
+
+" Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
+" present a nice display of what's taking so long
+Plug 'tweekmonster/startuptime.vim'
 
 " Integrate with external tools
 Plug 'KabbAmine/zeavim.vim'
 Plug 'junegunn/fzf'
 
-" Super advanced completion!
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/neco-syntax'
+" A plugin that allows me to tab complete a snippet of code with just a keyword
 Plug 'SirVer/ultisnips'
+" ..and a collection of said snippets for a variety of languages
 Plug 'honza/vim-snippets'
 
 Plug 'wincent/command-t', {
   \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
   \ }
 
+" Easily put a character/pair around some text. Sandwich a word between
+" parentheses!
+Plug 'machakann/vim-sandwich'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
-augroup rainbow_parentheses
-  autocmd!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
-
 augroup vimrc_folding
   autocmd!
   au BufReadPost $MYVIMRC setlocal foldmethod=marker
@@ -123,22 +113,6 @@ augroup manual_docset_definitions
   autocmd!
   au BufReadPost $MYVIMRC let b:manualDocset = 'vim'
   au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
-augroup END
-
-augroup super_tab_completion
-  autocmd!
-
-  autocmd BufEnter  *  call ncm2#enable_for_buffer()
-
-  " Set mappings for only supported filetypes.
-  autocmd FileType * call LanguageClient_Maps()
-  " Run gofmt and goimports on save
-  autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-  autocmd CursorHold * call LanguageClient_Hovering()
-
-  autocmd User LanguageClientStarted setlocal signcolumn=yes
-  autocmd User LanguageClientStopped setlocal signcolumn=auto
-  autocmd User LanguageClientStarted :lcd b:LanguageClient_projectRoot
 augroup END
 
 " }}}
@@ -223,20 +197,8 @@ nnoremap Q gq
 " Format the next paragraph, quick!
 nnoremap gQ gqap
 
-" TODO: fix dis
-" if executable('fzf')
-"   nmap   ZE :call fzf#run(fzf#wrap({'sink': 'e'}, 0))<CR>
-"   nmap   ZS :call fzf#run(fzf#wrap({'sink': 'split'}))<CR>
-"   nmap   ZV :call fzf#run(fzf#wrap({'sink': 'vnew'}))<CR>
-" else
-"   nmap   ZE :e <C-R>=expand("%:h")<CR>/
-"   nmap   ZS :split <C-R>=expand("%:h")<CR>/
-"   nmap   ZV :vnew <C-R>=expand("%:h")<CR>/
-" endif
-"nnoremap ZE <Plug>(CommandT)
-nmap <silent> ZE <Plug>(CommandT)
-"nnoremap ZS :split <C-R>=expand("%:h")<CR>/
-"nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
+nnoremap <silent> ZE <Plug>(CommandT)
+nnoremap <silent> ZB <Plug>(CommandTBuffer)
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -253,7 +215,7 @@ nnoremap ' `
 nnoremap <silent> zP :set spell!<CR>
 
 " Clear the screen of artifacts, and clear highlighting too.
-map <silent> <c-l> <c-l>:nohlsearch<CR>:call LanguageClient#clearDocumentHighlight()<CR>
+map <silent> <c-l> <c-l>:nohlsearch<CR>
 
 " Immediately select the recommended spelling correction of the word underneath
 nnoremap zp 1z=
@@ -270,10 +232,6 @@ xmap gt <Plug>(EasyAlign)
 noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 map             L $
 
-" Quickly toggle the asynchronous lint engine. It causes a bit of lag in the
-" editor, so it's disabled by default.
-nnoremap <silent> ZY :ALEToggle<CR>
-
 " Launch Zeal from vim easily: Press K! (unless you specify a custom keyword
 " program to search for)
 nnoremap <silent> K :call <SID>SmartZeal(0)<CR>
@@ -284,9 +242,15 @@ nmap ZK <Plug>ZVKeyDocset
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-"imap <silent> <CR> <CR><Plug>DiscretionaryEnd
-imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
+" imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
+imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
+
+" Make gf smarter by default, freeing up gF to be a quick alias to vim-gtfo
+nnoremap gf gF
+nnoremap <silent> gF :<c-u>call gtfo#open#file(getcwd())<cr>
+
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " }}}
 
@@ -315,87 +279,100 @@ let g:zv_file_types = {
   \ }
 " }}}}
 
-" {{{{ Language server configuration
-" Configure the language servers
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.local/cargo/bin/rls'],
-    \ 'ruby': ['~/.local/ruby/bin/solargraph', 'stdio'],
-    \ 'go': ['~/.local/go/bin/gopls'],
-    \ 'python': ['~/.local/pypi/bin/pyls'],
-    \ 'dockerfile': ['~/.local/node/bin/docker-langserver', '--stdio'],
-    \ 'sh': ['bash-language-server', 'start'],
-    \ 'javascript': ['~/.local/node/bin/javascript-typescript-stdio'],
-    \ 'vim': ['~/.local/node/bin/vim-language-server', '--stdio'],
-    \ 'css': ['~/.local/node/bin/css-languageserver', '--stdio'],
-    \ 'scss': ['~/.local/node/bin/css-languageserver', '--stdio'],
-    \ 'html': ['~/.local/node/bin/html-languageserver', '--stdio']
-    \ }
-" Only send text updates to the language server every this seconds
-let g:LanguageClient_changeThrottle = 0.5
-" Don't use fzf for the context menu
-let g:LanguageClient_fzfContextMenu = 0
-let g:LanguageClient_hoverPreview = 'Never'
-let g:LanguageClient_useVirtualText = 0
-
-let g:LanguageClient_settingsPath = $VIMUSERRUNTIME . 'languageservers.json'
-"let g:LanguageClient_loadSettings = ~/.local/share/nvim/languageclient.log
-
-" }}}}
-
 " {{{{ Disable mappings from various plugins
 let g:zv_disable_mapping = 1
 let g:endwise_no_mappings = 1
 " }}}}
+
+" {{{{ Rainbow Parentheses configuration
+augroup rainbow_parentheses
+  autocmd!
+  au VimEnter * call rainbow_parentheses#activate()
+augroup END
+
+" Manually define the colors of the pairs. This normally derived automatically
+" from the color scheme, but that breaks with mine.
+let s:para_colors = map([
+      \ 'Yellow',
+      \ 'Magenta',
+      \ 'Green',
+      \ 'Cyan',
+      \ 'Brown',
+      \ 'Blue',
+      \ 'DarkGreen',
+      \ 'Red',
+      \ ], '[v:val, v:val]')
+let g:rainbow#max_level = len(s:para_colors)
+let g:rainbow#colors = { 'dark': s:para_colors, 'light': s:para_colors }
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+" }}}}
+
+" Switch sandwich to using surround.vim's key bindings, which I'm very used
+" to, while still taking advantage of the extra functionality
+runtime macros/sandwich/keymap/surround.vim
 
 " }}}
 
 let g:hybrid_custom_term_colors = 1
 colorscheme devolved
 
-"highlight statusColNr gui=NONE guifg=#121212 guibg=#005f5f guisp=NONE
 highlight link statusColNr Number
-"highlight statusColNrPowerline gui=NONE guifg=#005f5f guibg=#1c1c1c guisp=NONE
-"highlight statusColNcPowerline gui=NONE guifg=#005f5f guibg=#121212 guisp=NONE
-"highlight statusFileName gui=NONE guifg=#ffaf00 guibg=#1c1c1c guisp=NONE
-"highlight statusFileType gui=NONE guifg=#00afff guibg=#1c1c1c guisp=NONE
-"highlight statusBranch gui=NONE guifg=#ff5f00 guibg=#1c1c1c guisp=NONE
-"highlight statusFlag gui=NONE guifg=#ff00d7 guibg=#1c1c1c guisp=NONE
-
 highlight link jinjaString String
+
+" Don't consider acronyms/abbreviations at least 3 long as spelling errors.
+" Includes a trailing 's' at the end, and any numbers as part of the acronym.
+syn match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
+" Don't consider URL-like things as spelling errors
+syn match NoSpellUrl '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
 
 " {{{ Supporting functions
 
+" Only run Zeal if the keywordprg is set to ":Man", which it will be
+" automatically if it's not set to anything else by another language-specific
+" plugin. If a docset is set, however, always use Zeal.
 function <SID>SmartZeal(is_visual)
-  if &keywordprg ==? ':Man'
+  if get(b:, 'manualDocset', 1)
     if a:is_visual
-      ZeavimV
+      call zeavim#SearchFor('', '', 'v')
     else
-      Zeavim
+      call zeavim#SearchFor('', expand('<cword>'))
+    endif
+  elseif &keywordprg ==? ':Man'
+    if a:is_visual
+      call zeavim#SearchFor('', '', 'v')
+    else
+      call zeavim#SearchFor('', expand('<cword>'))
     endif
   else
     normal! K
   endif
 endfunction
 
-function LanguageClient_Maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
-    nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> Z=   :call LanguageClient#textDocument_formatting_sync()<CR>
-    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    nnoremap <silent> ZT   :call LanguageClient#textDocument_documentSymbol()<CR>
-  endif
-endfunction
-
-function LanguageClient_Hovering()
-  if g:LanguageClient_serverStatusMessage ==# ''
-    " No language server is running (not installed?), don't try to get the
-    " hover text
-    return
-  endif
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    call LanguageClient#textDocument_hover()
-  endif
-endfunction
-
 " }}}
+
+augroup RestoreSavedCursor
+  au!
+  " when I edit a file, restore the cursor to the saved position
+  autocmd BufReadPost *
+        \ if expand("<afile>:p:h") !=? $TEMP |
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \ let RestoreSavedCursor_line = line("'\"") |
+        \ let b:doopenfold = 1 |
+        \ if (foldlevel(RestoreSavedCursor_line) > foldlevel(RestoreSavedCursor_line - 1)) |
+        \ let RestoreSavedCursor_line = RestoreSavedCursor_line - 1 |
+        \ let b:doopenfold = 2 |
+        \ endif |
+        \ exe RestoreSavedCursor_line |
+        \ endif |
+        \ endif
+
+  " postpone using "zv" until after reading the modeline
+  autocmd BufWinEnter *
+        \ if exists("b:doopenfold") |
+        \ exe "normal zv" |
+        \ if(b:doopenfold > 1) |
+        \ exe "+".1 |
+        \ endif |
+        \ unlet b:doopenfold |
+        \ endif
+augroup END
