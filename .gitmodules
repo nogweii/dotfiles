@@ -1,18 +1,9 @@
-[submodule "icons/Faenza"]
-	path = icons/Faenza
-	url = https://github.com/zhelyabuzhsky/faenza
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
 [submodule "zsh/plugins/users-completions"]
 	path = zsh/plugins/users-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
-[submodule "vim/bundle/textobj-user"]
-	path = vim/bundle/textobj-user
-	url = https://github.com/kana/vim-textobj-user
 [submodule "zsh/plugins/histdb"]
 	path = zsh/plugins/histdb
 	url = https://github.com/larkery/zsh-histdb
