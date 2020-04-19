@@ -193,20 +193,8 @@ nnoremap Q gq
 " Format the next paragraph, quick!
 nnoremap gQ gqap
 
-" TODO: fix dis
-" if executable('fzf')
-"   nmap   ZE :call fzf#run(fzf#wrap({'sink': 'e'}, 0))<CR>
-"   nmap   ZS :call fzf#run(fzf#wrap({'sink': 'split'}))<CR>
-"   nmap   ZV :call fzf#run(fzf#wrap({'sink': 'vnew'}))<CR>
-" else
-"   nmap   ZE :e <C-R>=expand("%:h")<CR>/
-"   nmap   ZS :split <C-R>=expand("%:h")<CR>/
-"   nmap   ZV :vnew <C-R>=expand("%:h")<CR>/
-" endif
-"nnoremap ZE <Plug>(CommandT)
-nmap <silent> ZE <Plug>(CommandT)
-"nnoremap ZS :split <C-R>=expand("%:h")<CR>/
-"nnoremap ZV :vnew <C-R>=expand("%:h")<CR>/
+nnoremap <silent> ZE <Plug>(CommandT)
+nnoremap <silent> ZB <Plug>(CommandTBuffer)
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -240,10 +228,6 @@ xmap gt <Plug>(EasyAlign)
 noremap  <expr> H (col('.') == matchend(getline('.'), '^\s*')+1 ? '0' : '^')
 map             L $
 
-" Quickly toggle the asynchronous lint engine. It causes a bit of lag in the
-" editor, so it's disabled by default.
-nnoremap <silent> ZY :ALEToggle<CR>
-
 " Launch Zeal from vim easily: Press K! (unless you specify a custom keyword
 " program to search for)
 nnoremap <silent> K :call <SID>SmartZeal(0)<CR>
@@ -254,9 +238,15 @@ nmap ZK <Plug>ZVKeyDocset
 "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-"inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
-"imap <silent> <CR> <CR><Plug>DiscretionaryEnd
-imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
+" imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
+imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
+
+" Make gf smarter by default, freeing up gF to be a quick alias to vim-gtfo
+nnoremap gf gF
+nnoremap <silent> gF :<c-u>call gtfo#open#file(getcwd())<cr>
+
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " }}}
 
@@ -333,12 +323,21 @@ syn match NoSpellUrl '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
 
 " {{{ Supporting functions
 
+" Only run Zeal if the keywordprg is set to ":Man", which it will be
+" automatically if it's not set to anything else by another language-specific
+" plugin. If a docset is set, however, always use Zeal.
 function <SID>SmartZeal(is_visual)
-  if &keywordprg ==? ':Man'
+  if get(b:, 'manualDocset', 1)
     if a:is_visual
-      ZeavimV
+      call zeavim#SearchFor('', '', 'v')
     else
-      Zeavim
+      call zeavim#SearchFor('', expand('<cword>'))
+    endif
+  elseif &keywordprg ==? ':Man'
+    if a:is_visual
+      call zeavim#SearchFor('', '', 'v')
+    else
+      call zeavim#SearchFor('', expand('<cword>'))
     endif
   else
     normal! K
