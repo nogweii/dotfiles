@@ -1,18 +1,3 @@
-[submodule "vim/bundle/puppet"]
-	path = vim/bundle/puppet
-	url = https://github.com/rodjek/vim-puppet
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/signature"]
-	path = vim/bundle/signature
-	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/bundle/indent-object"]
-	path = vim/bundle/indent-object
-	url = https://github.com/michaeljsmith/vim-indent-object
-[submodule "vim/bundle/characterize"]
-	path = vim/bundle/characterize
-	url = https://github.com/tpope/vim-characterize
 [submodule "icons/Faenza"]
 	path = icons/Faenza
 	url = https://github.com/zhelyabuzhsky/faenza
@@ -25,129 +10,12 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "vim/bundle/commentary"]
-	path = vim/bundle/commentary
-	url = https://github.com/tpope/vim-commentary
 [submodule "vim/bundle/textobj-user"]
 	path = vim/bundle/textobj-user
 	url = https://github.com/kana/vim-textobj-user
-[submodule "vim/bundle/textobj-underscore"]
-	path = vim/bundle/textobj-underscore
-	url = https://github.com/kana/vim-textobj-underscore
-[submodule "vim/bundle/textobj-indent"]
-	path = vim/bundle/textobj-indent
-	url = https://github.com/kana/vim-textobj-indent
-[submodule "vim/bundle/textobj-comment"]
-	path = vim/bundle/textobj-comment
-	url = https://github.com/glts/vim-textobj-comment
-[submodule "vim/bundle/mustache"]
-	path = vim/bundle/mustache
-	url = https://github.com/mustache/vim-mustache-handlebars
-[submodule "vim/bundle/textobj-lastpat"]
-	path = vim/bundle/textobj-lastpat
-	url = https://github.com/kana/vim-textobj-lastpat
-[submodule "vim/bundle/textobj"]
-	path = vim/bundle/textobj
-	url = https://github.com/kana/vim-textobj-user
-[submodule "vim/bundle/yaifa"]
-	path = vim/bundle/yaifa
-	url = https://github.com/Raimondi/YAIFA
-[submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
-	url = https://github.com/tpope/vim-surround
-[submodule "vim/bundle/swapit"]
-	path = vim/bundle/swapit
-	url = https://github.com/mjbrownie/swapit
-[submodule "vim/bundle/speeddating"]
-	path = vim/bundle/speeddating
-	url = https://github.com/tpope/vim-speeddating
-[submodule "vim/bundle/space"]
-	path = vim/bundle/space
-	url = https://github.com/spiiph/vim-space
-[submodule "vim/bundle/unimpaired"]
-	path = vim/bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule "vim/bundle/reimin"]
-	path = vim/bundle/reimin
-	url = https://github.com/wilhelmtell/reimin
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim
-[submodule "vim/bundle/repeat"]
-	path = vim/bundle/repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "vim/bundle/abolish"]
-	path = vim/bundle/abolish
-	url = https://github.com/tpope/vim-abolish
-[submodule "vim/bundle/dispatch"]
-	path = vim/bundle/dispatch
-	url = https://github.com/tpope/vim-dispatch
-[submodule "vim/bundle/eunuch"]
-	path = vim/bundle/eunuch
-	url = https://github.com/tpope/vim-eunuch
-[submodule "vim/bundle/jdaddy"]
-	path = vim/bundle/jdaddy
-	url = https://github.com/tpope/vim-jdaddy
-[submodule "vim/bundle/LargeFile"]
-	path = vim/bundle/LargeFile
-	url = https://github.com/vim-scripts/LargeFile
-[submodule "vim/bundle/ag.vim"]
-	path = vim/bundle/ag
-	url = https://github.com/rking/ag.vim
-[submodule "vim/bundle/markdown"]
-	path = vim/bundle/markdown
-	url = https://github.com/tpope/vim-markdown
-[submodule "vim/bundle/endwise"]
-	path = vim/bundle/endwise
-	url = https://github.com/tpope/vim-endwise
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate
-[submodule "vim/bundle/search_objects"]
-	path = vim/bundle/search_objects
-	url = https://github.com/Raimondi/vim_search_objects
-[submodule "vim/bundle/ack"]
-	path = vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/tmux"]
-	path = vim/bundle/tmux
-	url = https://github.com/tmux-plugins/vim-tmux
-[submodule "vim/bundle/salt"]
-	path = vim/bundle/salt
-	url = https://github.com/saltstack/salt-vim
-[submodule "vim/bundle/jinja"]
-	path = vim/bundle/jinja
-	url = https://github.com/chase/Vim-Jinja2-Syntax
-[submodule "vim/bundle/fzf"]
-	path = vim/bundle/fzf
-	url = https://github.com/junegunn/fzf.vim
-[submodule "vim/bundle/polyglot"]
-	path = vim/bundle/polyglot
-	url = https://github.com/sheerun/vim-polyglot
-[submodule "vim/bundle/snippets"]
-	path = vim/bundle/snippets
-	url = https://github.com/honza/vim-snippets
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
-[submodule "vim/bundle/sslsecure"]
-	path = vim/bundle/sslsecure
-	url = https://github.com/chr4/sslsecure.vim
 [submodule "zsh/plugins/histdb"]
 	path = zsh/plugins/histdb
 	url = https://github.com/larkery/zsh-histdb
-[submodule "vim/bundle/dirvish"]
-	path = vim/bundle/dirvish
-	url = https://github.com/justinmk/vim-dirvish
-[submodule "vim/bundle/gtfo"]
-	path = vim/bundle/gtfo
-	url = https://github.com/justinmk/vim-gtfo
-[submodule "vim/bundle/sneak"]
-	path = vim/bundle/sneak
-	url = https://github.com/justinmk/vim-sneak
 [submodule "zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma/fast-syntax-highlighting
