@@ -24,11 +24,14 @@ endif
 
 " {{{ Use vim-plug to install a bunch of plugins:
 call plug#begin($VIMUSERRUNTIME . '/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'sheerun/vim-polyglot', { 'tag': '*' }
+
+" A package of language support files, like syntax highlighting
+Plug 'sheerun/vim-polyglot'
+" Add TICKscript (Influx Kapacitor 1.x) syntax
 Plug 'nathanielc/vim-tickscript'
+
+" Automatically configure various editor settings in a standard way
 Plug 'editorconfig/editorconfig-vim'
-Plug 'w0rp/ale', { 'tag': '*' }
 
 "Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-dirvish'
@@ -48,44 +51,36 @@ Plug 'tpope/vim-fugitive'
 Plug 'raimondi/delimitmate'
 Plug 'raimondi/yaifa'
 
+" Briefly highlight whatever I yank
 Plug 'machakann/vim-highlightedyank'
-Plug 'kien/rainbow_parentheses.vim'
+" Color each level of nested pairs a different color
+Plug 'alok/rainbow_parentheses.vim', {'branch': 'fix-spell'} " use this branch to include https://github.com/alok/rainbow_parentheses.vim/commit/3d1152441c21a03fa9d6302c700e0cb7eb80469c, fixing spell check
 Plug 'andrewradev/sideways.vim'
-Plug 'inkarkat/swapit' " formerly mjbrownie/swapit
+Plug 'inkarkat/swapit'
 Plug 'chr4/sslsecure.vim'
 Plug 'tweekmonster/startuptime.vim'
 
 " Various color schemes I have tried...
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'dracula/vim'
-Plug 'jnurmine/zenburn'
-Plug 'tpope/vim-vividchalk'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/seoul256.vim'
-Plug 'tomasr/molokai'
-Plug 'chriskempson/base16-vim'
-Plug 'nlknguyen/papercolor-theme'
-Plug 'w0ng/vim-hybrid'
-Plug 'kristijanhusak/vim-hybrid-material'
+" Plug 'morhetz/gruvbox'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'dracula/vim'
+" Plug 'jnurmine/zenburn'
+" Plug 'tpope/vim-vividchalk'
+" Plug 'jonathanfilip/vim-lucius'
+" Plug 'junegunn/seoul256.vim'
+" Plug 'tomasr/molokai'
+" Plug 'chriskempson/base16-vim'
+" Plug 'nlknguyen/papercolor-theme'
+" Plug 'w0ng/vim-hybrid'
+" Plug 'kristijanhusak/vim-hybrid-material'
 
 " Integrate with external tools
 Plug 'KabbAmine/zeavim.vim'
 Plug 'junegunn/fzf'
 
-" Super advanced completion!
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-syntax'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/neco-syntax'
+" A plugin that allows me to tab complete a snippet of code with just a keyword
 Plug 'SirVer/ultisnips'
+" ..and a collection of said snippets for a variety of languages
 Plug 'honza/vim-snippets'
 
 Plug 'wincent/command-t', {
@@ -95,14 +90,6 @@ Plug 'wincent/command-t', {
 call plug#end() " }}}
 
 " {{{ Autocommand groups
-augroup rainbow_parentheses
-  autocmd!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
-
 augroup vimrc_folding
   autocmd!
   au BufReadPost $MYVIMRC setlocal foldmethod=marker
@@ -123,22 +110,6 @@ augroup manual_docset_definitions
   autocmd!
   au BufReadPost $MYVIMRC let b:manualDocset = 'vim'
   au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
-augroup END
-
-augroup super_tab_completion
-  autocmd!
-
-  autocmd BufEnter  *  call ncm2#enable_for_buffer()
-
-  " Set mappings for only supported filetypes.
-  autocmd FileType * call LanguageClient_Maps()
-  " Run gofmt and goimports on save
-  autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-  autocmd CursorHold * call LanguageClient_Hovering()
-
-  autocmd User LanguageClientStarted setlocal signcolumn=yes
-  autocmd User LanguageClientStopped setlocal signcolumn=auto
-  autocmd User LanguageClientStarted :lcd b:LanguageClient_projectRoot
 augroup END
 
 " }}}
@@ -249,7 +220,7 @@ nnoremap ' `
 nnoremap <silent> zP :set spell!<CR>
 
 " Clear the screen of artifacts, and clear highlighting too.
-map <silent> <c-l> <c-l>:nohlsearch<CR>:call LanguageClient#clearDocumentHighlight()<CR>
+map <silent> <c-l> <c-l>:nohlsearch<CR>
 
 " Immediately select the recommended spelling correction of the word underneath
 nnoremap zp 1z=
@@ -311,36 +282,32 @@ let g:zv_file_types = {
   \ }
 " }}}}
 
-" {{{{ Language server configuration
-" Configure the language servers
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.local/cargo/bin/rls'],
-    \ 'ruby': ['~/.local/ruby/bin/solargraph', 'stdio'],
-    \ 'go': ['~/.local/go/bin/gopls'],
-    \ 'python': ['~/.local/pypi/bin/pyls'],
-    \ 'dockerfile': ['~/.local/node/bin/docker-langserver', '--stdio'],
-    \ 'sh': ['bash-language-server', 'start'],
-    \ 'javascript': ['~/.local/node/bin/javascript-typescript-stdio'],
-    \ 'vim': ['~/.local/node/bin/vim-language-server', '--stdio'],
-    \ 'css': ['~/.local/node/bin/css-languageserver', '--stdio'],
-    \ 'scss': ['~/.local/node/bin/css-languageserver', '--stdio'],
-    \ 'html': ['~/.local/node/bin/html-languageserver', '--stdio']
-    \ }
-" Only send text updates to the language server every this seconds
-let g:LanguageClient_changeThrottle = 0.5
-" Don't use fzf for the context menu
-let g:LanguageClient_fzfContextMenu = 0
-let g:LanguageClient_hoverPreview = 'Never'
-let g:LanguageClient_useVirtualText = 0
-
-let g:LanguageClient_settingsPath = $VIMUSERRUNTIME . 'languageservers.json'
-"let g:LanguageClient_loadSettings = ~/.local/share/nvim/languageclient.log
-
-" }}}}
-
 " {{{{ Disable mappings from various plugins
 let g:zv_disable_mapping = 1
 let g:endwise_no_mappings = 1
+" }}}}
+
+" {{{{ Rainbow Parentheses configuration
+augroup rainbow_parentheses
+  autocmd!
+  au VimEnter * call rainbow_parentheses#activate()
+augroup END
+
+" Manually define the colors of the pairs. This normally derived automatically
+" from the color scheme, but that breaks with mine.
+let s:para_colors = map([
+      \ 'Yellow',
+      \ 'Magenta',
+      \ 'Green',
+      \ 'Cyan',
+      \ 'Brown',
+      \ 'Blue',
+      \ 'DarkGreen',
+      \ 'Red',
+      \ ], '[v:val, v:val]')
+let g:rainbow#max_level = len(s:para_colors)
+let g:rainbow#colors = { 'dark': s:para_colors, 'light': s:para_colors }
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 " }}}}
 
 " }}}
@@ -368,27 +335,6 @@ function <SID>SmartZeal(is_visual)
     endif
   else
     normal! K
-  endif
-endfunction
-
-function LanguageClient_Maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
-    nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> Z=   :call LanguageClient#textDocument_formatting_sync()<CR>
-    nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    nnoremap <silent> ZT   :call LanguageClient#textDocument_documentSymbol()<CR>
-  endif
-endfunction
-
-function LanguageClient_Hovering()
-  if g:LanguageClient_serverStatusMessage ==# ''
-    " No language server is running (not installed?), don't try to get the
-    " hover text
-    return
-  endif
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    call LanguageClient#textDocument_hover()
   endif
 endfunction
 
