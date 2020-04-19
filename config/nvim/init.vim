@@ -33,8 +33,9 @@ Plug 'nathanielc/vim-tickscript'
 " Automatically configure various editor settings in a standard way
 Plug 'editorconfig/editorconfig-vim'
 
-"Plug 'junegunn/vim-peekaboo'
+" A nice and quick directory viewer (the '-' keybinding)
 Plug 'justinmk/vim-dirvish'
+" Launch the file manager or new terminal easily from within vim
 Plug 'justinmk/vim-gtfo'
 
 " Tim Pope series of plugins. Quite a prolific vimscript author!
@@ -47,31 +48,30 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
 
+" Smartly insert the other (), [], '', "", <>
 Plug 'raimondi/delimitmate'
+" Scan the opened file, guess various indentation rules from it
 Plug 'raimondi/yaifa'
 
 " Briefly highlight whatever I yank
 Plug 'machakann/vim-highlightedyank'
 " Color each level of nested pairs a different color
 Plug 'alok/rainbow_parentheses.vim', {'branch': 'fix-spell'} " use this branch to include https://github.com/alok/rainbow_parentheses.vim/commit/3d1152441c21a03fa9d6302c700e0cb7eb80469c, fixing spell check
-Plug 'andrewradev/sideways.vim'
-Plug 'inkarkat/swapit'
-Plug 'chr4/sslsecure.vim'
-Plug 'tweekmonster/startuptime.vim'
 
-" Various color schemes I have tried...
-" Plug 'morhetz/gruvbox'
-" Plug 'nanotech/jellybeans.vim'
-" Plug 'dracula/vim'
-" Plug 'jnurmine/zenburn'
-" Plug 'tpope/vim-vividchalk'
-" Plug 'jonathanfilip/vim-lucius'
-" Plug 'junegunn/seoul256.vim'
-" Plug 'tomasr/molokai'
-" Plug 'chriskempson/base16-vim'
-" Plug 'nlknguyen/papercolor-theme'
-" Plug 'w0ng/vim-hybrid'
-" Plug 'kristijanhusak/vim-hybrid-material'
+" Custom text objects to interact with arguments/parameters in a list, or a
+" few other column/array like arrangements of text
+Plug 'andrewradev/sideways.vim'
+
+" Swap keywords in a list, using <C-a> and <C-x>
+Plug 'inkarkat/swapit'
+
+" Look for OpenSSL protocol and ciphers that are known to be insecure, and
+" highlight them
+Plug 'chr4/sslsecure.vim'
+
+" Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
+" present a nice display of what's taking so long
+Plug 'tweekmonster/startuptime.vim'
 
 " Integrate with external tools
 Plug 'KabbAmine/zeavim.vim'
