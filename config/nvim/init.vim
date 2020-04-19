@@ -395,3 +395,30 @@ function LanguageClient_Hovering()
 endfunction
 
 " }}}
+
+augroup RestoreSavedCursor
+  au!
+  " when I edit a file, restore the cursor to the saved position
+  autocmd BufReadPost *
+        \ if expand("<afile>:p:h") !=? $TEMP |
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \ let RestoreSavedCursor_line = line("'\"") |
+        \ let b:doopenfold = 1 |
+        \ if (foldlevel(RestoreSavedCursor_line) > foldlevel(RestoreSavedCursor_line - 1)) |
+        \ let RestoreSavedCursor_line = RestoreSavedCursor_line - 1 |
+        \ let b:doopenfold = 2 |
+        \ endif |
+        \ exe RestoreSavedCursor_line |
+        \ endif |
+        \ endif
+
+  " postpone using "zv" until after reading the modeline
+  autocmd BufWinEnter *
+        \ if exists("b:doopenfold") |
+        \ exe "normal zv" |
+        \ if(b:doopenfold > 1) |
+        \ exe "+".1 |
+        \ endif |
+        \ unlet b:doopenfold |
+        \ endif
+augroup END
