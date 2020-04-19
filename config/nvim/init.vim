@@ -39,7 +39,6 @@ Plug 'justinmk/vim-gtfo'
 
 " Tim Pope series of plugins. Quite a prolific vimscript author!
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-characterize'
@@ -86,6 +85,10 @@ Plug 'honza/vim-snippets'
 Plug 'wincent/command-t', {
   \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
   \ }
+
+" Easily put a character/pair around some text. Sandwich a word between
+" parentheses!
+Plug 'machakann/vim-sandwich'
 
 call plug#end() " }}}
 
@@ -309,6 +312,10 @@ let g:rainbow#max_level = len(s:para_colors)
 let g:rainbow#colors = { 'dark': s:para_colors, 'light': s:para_colors }
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 " }}}}
+
+" Switch sandwich to using surround.vim's key bindings, which I'm very used
+" to, while still taking advantage of the extra functionality
+runtime macros/sandwich/keymap/surround.vim
 
 " }}}
 
