@@ -348,16 +348,14 @@ let g:endwise_no_mappings = 1
 let g:hybrid_custom_term_colors = 1
 colorscheme devolved
 
-"highlight statusColNr gui=NONE guifg=#121212 guibg=#005f5f guisp=NONE
 highlight link statusColNr Number
-"highlight statusColNrPowerline gui=NONE guifg=#005f5f guibg=#1c1c1c guisp=NONE
-"highlight statusColNcPowerline gui=NONE guifg=#005f5f guibg=#121212 guisp=NONE
-"highlight statusFileName gui=NONE guifg=#ffaf00 guibg=#1c1c1c guisp=NONE
-"highlight statusFileType gui=NONE guifg=#00afff guibg=#1c1c1c guisp=NONE
-"highlight statusBranch gui=NONE guifg=#ff5f00 guibg=#1c1c1c guisp=NONE
-"highlight statusFlag gui=NONE guifg=#ff00d7 guibg=#1c1c1c guisp=NONE
-
 highlight link jinjaString String
+
+" Don't consider acronyms/abbreviations at least 3 long as spelling errors.
+" Includes a trailing 's' at the end, and any numbers as part of the acronym.
+syn match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
+" Don't consider URL-like things as spelling errors
+syn match NoSpellUrl '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
 
 " {{{ Supporting functions
 
