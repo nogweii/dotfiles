@@ -37,6 +37,17 @@ begin
   require 'irbtools/more'
   Irbtools.start
 
+  IRB.conf[:PROMPT][:ARROWSHAPES] = {
+    :PROMPT_I => ">> ",    # normal
+    :PROMPT_N => "|> ",    # indenting
+    :PROMPT_C => "…> ",    # continuing a statement
+    :PROMPT_S => "%l> ",   # continuing a string
+    :RETURN   => "=> %s \n",
+    :AUTO_INDENT => true,
+  }
+
+  IRB.conf[:PROMPT_MODE] = :ARROWSHAPES
+
 # Make some noise whenever there is an exception, of any kind.
 # Otherwise IRB won't report any error and just stop executing irbrc, leaving me
 # confused as to why some of the RC file hasn't been loaded.
