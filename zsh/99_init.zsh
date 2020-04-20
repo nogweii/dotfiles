@@ -54,8 +54,12 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# histdb: Store my shell history in a sqlite database
+typeset -g HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
+
 source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh 
+add-zsh-hook precmd histdb-update-outcome
+
 source ${DOTSDIR}/zsh/plugins/histdb/history-timer.zsh
-local HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
 add-zsh-hook preexec _start_timer
 add-zsh-hook precmd  _stop_timer
