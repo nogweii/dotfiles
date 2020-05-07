@@ -12,6 +12,7 @@
 "  * statusColNrPowerline - Default color of the status bar, when it's active
 "  * statusColNcPowerline - Default color of the status bar, when it's inactive
 "  * statusFileName - Color of the file name
+"  * statusFileType - Icon color of the associated file type
 "  * statusFlag - Color of various state flags (modified, is paste on, etc)
 "  * statusBranch - Git branch indicator (from fugitive)
 
