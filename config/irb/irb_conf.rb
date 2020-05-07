@@ -48,6 +48,9 @@ begin
 
   IRB.conf[:PROMPT_MODE] = :ARROWSHAPES
 
+  # Use the readline editing mode as it's vim implementation is a more comfortable than reline's
+  IRB.conf[:USE_READLINE] = true
+
 # Make some noise whenever there is an exception, of any kind.
 # Otherwise IRB won't report any error and just stop executing irbrc, leaving me
 # confused as to why some of the RC file hasn't been loaded.
