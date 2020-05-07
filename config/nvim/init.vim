@@ -70,7 +70,8 @@ Plug 'inkarkat/swapit'
 Plug 'chr4/sslsecure.vim'
 
 " Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
-" present a nice display of what's taking so long
+" present a nice display of what's taking so long startup. Also, see the shell
+" alias 'nvim-startup-benchmark'
 Plug 'tweekmonster/startuptime.vim'
 
 " Integrate with external tools
@@ -89,6 +90,9 @@ Plug 'wincent/command-t', {
 " Easily put a character/pair around some text. Sandwich a word between
 " parentheses!
 Plug 'machakann/vim-sandwich'
+
+Plug 'joshdick/onedark.vim'
+Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end() " }}}
 
@@ -311,12 +315,45 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 " to, while still taking advantage of the extra functionality
 runtime macros/sandwich/keymap/surround.vim
 
+" {{{ Color scheme settings for onedark & neodark
+let g:onedark_terminal_italics = 1
+" }}}
+
+
+
 " }}}
 
 let g:hybrid_custom_term_colors = 1
-colorscheme devolved
 
-highlight link statusColNr Number
+" These colors I've overridden to draw from the PatternFly palette
+let g:onedark_color_overrides = {
+      \ "green":          { "gui": "#5ba352", "cterm": "71",  "_pf": "green 400"  },
+      \ "purple":         { "gui": "#8476d1", "cterm": "104", "_pf": "purple 400" },
+      \ "dark_red":       { "gui": "#c9190b", "cterm": "88",  "_pf": "red 300"    },
+      \ "red":            { "gui": "#a30000", "cterm": "124", "_pf": "red 200"    },
+      \ "yellow":         { "gui": "#f4c145", "cterm": "221", "_pf": "gold 300"   },
+      \ "dark_yellow":    { "gui": "#f0ab00", "cterm": "214", "_pf": "gold 400"   },
+      \ "blue":           { "gui": "#2b9af3", "cterm": "75",  "_pf": "blue 300"   },
+      \ "cyan":           { "gui": "#009596", "cterm": "30",  "_pf": "cyan 300"   },
+      \ "white":          { "gui": "#f5f5f5", "cterm": "255", "_pf": "black 150"  },
+      \ "black":          { "gui": "#151515", "cterm": "233", "_pf": "black 900"  },
+      \ "comment_grey":   { "gui": "#4f5255", "cterm": "239", "_pf": "black 700"  },
+      \ "cursor_grey":    { "gui": "#212427", "cterm": "235", "_pf": "black 850"  },
+      \ "gutter_fg_grey": { "gui": "#3c3f42", "cterm": "237", "_pf": "black 800"  },
+      \ "visual_grey":    { "gui": "#737679", "cterm": "243", "_pf": "black 600"  },
+      \ "menu_grey":      { "gui": "#737679", "cterm": "243", "_pf": "black 600"  },
+      \ "special_grey":   { "gui": "#8a8d90", "cterm": "245", "_pf": "black 500"  },
+      \ "vertsplit":      { "gui": "#0f280d", "cterm": "235", "_pf": "green 700"  },
+      \}
+
+colorscheme onedark
+
+let s:colors = onedark#GetColors()
+call onedark#set_highlight('statusColNr', { "fg": s:colors["yellow"], "bg": s:colors["gutter_fg_grey"] })
+call onedark#set_highlight('statusColNrPowerline', {"fg": s:colors["gutter_fg_grey"], "bg": s:colors["cursor_grey"] })
+call onedark#set_highlight('statusColNcPowerline', { "fg": s:colors["comment_grey"] })
+call onedark#extend_highlight('WildMenu', { "bg": s:colors["green"] })
+call onedark#extend_highlight('PmenuSel', { "bg": s:colors["green"] })
 highlight link jinjaString String
 
 " Don't consider acronyms/abbreviations at least 3 long as spelling errors.
