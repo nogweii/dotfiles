@@ -6,4 +6,25 @@ set convert-meta off
 
 # mode in everything that uses readline
 set editing-mode vi
+
+# changing various Vim mode key bindings {{{
+
+# start with insert mode
+set keymap vi-insert
+
+# Ctrl+left/right for word movement
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# then any command mode changes
+set keymap vi-command
+
+"gg": beginning-of-history
+"G": end-of-history
+
+# end with setting the keymap back to normal Vim mode
 set keymap vi
+# }}}
+# vim: set foldmethod=marker:
