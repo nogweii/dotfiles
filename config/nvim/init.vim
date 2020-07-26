@@ -55,8 +55,6 @@ Plug 'raimondi/yaifa'
 
 " Briefly highlight whatever I yank
 Plug 'machakann/vim-highlightedyank'
-" Color each level of nested pairs a different color
-Plug 'alok/rainbow_parentheses.vim', {'branch': 'fix-spell'} " use this branch to include https://github.com/alok/rainbow_parentheses.vim/commit/3d1152441c21a03fa9d6302c700e0cb7eb80469c, fixing spell check
 
 " Custom text objects to interact with arguments/parameters in a list, or a
 " few other column/array like arrangements of text
@@ -93,6 +91,9 @@ Plug 'machakann/vim-sandwich'
 
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
+
+" Automatically jump to the project's root directory
+Plug 'airblade/vim-rooter'
 
 call plug#end() " }}}
 
@@ -314,27 +315,15 @@ let g:zv_disable_mapping = 1
 let g:endwise_no_mappings = 1
 " }}}}
 
-" {{{{ Rainbow Parentheses configuration
-augroup rainbow_parentheses
-  autocmd!
-  au VimEnter * call rainbow_parentheses#activate()
-augroup END
+" {{{{ Project root directory configuration
+" Switch to the file's current directory if we're not in a found project
+let g:rooter_change_directory_for_non_project_files = 'current'
+" Change only the local buffer's directory, not the entire vim
+let g:rooter_cd_cmd = 'lcd'
+" Be silent when changing directories
+let g:rooter_silent_chdir = 1
 
-" Manually define the colors of the pairs. This normally derived automatically
-" from the color scheme, but that breaks with mine.
-let s:para_colors = map([
-      \ 'Yellow',
-      \ 'Magenta',
-      \ 'Green',
-      \ 'Cyan',
-      \ 'Brown',
-      \ 'Blue',
-      \ 'DarkGreen',
-      \ 'Red',
-      \ ], '[v:val, v:val]')
-let g:rainbow#max_level = len(s:para_colors)
-let g:rainbow#colors = { 'dark': s:para_colors, 'light': s:para_colors }
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+" XXX: rooter sets a `b:rootDir` value to the absolute path of the folder
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
