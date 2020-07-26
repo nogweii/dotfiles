@@ -134,6 +134,10 @@
     ob = "!f() { git checkout --orphan $1 && git rm --quiet -r --cached .; }; f"
     # locally delete all branches that have been merged into master already
     branch-cleanup = "!f() { git branch --merged master | egrep -v '\\*? master' | xargs -n 1 git branch -d ;}; f" 
+    # Find the nearest parent branch from the current HEAD. This is very naïve!
+    parent-branch = "!f() { git log --pretty=format:'%D' HEAD^ | grep 'origin/' | head -n1 | sed 's@origin/@@' | sed 's@,.*@@' ;}; f"
+    # Set the branch's upstream to origin remote with the exact same branch name
+    branch-upstream-to-origin = "!f() { git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD) ;}; f"
 
 [web]
     browser = kde-open
@@ -174,10 +178,12 @@
     submodule = diff
 [advice]
     pushNonFastForward = false
-    #statusHints = false
+    statusHints = true
     commitBeforeMerge = false
     resolveConflict = false
     implicitIdentity = false
     detachedHead = false
+[pull]
+    rebase = true
 
 # vim: set ft=gitconfig:
