@@ -98,6 +98,9 @@ Plug 'airblade/vim-rooter'
 " Persist vim buffers, etc across executions, automatically
 Plug 'thaerkh/vim-workspace'
 
+" Show a list of the buffers as I switch through them
+Plug 'bling/vim-bufferline'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
@@ -183,6 +186,9 @@ set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
 set undofile                   " Persist undo history across sessions
 set termguicolors              " Use guifg over ctermfg in true-color terminals
+set sessionoptions-=blank      " Don't save empty windows in the session
+set sessionoptions-=buffers    " Don't save hidden buffers into the session
+set sessionoptions-=help       " Ignore the help buffer for sessions
 " Point the spell checker at my additional vocabulary words
 let &spellfile=$VIMUSERRUNTIME . "/en.utf-8.add"
 
@@ -231,8 +237,8 @@ nnoremap Q gq
 " Format the next paragraph, quick!
 nnoremap gQ gqap
 
-nnoremap <silent> ZE <Plug>(CommandT)
-nnoremap <silent> ZB <Plug>(CommandTBuffer)
+nnoremap <silent> ZE :CommandT<CR>
+nnoremap <silent> ZB :CommandTBuffer<CR>
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -283,8 +289,8 @@ imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
 nnoremap gf gF
 nnoremap <silent> gF :<c-u>call gtfo#open#file(getcwd())<cr>
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+nnoremap <silent> <C-n> :bnext<CR>
+nnoremap <silent> <C-p> :bprevious<CR>
 
 " }}}
 
