@@ -95,6 +95,9 @@ Plug 'KeitaNakamura/neodark.vim'
 " Automatically jump to the project's root directory
 Plug 'airblade/vim-rooter'
 
+" Persist vim buffers, etc across executions, automatically
+Plug 'thaerkh/vim-workspace'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
@@ -324,6 +327,22 @@ let g:rooter_cd_cmd = 'lcd'
 let g:rooter_silent_chdir = 1
 
 " XXX: rooter sets a `b:rootDir` value to the absolute path of the folder
+" }}}}
+
+" {{{{ Workspace configuration
+
+" Don't need to have workspace also manage my undo settings, I've got it
+" (globally)
+let g:workspace_persist_undo_history = 0
+
+" When calling vim with an argument, open those files as buffers, not tabs
+let g:workspace_create_new_tabs = 0
+
+" Don't automatically save files
+let g:workspace_autosave = 0
+let g:workspace_autosave_untrailspaces = 0
+
+let g:workspace_session_name = ".vim-stuff/Session.vim"
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
