@@ -2,7 +2,6 @@
 " of @blaenk's own status implementation, described on his blog
 " http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
 
-" Includes integration with a slightly modified version of buftabs.
 " Uses custom highlights, all beginning with 'status'. See my personal color
 " scheme, devolved. Assumes you have a "nerd font" installed, uses the private
 " use unicode section to display file types.
@@ -56,7 +55,7 @@ let s:filename_to_icon = {
    \  'LICENSE'      : "\uf0e3",
    \ }
 
-function! Status(winnum, buftabs)
+function! Status(winnum)
   let active = a:winnum == winnr()
   let bufnum = winbufnr(a:winnum)
 
@@ -91,9 +90,6 @@ function! Status(winnum, buftabs)
     let usealt = 1
   elseif name ==# '__Gundo_Preview__'
     let altstat .= ' Gundo Preview'
-    let usealt = 1
-  elseif a:buftabs
-    let altstat .= buftabs#statusline()
     let usealt = 1
   endif
 
@@ -200,18 +196,18 @@ function! Status(winnum, buftabs)
   return stat
 endfunction
 
-function! s:RefreshStatus(buftabs)
+function! s:RefreshStatus()
   for nr in range(1, winnr('$'))
-    call setwinvar(nr, '&statusline', '%!Status(' . nr . ',' . a:buftabs . ')')
+    call setwinvar(nr, '&statusline', '%!Status(' . nr . ')')
   endfor
 endfunction
 
-command! RefreshStatus :call <SID>RefreshStatus(0)
+command! RefreshStatus :call <SID>RefreshStatus()
 
 augroup status
   autocmd!
   " Update the status line a bunch of times
-  autocmd VimEnter,VimLeave,WinEnter,WinLeave,BufWinLeave * call <SID>RefreshStatus(0)
+  autocmd VimEnter,VimLeave,WinEnter,WinLeave,BufWinLeave,BufWinEnter * call <SID>RefreshStatus()
   " On occasion, simply refresh the status line
   autocmd CursorHold * :RefreshStatus
   " When to show the buffer list instead of the filename
