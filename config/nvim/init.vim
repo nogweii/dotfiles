@@ -6,7 +6,7 @@
 " intrigues you as well.
 " -- Happy vimming! :smile
 
-" Get the directory that contains init.vim.
+" Get the directory that contains init.vim. (this is probably ~/.config/nvim/ )
 let $VIMUSERRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 
 " {{{ Automatically install vim-plug if it isn't already present
@@ -104,7 +104,7 @@ Plug 'bling/vim-bufferline'
 call plug#end() " }}}
 
 " {{{ Autocommand groups
-augroup vimrc_folding
+augroup my_vimrc
   autocmd!
   au BufReadPost $MYVIMRC setlocal foldmethod=marker
 augroup END
@@ -126,31 +126,31 @@ augroup manual_docset_definitions
   au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
 augroup END
 
-augroup RestoreSavedCursor
+augroup smooth_out_vim
   au!
-  " when I edit a file, restore the cursor to the saved position
-  autocmd BufReadPost *
-        \ if expand("<afile>:p:h") !=? $TEMP |
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \ let RestoreSavedCursor_line = line("'\"") |
-        \ let b:doopenfold = 1 |
-        \ if (foldlevel(RestoreSavedCursor_line) > foldlevel(RestoreSavedCursor_line - 1)) |
-        \ let RestoreSavedCursor_line = RestoreSavedCursor_line - 1 |
-        \ let b:doopenfold = 2 |
-        \ endif |
-        \ exe RestoreSavedCursor_line |
-        \ endif |
-        \ endif
 
-  " postpone using "zv" until after reading the modeline
-  autocmd BufWinEnter *
-        \ if exists("b:doopenfold") |
-        \ exe "normal zv" |
-        \ if(b:doopenfold > 1) |
-        \ exe "+".1 |
-        \ endif |
-        \ unlet b:doopenfold |
-        \ endif
+  " Detect filetype after saving a file without a known one
+  au BufWritePost * nested
+        \ if &l:filetype ==# '' || exists('b:ftdetect')
+        \ |   unlet! b:ftdetect
+        \ |   filetype detect
+        \ | endif
+
+  " Automatically set read-only when a swap file was found
+  au SwapExists * nested let v:swapchoice = 'o'
+
+  " Resize the windows to be equal whenever vim is resized
+  au VimResized * tabdo wincmd =
+
+  " After opening a file, move the cursor back to where it last was
+  au BufReadPost * if &ft !~# 'commit' && ! &diff &&
+                 \      line("'\"") >= 1 && line("'\"") <= line("$")
+                 \ |   execute 'normal! g`"zvzz'
+                 \ | endif
+
+  " Disable the swap & undo files for various ephemeral files
+  au BufWritePre /tmp/*,COMMIT_EDITMSG,MERGE_MSG setlocal noundofile noswapfile
+
 augroup END
 " }}}
 
@@ -189,6 +189,9 @@ set termguicolors              " Use guifg over ctermfg in true-color terminals
 set sessionoptions-=blank      " Don't save empty windows in the session
 set sessionoptions-=buffers    " Don't save hidden buffers into the session
 set sessionoptions-=help       " Ignore the help buffer for sessions
+set formatoptions+=r           " Add comment syntax to new lines in insert mode
+set formatoptions+=o           " Automatically add comment syntax after o/O
+set shortmess+=F               " Don't print a message when opening a file
 " Point the spell checker at my additional vocabulary words
 let &spellfile=$VIMUSERRUNTIME . "/en.utf-8.add"
 
@@ -212,6 +215,11 @@ endif
 " directly set the path to the system python3, so it avoids using the
 " virtualenv
 let g:python3_host_prog = "/usr/bin/python3"
+
+" Where do I stick various things that make vim a bit more like an IDE? (this
+" is inside each project's folder)
+let s:vim_ide_folder = '.vim-stuff'
+execute "set tags+=" . s:vim_ide_folder . "/tags"
 
 " }}}
 
@@ -332,7 +340,7 @@ let g:rooter_cd_cmd = 'lcd'
 " Be silent when changing directories
 let g:rooter_silent_chdir = 1
 
-" XXX: rooter sets a `b:rootDir` value to the absolute path of the folder
+" XXX: rooter sets `b:rootDir` to the absolute path of the folder
 " }}}}
 
 " {{{{ Workspace configuration
@@ -348,7 +356,11 @@ let g:workspace_create_new_tabs = 0
 let g:workspace_autosave = 0
 let g:workspace_autosave_untrailspaces = 0
 
-let g:workspace_session_name = ".vim-stuff/Session.vim"
+let g:workspace_session_name = s:vim_ide_folder . "/Session.vim"
+" }}}}
+
+" {{{{ Bufferline tweaks
+let g:bufferline_excludes = ['\[vimfiler\]', 'Command-T']
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
