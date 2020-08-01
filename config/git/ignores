@@ -15,3 +15,5 @@ tags
 __pycache__
 *.pyc
 .vim-stuff
+.vscode
+.idea
