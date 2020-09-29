@@ -15,46 +15,6 @@
 "  * statusFlag - Color of various state flags (modified, is paste on, etc)
 "  * statusBranch - Git branch indicator (from fugitive)
 
-" Generic file type icons
-let s:filetype_to_icon = {
-   \  'html'        : "\ue736",
-   \  'ruby'        : "\ue791",
-   \  'markdown'    : "\ue73e",
-   \  'vim'         : "\ue7c5",
-   \  'bash'        : "\ue614",
-   \  'sh'          : "\ue614",
-   \  'zsh'         : "\ue614",
-   \  'python'      : "\ue606",
-   \  'gitconfig'   : "\ue702",
-   \  'gitcommit'   : "\ue702",
-   \  'javascript'  : "\ue781",
-   \  'css'         : "\ue74a",
-   \  'php'         : "\ue608",
-   \  'java'        : "\ue738",
-   \  'go'          : "\ue724",
-   \  'c'           : "\ue61e",
-   \  'cpp'         : "\ue61d",
-   \  'netrw'       : "\ue5fe",
-   \  'haskell'     : "\ue61f",
-   \  'coffee'      : "\ue751",
-   \  'dockerfile'  : "\ue7b0",
-   \  'erlang'      : "\ue7b1",
-   \  'xml'         : "\ue618",
-   \  'text'        : "\uf0f6",
-   \  'sass'        : "\ue74b",
-   \  'scss'        : "\ue74b",
-   \  'yaml'        : "\uf03a",
-   \ }
-
-" Some file names are so well-known there are icons just for them. Let's use
-" them! Equal matches only, and case-sensitive!
-let s:filename_to_icon = {
-   \  'Gulpfile.js'  : "\ue763",
-   \  'bower.json'   : "\ue61a",
-   \  'package.json' : "\ue71e",
-   \  'LICENSE'      : "\uf0e3",
-   \ }
-
 function! Status(winnum)
   let active = a:winnum == winnr()
   let bufnum = winbufnr(a:winnum)
@@ -134,20 +94,11 @@ function! Status(winnum)
   endif
   let stat .= "\ue0b0%*"
 
-  " file name
-  let stat .= Color(active, 'statusFileName', ' %<%f')
+  " file type icon
+  let stat .= Color(active, 'statusFileType', ' ' . WebDevIconsGetFileTypeSymbol() . ' ')
 
-  " file type icon or plain word
-  let file_type = getbufvar(bufnum, '&filetype')
-  let file_name = fnamemodify(name, ':t')
-  if has_key(s:filename_to_icon, file_name)
-    let fileicon = s:filename_to_icon[file_name]
-  elseif has_key(s:filetype_to_icon, file_type)
-    let fileicon = s:filetype_to_icon[file_type]
-  else
-    let fileicon = file_type
-  end
-  let stat .= Color(active, 'statusFileType', ' ' . fileicon)
+  " file name
+  let stat .= Color(active, 'statusFileName', '%<%f')
 
   " file modified
   let modified = getbufvar(bufnum, '&modified')

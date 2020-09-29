@@ -25,6 +25,13 @@ endif
 " {{{ Use vim-plug to install a bunch of plugins:
 call plug#begin($VIMUSERRUNTIME . '/plugged')
 
+" Bug fix https://github.com/neovim/neovim/issues/12587
+" and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+" file type icons powered by nerdfont
+Plug 'ryanoasis/vim-devicons'
+
 " A package of language support files, like syntax highlighting
 Plug 'sheerun/vim-polyglot'
 " Add TICKscript (Influx Kapacitor 1.x) syntax
@@ -98,8 +105,11 @@ Plug 'airblade/vim-rooter'
 " Persist vim buffers, etc across executions, automatically
 Plug 'thaerkh/vim-workspace'
 
-" Show a list of the buffers as I switch through them
-Plug 'bling/vim-bufferline'
+" A fancy 'tabline' that shows all of the buffers & tabs
+Plug 'bagrat/vim-buffet'
+
+" Automatically build and maintain a tags file
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end() " }}}
 
@@ -175,7 +185,7 @@ set backspace=indent,eol,start " Smart backspace in insert mode
 set sidescroll=1               " Scroll horizontally 1 column at a time
 set sidescrolloff=7            " Always show this at least this many columns
 set fileencoding=utf-8         " Default to assuming files are encoded in UTF-8
-set updatetime=2000            " Millisecs idle before calling the CursorHold
+set updatetime=100             " Millisecs idle before calling the CursorHold
 set complete+=k,kspell         " Scan dictionaries for completion as well
 set completeopt=noinsert,menuone,noselect
 set virtualedit+=block         " Block movement can go beyond end-of-line
@@ -217,6 +227,8 @@ let g:python3_host_prog = "/usr/bin/python3"
 " is inside each project's folder)
 let s:vim_ide_folder = '.vim-stuff'
 execute "set tags+=" . s:vim_ide_folder . "/tags"
+let g:gutentags_ctags_tagfile = s:vim_ide_folder . "/tags"
+let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 
 " }}}
 
@@ -297,6 +309,7 @@ nnoremap <silent> gF :<c-u>call gtfo#open#file(getcwd())<cr>
 nnoremap <silent> <C-n> :bnext<CR>
 nnoremap <silent> <C-p> :bprevious<CR>
 
+nnoremap <silent> ZD :Bw<CR>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -358,6 +371,27 @@ let g:workspace_session_name = s:vim_ide_folder . "/Session.vim"
 
 " {{{{ Bufferline tweaks
 let g:bufferline_excludes = ['\[vimfiler\]', 'Command-T']
+" }}}}
+
+" {{{{ Buffet tweaks
+let g:buffet_prefix = 'buffetHi'
+
+let g:buffet_use_devicons = 1
+
+let g:buffet_tab_icon = "\uf9e8" " material design icon, tab
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:buffet_noseparator = ""
+let g:buffet_separator = ""
+"let g:buffet_separator = "\u2502" " box drawing characters, light vertical
+let g:buffet_modified_icon = " \uf692 " " material design icon, save/floppy
+
+function! g:BuffetSetCustomColors()
+  hi! BuffetTab           cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#2b9af3 ctermbg=5
+  hi! BuffetTrunc         cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#151515 ctermbg=233
+  hi! BuffetBuffer        cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#151515 ctermbg=233
+  hi! BuffetCurrentBuffer cterm=NONE guifg=#009596 ctermfg=30  guibg=#151515 ctermbg=233
+endfunction
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
