@@ -4,7 +4,11 @@
 let g:code_folder = environ()["HOME"] . '/code'
 
 function AutoWorkspace()
-  if ! matchstr(getcwd(), g:code_folder) " String coercion is sad, so we have to invert the logic to prove we are underneath the directory
+  if ! exists("b:rootDir")
+    " vim-rooter didn't trigger here, so we won't either
+    return
+  endif
+  if ! matchstr(b:rootDir, g:code_folder) " String coercion is sad, so we have to invert the logic to prove we are underneath the directory
     if ! filereadable(g:workspace_session_name)
       " No saved workspace file readable, now build it
       let l:parent_dir = fnamemodify(g:workspace_session_name, ':p:h')
