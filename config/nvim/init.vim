@@ -136,9 +136,6 @@ augroup smooth_out_vim
         \ |   filetype detect
         \ | endif
 
-  " Automatically set read-only when a swap file was found
-  au SwapExists * nested let v:swapchoice = 'o'
-
   " Resize the windows to be equal whenever vim is resized
   au VimResized * tabdo wincmd =
 
