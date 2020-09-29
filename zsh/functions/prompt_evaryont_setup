@@ -49,6 +49,7 @@ function prompt_evaryont_precmd {
 
   local icon_mountain="行" # \ufa08, the mountain icon
   local icon_python=" " # \uf81f, python lang logo
+  local icon_snake="🐍" # \u1f40d snake emoji
 
   if [[ -f .terraform/environment ]]; then
     _prompt_tf_workspace="%F{97}${icon_mountain}$(< .terraform/environment)%f "
@@ -57,7 +58,7 @@ function prompt_evaryont_precmd {
   fi
 
   if [[ -n "${VIRTUAL_ENV}" ]]; then
-    _prompt_virtualenv="%F{64}${icon_python}active!%f "
+    _prompt_virtualenv="%F{64}${icon_snake}${VIRTUAL_ENV:t}%f "
   else
     _prompt_virtualenv=""
   fi

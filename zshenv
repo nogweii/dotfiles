@@ -144,7 +144,6 @@ export PYTHONUSERBASE=~/.local/pypi
 export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export GEM_HOME="${HOME}/.local/ruby"
 
-# Set `pip install` to install to the user directory rather than system-wide
-export PIP_USER=yes
-
 export CARGO_HOME="${HOME}/.local/cargo"
+
+unset PIP_USER

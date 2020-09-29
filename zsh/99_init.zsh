@@ -63,3 +63,6 @@ add-zsh-hook precmd histdb-update-outcome
 source ${DOTSDIR}/zsh/plugins/histdb/history-timer.zsh
 add-zsh-hook preexec _start_timer
 add-zsh-hook precmd  _stop_timer
+
+source ${DOTSDIR}/zsh/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+AUTOSWITCH_SILENT='yes'
