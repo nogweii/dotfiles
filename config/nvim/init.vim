@@ -114,14 +114,24 @@ Plug 'ludovicchabant/vim-gutentags'
 " Easily launch unit tests from within vim
 Plug 'vim-test/vim-test'
 
+" Popup menu and automatic completion suggestions
+Plug 'prabirshrestha/asyncomplete.vim'
+
+" Language Server Protocol support
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
+" sources for asyncomplete.vim
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'prabirshrestha/asyncomplete-emoji.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-tags.vim'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
-augroup my_vimrc
-  autocmd!
-  au BufReadPost $MYVIMRC setlocal foldmethod=marker
-augroup END
-
 augroup recalculate_scrolloffset
   autocmd!
   au VimResized * execute 'set scrolloff='.(&lines-2)
@@ -175,8 +185,6 @@ set laststatus=2               " Always show the status bar
 set hidden                     " Allow changing buffers even with modifications
 set spell                      " Enable spell check
 set title                      " Modify the terminal title
-set foldmethod=syntax          " Default to syntax based folds
-set foldminlines=2             " Require at least 2 lines before closing a fold
 set hlsearch                   " Highlight search results
 set incsearch                  " Jump to the first match in real-time
 set ignorecase                 " Case insensitive search, by default.
@@ -194,7 +202,7 @@ set sidescrolloff=7            " Always show this at least this many columns
 set fileencoding=utf-8         " Default to assuming files are encoded in UTF-8
 set updatetime=100             " Millisecs idle before calling the CursorHold
 set complete+=k,kspell         " Scan dictionaries for completion as well
-set completeopt=noinsert,menuone,noselect
+set completeopt=noinsert,menuone,noselect,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
@@ -206,6 +214,8 @@ set sessionoptions-=help       " Ignore the help buffer for sessions
 set formatoptions+=r           " Add comment syntax to new lines in insert mode
 set formatoptions+=o           " Automatically add comment syntax after o/O
 set shortmess+=F               " Don't print a message when opening a file
+set foldlevel=5                " Only fold sections deeper than this level automatically
+set foldlevelstart=5           " Only fold sections deeper than this level automatically
 " Point the spell checker at my additional vocabulary words
 let &spellfile=$VIMUSERRUNTIME . "/en.utf-8.add"
 
@@ -301,10 +311,6 @@ map             L $
 nnoremap <silent> K :call <SID>SmartZeal(0)<CR>
 vnoremap <silent> K :call <SID>SmartZeal(1)<CR>
 nmap ZK <Plug>ZVKeyDocset
-
-" Use <TAB> to select the popup menu
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
 imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
@@ -420,7 +426,7 @@ let test#strategy = "mine"
 " to, while still taking advantage of the extra functionality
 runtime macros/sandwich/keymap/surround.vim
 
-
+let g:delimitMate_tab2exit = 0
 
 " }}}
 
