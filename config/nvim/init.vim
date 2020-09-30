@@ -175,6 +175,8 @@ augroup smooth_out_vim
   " Turn off spell check in the terminal
   au TermEnter * setlocal nospell
 
+  autocmd BufWinEnter,WinEnter * if &buftype == 'quickfix' | setlocal nospell | endif
+
 augroup END
 " }}}
 
@@ -235,6 +237,9 @@ set backupdir=$XDG_DATA_HOME/nvim/backup
 if !isdirectory($XDG_DATA_HOME . "/nvim/backup")
   execute "silent! !mkdir " . $XDG_DATA_HOME . "/nvim/backup"
 endif
+
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --follow
+set grepformat=%f:%l:%c:%m
 
 " directly set the path to the system python3, so it avoids using the
 " virtualenv
@@ -333,6 +338,8 @@ nmap <silent> <leader>te :TestVisit<CR>
 
 " Easily get out of insert mode in the terminal
 tmap <C-s> <C-\><C-n>
+
+nnoremap <silent> ZG :call <SID>GrepPrompt()<CR>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -497,5 +504,19 @@ function <SID>SmartZeal(is_visual)
     normal! K
   endif
 endfunction
+
+function! <SID>GrepPrompt()
+  let l:searchterm = input("Project Search: ")
+  silent! exe 'grep! ' . l:searchterm
+  if len(getqflist())
+    botright copen
+    redraw!
+  else
+    cclose
+    redraw!
+    echohl WarningMsg | echo "No search results for " . l:searchterm | echohl None
+  endif
+endfunction
+
 
 " }}}
