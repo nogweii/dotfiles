@@ -1,9 +1,10 @@
 [Appearance]
-Font=FantasqueSansMono Nerd Font,16,-1,5,50,0,0,0,0,0,Regular
+Font=FantasqueSansMono Nerd Font,16,-1,5,50,0,0,0,0,0
 LineSpacing=1
 UseFontLineChararacters=true
 
 [General]
+Directory=/home/colin
 LocalTabTitleFormat=%w
 Name=Happiness
 Parent=FALLBACK/
@@ -23,4 +24,4 @@ ScrollBarPosition=2
 ScrollFullPage=true
 
 [Terminal Features]
-UrlHintsModifiers=100663296
+UrlHintsModifiers=134217728
