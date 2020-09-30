@@ -26,6 +26,7 @@ path=(
   $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/bin             # Machine-local artisinal scripts
   $HOME/.local/ruby/bin        # User-installed ruby gems
+  "${VIRTUAL_ENV:-/dev/null}/bin" # Python virtualenv
   $HOME/.local/pypi/bin        # User-installed python packages
   $HOME/.local/node/bin        # User-installed npm packages
   $HOME/.local/go/bin          # User-installed go packages

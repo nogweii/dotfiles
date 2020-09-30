@@ -111,6 +111,9 @@ Plug 'bagrat/vim-buffet'
 " Automatically build and maintain a tags file
 Plug 'ludovicchabant/vim-gutentags'
 
+" Easily launch unit tests from within vim
+Plug 'vim-test/vim-test'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
@@ -136,6 +139,7 @@ augroup manual_docset_definitions
   au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
 augroup END
 
+" Various minor changes in neovim UX to smooth it out
 augroup smooth_out_vim
   au!
 
@@ -157,6 +161,9 @@ augroup smooth_out_vim
 
   " Disable the swap & undo files for various ephemeral files
   au BufWritePre /tmp/*,COMMIT_EDITMSG,MERGE_MSG setlocal noundofile noswapfile
+
+  " Turn off spell check in the terminal
+  au TermEnter * setlocal nospell
 
 augroup END
 " }}}
@@ -254,8 +261,8 @@ nnoremap Q gq
 " Format the next paragraph, quick!
 nnoremap gQ gqap
 
-nnoremap <silent> ZE :CommandT<CR>
-nnoremap <silent> ZB :CommandTBuffer<CR>
+nmap <silent> ZE <Plug>(CommandT)
+nmap <silent> ZB <Plug>(CommandTBuffer)
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -310,6 +317,16 @@ nnoremap <silent> <C-n> :bnext<CR>
 nnoremap <silent> <C-p> :bprevious<CR>
 
 nnoremap <silent> ZD :Bw<CR>
+
+" Launch a test suite from wihtin vim
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>te :TestVisit<CR>
+
+" Easily get out of insert mode in the terminal
+tmap <C-s> <C-\><C-n>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -392,6 +409,11 @@ function! g:BuffetSetCustomColors()
   hi! BuffetBuffer        cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#151515 ctermbg=233
   hi! BuffetCurrentBuffer cterm=NONE guifg=#009596 ctermfg=30  guibg=#151515 ctermbg=233
 endfunction
+" }}}}
+
+" {{{{ vim-test config
+let test#strategy = "mine"
+" let test#neovim#term_position = "botright"
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
