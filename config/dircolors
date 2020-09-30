@@ -8,6 +8,7 @@
 # Below, there should be one TERM entry for each termtype that is colorizable
 TERM Eterm
 TERM ansi
+TERM alacritty
 TERM color-xterm
 TERM con132x25
 TERM con132x30
