@@ -181,3 +181,5 @@
     detachedHead = false
 
 # vim: set ft=gitconfig:
+[diff "ansible-vault"]
+	textconv = ansible-vault view
