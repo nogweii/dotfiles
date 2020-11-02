@@ -43,3 +43,6 @@ gem 'solargraph'
 
 # Neovim gem enables ruby support in neovim
 gem 'neovim'
+
+# better tags generation using Ripper, the Ruby parser library
+gem "ripper-tags"

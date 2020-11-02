@@ -5,6 +5,21 @@ require 'rainbow'
 require 'erb'
 require 'json'
 
+# 'term-style'/'gui-style' can be:
+#              bold, underline, undercurl, reverse, inverse, italic, standout, NONE
+#
+# if gui-style is empty, the term-style value is used for the gui
+#
+# (Note: not everything is supported by a terminal nor the gui)
+#
+# besides empty values defaults to 'NONE"
+#
+# may also check:  :help highlight-groups
+#                  :help hl-<highlight-group> "
+#
+# for the Color numbers (0-255) for the foreground/background and under-curl-colors:
+# http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
+
 # ['color-group', 'term-style', 'foreground-color', 'background-color', 'gui-style', 'under-curl-color' ],
 @colors = [
   ['Normal',                   'NONE',      253, 233, 'NONE',      'NONE'],
@@ -110,11 +125,8 @@ def handle_color(color)
   @data.each do |xterm_color|
     return xterm_color['hexString'] if xterm_color['colorId'] == color
   end
-  "COLOR_ID_MISSING: #{color}"
+  return "COLOR_ID_MISSING: #{color}"
 end
-
-#       exec "hi ".a:colarg[0]." gui=".guival." guifg=".fg." guibg=".bg." guisp=".sp
-#       exec "hi ".s:colorRow[0]." cterm=".s:colorRow[1]." ctermfg=".s:colorRow[2]." ctermbg=".s:colorRow[3]
 
 puts ERB.new(DATA.read, nil, '-<>').result binding
 
@@ -138,6 +150,5 @@ endif
 let g:colors_name = "devolved"
 
 <% @colors.each do |color| -%>
-highlight <%= color[0] %> cterm=<%= maybe_none(color[1]) %> ctermfg=<%= fg_text(color[2]) %> ctermbg=<%= maybe_none(color[3]) %>
-highlight <%= color[0] %> gui=<%= maybe_none(color[5]) %> guifg=<%= handle_color(fg_text(color[2])) %> guibg=<%= handle_color(color[3]) %> guisp=<%= handle_color(color[5]) %>
+highlight <%= color[0] %> cterm=<%= maybe_none(color[1]) %> ctermfg=<%= fg_text(color[2]) %> ctermbg=<%= maybe_none(color[3]) %> gui=<%= maybe_none(color[1]) %> guifg=<%= handle_color(fg_text(color[2])) %> guibg=<%= handle_color(color[3]) %> guisp=<%= handle_color(color[5]) %>
 <% end -%>

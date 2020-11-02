@@ -254,11 +254,3 @@ function less() {
     command less $@
   fi
 }
-
-function mkvenv() {
-  venv_path="${1:-venv}"
-  python3 -m venv $venv_path
-  VIRTUAL_ENV_DISABLE_PROMPT=1
-  unset PIP_USER
-  source $venv_path/bin/activate
-}

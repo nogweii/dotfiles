@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rake/clean'
 
 ENV['HOME'] = ENV['DOTFILES_HOME_DIR'] if ENV.key? 'DOTFILES_HOME_DIR'
@@ -69,7 +71,7 @@ end
 dotfiles.each do |dotfile|
   dottask dotfile
 end
-if File.exists? File.expand_path '~/.local/share/konsole'
+if File.exist? File.expand_path '~/.local/share/konsole'
   dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
 end
 
@@ -151,7 +153,7 @@ namespace :vim do
     require 'readline'
     require 'octokit'
     require 'pp'
-    stty_save = %x`stty -g`.chomp
+    stty_save = `stty -g`.chomp
     trap('INT') { system 'stty', stty_save; exit }
 
     puts 'Creating a new submodule in vim/bundle/ from github'
@@ -168,16 +170,23 @@ namespace :vim do
 
     sh "git commit -m 'New vim plugin: #{buf}'"
   end
+
+  desc 'Build the color schemes from ERB templates'
+  task :colorgen do
+    require 'erb'
+    erb_template = open('config/nvim/colors/breeze-dark.erb').read
+    open('config/nvim/colors/breeze-dark.vim', 'w') do |vim_file|
+      vim_file.puts ERB.new(erb_template, trim_mode: '<>-').result
+    end
+  end
 end
 
 desc 'Check for any extra elements missing from this system'
 task :doctor => ['doctor:binaries', 'doctor:fonts']
 
 namespace :doctor do
-
   desc 'Find any missing CLI tools to fully make me comfortable'
   task :binaries do
-
     %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg
     wget curl vim nvim yarn irb fzf fd lsd mutt docker ansible sudo tmux dtach
     dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags bundle pry
@@ -188,7 +197,6 @@ namespace :doctor do
       end
       warn "Missing binary: #{binary}"
     end
-
   end
 
   desc 'Check that all of my favorite fonts are available'
@@ -200,8 +208,8 @@ namespace :doctor do
       /nerd font/i
     ].each do |font|
       next if all_fonts.any? font
+
       warn "Missing font matching #{font}"
     end
   end
-
 end

@@ -1,5 +1,5 @@
 case $TERM in
-  termite|*xterm*|rxvt*|(dt|k|E)term|gnome*|konsole*)
+  termite|*xterm*|rxvt*|(dt|k|E)term|gnome*|konsole*|alacritty*)
     termtitle () {
       if [[ -n "${SSH_TTY}" ]]; then
         ssh_host="<%m> "

@@ -26,6 +26,7 @@ path=(
   $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/bin             # Machine-local artisinal scripts
   $HOME/.local/ruby/bin        # User-installed ruby gems
+  "${VIRTUAL_ENV:-/dev/null}/bin" # Python virtualenv
   $HOME/.local/pypi/bin        # User-installed python packages
   $HOME/.local/node/bin        # User-installed npm packages
   $HOME/.local/go/bin          # User-installed go packages
@@ -144,7 +145,6 @@ export PYTHONUSERBASE=~/.local/pypi
 export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
 export GEM_HOME="${HOME}/.local/ruby"
 
-# Set `pip install` to install to the user directory rather than system-wide
-export PIP_USER=yes
-
 export CARGO_HOME="${HOME}/.local/cargo"
+
+unset PIP_USER

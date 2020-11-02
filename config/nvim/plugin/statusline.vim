@@ -2,7 +2,6 @@
 " of @blaenk's own status implementation, described on his blog
 " http://www.blaenkdenum.com/posts/a-simpler-vim-statusline/
 
-" Includes integration with a slightly modified version of buftabs.
 " Uses custom highlights, all beginning with 'status'. See my personal color
 " scheme, devolved. Assumes you have a "nerd font" installed, uses the private
 " use unicode section to display file types.
@@ -12,50 +11,11 @@
 "  * statusColNrPowerline - Default color of the status bar, when it's active
 "  * statusColNcPowerline - Default color of the status bar, when it's inactive
 "  * statusFileName - Color of the file name
+"  * statusFileType - Icon color of the associated file type
 "  * statusFlag - Color of various state flags (modified, is paste on, etc)
 "  * statusBranch - Git branch indicator (from fugitive)
 
-" Generic file type icons
-let s:filetype_to_icon = {
-   \  'html'        : "\ue736",
-   \  'ruby'        : "\ue791",
-   \  'markdown'    : "\ue73e",
-   \  'vim'         : "\ue7c5",
-   \  'bash'        : "\ue614",
-   \  'sh'          : "\ue614",
-   \  'zsh'         : "\ue614",
-   \  'python'      : "\ue606",
-   \  'gitconfig'   : "\ue702",
-   \  'gitcommit'   : "\ue702",
-   \  'javascript'  : "\ue781",
-   \  'css'         : "\ue74a",
-   \  'php'         : "\ue608",
-   \  'java'        : "\ue738",
-   \  'go'          : "\ue724",
-   \  'c'           : "\ue61e",
-   \  'cpp'         : "\ue61d",
-   \  'netrw'       : "\ue5fe",
-   \  'haskell'     : "\ue61f",
-   \  'coffee'      : "\ue751",
-   \  'dockerfile'  : "\ue7b0",
-   \  'erlang'      : "\ue7b1",
-   \  'xml'         : "\ue618",
-   \  'text'        : "\uf0f6",
-   \  'sass'        : "\ue74b",
-   \  'scss'        : "\ue74b",
-   \  'yaml'        : "\uf03a",
-   \ }
-
-" Some file names are so well-known there are icons just for them. Let's use
-" them! Equal matches only, and case-sensitive!
-let s:filename_to_icon = {
-   \  'Gulpfile.js'  : "\ue763",
-   \  'bower.json'   : "\ue61a",
-   \  'package.json' : "\ue71e",
-   \  'LICENSE'      : "\uf0e3",
-   \ }
-
-function! Status(winnum, buftabs)
+function! Status(winnum)
   let active = a:winnum == winnr()
   let bufnum = winbufnr(a:winnum)
 
@@ -90,9 +50,6 @@ function! Status(winnum, buftabs)
     let usealt = 1
   elseif name ==# '__Gundo_Preview__'
     let altstat .= ' Gundo Preview'
-    let usealt = 1
-  elseif a:buftabs
-    let altstat .= buftabs#statusline()
     let usealt = 1
   endif
 
@@ -137,20 +94,11 @@ function! Status(winnum, buftabs)
   endif
   let stat .= "\ue0b0%*"
 
-  " file name
-  let stat .= Color(active, 'statusFileName', ' %<%f')
+  " file type icon
+  let stat .= Color(active, 'statusFileType', ' ' . WebDevIconsGetFileTypeSymbol() . ' ')
 
-  " file type icon or plain word
-  let file_type = getbufvar(bufnum, '&filetype')
-  let file_name = fnamemodify(name, ':t')
-  if has_key(s:filename_to_icon, file_name)
-    let fileicon = s:filename_to_icon[file_name]
-  elseif has_key(s:filetype_to_icon, file_type)
-    let fileicon = s:filetype_to_icon[file_type]
-  else
-    let fileicon = file_type
-  end
-  let stat .= Color(active, 'statusFileType', ' ' . fileicon)
+  " file name
+  let stat .= Color(active, 'statusFileName', '%<%f')
 
   " file modified
   let modified = getbufvar(bufnum, '&modified')
@@ -199,18 +147,18 @@ function! Status(winnum, buftabs)
   return stat
 endfunction
 
-function! s:RefreshStatus(buftabs)
+function! s:RefreshStatus()
   for nr in range(1, winnr('$'))
-    call setwinvar(nr, '&statusline', '%!Status(' . nr . ',' . a:buftabs . ')')
+    call setwinvar(nr, '&statusline', '%!Status(' . nr . ')')
   endfor
 endfunction
 
-command! RefreshStatus :call <SID>RefreshStatus(0)
+command! RefreshStatus :call <SID>RefreshStatus()
 
 augroup status
   autocmd!
   " Update the status line a bunch of times
-  autocmd VimEnter,VimLeave,WinEnter,WinLeave,BufWinLeave * call <SID>RefreshStatus(0)
+  autocmd VimEnter,VimLeave,WinEnter,WinLeave,BufWinLeave,BufWinEnter * call <SID>RefreshStatus()
   " On occasion, simply refresh the status line
   autocmd CursorHold * :RefreshStatus
   " When to show the buffer list instead of the filename

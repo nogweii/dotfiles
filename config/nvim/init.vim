@@ -6,7 +6,7 @@
 " intrigues you as well.
 " -- Happy vimming! :smile
 
-" Get the directory that contains init.vim.
+" Get the directory that contains init.vim. (this is probably ~/.config/nvim/ )
 let $VIMUSERRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 
 " {{{ Automatically install vim-plug if it isn't already present
@@ -24,6 +24,13 @@ endif
 
 " {{{ Use vim-plug to install a bunch of plugins:
 call plug#begin($VIMUSERRUNTIME . '/plugged')
+
+" Bug fix https://github.com/neovim/neovim/issues/12587
+" and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
+Plug 'antoinemadec/FixCursorHold.nvim'
+
+" file type icons powered by nerdfont
+Plug 'ryanoasis/vim-devicons'
 
 " A package of language support files, like syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -55,8 +62,6 @@ Plug 'raimondi/yaifa'
 
 " Briefly highlight whatever I yank
 Plug 'machakann/vim-highlightedyank'
-" Color each level of nested pairs a different color
-Plug 'alok/rainbow_parentheses.vim', {'branch': 'fix-spell'} " use this branch to include https://github.com/alok/rainbow_parentheses.vim/commit/3d1152441c21a03fa9d6302c700e0cb7eb80469c, fixing spell check
 
 " Custom text objects to interact with arguments/parameters in a list, or a
 " few other column/array like arrangements of text
@@ -70,7 +75,8 @@ Plug 'inkarkat/swapit'
 Plug 'chr4/sslsecure.vim'
 
 " Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
-" present a nice display of what's taking so long
+" present a nice display of what's taking so long startup. Also, see the shell
+" alias 'nvim-startup-benchmark'
 Plug 'tweekmonster/startuptime.vim'
 
 " Integrate with external tools
@@ -90,14 +96,42 @@ Plug 'wincent/command-t', {
 " parentheses!
 Plug 'machakann/vim-sandwich'
 
+Plug 'joshdick/onedark.vim'
+Plug 'KeitaNakamura/neodark.vim'
+
+" Automatically jump to the project's root directory
+Plug 'airblade/vim-rooter'
+
+" Persist vim buffers, etc across executions, automatically
+Plug 'thaerkh/vim-workspace'
+
+" A fancy 'tabline' that shows all of the buffers & tabs
+Plug 'bagrat/vim-buffet'
+
+" Automatically build and maintain a tags file
+Plug 'ludovicchabant/vim-gutentags'
+
+" Easily launch unit tests from within vim
+Plug 'vim-test/vim-test'
+
+" Popup menu and automatic completion suggestions
+Plug 'prabirshrestha/asyncomplete.vim'
+
+" Language Server Protocol support
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+
+" sources for asyncomplete.vim
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+Plug 'prabirshrestha/asyncomplete-emoji.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'prabirshrestha/asyncomplete-tags.vim'
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
-augroup vimrc_folding
-  autocmd!
-  au BufReadPost $MYVIMRC setlocal foldmethod=marker
-augroup END
-
 augroup recalculate_scrolloffset
   autocmd!
   au VimResized * execute 'set scrolloff='.(&lines-2)
@@ -115,6 +149,35 @@ augroup manual_docset_definitions
   au BufReadPost ansible.cfg let b:manualDocset = 'ansible'
 augroup END
 
+" Various minor changes in neovim UX to smooth it out
+augroup smooth_out_vim
+  au!
+
+  " Detect filetype after saving a file without a known one
+  au BufWritePost * nested
+        \ if &l:filetype ==# '' || exists('b:ftdetect')
+        \ |   unlet! b:ftdetect
+        \ |   filetype detect
+        \ | endif
+
+  " Resize the windows to be equal whenever vim is resized
+  au VimResized * tabdo wincmd =
+
+  " After opening a file, move the cursor back to where it last was
+  au BufReadPost * if &ft !~# 'commit' && ! &diff &&
+                 \      line("'\"") >= 1 && line("'\"") <= line("$")
+                 \ |   execute 'normal! g`"zvzz'
+                 \ | endif
+
+  " Disable the swap & undo files for various ephemeral files
+  au BufWritePre /tmp/*,COMMIT_EDITMSG,MERGE_MSG setlocal noundofile noswapfile
+
+  " Turn off spell check in the terminal
+  au TermEnter * setlocal nospell
+
+  autocmd BufWinEnter,WinEnter * if &buftype == 'quickfix' | setlocal nospell | endif
+
+augroup END
 " }}}
 
 " {{{ NeoVim settings
@@ -124,8 +187,6 @@ set laststatus=2               " Always show the status bar
 set hidden                     " Allow changing buffers even with modifications
 set spell                      " Enable spell check
 set title                      " Modify the terminal title
-set foldmethod=syntax          " Default to syntax based folds
-set foldminlines=2             " Require at least 2 lines before closing a fold
 set hlsearch                   " Highlight search results
 set incsearch                  " Jump to the first match in real-time
 set ignorecase                 " Case insensitive search, by default.
@@ -141,14 +202,22 @@ set backspace=indent,eol,start " Smart backspace in insert mode
 set sidescroll=1               " Scroll horizontally 1 column at a time
 set sidescrolloff=7            " Always show this at least this many columns
 set fileencoding=utf-8         " Default to assuming files are encoded in UTF-8
-set updatetime=2000            " Millisecs idle before calling the CursorHold
+set updatetime=100             " Millisecs idle before calling the CursorHold
 set complete+=k,kspell         " Scan dictionaries for completion as well
-set completeopt=noinsert,menuone,noselect
+set completeopt=noinsert,menuone,noselect,preview
 set virtualedit+=block         " Block movement can go beyond end-of-line
 set modelines=3                " Search the top and bottom 3 lines for modelines
 set number                     " Show line numbers
 set undofile                   " Persist undo history across sessions
 set termguicolors              " Use guifg over ctermfg in true-color terminals
+set sessionoptions-=blank      " Don't save empty windows in the session
+set sessionoptions-=buffers    " Don't save hidden buffers into the session
+set sessionoptions-=help       " Ignore the help buffer for sessions
+set formatoptions+=r           " Add comment syntax to new lines in insert mode
+set formatoptions+=o           " Automatically add comment syntax after o/O
+set shortmess+=F               " Don't print a message when opening a file
+set foldlevel=5                " Only fold sections deeper than this level automatically
+set foldlevelstart=5           " Only fold sections deeper than this level automatically
 " Point the spell checker at my additional vocabulary words
 let &spellfile=$VIMUSERRUNTIME . "/en.utf-8.add"
 
@@ -169,9 +238,19 @@ if !isdirectory($XDG_DATA_HOME . "/nvim/backup")
   execute "silent! !mkdir " . $XDG_DATA_HOME . "/nvim/backup"
 endif
 
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ --follow
+set grepformat=%f:%l:%c:%m
+
 " directly set the path to the system python3, so it avoids using the
 " virtualenv
 let g:python3_host_prog = "/usr/bin/python3"
+
+" Where do I stick various things that make vim a bit more like an IDE? (this
+" is inside each project's folder)
+let s:vim_ide_folder = '.vim-stuff'
+execute "set tags+=" . s:vim_ide_folder . "/tags"
+let g:gutentags_ctags_tagfile = s:vim_ide_folder . "/tags"
+let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 
 " }}}
 
@@ -197,8 +276,8 @@ nnoremap Q gq
 " Format the next paragraph, quick!
 nnoremap gQ gqap
 
-nnoremap <silent> ZE <Plug>(CommandT)
-nnoremap <silent> ZB <Plug>(CommandTBuffer)
+nmap <silent> ZE <Plug>(CommandT)
+nmap <silent> ZB <Plug>(CommandTBuffer)
 
 " Sometimes you just need to move a character or two in insert mode. Don't
 " make these a habit, though!
@@ -238,10 +317,6 @@ nnoremap <silent> K :call <SID>SmartZeal(0)<CR>
 vnoremap <silent> K :call <SID>SmartZeal(1)<CR>
 nmap ZK <Plug>ZVKeyDocset
 
-" Use <TAB> to select the popup menu
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 " imap <silent> <expr> <CR> pumvisible() ? ncm2_ultisnips#expand_or("\<CR>", 'n') : "\<CR>\<Plug>DiscretionaryEnd"
 imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
 
@@ -249,9 +324,22 @@ imap <silent> <expr> <CR> "\<CR>\<Plug>DiscretionaryEnd"
 nnoremap gf gF
 nnoremap <silent> gF :<c-u>call gtfo#open#file(getcwd())<cr>
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+nnoremap <silent> <C-n> :bnext<CR>
+nnoremap <silent> <C-p> :bprevious<CR>
 
+nnoremap <silent> ZD :Bw<CR>
+
+" Launch a test suite from wihtin vim
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>te :TestVisit<CR>
+
+" Easily get out of insert mode in the terminal
+tmap <C-s> <C-\><C-n>
+
+nnoremap <silent> ZG :call <SID>GrepPrompt()<CR>
 " }}}
 
 " {{{ Plugin configuration settings
@@ -284,39 +372,106 @@ let g:zv_disable_mapping = 1
 let g:endwise_no_mappings = 1
 " }}}}
 
-" {{{{ Rainbow Parentheses configuration
-augroup rainbow_parentheses
-  autocmd!
-  au VimEnter * call rainbow_parentheses#activate()
-augroup END
+" {{{{ Project root directory configuration
+" Switch to the file's current directory if we're not in a found project
+let g:rooter_change_directory_for_non_project_files = 'current'
+" Change only the local buffer's directory, not the entire vim
+let g:rooter_cd_cmd = 'lcd'
+" Be silent when changing directories
+let g:rooter_silent_chdir = 1
 
-" Manually define the colors of the pairs. This normally derived automatically
-" from the color scheme, but that breaks with mine.
-let s:para_colors = map([
-      \ 'Yellow',
-      \ 'Magenta',
-      \ 'Green',
-      \ 'Cyan',
-      \ 'Brown',
-      \ 'Blue',
-      \ 'DarkGreen',
-      \ 'Red',
-      \ ], '[v:val, v:val]')
-let g:rainbow#max_level = len(s:para_colors)
-let g:rainbow#colors = { 'dark': s:para_colors, 'light': s:para_colors }
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+" XXX: rooter sets `b:rootDir` to the absolute path of the folder
+" }}}}
+
+" {{{{ Workspace configuration
+
+" Don't need to have workspace also manage my undo settings, I've got it
+" (globally)
+let g:workspace_persist_undo_history = 0
+
+" When calling vim with an argument, open those files as buffers, not tabs
+let g:workspace_create_new_tabs = 0
+
+" Don't automatically save files
+let g:workspace_autosave = 0
+let g:workspace_autosave_untrailspaces = 0
+
+let g:workspace_session_name = s:vim_ide_folder . "/Session.vim"
+" }}}}
+
+" {{{{ Bufferline tweaks
+let g:bufferline_excludes = ['\[vimfiler\]', 'Command-T']
+" }}}}
+
+" {{{{ Buffet tweaks
+let g:buffet_prefix = 'buffetHi'
+
+let g:buffet_use_devicons = 1
+
+let g:buffet_tab_icon = "\uf9e8" " material design icon, tab
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:buffet_noseparator = ""
+let g:buffet_separator = ""
+"let g:buffet_separator = "\u2502" " box drawing characters, light vertical
+let g:buffet_modified_icon = " \uf692 " " material design icon, save/floppy
+
+function! g:BuffetSetCustomColors()
+  hi! BuffetTab           cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#2b9af3 ctermbg=5
+  hi! BuffetTrunc         cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#151515 ctermbg=233
+  hi! BuffetBuffer        cterm=NONE guifg=#f5f5f5 ctermfg=255 guibg=#151515 ctermbg=233
+  hi! BuffetCurrentBuffer cterm=NONE guifg=#009596 ctermfg=30  guibg=#151515 ctermbg=233
+endfunction
+" }}}}
+
+" {{{{ vim-test config
+let test#strategy = "mine"
+" let test#neovim#term_position = "botright"
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
 " to, while still taking advantage of the extra functionality
 runtime macros/sandwich/keymap/surround.vim
 
+let g:delimitMate_tab2exit = 0
+
 " }}}
 
-let g:hybrid_custom_term_colors = 1
-colorscheme devolved
+" {{{ Color scheme settings
 
-highlight link statusColNr Number
+let g:onedark_terminal_italics = 1
+" These colors I've overridden to draw from the PatternFly palette
+let g:onedark_color_overrides = {
+      \ "green":          { "gui": "#5ba352", "cterm": "71",  "_pf": "green 400"  },
+      \ "purple":         { "gui": "#8476d1", "cterm": "104", "_pf": "purple 400" },
+      \ "dark_red":       { "gui": "#c9190b", "cterm": "88",  "_pf": "red 300"    },
+      \ "red":            { "gui": "#a30000", "cterm": "124", "_pf": "red 200"    },
+      \ "yellow":         { "gui": "#f4c145", "cterm": "221", "_pf": "gold 300"   },
+      \ "dark_yellow":    { "gui": "#f0ab00", "cterm": "214", "_pf": "gold 400"   },
+      \ "blue":           { "gui": "#2b9af3", "cterm": "75",  "_pf": "blue 300"   },
+      \ "cyan":           { "gui": "#009596", "cterm": "30",  "_pf": "cyan 300"   },
+      \ "white":          { "gui": "#f5f5f5", "cterm": "255", "_pf": "black 150"  },
+      \ "black":          { "gui": "#151515", "cterm": "233", "_pf": "black 900"  },
+      \ "comment_grey":   { "gui": "#4f5255", "cterm": "239", "_pf": "black 700"  },
+      \ "cursor_grey":    { "gui": "#212427", "cterm": "235", "_pf": "black 850"  },
+      \ "gutter_fg_grey": { "gui": "#3c3f42", "cterm": "237", "_pf": "black 800"  },
+      \ "visual_grey":    { "gui": "#737679", "cterm": "243", "_pf": "black 600"  },
+      \ "menu_grey":      { "gui": "#737679", "cterm": "243", "_pf": "black 600"  },
+      \ "special_grey":   { "gui": "#8a8d90", "cterm": "245", "_pf": "black 500"  },
+      \ "vertsplit":      { "gui": "#0f280d", "cterm": "235", "_pf": "green 700"  },
+      \}
+
+colorscheme onedark
+
+let s:colors = onedark#GetColors()
+call onedark#set_highlight('statusColNr', { "fg": s:colors["yellow"], "bg": s:colors["gutter_fg_grey"] })
+call onedark#set_highlight('statusColNrPowerline', {"fg": s:colors["gutter_fg_grey"], "bg": s:colors["cursor_grey"] })
+call onedark#set_highlight('statusColNcPowerline', { "fg": s:colors["comment_grey"] })
+call onedark#set_highlight('statusFileName', { "fg": s:colors["cyan"], "bg": s:colors["cursor_grey"] })
+call onedark#set_highlight('statusFileType', { "fg": s:colors["dark_yellow"], "bg": s:colors["cursor_grey"] })
+call onedark#set_highlight('statusFlag', { "fg": s:colors["purple"], "bg": s:colors["cursor_grey"] })
+call onedark#extend_highlight('WildMenu', { "bg": s:colors["green"] })
+call onedark#extend_highlight('PmenuSel', { "bg": s:colors["green"] })
 highlight link jinjaString String
 
 " Don't consider acronyms/abbreviations at least 3 long as spelling errors.
@@ -324,6 +479,8 @@ highlight link jinjaString String
 syn match NoSpellAcronym '\<\(\u\|\d\)\{3,}s\?\>' contains=@NoSpell
 " Don't consider URL-like things as spelling errors
 syn match NoSpellUrl '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
+
+" }}}
 
 " {{{ Supporting functions
 
@@ -348,31 +505,18 @@ function <SID>SmartZeal(is_visual)
   endif
 endfunction
 
+function! <SID>GrepPrompt()
+  let l:searchterm = input("Project Search: ")
+  silent! exe 'grep! ' . l:searchterm
+  if len(getqflist())
+    botright copen
+    redraw!
+  else
+    cclose
+    redraw!
+    echohl WarningMsg | echo "No search results for " . l:searchterm | echohl None
+  endif
+endfunction
+
+
 " }}}
-
-augroup RestoreSavedCursor
-  au!
-  " when I edit a file, restore the cursor to the saved position
-  autocmd BufReadPost *
-        \ if expand("<afile>:p:h") !=? $TEMP |
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \ let RestoreSavedCursor_line = line("'\"") |
-        \ let b:doopenfold = 1 |
-        \ if (foldlevel(RestoreSavedCursor_line) > foldlevel(RestoreSavedCursor_line - 1)) |
-        \ let RestoreSavedCursor_line = RestoreSavedCursor_line - 1 |
-        \ let b:doopenfold = 2 |
-        \ endif |
-        \ exe RestoreSavedCursor_line |
-        \ endif |
-        \ endif
-
-  " postpone using "zv" until after reading the modeline
-  autocmd BufWinEnter *
-        \ if exists("b:doopenfold") |
-        \ exe "normal zv" |
-        \ if(b:doopenfold > 1) |
-        \ exe "+".1 |
-        \ endif |
-        \ unlet b:doopenfold |
-        \ endif
-augroup END

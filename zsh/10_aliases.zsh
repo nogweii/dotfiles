@@ -136,6 +136,7 @@ alias npm8gb='node --max-old-space-size=8192 /usr/bin/npm'
 
 alias server-ports="sudo ss -lntup | sed 's/users:((\"\([^\"]*\)\",pid.*$/\1/' | tail -n+2 | awk '{ printf \"%-17s %s/%s\n\", \$7, \$5, \$1 }' | sort"
 alias nvim-plugs='nvim +PlugClean! +PlugInstall +PlugUpdate +PlugUpgrade +3sleep +qa!'
+alias nvim-startup-benchmark='nvim "+StartupTime"'
 
 if [ -n "${commands[nvim]}" ]; then
     alias vi=nvim

@@ -1,0 +1,562 @@
+<%-
+information = {
+  author:      "Nogweii",
+  email:       "hello@nogweii.one",
+  name:        "breeze-dark",
+  description: "A Vim color scheme using the KDE Breeze colors, with dark intentions and full support for plugins & semantic highlighting.",
+  webpage:     "https://nogweii.one/projects/breeze-dark-vim.html"
+}
+-%>
+" <%= information[:name] %>.vim -- Vim color scheme.
+" Author:      <%= information[:author] %> (<%= information[:email] %>)
+" Webpage:     <%= information[:webpage] %>
+" Description: <%= information[:description] %>
+" Last Change: <%= Time.new.strftime "%Y-%m-%d" %>
+
+<%-
+# Breeze color palette:
+#
+
+@breeze_colors = {
+  "Abyss Blue" => "#2980b9",
+  "Alternate Gray" => "#bdc3c7",
+  "Beware Orange" => "#f67400",
+  "Burnt Charcoal" => "#3b4045",
+  "Cardboard Gray" => "#eff0f1",
+  "Charcoal Gray" => "#31363b",
+  "Coastal Fog" => "#7f8c8d",
+  "Danger Red" => "#ed1515",
+  "Deco Blue" => "#1e92ff",
+  "Green Sea" => "#16a085", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/16a085
+  "Hmmmmm Purple" => "#c039db", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/c039db
+  "Humble Yellow" => "#f39c1f", # Neither KDE or that website had a name for this, so I made one up.
+  "Hover Blue" => "#93cee9",
+  "Hyper Blue" => "#3daee6",
+  "Icon Blue" => "#1d99f3",
+  "Icon Gray" => "#4d4d4d",
+  "Icon Green" => "#2ecc71",
+  "Icon Orange" => "#f47750",
+  "Icon Red" => "#da4453",
+  "Icon Yellow" => "#fdbc4b",
+  "Lazy Gray" => "#afb0b3",
+  "Mellow Turquoise" => "#1cdc9a",
+  "Murky Sea Floor Blue" => "#2c3e50", # Neither KDE or that website had a name for this, so I made one up.
+  "Noble Fir" => "#27ae60",
+  "Paper White" => "#fcfcfc",
+  "Peter River Blue" => "#3498db", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/3498db
+  "Plasma Blue" => "#3daee9",
+  "Plastic Fire Red" => "#e74c30", # Neither KDE or that website had a name for this, so I made one up.
+  "Rusty Fruit Orange" => "#d35400", # Neither KDE or that website had a name for this, so I made one up.
+  "Shade Black" => "#232629",
+  "Slate Cloud Gray" => "#95a5a6", # Neither KDE or that website had a name for this, so I made one up.
+  "Studio Purple" => "#8e44ad", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/8e44ad
+  "Sunbeam Yellow" => "#c9ce3b",
+  "Turtle Turquoise" => "#1abc9c", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/1abc9c
+  "Verdant Green" => "#11d116",
+  "Wet Asphalt Gray" => "#34495e", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/34495e
+  "Wisteria Purple" => "#9b59b6", # The KDE design group didn't actually name this one, but someone online did: https://colornames.org/color/9b59b6
+
+  :fallback => nil, # The fallback value used when a group doesn't specify a color
+}
+
+def fetch_color(name)
+  if name == 'NONE'
+    'NONE'
+  elsif name == :fg
+    'fg'
+  elsif name == :bg
+    'bg'
+  elsif name
+    @breeze_colors[name]
+  else
+    nil
+  end
+end
+
+highlight_groups = {
+  "Normal"     => {fg: 'Paper White', bg: 'Shade Black'},
+
+  # 4.1. Text Analysis
+  "Comment"     => {fg: 'Coastal Fog', style: 'italic'},
+  "NonText"     => {fg: 'Icon Gray'},
+  "EndOfBuffer" => 'NonText',
+  "Whitespace"  => 'NonText',
+
+  # 4.1.1. Literals
+  "Constant"  => {fg: 'Icon Orange'},
+  "String"    => {fg: 'Icon Green'},
+  "Character" => {fg: 'Plastic Fire Red'},
+  "Number"    => {fg: 'Icon Red'},
+  "Boolean"   => {fg: 'Icon Yellow'},
+  "Float"     => 'Number',
+
+  # 4.1.2. Identifiers
+  "Identifier" => {fg: :fg},
+  "Function"   => {fg: 'Wisteria Purple'},
+
+  # 4.1.3. Syntax
+  "Statement"   => {fg: 'Icon Blue'},
+  "Conditional" => {fg: 'Icon Blue', style: 'italic'},
+  "Repeat"      => {fg: 'Hover Blue', style: 'bold'},
+  "Label"       => {fg: 'Icon Red', style: 'italic'},
+  "Operator"    => {fg: 'Noble Fir'},
+  "Keyword"     => {fg: 'Abyss Blue'},
+  "Exception"   => {fg: 'Plastic Fire Red', style: 'bold'},
+  "Noise"       => 'Delimiter',
+
+  # 4.1.4. Metatextual Information
+  "PreProc"   => {fg: 'Sunbeam Yellow'},
+  "Include"   => {fg: 'Verdant Green', style: ''},
+  "Define"    => {fg: 'Plasma Blue', style: ''},
+  "Macro"     => {fg: 'Plasma Blue', style: 'italic'},
+  "PreCondit" => {fg: 'Sunbeam Yellow',         style: 'italic'},
+
+  # 4.1.5. Semantics
+  "Type"         => {fg: 'Plasma Blue'},
+  "StorageClass" => {fg: 'Icon Orange', style: 'bold'},
+  "Structure"    => {fg: 'Plasma Blue', style: 'bold'},
+  "Typedef"      => {fg: 'Plasma Blue', style: 'italic'},
+
+  # 4.1.6. Edge Cases
+  "Special"        => {fg: 'Plastic Fire Red',   style: 'bold'},
+  "SpecialChar"    => {fg: 'Plastic Fire Red', style: 'italic'},
+  "SpecialKey"     => 'Character',
+  "Tag"            => 'Underlined',
+  "Delimiter"      => {fg: 'Cardboard Gray'},
+  "SpecialComment" => {fg: 'Coastal Fog', style: 'bold'},
+  "Debug"          => 'WarningMsg',
+
+  # 4.1.7. Help Syntax
+  "Underlined"        => {fg: 'Hover Blue', style: 'underline'},
+  "Ignore"            => {fg: 'Coastal Fog'},
+  "Error"             => {bg: 'Danger Red', fg: 'Cardboard Gray', style: 'bold'},
+  "Todo"              => {fg: 'Icon Yellow',   style: 'bold'},
+  "helpHyperTextJump" => 'Underlined',
+  "helpNormal"        => 'Normal',
+  "helpLeadBlank"     => 'Normal',
+  "Hint"              => {bg: 'Plastic Fire Red',    fg: 'Charcoal Gray', style: 'bold'},
+  "Info"              => {bg: 'Icon Red', fg: 'Charcoal Gray', style: 'bold'},
+  "Warning"           => {bg: 'Rusty Fruit Orange',     fg: 'Charcoal Gray', style: 'bold'},
+
+  # 4.2. Editor UI 
+  # 4.2.1. Status Line
+  "StatusLine"       => {bg: 'Icon Gray', fg: 'Verdant Green'},
+  "StatusLineNC"     => {bg: 'Icon Gray', fg: 'Coastal Fog'},
+  "StatusLineTerm"   => 'StatusLine',
+  "StatusLineTermNC" => 'StatusLineNC',
+
+  # 4.2.2. Separators
+  "VertSplit"   => {fg: 'Icon Gray'},
+  "TabLine"     => {bg: 'Icon Gray', fg: :fg},
+  "TabLineFill" => {fg: :fg},
+  "TabLineSel"  => {bg: 'Icon Gray', fg: :fg, style: 'inverse'},
+  "Title"       => {style: 'bold'},
+
+  # 4.2.3. Conditional Line Highlighting
+  "Conceal"         => {fg: 'NONE', bg: 'NONE'},
+  "CursorLine"      => {bg: 'Charcoal Gray'},
+  "CursorLineNr"    => {bg: 'Charcoal Gray', fg: 'Icon Red'},
+  "debugBreakpoint" => 'ErrorMsg',
+  "debugPC"         => 'ColorColumn',
+  "LineNr"          => {fg: 'Coastal Fog'},
+  "QuickFixLine"    => {bg: 'Icon Gray'},
+  "Visual"          => {style: 'inverse'},
+  "VisualNOS"       => {bg: 'Icon Gray'},
+
+  # 4.2.4. Popup Menu
+  "Pmenu"      => {bg: 'Charcoal Gray', fg: :fg},
+  "PmenuSbar"  => {bg: 'Charcoal Gray'},
+  "PmenuSel"   => {fg: :fg},
+  "PmenuThumb" => {bg: 'Cardboard Gray'},
+  "WildMenu"   => {},
+
+  # 4.2.5. Folds
+  "FoldColumn" => {bg: 'Icon Gray',             style: 'bold'},
+  "Folded"     => {bg: 'Hmmmmm Purple',  fg: 'Charcoal Gray', style: 'italic'},
+
+  # 4.2.6. Diffs
+  "DiffAdd"    => {fg: 'Noble Fir', style: 'inverse'},
+  "DiffChange" => {fg: 'Icon Yellow',     style: 'inverse'},
+  "DiffDelete" => {fg: 'Danger Red',        style: 'inverse'},
+  "DiffText"   => {style: 'inverse'},
+
+  # 4.2.7. Searching
+  "IncSearch"  => {style: 'inverse'},
+  "Search"     => {style: 'underline'},
+  "MatchParen" => {fg: 'Icon Green', style: 'bold'},
+
+  # 4.2.8. Spelling
+  "SpellBad"   => {bg: 'Danger Red', style: 'underline'},
+  "SpellCap"   => {bg: 'Abyss Blue', style: 'underline'},
+  "SpellLocal" => {bg: 'Icon Red', style: 'underline'},
+  "SpellRare"  => {bg: 'Icon Red', style: 'underline'},
+
+  # 4.2.9. Conditional Column Highlighting
+  "ColorColumn" => {style: 'inverse'},
+  "SignColumn"  => {},
+
+  # 4.2.10. Messages
+  "ErrorMsg"   => {fg: 'Danger Red',          style: 'bold'},
+  "HintMsg"    => {fg: 'Plastic Fire Red',      style: 'bold'},
+  "InfoMsg"    => {fg: 'Icon Red',   style: 'bold'},
+  "ModeMsg"    => {fg: 'Icon Yellow'},
+  "MoreMsg"    => 'ModeMsg',
+  "Question"   => {fg: 'Icon Orange', style: 'underline'},
+  "WarningMsg" => {fg: 'Rusty Fruit Orange',       style: 'bold'},
+
+  # 4.2.11. LSP
+  "LspDiagnosticsError" => 'Error',
+  "LspDiagnosticsErrorFloating" => 'ErrorMsg',
+  "LspDiagnosticsErrorSign" => 'ErrorMsg',
+
+  "LspDiagnosticsWarning" => 'Warning',
+  "LspDiagnosticsWarningFloating" => 'WarningMsg',
+  "LspDiagnosticsWarningSign" => 'WarningMsg',
+
+  "LspDiagnosticsHint" => 'Hint',
+  "LspDiagnosticsHintFloating" => 'HintMsg',
+  "LspDiagnosticsHintSign" => 'HintMsg',
+
+  "LspDiagnosticsInformation" => 'Info',
+  "LspDiagnosticsInformationFloating" => 'InfoMsg',
+  "LspDiagnosticsInformationSign" => 'InfoMsg',
+
+  "LspDiagnosticsUnderline" => {style: 'underline'},
+  "LspDiagnosticsUnderlineError" => 'CocErrorHighlight',
+  "LspDiagnosticsUnderlineHint"  => 'CocHintHighlight',
+  "LspDiagnosticsUnderlineInfo"  => 'CocInfoHighlight',
+  "LspDiagnosticsUnderlineWarning" => 'CocWarningHighlight',
+
+  # 4.2.12. Cursor
+  "Cursor"   => {style: 'inverse'},
+  "CursorIM" => 'Cursor',
+  "CursorColumn" => {bg: 'Charcoal Gray'},
+
+  # 4.2.13. Misc
+  "Directory" => {fg: 'Icon Blue', style: 'bold'},
+
+  # 4.3. Programming Languages
+  # 4.3.1. C
+  "cConstant"    => 'Constant',
+  "cCustomClass" => 'Type',
+
+  # 4.3.2. C++
+  "cppSTLexception" => 'Exception',
+  "cppSTLnamespace" => 'String',
+
+  # 4.3.3 C#
+  "csBraces"     => 'Delimiter',
+  "csClass"      => 'Structure',
+  "csClassType"  => 'Type',
+  "csContextualStatement" => 'Conditional',
+  "csEndColon"   => 'Delimiter',
+  "csGeneric"    => 'Typedef',
+  "csInterpolation" => 'Include',
+  "csInterpolationDelimiter" => 'SpecialChar',
+  "csLogicSymbols"  => 'Operator',
+  "csModifier"   => 'Keyword',
+  "csNew"        => 'Operator',
+  "csNewType"    => 'Type',
+  "csParens"     => 'Delimiter',
+  "csPreCondit"  => 'PreProc',
+  "csRepeat"     => 'Repeat',
+  "csStorage"    => 'StorageClass',
+  "csUnspecifiedStatement" => 'Statement',
+  "csXmlTag"     => 'Define',
+  "csXmlTagName" => 'Define',
+
+  # 4.3.4. CSS
+  "cssBraces"     => 'Delimiter',
+  "cssProp"       => 'Keyword',
+  "cssSelectorOp" => 'Operator',
+  "cssTagName"    => 'htmlTagName',
+  "scssAmpersand" => 'Special',
+  "scssAttribute" => 'Label',
+  "scssBoolean"   => 'Boolean',
+  "scssDefault"   => 'Keyword',
+  "scssElse"      => 'PreCondit',
+  "scssIf"        => 'PreCondit',
+  "scssInclude"   => 'Include',
+  "scssSelectorChar" => 'Operator',
+  "scssSelectorName" => 'Identifier',
+  "scssVariable"  => 'Define',
+  "scssVariableAssignment" => 'Operator',
+
+  # 4.3.5. Dart
+  "dartLibrary" => 'Statement',
+
+  # 4.3.6. dot
+  "dotKeyChar" => 'Character',
+  "dotType"    => 'Type',
+
+  # 4.3.7. Go
+  "goBlock"                 => 'Delimiter',
+  "goBoolean"               => 'Boolean',
+  "goBuiltins"              => 'Operator',
+  "goField"                 => 'Identifier',
+  "goFloat"                 => 'Float',
+  "goFormatSpecifier"       => 'Character',
+  "goFunction"              => 'Function',
+  "goFunctionCall"          => 'goFunction',
+  "goFunctionReturn"        => {},
+  "goMethodCall"            => 'goFunctionCall',
+  "goParamType"             => 'goReceiverType',
+  "goPointerOperator"       => 'SpecialChar',
+  "goPredefinedIdentifiers" => 'Constant',
+  "goReceiver"              => 'goBlock',
+  "goReceiverType"          => 'goTypeName',
+  "goSimpleParams"          => 'goBlock',
+  "goType"                  => 'Type',
+  "goTypeConstructor"       => 'goFunction',
+  "goTypeName"              => 'Type',
+  "goVarAssign"             => 'Identifier',
+  "goVarDefs"               => 'goVarAssign',
+
+  # 4.3.8. HTML
+  "htmlArg"     => 'Label',
+  "htmlBold"    => {fg: 'Alternate Gray', style: 'bold'},
+  "htmlTitle"   => 'htmlBold',
+  "htmlEndTag"  => 'htmlTag',
+  "htmlH1"      => 'markdownH1',
+  "htmlH2"      => 'markdownH2',
+  "htmlH3"      => 'markdownH3',
+  "htmlH4"      => 'markdownH4',
+  "htmlH5"      => 'markdownH5',
+  "htmlH6"      => 'markdownH6',
+  "htmlItalic"  => {style: 'italic'},
+  "htmlSpecialTagName" => 'Keyword',
+  "htmlTag"     => 'Special',
+  "htmlTagN"    => 'Typedef',
+  "htmlTagName" => 'Type',
+
+  # 4.3.9. Java
+  "javaClassDecl" => 'Structure',
+
+  # 4.3.10. JavaScript
+  "jsFuncBlock"   => 'Function',
+  "jsObjectKey"   => 'Type',
+  "jsReturn"      => 'Keyword',
+  "jsVariableDef" => 'Identifier',
+
+  # 4.3.11. JSON
+  "jsonBraces" => 'luaBraces',
+  "jsonKeywordMatch" => 'Operator',
+  "jsonNull"   => 'Constant',
+  "jsonQuote"  => 'Delimiter',
+  "jsonString" => 'String',
+  "jsonStringSQError" => 'Exception',
+
+  # 4.3.12. Lua
+  "luaBraces"       => 'Structure',
+  "luaBrackets"     => 'Delimiter',
+  "luaBuiltin"      => 'Keyword',
+  "luaComma"        => 'Delimiter',
+  "luaFuncArgName"  => 'Identifier',
+  "luaFuncCall"     => 'Function',
+  "luaFuncId"       => 'luaNoise',
+  "luaFuncKeyword"  => 'Type',
+  "luaFuncName"     => 'Function',
+  "luaFuncParens"   => 'Delimiter',
+  "luaFuncTable"    => 'Structure',
+  "luaLocal"        => 'Type',
+  "luaNoise"        => 'Operator',
+  "luaParens"       => 'Delimiter',
+  "luaSpecialTable" => 'StorageClass',
+  "luaSpecialValue" => 'Function',
+
+  # 4.3.12. Make
+  "makeCommands"   => 'Statment',
+  "makeSpecTarget" => 'Type',
+
+  # 4.3.13. Markdown
+  "markdownH1"          => {fg: 'Danger Red', style: 'bold'},
+  "markdownH2"          => {fg: 'Beware Orange', style: 'bold'},
+  "markdownH3"          => {fg: 'Icon Yellow', style: 'bold'},
+  "markdownH4"          => {fg: 'Noble Fir', style: 'bold'},
+  "markdownH5"          => {fg: 'Plasma Blue', style: 'bold'},
+  "markdownH6"          => {fg: 'Hmmmmm Purple', style: 'bold'},
+  "mkdBold"             => 'SpecialComment',
+  "mkdCode"             => 'Keyword',
+  "mkdCodeDelimiter"    => 'mkdBold',
+  "mkdCodeStart"        => 'mkdCodeDelimiter',
+  "mkdCodeEnd"          => 'mkdCodeStart',
+  "mkdHeading"          => 'Delimiter',
+  "mkdItalic"           => 'mkdBold',
+  "mkdListItem"         => 'Special',
+  "mkdRule"             => 'Underlined',
+  "texMathMatcher"      => 'Number',
+  "texMathZoneX"        => 'Number',
+  "texMathZoneY"        => 'Number',
+
+  # 4.3.20. Python
+  "pythonBrackets"        => 'Delimiter',
+  "pythonBuiltinFunc"     => 'Operator',
+  "pythonBuiltinObj"      => 'Type',
+  "pythonBuiltinType"     => 'Type',
+  "pythonClass"           => 'Structure',
+  "pythonClassParameters" => 'pythonParameters',
+  "pythonDecorator"       => 'PreProc',
+  "pythonDottedName"      => 'Identifier',
+  "pythonError"           => 'Error',
+  "pythonException"       => 'Exception',
+  "pythonInclude"         => 'Include',
+  "pythonIndentError"     => 'pythonError',
+  "pythonLambdaExpr"      => 'pythonOperator',
+  "pythonOperator"        => 'Operator',
+  "pythonParam"           => 'Identifier',
+  "pythonParameters"      => 'Delimiter',
+  "pythonSelf"            => 'Statement',
+  "pythonSpaceError"      => 'pythonError',
+  "pythonStatement"       => 'Statement',
+
+  # 4.3.21. Ruby
+  "rubyClass"                  => 'Structure',
+  "rubyDefine"                 => 'Define',
+  "rubyInterpolationDelimiter" => 'Delimiter',
+  "rubyConstant"               => 'Constant',
+  "rubyBlockParameterList"     => 'Identifier',
+
+  # 4.3.22. Rust
+  "rustKeyword"   => 'Keyword',
+  "rustModPath"   => 'Include',
+  "rustScopeDecl" => 'Delimiter',
+  "rustTrait"     => 'StorageClass',
+
+  # 4.3.23. Scala
+  "scalaKeyword"        => 'Keyword',
+  "scalaNameDefinition" => 'Identifier',
+
+  # 4.3.24. shell
+  "shDerefSimple" => 'SpecialChar',
+  "shFunctionKey" => 'Function',
+  "shLoop"    => 'Repeat',
+  "shParen"   => 'Delimiter',
+  "shQuote"   => 'Delimiter',
+  "shSet"     => 'Statement',
+  "shTestOpr" => 'Debug',
+
+  # 4.3.25. Solidity
+  "solBuiltinType"  => 'Type',
+  "solContract"     => 'Typedef',
+  "solContractName" => 'Function',
+
+  # 4.3.26. TOML
+  "tomlComment" => 'Comment',
+  "tomlKey"     => 'Label',
+  "tomlTable"   => 'StorageClass',
+
+  # 4.3.27. VimScript
+  "helpSpecial"    => 'Special',
+  "vimFgBgAttrib"  => 'Constant',
+  "vimHiCterm"     => 'Label',
+  "vimHiCtermFgBg" => 'vimHiCterm',
+  "vimHiGroup"     => 'Typedef',
+  "vimHiGui"       => 'vimHiCterm',
+  "vimHiGuiFgBg"   => 'vimHiGui',
+  "vimHiKeyList"   => 'Operator',
+  "vimOption"      => 'Define',
+  "vimSetEqual"    => 'Operator',
+
+  # 4.3.28. XML
+  "xmlAttrib"  => 'htmlArg',
+  "xmlEndTag"  => 'xmlTag',
+  "xmlEqual"   => 'Operator',
+  "xmlTag"     => 'htmlTag',
+  "xmlTagName" => 'htmlTagName',
+
+  # 4.3.29. SQL
+  "sqlKeyword"   => 'Keyword',
+  "sqlParen"     => 'Delimiter',
+  "sqlSpecial"   => 'Constant',
+  "sqlStatement" => 'Statement',
+  "sqlParenFunc" => 'Function',
+
+  # 4.3.30. dos INI
+  "dosiniHeader" => 'Title',
+
+  # 4.3.31. Crontab
+  "crontabDay"  => 'StorageClass',
+  "crontabDow"  => 'String',
+  "crontabHr"   => 'Number',
+  "crontabMin"  => 'Float',
+  "crontabMnth" => 'Structure',
+
+  # 4.3.32. PlantUML
+  "plantumlColonLine" => {},
+
+  # 4.4. Plugins
+  # 4.4.1. ALE
+  "ALEErrorSign"   => 'ErrorMsg',
+  "ALEWarningSign" => 'WarningMsg',
+
+  # 4.4.2. coc.nvim
+  "CocErrorHighlight"   => {},
+  "CocHintHighlight"    => {},
+  "CocInfoHighlight"    => {},
+  "CocWarningHighlight" => {},
+  "CocErrorSign"   => 'ALEErrorSign',
+  "CocHintSign"    => 'HintMsg',
+  "CocInfoSign"    => 'InfoMsg',
+  "CocWarningSign" => 'ALEWarningSign',
+
+  # 4.4.2. vim-jumpmotion / vim-easymotion
+  "EasyMotion" => 'IncSearch',
+  "JumpMotion" => 'EasyMotion',
+
+  # 4.4.4. vim-gitgutter / vim-signify
+  "GitGutterAdd"          => {fg: 'Icon Green'},
+  "GitGutterChange"       => {fg: 'Icon Yellow'},
+  "GitGutterDelete"       => {fg: 'Danger Red'},
+  "GitGutterChangeDelete" => {fg: 'Beware Orange'},
+
+  "SignifySignAdd"    => 'GitGutterAdd',
+  "SignifySignChange" => 'GitGutterChange',
+  "SignifySignDelete" => 'GitGutterDelete',
+  "SignifySignChangeDelete" => 'GitGutterChangeDelete',
+
+  # 4.4.5. vim-indent-guides
+  "IndentGuidesOdd"  => {bg: 'Icon Gray'},
+  "IndentGuidesEven" => {bg: 'Charcoal Gray'},
+
+  # 4.4.7. NERDTree
+  "NERDTreeCWD" => 'Label',
+  "NERDTreeUp"  => 'Operator',
+  "NERDTreeDir" => 'Directory',
+  "NERDTreeDirSlash" => 'Delimiter',
+  "NERDTreeOpenable" => 'NERDTreeDir',
+  "NERDTreeClosable" => 'NERDTreeOpenable',
+  "NERDTreeExecFile" => 'Function',
+  "NERDTreeLinkTarget" => 'Tag',
+
+  # 4.4.8. nvim-treesitter
+  "TSConstBuiltin" => 'Constant',
+  "TSConstructor"  => 'Typedef',
+  "TSFuncBuiltin"  => 'Function',
+  "TSStringEscape" => 'Character',
+  "TSStringRegex"  => 'SpecialChar',
+  "TSURI" => 'Tag',
+  "TSVariableBuiltin" => 'Identifier',
+}
+
+-%>
+
+hi clear
+
+if exists("syntax_on")
+  syntax reset
+endif
+
+let colors_name = "<%= information[:name].downcase %>"
+
+<%- highlight_groups.each do |group_name, styles| -%>
+  <%- if styles.is_a? String -%>
+hi link <%= group_name %> <%= styles %>
+  <%- else
+    bg = fetch_color(styles[:bg])
+    fg = fetch_color(styles[:fg])
+  -%>
+hi <%= group_name %> <%= "guibg=#{bg}" if bg %> <%= "guifg=#{fg}" if fg %> gui=<%= styles.fetch :styles, 'NONE' %>
+  <%- end -%>
+<%- end -%>
+
+" Generated with eRuby, inspired by RNB & Highlite theme engines
