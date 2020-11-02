@@ -18,7 +18,7 @@ let g:UltiSnipsExpandTrigger = "<c-t>"
 " Use <TAB> to scroll the popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>\<Plug>DiscretionaryEnd"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<CR>"
 " Ctrl-Space will force the popup menu
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 
