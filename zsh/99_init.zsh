@@ -20,12 +20,10 @@ if [ -S "${XDG_RUNTIME_DIR}/keyring/ssh" ]; then
     export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/keyring/ssh"
 elif [ -n "${LXSS}" ]; then
     local ssh_agent_wsl="/mnt/c/Users/${WINUSER}/Local Applications/ssh-agent-wsl/ssh-agent-wsl"
-    local ssh_agent_service="$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '(Get-Service "ssh-agent").Status;' | tr -d '\r')"
+    # local ssh_agent_service="$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '(Get-Service "ssh-agent").Status;' | tr -d '\r')"
     if [ -x "${ssh_agent_wsl}" ]; then
         # ssh-agent-wsl installed to my home directory allows me to use Windows 10's ssh-agent in WSL
         eval $("${ssh_agent_wsl}" -q -r)
-    else
-        echo "LXSS/WSL environment detected, but missing ssh-agent-wsl. Can't share SSH keys between environments."
     fi
 elif [ -n "${commands[keychain]}" ]; then
     # Use keychain to launch a shared SSH agent across terminals when there is
@@ -58,10 +56,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 typeset -g HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
 
 source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh 
-
-source ${DOTSDIR}/zsh/plugins/histdb/history-timer.zsh
-add-zsh-hook preexec _start_timer
-add-zsh-hook precmd  _stop_timer
 
 source ${DOTSDIR}/zsh/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 AUTOSWITCH_SILENT='yes'
