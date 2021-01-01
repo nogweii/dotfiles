@@ -26,4 +26,5 @@ config/nvim/plugged/
 config/nvim/doc/plug.txt
 config/nvim/doc/tags
 config/nvim/en.utf-8.add.spl
+config/irb/irb_history
 .zcompdump
