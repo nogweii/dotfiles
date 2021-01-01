@@ -2,3 +2,7 @@
 BUNDLE_BIN: ".bundle/bin"
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
 BUNDLE_GEM__TEST: "rspec"
+BUNDLE_GEM__CI: "gitlab"
+BUNDLE_GEM__MIT: "false"
+BUNDLE_GEM__COC: "false"
+BUNDLE_GEM__RUBOCOP: "true"
