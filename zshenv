@@ -60,6 +60,7 @@ manpath=(
   #${${:-~/.rubygems/gems/*/man/*.[0-9]}:A:h} # Gem-installed man pages
   /usr/local/share/man
   /usr/share/man
+  $HOME/.local/ruby/share/man/  # Gem-installed man gems
   $manpath
 )
 
