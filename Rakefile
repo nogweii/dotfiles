@@ -98,10 +98,13 @@ end
 # File.foreach('.gitmodules') {|line| print $1 if line =~ /^\[submodule
 # \"(.*)\"\]/ }
 
-MAKE_DIRS = ['vim/tmp',
-             File.expand_path('~/.local/cache'),
-             File.expand_path('~/.local'),
-             File.expand_path('~/media')]
+MAKE_DIRS = [
+  'vim/tmp',
+  File.expand_path('~/.local/cache'),
+  File.expand_path('~/.local'),
+  File.expand_path('~/media'),
+  File.expand_path('~/.local/cache/zsh'),
+]
 
 File.open('config/user-dirs.dirs').readlines.each do |user_dir|
   next if user_dir =~ /^#/
