@@ -213,6 +213,10 @@ set termguicolors              " Use guifg over ctermfg in true-color terminals
 set sessionoptions-=blank      " Don't save empty windows in the session
 set sessionoptions-=buffers    " Don't save hidden buffers into the session
 set sessionoptions-=help       " Ignore the help buffer for sessions
+set sessionoptions-=options    " Don't save any vim options (this list)
+set sessionoptions-=globals    " Ignore any g:-variables
+set sessionoptions+=localoptions " Include buffer local overrides
+set sessionoptions+=tabpages   " This session is for all tabs, not individual ones
 set formatoptions+=r           " Add comment syntax to new lines in insert mode
 set formatoptions+=o           " Automatically add comment syntax after o/O
 set shortmess+=F               " Don't print a message when opening a file
