@@ -44,3 +44,5 @@ export TF_CLI_CONFIG_FILE="${XDG_CONFIG_HOME}/terraform.rc"
 # Mix, for backwards compatibility, uses ~/.mix; setting this will switch to
 # prioritizing the XDG settings
 export MIX_XDG=please
+# for every other elixir tool that doesn't know about $MIX_XDG
+export MIX_HOME="${XDG_DATA_HOME}/mix"
