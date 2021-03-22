@@ -131,9 +131,9 @@ _strip_fakes path fpath manpath
 unfunction _strip_fakes
 
 # Make sure we have a language set
-if ! (( $+LANG )) || [[ -z "$LANG" ]]; then
+if [[ -z "$LANG" ]]; then
   export LC_ALL="en_US.UTF-8"
-  emulate -R sh -c "$(locale)"
+  export LANG="en_US.UTF-8"
 fi
 
 # Tell SSH about gpg-agent's SSH socket
