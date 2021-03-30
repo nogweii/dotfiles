@@ -129,6 +129,11 @@ Plug 'prabirshrestha/asyncomplete-emoji.vim'
 Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'prabirshrestha/asyncomplete-tags.vim'
 
+" Vim is a wiki and a Zettelkasten method
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
+
+
 call plug#end() " }}}
 
 " {{{ Autocommand groups
@@ -431,6 +436,11 @@ endfunction
 " {{{{ vim-test config
 let test#strategy = "mine"
 " let test#neovim#term_position = "botright"
+" }}}}
+
+" {{{{ vimwiki config
+let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext = 0
 " }}}}
 
 " Switch sandwich to using surround.vim's key bindings, which I'm very used
