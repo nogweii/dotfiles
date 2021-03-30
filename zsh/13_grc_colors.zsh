@@ -14,7 +14,7 @@ if [[ "$TERM" != dumb ]] && (( $+commands[grc] )) ; then
     [ "$cmd" = ';' ] && continue
     # check if the command actually exists on the system to avoid an alias to nothing
     if (( $+commands[$cmd] )) ; then
-      alias $cmd="grc --colour=auto $(whence $cmd)"
+      alias $cmd="grc --colour=auto ${commands[$cmd]}"
     fi
   done
 
