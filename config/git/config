@@ -49,7 +49,7 @@
     # Easy amending of commit messages
     ca = commit -v --amend -c HEAD
     # Easily create a new branch based off mater
-    cb = "!f() { git checkout -b $1 master; }; f"
+    cb = "!f() { git checkout -b $1 $(git default-branch); }; f"
     # show a log of changes that haven't been pushed upstream yet.
     unpushed = log origin..HEAD
     # pretty log
@@ -70,10 +70,6 @@
     subpull = submodule foreach "git pull origin master"
     # Delete a submodule
     subrm = !cd ${GIT_PREFIX:-.} && git submodule deinit --force $1 && git rm --force $1
-    # Push the current branch for review
-    push-review = !git push origin HEAD:refs/for/develop/$(git name-rev --name-only HEAD)
-    # Same as push-review, but target master rather than the develop branch
-    push-review-master = !git push origin HEAD:refs/for/master/$(git name-rev --name-only HEAD)
     # A list of the environment variables git sets (+ any it inherits)
     env = !env
     # Execute a command relative to the root of the repository. (Non-shell git
@@ -129,15 +125,17 @@
     # show the remote url for the current branch
     remote-url = "!git ls-remote --get-url $(git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD))"
     # list all branches that have been merged
-    merged-branches = "!f() { branch=${1:-master}; eval \"git branch --merged $branch | egrep -v '^(. )?$branch$' | sed 's/^. //'\"; }; f"
+    merged-branches = "!f() { branch=${1:-$(git default-branch)}; eval \"git branch --merged $branch | egrep -v '^(. )?$branch$' | sed 's/^. //'\"; }; f"
     # create an orphaned branch, empty and disconnected from the repo's history
     ob = "!f() { git checkout --orphan $1 && git rm --quiet -r --cached .; }; f"
-    # locally delete all branches that have been merged into master already
-    branch-cleanup = "!f() { git branch --merged master | egrep -v '\\*? master' | xargs -n 1 git branch -d ;}; f" 
+    # locally delete all branches that have been merged into the default branch already
+    branch-cleanup = "!f() { git branch --merged $(git default-branch) | egrep -v '\\*? $(git default-branch)' | xargs -n 1 git branch -d ;}; f"
     # Find the nearest parent branch from the current HEAD. This is very naïve!
     parent-branch = "!f() { git log --pretty=format:'%D' HEAD^ | grep 'origin/' | head -n1 | sed 's@origin/@@' | sed 's@,.*@@' ;}; f"
     # Set the branch's upstream to origin remote with the exact same branch name
     branch-upstream-to-origin = "!f() { git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD) ;}; f"
+    # find what branch origin's HEAD points to, presuming it's the default/primary branch
+    default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@' ;}; f"
 
 [web]
     browser = kde-open
