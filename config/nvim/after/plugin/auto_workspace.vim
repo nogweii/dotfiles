@@ -22,5 +22,5 @@ endfunction
 
 augroup AutoWorkspacing
   au!
-  au VimEnter * call AutoWorkspace()
+  " au VimEnter * call AutoWorkspace()
 augroup END
