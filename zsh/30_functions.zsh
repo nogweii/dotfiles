@@ -254,3 +254,20 @@ function less() {
     command less $@
   fi
 }
+
+function nvim-packs() {
+  # Check if packer.nvim has been installed yet
+  local packer_directory="${XDG_DATA_HOME}/nvim/site/pack/packer/start/packer.nvim"
+
+  if [ ! -d ${packer_directory} ]; then
+    echo 'Cloning Neovim package manager packer.nvim...'
+    git clone -q "https://github.com/wbthomason/packer.nvim" "${packer_directory}"
+  fi
+
+  # Install the plugins configured
+  nvim -u NONE \
+    +'autocmd User PackerComplete quitall' \
+    +'runtime plugin/rplugin.vim' \
+    +'lua require("me.plugins")' \
+    +'lua require("packer").sync()'
+}

@@ -14,11 +14,12 @@ function! s:ShowHighlight()
 endfunction
 
 " And map the function
-noremap <script> <buffer> <silent> <Leader>hi :call <SID>ShowHighlight()<CR>
+noremap <script> <silent> <Leader>hi :call <SID>ShowHighlight()<CR>
 
-nmap <silent> <leader>hi
- \ :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
- \ . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
- \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
- \ <CR>:execute "highlight " .
- \ synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")<CR>
+" Original binding from the internet
+"nmap <silent> <leader>hi
+" \ :echo "hi<".synIDattr(synID(line("."),col("."),1),"name").'>'
+" \ . ' trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"
+" \ <CR>:execute "highlight " .
+" \ synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")<CR>

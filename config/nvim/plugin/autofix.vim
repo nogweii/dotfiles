@@ -1,5 +1,6 @@
+" Autofix some common typos I make in all files.
+
 " my personal ones
-iabbrev i               I
 iabbrev teh             the
 iabbrev isnt            isn't
 iabbrev cant            can't
@@ -7,19 +8,11 @@ iabbrev dont            don't
 iabbrev wont            won't
 iabbrev wouldnt         wouldn't
 iabbrev havent          haven't
-iabbrev outta           out of
-iabbrev prolly          probably
-iabbrev wanna           want to
-iabbrev woulda          would've
-iabbrev lemme           let me
 iabbrev defnitly        definitely
-iabbrev im              I'm
-iabbrev ofcourse        of course
-iabbrev ofc             of course
-iabbrev headsup         heads up
 iabbrev forcably        forcibly
 iabbrev algorithims     algorithms
 iabbrev privilge        privilege
+iabbrev mispelled       misspelled
 
 " Auto-add some accents
 iabbrev cafe            café
