@@ -81,7 +81,11 @@ cmd_map{keys = "-", command = "NvimTreeToggle"}
 map{keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true}
 map{keys = "[c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true}
 
--- vimp.nnoremap('<leader>hw', function()
---   print('hello')
---   print('world')
--- end)
+-- a much smarter <C-a> and <C-x> that know how to flip through enumerated lists
+-- and manipulate additional number formats & dates
+plug_map{keys = "<C-a>", command = 'dial-increment'}
+plug_map{keys = "<C-x>", command = 'dial-decrement'}
+plug_map{mode = 'v', keys = "<C-a>", command = 'dial-increment'}
+plug_map{mode = 'v', keys = "<C-x>", command = 'dial-decrement'}
+plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
+plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
