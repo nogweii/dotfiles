@@ -1,5 +1,3 @@
--- local vimp = require('vimp')
-
 vim.g.mapleader = ';'
 
 -- A little utility function to make nvim_set_keymap a bit more ergonomic
@@ -13,10 +11,6 @@ function map(args)
         silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
         expression = false, -- set to true if the output is to be evaluated rather than typed
     })
-
-    if type(args.to) == 'function' then
-      -- a lua function was passed in, 
-    end
 
     vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
 end
