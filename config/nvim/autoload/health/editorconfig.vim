@@ -5,6 +5,6 @@ function! health#editorconfig#check() abort
   if l:bin_found
     call health#report_ok("found `editorconfig` in $PATH: " . exepath("editorconfig"))
   else
-    call health#report_warn("Can not find `editorconfig` in $PATH, falling back to pure vimscript core", ['install the editorconfig-core-c package from extra')
+    call health#report_warn("Can not find `editorconfig` in $PATH, falling back to pure vimscript core", ['install the editorconfig-core-c package from extra'])
   endif
 endfunction

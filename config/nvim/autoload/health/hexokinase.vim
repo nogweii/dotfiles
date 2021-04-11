@@ -5,6 +5,6 @@ function! health#hexokinase#check() abort
   if l:bin_found
     call health#report_ok("found `hexokinase` in $PATH: " . exepath("hexokinase"))
   else
-    call health#report_error("Can not find `hexokinase` in $PATH", ['install the hexokinase-git package from AUR')
+    call health#report_error("Can not find `hexokinase` in $PATH", ['install the hexokinase-git package from AUR'])
   endif
 endfunction
