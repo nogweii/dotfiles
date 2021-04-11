@@ -23,18 +23,19 @@ let g:firenvim_config = {
 let fc = g:firenvim_config['localSettings']
 let fc['https?://[^/]+twitter.com'] = { 'takeover': 'never', 'priority': 1 }
 
-let s:dont_write = v:false
-function! s:Conditional_Write(timer) abort
-	let s:dont_write = v:false
-	write
+" Automatically save after a few seconds
+let g:firenvim_auto_write = v:false
+function! Firenvim_Write(timer) abort
+  let g:firenvim_auto_write = v:false
+  write
 endfunction
 
-function! s:Debounced_Write() abort
-	if s:dont_write
-		return
-	end
-	let s:dont_write = v:true
-	call timer_start(1000, 'Conditional_Write')
+function! Debounced_Firenvim_Write() abort
+  if g:firenvim_auto_write
+    return
+  end
+  let g:firenvim_auto_write = v:true
+  call timer_start(10000, 'Firenvim_Write')
 endfunction
 
 
@@ -42,8 +43,8 @@ if exists('g:started_by_firenvim')
   augroup firenvim_tweaks
     autocmd!
     autocmd UIEnter * ++once call s:FirenvimSettingTweaks(v:event)
-    autocmd TextChanged * ++nested call s:Debounced_Write()
-    autocmd TextChangedI * ++nested call s:Debounced_Write()
+    autocmd TextChanged * ++nested call Debounced_Firenvim_Write()
+    autocmd TextChangedI * ++nested call Debounced_Firenvim_Write()
 
     autocmd BufEnter github.com_*.txt set filetype=markdown
     autocmd BufEnter stackoverflow.com_*.txt,stackexchange.com_*.txt,*.stackexchange.com_*.txt set filetype=markdown
