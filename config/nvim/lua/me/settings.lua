@@ -2,17 +2,10 @@
 
 vim.cmd [[colorscheme zephyr]]
 
--- disable the base vim plugin from trying to autodetect the hexokinase binary,
--- since I'm managing it outside of the normal installation places
--- vim.g.loaded_hexokinase = 1
--- vim.g.Hexokinase_highlighters = {'virtual'}
--- if vim.fn.executable("hexokinase") then
---     vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
---     vim.fn['hexokinase#v2#setup()']()
--- end
-
--- TODO: g:editorconfig_core_mode -> external_command
--- TODO: healthcheck for `editorconfig` from editorconfig-core-c package
+if vim.fn.executable('editorconfig') then
+ vim.g.EditorConfig_core_mode = "external_command"
+ vim.g.EditorConfig_exec_path = vim.fn.exepath('editorconfig')
+end
 
 -- Switch to the file's current directory if we're not in a found project
 vim.g.rooter_change_directory_for_non_project_files = 'current'
