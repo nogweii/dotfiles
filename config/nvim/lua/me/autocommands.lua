@@ -11,11 +11,31 @@ function nvim_create_augroups(definitions)
 end
 
 nvim_create_augroups({
-    nospell_types = {
-      {"FileType", "lua", "setlocal", "nospell"},
-    },
+  nospell_types = {
+    {"FileType", "lua", "setlocal", "nospell"},
+  },
 
-    nvim_tree_changes = {
-      {"FileType", "NvimTree", "setlocal", "cursorline"},
+  nvim_tree_changes = {
+    {"FileType", "NvimTree", "setlocal", "cursorline"},
+  },
+
+  highlight_yank = { -- Copied from :help	lua-highlight
+    {"TextYankPost", "*", "silent! lua vim.highlight.on_yank()"},
+  },
+
+  restore_curpos = {
+    {'BufReadPost', '*',
+      [[
+        if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+          exe "normal! g`\""
+        endif
+      ]],
     },
+  },
+
+  quickfix_windows = {
+    {'QuickFixCmdPost', 'grep', 'cwindow'},
+    {'QuickFixCmdPost', 'helpgrep', 'cwindow'},
+    {'FileType', 'qf', 'setlocal scrolloff=0'},
+  },
 })
