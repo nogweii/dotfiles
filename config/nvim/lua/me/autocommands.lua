@@ -19,8 +19,8 @@ nvim_create_augroups({
     {"FileType", "NvimTree", "setlocal", "cursorline"},
   },
 
-  highlight_yank = { -- Copied from :help	lua-highlight
-    {"TextYankPost", "*", "silent! lua vim.highlight.on_yank()"},
+  highlight_yank = { -- Copied from :help lua-highlight
+    {"TextYankPost", "*", "silent! lua vim.highlight.on_yank {timeout=500}"},
   },
 
   restore_curpos = {
