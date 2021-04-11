@@ -27,6 +27,9 @@ map{keys = "gG", to = "G"}
 map{keys = "gG", to = "G", mode = "o"}
 map{keys = "G", to = '', recurse = true}
 
+-- change Y to only select the line starting from the cursor
+map{keys = "Y", to = "y$"}
+
 -- nop-out semicolon, it's my mapleader key
 map{keys = ";", to = '', recurse = true}
 -- but restore the functionality by using the comma key
