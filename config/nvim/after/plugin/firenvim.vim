@@ -21,7 +21,9 @@ let g:firenvim_config = {
 \ }
 
 let fc = g:firenvim_config['localSettings']
-let fc['https?://[^/]+twitter.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://[^/]+twitter\.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://app\.slack\.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://discord\.com'] = { 'takeover': 'never', 'priority': 1 }
 
 " Automatically save after a few seconds
 let g:firenvim_auto_write = v:false
