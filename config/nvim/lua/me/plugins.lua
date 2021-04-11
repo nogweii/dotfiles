@@ -86,6 +86,7 @@ return require("packer").startup(function(use)
     -- alias 'nvim-startup-benchmark'
     use "tweekmonster/startuptime.vim"
 
+    -- run neovim in my browser!
     use {"glacambre/firenvim", run = function() vim.fn["firenvim#install"](0) end}
 
     use "tpope/vim-repeat"
@@ -96,6 +97,7 @@ return require("packer").startup(function(use)
     use "tpope/vim-eunuch"
     use "tpope/vim-fugitive"
 
+    -- a collection of lsp server installation scripts
     use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
       config = function()
         require('lspinstall').setup()
@@ -109,6 +111,8 @@ return require("packer").startup(function(use)
 
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *'}
 
+    -- put git change information in the sidebar, provide some helpers
+    -- to manage git hunks
     use {
       "lewis6991/gitsigns.nvim",
       requires = {
@@ -119,15 +123,28 @@ return require("packer").startup(function(use)
       end
     }
 
+    -- asynchronous status bar and framework for full customization
     use {
       'glepnir/galaxyline.nvim',
       config = function() require('me.statusline') end,
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
+    -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
     use {
       'monaqa/dial.nvim',
       config = function() require('me.swaps') end
+    }
+
+    -- when typing `:<number>` scroll to that line, only while in command mode
+    -- which allows easy peeking to another location in the file
+    use { 'nacro90/numb.nvim',
+      config = function()
+        require('numb').setup{
+           show_numbers = true, -- Enable 'number' for the window while peeking
+           show_cursorline = true -- Enable 'cursorline' for the window while peeking
+        }
+      end
     }
 
 end) -- end of packer's startup / function(use)
