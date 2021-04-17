@@ -1,6 +1,7 @@
-return require("packer").startup(function(use)
+return require("packer").startup {
+  function(use)
     -- use packer to manage packer
-    use "wbthomason/packer.nvim"
+    use { "wbthomason/packer.nvim", branch = "feat-profile-compiled-code" }
 
     -- Bug fix https://github.com/neovim/neovim/issues/12587
     -- and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
@@ -20,22 +21,22 @@ return require("packer").startup(function(use)
 
     -- preview colors inline in the editor
     use {"rrethy/vim-hexokinase",
-        cond = "vim.fn.executable('hexokinase')",
-        setup = function()
-            vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
-            vim.g.Hexokinase_highlighters = {'virtual'}
-            vim.g.Hexokinase_optInPatterns = {'full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla'}
-        end
+      cond = "vim.fn.executable('hexokinase')",
+      setup = function()
+        vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
+        vim.g.Hexokinase_highlighters = {'virtual'}
+        vim.g.Hexokinase_optInPatterns = {'full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla'}
+      end
     }
 
     use { "nvim-treesitter/nvim-treesitter",
-        run = function()
-            require('me.treesitter')
-            vim.cmd [[:TSUpdate]]
-        end,
-        config = function()
-            require('me.treesitter')
-        end
+      run = function()
+        require('me.treesitter')
+        vim.cmd [[:TSUpdate]]
+      end,
+      config = function()
+        require('me.treesitter')
+      end
     }
     -- Treesitter compatible rainbow parentheses
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
@@ -53,12 +54,12 @@ return require("packer").startup(function(use)
 
     -- Automatically configure various editor settings in a standard way
     use { "editorconfig/editorconfig-vim",
-        setup = function()
-            if vim.fn.executable('editorconfig') then
-                vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
-                vim.g.EditorConfig_core_mode = 'external_command'
-            end
+      setup = function()
+        if vim.fn.executable('editorconfig') then
+          vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
+          vim.g.EditorConfig_core_mode = 'external_command'
         end
+      end
     }
 
     -- Easily put a character/pair around some text. Sandwich a word between
@@ -141,10 +142,29 @@ return require("packer").startup(function(use)
     use { 'nacro90/numb.nvim',
       config = function()
         require('numb').setup{
-           show_numbers = true, -- Enable 'number' for the window while peeking
-           show_cursorline = true -- Enable 'cursorline' for the window while peeking
+          show_numbers = true, -- Enable 'number' for the window while peeking
+          show_cursorline = true -- Enable 'cursorline' for the window while peeking
         }
       end
     }
 
-end) -- end of packer's startup / function(use)
+    -- snippets! quick expansion of some text into blocks of code
+    -- it's also LSP-aware, so it'll pull any provided by the LSP as well
+    use {
+      'hrsh7th/vim-vsnip',
+      config = function()
+        vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
+        vim.g.vsnip_snippet_dirs = {vim.fn.stdpath('data') .. '/site/pack/packer/start/friendly-snippets/snippets'}
+      end,
+      requires = 'rafamadriz/friendly-snippets', -- plus a collection of community provided snippets
+    }
+
+  end, -- end of function(use)
+
+  config = {
+    profile = {
+      enable = true,
+      threshold = 1
+    }
+  }
+} -- end of packer's setup()
