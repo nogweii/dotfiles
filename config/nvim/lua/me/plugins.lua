@@ -99,16 +99,8 @@ return require("packer").startup {
     use "tpope/vim-fugitive"
 
     -- a collection of lsp server installation scripts
-    use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
-      config = function()
-        require('lspinstall').setup()
-
-        local servers = require('lspinstall').installed_servers()
-        for _, server in pairs(servers) do
-          require('lspconfig')[server].setup{}
-        end
-      end
-    }
+    use "kabouzeid/nvim-lspinstall"
+    use "neovim/nvim-lspconfig"
 
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *'}
 
