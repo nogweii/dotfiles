@@ -266,7 +266,6 @@ function nvim-packs() {
 
   # Install the plugins configured
   nvim -u NONE \
-    +'autocmd User PackerComplete quitall' \
     +'runtime plugin/rplugin.vim' \
     +'lua require("me.plugins")' \
     +'lua require("packer").sync()'
