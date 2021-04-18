@@ -24,3 +24,11 @@ vim.cmd [[runtime macros/sandwich/keymap/surround.vim]]
 vim.g.nvim_tree_quit_on_open = 1 -- After selecting a file in tree, close it
 vim.g.nvim_tree_add_trailing = 1 -- Trailing slashes on directories
 vim.g.nvim_tree_follow = 1
+
+-- Speed up loading vim remote plugin hosts. Since they do a more complicated
+-- heuristic than my systems need, I can shortcut the work needed.
+if vim.fn.executable('neovim-ruby-host') then
+  vim.g.ruby_host_prog = vim.fn.exepath('neovim-ruby-host')
+end
+vim.g.python3_host_prog = vim.fn.exepath('python3')
+vim.g.loaded_python_provider = 0
