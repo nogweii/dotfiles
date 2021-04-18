@@ -78,13 +78,6 @@ opt.spellfile = vim.fn.stdpath("config") .. "/en.utf-8.add"
 -- Calculate the offset required to the cursor vertically centered on-screen.
 opt.scrolloff = vim.o.lines - 2
 
--- My default indentation settings. Plugins will scan the buffer for the
--- correct settings, but these are my preferred fallback:
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.tabstop = 4
-opt.expandtab = true
-
 opt.backupdir = vim.fn.stdpath("data") .. '/backup'
 if not vim.fn.isdirectory(vim.o.backupdir) then
   vim.fn.mkdir(vim.o.backupdir, "p")

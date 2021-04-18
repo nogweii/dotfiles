@@ -152,6 +152,15 @@ return require("packer").startup {
       requires = 'rafamadriz/friendly-snippets', -- plus a collection of community provided snippets
     }
 
+    use {
+      'Raimondi/yaifa',
+      config = function()
+        vim.g.yaifa_shiftwidth = 2
+        vim.g.yaifa_tabstop = 4
+        vim.g.yaifa_expandtab = 1 
+      end
+    }
+
   end, -- end of function(use)
 
   config = {
