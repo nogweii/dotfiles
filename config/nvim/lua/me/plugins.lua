@@ -31,11 +31,11 @@ return require("packer").startup {
 
     use { "nvim-treesitter/nvim-treesitter",
       run = function()
-        require('me.treesitter')
+        require('me.settings.treesitter')
         vim.cmd [[:TSUpdate]]
       end,
       config = function()
-        require('me.treesitter')
+        require('me.settings.treesitter')
       end,
       event = 'BufRead',
     }
@@ -103,7 +103,7 @@ return require("packer").startup {
     use "kabouzeid/nvim-lspinstall"
     use "neovim/nvim-lspconfig"
 
-    use {"hrsh7th/nvim-compe", event = 'InsertEnter *'}
+    use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 
     -- put git change information in the sidebar, provide some helpers
     -- to manage git hunks
@@ -120,14 +120,14 @@ return require("packer").startup {
     -- asynchronous status bar and framework for full customization
     use {
       'glepnir/galaxyline.nvim',
-      config = function() require('me.statusline') end,
+      config = function() require('me.settings.galaxyline') end,
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
     -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
     use {
       'monaqa/dial.nvim',
-      config = function() require('me.swaps') end
+      config = function() require('me.settings.dial_swaps') end
     }
 
     -- when typing `:<number>` scroll to that line, only while in command mode
