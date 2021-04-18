@@ -36,7 +36,8 @@ return require("packer").startup {
       end,
       config = function()
         require('me.treesitter')
-      end
+      end,
+      event = 'BufRead',
     }
     -- Treesitter compatible rainbow parentheses
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
@@ -85,7 +86,7 @@ return require("packer").startup {
     -- Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
     -- present a nice display of what's taking so long startup. Also, see the shell
     -- alias 'nvim-startup-benchmark'
-    use "tweekmonster/startuptime.vim"
+    use {'tweekmonster/startuptime.vim', cmd = 'StartupTime'}
 
     -- run neovim in my browser!
     use {"glacambre/firenvim", run = function() vim.fn["firenvim#install"](0) end}
