@@ -92,10 +92,8 @@ return require("packer").startup {
     use {"glacambre/firenvim", run = function() vim.fn["firenvim#install"](0) end}
 
     use "tpope/vim-repeat"
-    use "tpope/vim-endwise"
     use "tpope/vim-commentary"
     use "tpope/vim-characterize"
-    use "tpope/vim-rsi"
     use "tpope/vim-eunuch"
     use "tpope/vim-fugitive"
 
@@ -159,6 +157,9 @@ return require("packer").startup {
         vim.g.yaifa_tabstop = 4
         vim.g.yaifa_expandtab = 1 
       end
+    }
+    use {
+      'Raimondi/delimitMate',
     }
 
   end, -- end of function(use)
