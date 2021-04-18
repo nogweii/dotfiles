@@ -9,6 +9,21 @@ function _G.dump(...)
     print(unpack(objects))
 end
 
+-- Taking a function reference as a parameter, run the function and return a
+-- table describing how long that took to run
+function _G.profile(func)
+  local start_time = vim.loop.hrtime() -- gets a nanosecond precision timestamp
+  local return_value = func()
+  local end_time = vim.loop.hrtime()
+
+  return {
+    start_time = start_time,
+    return_value = return_value,
+    end_time = end_time,
+    duration = ((end_time - start_time) / 1e6) -- return as milliseconds
+  }
+end
+
 require('me.options')
 require('me.plugins')
 require('me.maps')
