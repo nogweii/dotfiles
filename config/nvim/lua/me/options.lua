@@ -51,7 +51,9 @@ opt.formatoptions = opt.formatoptions
                  + "r"         -- Add comment syntax to new lines in insert mode
                  + "o"         -- Automatically add comment syntax after o/O
 
-opt.shortmess = vim.o.shortmess .. "F" -- Don't print a message when opening a file
+opt.shortmess = vim.o.shortmess
+                .. "F" -- Don't print a message when opening a file
+                .. "c" -- silence insert mode completion messages
 
 opt.foldlevel = 5              -- Only fold sections deeper than this level automatically
 opt.foldlevelstart = 5         -- Only fold sections deeper than this level automatically
