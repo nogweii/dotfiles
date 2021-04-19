@@ -107,6 +107,20 @@ gls.mid[3] = {
 }
 
 gls.right[1] = {
+  LspIsActive = {
+    provider = function()
+      local icon = '力'
+      local icon_gone = '年' -- TODO: do I show this when lspinstall/lspconfig knows about a LSP that isn't installed?
+      if next(vim.lsp.get_active_clients()) == nil then
+        -- no lsp connected
+        icon = ''
+      end
+      return icon
+    end,
+    highlight = { colors.teal, active_bg }
+  }
+}
+gls.right[2] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
@@ -114,7 +128,7 @@ gls.right[1] = {
     icon = " "
   }
 }
-gls.right[2] = {
+gls.right[3] = {
   FileFormat = {
     provider = function()
       local icons = {
@@ -135,7 +149,7 @@ gls.right[2] = {
     highlight = { colors.base1, colors.magenta },
   }
 }
-gls.right[3] = {
+gls.right[4] = {
   SpellCheck = {
     provider = function()
       local color = colors.teal
