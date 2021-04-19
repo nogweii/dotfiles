@@ -2,24 +2,29 @@ vim.g.mapleader = ';'
 
 -- A little utility function to make nvim_set_keymap a bit more ergonomic
 function map(args)
-    args = vim.tbl_extend("keep", args, {
-        mode = "", -- The vim mode for this map
-        keys = nil, -- The input sequence of keys to activate this mapping
-        to = nil, -- Sequence to keys to 'type' into the editor
+  args = vim.tbl_extend("keep", args, {
+    mode = "", -- The vim mode for this map
+    keys = nil, -- The input sequence of keys to activate this mapping
+    to = nil, -- Sequence to keys to 'type' into the editor
 
-        recurse = false, -- set to true to not include noremap
-        silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
-        expression = false, -- set to true if the output is to be evaluated rather than typed
-    })
+    recurse = false, -- set to true to not include noremap
+    silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
+    expression = false, -- set to true if the output is to be evaluated rather than typed
+    plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
+  })
 
-    vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
+  if (args.plugins) and (not packer_exists) then
+    return
+  end
+
+  vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
 end
 
 local function plug_map(args)
-    map{keys = args.keys, to = '<Plug>(' .. args.command .. ')', mode = args.mode or 'n', silent = true, recurse = true}
+  map{keys = args.keys, to = '<Plug>(' .. args.command .. ')', mode = args.mode or 'n', silent = true, recurse = true, plugins = true}
 end
 local function cmd_map(args)
-    map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', silent = true, command = true}
+  map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', silent = true, command = true, plugins = true}
 end
 
 -- Free up 'G' to be a generic prefix, and make gG do what G used to do
@@ -78,7 +83,7 @@ map{keys = "L", to = '$', recurse = true}
 map{keys = "<C-s>", to = '<C-\\><C-n>', recurse = true, mode = "t"}
 
 -- Tap - to jump into a file pane
-cmd_map{keys = "-", command = "NvimTreeToggle"}
+cmd_map{keys = "-", command = "NvimTreeToggle", plugins = true}
 
 -- Git hunk jumps, that behave the same when diffing two files
 map{keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true}
@@ -94,9 +99,9 @@ plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
 
 -- completion key bindings
-map{mode = 'i', keys = "<C-Space>", to = [[compe#complete()]], expression = true}
-map{mode = 'i', keys = "<CR>", to = [[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]], expression = true}
-map{mode = 'i', keys = "<C-e>", to = [[compe#close('<End>')]], expression = true}
+map{mode = 'i', keys = "<C-Space>", to = [[compe#complete()]], expression = true, plugins = true}
+map{mode = 'i', keys = "<CR>", to = [[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]], expression = true, plugins = true}
+map{mode = 'i', keys = "<C-e>", to = [[compe#close('<End>')]], expression = true, plugins = true}
 -- TODO: what are these even useful for?
 -- map{mode = 'i', keys = "<C-f>", to = [[compe#scroll({ 'delta': +4 })]], expression = true}
 -- map{mode = 'i', keys = "<C-b>", to = [[compe#scroll({ 'delta': -4 })]], expression = true}
@@ -149,10 +154,10 @@ _G.shift_tab_completion = function()
   end
 end
 
-map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true}
-map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true}
-map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}
-map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}
+map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true, plugins = true}
+map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true, plugins = true}
+map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
+map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
 
 -- A basic list of all of the known snippets for the buffer
 -- TODO: this isn't an interactive menu, it's a big rough for now

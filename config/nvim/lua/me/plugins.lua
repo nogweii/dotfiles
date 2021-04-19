@@ -1,5 +1,5 @@
 -- Bail out early if I haven't ran my `nvim-packs` shell function yet
-local packer_exists = pcall(vim.cmd, 'packadd packer.nvim')
+_G.packer_exists = pcall(vim.cmd, 'packadd packer.nvim')
 if not packer_exists then
   return nil
 end
@@ -22,7 +22,7 @@ return require("packer").startup {
     -- a pretty file tree on the side
     use { "kyazdani42/nvim-tree.lua",
       requires = "kyazdani42/nvim-web-devicons",
-      module = "nvim-tree"
+      as = "nvim-tree"
     }
 
     -- preview colors inline in the editor
