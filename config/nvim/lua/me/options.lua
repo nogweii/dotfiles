@@ -82,3 +82,7 @@ opt.backupdir = vim.fn.stdpath("data") .. '/backup'
 if not vim.fn.isdirectory(vim.o.backupdir) then
   vim.fn.mkdir(vim.o.backupdir, "p")
 end
+
+-- Don't always show the sign columns, but if there are, make sure there's room
+-- for two. This matches the width of the mode indicator in the statusbar
+opt.signcolumn = 'auto:2'
