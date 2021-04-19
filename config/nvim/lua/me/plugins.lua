@@ -1,3 +1,9 @@
+-- Bail out early if I haven't ran my `nvim-packs` shell function yet
+local packer_exists = pcall(vim.cmd, 'packadd packer.nvim')
+if not packer_exists then
+  return nil
+end
+
 return require("packer").startup {
   function(use)
     -- use packer to manage packer
@@ -75,7 +81,11 @@ return require("packer").startup {
     use "ludovicchabant/vim-gutentags"
 
     -- COLORS! All the colors!
-    use "glepnir/zephyr-nvim"
+    use { "glepnir/zephyr-nvim",
+      config = function()
+        vim.cmd [[colorscheme zephyr]]
+      end
+    }
 
     -- A very fast way to open a file, with fuzzy searching!
     use { "wincent/command-t", run = 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
@@ -98,8 +108,10 @@ return require("packer").startup {
     use "tpope/vim-fugitive"
 
     -- a collection of lsp server installation scripts
-    use "kabouzeid/nvim-lspinstall"
     use "neovim/nvim-lspconfig"
+    use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
+      config = function() require('me.settings.lsp') end
+    }
 
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 

@@ -1,7 +1,5 @@
 -- Set various global variables to configure all of the plugins I've installed
 
-vim.cmd [[colorscheme zephyr]]
-
 if vim.fn.executable('editorconfig') then
  vim.g.EditorConfig_core_mode = "external_command"
  vim.g.EditorConfig_exec_path = vim.fn.exepath('editorconfig')
