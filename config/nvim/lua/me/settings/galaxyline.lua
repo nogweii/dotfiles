@@ -135,6 +135,20 @@ gls.right[2] = {
     highlight = { colors.base1, colors.magenta },
   }
 }
+gls.right[3] = {
+  SpellCheck = {
+    provider = function()
+      local color = colors.teal
+      local gui_style = "NONE"
+      if not vim.wo.spell then
+	color = colors.redwine
+        gui_style = "strikethrough"
+      end
+      vim.api.nvim_command('hi GalaxySpellCheck guifg=' .. color .. ' gui=' .. gui_style .. ' guibg=' .. active_bg)
+      return '暈'
+    end
+  }
+}
 
 
 gls.short_line_left[1] = {
