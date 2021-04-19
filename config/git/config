@@ -97,7 +97,7 @@
     # Delete a branch from the remote
     push-deleted-branch = "!f() { [[ -z $2 ]] && git push origin \":${1}\" || git push $1 \":${2}\" }; f"
     # This is funny to me, I like keeping the same commit message for this file
-    commit-vim-vocab = "!git add config/nvim/en.utf-8.add vim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
+    commit-vim-vocab = "!git add config/nvim/spell/en.utf-8.add && git commit -m 'More vocabulary!'"
     # Clone only the latest commit, to minimize the download size (and therefore increase speed)
     shallow-clone = clone --depth=1
     # Lazy git initialization with initial commit

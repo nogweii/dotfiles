@@ -73,7 +73,7 @@ opt.wildignore = {
 
 
 -- Point the spell checker at my additional vocabulary words
-opt.spellfile = vim.fn.stdpath("config") .. "/en.utf-8.add"
+opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
 -- Calculate the offset required to the cursor vertically centered on-screen.
 opt.scrolloff = vim.o.lines - 2
