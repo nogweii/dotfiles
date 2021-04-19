@@ -96,7 +96,12 @@ local function setup_servers()
     --   config.settings = neovim_lua_settings
     -- end
 
-    lspconfig[server].setup(config)
+    local lsp_server = lspconfig[server]
+    if lsp_server == nil then
+      vim.notify("Attempted to configure unknown LSP server " .. server, "warn")
+    else
+      lsp_server.setup(config)
+    end
   end
 end
 
