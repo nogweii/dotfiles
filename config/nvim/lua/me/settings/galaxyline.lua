@@ -82,7 +82,7 @@ gls.left[2] = {
 gls.mid[1] = {
   FileIcon = {
     provider = 'FileIcon',
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = { require('galaxyline.provider_fileinfo').get_file_icon_color, active_bg },
   }
 }
@@ -91,7 +91,7 @@ gls.mid[2] = {
     provider = function()
       return vim.fn.expand("%")
     end,
-    condition = buffer_not_empty,
+    condition = condition.buffer_not_empty,
     highlight = { colors.base8, active_bg },
   }
 }
@@ -99,7 +99,7 @@ gls.mid[3] = {
   ModifiedIcon = {
     provider = function()
       if vim.bo.modifiable and vim.bo.modified then
-        return ''
+        return '💾'
       end
     end,
     highlight = { colors.magenta, active_bg },
