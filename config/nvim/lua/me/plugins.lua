@@ -139,17 +139,7 @@ return require("packer").startup {
       end
     }
 
-    -- snippets! quick expansion of some text into blocks of code
-    -- it's also LSP-aware, so it'll pull any provided by the LSP as well
-    use {
-      'hrsh7th/vim-vsnip',
-      config = function()
-        vim.g.vsnip_snippet_dir = vim.fn.stdpath('config') .. '/snippets'
-        vim.g.vsnip_snippet_dirs = {vim.fn.stdpath('data') .. '/site/pack/packer/start/friendly-snippets/snippets'}
-      end,
-      requires = 'rafamadriz/friendly-snippets', -- plus a collection of community provided snippets
-    }
-
+    -- Automatic semi-smart indentation settings for a buffer
     use {
       'Raimondi/yaifa',
       config = function()
@@ -158,9 +148,14 @@ return require("packer").startup {
         vim.g.yaifa_expandtab = 1 
       end
     }
-    use {
-      'Raimondi/delimitMate',
-    }
+
+    -- automatically add closing pair characters ({}, <>, quotes, and more)
+    use { 'Raimondi/delimitMate' }
+
+    -- my preferred snippet engine for vim
+    use { 'SirVer/ultisnips' }
+    -- community-maintained snippets for a variety of languages
+    use { 'honza/vim-snippets', requires = 'SirVer/ultisnips' }
 
   end, -- end of function(use)
 

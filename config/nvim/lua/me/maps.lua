@@ -39,11 +39,17 @@ map{keys = ",", to = ";"}
 map{keys = "<", to = "<gv", mode = "v"}
 map{keys = ">", to = ">gv", mode = "v"}
 
+-- Fuzzy find a file to edit
 plug_map{keys = "ZE", command = 'CommandT'}
 plug_map{keys = "ZB", command = 'CommandTBuffer'}
 -- Save the file only when the buffer has been modified.
 cmd_map{keys = "ZD", command = "BufferWipeout"}
 cmd_map{keys = "ZW", command = "update"}
+-- Create & edit a snippets file for this filetype
+cmd_map{keys = "ZP", command = "UltiSnipsEdit"}
+-- Easily edit my vimrc file
+-- TODO: integrate it with my workspace concept, editing a project-local lua file instead
+cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}
 
 -- Sometimes you just need to move a character or two in insert mode. Don't
 -- make these a habit, though!
@@ -86,3 +92,64 @@ plug_map{mode = 'v', keys = "<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "<C-x>", command = 'dial-decrement'}
 plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
+
+-- completion key bindings
+map{mode = 'i', keys = "<C-Space>", to = [[compe#complete()]], expression = true}
+map{mode = 'i', keys = "<CR>", to = [[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]], expression = true}
+map{mode = 'i', keys = "<C-e>", to = [[compe#close('<End>')]], expression = true}
+-- TODO: what are these even useful for?
+-- map{mode = 'i', keys = "<C-f>", to = [[compe#scroll({ 'delta': +4 })]], expression = true}
+-- map{mode = 'i', keys = "<C-b>", to = [[compe#scroll({ 'delta': -4 })]], expression = true}
+
+-- Inspired by tpope's rsi.vim, buch much more constrained:
+-- jump to the beginning of the line
+map{mode = 'i', keys = "<C-a>", to = "<C-o>H", recurse = true}
+map{mode = 'c', keys = "<C-a>", to = "<Home>"}
+-- jump to the end of the line
+-- (command mode already has this binding)
+-- (insert mode is covered by compe falling back to <End> in the mapping above)
+
+local is_prior_char_whitespace = function()
+  local col = vim.fn.col('.') - 1
+  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    return true
+  else
+    return false
+  end
+end
+
+-- Use (shift-)tab to:
+--- move to prev/next item in completion menu
+--- jump to the prev/next snippet placeholder
+--- insert a simple tab
+--- start the completion menu
+_G.tab_completion = function()
+  if vim.fn.pumvisible() == 1 then
+    return vim.api.nvim_replace_termcodes("<C-n>", true, true, true)
+
+  elseif vim.fn["UltiSnips#CanExpandSnippet"]() == 1 or vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+    return vim.api.nvim_replace_termcodes("<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>", true, true, true)
+
+  elseif is_prior_char_whitespace() then
+    return vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
+
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.shift_tab_completion = function()
+  if vim.fn.pumvisible() == 1 then
+    return vim.api.nvim_replace_termcodes("<C-p>", true, true, true)
+
+  elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+    return vim.api.nvim_replace_termcodes("<C-R>=UltiSnips#JumpBackwards()<CR>", true, true, true)
+
+  else
+    return vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true)
+  end
+end
+
+map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true}
+map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true}
+map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}
+map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}

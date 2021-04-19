@@ -32,3 +32,9 @@ if vim.fn.executable('neovim-ruby-host') then
 end
 vim.g.python3_host_prog = vim.fn.exepath('python3')
 vim.g.loaded_python_provider = 0
+
+-- Disable all of UltiSnip's default mappings
+vim.g.UltiSnipsExpandTrigger = "<NUL>"
+vim.g.UltiSnipsListSnippets = "<NUL>"
+vim.g.UltiSnipsJumpForwardTrigger = "<NUL>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<NUL>"

@@ -71,7 +71,7 @@ local neovim_lua_settings = {
 -- config that activates keymaps and enables snippet support
 local function make_config()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  -- capabilities.textDocument.completion.completionItem.snippetSupport = true
   return {
     -- enable snippet support
     capabilities = capabilities,

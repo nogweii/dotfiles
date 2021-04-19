@@ -1,7 +1,7 @@
 require('compe').setup {
   enabled = true,
   autocomplete = true, -- automatically open the completion menu
-  min_length = 1, -- minimum number of characters before completing items
+  min_length = 3, -- minimum number of characters before completing items
   debug = false,
 
   source = {
