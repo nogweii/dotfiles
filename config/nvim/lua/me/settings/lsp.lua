@@ -92,6 +92,7 @@ local function setup_servers()
 
     -- language specific config
     -- if server == "lua" then
+    --   TODO: check if the buffer is neovim related
     --   config.settings = neovim_lua_settings
     -- end
 
@@ -99,6 +100,7 @@ local function setup_servers()
   end
 end
 
+-- do the setup when neovim first loads
 setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
