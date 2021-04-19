@@ -1,5 +1,35 @@
 local lspconfig = require('lspconfig')
 local lspinstall = require('lspinstall')
+local lspkind = require('lspkind')
+
+-- add some emoji decorations to the completion menu's suggestions
+lspkind.init({
+  with_text = true,
+  symbol_map = {
+    Text = '📜',
+    Method = '🧶',
+    Function = '🧵',
+    Constructor = '🚧',
+    Variable = '🔻',
+    Class = '📦',
+    Interface = '🧩',
+    Module = '🚛',
+    Property = '💊',
+    Unit = '🗳 ',
+    Value = '🧪',
+    Enum = '🧫',
+    Keyword = '🔑',
+    Snippet = '🌱',
+    Color = '🎨',
+    File = '🗄 ',
+    Folder = '📁',
+    EnumMember = '🦠',
+    Constant = '🧊',
+    Struct = '🧱',
+    Operator = '❎',
+    Buffer = '🪐'
+  },
+})
 
 -- keymaps
 local function on_attach(client, bufnr)

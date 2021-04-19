@@ -111,6 +111,7 @@ return require("packer").startup {
     use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
       config = function() require('me.settings.lsp') end
     }
+    use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
 
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 
