@@ -175,6 +175,10 @@ return require("packer").startup {
     profile = {
       enable = true,
       threshold = 1
-    }
+    },
+    display = {
+      -- instead of opening a new window to the side, open a floating one
+      open_fn = require('packer.util').float,
+    },
   }
 } -- end of packer's setup()
