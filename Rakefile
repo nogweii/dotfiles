@@ -43,7 +43,7 @@ DOTFILES = []
 # prefixing it) to the source file within the repository.
 #
 # @param [String] dotfile The local file in the repo to be symlinked to $HOME
-# @param [String] homoe_path The destination path for the file, guessed from dotfile
+# @param [String] home_path The destination path for the file, guessed from dotfile
 def dottask(dotfile, home_path = nil)
   # Absolute path to where we're going to symlink in $HOME
   home_abs_path = File.expand_path (home_path || "~/.#{dotfile}")
