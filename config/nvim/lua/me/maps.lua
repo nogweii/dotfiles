@@ -24,7 +24,7 @@ local function plug_map(args)
   map{keys = args.keys, to = '<Plug>(' .. args.command .. ')', mode = args.mode or 'n', silent = true, recurse = true, plugins = true}
 end
 local function cmd_map(args)
-  map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', silent = true, command = true, plugins = true}
+  map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', mode = args.mode or 'n', silent = true, plugins = args.plugins == nil and true or args.plugins}
 end
 
 -- Free up 'G' to be a generic prefix, and make gG do what G used to do
@@ -83,7 +83,7 @@ map{keys = "L", to = '$', recurse = true}
 map{keys = "<C-s>", to = '<C-\\><C-n>', recurse = true, mode = "t"}
 
 -- Tap - to jump into a file pane
-cmd_map{keys = "-", command = "NvimTreeToggle", plugins = true}
+cmd_map{keys = "-", command = "NvimTreeToggle"}
 
 -- Git hunk jumps, that behave the same when diffing two files
 map{keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true}
@@ -162,3 +162,12 @@ map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], express
 -- A basic list of all of the known snippets for the buffer
 -- TODO: this isn't an interactive menu, it's a big rough for now
 map{mode = 'i', keys = "<C-x><C-p>", to = "<C-R>=UltiSnips#ListSnippets()<cr>"}
+
+-- easy buffer switching, that's barbar-aware
+if packer_exists then
+  cmd_map{keys = "<C-n>", command = "BufferNext"}
+  cmd_map{keys = "<C-p>", command = "BufferPrev"}
+else
+  cmd_map{keys = "<C-n>", command = "bnext", plugins = false}
+  cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
+end
