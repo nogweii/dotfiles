@@ -102,7 +102,6 @@ return require("packer").startup {
     use {"glacambre/firenvim", run = function() vim.fn["firenvim#install"](0) end}
 
     use "tpope/vim-repeat"
-    use "tpope/vim-commentary"
     use "tpope/vim-characterize"
     use "tpope/vim-eunuch"
     use "tpope/vim-fugitive"
@@ -168,6 +167,9 @@ return require("packer").startup {
     use { 'SirVer/ultisnips' }
     -- community-maintained snippets for a variety of languages
     use { 'honza/vim-snippets', requires = 'SirVer/ultisnips' }
+
+    -- quickly toggle comments for a line (or motion)
+    use "b3nj5m1n/kommentary"
 
   end, -- end of function(use)
 
