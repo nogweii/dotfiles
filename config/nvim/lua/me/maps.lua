@@ -153,3 +153,7 @@ map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = tr
 map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true}
 map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}
 map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true}
+
+-- A basic list of all of the known snippets for the buffer
+-- TODO: this isn't an interactive menu, it's a big rough for now
+map{mode = 'i', keys = "<C-x><C-p>", to = "<C-R>=UltiSnips#ListSnippets()<cr>"}
