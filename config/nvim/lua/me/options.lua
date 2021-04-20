@@ -1,6 +1,7 @@
--- NeoVim editor options
+-- NeoVim editor options.
+-- Looking for configuration for plugins? Check settings/* and settings.lua
 
--- pull in @tjdevries's lovely wrapper to make setting neovim options ergonomic
+-- pull in @tjdevries's lovely wrapper to make setting neovim options ergonomic.
 -- unneeded once https://github.com/neovim/neovim/pull/13479 is merged
 require('tj.opt')
 local opt = vim.opt
@@ -86,3 +87,6 @@ end
 -- Don't always show the sign columns, but if there are, make sure there's room
 -- for two. This matches the width of the mode indicator in the statusbar
 opt.signcolumn = 'auto:2'
+
+-- Add angle brackets to the list of recognized characters in a pair
+opt.matchpairs = vim.bo.matchpairs .. ",<:>"
