@@ -14,7 +14,7 @@ require('compe').setup {
     calc = false,
     omni = false,
     emoji = true,
-    
+
     -- neovim specific sources
     nvim_lsp = true,
     nvim_lua = true,

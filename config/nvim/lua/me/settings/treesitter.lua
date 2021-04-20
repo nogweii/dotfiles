@@ -9,7 +9,7 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true
   },
-  
+
   -- Colorful brackets to help visualize nest depth
   -- (provided by p00f/nvim-ts-rainbow)
   rainbow = {

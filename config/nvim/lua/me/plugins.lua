@@ -157,7 +157,7 @@ return require("packer").startup {
       config = function()
         vim.g.yaifa_shiftwidth = 2
         vim.g.yaifa_tabstop = 4
-        vim.g.yaifa_expandtab = 1 
+        vim.g.yaifa_expandtab = 1
       end
     }
 
