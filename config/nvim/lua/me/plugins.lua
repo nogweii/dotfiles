@@ -129,6 +129,22 @@ return require("packer").startup {
       end
     }
     use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
+    use {
+      'ruifm/gitlinker.nvim',
+      requires = 'nvim-lua/plenary.nvim',
+      config = function()
+        require("gitlinker").setup {
+          opts = {
+            -- mappings = nil,
+            add_current_line_on_normal_mode = false,
+            action_callback = require("gitlinker.actions").copy_to_clipboard,
+          },
+          callbacks = {
+            ["code.aether.earth"] = require("gitlinker.hosts").get_gitlab_type_url
+          }
+        }
+      end
+    }
 
     -- asynchronous status bar and framework for full customization
     use {
