@@ -72,12 +72,57 @@ gls.left[2] = {
       -- byte length in line of text is not used.
       local column = vim.fn.virtcol('.')
 
-      return ''.. line .. ' ' .. column
+      local line_padded = line .. string.rep(' ', 3 - #tostring(line))
+      local column_padded = column .. string.rep(' ', 2 - #tostring(column))
+
+      return ''.. line_padded .. ' ' .. column_padded
     end,
     highlight = { colors.black, colors.brown },
   }
 }
 
+gls.left[3] = {
+  AleErrorCount = {
+    provider = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.error
+    end,
+    highlight = 'LspDiagnosticsSignError',
+    icon = ' ' .. vim.g.ale_sign_error .. ' ',
+    condition = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.error > 0
+    end,
+  }
+}
+gls.left[4] = {
+  AleWarningCount = {
+    provider = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.warning
+    end,
+    highlight = 'LspDiagnosticsSignWarning',
+    icon = ' ' .. vim.g.ale_sign_warning .. ' ',
+    condition = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.warning > 0
+    end,
+  }
+}
+gls.left[5] = {
+  AleInfoCount = {
+    provider = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.info
+    end,
+    highlight = 'LspDiagnosticsSignInformation',
+    icon = ' ' .. vim.g.ale_sign_info .. ' ',
+    condition = function()
+      local ale_counts = vim.fn["ale#statusline#Count"](vim.fn.bufnr())
+      return ale_counts.info > 0
+    end,
+  }
+}
 
 gls.mid[1] = {
   FileIcon = {
@@ -121,6 +166,20 @@ gls.right[1] = {
   }
 }
 gls.right[2] = {
+  SpellCheck = {
+    provider = function()
+      local color = colors.teal
+      local gui_style = "NONE"
+      if not vim.wo.spell then
+	color = colors.redwine
+        gui_style = "strikethrough"
+      end
+      vim.api.nvim_command('hi GalaxySpellCheck guifg=' .. color .. ' gui=' .. gui_style .. ' guibg=' .. active_bg)
+      return '暈'
+    end
+  }
+}
+gls.right[3] = {
   GitBranch = {
     provider = 'GitBranch',
     condition = condition.check_git_workspace,
@@ -128,7 +187,7 @@ gls.right[2] = {
     icon = " "
   }
 }
-gls.right[3] = {
+gls.right[4] = {
   FileFormat = {
     provider = function()
       local icons = {
@@ -149,20 +208,6 @@ gls.right[3] = {
     highlight = { colors.base1, colors.magenta },
   }
 }
-gls.right[4] = {
-  SpellCheck = {
-    provider = function()
-      local color = colors.teal
-      local gui_style = "NONE"
-      if not vim.wo.spell then
-	color = colors.redwine
-        gui_style = "strikethrough"
-      end
-      vim.api.nvim_command('hi GalaxySpellCheck guifg=' .. color .. ' gui=' .. gui_style .. ' guibg=' .. active_bg)
-      return '暈'
-    end
-  }
-}
 
 
 gls.short_line_left[1] = {
@@ -180,3 +225,6 @@ gls.short_line_left[2] = {
     highlight = {colors.grey, inactive_bg}
   }
 }
+
+-- Reload galaxyline after ALE finishes so that the counts update
+vim.api.nvim_command('autocmd User ALELintPost lua require("galaxyline").load_galaxyline()')

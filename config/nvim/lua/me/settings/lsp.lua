@@ -1,6 +1,7 @@
 local lspconfig = require('lspconfig')
 local lspinstall = require('lspinstall')
 local lspkind = require('lspkind')
+require("nvim-ale-diagnostic")
 
 -- add some emoji decorations to the completion menu's suggestions
 lspkind.init({
@@ -31,6 +32,16 @@ lspkind.init({
   },
 })
 
+-- forward diagnostics to ALE
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = false,
+    virtual_text = false,
+    signs = true,
+    update_in_insert = false,
+  }
+)
+
 -- keymaps
 local function on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -48,10 +59,6 @@ local function on_attach(client, bufnr)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<leader>de', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<leader>dq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
   -- Not all LSPs implement every bit of functionality; check the particular
   -- LSP server we've attached to for these

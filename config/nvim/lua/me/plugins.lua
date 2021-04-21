@@ -172,6 +172,11 @@ return require("packer").startup {
     -- quickly toggle comments for a line (or motion)
     use "b3nj5m1n/kommentary"
 
+    use { "dense-analysis/ale",
+      setup = function() require('me.settings.ale') end
+    }
+    use { "nathunsmitty/nvim-ale-diagnostic", requires = "dense-analysis/ale", module = "nvim-ale-diagnostic" }
+
   end, -- end of function(use)
 
   config = {

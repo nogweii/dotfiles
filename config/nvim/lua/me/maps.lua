@@ -171,3 +171,11 @@ else
   cmd_map{keys = "<C-n>", command = "bnext", plugins = false}
   cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
 end
+
+-- linter errors & LSP diagnostics management via ALE
+cmd_map{keys = "[d", command = "ALEPreviousWrap"}
+cmd_map{keys = "]d", command = "ALENextWrap"}
+cmd_map{keys = "<leader>df", command = "ALEFix"}
+cmd_map{keys = "<leader>dd", command = "ALEDetail"}
+cmd_map{keys = "<leader>dl", command = "ALELint"}
+cmd_map{keys = "<leader>dL", command = "ALEToggle"}
