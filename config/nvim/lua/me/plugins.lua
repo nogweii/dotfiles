@@ -123,9 +123,12 @@ return require("packer").startup {
         "nvim-lua/plenary.nvim"
       },
       config = function()
-        require('gitsigns').setup()
+        require('gitsigns').setup {
+          keymaps = { }, -- empty keymaps list to disable the default ones
+        }
       end
     }
+    use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
 
     -- asynchronous status bar and framework for full customization
     use {

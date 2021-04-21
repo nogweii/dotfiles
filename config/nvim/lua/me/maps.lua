@@ -1,7 +1,15 @@
 vim.g.mapleader = ';'
 
+--[[
+ _          _
+| |__   ___| |_ __   ___ _ __ ___
+| '_ \ / _ \ | '_ \ / _ \ '__/ __|
+| | | |  __/ | |_) |  __/ |  \__ \
+|_| |_|\___|_| .__/ \___|_|  |___/
+             |_|
+ ]]
 -- A little utility function to make nvim_set_keymap a bit more ergonomic
-function map(args)
+local function map(args)
   args = vim.tbl_extend("keep", args, {
     mode = "", -- The vim mode for this map
     keys = nil, -- The input sequence of keys to activate this mapping
@@ -27,6 +35,14 @@ local function cmd_map(args)
   map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', mode = args.mode or 'n', silent = true, plugins = args.plugins == nil and true or args.plugins}
 end
 
+--[[
+                                 _
+  __ _  ___ _ __   ___ _ __ __ _| |
+ / _` |/ _ \ '_ \ / _ \ '__/ _` | |
+| (_| |  __/ | | |  __/ | | (_| | |
+ \__, |\___|_| |_|\___|_|  \__,_|_|
+ |___/
+ ]]
 -- Free up 'G' to be a generic prefix, and make gG do what G used to do
 map{keys = "gG", to = "G"}
 map{keys = "gG", to = "G", mode = "o"}
@@ -43,18 +59,6 @@ map{keys = ",", to = ";"}
 -- Easily (un)indent again in visual mode by immediately re-selecting
 map{keys = "<", to = "<gv", mode = "v"}
 map{keys = ">", to = ">gv", mode = "v"}
-
--- Fuzzy find a file to edit
-plug_map{keys = "ZE", command = 'CommandT'}
-plug_map{keys = "ZB", command = 'CommandTBuffer'}
--- Save the file only when the buffer has been modified.
-cmd_map{keys = "ZD", command = "BufferWipeout"}
-cmd_map{keys = "ZW", command = "update"}
--- Create & edit a snippets file for this filetype
-cmd_map{keys = "ZP", command = "UltiSnipsEdit"}
--- Easily edit my vimrc file
--- TODO: integrate it with my workspace concept, editing a project-local lua file instead
-cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}
 
 -- Sometimes you just need to move a character or two in insert mode. Don't
 -- make these a habit, though!
@@ -82,12 +86,20 @@ map{keys = "L", to = '$', recurse = true}
 -- Easily get out of insert mode in the terminal
 map{keys = "<C-s>", to = '<C-\\><C-n>', recurse = true, mode = "t"}
 
+-- Fuzzy find a file to edit
+plug_map{keys = "ZE", command = 'CommandT'}
+plug_map{keys = "ZB", command = 'CommandTBuffer'}
+-- Save the file only when the buffer has been modified.
+cmd_map{keys = "ZD", command = "BufferWipeout"}
+cmd_map{keys = "ZW", command = "update"}
+-- Create & edit a snippets file for this filetype
+cmd_map{keys = "ZP", command = "UltiSnipsEdit"}
+-- Easily edit my vimrc file
+-- TODO: integrate it with my workspace concept, editing a project-local lua file instead
+cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}
+
 -- Tap - to jump into a file pane
 cmd_map{keys = "-", command = "NvimTreeToggle"}
-
--- Git hunk jumps, that behave the same when diffing two files
-map{keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true}
-map{keys = "[c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true}
 
 -- a much smarter <C-a> and <C-x> that know how to flip through enumerated lists
 -- and manipulate additional number formats & dates
@@ -98,6 +110,34 @@ plug_map{mode = 'v', keys = "<C-x>", command = 'dial-decrement'}
 plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
 
+--[[
+       _ _
+  __ _(_) |_
+ / _` | | __|
+| (_| | | |_
+ \__, |_|\__|
+ |___/
+ ]]
+-- Git hunk jumps, that behave the same when diffing two files
+map{keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true}
+map{keys = "[c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true}
+-- a motion to select the whole hunk
+map{mode = "o", keys = "ih", to = "<cmd>lua require('gitsigns').select_hunk()<CR>"}
+map{mode = "x", keys = "ih", to = "<cmd>lua require('gitsigns').select_hunk()<CR>"}
+cmd_map{keys = "<leader>gb", command = "GitMessenger"}
+map{keys = "<leader>gS", to = "<cmd>lua require('gitsigns').stage_hunk()<CR>"}
+map{keys = "<leader>gU", to = "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>"}
+map{keys = "<leader>gp", to = "<cmd>lua require('gitsigns').preview_hunk()<CR>"}
+
+
+--[[
+                           _      _   _
+  ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __
+ / __/ _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \
+| (_| (_) | | | | | | |_) | |  __/ |_| | (_) | | | |
+ \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|
+                    |_|
+ ]]
 -- completion key bindings
 map{mode = 'i', keys = "<C-Space>", to = [[compe#complete()]], expression = true, plugins = true}
 map{mode = 'i', keys = "<CR>", to = [[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]], expression = true, plugins = true}
@@ -172,6 +212,14 @@ else
   cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
 end
 
+
+--[[
+ _ _       _
+| (_)_ __ | |_ ___ _ __
+| | | '_ \| __/ _ \ '__|
+| | | | | | ||  __/ |
+|_|_|_| |_|\__\___|_|
+ ]]
 -- linter errors & LSP diagnostics management via ALE
 cmd_map{keys = "[d", command = "ALEPreviousWrap"}
 cmd_map{keys = "]d", command = "ALENextWrap"}
