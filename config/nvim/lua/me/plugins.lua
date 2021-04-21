@@ -7,7 +7,7 @@ end
 return require("packer").startup {
   function(use)
     -- use packer to manage packer
-    use { "wbthomason/packer.nvim", branch = "feat-profile-compiled-code" }
+    use { "wbthomason/packer.nvim" }
 
     -- Bug fix https://github.com/neovim/neovim/issues/12587
     -- and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
