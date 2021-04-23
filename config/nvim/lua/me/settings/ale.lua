@@ -25,3 +25,6 @@ vim.g.ale_lint_on_insert_leave = 1
 vim.g.ale_echo_cursor = 1
 -- if there's an ALE preview window open, close it when I enter insert mode
 vim.g.ale_close_preview_on_insert = 1
+
+-- customize the linters
+vim.g.ale_yaml_yamllint_options = '-f ' .. vim.fn.stdpath("config") .. "/linters/yamllint.yml"
