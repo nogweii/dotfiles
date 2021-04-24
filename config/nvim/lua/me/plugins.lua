@@ -196,6 +196,8 @@ return require("packer").startup {
     }
     use { "nathunsmitty/nvim-ale-diagnostic", requires = "dense-analysis/ale", module = "nvim-ale-diagnostic" }
 
+    use "hashivim/vim-terraform"
+
   end, -- end of function(use)
 
   config = {
