@@ -51,7 +51,7 @@ gls.left[1] = {
     provider = function()
       local text = mode_map[vim.fn.mode()][1]
       local color = mode_map[vim.fn.mode()][2]
-      vim.api.nvim_command('hi GalaxyVimMode guibg=' .. color)
+      vim.cmd('hi GalaxyVimMode guibg=' .. color)
       return text..' '
     end,
     highlight = { colors.fg_alt, active_bg },
@@ -174,7 +174,7 @@ gls.right[2] = {
 	color = colors.redwine
         gui_style = "strikethrough"
       end
-      vim.api.nvim_command('hi GalaxySpellCheck guifg=' .. color .. ' gui=' .. gui_style .. ' guibg=' .. active_bg)
+      vim.cmd('hi GalaxySpellCheck guifg=' .. color .. ' gui=' .. gui_style .. ' guibg=' .. active_bg)
       return '暈'
     end
   }
@@ -227,4 +227,4 @@ gls.short_line_left[2] = {
 }
 
 -- Reload galaxyline after ALE finishes so that the counts update
-vim.api.nvim_command('autocmd User ALELintPost lua require("galaxyline").load_galaxyline()')
+vim.cmd('autocmd User ALELintPost lua require("galaxyline").load_galaxyline()')

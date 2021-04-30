@@ -198,6 +198,10 @@ return require("packer").startup {
 
     use "hashivim/vim-terraform"
 
+    -- A smarter cursor position restoration function, excluding various buffers
+    -- where it makes sense, and opening folds if needed.
+    use "farmergreg/vim-lastplace"
+
   end, -- end of function(use)
 
   config = {

@@ -41,3 +41,8 @@ vim.g.UltiSnipsJumpBackwardTrigger = "<NUL>"
 vim.g.gutentags_enabled = 0 -- by default it's disabled
 vim.g.gutentags_ctags_tagfile = ".vim-stuff/tags" -- TODO: auto-enable when this folder exists
 vim.g.gutentags_ctags_executable_ruby = 'ripper-tags'
+
+-- lastplace configuration
+vim.g.lastplace_ignore_buftype = "quickfix,nofile,help"
+vim.g.lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+vim.g.lastplace_open_folds = 1
