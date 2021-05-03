@@ -28,7 +28,7 @@ vim.g.nvim_tree_follow = 1
 if vim.fn.executable('neovim-ruby-host') then
   vim.g.ruby_host_prog = vim.fn.exepath('neovim-ruby-host')
 end
-vim.g.python3_host_prog = vim.fn.exepath('python3')
+vim.g.python3_host_prog = '/usr/bin/python3'
 vim.g.loaded_python_provider = 0
 
 -- Disable all of UltiSnip's default mappings
