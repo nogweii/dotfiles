@@ -136,6 +136,8 @@
     branch-upstream-to-origin = "!f() { git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD) ;}; f"
     # find what branch origin's HEAD points to, presuming it's the default/primary branch
     default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@' ;}; f"
+    # generate a mailmap file with all of the committer's emails
+    gen-mailcap = "!f() { git shortlog -se | awk -F'\t' '{print $2,$3}' | sort >> .mailmap ;}; f"
 
 [web]
     browser = kde-open
@@ -188,3 +190,5 @@
 # vim: set ft=gitconfig:
 [diff "ansible-vault"]
 	textconv = ansible-vault view
+[log]
+	mailmap = true
