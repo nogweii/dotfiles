@@ -21,3 +21,11 @@ wk.register({
     f = 'Run all fixers on the file',
   }
 }, { prefix = '<leader>' })
+
+wk.register({
+  L = 'Edit the neovim config',
+  P = 'Edit the appropriate snippets file',
+  W = 'Save changes',
+  D = 'Close the buffer',
+  E = 'Fuzzily find a file',
+}, { prefix = 'Z' })
