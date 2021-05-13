@@ -202,6 +202,11 @@ return require("packer").startup {
     -- where it makes sense, and opening folds if needed.
     use "farmergreg/vim-lastplace"
 
+    use {
+      "folke/which-key.nvim",
+      config = function() require('me.settings.which_key') end
+    }
+
   end, -- end of function(use)
 
   config = {
