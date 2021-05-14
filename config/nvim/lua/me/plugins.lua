@@ -114,7 +114,7 @@ return require("packer").startup {
     use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
     use "lspcontainers/lspcontainers.nvim"
 
-
+    -- insert completion menu
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 
     -- put git change information in the sidebar, provide some helpers
@@ -130,7 +130,9 @@ return require("packer").startup {
         }
       end
     }
+    -- show git blame in a popup
     use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
+    -- yank a link to the commit
     use {
       'ruifm/gitlinker.nvim',
       requires = 'nvim-lua/plenary.nvim',
@@ -193,17 +195,21 @@ return require("packer").startup {
     -- quickly toggle comments for a line (or motion)
     use "b3nj5m1n/kommentary"
 
+    -- diagnostics from various tools
     use { "dense-analysis/ale",
       setup = function() require('me.settings.ale') end
     }
+    -- ...and them pulled from the LSP
     use { "nathunsmitty/nvim-ale-diagnostic", requires = "dense-analysis/ale", module = "nvim-ale-diagnostic" }
 
+    -- Additional syntax support
     use "hashivim/vim-terraform"
 
     -- A smarter cursor position restoration function, excluding various buffers
     -- where it makes sense, and opening folds if needed.
     use "farmergreg/vim-lastplace"
 
+    -- Key bindings help & reminder
     use {
       "folke/which-key.nvim",
       config = function() require('me.settings.which_key') end
