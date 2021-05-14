@@ -101,6 +101,8 @@ cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua
 cmd_map{keys = "ZG", command = "Grepper"}
 plug_map{mode = "o", keys = "gs", command = "GrepperOperator"}
 plug_map{mode = "x", keys = "gs", command = "GrepperOperator"}
+-- Visualize the undo history of the file
+cmd_map{keys = "ZU", command = "MundoToggle"}
 
 -- Tap - to jump into a file pane
 cmd_map{keys = "-", command = "NvimTreeToggle"}

@@ -29,4 +29,5 @@ wk.register({
   D = 'Close the buffer',
   E = 'Fuzzily find a file',
   G = 'Search for text in files',
+  U = 'Visualize undo tree',
 }, { prefix = 'Z' })

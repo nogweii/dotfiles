@@ -245,6 +245,9 @@ return require("packer").startup {
       end
     }
 
+    -- Visualize the undo tree
+    use 'simnalamburt/vim-mundo'
+
   end, -- end of function(use)
 
   config = {
