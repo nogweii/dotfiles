@@ -97,6 +97,10 @@ cmd_map{keys = "ZP", command = "UltiSnipsEdit"}
 -- Easily edit my vimrc file
 -- TODO: integrate it with my workspace concept, editing a project-local lua file instead
 cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}
+-- Easily search the directory
+cmd_map{keys = "ZG", command = "Grepper"}
+plug_map{mode = "o", keys = "gs", command = "GrepperOperator"}
+plug_map{mode = "x", keys = "gs", command = "GrepperOperator"}
 
 -- Tap - to jump into a file pane
 cmd_map{keys = "-", command = "NvimTreeToggle"}

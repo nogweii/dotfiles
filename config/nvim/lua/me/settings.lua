@@ -46,3 +46,11 @@ vim.g.gutentags_ctags_executable_ruby = 'ripper-tags'
 vim.g.lastplace_ignore_buftype = "quickfix,nofile,help"
 vim.g.lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
 vim.g.lastplace_open_folds = 1
+
+-- Grepper configuration
+vim.g.grepper = {
+  open = 0,
+  quickfix = 1,
+  searchreg = 1,
+  highlight = 0,
+}

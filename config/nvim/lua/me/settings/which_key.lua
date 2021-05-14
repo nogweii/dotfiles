@@ -28,4 +28,5 @@ wk.register({
   W = 'Save changes',
   D = 'Close the buffer',
   E = 'Fuzzily find a file',
+  G = 'Search for text in files',
 }, { prefix = 'Z' })

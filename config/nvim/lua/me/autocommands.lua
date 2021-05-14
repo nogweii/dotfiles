@@ -26,6 +26,10 @@ nvim_create_augroups({
   quickfix_windows = {
     {'QuickFixCmdPost', 'grep', 'cwindow'},
     {'QuickFixCmdPost', 'helpgrep', 'cwindow'},
-    {'FileType', 'qf', 'setlocal scrolloff=0'},
+    {'FileType', 'qf', 'setlocal scrolloff=0 nobuflisted'},
+  },
+
+  grepper = {
+    {'User', 'Grepper', [[call setqflist([], 'r', {'context': {'bqf': {'pattern_hl': histget('/')}}}) | botright copen]]},
   },
 })

@@ -215,6 +215,36 @@ return require("packer").startup {
       config = function() require('me.settings.which_key') end
     }
 
+    -- Asynchronously use search tools
+    use { 'mhinz/vim-grepper',
+      cmd = 'Grepper',
+      keys = '<plug>(GrepperOperator)',
+    }
+
+    use { 'kevinhwang91/nvim-bqf',
+      config = function()
+        require('bqf').setup({
+          preview = {
+            win_height = 10,
+            win_vheight = 10,
+            delay_syntax = 100,
+            border_chars = {'┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'}
+          },
+          func_map = {
+            vsplit = '',
+            ptogglemode = 'z,',
+            stoggleup = ''
+          },
+          --[[ filter = {
+            fzf = {
+              action_for = {['ctrl-s'] = 'split'},
+              extra_opts = {'--bind', 'ctrl-o:toggle-all', '--prompt', '> '}
+            }
+          } ]]
+        })
+      end
+    }
+
   end, -- end of function(use)
 
   config = {
