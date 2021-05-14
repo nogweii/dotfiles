@@ -1,5 +1,4 @@
 local lspconfig = require('lspconfig')
-local lspinstall = require('lspinstall')
 local lspkind = require('lspkind')
 require("nvim-ale-diagnostic")
 
@@ -119,10 +118,10 @@ end
 
 -- lsp-install
 local function setup_servers()
-  lspinstall.setup()
-
-  -- get all installed servers
-  local servers = lspinstall.installed_servers()
+  -- all known servers in containers
+  local servers = { 'bashls', 'dockerls', 'gopls', 'rust_analyzer', 'sumneko_lua', 'tsserver', 'yamlls' }
+  -- local LSP containers I'm building
+  servers = vim.tbl_extend("force", servers, { 'pyls' })
 
   for _, server in pairs(servers) do
     local config = make_config()
@@ -133,20 +132,21 @@ local function setup_servers()
     --   config.settings = neovim_lua_settings
     -- end
 
-    local lsp_server = lspconfig[server]
-    if lsp_server == nil then
-      vim.notify("Attempted to configure unknown LSP server " .. server, "warn")
-    else
-      lsp_server.setup(config)
-    end
+    local lsp_configuration = lspconfig[server]
+
+    lsp_configuration.setup {
+      before_init = function(params)
+        params.processId = vim.NIL
+      end,
+      cmd = require('lspcontainers').command(server, {
+        additional_languages = {
+          pyls = "lsp-pyls:latest"
+        }
+      }),
+      root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
+    }
   end
 end
 
 -- do the setup when neovim first loads
 setup_servers()
-
--- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-lspinstall.post_install_hook = function ()
-  setup_servers() -- reload installed servers
-  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
-end
