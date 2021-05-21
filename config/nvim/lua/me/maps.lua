@@ -103,6 +103,8 @@ plug_map{mode = "o", keys = "gs", command = "GrepperOperator"}
 plug_map{mode = "x", keys = "gs", command = "GrepperOperator"}
 -- Visualize the undo history of the file
 cmd_map{keys = "ZU", command = "MundoToggle"}
+-- Find all of the code tags (TODO, NOTE, FIXME, etc) in the project
+cmd_map{keys = "ZT", command = "CodeTagSearch"}
 
 -- Tap - to jump into a file pane
 cmd_map{keys = "-", command = "NvimTreeToggle"}

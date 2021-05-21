@@ -30,4 +30,5 @@ wk.register({
   E = 'Fuzzily find a file',
   G = 'Search for text in files',
   U = 'Visualize undo tree',
+  T = 'Search for code tags',
 }, { prefix = 'Z' })
