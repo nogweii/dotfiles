@@ -121,7 +121,7 @@ local function setup_servers()
   -- all known servers in containers
   local servers = { 'bashls', 'dockerls', 'gopls', 'rust_analyzer', 'sumneko_lua', 'tsserver', 'yamlls' }
   -- local LSP containers I'm building
-  servers = vim.tbl_extend("force", servers, { 'pyls' })
+  servers = vim.tbl_extend("force", servers, { 'pylsp' })
 
   for _, server in pairs(servers) do
     local config = make_config()
@@ -140,7 +140,7 @@ local function setup_servers()
       end,
       cmd = require('lspcontainers').command(server, {
         additional_languages = {
-          pyls = "lsp-pyls:latest"
+          pylsp = "lspcontainers/python-lsp:1.0.1"
         }
       }),
       root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
