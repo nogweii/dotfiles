@@ -142,3 +142,7 @@ if [ -n "${commands[nvim]}" ]; then
 fi
 
 alias qrencode-text='qrencode -t ANSIUTF8 -m2 -lm'
+
+if [ -n "${commands[ctop]}" -a "${TERM}" = "alacritty" ]; then
+    alias ctop="TERM=xterm-256color ctop"
+fi
