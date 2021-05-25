@@ -1,6 +1,6 @@
 -- Doesn't work if we don't have notify-send installed, so fall back to
 -- the built-in implementation
-if not vim.fn.executable("notify-send") then
+if vim.fn.executable("notify-send") == 0 then
   return
 end
 
