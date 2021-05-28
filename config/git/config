@@ -165,9 +165,7 @@
 [merge]
     tool = fugitive
 [mergetool "fugitive"]
-    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
-[mergetool "vimdiff3"]
-    cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+    cmd = nvim -c \"Gvdiff\" \"$MERGED\"
 [status]
     submodulesummary = true
 [pack]
@@ -192,3 +190,5 @@
 	textconv = ansible-vault view
 [log]
 	mailmap = true
+[mergetool]
+	prompt = false
