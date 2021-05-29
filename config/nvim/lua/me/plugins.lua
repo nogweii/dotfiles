@@ -109,6 +109,9 @@ return require("packer").startup {
     use "tpope/vim-characterize"
     use "tpope/vim-eunuch"
     use "tpope/vim-fugitive"
+    -- get more recently updated git related syntax files
+    -- this is the upstream source of what is shipped with the editor
+    use { 'tpope/vim-git' }
 
     -- a collection of lsp server installation scripts
     use "neovim/nvim-lspconfig"
