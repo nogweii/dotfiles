@@ -116,7 +116,7 @@ return require("packer").startup {
     -- a collection of lsp server installation scripts
     use "neovim/nvim-lspconfig"
     use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
-      config = function() require('me.settings.lsp') end
+      config = function() require('me.settings.lsp').setup_servers() end
     }
     use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
     use "lspcontainers/lspcontainers.nvim"
@@ -181,10 +181,14 @@ return require("packer").startup {
       end
     }
 
+    use { 'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
+
     -- Automatic semi-smart indentation settings for a buffer
     use {
       'Raimondi/yaifa',
-      config = function()
+      setup = function()
         vim.g.yaifa_shiftwidth = 2
         vim.g.yaifa_tabstop = 4
         vim.g.yaifa_expandtab = 1
@@ -254,6 +258,13 @@ return require("packer").startup {
 
     -- Visualize the undo tree
     use 'simnalamburt/vim-mundo'
+
+    -- Wrap zk to help manage my notes
+    use { "megalithic/zk.nvim",
+      cond = "vim.fn.executable('zk')",
+      config = function () require('me.settings.zk') end,
+      requires = {'nvim-telescope/telescope.nvim'}
+    }
 
   end, -- end of function(use)
 

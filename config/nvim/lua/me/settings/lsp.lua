@@ -1,6 +1,9 @@
 local lspconfig = require('lspconfig')
 local lspkind = require('lspkind')
+local lspconfigs = require('lspconfig.configs')
 require("nvim-ale-diagnostic")
+
+local M = {}
 
 -- add some emoji decorations to the completion menu's suggestions
 lspkind.init({
@@ -42,7 +45,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 -- keymaps
-local function on_attach(client, bufnr)
+function M.on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -105,26 +108,26 @@ local neovim_lua_settings = {
 }
 
 -- config that activates keymaps and enables snippet support
-local function make_config()
+function M.make_config()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   -- capabilities.textDocument.completion.completionItem.snippetSupport = true
   return {
     -- enable snippet support
     capabilities = capabilities,
     -- map buffer local keybindings when the language server attaches
-    on_attach = on_attach,
+    on_attach = M.on_attach,
   }
 end
 
 -- lsp-install
-local function setup_servers()
+function M.setup_servers()
   -- all known servers in containers
   local servers = { 'bashls', 'dockerls', 'gopls', 'rust_analyzer', 'sumneko_lua', 'tsserver', 'yamlls' }
   -- local LSP containers I'm building
   servers = vim.tbl_extend("force", servers, { 'pylsp' })
 
   for _, server in pairs(servers) do
-    local config = make_config()
+    local config = M.make_config()
 
     -- language specific config
     -- if server == "lua" then
@@ -148,5 +151,4 @@ local function setup_servers()
   end
 end
 
--- do the setup when neovim first loads
-setup_servers()
+return M
