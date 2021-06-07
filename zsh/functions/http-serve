@@ -1,0 +1,23 @@
+# vim: set syntax=sh:
+# Launch an HTTP server for a given directory, or the current one
+
+if [ -d "$1" ]; then
+    local dir="${1}"
+else
+    local dir="${PWD}"
+fi
+
+# Get a random, unused, local port by first using ruby to bind to port 0 --
+# meaning the kernel will choose one for us
+# TODO: can zsh bind to a socket?
+random_port=$(ruby -e 'require "socket"; puts Addrinfo.tcp("", 0).bind {|s| s.local_address.ip_port }')
+
+if [ -z "${SSH_TTY}" -a -n "${DISPLAY}" ]; then
+    {
+        sleep 2;
+        xdg-open "http://localhost:${random_port}"
+    } &|
+fi
+
+# Then pass the port to our webserver. (Powered by docker & apache httpd)
+docker run --rm -it --hostname 'http.local' -p "${random_port}:80" -v "$dir":/usr/local/apache2/htdocs/ httpd:alpine
