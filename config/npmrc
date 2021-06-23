@@ -20,3 +20,6 @@ unicode=true
 
 # Move node-gyp's temporary directory to the cache folder too
 devdir=~/.local/cache/node-gyp
+
+@nogweii:registry=https://code.aether.earth/api/v4/packages/npm/
+https://code.aether.earth/api/v4/packages/npm/:_authToken=$GITLAB_API_PRIVATE_TOKEN
