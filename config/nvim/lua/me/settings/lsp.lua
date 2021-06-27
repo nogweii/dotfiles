@@ -1,6 +1,7 @@
 local lspconfig = require('lspconfig')
-local lspkind = require('lspkind')
 local lspconfigs = require('lspconfig.configs')
+local lspcontainers = require('lspcontainers')
+local lspkind = require('lspkind')
 require("nvim-ale-diagnostic")
 
 local M = {}
@@ -85,69 +86,31 @@ function M.on_attach(client, bufnr)
   end
 end
 
--- Configure lua language server for neovim development
-local neovim_lua_settings = {
-  Lua = {
-    runtime = {
-      -- LuaJIT in the case of Neovim
-      version = 'LuaJIT',
-      path = vim.split(package.path, ';'),
-    },
-    diagnostics = {
-      -- Get the language server to recognize the `vim` global
-      globals = {'vim'},
-    },
-    workspace = {
-      -- Make the server aware of Neovim runtime files
-      library = {
-        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-        [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-      },
-    },
-  }
-}
-
 -- config that activates keymaps and enables snippet support
-function M.make_config()
+function M.make_config(server_name)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-  return {
+  local lsp_config = {
     -- enable snippet support
     capabilities = capabilities,
     -- map buffer local keybindings when the language server attaches
     on_attach = M.on_attach,
   }
+
+  if vim.tbl_contains(lspcontainers.supported_languages, server_name) then
+    lsp_config.cmd = lspcontainers.command(server_name)
+    lsp_config.before_init = function(params)
+      params.processId = vim.NIL
+    end
+  end
+
+  return lsp_config
 end
 
 -- lsp-install
 function M.setup_servers()
-  -- all known servers in containers
-  local servers = { 'bashls', 'dockerls', 'gopls', 'rust_analyzer', 'sumneko_lua', 'tsserver', 'yamlls' }
-  -- local LSP containers I'm building
-  servers = vim.tbl_extend("force", servers, { 'pylsp' })
-
-  for _, server in pairs(servers) do
-    local config = M.make_config()
-
-    -- language specific config
-    -- if server == "lua" then
-    --   TODO: check if the buffer is neovim related
-    --   config.settings = neovim_lua_settings
-    -- end
-
-    local lsp_configuration = lspconfig[server]
-
-    lsp_configuration.setup {
-      before_init = function(params)
-        params.processId = vim.NIL
-      end,
-      cmd = require('lspcontainers').command(server, {
-        additional_languages = {
-          pylsp = "lspcontainers/python-lsp:1.0.1"
-        }
-      }),
-      root_dir = lspconfig.util.root_pattern(".git", vim.fn.getcwd()),
-    }
+  for server, _ in pairs(lspcontainers.supported_languages) do
+    lspconfig[server].setup(M.make_config(server))
   end
 end
 

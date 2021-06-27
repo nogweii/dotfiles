@@ -43,4 +43,4 @@ configs.zk.new = function(...)
   )
 end
 
-lspconfig.zk.setup(my_lsp.make_config())
+lspconfig.zk.setup(my_lsp.make_config("zk"))
