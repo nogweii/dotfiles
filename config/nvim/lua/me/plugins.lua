@@ -266,6 +266,11 @@ return require("packer").startup {
       requires = {'nvim-telescope/telescope.nvim'}
     }
 
+    -- addtional syntax highlighting for postgresql extensions
+    use { 'lifepillar/pgsql.vim',
+      ft = 'sql'
+    }
+
   end, -- end of function(use)
 
   config = {

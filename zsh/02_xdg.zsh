@@ -46,3 +46,6 @@ export TF_CLI_CONFIG_FILE="${XDG_CONFIG_HOME}/terraform.rc"
 export MIX_XDG=please
 # for every other elixir tool that doesn't know about $MIX_XDG
 export MIX_HOME="${XDG_DATA_HOME}/mix"
+
+export PSQLRC="${XDG_CONFIG_HOME}/psqlrc"
+export PSQL_HISTORY="${XDG_CACHE_HOME}/psql_history"

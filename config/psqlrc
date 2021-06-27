@@ -1,0 +1,151 @@
+-- PostgreSQL CLI client configuration file
+-- Reference: https://www.postgresql.org/docs/current/app-psql.html
+-- vim: set filetype=sql:
+
+-- As I change these settings, psql "helpfully" mentions that. But as part
+-- of the config file? not that helpful, turn them off
+\set QUIET 1
+
+------------------------------------------------------------
+-- Customizations & Prettiness
+------------------------------------------------------------
+
+-- Change the way postgres outputs a null value
+-- \pset null ¤
+\pset null '(null)'
+
+-- make my prompt look like a colorful DB URI connection string
+-- e.g "psql://root@dev.db.local:5432/postgres"
+\set PROMPT1 '%[%033[38;5;247m%]psql://%[%033[38;5;134m%]%n%[%033[38;5;247m%]@%[%033[36m%]%M%[%033[38;5;247m%]:%[%033[38;5;110m%]%>%[%033[38;5;247m%]/%[%033[33m%]%/ %[%033[1;33m%]%#%[%033[0m%] '
+
+-- Tab completed SQL keywords are in this case:
+\set COMP_KEYWORD_CASE upper
+
+-- Use table format (with headers across the top) by default, but switch to
+-- expanded table format when there's a lot of data, which makes it much
+-- easier to read.
+\x auto
+
+-- If the same command is run more than once in a row, only store it once
+\set HISTCONTROL ignoredups
+
+-- Store a lot of history
+\set HISTSIZE 50000
+
+-- When an error arises in the midst of a transaction, always rollback the 
+-- changes. Better safe than sorry, IMO!
+\set ON_ERROR_ROLLBACK on
+
+-- Always use a pager to display the results
+\pset pager_min_lines 1
+\pset pager always
+
+-- Draw additional borders around each column
+\pset border 2
+
+-- Use fancier unicode line drawing characters to draw the borders
+\pset linestyle unicode
+\pset unicode_header_linestyle double
+
+------------------------------------------------------------
+-- Useful aliases / premade SQL statements
+------------------------------------------------------------
+
+-- get a list of installed database extensions
+\set extensions 'SELECT * FROM pg_available_extensions;'
+
+-- running queries
+\set queries 'SELECT current_timestamp - query_start AS runtime, pid, datname, usename, query FROM pg_stat_activity WHERE query != \'<IDLE>\' ORDER BY 1 DESC;'
+
+-- server uptime
+\set uptime 'SELECT date_trunc(\'second\', current_timestamp - pg_postmaster_start_time()) AS uptime;'
+
+-- file size of the databases
+\set dbsize 'SELECT datname as database, pg_size_pretty(pg_database_size(datname)) size FROM pg_database ORDER BY pg_database_size(datname) DESC;'
+-- file size of the tables
+\set tablesize 'SELECT nspname || \'.\' || relname AS \"relation\", pg_size_pretty(pg_relation_size(C.oid)) AS "size" FROM pg_class C LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace) WHERE nspname NOT IN (\'pg_catalog\', \'information_schema\') ORDER BY pg_relation_size(C.oid) DESC LIMIT 40;'
+
+-- show all queries that have an open lock which blocks another
+\set locks 'SELECT bl.pid AS blocked_pid, a.usename AS blocked_user, kl.pid AS blocking_pid, ka.usename AS blocking_user, a.query AS blocked_statement FROM pg_catalog.pg_locks bl JOIN pg_catalog.pg_stat_activity a ON bl.pid = a.pid JOIN pg_catalog.pg_locks kl JOIN pg_catalog.pg_stat_activity ka ON kl.pid = ka.pid ON bl.transactionid = kl.transactionid AND bl.pid != kl.pid WHERE NOT bl.granted;'
+
+-- Long Running Queries
+SELECT $$
+ SELECT pid, 
+        now() - pg_stat_activity.query_start AS duration, 
+        query AS query 
+   FROM pg_stat_activity 
+  WHERE pg_stat_activity.query <> ''::text 
+    AND now() - pg_stat_activity.query_start > interval '5 minutes' 
+  ORDER BY now() - pg_stat_activity.query_start DESC;
+$$ long_running_queries \gset
+
+-- Process Summary (ps)
+SELECT $$
+ SELECT pid, 
+        usename,
+        application_name AS source, 
+        age(now(),query_start) AS running_for, 
+        wait_event_type, wait_event, 
+        query AS query 
+   FROM pg_stat_activity 
+  WHERE query <> '<insufficient privilege>' 
+    AND pid <> pg_backend_pid()
+    AND usename IS NOT NULL
+  ORDER BY 3 DESC;
+$$ ps \gset
+
+-- Which tables are eligible for vacuuming by autovacuum
+SELECT $$
+WITH vbt AS (
+  SELECT setting AS autovacuum_vacuum_threshold    FROM pg_settings WHERE name = 'autovacuum_vacuum_threshold'
+), vsf AS (
+  SELECT setting AS autovacuum_vacuum_scale_factor FROM pg_settings WHERE name = 'autovacuum_vacuum_scale_factor'
+), fma AS (
+  SELECT setting AS autovacuum_freeze_max_age      FROM pg_settings WHERE name = 'autovacuum_freeze_max_age'
+), sto AS (
+  SELECT opt_oid,
+         split_part(setting, '=', 1) AS param,
+         split_part(setting, '=', 2) AS value
+  FROM (SELECT oid opt_oid, unnest(reloptions) setting FROM pg_class) opt
+)
+SELECT
+    '"' || ns.nspname || '"."' || c.relname || '"' AS relation
+    , pg_size_pretty(pg_table_size(c.oid))         AS table_size
+    , age(relfrozenxid)                            AS xid_age
+    , coalesce(cfma.value::float, autovacuum_freeze_max_age::float)
+                                                   AS autovacuum_freeze_max_age
+    , ( coalesce(cvbt.value::float, autovacuum_vacuum_threshold::float) 
+      + coalesce(cvsf.value::float, autovacuum_vacuum_scale_factor::float) * 
+        pg_table_size(c.oid)
+      )                                            AS autovacuum_vacuum_tuples
+    , n_dead_tup                                   AS dead_tuples
+FROM pg_class c
+JOIN pg_namespace ns         ON ns.oid     = c.relnamespace
+JOIN pg_stat_all_tables stat ON stat.relid = c.oid
+JOIN vbt                     ON (1=1)
+JOIN vsf                     ON (1=1)
+JOIN fma                     ON (1=1)
+LEFT JOIN sto cvbt           ON cvbt.param = 'autovacuum_vacuum_threshold'    AND c.oid = cvbt.opt_oid
+LEFT JOIN sto cvsf           ON cvsf.param = 'autovacuum_vacuum_scale_factor' AND c.oid = cvsf.opt_oid
+LEFT JOIN sto cfma           ON cfma.param = 'autovacuum_freeze_max_age'      AND c.oid = cfma.opt_oid
+WHERE c.relkind = 'r'
+  AND nspname <> 'pg_catalog'
+  AND (  age(relfrozenxid) >= coalesce(cfma.value::float, autovacuum_freeze_max_age::float)
+      OR
+        coalesce(cvbt.value::float, autovacuum_vacuum_threshold::float) +
+        coalesce(cvsf.value::float, autovacuum_vacuum_scale_factor::float) *
+        pg_table_size(c.oid) <= n_dead_tup
+      -- OR 1 = 1
+  )
+ORDER BY age(relfrozenxid) DESC
+LIMIT 50;
+$$ vacuum_ready \gset
+
+-- get a count of all active connections per user
+\set active_users 'select COALESCE(usename, \'(system)\') as username, count(*) as connections from pg_stat_activity group by username order by username;'
+
+-- Show how long each query takes to execute
+-- (done here so the \gset aliases set above aren't reported)
+\timing on
+-- now that we're done configuring, turn on psql's output again
+\unset QUIET

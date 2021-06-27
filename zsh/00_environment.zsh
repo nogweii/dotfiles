@@ -82,3 +82,5 @@ PROMPT_EOL_MARK="%B%S␤%s%b" # customize zsh's injected newline indicator
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export ZK_NOTEBOOK_DIR="${HOME}/notes"
+
+[ -n "${commands[pspg]}" ] && export PSQL_PAGER="pspg"
