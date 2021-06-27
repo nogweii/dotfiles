@@ -120,6 +120,7 @@ return require("packer").startup {
     }
     use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
     use "lspcontainers/lspcontainers.nvim"
+    use "folke/lua-dev.nvim"
 
     -- insert completion menu
     use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}

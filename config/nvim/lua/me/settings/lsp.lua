@@ -86,6 +86,20 @@ function M.on_attach(client, bufnr)
   end
 end
 
+local function neovim_lua_config(new_config, new_root_dir)
+  new_config.cmd = lspcontainers.command("sumneko_lua")
+
+  -- check if the Lua buffer opened just now is related neovim
+  -- (a config file underneath the correct directory)
+  local neovim_parent_dir = vim.fn.resolve(vim.fn.stdpath("config"))
+  local buffer_file_name = vim.fn.expand("%:p")
+  if string.sub(buffer_file_name, 1, string.len(neovim_parent_dir)) == neovim_parent_dir then
+    -- yup, so load the awesome settings from folke to teach the LSP about
+    -- neovim's APIs
+    new_config.settings = require("lua-dev").setup().settings
+  end
+end
+
 -- config that activates keymaps and enables snippet support
 function M.make_config(server_name)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -102,6 +116,10 @@ function M.make_config(server_name)
     lsp_config.before_init = function(params)
       params.processId = vim.NIL
     end
+  end
+
+  if server_name == "sumneko_lua" then
+    lsp_config.on_new_config = neovim_lua_config
   end
 
   return lsp_config
