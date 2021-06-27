@@ -1,6 +1,5 @@
 -- PostgreSQL CLI client configuration file
 -- Reference: https://www.postgresql.org/docs/current/app-psql.html
--- vim: set filetype=sql:
 
 -- As I change these settings, psql "helpfully" mentions that. But as part
 -- of the config file? not that helpful, turn them off

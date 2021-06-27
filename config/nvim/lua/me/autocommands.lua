@@ -32,4 +32,8 @@ nvim_create_augroups({
   grepper = {
     {'User', 'Grepper', [[call setqflist([], 'r', {'context': {'bqf': {'pattern_hl': histget('/')}}}) | botright copen]]},
   },
+
+  postgresql_configs = {
+    {'BufNewFile,BufRead', 'psqlrc,.psqlrc', [[let b:sql_type_override='pgsql' | setfiletype sql]]}
+  }
 })
