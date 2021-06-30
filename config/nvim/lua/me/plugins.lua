@@ -49,8 +49,6 @@ return require("packer").startup {
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
     -- Dynamically set &commentstring when moving around files with multiple filetypes combined
     use { "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
-    -- Show a little hint after closing syntax
-    use { 'code-biscuits/nvim-biscuits', after = "nvim-treesitter", config = function() require('me.settings.code_biscuits') end }
     -- Smarter %-matcher, powered by treesitter queries
     use { 'theHamsta/nvim-treesitter-pairs', after = "nvim-treesitter" }
 
