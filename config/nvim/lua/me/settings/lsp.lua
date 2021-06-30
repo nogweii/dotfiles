@@ -111,7 +111,7 @@ function M.make_config(server_name)
     on_attach = M.on_attach,
   }
 
-  if vim.tbl_contains(lspcontainers.supported_languages, server_name) then
+  if lspcontainers.supported_languages[server_name] ~= nil then
     lsp_config.cmd = lspcontainers.command(server_name)
     lsp_config.before_init = function(params)
       params.processId = vim.NIL
