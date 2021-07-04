@@ -84,3 +84,5 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export ZK_NOTEBOOK_DIR="${HOME}/notes"
 
 [ -n "${commands[pspg]}" ] && export PSQL_PAGER="pspg"
+
+export BUNDLE_JOBS=4
