@@ -29,3 +29,4 @@ config/nvim/spell/en.utf-8.add.spl
 config/irb/irb_history
 .zcompdump
 config/nvim/plugin/packer_compiled.vim
+config/nvim/plugin/packer_compiled.lua
