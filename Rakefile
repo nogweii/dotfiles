@@ -104,6 +104,7 @@ MAKE_DIRS = [
   File.expand_path('~/.local'),
   File.expand_path('~/media'),
   File.expand_path('~/.local/cache/zsh'),
+  File.expand_path('~/.local/share/nvim/backup'),
 ]
 
 File.open('config/user-dirs.dirs').readlines.each do |user_dir|
