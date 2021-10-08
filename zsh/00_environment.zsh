@@ -31,8 +31,6 @@ export SUDO_PROMPT="[38;5;5m%p[00m's password:"
 export GDK_USE_XFT=1
 export QT_XFT=true
 
-[ -z "$HOSTNAME" ] && export HOSTNAME="$(hostname)"
-
 # Idle timeout value. Automatically closes the shell after this many seconds
 export TMOUT=14400 # 4 hours
 
