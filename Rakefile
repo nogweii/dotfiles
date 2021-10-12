@@ -213,7 +213,9 @@ namespace :doctor do
 
     [
       /Noto Color Emoji/,
-      /nerd font/i
+      /nerd font/i,
+      /Fira Sans:style=Regular/,
+      /Fira Code:style=Regular/
     ].each do |font|
       next if all_fonts.any? font
 
