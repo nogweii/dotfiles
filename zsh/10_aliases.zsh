@@ -100,10 +100,8 @@ fi
 alias gen-sha-pwd='head -c64 /dev/random | sha256sum'
 
 # Lazy open command
-if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
-    alias open='gio open'
-elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
-    alias open=kde-open
+if [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
+    alias open=kde-open5
 fi
 
 if [ -x "${commands[systemctl]}" ]; then

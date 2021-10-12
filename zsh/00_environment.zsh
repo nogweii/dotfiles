@@ -16,10 +16,10 @@ if [ "${TERM_PROGRAM}" = "vscode" ]; then
     export EDITOR='code'
 fi
 
-if [ "${XDG_SESSION_DESKTOP}" = "gnome" ]; then
-    export BROWSER="gvfs-open"
-elif [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
-    export BROWSER="kde-open"
+if [ "${XDG_SESSION_DESKTOP:l}" = "kde" ]; then
+    export BROWSER="kde-open5"
+    export SSH_ASKPASS=/usr/bin/ksshaskpass
+    export SSH_ASKPASS_REQUIRE=prefer
 fi
 
 # CLI default parameters
@@ -67,9 +67,6 @@ export FZF_DEFAULT_OPTS="--inline-info --ansi"
 # control it. Override in ~/.zshrc.local.
 export GIT_AUTHOR_EMAIL="colin@evaryont.me"
 export GIT_COMMITTER_EMAIL="colin@evaryont.me"
-
-# When logged into a GNOME desktop, have gem open work as I expect.
-[ "${XDG_SESSION_DESKTOP}" = "gnome" ] && export GEM_EDITOR='gio open'
 
 [ -n "${LXSS}" ] && export WINUSER="$(/mnt/c/Windows/System32/whoami.exe | sed 's/^.*\\//' | tr -d '\n\r')"
 
