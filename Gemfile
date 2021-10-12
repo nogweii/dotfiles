@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '~> 2.4'
+ruby '~> 3'
 
 gem 'uniscribe'
 gem 'md2man'
@@ -19,13 +19,13 @@ group :irb do
 
   gem 'pry' # because it's so damn neat and useful
 
-  gem 'irbtools', "~> 3.0.2"
-  gem 'irbtools-more', '~> 2.4.0'
-  gem 'looksee', "~> 4.2.0"
+  gem 'irbtools'
+  gem 'irbtools-more'
+  gem 'looksee'
 end
 
 group :development do
-  gem 'octokit', "~> 4.0"
+  gem 'octokit'
   gem 'rubocop'
 end
 
