@@ -195,8 +195,8 @@ task :doctor => ['doctor:binaries', 'doctor:fonts', 'doctor:archlinux']
 namespace :doctor do
   desc 'Find any missing CLI tools to fully make me comfortable'
   task :binaries do
-    %w[jq rg npm pip irb bundle grc keychain go youtube-dl streamlink mpv pamu2fcfg
-    wget curl nvim yarn fzf fd lsd mutt docker ansible sudo tmux
+    %w[jq rg npm pip irb bundle grc go youtube-dl streamlink mpv pamu2fcfg
+    wget curl nvim yarn fzf fd lsd neomutt docker ansible sudo tmux
     dfc ncdu git sqlite3 ksshaskpass cryfs ctags bundle pry
     shellcheck neovim-ruby-host nc youtube-dl zk].each do |binary|
 
@@ -260,7 +260,13 @@ namespace :doctor do
         "ttf-cascadia-code",
         "ttf-fira-code",
         "otf-fira-sans",
-        "ripgrep", "jq", "fzf", "tmux", "docker", "shellcheck"
+        "ripgrep",
+        "jq",
+        "fzf",
+        "tmux",
+        "docker",
+        "shellcheck",
+        "openbsd-netcat"
       ].each do |package_name|
         if not system("pacman -Qiq #{package_name} >/dev/null 2>&1")
           puts "Package #{package_name} not installed"
