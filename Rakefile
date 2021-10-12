@@ -3,14 +3,18 @@
 require 'rake/clean'
 
 ENV['HOME'] = ENV['DOTFILES_HOME_DIR'] if ENV.key? 'DOTFILES_HOME_DIR'
-extra_information = (verbose == true) || (Rake.application.options.trace == true)
+@extra_information = (verbose == true) || (Rake.application.options.trace == true)
+
+def debug(message)
+  puts message if @extra_information
+end
 
 # cd to the top of the git repo
 gitdir = `git rev-parse --show-toplevel`.strip
 Dir.chdir gitdir
 
 # Only show shell commands if we didn't run rake with -v or -t
-RakeFileUtils.verbose_flag = false unless extra_information
+RakeFileUtils.verbose_flag = false unless @extra_information
 
 def dotfiles
   (
@@ -186,15 +190,15 @@ namespace :vim do
 end
 
 desc 'Check for any extra elements missing from this system'
-task :doctor => ['doctor:binaries', 'doctor:fonts']
+task :doctor => ['doctor:binaries', 'doctor:fonts', 'doctor:archlinux']
 
 namespace :doctor do
   desc 'Find any missing CLI tools to fully make me comfortable'
   task :binaries do
-    %w[jq ag rg npm pip grc keychain go youtube-dl streamlink mpv pamu2fcfg
-    wget curl vim nvim yarn irb fzf fd lsd mutt docker ansible sudo tmux dtach
-    dfc ncdu git pet sqlite3 ksshaskpass cryfs ctags bundle pry
-    shellcheck neovim-ruby-host nc youtube-dl bundle].each do |binary|
+    %w[jq rg npm pip irb bundle grc keychain go youtube-dl streamlink mpv pamu2fcfg
+    wget curl nvim yarn fzf fd lsd mutt docker ansible sudo tmux
+    dfc ncdu git sqlite3 ksshaskpass cryfs ctags bundle pry
+    shellcheck neovim-ruby-host nc youtube-dl zk].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exists? File.join(path, binary)
@@ -214,6 +218,63 @@ namespace :doctor do
       next if all_fonts.any? font
 
       warn "Missing font matching #{font}"
+    end
+  end
+
+  arch_ns = namespace :archlinux do
+    task :repo_key do
+      aether_key_fingerprint = '739AA6E3A03B25494C16379E65462C4BAE7384AD'
+      `pacman-key -f '#{aether_key_fingerprint}' >/dev/null 2>&1`
+      if $?.exitstatus == 1
+        puts "No trust of aether-aur repo PGP key. Run pacman-key to trust it:"
+        puts "  sudo pacman-key --keyserver 'hkps://keys.openpgp.org' -r '#{aether_key_fingerprint}'"
+        puts "  sudo pacman-key --keyserver 'hkps://keys.openpgp.org' --lsign-key '#{aether_key_fingerprint}'"
+      else
+        debug "GPG key #{aether_key_fingerprint} is trusted"
+      end
+    end
+
+    task :repo do
+      f = File.open("/etc/pacman.conf")
+      found = false
+      f.each_line do |line|
+        found = true if line == "[aether-aur]\n"
+      end
+
+      puts "aether-aur repository configuration missing in pacman.conf" unless found
+    end
+
+    desc 'Check various Arch packages are installed'
+    task :packages do
+      [
+        "lsd",
+        "alacritty",
+        # "base-devel",
+        "mpv",
+        "pacman-contrib",
+        "python-pynvim",
+        "noto-fonts-emoji",
+        "ttf-nerd-fonts-symbols",
+        "ttf-cascadia-code",
+        "ttf-fira-code",
+        "otf-fira-sans",
+        "ripgrep", "jq", "fzf", "tmux", "docker", "shellcheck"
+      ].each do |package_name|
+        if not system("pacman -Qiq #{package_name} >/dev/null 2>&1")
+          puts "Package #{package_name} not installed"
+        end
+      end
+    end
+  end
+
+  desc 'Run archlinux specific tasks, but only on arch systems.'
+  task :archlinux do
+    if File.exist? "/etc/arch-release"
+      arch_ns.tasks.each do |arch_task|
+        arch_task.invoke
+      end
+    else
+      debug "Skipping archlinux tasks because this does not look like an Arch system"
     end
   end
 end
