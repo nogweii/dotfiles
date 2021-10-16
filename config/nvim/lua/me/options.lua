@@ -1,9 +1,6 @@
 -- NeoVim editor options.
 -- Looking for configuration for plugins? Check settings/* and settings.lua
 
--- pull in @tjdevries's lovely wrapper to make setting neovim options ergonomic.
--- unneeded once https://github.com/neovim/neovim/pull/13479 is merged
-require('tj.opt')
 local opt = vim.opt
 
 opt.showmode = false -- Hide the mode indication in the command bar, since my status bar has it
