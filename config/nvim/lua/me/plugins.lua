@@ -22,7 +22,17 @@ return require("packer").startup {
     -- a pretty file tree on the side
     use { "kyazdani42/nvim-tree.lua",
       requires = "kyazdani42/nvim-web-devicons",
-      as = "nvim-tree"
+      as = "nvim-tree",
+      config = function()
+        require('nvim-tree').setup {
+          auto_close = true, -- if there is only one window, and it's NvimTree, close that window & neovim
+          update_cwd = true,
+          update_focused_file = {
+            enable = true,
+            update_cwd = true
+          }
+        }
+      end,
     }
 
     -- preview colors inline in the editor
