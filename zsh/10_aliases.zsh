@@ -144,3 +144,8 @@ alias qrencode-text='qrencode -t ANSIUTF8 -m2 -lm'
 if [ -n "${commands[ctop]}" -a "${TERM}" = "alacritty" ]; then
     alias ctop="TERM=xterm-256color ctop"
 fi
+
+# If plocate is installed and there isn't anything providing regular locate, alias it
+if [ -n "${commands[plocate]}" -a -z "${commands[locate]}" ]; then
+    alias locate=plocate
+fi
