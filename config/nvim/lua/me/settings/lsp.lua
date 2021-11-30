@@ -1,8 +1,8 @@
 local lspconfig = require('lspconfig')
 local lspconfigs = require('lspconfig.configs')
-local lspcontainers = require('lspcontainers')
 local lspkind = require('lspkind')
-require("nvim-ale-diagnostic")
+local lsp_installer = require("nvim-lsp-installer")
+local coq = require("coq")
 
 local M = {}
 
@@ -34,16 +34,6 @@ lspkind.init({
     Buffer = '🪐'
   },
 })
-
--- forward diagnostics to ALE
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = false,
-    virtual_text = false,
-    signs = true,
-    update_in_insert = false,
-  }
-)
 
 -- keymaps
 function M.on_attach(client, bufnr)
@@ -86,50 +76,20 @@ function M.on_attach(client, bufnr)
   end
 end
 
-local function neovim_lua_config(new_config, new_root_dir)
-  new_config.cmd = lspcontainers.command("sumneko_lua")
-
-  -- check if the Lua buffer opened just now is related neovim
-  -- (a config file underneath the correct directory)
-  local neovim_parent_dir = vim.fn.resolve(vim.fn.stdpath("config"))
-  local buffer_file_name = vim.fn.expand("%:p")
-  if string.sub(buffer_file_name, 1, string.len(neovim_parent_dir)) == neovim_parent_dir then
-    -- yup, so load the awesome settings from folke to teach the LSP about
-    -- neovim's APIs
-    new_config.settings = require("lua-dev").setup().settings
-  end
-end
-
--- config that activates keymaps and enables snippet support
-function M.make_config(server_name)
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-  local lsp_config = {
-    -- enable snippet support
-    capabilities = capabilities,
+lsp_installer.on_server_ready(function(server)
+  local opts = {
     -- map buffer local keybindings when the language server attaches
     on_attach = M.on_attach,
   }
 
-  if lspcontainers.supported_languages[server_name] ~= nil then
-    lsp_config.cmd = lspcontainers.command(server_name)
-    lsp_config.before_init = function(params)
-      params.processId = vim.NIL
-    end
+  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_configs." .. server.name)
+  if has_lsp_config then
+    opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
   end
 
-  if server_name == "sumneko_lua" then
-    lsp_config.on_new_config = neovim_lua_config
-  end
-
-  return lsp_config
-end
-
--- lsp-install
-function M.setup_servers()
-  for server, _ in pairs(lspcontainers.supported_languages) do
-    lspconfig[server].setup(M.make_config(server))
-  end
-end
+  -- This setup() function is exactly the same as lspconfig's setup function.
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  server:setup(coq.lsp_ensure_capabilities(opts))
+end)
 
 return M

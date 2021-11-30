@@ -59,17 +59,6 @@ return require("packer").startup {
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
     -- Dynamically set &commentstring when moving around files with multiple filetypes combined
     use { "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
-    -- Smarter %-matcher, powered by treesitter queries
-    use { 'theHamsta/nvim-treesitter-pairs', after = "nvim-treesitter" }
-
-    -- A package of language support files, like syntax highlighting.
-    -- WARN: this has a pretty substantial impact on startup time; treesitter
-    -- does a lot of what's missing. It's still a great resource on awesome
-    -- vim plugins for a whole host of file types!
-    -- use { "sheerun/vim-polyglot" }
-
-    -- Add TICKscript (Influx Kapacitor 1.x) syntax
-    use "nathanielc/vim-tickscript"
 
     -- Automatically configure various editor settings in a standard way
     use { "editorconfig/editorconfig-vim",
@@ -89,18 +78,10 @@ return require("packer").startup {
       end
     }
 
-    -- Automatically build and maintain a tags file
-    use "ludovicchabant/vim-gutentags"
-
     -- COLORS! All the colors!
-    use { "glepnir/zephyr-nvim",
-      config = function()
-        vim.cmd [[colorscheme zephyr]]
-      end
+    use { "catppuccin/nvim",
+      config = [[require('me.settings.catppuccin')]]
     }
-
-    -- A very fast way to open a file, with fuzzy searching!
-    use { "wincent/command-t", run = 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
 
     -- Launch the file manager or new terminal easily from within vim
     use "justinmk/vim-gtfo"
@@ -110,9 +91,6 @@ return require("packer").startup {
     -- alias 'nvim-startup-benchmark'
     use {'tweekmonster/startuptime.vim', cmd = 'StartupTime'}
 
-    -- run neovim in my browser!
-    use {"glacambre/firenvim", run = function() vim.fn["firenvim#install"](0) end}
-
     use "tpope/vim-repeat"
     use "tpope/vim-characterize"
     use "tpope/vim-eunuch"
@@ -121,17 +99,35 @@ return require("packer").startup {
     -- this is the upstream source of what is shipped with the editor
     use { 'tpope/vim-git' }
 
-    -- a collection of lsp server installation scripts
+    -- a collection of LSP configs
     use "neovim/nvim-lspconfig"
-    use { "kabouzeid/nvim-lspinstall", requires = "neovim/nvim-lspconfig",
-      config = function() require('me.settings.lsp').setup_servers() end
-    }
+    -- add pictograms to completion results
+    -- (which I override with emojis in config/nvim/lua/me/settings/lsp.lua)
     use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
-    use "lspcontainers/lspcontainers.nvim"
+    -- easily install LSP servers in isolation from the rest of the system
+    use {
+      'williamboman/nvim-lsp-installer',
+      config = function() require('me.settings.lsp_installer') end
+    }
+
+    -- Additonal LSP setup for the neovim nvim lua API.
+    -- see config/nvim/lua/me/settings/lsp_configs/sumneko_lua.lua for additional details
     use "folke/lua-dev.nvim"
 
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+
     -- insert completion menu
-    use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
+    --use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 
     -- put git change information in the sidebar, provide some helpers
     -- to manage git hunks
@@ -167,10 +163,16 @@ return require("packer").startup {
     }
 
     -- asynchronous status bar and framework for full customization
-    use {
+    --[[ use {
       'glepnir/galaxyline.nvim',
       config = function() require('me.settings.galaxyline') end,
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    } ]]
+
+    use { 'famiu/feline.nvim',
+      tag = 'v0.3.3',
+      config = function() require('me.settings.feline') end,
+      requires = {'kyazdani42/nvim-web-devicons', 'lewis6991/gitsigns.nvim'}
     }
 
     -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
@@ -207,23 +209,10 @@ return require("packer").startup {
     -- automatically add closing pair characters ({}, <>, quotes, and more)
     use { 'Raimondi/delimitMate' }
 
-    -- my preferred snippet engine for vim
-    use { 'SirVer/ultisnips' }
-    -- community-maintained snippets for a variety of languages
-    use { 'honza/vim-snippets', requires = 'SirVer/ultisnips' }
-
     -- quickly toggle comments for a line (or motion)
     use "b3nj5m1n/kommentary"
 
-    -- diagnostics from various tools
-    use { "dense-analysis/ale",
-      setup = function() require('me.settings.ale') end
-    }
-    -- ...and them pulled from the LSP
-    use { "nathunsmitty/nvim-ale-diagnostic", requires = "dense-analysis/ale", module = "nvim-ale-diagnostic" }
-
-    -- Additional syntax support
-    use "hashivim/vim-terraform"
+    use 'mfussenegger/nvim-lint'
 
     -- A smarter cursor position restoration function, excluding various buffers
     -- where it makes sense, and opening folds if needed.
@@ -265,20 +254,32 @@ return require("packer").startup {
       end
     }
 
-    -- Visualize the undo tree
-    use 'simnalamburt/vim-mundo'
-
-    -- Wrap zk to help manage my notes
-    use { "megalithic/zk.nvim",
-      cond = "vim.fn.executable('zk')",
-      config = function () require('me.settings.zk') end,
-      requires = {'nvim-telescope/telescope.nvim'}
+    use { "ms-jpq/coq_nvim",
+      branch = "coq",
+      config = [[require('me.settings.coq')]],
+      run    = ":COQdeps",
+      requires = {
+        { "ms-jpq/coq.artifacts", branch = "artifacts"},
+        { "ms-jpq/coq.thirdparty", branch = "3p"}
+      }
     }
+
+    -- Support HCL and other Hashicorp specific syntaxes
+    use "hashivim/vim-terraform"
 
     -- addtional syntax highlighting for postgresql extensions
     use { 'lifepillar/pgsql.vim',
       ft = 'sql'
     }
+
+    -- Better markdown syntax
+    use {
+      'plasticboy/vim-markdown',
+      ft = 'markdown'
+    }
+
+    -- Add TICKscript (Influx Kapacitor 1.x) syntax
+    use "nathanielc/vim-tickscript"
 
   end, -- end of function(use)
 

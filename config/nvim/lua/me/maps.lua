@@ -118,6 +118,25 @@ plug_map{mode = 'v', keys = "<C-x>", command = 'dial-decrement'}
 plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
 
+
+-- Inspired by tpope's rsi.vim, buch much more constrained:
+-- jump to the beginning of the line
+map{mode = 'i', keys = "<C-a>", to = "<C-o>H", recurse = true}
+map{mode = 'c', keys = "<C-a>", to = "<Home>"}
+-- jump to the end of the line
+-- (command mode already has this binding)
+-- (insert mode is covered by compe falling back to <End> in the mapping above)
+
+-- easy buffer switching, that's barbar-aware
+if packer_exists then
+  cmd_map{keys = "<C-n>", command = "BufferNext"}
+  cmd_map{keys = "<C-p>", command = "BufferPrev"}
+else
+  cmd_map{keys = "<C-n>", command = "bnext", plugins = false}
+  cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
+end
+
+
 --[[
        _ _
   __ _(_) |_
@@ -147,20 +166,11 @@ map{keys = "<leader>gp", to = "<cmd>lua require('gitsigns').preview_hunk()<CR>"}
                     |_|
  ]]
 -- completion key bindings
-map{mode = 'i', keys = "<C-Space>", to = [[compe#complete()]], expression = true, plugins = true}
-map{mode = 'i', keys = "<CR>", to = [[compe#confirm({ 'keys': "\<Plug>delimitMateCR", 'mode': '' })]], expression = true, plugins = true}
-map{mode = 'i', keys = "<C-e>", to = [[compe#close('<End>')]], expression = true, plugins = true}
--- TODO: what are these even useful for?
--- map{mode = 'i', keys = "<C-f>", to = [[compe#scroll({ 'delta': +4 })]], expression = true}
--- map{mode = 'i', keys = "<C-b>", to = [[compe#scroll({ 'delta': -4 })]], expression = true}
-
--- Inspired by tpope's rsi.vim, buch much more constrained:
--- jump to the beginning of the line
-map{mode = 'i', keys = "<C-a>", to = "<C-o>H", recurse = true}
-map{mode = 'c', keys = "<C-a>", to = "<Home>"}
--- jump to the end of the line
--- (command mode already has this binding)
--- (insert mode is covered by compe falling back to <End> in the mapping above)
+map{mode = 'i', keys = "<ESC>", to = [[pumvisible() ? "<C-e><ESC>" : "<ESC>"]], expression = true}
+map{mode = 'i', keys = "<C-c>", to = [[pumvisible() ? "<C-e><C-c>" : "<C-c>"]], expression = true}
+-- TODO: integrate nvim-autopairs and replace these two bindings
+map{mode = 'i', keys = "<CR>", to = [[pumvisible() ? (complete_info().selected == -1 ? "<C-e><CR>" : "<C-y>") : "<CR>"]], expression = true}
+map{mode = 'i', keys = "<BS>", to = [[pumvisible() ? "<C-e><BS>" : "<BS>"]], expression = true}
 
 local is_prior_char_whitespace = function()
   local col = vim.fn.col('.') - 1
@@ -173,29 +183,20 @@ end
 
 -- Use (shift-)tab to:
 --- move to prev/next item in completion menu
---- jump to the prev/next snippet placeholder
+--- jump to the prev/next snippet placeholder (TOOD: how to activate this in coq?)
 --- insert a simple tab
---- start the completion menu
+--- start the completion menu (TOOD: how to activate this in coq?)
 _G.tab_completion = function()
   if vim.fn.pumvisible() == 1 then
     return vim.api.nvim_replace_termcodes("<C-n>", true, true, true)
 
-  elseif vim.fn["UltiSnips#CanExpandSnippet"]() == 1 or vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
-    return vim.api.nvim_replace_termcodes("<C-R>=UltiSnips#ExpandSnippetOrJump()<CR>", true, true, true)
-
   elseif is_prior_char_whitespace() then
     return vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
-
-  else
-    return vim.fn['compe#complete']()
   end
 end
 _G.shift_tab_completion = function()
   if vim.fn.pumvisible() == 1 then
     return vim.api.nvim_replace_termcodes("<C-p>", true, true, true)
-
-  elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-    return vim.api.nvim_replace_termcodes("<C-R>=UltiSnips#JumpBackwards()<CR>", true, true, true)
 
   else
     return vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true)
@@ -206,20 +207,6 @@ map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = tr
 map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true, plugins = true}
 map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
 map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
-
--- A basic list of all of the known snippets for the buffer
--- TODO: this isn't an interactive menu, it's a big rough for now
-map{mode = 'i', keys = "<C-x><C-p>", to = "<C-R>=UltiSnips#ListSnippets()<cr>"}
-
--- easy buffer switching, that's barbar-aware
-if packer_exists then
-  cmd_map{keys = "<C-n>", command = "BufferNext"}
-  cmd_map{keys = "<C-p>", command = "BufferPrev"}
-else
-  cmd_map{keys = "<C-n>", command = "bnext", plugins = false}
-  cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
-end
-
 
 --[[
  _ _       _
@@ -235,3 +222,10 @@ cmd_map{keys = "<leader>df", command = "ALEFix"}
 cmd_map{keys = "<leader>dd", command = "ALEDetail"}
 cmd_map{keys = "<leader>dl", command = "ALELint"}
 cmd_map{keys = "<leader>dL", command = "ALEToggle"}
+
+-- return a table so that other files can use these
+return {
+  map = map,
+  plug_map = plug_map,
+  cmd_map = cmd_map
+}

@@ -53,3 +53,8 @@ vim.g.grepper = {
   searchreg = 1,
   highlight = 0,
 }
+
+-- markdown configuration
+vim.g.vim_markdown_conceal = 1 -- turn on conceal support
+vim.g.vim_markdown_math = 1 -- latex math syntax ($foo^2$)
+vim.g.vim_markdown_frontmatter = 1 -- YAML at the top of the file

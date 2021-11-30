@@ -33,6 +33,7 @@ vim.opt.modelines = 3                -- Search the top and bottom 3 lines for mo
 vim.opt.number = true                     -- Show line numbers
 vim.opt.undofile = true                   -- Persist undo history across sessions
 vim.opt.termguicolors = true              -- Use guifg over ctermfg in true-color terminals
+vim.opt.conceallevel = 2              -- Automatically conceal characters
 
 vim.opt.sessionoptions = vim.opt.sessionoptions
               - "blank"        -- Don't save empty windows in the session
