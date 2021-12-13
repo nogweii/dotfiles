@@ -93,7 +93,7 @@ plug_map{keys = "ZB", command = 'CommandTBuffer'}
 cmd_map{keys = "ZD", command = "BufferWipeout"}
 cmd_map{keys = "ZW", command = "update"}
 -- Create & edit a snippets file for this filetype
-cmd_map{keys = "ZP", command = "UltiSnipsEdit"}
+cmd_map{keys = "ZP", command = "COQsnips edit"}
 -- Easily edit my vimrc file
 -- TODO: integrate it with my workspace concept, editing a project-local lua file instead
 cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}

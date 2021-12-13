@@ -105,19 +105,22 @@ return require("packer").startup {
     -- this is the upstream source of what is shipped with the editor
     use { 'tpope/vim-git' }
 
-    -- a collection of LSP configs
-    use "neovim/nvim-lspconfig"
-    -- add pictograms to completion results
-    -- (which I override with emojis in config/nvim/lua/me/settings/lsp.lua)
-    use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
     -- easily install LSP servers in isolation from the rest of the system
     use {
       'williamboman/nvim-lsp-installer',
       config = function() require('me.lsp.installer') end
     }
+    -- a collection of LSP configs
+    use { "neovim/nvim-lspconfig",
+      requires = "williamboman/nvim-lsp-installer",
+      config = function() require('me.lsp.settings') end,
+    }
+    -- add pictograms to completion results
+    -- (which I override with emojis in config/nvim/lua/me/settings/lsp.lua)
+    use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
 
     -- Additonal LSP setup for the neovim nvim lua API.
-    -- see config/nvim/lua/me/settings/lsp_configs/sumneko_lua.lua for additional details
+    -- see config/nvim/lua/me/lsp/configs/sumneko_lua.lua for additional details
     use "folke/lua-dev.nvim"
 
     use {

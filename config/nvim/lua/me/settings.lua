@@ -30,12 +30,6 @@ end
 vim.g.python3_host_prog = '/usr/bin/python3'
 vim.g.loaded_python_provider = 0
 
--- Disable all of UltiSnip's default mappings
-vim.g.UltiSnipsExpandTrigger = "<NUL>"
-vim.g.UltiSnipsListSnippets = "<NUL>"
-vim.g.UltiSnipsJumpForwardTrigger = "<NUL>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<NUL>"
-
 -- Gutentags configuration
 vim.g.gutentags_enabled = 0 -- by default it's disabled
 vim.g.gutentags_ctags_tagfile = ".vim-stuff/tags" -- TODO: auto-enable when this folder exists

@@ -35,5 +35,9 @@ nvim_create_augroups({
 
   postgresql_configs = {
     {'BufNewFile,BufRead', 'psqlrc,.psqlrc', [[let b:sql_type_override='pgsql' | setfiletype sql]]}
-  }
+  },
+
+  lsp_document_highlight = {
+    {'CursorMoved', '<buffer>', [[lua vim.lsp.buf.clear_references()]]}
+  },
 })

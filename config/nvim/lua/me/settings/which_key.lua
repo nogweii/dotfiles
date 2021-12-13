@@ -24,7 +24,7 @@ wk.register({
 
 wk.register({
   L = 'Edit the neovim config',
-  P = 'Edit the appropriate snippets file',
+  P = 'Edit the snippets file for this file type',
   W = 'Save changes',
   D = 'Close the buffer',
   E = 'Fuzzily find a file',

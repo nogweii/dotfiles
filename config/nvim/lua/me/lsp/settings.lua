@@ -56,23 +56,8 @@ function M.on_attach(client, bufnr)
   -- Not all LSPs implement every bit of functionality; check the particular
   -- LSP server we've attached to for these
 
-  -- TODO: switch when https://github.com/neovim/neovim/pull/13138 is merged
-  -- buf_set_option('formatexpr', '')
-  if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  end
-  if client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("v", "<leader>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
-
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-    augroup lsp_document_highlight
-    autocmd! * <buffer>
-    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    augroup END
-    ]], false)
+  if (client.resolved_capabilities.document_formatting or client.resolved_capabilities.document_range_formatting) then
+    buf_set_option('formatexpr', 'v:lua.vim.lsp.formatexpr(#{timeout_ms:250})')
   end
 end
 
