@@ -86,6 +86,13 @@ local components = {
       fg = 'blue'
     }
   },
+
+  cursor_position = {
+    provider = function()
+      return string.format('%3d:%-2d', unpack(vim.api.nvim_win_get_cursor(0)))
+    end,
+    icon = ''
+  }
 }
 
 require('feline').setup({
@@ -93,14 +100,14 @@ require('feline').setup({
     active = {
       { -- left
         components.vi_mode,
-        components.lsp_icon,
+        components.lsp_client_names,
       },
       { -- middle
         components.file_name,
       },
       { -- right
-        components.line_percentage,
-        components.scroll_bar,
+        components.cursor_position,
+        components.lsp_icon,
       }
     },
 
