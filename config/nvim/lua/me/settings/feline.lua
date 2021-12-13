@@ -82,9 +82,6 @@ local components = {
         file_readonly_icon = '🔒',
       }
     },
-    hl = {
-      fg = 'blue'
-    }
   },
 
   cursor_position = {
