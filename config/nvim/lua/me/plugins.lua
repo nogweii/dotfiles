@@ -80,8 +80,14 @@ return require("packer").startup {
 
     -- COLORS! All the colors!
     use { "catppuccin/nvim",
-      config = [[require('me.settings.catppuccin')]]
+      -- config = [[require('me.settings.colors.catppuccin')]]
     }
+    use { "marko-cerovac/material.nvim",
+      config = [[require('me.settings.colors.material')]]
+    }
+    -- TODO: evaluate these
+    use 'folke/tokyonight.nvim'
+    use 'EdenEast/nightfox.nvim'
 
     -- Launch the file manager or new terminal easily from within vim
     use "justinmk/vim-gtfo"
@@ -107,7 +113,7 @@ return require("packer").startup {
     -- easily install LSP servers in isolation from the rest of the system
     use {
       'williamboman/nvim-lsp-installer',
-      config = function() require('me.settings.lsp_installer') end
+      config = function() require('me.lsp.installer') end
     }
 
     -- Additonal LSP setup for the neovim nvim lua API.

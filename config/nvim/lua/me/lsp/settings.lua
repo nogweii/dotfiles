@@ -82,7 +82,7 @@ lsp_installer.on_server_ready(function(server)
     on_attach = M.on_attach,
   }
 
-  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_configs." .. server.name)
+  local has_lsp_config, custom_lsp_config = pcall(require, "me.lsp.configs." .. server.name)
   if has_lsp_config then
     opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
   end
