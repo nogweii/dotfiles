@@ -26,7 +26,7 @@ end
 
 require('me.options')
 require('me.desktop_notify')
--- require('me.plugins')
+require('me.plugins')
 require('me.maps')
 require('me.settings')
 require('me.autocommands')
