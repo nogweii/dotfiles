@@ -24,9 +24,12 @@ function _G.profile(func)
   }
 end
 
+require('impatient').enable_profile()
+
 require('me.options')
 require('me.desktop_notify')
 require('me.plugins')
+require('packer_compiled')
 require('me.maps')
 require('me.settings')
 require('me.autocommands')

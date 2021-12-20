@@ -13,6 +13,10 @@ return require("packer").startup {
     -- and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
     use "antoinemadec/FixCursorHold.nvim"
 
+    -- a few performance optimiziation tweaks to neovim.
+    -- remove once neovim core gets something similar: https://github.com/neovim/neovim/pull/15436
+    use 'lewis6991/impatient.nvim'
+
     -- Automatically jump to the project's root directory
     use "airblade/vim-rooter"
 
@@ -59,6 +63,18 @@ return require("packer").startup {
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
     -- Dynamically set &commentstring when moving around files with multiple filetypes combined
     use { "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
+    -- make neovim's spell checking treesitter aware
+    use {
+      "lewis6991/spellsitter.nvim",
+      config = function()
+        require('spellsitter').setup({
+          enabled = true,
+          spellchecker = 'ffi'
+        })
+      end,
+      requires = "nvim-treesitter/nvim-treesitter",
+      after = "nvim-treesitter",
+    }
 
     -- Automatically configure various editor settings in a standard way
     use { "editorconfig/editorconfig-vim",
@@ -301,5 +317,8 @@ return require("packer").startup {
       -- instead of opening a new window to the side, open a floating one
       open_fn = require('packer.util').float,
     },
+    -- move the compiled file to a different location so that it must be loaded
+    -- by require(), allowing impatient.nvim to work its magic
+    compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua'
   }
 } -- end of packer's setup()
