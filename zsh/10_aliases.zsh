@@ -85,9 +85,6 @@ alias extr=extract_archive
 # sudo the previous command
 alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
 
-if [ -z "${IS_OSX}" ]; then
-    alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-fi
 alias wc='wc -l'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"

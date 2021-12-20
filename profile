@@ -12,12 +12,4 @@ if [ ! $(( $(umask) + 0 )) -gt 0 ]; then
   umask 022
 fi
 
-# A quick check for what type of system I'm on.
-os_name=`uname`
-if [ "${os_name}" = "Darwin" ]; then
-  IS_OSX=1
-elif [ "${os_name}" = "Linux" ]; then
-  IS_LINUX=1
-fi
-
 # vim: set syn=sh:

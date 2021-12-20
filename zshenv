@@ -40,9 +40,7 @@ path=(
   $HOME/.cabal/bin
   $HOME/.heroku/client/bin     # Heroku toolbelt, via `heroku update`
   $DOTSDIR/share/rbenv/bin     # rbenv install
-  $HOME/.local/bin             # User-installed Python packages
   $HOME/.local/elixir/bin      # Manually installed elixir 1.0 binaries
-  $HOME/.gem/ruby/*/bin(On)    # rubygems installed, newest first
   $HOME/go/bin                 # go packages
   /usr/lib/cw                  # Colorized versions of GNU coreutils
   /usr/local/heroku/bin        # Heroku toolbelt, as installed from a package
@@ -53,6 +51,7 @@ fpath=(
   $DOTSDIR/zsh/plugins/users-completions/src
   $DOTSDIR/zsh/functions
   /usr/share/zsh/site-functions
+  /opt/homebrew/share/zsh/site-functions
   $fpath
 )
 
@@ -60,31 +59,45 @@ manpath=(
   #${${:-~/.rubygems/gems/*/man/*.[0-9]}:A:h} # Gem-installed man pages
   /usr/local/share/man
   /usr/share/man
-  $HOME/.local/ruby/share/man/  # Gem-installed man gems
+  $HOME/.local/ruby/share/man/  # Gem-installed man pages
   $manpath
 )
 
-if [ -n "${IS_OSX}" ]; then
-  # On OSX systems, prepend the GNU userland to path
+if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
+  # On MacOS systems, prepend the GNU userland to path
   path=(
-    /usr/local/opt/gnu-tar/libexec/gnubin
-    /usr/local/opt/gnu-sed/libexec/gnubin
-    /usr/local/opt/coreutils/libexec/gnubin
+    /opt/homebrew/opt/gnu-tar/libexec/gnubin
+    /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    /opt/homebrew/opt/coreutils/libexec/gnubin
+    /opt/homebrew/opt/ruby/bin
     $path
-    /usr/local/opt/go/libexec/bin
+    /opt/homebrew/{bin,sbin}     # MacOS: Homebrew packages
+    /opt/homebrew/opt/go/libexec/bin
   )
-  # And get the GNU man pages, not the OSX ones
+  # And get the GNU man pages, not the MacOS ones
   manpath=(
-    /usr/local/opt/coreutils/libexec/gnuman
-    /usr/local/opt/gnu-sed/libexec/gnuman
+    /opt/homebrew/opt/coreutils/libexec/gnuman
+    /opt/homebrew/opt/gnu-sed/libexec/gnuman
+    /opt/homebrew/share/man
     $manpath
   )
+
+  if [ -d /opt/homebrew ]; then
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+  fi
+
+  if [ -d /opt/homebrew/opt/ruby/ ]; then
+    export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+  fi
 fi
 
 # Make sure the arrays only contain unique values
-typeset -gU cdpath fpath mailpath manpath path
+typeset -gU cdpath fpath mailpath manpath infopath path
 # And make sure these variables are exported to subcommands
-typeset -x PATH MANPATH
+typeset -x PATH MANPATH INFOPATH
 
 # Given a list of arrays, delete any values from each that don't point to a
 # real directory. It will also resolve any symlinks.
