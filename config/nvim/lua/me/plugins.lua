@@ -41,9 +41,10 @@ return require("packer").startup {
 
     -- preview colors inline in the editor
     use {"rrethy/vim-hexokinase",
-      cond = "vim.fn.executable('hexokinase')",
       setup = function()
-        vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
+        if vim.fn.executable('hexokinase') == 1 then
+          vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
+        end
         vim.g.Hexokinase_highlighters = {'virtual'}
         vim.g.Hexokinase_optInPatterns = {'full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla'}
       end
