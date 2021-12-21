@@ -13,14 +13,12 @@ gem 'rainbow'
 
 # These gems I use within irb. Check config/irb/irb_conf.rb for details.
 group :irb do
-  gem 'ruby-terminfo'
   gem 'racksh'
   gem 'net-http-spy'
 
   gem 'pry' # because it's so damn neat and useful
 
   gem 'irbtools'
-  gem 'irbtools-more'
   gem 'looksee'
 end
 

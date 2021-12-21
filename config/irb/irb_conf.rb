@@ -8,7 +8,7 @@ begin
   require 'irbtools/configure'
   # Move IRB's history file to an XDG compliant configuration directory
   IRB.conf[:HISTORY_FILE] = File.expand_path File.join(ENV['XDG_DATA_HOME'], 'irb_history')
-  Irbtools.welcome_message = "Welcome to irb. You are using #{ RUBY_DESCRIPTION }."
+  Irbtools.welcome_message = "Welcome to irb. 💎 You are using #{ RUBY_DESCRIPTION }."
 
   #################################################
   # Supplemental gems
