@@ -64,17 +64,17 @@ manpath=(
 )
 
 if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
-  # On MacOS systems, prepend the GNU userland to path
+  # On MacOS systems, prepend Homebrew & the GNU userland to path
   path=(
     /opt/homebrew/opt/gnu-tar/libexec/gnubin
     /opt/homebrew/opt/gnu-sed/libexec/gnubin
     /opt/homebrew/opt/coreutils/libexec/gnubin
     /opt/homebrew/opt/ruby/bin
-    $path
-    /opt/homebrew/{bin,sbin}     # MacOS: Homebrew packages
     /opt/homebrew/opt/go/libexec/bin
+    /opt/homebrew/{bin,sbin}
+    $path
   )
-  # And get the GNU man pages, not the MacOS ones
+  # And get the brew installed man pages
   manpath=(
     /opt/homebrew/opt/coreutils/libexec/gnuman
     /opt/homebrew/opt/gnu-sed/libexec/gnuman
