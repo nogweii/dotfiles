@@ -1,39 +1,8 @@
 vim.g.mapleader = ';'
 
---[[
- _          _
-| |__   ___| |_ __   ___ _ __ ___
-| '_ \ / _ \ | '_ \ / _ \ '__/ __|
-| | | |  __/ | |_) |  __/ |  \__ \
-|_| |_|\___|_| .__/ \___|_|  |___/
-             |_|
- ]]
--- A little utility function to make nvim_set_keymap a bit more ergonomic
-local function map(args)
-  args = vim.tbl_extend("keep", args, {
-    mode = "", -- The vim mode for this map
-    keys = nil, -- The input sequence of keys to activate this mapping
-    to = nil, -- Sequence to keys to 'type' into the editor
-
-    recurse = false, -- set to true to not include noremap
-    silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
-    expression = false, -- set to true if the output is to be evaluated rather than typed
-    plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
-  })
-
-  if (args.plugins) and (not packer_exists) then
-    return
-  end
-
-  vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
-end
-
-local function plug_map(args)
-  map{keys = args.keys, to = '<Plug>(' .. args.command .. ')', mode = args.mode or 'n', silent = true, recurse = true, plugins = true}
-end
-local function cmd_map(args)
-  map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', mode = args.mode or 'n', silent = true, plugins = args.plugins == nil and true or args.plugins}
-end
+local map = require("me.map_utils").map
+local cmd_map = require("me.map_utils").cmd_map
+local plug_map = require("me.map_utils").plug_map
 
 --[[
                                  _
@@ -87,10 +56,9 @@ map{keys = "L", to = '$', recurse = true}
 map{keys = "<C-s>", to = '<C-\\><C-n>', recurse = true, mode = "t"}
 
 -- Fuzzy find a file to edit
-plug_map{keys = "ZE", command = 'CommandT'}
-plug_map{keys = "ZB", command = 'CommandTBuffer'}
--- Save the file only when the buffer has been modified.
+cmd_map{keys = "ZE", command = 'Telescope find_files previewer=false prompt_prefix=🔍\\ '}
 cmd_map{keys = "ZD", command = "BufferWipeout"}
+-- Save the file only when the buffer has been modified.
 cmd_map{keys = "ZW", command = "update"}
 -- Create & edit a snippets file for this filetype
 cmd_map{keys = "ZP", command = "COQsnips edit"}
@@ -105,6 +73,7 @@ plug_map{mode = "x", keys = "gs", command = "GrepperOperator"}
 cmd_map{keys = "ZU", command = "MundoToggle"}
 -- Find all of the code tags (TODO, NOTE, FIXME, etc) in the project
 cmd_map{keys = "ZT", command = "CodeTagSearch"}
+cmd_map{keys = "ZR", command = "TroubleToggle"}
 
 -- Tap - to jump into a file pane
 cmd_map{keys = "-", command = "NvimTreeToggle"}
@@ -222,10 +191,3 @@ cmd_map{keys = "<leader>df", command = "ALEFix"}
 cmd_map{keys = "<leader>dd", command = "ALEDetail"}
 cmd_map{keys = "<leader>dl", command = "ALELint"}
 cmd_map{keys = "<leader>dL", command = "ALEToggle"}
-
--- return a table so that other files can use these
-return {
-  map = map,
-  plug_map = plug_map,
-  cmd_map = cmd_map
-}

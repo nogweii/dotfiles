@@ -97,6 +97,7 @@ return require("packer").startup {
 
     -- COLORS! All the colors!
     use { "catppuccin/nvim",
+      as = "catppuccin"
       -- config = [[require('me.settings.colors.catppuccin')]]
     }
     use { "marko-cerovac/material.nvim",
@@ -135,6 +136,12 @@ return require("packer").startup {
     -- add pictograms to completion results
     -- (which I override with emojis in config/nvim/lua/me/settings/lsp.lua)
     use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
+    use { "kosayoda/nvim-lightbulb",
+      requires = "neovim/nvim-lspconfig",
+      config = function()
+        vim.cmd [[:autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+      end
+    }
 
     -- Additonal LSP setup for the neovim nvim lua API.
     -- see config/nvim/lua/me/lsp/configs/sumneko_lua.lua for additional details
@@ -219,7 +226,8 @@ return require("packer").startup {
     }
 
     use { 'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+      requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+      config = function() require('me.settings.telescope') end
     }
 
     -- Automatic semi-smart indentation settings for a buffer
@@ -306,6 +314,18 @@ return require("packer").startup {
 
     -- Add TICKscript (Influx Kapacitor 1.x) syntax
     use "nathanielc/vim-tickscript"
+
+    -- quickly & easily generate a python docstring
+    use { 'heavenshell/vim-pydocstring',
+      run = 'make install',
+      ft = 'python',
+      config = function()
+        vim.g.pydocstring_formatter = 'google'
+        vim.g.pydocstring_enable_mapping = 0
+        local cmd_map = require('me.map_utils').cmd_map
+        cmd_map{keys = "<leader>pd", command = "Pydocstring"}
+      end
+    }
 
   end, -- end of function(use)
 

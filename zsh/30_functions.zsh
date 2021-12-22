@@ -267,6 +267,7 @@ function nvim-packs() {
   # Install the plugins configured
   nvim -u NONE \
     +'runtime plugin/rplugin.vim' \
+    +'set termguicolors' \
     +'lua require("me.plugins")' \
     +'lua require("packer").sync()'
 }
