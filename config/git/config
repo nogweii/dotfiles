@@ -138,6 +138,8 @@
     default-branch = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@' ;}; f"
     # generate a mailmap file with all of the committer's emails
     gen-mailmap = "!f() { git shortlog -se | awk -F'\t' '{print $2,$3}' | sort >> .mailmap ;}; f"
+    # update a remote and prune local branches to match
+    rem-up = "!f() { git remote update $1 && git remote prune $1 ;}; f"
 
 [web]
     browser = kde-open
