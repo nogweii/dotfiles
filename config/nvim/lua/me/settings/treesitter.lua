@@ -1,6 +1,9 @@
 require('nvim-treesitter.configs').setup {
   -- automatically install all of the maintained treesitter modules
   ensure_installed = "maintained",
+  ignore_install = {
+    "norg" -- Doesn't compile successfully on ARM64 MacOS.
+  },
 
   -- Enable some modules shipped with nvim-treesitter
   highlight = {

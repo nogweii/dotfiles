@@ -139,7 +139,7 @@ return require("packer").startup {
     use { "kosayoda/nvim-lightbulb",
       requires = "neovim/nvim-lspconfig",
       config = function()
-        vim.cmd [[:autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+        -- vim.cmd [[:autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
       end
     }
 
@@ -195,15 +195,9 @@ return require("packer").startup {
       end
     }
 
-    -- asynchronous status bar and framework for full customization
-    --[[ use {
-      'glepnir/galaxyline.nvim',
-      config = function() require('me.settings.galaxyline') end,
-      requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    } ]]
-
-    use { 'famiu/feline.nvim',
-      tag = 'v0.3.3',
+    -- a very customizble status bar framework for Neovim written in Lua
+    use { 'feline-nvim/feline.nvim',
+      tag = '*',
       config = function() require('me.settings.feline') end,
       requires = {'kyazdani42/nvim-web-devicons', 'lewis6991/gitsigns.nvim'}
     }
@@ -211,6 +205,7 @@ return require("packer").startup {
     -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
     use {
       'monaqa/dial.nvim',
+      tag = '*',
       config = function() require('me.settings.dial_swaps') end
     }
 

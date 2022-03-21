@@ -8,12 +8,14 @@ local M = {}
 
 -- add some emoji decorations to the completion menu's suggestions
 lspkind.init({
-  with_text = true,
+  mode = 'symbol_text',
+
   symbol_map = {
     Text = '📜',
     Method = '🧶',
     Function = '🧵',
     Constructor = '🚧',
+    Field = "🏷️",
     Variable = '🔻',
     Class = '📦',
     Interface = '🧩',
@@ -26,12 +28,14 @@ lspkind.init({
     Snippet = '🌱',
     Color = '🎨',
     File = '🗄 ',
+    Reference = "🪝",
     Folder = '📁',
     EnumMember = '🦠',
     Constant = '🧊',
     Struct = '🧱',
+    Event = "🌩️",
     Operator = '❎',
-    Buffer = '🪐'
+    TypeParameter = "🅾️"
   },
 })
 
