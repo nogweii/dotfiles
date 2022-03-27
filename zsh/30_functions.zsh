@@ -231,7 +231,7 @@ function cat() {
     if [[ $# == 1 && -t 0 ]]; then
       # only use bat in the simplest case: a single file passed in 
       # an interactive session
-      bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | less
+      bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | command less
     else
       command cat $@
     fi
