@@ -27,7 +27,13 @@ vim.g.nvim_tree_add_trailing = 1 -- Trailing slashes on directories
 if vim.fn.executable('neovim-ruby-host') then
   vim.g.ruby_host_prog = vim.fn.exepath('neovim-ruby-host')
 end
-vim.g.python3_host_prog = '/usr/bin/python3'
+-- use homebrew python if it exists (macOS support)
+if vim.fn.filereadable('/opt/homebrew/bin/python3') then
+  vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+else
+  -- otherwise presume the system-wide python3 is correct (which it is for Arch)
+  vim.g.python3_host_prog = '/usr/bin/python3'
+end
 vim.g.loaded_python_provider = 0
 
 -- Gutentags configuration
