@@ -34,7 +34,14 @@ local lsp_settings = {
 }
 
 if is_venv then
-  -- lsp_settings[]
+
+  -- Check if pylint is installed inside the virtualenv
+  local pylint_path = vim.fn.exepath('pylint')
+  if vim.startswith(pylint_path, vim.env.VIRTUAL_ENV) then
+    -- it is, so rely on launching it as a subprocess rather than the copy of pylint that lives in the LSP's code
+    -- (this way, that subprocess pylint can scan all of the packages installed inside)
+    lsp_settings['settings']['pylsp']['plugins']['pylint']['executable'] = pylint_path
+  end
 end
 
 return lsp_settings
