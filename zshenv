@@ -66,32 +66,25 @@ manpath=(
 if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
   # On MacOS systems, prepend Homebrew & the GNU userland to path
   path=(
+    /opt/homebrew/opt/coreutils/libexec/gnubin
     /opt/homebrew/opt/gnu-tar/libexec/gnubin
     /opt/homebrew/opt/gnu-sed/libexec/gnubin
-    /opt/homebrew/opt/coreutils/libexec/gnubin
+    /opt/homebrew/opt/libtool/libexec/gnubin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/go/libexec/bin
     /opt/homebrew/{bin,sbin}
     $path
   )
-  # And get the brew installed man pages
+
+  # And get the brew installed man pages prefixed too
   manpath=(
     /opt/homebrew/opt/coreutils/libexec/gnuman
+    /opt/homebrew/opt/gnu-tar/libexec/gnuman
     /opt/homebrew/opt/gnu-sed/libexec/gnuman
+    /opt/homebrew/opt/libtool/libexec/gnuman
     /opt/homebrew/share/man
     $manpath
   )
-
-  if [ -d /opt/homebrew ]; then
-    export HOMEBREW_PREFIX="/opt/homebrew";
-    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-    export HOMEBREW_REPOSITORY="/opt/homebrew";
-  fi
-
-  if [ -d /opt/homebrew/opt/ruby/ ]; then
-    export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
-    export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
-  fi
 fi
 
 # Make sure the arrays only contain unique values
