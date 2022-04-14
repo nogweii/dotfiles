@@ -21,9 +21,9 @@ def dotfiles
     # Start with everything in this directory, but not recursively
     Dir['*'] -
     # Don't symlink the following
-    %w[Rakefile README.md config Brewfile Gemfile Gemfile.lock xdg-data] +
+    %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
     # Add these extra to the list to be symlink'd
-    %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty]
+    %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml]
   ).sort
 end
 
@@ -148,11 +148,15 @@ end
 
 desc 'List of everything this rake file will try managing'
 task :list do
-  require 'pp'
   puts 'Symlink these files:'
-  pp DOTFILES
+  DOTFILES.each do |file|
+    puts " - #{file}"
+  end
+  puts ''
   puts 'Create these directories:'
-  pp MAKE_DIRS
+  MAKE_DIRS.each do |dir|
+    puts " - #{dir}"
+  end
 end
 
 namespace :vim do
