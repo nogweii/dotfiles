@@ -23,7 +23,7 @@ local lsp_settings = {
           enabled = true
         },
 
-        pyls_mypy = {
+        pylsp_mypy = {
           enabled = true,
           dmypy = true,
           overrides = {"--python-executable", python_path, true}
