@@ -29,7 +29,6 @@ return require("packer").startup {
       as = "nvim-tree",
       config = function()
         require('nvim-tree').setup {
-          auto_close = true, -- if there is only one window, and it's NvimTree, close that window & neovim
           update_cwd = true,
           update_focused_file = {
             enable = true,
