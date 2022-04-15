@@ -125,7 +125,7 @@ return require("packer").startup {
     -- easily install LSP servers in isolation from the rest of the system
     use {
       'williamboman/nvim-lsp-installer',
-      config = function() require('me.lsp.installer') end
+      config = function() require('me.lsp.installer') end,
     }
     -- a collection of LSP configs
     use { "neovim/nvim-lspconfig",
@@ -282,14 +282,38 @@ return require("packer").startup {
       end
     }
 
-    use { "ms-jpq/coq_nvim",
-      branch = "coq",
-      config = [[require('me.settings.coq')]],
-      run    = ":COQdeps",
-      requires = {
-        { "ms-jpq/coq.artifacts", branch = "artifacts"},
-        { "ms-jpq/coq.thirdparty", branch = "3p"}
-      }
+    -- snippets engine
+    use { "L3MON4D3/LuaSnip",
+      after = "friendly-snippets",
+      config = function()
+        require('me.settings.luasnip')
+      end
+    }
+    -- a bunch of community maintained snippets
+    use { "rafamadriz/friendly-snippets",
+      -- lazily loaded when either of these happen:
+      -- event = "InsertEnter"
+    }
+
+    -- advanced & flexible completion menu
+    use { "hrsh7th/nvim-cmp",
+      config = function()
+        require('me.settings.cmp')
+      end,
+      after = "friendly-snippets"
+    }
+    -- additional sources for cmp, lazily loaded
+    use { "saadparwaiz1/cmp_luasnip",
+      after = "nvim-cmp",
+    }
+    use { "hrsh7th/cmp-nvim-lsp",
+      after = "nvim-cmp",
+    }
+    use { "hrsh7th/cmp-buffer",
+      after = "nvim-cmp",
+    }
+    use { "hrsh7th/cmp-path",
+      after = "nvim-cmp",
     }
 
     -- Support HCL and other Hashicorp specific syntaxes

@@ -1,43 +1,8 @@
 local lspconfig = require('lspconfig')
 local lspconfigs = require('lspconfig.configs')
-local lspkind = require('lspkind')
 local lsp_installer = require("nvim-lsp-installer")
-local coq = require("coq")
 
 local M = {}
-
--- add some emoji decorations to the completion menu's suggestions
-lspkind.init({
-  mode = 'symbol_text',
-
-  symbol_map = {
-    Text = '📜',
-    Method = '🧶',
-    Function = '🧵',
-    Constructor = '🚧',
-    Field = "🏷️",
-    Variable = '🔻',
-    Class = '📦',
-    Interface = '🧩',
-    Module = '🚛',
-    Property = '💊',
-    Unit = '🗳 ',
-    Value = '🧪',
-    Enum = '🧫',
-    Keyword = '🔑',
-    Snippet = '🌱',
-    Color = '🎨',
-    File = '🗄 ',
-    Reference = "🪝",
-    Folder = '📁',
-    EnumMember = '🦠',
-    Constant = '🧊',
-    Struct = '🧱',
-    Event = "🌩️",
-    Operator = '❎',
-    TypeParameter = "🅾️"
-  },
-})
 
 -- keymaps
 function M.on_attach(client, bufnr)
@@ -65,10 +30,26 @@ function M.on_attach(client, bufnr)
   end
 end
 
+local make_capabilities = function()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+  -- TODO: everyone does this, but what does it enable?
+  capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+  capabilities.textDocument.completion.completionItem.preselectSupport = true
+
+  -- I've set up LuaSnip, which knows how to parse LSP provided snippets
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+  return capabilities
+end
+
 lsp_installer.on_server_ready(function(server)
   local opts = {
     -- map buffer local keybindings when the language server attaches
     on_attach = M.on_attach,
+    capabilities = make_capabilities()
   }
 
   local has_lsp_config, custom_lsp_config = pcall(require, "me.lsp.configs." .. server.name)
@@ -78,7 +59,7 @@ lsp_installer.on_server_ready(function(server)
 
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  server:setup(coq.lsp_ensure_capabilities(opts))
+  server:setup(opts)
 end)
 
 return M

@@ -60,8 +60,6 @@ cmd_map{keys = "ZE", command = 'Telescope find_files previewer=false prompt_pref
 cmd_map{keys = "ZD", command = "BufferWipeout"}
 -- Save the file only when the buffer has been modified.
 cmd_map{keys = "ZW", command = "update"}
--- Create & edit a snippets file for this filetype
-cmd_map{keys = "ZP", command = "COQsnips edit"}
 -- Easily edit my vimrc file
 -- TODO: integrate it with my workspace concept, editing a project-local lua file instead
 cmd_map{keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua"}
@@ -125,57 +123,6 @@ map{keys = "<leader>gS", to = "<cmd>lua require('gitsigns').stage_hunk()<CR>"}
 map{keys = "<leader>gU", to = "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>"}
 map{keys = "<leader>gp", to = "<cmd>lua require('gitsigns').preview_hunk()<CR>"}
 
-
---[[
-                           _      _   _
-  ___ ___  _ __ ___  _ __ | | ___| |_(_) ___  _ __
- / __/ _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \
-| (_| (_) | | | | | | |_) | |  __/ |_| | (_) | | | |
- \___\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|
-                    |_|
- ]]
--- completion key bindings
-map{mode = 'i', keys = "<ESC>", to = [[pumvisible() ? "<C-e><ESC>" : "<ESC>"]], expression = true}
-map{mode = 'i', keys = "<C-c>", to = [[pumvisible() ? "<C-e><C-c>" : "<C-c>"]], expression = true}
--- TODO: integrate nvim-autopairs and replace these two bindings
-map{mode = 'i', keys = "<CR>", to = [[pumvisible() ? (complete_info().selected == -1 ? "<C-e><CR>" : "<C-y>") : "<CR>"]], expression = true}
-map{mode = 'i', keys = "<BS>", to = [[pumvisible() ? "<C-e><BS>" : "<BS>"]], expression = true}
-
-local is_prior_char_whitespace = function()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-  else
-    return false
-  end
-end
-
--- Use (shift-)tab to:
---- move to prev/next item in completion menu
---- jump to the prev/next snippet placeholder (TOOD: how to activate this in coq?)
---- insert a simple tab
---- start the completion menu (TOOD: how to activate this in coq?)
-_G.tab_completion = function()
-  if vim.fn.pumvisible() == 1 then
-    return vim.api.nvim_replace_termcodes("<C-n>", true, true, true)
-
-  elseif is_prior_char_whitespace() then
-    return vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
-  end
-end
-_G.shift_tab_completion = function()
-  if vim.fn.pumvisible() == 1 then
-    return vim.api.nvim_replace_termcodes("<C-p>", true, true, true)
-
-  else
-    return vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true)
-  end
-end
-
-map{mode = 'i', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true, plugins = true}
-map{mode = 's', keys = "<Tab>", to = [[v:lua.tab_completion()]], expression = true, plugins = true}
-map{mode = 'i', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
-map{mode = 's', keys = "<S-Tab>", to = [[v:lua.shift_tab_completion()]], expression = true, plugins = true}
 
 --[[
  _ _       _
