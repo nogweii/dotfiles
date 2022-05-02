@@ -1,5 +1,4 @@
 local vi_mode = require('feline.providers.vi_mode')
-local mat_colors = require('material.colors')
 local lsp_servers = require('nvim-lsp-installer.servers')
 local all_available_lsp_servers = lsp_servers.get_available_servers()
 local all_installed_lsp_servers = lsp_servers.get_installed_server_names()
@@ -15,6 +14,8 @@ local function lsp_status_icon(filetype)
     hl = {},
     always_visible = true, -- there is no text in this component, just an icon
   }
+
+  icon_data.hl.bg = '#343a40'
 
   if next(vim.lsp.buf_get_clients(0)) ~= nil then
     -- an LSP server is installed & actively connected, hurrah!
@@ -37,7 +38,7 @@ local function lsp_status_icon(filetype)
           -- an LSP server is available, but it's not installed.
           -- let me know I could install one
           icon_data.str = '年'
-          icon_data.hl.fg = "#4e4e4e"
+          icon_data.hl.fg = "#495057"
           icon_data.hl.name = "LspStatusIconAvailale"
         end
       end
@@ -56,6 +57,8 @@ local center_pad = function(str, len, char)
     return string.rep(char, left_pad) .. str .. string.rep(char, right_pad)
 end
 
+local left_half_bar = '▌'
+
 local components = {
   vi_mode = {
     provider = function()
@@ -68,7 +71,9 @@ local components = {
         -- style = 'bold'
       }
     end,
-    right_sep = 'slant_right_2',
+    -- TODO: somehow determine the darker version of the vim mode color
+    -- left_sep = left_half_bar,
+    right_sep = '',
   },
 
   lsp_icon = {
@@ -76,6 +81,14 @@ local components = {
     icon = function()
       return lsp_status_icon(vim.bo.filetype)
     end,
+    left_sep = {
+      str = left_half_bar,
+      hl = {
+        fg = '#adb5bd',
+        bg = '#343a40'
+      },
+      always_visible = true,
+    },
   },
 
   file_name = {
@@ -87,10 +100,16 @@ local components = {
         file_readonly_icon = '🔒',
       },
     },
-    left_sep = 'left_rounded',
-    right_sep = 'right_rounded',
+    left_sep = {
+      str = '▐',
+      fg = '#343a40',
+    },
+    right_sep = {
+      str = left_half_bar,
+      fg = '#343a40',
+    },
     hl = {
-      bg = 'black'
+      bg = '#343a40'
     }
   },
 
@@ -99,7 +118,13 @@ local components = {
       return string.format('%3d:%-2d', unpack(vim.api.nvim_win_get_cursor(0)))
     end,
     icon = '',
-    left_sep = 'slant_left_2',
+    left_sep = {
+      str = left_half_bar,
+      hl = {
+        fg = '#6f42c1',
+        bg = 'violet'
+      }
+    },
     hl = {
       fg = 'black',
       bg = 'violet',
@@ -126,17 +151,16 @@ local components = {
   git_branch = {
     provider = 'git_branch',
     hl = {
-      bg = mat_colors.darkorange,
-      fg = mat_colors.bg,
+      bg = '#fd7e14',
+      fg = '#212529',
     },
-    right_sep = {
-      str = 'slant_left_2',
+    left_sep = {
+      str = left_half_bar,
       hl = {
-        fg = mat_colors.bg,
-        bg = mat_colors.darkorange,
+        fg = '#984c0c',
+        bg = '#fd7e14',
       }
     },
-    left_sep = 'slant_left_2',
   },
 }
 
