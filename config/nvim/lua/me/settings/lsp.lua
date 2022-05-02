@@ -106,3 +106,7 @@ end
 if vim.fn.executable("gopls") == 1 then
   setup_lsp_server("gopls")
 end
+
+if vim.fn.executable("zk") == 1 then
+  setup_lsp_server("zk")
+end
