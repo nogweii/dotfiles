@@ -50,10 +50,7 @@ return require("packer").startup {
     }
 
     use { "nvim-treesitter/nvim-treesitter",
-      run = function()
-        require('me.settings.treesitter')
-        vim.cmd [[:TSUpdate]]
-      end,
+      run = ':TSUpdate',
       config = function()
         require('me.settings.treesitter')
       end,
@@ -123,28 +120,17 @@ return require("packer").startup {
     use { 'tpope/vim-git' }
 
     -- easily install LSP servers in isolation from the rest of the system
-    use {
-      'williamboman/nvim-lsp-installer',
-      config = function() require('me.lsp.installer') end,
-    }
-    -- a collection of LSP configs
-    use { "neovim/nvim-lspconfig",
-      requires = "williamboman/nvim-lsp-installer",
-      config = function() require('me.lsp.settings') end,
-    }
-    -- add pictograms to completion results
-    -- (which I override with emojis in config/nvim/lua/me/settings/lsp.lua)
-    use { "onsails/lspkind-nvim", requires = "neovim/nvim-lspconfig" }
-    use { "kosayoda/nvim-lightbulb",
-      requires = "neovim/nvim-lspconfig",
-      config = function()
-        -- vim.cmd [[:autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
-      end
-    }
+    use { "williamboman/nvim-lsp-installer",
+        requires = {
+          -- a collection of LSP configs
+          "neovim/nvim-lspconfig",
 
-    -- Additonal LSP setup for the neovim nvim lua API.
-    -- see config/nvim/lua/me/lsp/configs/sumneko_lua.lua for additional details
-    use "folke/lua-dev.nvim"
+          -- Additonal LSP setup for the neovim nvim lua API.
+          -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
+          "folke/lua-dev.nvim"
+        },
+        config = function() require('me.settings.lsp') end,
+    }
 
     use {
       "folke/trouble.nvim",

@@ -1,11 +1,9 @@
+local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require('lspconfig')
 local lspconfigs = require('lspconfig.configs')
-local lsp_installer = require("nvim-lsp-installer")
-
-local M = {}
 
 -- keymaps
-function M.on_attach(client, bufnr)
+local function on_attach(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -45,21 +43,32 @@ local make_capabilities = function()
   return capabilities
 end
 
-lsp_installer.on_server_ready(function(server)
+-- Configure & initialize LSP Installer
+lsp_installer.setup({
+    automatic_installation = false,
+    ui = {
+        icons = {
+            server_installed = "💾",
+            server_pending = "🎁",
+            server_uninstalled = "❓"
+        }
+    }
+})
+
+-- Then register all of the servers that have been installed via LSP installer
+for server in pairs(lsp_installer.get_installed_servers()) do
   local opts = {
     -- map buffer local keybindings when the language server attaches
-    on_attach = M.on_attach,
+    on_attach = on_attach,
     capabilities = make_capabilities()
   }
 
-  local has_lsp_config, custom_lsp_config = pcall(require, "me.lsp.configs." .. server.name)
+  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_servers." .. server.name)
   if has_lsp_config then
     opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
   end
 
-  -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  server:setup(opts)
-end)
+  lspconfig[server].setup(opts)
+end
 
-return M
