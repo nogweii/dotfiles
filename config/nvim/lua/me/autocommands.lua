@@ -1,4 +1,4 @@
-function nvim_create_augroups(definitions)
+local function nvim_create_augroups(definitions)
 	for group_name, definition in pairs(definitions) do
 		vim.cmd("augroup " .. group_name)
 		vim.cmd("autocmd!")
