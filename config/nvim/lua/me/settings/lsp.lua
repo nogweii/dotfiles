@@ -1,6 +1,5 @@
 local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require('lspconfig')
-local lspconfigs = require('lspconfig.configs')
 
 -- keymaps
 local function on_attach(client, bufnr)
@@ -43,6 +42,22 @@ local make_capabilities = function()
   return capabilities
 end
 
+local function setup_lsp_server(name)
+  local opts = {
+    -- map buffer local keybindings when the language server attaches
+    on_attach = on_attach,
+    capabilities = make_capabilities()
+  }
+
+  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_servers." .. name)
+  if has_lsp_config then
+    opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
+  end
+
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  lspconfig[name].setup(opts)
+end
+
 -- Configure & initialize LSP Installer
 lsp_installer.setup({
     automatic_installation = false,
@@ -57,18 +72,37 @@ lsp_installer.setup({
 
 -- Then register all of the servers that have been installed via LSP installer
 for server in pairs(lsp_installer.get_installed_servers()) do
-  local opts = {
-    -- map buffer local keybindings when the language server attaches
-    on_attach = on_attach,
-    capabilities = make_capabilities()
-  }
-
-  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_servers." .. server.name)
-  if has_lsp_config then
-    opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
-  end
-
-  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  lspconfig[server].setup(opts)
+  setup_lsp_server(server)
 end
 
+if vim.fn.executable("bash-language-server") == 1 then
+  setup_lsp_server("bashls")
+end
+
+if vim.fn.executable("vscode-html-languageserver") == 1 then
+  setup_lsp_server("html")
+end
+
+if vim.fn.executable("vscode-css-languageserver") == 1 then
+  setup_lsp_server("cssls")
+end
+
+if vim.fn.executable("vscode-json-languageserver") == 1 then
+  setup_lsp_server("jsonls")
+end
+
+if vim.fn.executable("yaml-language-server") == 1 then
+  setup_lsp_server("yamlls")
+end
+
+if vim.fn.executable("lua-language-server") == 1 then
+  setup_lsp_server("sumneko_lua")
+end
+
+if vim.fn.executable("typescript-language-server") == 1 then
+  setup_lsp_server("tsserver")
+end
+
+if vim.fn.executable("gopls") == 1 then
+  setup_lsp_server("gopls")
+end
