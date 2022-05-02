@@ -72,7 +72,7 @@ lsp_installer.setup({
 
 -- Then register all of the servers that have been installed via LSP installer
 for _, server in pairs(lsp_installer.get_installed_servers()) do
-  setup_lsp_server(server)
+  setup_lsp_server(server.name)
 end
 
 local arch_package_binaries_to_lsp = {
