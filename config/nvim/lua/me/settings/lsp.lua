@@ -71,42 +71,29 @@ lsp_installer.setup({
 })
 
 -- Then register all of the servers that have been installed via LSP installer
-for server in pairs(lsp_installer.get_installed_servers()) do
+for _, server in pairs(lsp_installer.get_installed_servers()) do
   setup_lsp_server(server)
 end
 
-if vim.fn.executable("bash-language-server") == 1 then
-  setup_lsp_server("bashls")
-end
+local arch_package_binaries_to_lsp = {
+  {"bash-language-server", "bashls"},
+  {"vscode-html-languageserver", "html"},
+  {"vscode-css-languageserver", "cssls"},
+  {"vscode-json-languageserver", "jsonls"},
+  {"yaml-language-server", "yamlls"},
+  {"lua-language-server", "sumneko_lua"},
+  {"typescript-language-server", "tsserver"},
+  {"gopls", "gopls"},
+  {"zk", "zk"},
+  {"texlab", "texlab"},
+  {"ccls", "ccls"},
+  {"dhall-lsp-server", "dhall_lsp_server"},
+  {"haskell-language-server-wrapper", "hls"},
+  {"pylsp", "pylsp"},
+}
 
-if vim.fn.executable("vscode-html-languageserver") == 1 then
-  setup_lsp_server("html")
-end
-
-if vim.fn.executable("vscode-css-languageserver") == 1 then
-  setup_lsp_server("cssls")
-end
-
-if vim.fn.executable("vscode-json-languageserver") == 1 then
-  setup_lsp_server("jsonls")
-end
-
-if vim.fn.executable("yaml-language-server") == 1 then
-  setup_lsp_server("yamlls")
-end
-
-if vim.fn.executable("lua-language-server") == 1 then
-  setup_lsp_server("sumneko_lua")
-end
-
-if vim.fn.executable("typescript-language-server") == 1 then
-  setup_lsp_server("tsserver")
-end
-
-if vim.fn.executable("gopls") == 1 then
-  setup_lsp_server("gopls")
-end
-
-if vim.fn.executable("zk") == 1 then
-  setup_lsp_server("zk")
+for _, lsp_map in pairs(arch_package_binaries_to_lsp) do
+  if vim.fn.executable(lsp_map[1]) == 1 then
+    setup_lsp_server(lsp_map[2])
+  end
 end
