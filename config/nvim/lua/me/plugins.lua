@@ -130,6 +130,7 @@ return require("packer").startup {
           "folke/lua-dev.nvim"
         },
         config = function() require('me.settings.lsp') end,
+        after = "cmp-nvim-lsp"
     }
 
     use {
@@ -286,7 +287,7 @@ return require("packer").startup {
       config = function()
         require('me.settings.cmp')
       end,
-      after = "friendly-snippets"
+      after = "LuaSnip"
     }
     -- additional sources for cmp, lazily loaded
     use { "saadparwaiz1/cmp_luasnip",

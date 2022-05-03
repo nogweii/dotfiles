@@ -1,8 +1,5 @@
 local vi_mode = require('feline.providers.vi_mode')
-local lsp_servers = require('nvim-lsp-installer.servers')
-local all_available_lsp_servers = lsp_servers.get_available_servers()
-local all_installed_lsp_servers = lsp_servers.get_installed_server_names()
-
+local has_lsp_servers, lsp_servers = pcall(require, 'nvim-lsp-installer.servers')
 
 -- LSP icon logic:
 -- * hidden if there are no relevant LSP servers at all
@@ -11,11 +8,15 @@ local all_installed_lsp_servers = lsp_servers.get_installed_server_names()
 -- * blue if an LSP server is actively attached to the buffer
 local function lsp_status_icon(filetype)
   local icon_data = {
-    hl = {},
+    hl = {
+      bg = '#343a40',
+    },
     always_visible = true, -- there is no text in this component, just an icon
   }
 
-  icon_data.hl.bg = '#343a40'
+  if not has_lsp_servers then
+    return icon_data
+  end
 
   if next(vim.lsp.buf_get_clients(0)) ~= nil then
     -- an LSP server is installed & actively connected, hurrah!
@@ -23,9 +24,9 @@ local function lsp_status_icon(filetype)
     icon_data.hl.fg = 'skyblue'
     icon_data.hl.name = "LspStatusIconRunning"
   else
-    for _, server in pairs(all_available_lsp_servers) do
+    for _, server in pairs(lsp_servers.get_available_servers()) do
       if vim.tbl_contains(server.languages, filetype) then
-        if vim.tbl_contains(all_installed_lsp_servers, server.name) then
+        if vim.tbl_contains(lsp_servers.get_installed_server_names(), server.name) then
           -- the LSP server is installed, but it's not an active client.
           -- something probably went wrong to get here
           icon_data.str = '力'
