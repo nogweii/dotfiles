@@ -6,4 +6,10 @@ if vim.fn.executable("vscode-json-languageserver") == 1 then
   setup_options['cmd'] = {"vscode-json-languageserver", "--stdio"}
 end
 
+setup_options['settings'] = {
+  json = {
+    schemas = require('schemastore').json.schemas(),
+  },
+}
+
 return setup_options

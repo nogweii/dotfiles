@@ -133,7 +133,11 @@ return require("packer").startup {
 
           -- Additonal LSP setup for the neovim nvim lua API.
           -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
-          "folke/lua-dev.nvim"
+          "folke/lua-dev.nvim",
+
+          -- a downloaded copy of the SchemaStore.org catalog
+          -- (used by JSON & YAML LSPs)
+          "b0o/schemastore.nvim"
         },
         config = function() require('me.settings.lsp') end,
         after = "cmp-nvim-lsp"
