@@ -122,6 +122,10 @@ cmd_map{keys = "<leader>gb", command = "GitMessenger"}
 map{keys = "<leader>gS", to = "<cmd>lua require('gitsigns').stage_hunk()<CR>"}
 map{keys = "<leader>gU", to = "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>"}
 map{keys = "<leader>gp", to = "<cmd>lua require('gitsigns').preview_hunk()<CR>"}
+map{keys = "<leader>gY", to = "<cmd>lua require('gitlinker').get_repo_url()<cr>"}
+map{keys = "<leader>gB", to = "<cmd>lua require('gitlinker').get_repo_url({action_callback = require('gitlinker.actions').open_in_browser})<cr>"}
+map{keys = "<leader>gy", to = "<cmd>lua require('gitlinker').get_buf_range_url('n')<cr>"}
+map{keys = "<leader>gy", to = "<cmd>lua require('gitlinker').get_buf_range_url('v')<cr>", mode = "v"}
 
 
 --[[

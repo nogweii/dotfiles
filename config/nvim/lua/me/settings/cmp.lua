@@ -71,7 +71,7 @@ local config = {
       end
     end, { "i", "s", }),
     ["<CR>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace, -- TODO: or do I want Insert?
+      behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     },
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),

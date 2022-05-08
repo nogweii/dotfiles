@@ -96,7 +96,7 @@ local components = {
     provider = {
       name = 'file_info',
       opts = {
-        type = 'unique',
+        type = 'relative',
         file_modified_icon = '💾',
         file_readonly_icon = '🔒',
       },

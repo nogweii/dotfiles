@@ -1,15 +1,16 @@
 local wk = require 'which-key'
-wk.setup {
-}
+wk.setup { }
 
 wk.register({
   g = {
     name = 'Git',
-    y = 'Yank a URL to the git repo',
+    y = 'Yank a URL to this file in a git repo',
     p = 'Show the diff of the hunk',
     S = 'Stage the hunk',
     U = 'Unstage the hunk',
     b = 'View history of current line',
+    Y = 'Yank homepage of the git repo',
+    B = 'Open the git repo in a browser',
   },
   ['hi'] = 'Show the highlight group of the current word',
   ['ml'] = 'Append a vim modeline to the end of the file',

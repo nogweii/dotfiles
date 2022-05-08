@@ -170,13 +170,13 @@ return require("packer").startup {
       config = function()
         require("gitlinker").setup {
           opts = {
-            -- mappings = nil,
             add_current_line_on_normal_mode = false,
             action_callback = require("gitlinker.actions").copy_to_clipboard,
           },
           callbacks = {
             ["code.aether.earth"] = require("gitlinker.hosts").get_gitlab_type_url
-          }
+          },
+          mappings = nil
         }
       end
     }
