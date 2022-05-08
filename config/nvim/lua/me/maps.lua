@@ -86,14 +86,6 @@ plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
 
 
--- Inspired by tpope's rsi.vim, buch much more constrained:
--- jump to the beginning of the line
-map{mode = 'i', keys = "<C-a>", to = "<C-o>H", recurse = true}
-map{mode = 'c', keys = "<C-a>", to = "<Home>"}
--- jump to the end of the line
--- (command mode already has this binding)
--- (insert mode is covered by compe falling back to <End> in the mapping above)
-
 -- easy buffer switching, that's barbar-aware
 if packer_exists then
   cmd_map{keys = "<C-n>", command = "BufferNext"}

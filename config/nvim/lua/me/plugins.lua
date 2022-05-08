@@ -118,6 +118,7 @@ return require("packer").startup {
     -- get more recently updated git related syntax files
     -- this is the upstream source of what is shipped with the editor
     use { 'tpope/vim-git' }
+    use "tpope/vim-rsi"
 
     -- easily install LSP servers in isolation from the rest of the system
     use { "williamboman/nvim-lsp-installer",
