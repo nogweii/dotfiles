@@ -103,12 +103,12 @@ end
 # \"(.*)\"\]/ }
 
 MAKE_DIRS = [
-  'vim/tmp',
   File.expand_path('~/.local/cache'),
   File.expand_path('~/.local'),
   File.expand_path('~/media'),
   File.expand_path('~/.local/cache/zsh'),
   File.expand_path('~/.local/share/nvim/backup'),
+  File.expand_path('~/.local/share/vim'),
 ]
 
 File.open('config/user-dirs.dirs').readlines.each do |user_dir|
