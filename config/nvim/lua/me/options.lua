@@ -5,7 +5,7 @@ vim.opt.showmode = false -- Hide the mode indication in the command bar, since m
 
 vim.opt.wrap = false                     -- Don't wrap lines
 vim.opt.errorbells = false               -- Disable any error bells
-vim.opt.laststatus = 2               -- Always show the status bar
+vim.opt.laststatus = 3               -- Always show the status bar
 vim.opt.hidden = true                     -- Allow changing buffers even with modifications
 vim.opt.spell = true                      -- Enable spell check
 vim.opt.spellcapcheck = ''             -- Disable capitalization spell check
