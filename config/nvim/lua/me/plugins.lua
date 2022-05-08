@@ -72,6 +72,15 @@ return require("packer").startup {
       requires = "nvim-treesitter/nvim-treesitter",
       after = "nvim-treesitter",
     }
+    -- Add some context to where I am in a file
+    use {
+      "lewis6991/nvim-treesitter-context",
+      config = function()
+        require('treesitter-context').setup({})
+      end,
+      requires = "nvim-treesitter/nvim-treesitter",
+      after = "nvim-treesitter",
+    }
 
     -- Automatically configure various editor settings in a standard way
     use { "editorconfig/editorconfig-vim",
