@@ -74,7 +74,7 @@ cmd_map{keys = "ZT", command = "CodeTagSearch"}
 cmd_map{keys = "ZR", command = "TroubleToggle"}
 
 -- Tap - to jump into a file pane
-cmd_map{keys = "-", command = "NvimTreeToggle"}
+cmd_map{keys = "-", command = "Neotree filesystem reveal current"}
 
 -- a much smarter <C-a> and <C-x> that know how to flip through enumerated lists
 -- and manipulate additional number formats & dates

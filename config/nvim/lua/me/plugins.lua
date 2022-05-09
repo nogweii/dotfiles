@@ -24,23 +24,19 @@ return require("packer").startup {
     use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }
 
     -- a pretty file tree on the side
-    use { "kyazdani42/nvim-tree.lua",
-      requires = "kyazdani42/nvim-web-devicons",
-      as = "nvim-tree",
-      config = function()
-        require('nvim-tree').setup {
-          update_cwd = true,
-          update_focused_file = {
-            enable = true,
-            update_cwd = true
-          }
-        }
-      end,
+    use { "nvim-neo-tree/neo-tree.nvim",
+      branch = "v2.x",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "kyazdani42/nvim-web-devicons",
+        "MunifTanjim/nui.nvim",
+      },
+      config = function() require('me.settings.neo-tree') end,
     }
 
     -- preview colors inline in the editor
     use {"rrethy/vim-hexokinase",
-      setup = function()
+      config = function()
         if vim.fn.executable('hexokinase') == 1 then
           vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
         end
