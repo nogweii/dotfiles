@@ -1,5 +1,7 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
 
 local lsp_kind_emojis = {
   Text = "📜",
@@ -127,3 +129,6 @@ cmp.setup.cmdline('/', {
     { name = 'buffer' }
   }
 })
+
+-- when I press enter, check if there are any pairs to complete
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' }}))

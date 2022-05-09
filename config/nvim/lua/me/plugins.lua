@@ -231,8 +231,9 @@ return require("packer").startup {
       end
     }
 
-    -- automatically add closing pair characters ({}, <>, quotes, and more)
-    use { 'Raimondi/delimitMate' }
+    use { "windwp/nvim-autopairs",
+      config = function() require('me.settings.autopairs') end
+    }
 
     -- quickly toggle comments for a line (or motion)
     use "b3nj5m1n/kommentary"
@@ -288,8 +289,6 @@ return require("packer").startup {
     }
     -- a bunch of community maintained snippets
     use { "rafamadriz/friendly-snippets",
-      -- lazily loaded when either of these happen:
-      -- event = "InsertEnter"
     }
 
     -- advanced & flexible completion menu
@@ -339,6 +338,30 @@ return require("packer").startup {
         vim.g.pydocstring_enable_mapping = 0
         local cmd_map = require('me.map_utils').cmd_map
         cmd_map{keys = "<leader>pd", command = "Pydocstring"}
+      end
+    }
+
+    -- Some utility key bindings for editng markdown tables
+    use { 'allen-mack/nvim-table-md',
+      ft = 'markdown',
+      config = function()
+        vim.keymap.set('n', '<leader>mto', function() require("tablemd").insertRow(false) end)
+        vim.keymap.set('n', '<leader>mtO', function() require("tablemd").insertRow(true) end)
+        vim.keymap.set('n', '<leader>mti', function() require("tablemd").insertColumn(true) end)
+        vim.keymap.set('n', '<leader>mtI', function() require("tablemd").insertColumn(false) end)
+        vim.keymap.set('n', '<leader>mtf', function() require("tablemd").format() end)
+        vim.keymap.set('n', '<leader>mtd', function() require("tablemd").deleteColumn() end)
+
+        local wk = require 'which-key'
+        wk.register({
+          name = "Markdown Table",
+          o = 'Add a new row below',
+          O = 'Add a new row above',
+          i = 'Add a new column to the right',
+          I = 'Add a new column to the left',
+          f = 'Reformat the table',
+          d = 'Delete the current column',
+        }, { prefix = '<leader>mt' })
       end
     }
 
