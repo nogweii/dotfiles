@@ -39,8 +39,13 @@ require("neo-tree").setup({
       end,
       open_term = function(state)
         local node = state.tree:get_node()
-        local path = node:get_id()
-        vim.call("gtfo#open#term", path)
+        local path
+        if node.type == "file" then
+          path = node:get_parent_id()
+        else
+          path = node:get_id()
+        end
+        vim.call("gtfo#open#term", path, "")
       end,
     },
   },
