@@ -68,7 +68,7 @@ cmd_map{keys = "ZG", command = "Grepper"}
 plug_map{mode = "o", keys = "gs", command = "GrepperOperator"}
 plug_map{mode = "x", keys = "gs", command = "GrepperOperator"}
 -- Visualize the undo history of the file
-cmd_map{keys = "ZU", command = "MundoToggle"}
+cmd_map{keys = "ZU", command = "UndotreeToggle"}
 -- Find all of the code tags (TODO, NOTE, FIXME, etc) in the project
 cmd_map{keys = "ZT", command = "CodeTagSearch"}
 cmd_map{keys = "ZR", command = "TroubleToggle"}

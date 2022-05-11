@@ -365,6 +365,8 @@ return require("packer").startup {
       end
     }
 
+    use { "jiaoshijie/undotree", cmd = 'UndotreeToggle' }
+
   end, -- end of function(use)
 
   config = {
