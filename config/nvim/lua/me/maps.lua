@@ -45,7 +45,7 @@ map{keys = "zP", to = ":set spell!<CR>"} -- Toggle spell check quickly
 map{keys = "zp", to = "1z="} -- Accept the first spell correction
 
 -- Attempt to clear the screen of artifacts and clear search highlight
-map{keys = "<C-l>", to = "<c-l>:nohlsearch<CR>:redraw<CR>", recurse = true}
+map{keys = "<C-l>", to = "<c-l>:nohlsearch<CR>:redraw<CR>"}
 
 -- Map H and L to jump to the beginning or end of the line. H is smarter, in
 -- that it jumps between the first non-whitespace character or actual column 0.

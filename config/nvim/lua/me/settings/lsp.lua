@@ -22,7 +22,7 @@ local function on_attach(client, bufnr)
   -- Not all LSPs implement every bit of functionality; check the particular
   -- LSP server we've attached to for these
 
-  if (client.resolved_capabilities.document_formatting or client.resolved_capabilities.document_range_formatting) then
+  if (client.server_capabilities.document_formatting or client.server_capabilities.document_range_formatting) then
     buf_set_option('formatexpr', 'v:lua.vim.lsp.formatexpr(#{timeout_ms:250})')
   end
 end
