@@ -193,7 +193,6 @@ return require("packer").startup {
 
     -- a very customizble status bar framework for Neovim written in Lua
     use { 'feline-nvim/feline.nvim',
-      tag = '*',
       config = function() require('me.settings.feline') end,
       requires = {'kyazdani42/nvim-web-devicons', 'lewis6991/gitsigns.nvim'}
     }
@@ -201,7 +200,6 @@ return require("packer").startup {
     -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
     use {
       'monaqa/dial.nvim',
-      tag = '*',
       config = function() require('me.settings.dial_swaps') end
     }
 
