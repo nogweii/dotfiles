@@ -23,11 +23,13 @@ brew 'ruby'
 brew 'sqlite'
 brew 'the_silver_searcher'
 brew 'wget'
+brew 'bitwarden-cli'
 
 cask 'docker'
 cask 'slack'
-cask 'tuple'
 cask 'zoom'
+cask 'iterm2'
+cask 'bitwarden'
 
 cask 'homebrew/cask-fonts/font-sauce-code-pro-nerd-font'
 
