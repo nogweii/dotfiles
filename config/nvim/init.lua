@@ -24,12 +24,15 @@ function _G.profile(func)
   }
 end
 
-require('impatient').enable_profile()
+local has_impatient, impatient = pcall(require, 'impatient')
+if has_impatient then
+  impatient.enable_profile()
+end
 
 require('me.options')
 require('me.desktop_notify')
 require('me.plugins')
-require('packer_compiled')
+pcall(require, 'packer_compiled')
 require('me.maps')
 require('me.settings')
 require('me.autocommands')
