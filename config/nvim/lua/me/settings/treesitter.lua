@@ -27,7 +27,7 @@ require('nvim-treesitter.configs').setup {
   -- Enable some modules shipped with nvim-treesitter
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
   indent = {
     enable = true
