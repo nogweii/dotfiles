@@ -13,9 +13,11 @@ alias -g   U='|uniq'
 ########################
 # Listing aliases
 if [ -n "${commands[lsd]}" ]; then
-    alias ls='command lsd --icon=auto --color=auto -F'
+    alias ls="${commands[lsd]} --icon=auto --color=auto -F"
+elif [ -n "${commands[gls]}" ]; then
+    alias ls="${commands[gls]} --color=auto -F"
 else
-    alias ls='ls --color=auto -F'
+    alias ls="ls --color=auto -F"
 fi
 alias    lsa='ls -A'                      # only show dot-files
 alias    lsd='ls -d *(/)'                 # only show directories
@@ -31,7 +33,12 @@ alias    lld='ll -d *(/)'                 # only show directories
 # parent directories?
 alias mkdir='mkdir -p'
 alias cp='cp -Ri'
-alias rm='rm -rv --one-file-system --no-preserve-root'
+# I'm using the GNU extensions to the rm command
+if [ -n "${commands[grm]}" ]; then
+    alias rm="${commands[grm]} -rv --one-file-system --no-preserve-root"
+else
+    alias rm="rm -rv --one-file-system --no-preserve-root"
+fi
 alias mv='mv -i'
 alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the parent process
 

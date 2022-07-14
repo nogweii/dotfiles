@@ -44,7 +44,13 @@ export HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export SAVEHIST="${HISTSIZE}"
 
 # Pretty colors! Used by zstyle & ls (and probably others)
-eval $(dircolors -b ${DOTSDIR}/config/dircolors)
+if [ -n "${commands[gdircolors]}" ]; then
+    eval $(gdircolors -b ${DOTSDIR}/config/dircolors)
+elif [ -n "${commands[dircolors]}" ]; then
+    eval $(dircolors -b ${DOTSDIR}/config/dircolors)
+else
+    echo "no (g)dircolors installed? check \$PATH"
+fi
 
 export LESSHISTSIZE=2000
 

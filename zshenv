@@ -66,10 +66,6 @@ manpath=(
 if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
   # On MacOS systems, prepend Homebrew & the GNU userland to path
   path=(
-    /opt/homebrew/opt/coreutils/libexec/gnubin
-    /opt/homebrew/opt/gnu-tar/libexec/gnubin
-    /opt/homebrew/opt/gnu-sed/libexec/gnubin
-    /opt/homebrew/opt/libtool/libexec/gnubin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/go/libexec/bin
     /opt/homebrew/{bin,sbin}
@@ -78,10 +74,6 @@ if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
 
   # And get the brew installed man pages prefixed too
   manpath=(
-    /opt/homebrew/opt/coreutils/libexec/gnuman
-    /opt/homebrew/opt/gnu-tar/libexec/gnuman
-    /opt/homebrew/opt/gnu-sed/libexec/gnuman
-    /opt/homebrew/opt/libtool/libexec/gnuman
     /opt/homebrew/share/man
     $manpath
   )
