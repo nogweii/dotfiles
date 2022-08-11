@@ -1,7 +1,7 @@
 [github]
-    user = evaryont
+    user = nogweii
 [user]
-    name = Colin Shea
+    name = Nogweii
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [apply]
     whitespace = fix
@@ -27,6 +27,52 @@
     attributesfile = ~/dotfiles/config/git/attributes
 [branch]
     autosetuprebase = always
+[web]
+    browser = kde-open
+[browser "kde-open"]
+    cmd = kde-open
+[push]
+    default = current
+[help]
+    autocorrect = 1
+[url "ssh://git@code.aether.earth:22792/"]
+    insteadOf = https://code.aether.earth/
+[merge "merge-changelog"]
+    name = GNU-style ChangeLog merge driver
+    driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
+[merge]
+    tool = fugitive
+[mergetool "fugitive"]
+    cmd = nvim -c \"Gvdiff\" \"$MERGED\"
+[status]
+    submodulesummary = true
+[pack]
+    threads = 0
+[init]
+    templatedir = ~/dotfiles/config/git/template
+    defaultBranch = main
+[diff]
+    submodule = diff
+[advice]
+    pushNonFastForward = false
+    statusHints = true
+    commitBeforeMerge = false
+    resolveConflict = false
+    implicitIdentity = false
+    detachedHead = false
+[pull]
+    rebase = true
+[diff "ansible-vault"]
+    textconv = ansible-vault view
+[log]
+    mailmap = true
+[mergetool]
+    prompt = false
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [alias]
     # quick shortcut for add
@@ -141,61 +187,4 @@
     # update a remote and prune local branches to match
     rem-up = "!f() { git remote update $1 && git remote prune $1 ;}; f"
 
-[web]
-    browser = kde-open
-[browser "kde-open"]
-    cmd = kde-open
-[push]
-    default = current
-[help]
-    autocorrect = 1
-[sendemail]
-    smtpserver = evaryont.me
-    smtpserverport = 465
-    smtpencryption = tls
-    smtpuser = colin
-[url "git://anongit.kde.org/"]
-    insteadOf = kde:
-[url "ssh://git@git.kde.org/"]
-    pushInsteadOf = kde:
-[url "ssh://git@github.com/"]
-    pushInsteadOf = gh:
-    insteadOf = gh:
-[merge "merge-changelog"]
-    name = GNU-style ChangeLog merge driver
-    driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
-[merge]
-    tool = fugitive
-[mergetool "fugitive"]
-    cmd = nvim -c \"Gvdiff\" \"$MERGED\"
-[status]
-    submodulesummary = true
-[pack]
-    threads = 0
-[init]
-    templatedir = ~/dotfiles/config/git/template
-    defaultBranch = main
-[diff]
-    submodule = diff
-[advice]
-    pushNonFastForward = false
-    statusHints = true
-    commitBeforeMerge = false
-    resolveConflict = false
-    implicitIdentity = false
-    detachedHead = false
-[pull]
-    rebase = true
-
 # vim: set ft=gitconfig:
-[diff "ansible-vault"]
-	textconv = ansible-vault view
-[log]
-	mailmap = true
-[mergetool]
-	prompt = false
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
