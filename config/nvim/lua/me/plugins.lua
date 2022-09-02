@@ -125,12 +125,9 @@ return require("packer").startup {
     use { 'tpope/vim-git' }
     use "tpope/vim-rsi"
 
-    -- easily install LSP servers in isolation from the rest of the system
-    use { "williamboman/nvim-lsp-installer",
+    -- a collection of LSP configs
+    use { "neovim/nvim-lspconfig",
         requires = {
-          -- a collection of LSP configs
-          "neovim/nvim-lspconfig",
-
           -- Additonal LSP setup for the neovim nvim lua API.
           -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
           "folke/lua-dev.nvim",
@@ -364,6 +361,11 @@ return require("packer").startup {
     }
 
     use { "jiaoshijie/undotree", cmd = 'UndotreeToggle' }
+
+    use {
+      'mhartington/formatter.nvim',
+      config = function() require('me.settings.formatter') end
+    }
 
   end, -- end of function(use)
 

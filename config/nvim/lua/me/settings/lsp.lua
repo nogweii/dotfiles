@@ -1,4 +1,3 @@
-local lsp_installer = require("nvim-lsp-installer")
 local lspconfig = require('lspconfig')
 
 -- keymaps
@@ -56,23 +55,6 @@ local function setup_lsp_server(name)
 
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   lspconfig[name].setup(opts)
-end
-
--- Configure & initialize LSP Installer
-lsp_installer.setup({
-    automatic_installation = false,
-    ui = {
-        icons = {
-            server_installed = "💾",
-            server_pending = "🎁",
-            server_uninstalled = "❓"
-        }
-    }
-})
-
--- Then register all of the servers that have been installed via LSP installer
-for _, server in pairs(lsp_installer.get_installed_servers()) do
-  setup_lsp_server(server.name)
 end
 
 local arch_package_binaries_to_lsp = {
