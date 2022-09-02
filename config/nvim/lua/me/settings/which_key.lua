@@ -33,4 +33,5 @@ wk.register({
   R = 'Show all LSP diagnostics',
   U = 'Visualize undo tree',
   W = 'Save changes',
+  ['='] = 'Format the file',
 }, { prefix = 'Z' })

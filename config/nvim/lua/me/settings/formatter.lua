@@ -1,5 +1,5 @@
 require("formatter").setup {
-  log_level = vim.log.levels.DEBUG,
+  log_level = vim.log.levels.WARN,
 
   -- All formatter configurations are opt-in, they must be specified here.
   -- If a filetype table has multiple entries, they will be ran in order.
