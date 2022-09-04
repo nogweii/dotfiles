@@ -294,18 +294,10 @@ return require("packer").startup {
       after = "LuaSnip"
     }
     -- additional sources for cmp, lazily loaded
-    use { "saadparwaiz1/cmp_luasnip",
-      after = "nvim-cmp",
-    }
-    use { "hrsh7th/cmp-nvim-lsp",
-      after = "nvim-cmp",
-    }
-    use { "hrsh7th/cmp-buffer",
-      after = "nvim-cmp",
-    }
-    use { "hrsh7th/cmp-path",
-      after = "nvim-cmp",
-    }
+    use { "saadparwaiz1/cmp_luasnip" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path"}
 
     -- Support HCL and other Hashicorp specific syntaxes
     use "hashivim/vim-terraform"
@@ -370,6 +362,8 @@ return require("packer").startup {
     -- ReasonML & ReScript syntax support
     use { "amiralies/vim-reason" }
     use { "rescript-lang/vim-rescript" }
+
+    use { 'Joorem/vim-haproxy' }
 
   end, -- end of function(use)
 
