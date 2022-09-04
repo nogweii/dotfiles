@@ -41,3 +41,18 @@ nvim_create_augroups({
     {'CursorMoved', '<buffer>', [[lua vim.lsp.buf.clear_references()]]}
   },
 })
+
+local au_group_ansiblefilepath = vim.api.nvim_create_augroup("AnsibleFilePath", {})
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufNewFile"}, {
+  group = au_group_ansiblefilepath,
+  pattern = {"*.yaml", "*.yml"},
+  callback = function(au_details)
+    local looklike_paths = vim.regex("\\v/(tasks|roles|handlers|(group|host)_vars)/.*\\.ya?ml$")
+    local file_base_name = vim.fn.fnamemodify(au_details.file, ':t:r')
+    local ansible_file_names = { 'playbook', 'site', 'main', 'requirements' }
+    if looklike_paths:match_str(au_details.file) or vim.tbl_contains(ansible_file_names, file_base_name) then
+      vim.opt_local.path:append { "./../templates", "./../files", "templates", "files", "", "." }
+    end
+  end
+})
