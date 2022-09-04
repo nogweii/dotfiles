@@ -42,9 +42,9 @@ nvim_create_augroups({
   },
 })
 
+-- Ansible file detection & configuration
 local au_group_ansiblefilepath = vim.api.nvim_create_augroup("AnsibleFilePath", {})
-
-vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufNewFile"}, {
+vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost", "FileReadPost"}, {
   group = au_group_ansiblefilepath,
   pattern = {"*.yaml", "*.yml"},
   callback = function(au_details)
@@ -54,5 +54,6 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter", "BufNewFile"}, {
     if looklike_paths:match_str(au_details.file) or vim.tbl_contains(ansible_file_names, file_base_name) then
       vim.opt_local.path:append { "./../templates", "./../files", "templates", "files", "", "." }
     end
+    vim.opt_local.filetype = 'yaml.ansible'
   end
 })
