@@ -57,7 +57,9 @@ local function setup_lsp_server(name)
   lspconfig[name].setup(opts)
 end
 
-local arch_package_binaries_to_lsp = {
+-- A list of binaries found in $PATH and what configuration
+-- that powers
+local binaries_to_lsp = {
   {"bash-language-server", "bashls"},
   {"vscode-html-languageserver", "html"},
   {"vscode-css-languageserver", "cssls"},
@@ -72,9 +74,10 @@ local arch_package_binaries_to_lsp = {
   {"dhall-lsp-server", "dhall_lsp_server"},
   {"haskell-language-server-wrapper", "hls"},
   {"pylsp", "pylsp"},
+  {"ansible-language-server", "ansiblels"},
 }
 
-for _, lsp_map in pairs(arch_package_binaries_to_lsp) do
+for _, lsp_map in pairs(binaries_to_lsp) do
   if vim.fn.executable(lsp_map[1]) == 1 then
     setup_lsp_server(lsp_map[2])
   end
