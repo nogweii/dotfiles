@@ -367,6 +367,10 @@ return require("packer").startup {
       config = function() require('me.settings.formatter') end
     }
 
+    -- ReasonML & ReScript syntax support
+    use { "amiralies/vim-reason" }
+    use { "rescript-lang/vim-rescript" }
+
   end, -- end of function(use)
 
   config = {
