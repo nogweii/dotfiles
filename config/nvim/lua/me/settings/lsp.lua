@@ -36,7 +36,8 @@ local make_capabilities = function()
   -- I've set up LuaSnip, which knows how to parse LSP provided snippets
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+  local cmp_lsp_caps = require('cmp_nvim_lsp').default_capabilities()
+  vim.tbl_deep_extend("force", capabilities, cmp_lsp_caps)
 
   return capabilities
 end
