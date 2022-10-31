@@ -153,3 +153,5 @@ fi
 if [ -n "${commands[plocate]}" -a -z "${commands[locate]}" ]; then
     alias locate=plocate
 fi
+
+alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbnail --xattrs --embed-metadata"
