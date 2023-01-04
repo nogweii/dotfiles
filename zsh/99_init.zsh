@@ -36,8 +36,12 @@ if [ -n "${commands[fortune]}" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
 
+# For Linux installs
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+# For MacOS homebrew installs
+[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
+[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 
 # Enable syntax highlighting:
 source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
