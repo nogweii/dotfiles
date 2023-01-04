@@ -103,6 +103,11 @@ local function_file
 for function_file in ${DOTSDIR}/zsh/functions/* ; do
   autoload ${function_file:t}
 done
+for function_file in ${DOTSDIR}/zsh/zle-widgets/* ; do
+  autoload ${function_file:t}
+  zle -N ${function_file:t}
+done
+unset function_file
 
 function df() {
   # Is dfc installed & did I not pass any arguments to df? 

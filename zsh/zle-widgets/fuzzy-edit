@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# Fuzzily locate a file or directory
+# If it's a file, open $EDITOR
+# If it's a directory, cd into it
+
+local choice=$(fd -u -tf -td -tl --one-file-system --strip-cwd-prefix --color=always | fzf --ansi +m --scheme=path --height=40%)
+
+if [[ -f "${choice}" ]]; then
+  BUFFER="e ${choice}"
+elif [[ -d "${choice}" ]]; then
+  BUFFER="cd ${choice}"
+fi
+
+CURSOR=$#BUFFER
+zle redisplay
+zle accept-line

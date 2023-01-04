@@ -44,3 +44,6 @@ function insert-sudo() {
 }
 zle -N insert-sudo
 bindkey "^[s" insert-sudo
+
+bindkey -M vicmd 'ZE' fuzzy-edit
+bindkey -M viins '^O' fuzzy-edit
