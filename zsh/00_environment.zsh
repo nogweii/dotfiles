@@ -23,7 +23,7 @@ if [ "${XDG_SESSION_DESKTOP:l}" = "kde" ]; then
 fi
 
 # CLI default parameters
-export GREP_DEFAULTS="-E -i -I -n --color=auto"
+export GREP_DEFAULTS="-E -i -I --color=auto"
 export LESS="-RSMwi"
 
 # Application settings
