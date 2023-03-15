@@ -42,8 +42,11 @@
     driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
 [merge]
     tool = fugitive
+    keepBackup = false
 [mergetool "fugitive"]
-    cmd = nvim -c \"Gvdiff\" \"$MERGED\"
+    cmd = nvim -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool "sops"]
+    cmd = sops-mergetool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [status]
     submodulesummary = true
 [pack]
