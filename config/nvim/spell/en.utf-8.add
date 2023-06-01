@@ -404,3 +404,6 @@ postgresql
 kubernetes
 Kubernetes
 jsonnet
+ENV
+pipefail
+env
