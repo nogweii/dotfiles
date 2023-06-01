@@ -13,7 +13,6 @@ gem "uniscribe"
 # These gems I use within irb. Check config/irb/irb_conf.rb for details.
 group :irb do
   gem 'irbtools'
-  gem 'irbtools-more'
   gem 'looksee'
   gem 'net-http-spy'
   gem 'pry' # because it's so damn neat and useful

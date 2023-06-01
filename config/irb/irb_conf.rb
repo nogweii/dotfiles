@@ -21,7 +21,7 @@ begin
     end
   end
 
-  if File.exists?(ENV['CONFIG_RU'] || 'config.ru')
+  if File.exist?(ENV['CONFIG_RU'] || 'config.ru')
     Irbtools.add_library 'racksh/init', thread: :myIRB do
       ENV['CONFIG_RU'] ||= 'config.ru'
       ENV['RACK_ENV'] ||= 'development'
@@ -33,8 +33,6 @@ begin
 
   # Don't need coderay support within irb to syntax highlight files, I don't use it
   Irbtools.remove_library :coderay
-
-  require 'irbtools/more'
   Irbtools.start
 
   IRB.conf[:PROMPT][:ARROWSHAPES] = {
