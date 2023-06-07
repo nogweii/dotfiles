@@ -1,3 +1,4 @@
+require("neodev").setup({ })
 local lspconfig = require('lspconfig')
 
 -- keymaps
@@ -66,7 +67,7 @@ local binaries_to_lsp = {
   {"vscode-css-languageserver", "cssls"},
   {"vscode-json-languageserver", "jsonls"},
   {"yaml-language-server", "yamlls"},
-  {"lua-language-server", "sumneko_lua"},
+  {"lua-language-server", "lua_ls"},
   {"typescript-language-server", "tsserver"},
   {"gopls", "gopls"},
   {"zk", "zk"},

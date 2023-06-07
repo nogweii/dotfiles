@@ -25,7 +25,7 @@ return require("packer").startup {
 
     -- a pretty file tree on the side
     use { "nvim-neo-tree/neo-tree.nvim",
-      branch = "v2.x",
+      -- branch = "v2.x",
       requires = {
         "nvim-lua/plenary.nvim",
         "kyazdani42/nvim-web-devicons",
@@ -56,21 +56,9 @@ return require("packer").startup {
     use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
     -- Dynamically set &commentstring when moving around files with multiple filetypes combined
     use { "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
-    -- make neovim's spell checking treesitter aware
-    use {
-      "lewis6991/spellsitter.nvim",
-      config = function()
-        require('spellsitter').setup({
-          enabled = true,
-          spellchecker = 'ffi'
-        })
-      end,
-      requires = "nvim-treesitter/nvim-treesitter",
-      after = "nvim-treesitter",
-    }
     -- Add some context to where I am in a file
     use {
-      "lewis6991/nvim-treesitter-context",
+      "nvim-treesitter/nvim-treesitter-context",
       config = function()
         require('treesitter-context').setup({})
       end,
@@ -130,7 +118,7 @@ return require("packer").startup {
         requires = {
           -- Additonal LSP setup for the neovim nvim lua API.
           -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
-          "folke/lua-dev.nvim",
+          "folke/neodev.nvim",
 
           -- a downloaded copy of the SchemaStore.org catalog
           -- (used by JSON & YAML LSPs)
@@ -151,9 +139,6 @@ return require("packer").startup {
         }
       end
     }
-
-    -- insert completion menu
-    --use {"hrsh7th/nvim-compe", event = 'InsertEnter *', config = [[require('me.settings.compe')]]}
 
     -- put git change information in the sidebar, provide some helpers
     -- to manage git hunks
