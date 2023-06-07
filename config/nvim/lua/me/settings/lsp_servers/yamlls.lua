@@ -7,10 +7,14 @@ table.insert(aws_cfn_schema['fileMatch'], 'cloudformation/*.yml')
 -- and then overwrite the table with my modified one
 schemas[aws_cfn_schema_index] = aws_cfn_schema
 
-
 local setup_options = {
   settings = {
     yaml = {
+      schemaStore = {
+        -- disable the schemas shipped with the LSP to use the schemastore plugin
+        -- which can be configured in more ways than a basic on/off
+        enable = false,
+      },
       schemas = schemas,
       -- AWS CloudFormation tags
       customTags = {
