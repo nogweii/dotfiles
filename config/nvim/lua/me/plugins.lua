@@ -90,11 +90,17 @@ return require("packer").startup {
       -- config = [[require('me.settings.colors.catppuccin')]]
     }
     use { "marko-cerovac/material.nvim",
-      config = [[require('me.settings.colors.material')]]
+      -- config = [[require('me.settings.colors.material')]]
     }
     -- TODO: evaluate these
     use 'folke/tokyonight.nvim'
     use 'EdenEast/nightfox.nvim'
+    use { 'ribru17/bamboo.nvim',
+      config = function()
+        require('bamboo').setup({})
+        require('bamboo').load()
+      end
+    }
 
     -- Launch the file manager or new terminal easily from within vim
     use "justinmk/vim-gtfo"
