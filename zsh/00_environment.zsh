@@ -71,8 +71,8 @@ export FZF_DEFAULT_OPTS="--inline-info --ansi"
 
 # By default, git doesn't have an email set. I use environment variables to
 # control it. Override in ~/.zshrc.local.
-export GIT_AUTHOR_EMAIL="colin@evaryont.me"
-export GIT_COMMITTER_EMAIL="colin@evaryont.me"
+export GIT_AUTHOR_EMAIL="me@nogweii.net"
+export GIT_COMMITTER_EMAIL="me@nogweii.net"
 
 [ -n "${LXSS}" ] && export WINUSER="$(/mnt/c/Windows/System32/whoami.exe | sed 's/^.*\\//' | tr -d '\n\r')"
 
