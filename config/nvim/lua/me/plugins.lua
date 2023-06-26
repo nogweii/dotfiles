@@ -154,9 +154,7 @@ return require("packer").startup {
         "nvim-lua/plenary.nvim"
       },
       config = function()
-        require('gitsigns').setup {
-          keymaps = { }, -- empty keymaps list to disable the default ones
-        }
+        require('gitsigns').setup { }
       end
     }
     -- show git blame in a popup
