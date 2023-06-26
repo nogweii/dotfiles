@@ -61,5 +61,6 @@ typeset -g HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
 
 source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh 
 
+[ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
 source ${DOTSDIR}/zsh/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 AUTOSWITCH_SILENT='yes'
