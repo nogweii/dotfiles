@@ -51,9 +51,10 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost", "FileReadPost"}, {
     local looklike_paths = vim.regex("\\v/(tasks|roles|handlers|(group|host)_vars)/.*\\.ya?ml$")
     local file_base_name = vim.fn.fnamemodify(au_details.file, ':t:r')
     local ansible_file_names = { 'playbook', 'site', 'main', 'requirements' }
+
     if looklike_paths:match_str(au_details.file) or vim.tbl_contains(ansible_file_names, file_base_name) then
       vim.opt_local.path:append { "./../templates", "./../files", "templates", "files", "", "." }
+      vim.opt_local.filetype = "yaml.ansible"
     end
-    vim.opt_local.filetype = 'yaml.ansible'
   end
 })
