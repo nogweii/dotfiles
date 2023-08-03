@@ -87,3 +87,7 @@ export ZK_NOTEBOOK_DIR="${HOME}/notes"
 [ -n "${commands[pspg]}" ] && export PSQL_PAGER="pspg"
 
 export BUNDLE_JOBS=4
+
+# Configure the list of timezones `tz` will present
+# See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a reference
+export TZ_LIST="America/Phoenix,Phoenix;Etc/UTC,UTC;America/New_York,US East;America/Los_Angeles,US West;America/Denver,Mountains;America/Chicago,Central"
