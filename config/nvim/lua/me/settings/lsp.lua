@@ -77,6 +77,7 @@ local binaries_to_lsp = {
   {"haskell-language-server-wrapper", "hls"},
   {"pylsp", "pylsp"},
   {"ansible-language-server", "ansiblels"},
+  {"terraform-ls", "terraformls"},
 }
 
 for _, lsp_map in pairs(binaries_to_lsp) do
