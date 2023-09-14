@@ -92,16 +92,9 @@ plug_map{mode = 'v', keys = "<C-x>", command = 'dial-decrement'}
 plug_map{mode = 'v', keys = "g<C-a>", command = 'dial-increment'}
 plug_map{mode = 'v', keys = "g<C-x>", command = 'dial-decrement'}
 
-
 -- easy buffer switching, that's barbar-aware
-if packer_exists then
-  cmd_map{keys = "<C-n>", command = "BufferNext"}
-  cmd_map{keys = "<C-p>", command = "BufferPrev"}
-else
-  cmd_map{keys = "<C-n>", command = "bnext", plugins = false}
-  cmd_map{keys = "<C-p>", command = "bprev", plugins = false}
-end
-
+cmd_map{keys = "<C-n>", command = "BufferNext"}
+cmd_map{keys = "<C-p>", command = "BufferPrev"}
 
 --[[
        _ _

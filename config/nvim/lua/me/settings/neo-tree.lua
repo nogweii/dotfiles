@@ -22,7 +22,9 @@ require("neo-tree").setup({
       hide_dotfiles = true,
       hide_gitignored = true,
     },
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true,
+    },
 
     window = {
       mappings = {

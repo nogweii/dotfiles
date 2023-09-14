@@ -32,7 +32,6 @@ end
 require('me.options')
 require('me.desktop_notify')
 require('me.plugins')
-pcall(require, 'packer_compiled')
 require('me.maps')
 require('me.settings')
 require('me.autocommands')

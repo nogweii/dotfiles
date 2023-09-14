@@ -13,10 +13,6 @@ function _M.map(args)
     plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
   })
 
-  if (args.plugins) and (not packer_exists) then
-    return
-  end
-
   vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
 end
 

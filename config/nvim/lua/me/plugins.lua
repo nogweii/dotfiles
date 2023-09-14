@@ -1,142 +1,130 @@
--- Bail out early if I haven't ran my `nvim-packs` shell function yet
-_G.packer_exists = pcall(vim.cmd, 'packadd packer.nvim')
-if not packer_exists then
-  return nil
-end
-
-return require("packer").startup {
-  function(use)
+local plugins = {
     -- use packer to manage packer
-    use { "wbthomason/packer.nvim" }
+    { "wbthomason/packer.nvim" },
 
     -- Bug fix https://github.com/neovim/neovim/issues/12587
     -- and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
-    use "antoinemadec/FixCursorHold.nvim"
+    { "antoinemadec/FixCursorHold.nvim" },
 
     -- a few performance optimiziation tweaks to neovim.
     -- remove once neovim core gets something similar: https://github.com/neovim/neovim/pull/15436
-    use 'lewis6991/impatient.nvim'
+    { "lewis6991/impatient.nvim" },
 
     -- Automatically jump to the project's root directory
-    use "airblade/vim-rooter"
+    { "airblade/vim-rooter" },
 
     -- a very beautiful tabline
-    use { "romgrk/barbar.nvim", requires = "kyazdani42/nvim-web-devicons" }
+    { "romgrk/barbar.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
 
     -- a pretty file tree on the side
-    use { "nvim-neo-tree/neo-tree.nvim",
+    { "nvim-neo-tree/neo-tree.nvim",
       -- branch = "v2.x",
-      requires = {
+      dependencies = {
         "nvim-lua/plenary.nvim",
         "kyazdani42/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
       },
       config = function() require('me.settings.neo-tree') end,
-    }
+    },
 
     -- preview colors inline in the editor
-    use {"rrethy/vim-hexokinase",
+    {"NvChad/nvim-colorizer.lua",
       config = function()
-        if vim.fn.executable('hexokinase') == 1 then
-          vim.g.Hexokinase_executable_path = vim.fn.exepath("hexokinase")
-        end
-        vim.g.Hexokinase_highlighters = {'virtual'}
-        vim.g.Hexokinase_optInPatterns = {'full_hex', 'triple_hex', 'rgb', 'rgba', 'hsl', 'hsla'}
+        require("colorizer").setup()
       end
-    }
+    },
 
-    use { "nvim-treesitter/nvim-treesitter",
-      run = ':TSUpdate',
+    { "nvim-treesitter/nvim-treesitter",
+      build = ':TSUpdate',
       config = function()
         require('me.settings.treesitter')
       end,
       event = 'BufRead',
-    }
+    },
     -- Treesitter compatible rainbow parentheses
-    use { "p00f/nvim-ts-rainbow", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
+    { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
     -- Dynamically set &commentstring when moving around files with multiple filetypes combined
-    use { "JoosepAlviste/nvim-ts-context-commentstring", requires = "nvim-treesitter/nvim-treesitter", after = "nvim-treesitter" }
+    { "JoosepAlviste/nvim-ts-context-commentstring", dependencies = {"nvim-treesitter/nvim-treesitter"} },
     -- Add some context to where I am in a file
-    use {
+    {
       "nvim-treesitter/nvim-treesitter-context",
       config = function()
         require('treesitter-context').setup({})
       end,
-      requires = "nvim-treesitter/nvim-treesitter",
-      after = "nvim-treesitter",
-    }
+      dependencies = {"nvim-treesitter/nvim-treesitter"},
+    },
 
     -- Automatically configure various editor settings in a standard way
-    use { "editorconfig/editorconfig-vim",
-      setup = function()
+    { "editorconfig/editorconfig-vim",
+      init = function()
         if vim.fn.executable('editorconfig') then
           vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
           vim.g.EditorConfig_core_mode = 'external_command'
         end
       end
-    }
+    },
 
     -- Easily put a character/pair around some text. Sandwich a word between
     -- parentheses!
-    use { "machakann/vim-sandwich",
+    { "machakann/vim-sandwich",
       config = function()
         vim.cmd("runtime macros/sandwich/keymap/surround.vim")
       end
-    }
+    },
 
     -- COLORS! All the colors!
-    use { "catppuccin/nvim",
-      as = "catppuccin"
+    { "catppuccin/nvim",
+      name = "catppuccin"
       -- config = [[require('me.settings.colors.catppuccin')]]
-    }
-    use { "marko-cerovac/material.nvim",
+    },
+    { "marko-cerovac/material.nvim",
       -- config = [[require('me.settings.colors.material')]]
-    }
+    },
     -- TODO: evaluate these
-    use 'folke/tokyonight.nvim'
-    use 'EdenEast/nightfox.nvim'
-    use { 'ribru17/bamboo.nvim',
+    { "folke/tokyonight.nvim" },
+    { "EdenEast/nightfox.nvim" },
+    { 'ribru17/bamboo.nvim',
       config = function()
         require('bamboo').setup({})
         require('bamboo').load()
       end
-    }
+    },
 
     -- Launch the file manager or new terminal easily from within vim
-    use "justinmk/vim-gtfo"
+    { "justinmk/vim-gtfo" },
 
     -- Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
     -- present a nice display of what's taking so long startup. Also, see the shell
     -- alias 'nvim-startup-benchmark'
-    use {'tweekmonster/startuptime.vim', cmd = 'StartupTime'}
+    {'tweekmonster/startuptime.vim', cmd = 'StartupTime'},
 
-    use "tpope/vim-repeat"
-    use "tpope/vim-characterize"
-    use "tpope/vim-eunuch"
-    use "tpope/vim-fugitive"
+    { "tpope/vim-repeat" },
+    { "tpope/vim-characterize" },
+    { "tpope/vim-eunuch" },
+    { "tpope/vim-fugitive" },
     -- get more recently updated git related syntax files
     -- this is the upstream source of what is shipped with the editor
-    use { 'tpope/vim-git' }
-    use "tpope/vim-rsi"
+    { 'tpope/vim-git' },
+    { "tpope/vim-rsi" },
 
     -- a collection of LSP configs
-    use { "neovim/nvim-lspconfig",
-        requires = {
+    { "neovim/nvim-lspconfig",
+        dependencies = {
           -- Additonal LSP setup for the neovim nvim lua API.
           -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
           "folke/neodev.nvim",
 
           -- a downloaded copy of the SchemaStore.org catalog
           -- (used by JSON & YAML LSPs)
-          "b0o/schemastore.nvim"
+          "b0o/schemastore.nvim",
+          "hrsh7th/cmp-nvim-lsp",
         },
         config = function() require('me.settings.lsp') end,
-        after = "cmp-nvim-lsp"
-    }
+    },
 
-    use {
+    {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      dependencies = {"kyazdani42/nvim-web-devicons"},
       config = function()
         require("trouble").setup {
           -- your configuration comes here
@@ -144,25 +132,25 @@ return require("packer").startup {
           -- refer to the configuration section below
         }
       end
-    }
+    },
 
     -- put git change information in the sidebar, provide some helpers
     -- to manage git hunks
-    use {
+    {
       "lewis6991/gitsigns.nvim",
-      requires = {
+      dependencies = {
         "nvim-lua/plenary.nvim"
       },
       config = function()
-        require('gitsigns').setup { }
+        require("gitsigns").setup { }
       end
-    }
+    },
     -- show git blame in a popup
-    use {'rhysd/git-messenger.vim', cmd = 'GitMessenger'}
+    {"rhysd/git-messenger.vim", cmd = "GitMessenger"},
     -- yank a link to the commit
-    use {
-      'ruifm/gitlinker.nvim',
-      requires = 'nvim-lua/plenary.nvim',
+    {
+      "ruifm/gitlinker.nvim",
+      dependencies = {"nvim-lua/plenary.nvim"},
       config = function()
         require("gitlinker").setup {
           opts = {
@@ -175,139 +163,119 @@ return require("packer").startup {
           mappings = nil
         }
       end
-    }
+    },
 
     -- a very customizble status bar framework for Neovim written in Lua
-    use { 'feline-nvim/feline.nvim',
+    { 'feline-nvim/feline.nvim',
       config = function() require('me.settings.feline') end,
-      requires = {'kyazdani42/nvim-web-devicons', 'lewis6991/gitsigns.nvim'}
-    }
+      dependencies = {'kyazdani42/nvim-web-devicons', 'lewis6991/gitsigns.nvim'}
+    },
 
     -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
-    use {
+    {
       'monaqa/dial.nvim',
       config = function() require('me.settings.dial_swaps') end
-    }
+    },
 
     -- when typing `:<number>` scroll to that line, only while in command mode
     -- which allows easy peeking to another location in the file
-    use { 'nacro90/numb.nvim',
+    { 'nacro90/numb.nvim',
       config = function()
         require('numb').setup{
           show_numbers = true, -- Enable 'number' for the window while peeking
           show_cursorline = true -- Enable 'cursorline' for the window while peeking
         }
       end
-    }
+    },
 
-    use { 'nvim-telescope/telescope.nvim',
-      requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+    { 'nvim-telescope/telescope.nvim',
+      dependencies = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
       config = function() require('me.settings.telescope') end
-    }
+    },
 
     -- Automatic semi-smart indentation settings for a buffer
-    use {
+    {
       'Raimondi/yaifa',
-      setup = function()
+      init = function()
         vim.g.yaifa_shiftwidth = 2
         vim.g.yaifa_tabstop = 4
         vim.g.yaifa_expandtab = 1
       end
-    }
+    },
 
-    use { "windwp/nvim-autopairs",
+    { "windwp/nvim-autopairs",
       config = function() require('me.settings.autopairs') end
-    }
+    },
 
     -- quickly toggle comments for a line (or motion)
-    use "b3nj5m1n/kommentary"
+    { "b3nj5m1n/kommentary" },
 
-    use 'mfussenegger/nvim-lint'
+    { "mfussenegger/nvim-lint" },
 
     -- A smarter cursor position restoration function, excluding various buffers
     -- where it makes sense, and opening folds if needed.
-    use "farmergreg/vim-lastplace"
+    { "farmergreg/vim-lastplace" },
 
     -- Key bindings help & reminder
-    use {
+    {
       "folke/which-key.nvim",
       config = function() require('me.settings.which_key') end
-    }
+    },
 
     -- Asynchronously use search tools
-    use { 'mhinz/vim-grepper',
+    { 'mhinz/vim-grepper',
       cmd = 'Grepper',
-      keys = '<plug>(GrepperOperator)',
-    }
+    },
 
-    use { 'kevinhwang91/nvim-bqf',
+    { 'kevinhwang91/nvim-bqf',
       config = function()
-        require('bqf').setup({
-          preview = {
-            win_height = 10,
-            win_vheight = 10,
-            delay_syntax = 100,
-            border_chars = {'┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'}
-          },
-          func_map = {
-            vsplit = '',
-            ptogglemode = 'z,',
-            stoggleup = ''
-          },
-          --[[ filter = {
-            fzf = {
-              action_for = {['ctrl-s'] = 'split'},
-              extra_opts = {'--bind', 'ctrl-o:toggle-all', '--prompt', '> '}
-            }
-          } ]]
-        })
+        require('bqf').setup()
       end
-    }
+    },
 
     -- snippets engine
-    use { "L3MON4D3/LuaSnip",
-      after = "friendly-snippets",
+    { "L3MON4D3/LuaSnip",
+      dependencies = { "rafamadriz/friendly-snippets" },
       config = function()
         require('me.settings.luasnip')
       end
-    }
+    },
     -- a bunch of community maintained snippets
-    use { "rafamadriz/friendly-snippets",
-    }
+    { "rafamadriz/friendly-snippets" },
 
     -- advanced & flexible completion menu
-    use { "hrsh7th/nvim-cmp",
+    { "hrsh7th/nvim-cmp",
       config = function()
         require('me.settings.cmp')
       end,
-      after = "LuaSnip"
-    }
+      dependencies = { "L3MON4D3/LuaSnip" }
+    },
     -- additional sources for cmp, lazily loaded
-    use { "saadparwaiz1/cmp_luasnip" }
-    use { "hrsh7th/cmp-nvim-lsp" }
-    use { "hrsh7th/cmp-buffer" }
-    use { "hrsh7th/cmp-path"}
+    { "saadparwaiz1/cmp_luasnip" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
 
     -- Support HCL and other Hashicorp specific syntaxes
-    use "hashivim/vim-terraform"
+    { "hashivim/vim-terraform" },
 
     -- addtional syntax highlighting for postgresql extensions
-    use { 'lifepillar/pgsql.vim',
+    { 'lifepillar/pgsql.vim',
       ft = 'sql'
-    }
+    },
 
     -- Better markdown syntax
-    use {
+    {
       'plasticboy/vim-markdown',
       ft = 'markdown'
-    }
+    },
 
     -- Add TICKscript (Influx Kapacitor 1.x) syntax
-    use "nathanielc/vim-tickscript"
+    { "nathanielc/vim-tickscript" },
 
     -- quickly & easily generate a python docstring
-    use { 'heavenshell/vim-pydocstring',
-      run = 'make install',
+    { 'heavenshell/vim-pydocstring',
+      build = 'make install',
       ft = 'python',
       config = function()
         vim.g.pydocstring_formatter = 'google'
@@ -315,10 +283,10 @@ return require("packer").startup {
         local cmd_map = require('me.map_utils').cmd_map
         cmd_map{keys = "<leader>pd", command = "Pydocstring"}
       end
-    }
+    },
 
     -- Some utility key bindings for editng markdown tables
-    use { 'allen-mack/nvim-table-md',
+    { 'allen-mack/nvim-table-md',
       ft = 'markdown',
       config = function()
         vim.keymap.set('n', '<leader>mto', function() require("tablemd").insertRow(false) end)
@@ -339,34 +307,63 @@ return require("packer").startup {
           d = 'Delete the current column',
         }, { prefix = '<leader>mt' })
       end
-    }
+    },
 
-    use { "jiaoshijie/undotree", cmd = 'UndotreeToggle' }
+    { "jiaoshijie/undotree", cmd = 'UndotreeToggle' },
 
-    use {
+    {
       'mhartington/formatter.nvim',
       config = function() require('me.settings.formatter') end
-    }
+    },
 
     -- ReasonML & ReScript syntax support
-    use { "amiralies/vim-reason" }
-    use { "rescript-lang/vim-rescript" }
+    { "amiralies/vim-reason" },
+    { "rescript-lang/vim-rescript" },
 
-    use { 'Joorem/vim-haproxy' }
+    { 'Joorem/vim-haproxy' },
 
-  end, -- end of function(use)
-
-  config = {
-    profile = {
-      enable = true,
-      threshold = 1
-    },
-    display = {
-      -- instead of opening a new window to the side, open a floating one
-      open_fn = require('packer.util').float,
-    },
-    -- move the compiled file to a different location so that it must be loaded
-    -- by require(), allowing impatient.nvim to work its magic
-    compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua'
-  }
 } -- end of packer's setup()
+
+-- Bootstrap lazy.nvim by automatically cloning the git repo
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  if not vim.fn.executable("git") then
+    print("Lazy.nvim not installed and git not found in PATH. Plugins aren't available!")
+  else
+    vim.fn.system({
+      "git",
+      "clone",
+      "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable", -- latest stable release
+      lazypath,
+    })
+    print("Lazy.nvim git repository cloned.")
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+local opts = {
+  ui = {
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
+
+  defaults = {
+    version = "*",
+  },
+}
+
+require("lazy").setup(plugins, opts)
