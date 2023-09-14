@@ -72,6 +72,9 @@ cmd_map({ keys = "ZU", command = "UndotreeToggle" })
 -- Find all of the code tags (TODO, NOTE, FIXME, etc) in the project
 cmd_map({ keys = "ZT", command = "CodeTagSearch" })
 cmd_map({ keys = "ZR", command = "TroubleToggle" })
+vim.keymap.set("n", "Z-", function()
+  require('telescope').extensions.projects.projects{}
+end, { desc = "Select project" })
 vim.keymap.set("n", "Z=", function()
   -- Ask the LSPs to format stuff
   vim.lsp.buf.formatting_sync()

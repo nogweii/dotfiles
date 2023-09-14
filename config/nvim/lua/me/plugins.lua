@@ -13,10 +13,12 @@ local plugins = {
   -- Automatically jump to the project's root directory
   {
     "ahmedkhalf/project.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", },
     config = function()
       require("project_nvim").setup({
         patterns = { "!>packages", ">code", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
       })
+      require('telescope').load_extension('projects')
     end,
   },
 
