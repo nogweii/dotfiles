@@ -14,7 +14,7 @@ local plugins = {
   { "airblade/vim-rooter" },
 
   -- a very beautiful tabline
-  { "romgrk/barbar.nvim",             dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "romgrk/barbar.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
 
   -- a pretty file tree on the side
   {
@@ -25,7 +25,9 @@ local plugins = {
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    config = function() require("me.settings.neo-tree") end,
+    config = function()
+      require("me.settings.neo-tree")
+    end,
   },
 
   -- preview colors inline in the editor
@@ -33,19 +35,19 @@ local plugins = {
     "NvChad/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup()
-    end
+    end,
   },
 
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ':TSUpdate',
+    build = ":TSUpdate",
     config = function()
       require("me.settings.treesitter")
     end,
-    event = 'BufRead',
+    event = "BufRead",
   },
   -- Treesitter compatible rainbow parentheses
-  { "p00f/nvim-ts-rainbow",                        dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   -- Dynamically set &commentstring when moving around files with multiple filetypes combined
   { "JoosepAlviste/nvim-ts-context-commentstring", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   -- Add some context to where I am in a file
@@ -61,11 +63,11 @@ local plugins = {
   {
     "editorconfig/editorconfig-vim",
     init = function()
-      if vim.fn.executable('editorconfig') then
+      if vim.fn.executable("editorconfig") then
         vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
-        vim.g.EditorConfig_core_mode = 'external_command'
+        vim.g.EditorConfig_core_mode = "external_command"
       end
-    end
+    end,
   },
 
   -- Easily put a character/pair around some text. Sandwich a word between
@@ -74,27 +76,15 @@ local plugins = {
     "machakann/vim-sandwich",
     config = function()
       vim.cmd("runtime macros/sandwich/keymap/surround.vim")
-    end
+    end,
   },
 
-  -- COLORS! All the colors!
-  {
-    "catppuccin/nvim",
-    name = "catppuccin"
-    -- config = [[require('me.settings.colors.catppuccin')]]
-  },
-  { "marko-cerovac/material.nvim",
-    -- config = [[require('me.settings.colors.material')]]
-  },
-  -- TODO: evaluate these
-  { "folke/tokyonight.nvim" },
-  { "EdenEast/nightfox.nvim" },
   {
     "ribru17/bamboo.nvim",
     config = function()
       require("bamboo").setup({})
       require("bamboo").load()
-    end
+    end,
   },
 
   -- Launch the file manager or new terminal easily from within vim
@@ -103,7 +93,7 @@ local plugins = {
   -- Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
   -- present a nice display of what's taking so long startup. Also, see the shell
   -- alias 'nvim-startup-benchmark'
-  { "tweekmonster/startuptime.vim", cmd = 'StartupTime' },
+  { "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
   { "tpope/vim-repeat" },
   { "tpope/vim-characterize" },
@@ -127,19 +117,21 @@ local plugins = {
       "b0o/schemastore.nvim",
       "hrsh7th/cmp-nvim-lsp",
     },
-    config = function() require("me.settings.lsp") end,
+    config = function()
+      require("me.settings.lsp")
+    end,
   },
 
   {
     "folke/trouble.nvim",
     dependencies = { "kyazdani42/nvim-web-devicons" },
     config = function()
-      require("trouble").setup {
+      require("trouble").setup({
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
-      }
-    end
+      })
+    end,
   },
 
   -- put git change information in the sidebar, provide some helpers
@@ -147,11 +139,11 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim"
+      "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("gitsigns").setup {}
-    end
+      require("gitsigns").setup({})
+    end,
   },
   -- show git blame in a popup
   { "rhysd/git-messenger.vim", cmd = "GitMessenger" },
@@ -160,30 +152,34 @@ local plugins = {
     "ruifm/gitlinker.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("gitlinker").setup {
+      require("gitlinker").setup({
         opts = {
           add_current_line_on_normal_mode = false,
           action_callback = require("gitlinker.actions").copy_to_clipboard,
         },
         callbacks = {
-          ["code.aether.earth"] = require("gitlinker.hosts").get_gitlab_type_url
+          ["code.aether.earth"] = require("gitlinker.hosts").get_gitlab_type_url,
         },
-        mappings = nil
-      }
-    end
+        mappings = nil,
+      })
+    end,
   },
 
   -- a very customizble status bar framework for Neovim written in Lua
   {
     "feline-nvim/feline.nvim",
-    config = function() require("me.settings.feline") end,
-    dependencies = { "kyazdani42/nvim-web-devicons", "lewis6991/gitsigns.nvim" }
+    config = function()
+      require("me.settings.feline")
+    end,
+    dependencies = { "kyazdani42/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
   },
 
   -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
   {
     "monaqa/dial.nvim",
-    config = function() require("me.settings.dial_swaps") end
+    config = function()
+      require("me.settings.dial_swaps")
+    end,
   },
 
   -- when typing `:<number>` scroll to that line, only while in command mode
@@ -191,17 +187,19 @@ local plugins = {
   {
     "nacro90/numb.nvim",
     config = function()
-      require("numb").setup {
-        show_numbers = true,   -- Enable 'number' for the window while peeking
-        show_cursorline = true -- Enable 'cursorline' for the window while peeking
-      }
-    end
+      require("numb").setup({
+        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      })
+    end,
   },
 
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
-    config = function() require("me.settings.telescope") end
+    config = function()
+      require("me.settings.telescope")
+    end,
   },
 
   -- Automatic semi-smart indentation settings for a buffer
@@ -211,12 +209,14 @@ local plugins = {
       vim.g.yaifa_shiftwidth = 2
       vim.g.yaifa_tabstop = 4
       vim.g.yaifa_expandtab = 1
-    end
+    end,
   },
 
   {
     "windwp/nvim-autopairs",
-    config = function() require("me.settings.autopairs") end
+    config = function()
+      require("me.settings.autopairs")
+    end,
   },
 
   -- quickly toggle comments for a line (or motion)
@@ -231,7 +231,9 @@ local plugins = {
   -- Key bindings help & reminder
   {
     "folke/which-key.nvim",
-    config = function() require("me.settings.which_key") end
+    config = function()
+      require("me.settings.which_key")
+    end,
   },
 
   -- Asynchronously use search tools
@@ -244,7 +246,7 @@ local plugins = {
     "kevinhwang91/nvim-bqf",
     config = function()
       require("bqf").setup()
-    end
+    end,
   },
 
   -- snippets engine
@@ -253,7 +255,7 @@ local plugins = {
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
       require("me.settings.luasnip")
-    end
+    end,
   },
   -- a bunch of community maintained snippets
   { "rafamadriz/friendly-snippets" },
@@ -264,7 +266,7 @@ local plugins = {
     config = function()
       require("me.settings.cmp")
     end,
-    dependencies = { "L3MON4D3/LuaSnip" }
+    dependencies = { "L3MON4D3/LuaSnip" },
   },
   -- additional sources for cmp, lazily loaded
   { "saadparwaiz1/cmp_luasnip" },
@@ -278,13 +280,13 @@ local plugins = {
   -- addtional syntax highlighting for postgresql extensions
   {
     "lifepillar/pgsql.vim",
-    ft = 'sql'
+    ft = "sql",
   },
 
   -- Better markdown syntax
   {
     "plasticboy/vim-markdown",
-    ft = 'markdown'
+    ft = "markdown",
   },
 
   -- Add TICKscript (Influx Kapacitor 1.x) syntax
@@ -293,14 +295,14 @@ local plugins = {
   -- quickly & easily generate a python docstring
   {
     "heavenshell/vim-pydocstring",
-    build = 'make install',
-    ft = 'python',
+    build = "make install",
+    ft = "python",
     config = function()
-      vim.g.pydocstring_formatter = 'google'
+      vim.g.pydocstring_formatter = "google"
       vim.g.pydocstring_enable_mapping = 0
       local cmd_map = require("me.map_utils").cmd_map
-      cmd_map { keys = "<leader>pd", command = "Pydocstring" }
-    end
+      cmd_map({ keys = "<leader>pd", command = "Pydocstring" })
+    end,
   },
 
   -- Some utility key bindings for editng markdown tables
@@ -308,32 +310,45 @@ local plugins = {
     "allen-mack/nvim-table-md",
     ft = "markdown",
     config = function()
-      vim.keymap.set("n", "<leader>mto", function() require("tablemd").insertRow(false) end)
-      vim.keymap.set("n", "<leader>mtO", function() require("tablemd").insertRow(true) end)
-      vim.keymap.set("n", "<leader>mti", function() require("tablemd").insertColumn(true) end)
-      vim.keymap.set("n", "<leader>mtI", function() require("tablemd").insertColumn(false) end)
-      vim.keymap.set("n", "<leader>mtf", function() require("tablemd").format() end)
-      vim.keymap.set("n", "<leader>mtd", function() require("tablemd").deleteColumn() end)
+      vim.keymap.set("n", "<leader>mto", function()
+        require("tablemd").insertRow(false)
+      end)
+      vim.keymap.set("n", "<leader>mtO", function()
+        require("tablemd").insertRow(true)
+      end)
+      vim.keymap.set("n", "<leader>mti", function()
+        require("tablemd").insertColumn(true)
+      end)
+      vim.keymap.set("n", "<leader>mtI", function()
+        require("tablemd").insertColumn(false)
+      end)
+      vim.keymap.set("n", "<leader>mtf", function()
+        require("tablemd").format()
+      end)
+      vim.keymap.set("n", "<leader>mtd", function()
+        require("tablemd").deleteColumn()
+      end)
 
-      local wk = require 'which-key'
+      local wk = require("which-key")
       wk.register({
         name = "Markdown Table",
-        o = 'Add a new row below',
-        O = 'Add a new row above',
-        i = 'Add a new column to the right',
-        I = 'Add a new column to the left',
-        f = 'Reformat the table',
-        d = 'Delete the current column',
-      }, { prefix = '<leader>mt' })
-    end
+        o = "Add a new row below",
+        O = "Add a new row above",
+        i = "Add a new column to the right",
+        I = "Add a new column to the left",
+        f = "Reformat the table",
+        d = "Delete the current column",
+      }, { prefix = "<leader>mt" })
+    end,
   },
 
-  { "jiaoshijie/undotree",
-    cmd = 'UndotreeToggle' },
+  { "jiaoshijie/undotree", cmd = "UndotreeToggle" },
 
   {
     "mhartington/formatter.nvim",
-    config = function() require("me.settings.formatter") end
+    config = function()
+      require("me.settings.formatter")
+    end,
   },
 
   -- ReasonML & ReScript syntax support
@@ -341,8 +356,7 @@ local plugins = {
   { "rescript-lang/vim-rescript" },
 
   { "Joorem/vim-haproxy" },
-
-} -- end of packer's setup()
+}
 
 -- Bootstrap lazy.nvim by automatically cloning the git repo
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
