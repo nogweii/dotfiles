@@ -70,6 +70,7 @@ if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/go/libexec/bin
     /opt/homebrew/{bin,sbin}
+    /opt/homebrew/opt/libpq/bin
     $path
   )
 
