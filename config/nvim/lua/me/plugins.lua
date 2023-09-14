@@ -11,7 +11,14 @@ local plugins = {
   { "lewis6991/impatient.nvim" },
 
   -- Automatically jump to the project's root directory
-  { "airblade/vim-rooter" },
+  {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup({
+        patterns = { "!>packages", ">code", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+      })
+    end,
+  },
 
   -- a very beautiful tabline
   { "romgrk/barbar.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
@@ -360,16 +367,17 @@ local plugins = {
 
   { "Joorem/vim-haproxy" },
 
-  { 'echasnovski/mini.align',
-    version = '*',
-    config = function ()
-      require('mini.align').setup({
+  {
+    "echasnovski/mini.align",
+    version = "*",
+    config = function()
+      require("mini.align").setup({
         mappings = {
-          start = '', -- ga is already mapped to show the Unicode character, so don't overwrite that 
-          start_with_preview = 'gA',
-        }
+          start = "", -- ga is already mapped to show the Unicode character, so don't overwrite that
+          start_with_preview = "gA",
+        },
       })
-    end
+    end,
   },
 }
 
