@@ -1,7 +1,6 @@
-local cmp = require('cmp')
-local luasnip = require('luasnip')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 local lsp_kind_emojis = {
   Text = "📜",
@@ -28,12 +27,12 @@ local lsp_kind_emojis = {
   Struct = "🧱",
   Event = "🌩️",
   Operator = "❎",
-  TypeParameter = "🅾️"
+  TypeParameter = "🅾️",
 }
 
 local is_prior_char_whitespace = function()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+  local col = vim.fn.col(".") - 1
+  if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
     return true
   else
     return false
@@ -50,7 +49,7 @@ local config = {
 
   -- define various completion related keybindings here so that cmp's key
   -- handling doesn't get confused, along with it's cooperation with LSP
-  mapping = cmp.mapping.preset.insert {
+  mapping = cmp.mapping.preset.insert({
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -62,7 +61,7 @@ local config = {
       elseif not is_prior_char_whitespace() then
         cmp.complete()
       end
-    end, { "i", "s", }),
+    end, { "i", "s" }),
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -71,21 +70,21 @@ local config = {
       else
         fallback()
       end
-    end, { "i", "s", }),
-    ["<CR>"] = cmp.mapping.confirm {
+    end, { "i", "s" }),
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
-    },
+    }),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-  },
+  }),
 
   -- define which sources to enable by default
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
-    { name = 'path' },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
   }),
 
   -- customize how the completion menu appears
@@ -115,20 +114,20 @@ local config = {
 cmp.setup(config)
 
 -- Set configuration for specific filetypes:
-cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype("gitcommit", {
   sources = cmp.config.sources({
-    { name = 'buffer' },
-    { name = 'path' },
+    { name = "buffer" },
+    { name = "path" },
   }),
 })
 
 -- Use buffer source for `/` (relies on cmp's custom completion UI).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = "buffer" },
+  },
 })
 
 -- when I press enter, check if there are any pairs to complete
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' }}))
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))

@@ -120,8 +120,10 @@ local plugins = {
     config = function()
       require("me.settings.lsp")
     end,
+    version = false, -- use latest commit rather than version
   },
 
+  { "folke/neodev.nvim", opts = {} },
   {
     "folke/trouble.nvim",
     dependencies = { "kyazdani42/nvim-web-devicons" },
@@ -210,6 +212,7 @@ local plugins = {
       vim.g.yaifa_tabstop = 4
       vim.g.yaifa_expandtab = 1
     end,
+    version = false,
   },
 
   {
@@ -356,6 +359,18 @@ local plugins = {
   { "rescript-lang/vim-rescript" },
 
   { "Joorem/vim-haproxy" },
+
+  { 'echasnovski/mini.align',
+    version = '*',
+    config = function ()
+      require('mini.align').setup({
+        mappings = {
+          start = '', -- ga is already mapped to show the Unicode character, so don't overwrite that 
+          start_with_preview = 'gA',
+        }
+      })
+    end
+  },
 }
 
 -- Bootstrap lazy.nvim by automatically cloning the git repo

@@ -1,7 +1,7 @@
 vim.g.material_style = "darker"
-require('material').setup({
+require("material").setup({
   styles = {
-      comments = { italic = true },
+    comments = { italic = true },
   },
 
   plugins = {
@@ -24,4 +24,4 @@ require('material').setup({
     "which-key",
   },
 })
-vim.cmd 'colorscheme material'
+vim.cmd("colorscheme material")

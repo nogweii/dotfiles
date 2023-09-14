@@ -13,17 +13,35 @@ function _M.map(args)
     plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
   })
 
-  vim.api.nvim_set_keymap(args.mode, args.keys, args.to, { noremap = not args.recurse, silent = args.silent, expr = args.expression })
+  vim.api.nvim_set_keymap(
+    args.mode,
+    args.keys,
+    args.to,
+    { noremap = not args.recurse, silent = args.silent, expr = args.expression }
+  )
 end
 
 -- A wrapper around map for a common pattern of binding to a <Plug>
 function _M.plug_map(args)
-  _M.map{keys = args.keys, to = '<Plug>(' .. args.command .. ')', mode = args.mode or 'n', silent = true, recurse = true, plugins = true}
+  _M.map({
+    keys = args.keys,
+    to = "<Plug>(" .. args.command .. ")",
+    mode = args.mode or "n",
+    silent = true,
+    recurse = true,
+    plugins = true,
+  })
 end
 
 -- A wrapper around map for a common pattern of binding to a :command
 function _M.cmd_map(args)
-  _M.map{keys = args.keys, to = '<cmd>' .. args.command .. '<CR>', mode = args.mode or 'n', silent = true, plugins = args.plugins == nil and true or args.plugins}
+  _M.map({
+    keys = args.keys,
+    to = "<cmd>" .. args.command .. "<CR>",
+    mode = args.mode or "n",
+    silent = true,
+    plugins = args.plugins == nil and true or args.plugins,
+  })
 end
 
 return _M

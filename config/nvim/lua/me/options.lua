@@ -1,6 +1,7 @@
 -- NeoVim editor options.
 -- Looking for configuration for plugins? Check settings/* and settings.lua
 
+-- stylua: ignore start
 vim.opt.background     = "dark"                              -- Use dark colors over lighter ones
 vim.opt.backspace      = "indent,eol,start"                  -- Smart backspace in insert mode
 vim.opt.backupdir      = vim.fn.stdpath("data") .. '/backup'
@@ -35,23 +36,24 @@ vim.opt.virtualedit    = "block"                             -- Block movement c
 vim.opt.wildmenu       = true                                -- Show completion matches in the status bar
 vim.opt.wildmode       = "longest,full"                      -- Expand the longest common match, then all
 vim.opt.wrap           = false                               -- Don't wrap lines
+-- stylua: ignore end
 
 vim.opt.sessionoptions = vim.opt.sessionoptions
-              - "blank"        -- Don't save empty windows in the session
-              - "buffers"      -- Don't save hidden buffers into the session
-              - "help"         -- Ignore the help buffer for sessions
-              - "options"      -- Don't save any vim options (this list)
-              - "globals"      -- Ignore any g:-variables
-              + "localoptions" -- Include buffer local overrides
-              + "tabpages"     -- This session is for all tabs, not individual ones
+  - "blank" -- Don't save empty windows in the session
+  - "buffers" -- Don't save hidden buffers into the session
+  - "help" -- Ignore the help buffer for sessions
+  - "options" -- Don't save any vim options (this list)
+  - "globals" -- Ignore any g:-variables
+  + "localoptions" -- Include buffer local overrides
+  + "tabpages" -- This session is for all tabs, not individual ones
 
 vim.opt.formatoptions = vim.opt.formatoptions
-                 + "r"         -- Add comment syntax to new lines in insert mode
-                 + "o"         -- Automatically add comment syntax after o/O
+  + "r" -- Add comment syntax to new lines in insert mode
+  + "o" -- Automatically add comment syntax after o/O
 
 vim.opt.shortmess = vim.o.shortmess
-                .. "F" -- Don't print a message when opening a file
-                .. "c" -- silence insert mode completion messages
+  .. "F" -- Don't print a message when opening a file
+  .. "c" -- silence insert mode completion messages
 
 -- ignore a bunch of stuff in the wildmenu completion
 -- stylua: ignore
@@ -78,7 +80,7 @@ end
 
 -- Don't always show the sign columns, but if there are, make sure there's room
 -- for two. This matches the width of the mode indicator in the statusbar
-vim.opt.signcolumn = 'auto:2'
+vim.opt.signcolumn = "auto:2"
 
 -- Add angle brackets to the list of recognized characters in a pair
 vim.opt.matchpairs = vim.bo.matchpairs .. ",<:>"

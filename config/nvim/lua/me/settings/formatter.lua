@@ -1,4 +1,4 @@
-require("formatter").setup {
+require("formatter").setup({
   log_level = vim.log.levels.WARN,
 
   -- All formatter configurations are opt-in, they must be specified here.
@@ -6,7 +6,7 @@ require("formatter").setup {
   filetype = {
     -- The special "*" filetype defines formatter configurations for all filetypes
     ["*"] = {
-      require("formatter.filetypes.any").remove_trailing_whitespace
+      require("formatter.filetypes.any").remove_trailing_whitespace,
     },
 
     lua = {
@@ -18,9 +18,9 @@ require("formatter").setup {
         return {
           exe = "terraform",
           args = { "fmt", "-" },
-          stdin = true
+          stdin = true,
         }
-      end
+      end,
     },
 
     python = {
@@ -34,7 +34,7 @@ require("formatter").setup {
         rubocop_config.exe = "standardrb"
         rubocop_config.args[1] = "--fix"
         return rubocop_config
-      end
+      end,
     },
-  }
-}
+  },
+})

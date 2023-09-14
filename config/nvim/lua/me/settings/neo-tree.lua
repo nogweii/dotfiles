@@ -8,7 +8,7 @@ require("neo-tree").setup({
   sort_case_insensitive = true,
   default_component_configs = {
     modified = {
-      symbol = '💾',
+      symbol = "💾",
     },
     name = {
       trailing_slash = true,
@@ -57,7 +57,7 @@ require("neo-tree").setup({
       handler = function(_)
         -- automatically close Neo-Tree after a file has been opened
         require("neo-tree").close_all()
-      end
+      end,
     },
-  }
+  },
 })

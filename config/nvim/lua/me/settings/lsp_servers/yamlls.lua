@@ -1,9 +1,9 @@
-local schemas = require("schemastore").json.schemas();
+local schemas = require("schemastore").json.schemas()
 
 -- Extend the existing AWS CloudFormation schema to support the naming convetion IRL uses
-local aws_cfn_schema_index = schemas.index['AWS CloudFormation']
+local aws_cfn_schema_index = schemas.index["AWS CloudFormation"]
 local aws_cfn_schema = vim.deepcopy(schemas[aws_cfn_schema_index])
-table.insert(aws_cfn_schema['fileMatch'], 'cloudformation/*.yml')
+table.insert(aws_cfn_schema["fileMatch"], "cloudformation/*.yml")
 -- and then overwrite the table with my modified one
 schemas[aws_cfn_schema_index] = aws_cfn_schema
 
@@ -67,8 +67,8 @@ local setup_options = {
         "!Join map",
         "!Join sequence",
       },
-    }
-  }
+    },
+  },
 }
 
 return setup_options
