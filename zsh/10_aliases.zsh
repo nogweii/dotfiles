@@ -9,6 +9,7 @@ alias -g   N='&>/dev/null'
 alias -g   S='|sort'
 alias -g  TO='2>&1 3>&1' # '&>&1' returns a parse error
 alias -g   U='|uniq'
+alias -g  JL='| jq -C . | less'
 
 ########################
 # Listing aliases
@@ -155,3 +156,6 @@ if [ -n "${commands[plocate]}" -a -z "${commands[locate]}" ]; then
 fi
 
 alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbnail --xattrs --embed-metadata"
+
+# I do a lot of kubernetes stuff, make executing kubectl easier
+alias k=kubectl

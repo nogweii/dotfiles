@@ -45,6 +45,8 @@ path=(
   /usr/lib/cw                  # Colorized versions of GNU coreutils
   /usr/local/heroku/bin        # Heroku toolbelt, as installed from a package
   /opt/java/bin                # Some java installations
+  $HOME/.local/share/krew/bin  # kubernetes CLI plugins installed by krew
+  $HOME/.kubectl-plugin-completion # Additional programs to provide completion to kubectl plugins
 )
 
 fpath=(

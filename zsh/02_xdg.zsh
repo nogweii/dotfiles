@@ -51,3 +51,4 @@ export PSQLRC="${XDG_CONFIG_HOME}/psqlrc"
 export PSQL_HISTORY="${XDG_CACHE_HOME}/psql_history"
 
 export PYLINTRC="${XDG_CONFIG_HOME}/pylint.rc.toml"
+export KREW_ROOT="${XDG_DATA_HOME}/krew"
