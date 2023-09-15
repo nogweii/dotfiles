@@ -227,7 +227,13 @@ function pet-select() {
 zle -N pet-select
 
 function tls-info() {
-   echo | openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null | openssl x509 -text -noout
+  if [ -z "${1}" ]; then
+    echo "Get information about a TLS certificate from a remote server."
+    echo "Usage: $0 server <port or 443>"
+    return 1
+  fi
+
+  openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null </dev/null | openssl x509 -text -noout
 }
 
 # a (slightly) smarter cat command, that uses bat when available
