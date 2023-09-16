@@ -16,7 +16,7 @@ Dir.chdir gitdir
 # Only show shell commands if we didn't run rake with -v or -t
 RakeFileUtils.verbose_flag = false unless @extra_information
 
-def dotfiles
+def dotfiles_list
   (
     # Start with everything in this directory, but not recursively
     Dir['*'] -
@@ -72,7 +72,7 @@ def dottask(dotfile, home_path = nil)
   DOTFILES << home_abs_path
 end
 
-dotfiles.each do |dotfile|
+dotfiles_list.each do |dotfile|
   dottask dotfile
 end
 if File.exist? File.expand_path '~/.local/share/konsole'
@@ -82,16 +82,7 @@ end
 task default: :dotfiles
 
 desc 'Symlinks all my dotfiles'
-task dotfiles: [:submodules, :prepare, DOTFILES].flatten
-
-desc 'Removes all my dotfile symlinks'
-task :clean do
-  dotfiles.each do |dotfile|
-    link = File.expand_path("~/.#{dotfile}")
-
-    rm link if File.symlink?(link)
-  end
-end
+task dotfiles: [:submodules, :prepare, DOTFILES, :unnecessary].flatten
 
 desc 'Initialize all submodules'
 task :submodules do
@@ -103,13 +94,14 @@ end
 # \"(.*)\"\]/ }
 
 MAKE_DIRS = [
-  File.expand_path('~/.local/cache'),
   File.expand_path('~/.local'),
+  File.expand_path('~/.local/cache'),
   File.expand_path('~/media'),
   File.expand_path('~/.local/cache/zsh'),
   File.expand_path('~/.local/share/nvim/backup'),
-  File.expand_path('~/.local/share/vim'),
 ]
+MAKE_DIRS.sort!
+MAKE_DIRS.uniq!
 
 File.open('config/user-dirs.dirs').readlines.each do |user_dir|
   next if user_dir =~ /^#/
@@ -122,9 +114,6 @@ File.open('profile').readlines.each do |profile_line|
   expand_path = profile_line.gsub(/.*="\$\{HOME\}\/(.*)".*\n/, "#{ENV['HOME']}/\\1")
   MAKE_DIRS << expand_path
 end
-
-MAKE_DIRS.sort!
-MAKE_DIRS.uniq!
 
 MAKE_DIRS.each do |dir|
   directory dir do
@@ -146,6 +135,43 @@ task :prepare => MAKE_DIRS do
   end
 end
 
+OLD_CLEANUP = [
+  File.expand_path('~/.local/share/nvim/site/pack/packer'),
+  File.expand_path('./config/nvim/lua/packer_compiled.lua'),
+  File.expand_path('~/.vim'),
+  File.expand_path('~/.local/share/vim'),
+]
+OLD_CLEANUP.sort!
+OLD_CLEANUP.uniq!
+
+desc 'Delete no longer necessary files and directories'
+task :unnecessary do
+  # I'm deleting things, be loud about what that is
+  RakeFileUtils.verbose_flag = true
+
+  OLD_CLEANUP.each do |path|
+    rm_r path if File.exist? path or File.symlink? path
+  end
+
+  # Find various symlinks in my home directory that point to this folder but
+  # wouldn't be recreated normally. (Often a result of a file that's been
+  # deleted in the repo yet the symlink still remains)
+
+  home_links = Dir.entries(File.expand_path('~')).select do |home_path|
+    abs_path = File.join File.expand_path('~'), home_path
+    File.symlink? abs_path and File.readlink(abs_path).start_with?(File.expand_path('.'))
+  end.map { |item| item.sub(/^\./, '') }
+
+  config_links = Dir.entries(File.expand_path('~/.config')).select do |home_path|
+    abs_path = File.join File.expand_path('~/.config'), home_path
+    File.symlink? abs_path and File.readlink(abs_path).start_with?(File.expand_path('.'))
+  end.map { |item| 'config/' + item.sub(/^\./, '') }
+
+  ((home_links + config_links) - dotfiles_list).each do |path|
+    rm_r File.join(File.expand_path('~'), '.' + path)
+  end
+end
+
 desc 'List of everything this rake file will try managing'
 task :list do
   puts 'Symlink these files:'
@@ -157,39 +183,10 @@ task :list do
   MAKE_DIRS.each do |dir|
     puts " - #{dir}"
   end
-end
-
-namespace :vim do
-  desc 'add a vim plugin as a submodule'
-  task :add do
-    require 'readline'
-    require 'octokit'
-    require 'pp'
-    stty_save = `stty -g`.chomp
-    trap('INT') { system 'stty', stty_save; exit }
-
-    puts 'Creating a new submodule in vim/bundle/ from github'
-    buf = Readline.readline('Github project: ', false)
-    latest_tag = Octokit.tags(buf)[0]
-    bundle_dir_name = buf.split('/')[1].sub(/(^vim-?|[-.]?vim$)/, '')
-    if latest_tag
-      puts "Adding vim project #{bundle_dir_name} v#{latest_tag[:name]}"
-      sh "git submodule add https://github.com/#{buf} vim/bundle/#{bundle_dir_name} --branch #{latest_tag[:name]}"
-    else
-      puts "Adding vim project #{bundle_dir_name} HEAD"
-      sh "git submodule add https://github.com/#{buf} vim/bundle/#{bundle_dir_name}"
-    end
-
-    sh "git commit -m 'New vim plugin: #{buf}'"
-  end
-
-  desc 'Build the color schemes from ERB templates'
-  task :colorgen do
-    require 'erb'
-    erb_template = open('config/nvim/colors/breeze-dark.erb').read
-    open('config/nvim/colors/breeze-dark.vim', 'w') do |vim_file|
-      vim_file.puts ERB.new(erb_template, trim_mode: '<>-').result
-    end
+  puts ''
+  puts 'Clean up these old things:'
+  OLD_CLEANUP.each do |thing|
+    puts " - #{thing}"
   end
 end
 
