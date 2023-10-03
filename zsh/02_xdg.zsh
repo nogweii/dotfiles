@@ -2,7 +2,7 @@
 # and into various subdirectories within. `ls -a` should not report a million
 # items, much less now!
 
-export GEMRC="${DOTSDIR}/gemrc"
+export GEMRC="${DOTSDIR}/config/gemrc"
 export BUNDLE_CONFIG="${DOTSDIR}/config/bundle/config"
 export npm_config_prefix=$HOME/.local/node
 export npm_config_userconfig="${DOTSDIR}/config/npmrc"
