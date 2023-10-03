@@ -13,7 +13,7 @@ export DOCKER_CONFIG="${HOME}/.config/docker"
 
 export LESSHISTFILE="${XDG_CACHE_HOME}/lesshist"
 export HISTFILE="${HOME}/.local/cache/zsh/history"
-export INPUTRC="${DOTSDIR}/inputrc"
+export INPUTRC="${DOTSDIR}/config/inputrc"
 
 export ANSIBLE_LOCAL_TEMP="${XDG_CACHE_HOME}/ansible/temp"
 export ANSIBLE_SSH_CONTROL_PATH_DIR="${XDG_CACHE_HOME}/ansible/cp"
