@@ -56,7 +56,7 @@ local plugins = {
     event = "BufRead",
   },
   -- Treesitter compatible rainbow parentheses
-  { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "HiPhish/rainbow-delimiters.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   -- Dynamically set &commentstring when moving around files with multiple filetypes combined
   { "JoosepAlviste/nvim-ts-context-commentstring", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   -- Add some context to where I am in a file
