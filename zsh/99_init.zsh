@@ -18,6 +18,8 @@ if [ -S "${XDG_RUNTIME_DIR}/keyring/ssh" ]; then
     # As of GNOME 3.28, the keyring agent wraps the upstream OpenSSH agent process
     # and so I like it now. Set the AUTH_SOCK variable when it's around
     export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/keyring/ssh"
+elif [ -S "${XDG_RUNTIME_DIR}/ssh-agent.socket" ]; then
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 elif [ -n "${LXSS}" ]; then
     local ssh_agent_wsl="/mnt/c/Users/${WINUSER}/Local Applications/ssh-agent-wsl/ssh-agent-wsl"
     # local ssh_agent_service="$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '(Get-Service "ssh-agent").Status;' | tr -d '\r')"
