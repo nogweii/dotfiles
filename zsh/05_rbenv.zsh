@@ -7,10 +7,12 @@ if [[ -z $commands[rbenv] ]]; then
    return 
 fi
 
+export RBENV_SHELL=zsh
+
 # Get the directory rbenv is in (e.g. installed to /usr/local/rbenv/? The full
 # path to the rbenv command is /usr/local/rbenv/bin/rbenv and I want just just
 # '/usr/local/rbenv')
-local rbenv_parent_path=${${:-$commands[rbenv]/../../}:A}
+local rbenv_parent_path=${${:-$commands[rbenv]:A/../../}:A}
 
 # If the parent path is writable by me, use that. (For when rbenv is installed
 # in my home directory)
@@ -21,16 +23,18 @@ else
   export RBENV_ROOT="${XDG_DATA_HOME}/rbenv"
 fi
 
-_rbenv_plugins=${${:-${RBENV_ROOT}/../rbenv-plugins}:A}
-PATH="${RBENV_ROOT}/shims:${PATH}"
+path=("${RBENV_ROOT}/shims" $path)
 
-for plugin_bin in "${_rbenv_plugins}"/*/bin; do
-  PATH="${PATH}:${plugin_bin}"
-done
-for plugin_hook in "${_rbenv_plugins}"/*/etc/rbenv.d; do
-  RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
-done
-typeset -x RBENV_HOOK_PATH PATH
+_rbenv_plugins=${${:-${RBENV_ROOT}/../rbenv-plugins}:A}
+if [ -d "${_rbenv_plugins}" ]; then
+  for plugin_bin in "${_rbenv_plugins}"/*/bin; do
+    PATH="${PATH}:${plugin_bin}"
+  done
+  for plugin_hook in "${_rbenv_plugins}"/*/etc/rbenv.d; do
+    RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
+  done
+  typeset -x RBENV_HOOK_PATH
+fi
 
 # The completions are shipped in the same parent directory as the command
 source "${rbenv_parent_path}/completions/rbenv.zsh"
@@ -45,7 +49,7 @@ rbenv() {
   fi
 
   case "$rbenv_subcommand" in
-  rehash|shell|use)
+  rehash|shell)
     eval `rbenv "sh-$rbenv_subcommand" "$@"`;;
   *)
     command rbenv "$rbenv_subcommand" "$@";;

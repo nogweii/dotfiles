@@ -9,7 +9,6 @@ git_diff_staged.diff
 .vagrant
 .directory
 tags
-.ruby-version
 .bundle
 .mypy_cache
 __pycache__
