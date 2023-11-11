@@ -138,9 +138,6 @@ if [[ -z "$LANG" ]]; then
   export LANG="en_US.UTF-8"
 fi
 
-# Tell SSH about gpg-agent's SSH socket
-[[ -S ~/.gnupg/S.gpg-agent.ssh ]] && export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-
 # Move the user base directory to a subdirectory beneath .local, so the bin,
 # lib, etc directories don't pollute the top level directory
 export PYTHONUSERBASE=~/.local/pypi
