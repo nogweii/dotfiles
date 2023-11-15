@@ -26,16 +26,6 @@ _force_rehash() {
   return 1 # Because we didn't really complete anything
 }
 
-# Based off http://gist.github.com/172292. Idea by @defunkt
-# gist it! http://gist.github.com/172323 (zsh fork)
-function _ruby_or_irb() {
-    if [[ "$1" == "" ]]; then
-        command irb -f -I"${DOTSDIR}/config/irb" -r irb_conf
-    else
-        command ruby $@
-    fi
-}
-
 # Uses xdotool & the environment variable $WINDOWID to check if the current
 # window is focused in X11. Also requires $DISPLAY to be set (used as a signal
 # that X11 is indeed running).

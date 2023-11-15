@@ -10,9 +10,6 @@ name-dir() {
   echo "~${1}"
 }
 
-alias ruby=_ruby_or_irb
-alias irb=_ruby_or_irb
-
 function detach() {
     # Create the directory where we store the sockets, if it doesn't already
     # exist
