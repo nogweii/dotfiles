@@ -11,16 +11,6 @@ elif [ -S "${XDG_RUNTIME_DIR}/ssh-agent.socket" ]; then
     export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
     SSH_AUTH_SOCK_SOURCE="runtime-ssh-agent"
 
-# user systemd managed GnuPG SSH agent compatible
-elif [ -S "${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh" ]; then
-    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-    SSH_AUTH_SOCK_SOURCE="runtime-gpg-agent"
-
-# old GnuPG agent location
-elif [ -S ~/.gnupg/S.gpg-agent.ssh ]; then
-    export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-    SSH_AUTH_SOCK_SOURCE="legacy-gpg-agent"
-
 # ssh-agent-wsl installed to my home directory allows me to use Windows 10's
 # ssh-agent in WSL
 elif [ -n "${LXSS}" ]; then
@@ -33,7 +23,6 @@ elif [ -n "${LXSS}" ]; then
 # Use keychain to launch a shared SSH agent across terminals when there is
 # no gnome-keyring
 elif [ -n "${commands[keychain]}" ]; then
-    eval $(keychain --eval --quiet --timeout 120 --noask --agents ssh --absolute --dir $XDG_CACHE_HOME/keychain --host localhost)
+    eval $(keychain --eval --quiet --noask --agents ssh --absolute --dir $XDG_RUNTIME_DIR/keychain --systemd)
     SSH_AUTH_SOCK_SOURCE="gentoo-keychain"
 fi
-
