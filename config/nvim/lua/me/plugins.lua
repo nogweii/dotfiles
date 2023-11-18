@@ -1,15 +1,4 @@
 local plugins = {
-  -- use packer to manage packer
-  { "wbthomason/packer.nvim" },
-
-  -- Bug fix https://github.com/neovim/neovim/issues/12587
-  -- and see the readme: https://github.com/antoinemadec/FixCursorHold.nvim/blob/master/README.md
-  { "antoinemadec/FixCursorHold.nvim" },
-
-  -- a few performance optimiziation tweaks to neovim.
-  -- remove once neovim core gets something similar: https://github.com/neovim/neovim/pull/15436
-  { "lewis6991/impatient.nvim" },
-
   -- Automatically jump to the project's root directory
   {
     "ahmedkhalf/project.nvim",
@@ -22,8 +11,12 @@ local plugins = {
     end,
   },
 
+  { "nvim-tree/nvim-web-devicons", lazy = true },
+  { "MunifTanjim/nui.nvim", lazy = true },
+  { "nvim-lua/plenary.nvim", lazy = true },
+
   -- a very beautiful tabline
-  { "romgrk/barbar.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "romgrk/barbar.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   -- a pretty file tree on the side
   {
@@ -31,7 +24,7 @@ local plugins = {
     -- branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
     config = function()
@@ -79,6 +72,8 @@ local plugins = {
 
   {
     "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("bamboo").setup({})
       require("bamboo").load()
@@ -107,7 +102,7 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- Additonal LSP setup for the neovim nvim lua API.
-      -- see config/nvim/lua/me/settings/lsp_servers/sumneko_lua.lua for additional details
+      -- see config/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
       "folke/neodev.nvim",
 
       -- a downloaded copy of the SchemaStore.org catalog
@@ -124,7 +119,7 @@ local plugins = {
   { "folke/neodev.nvim", opts = {} },
   {
     "folke/trouble.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("trouble").setup({
         -- your configuration comes here
@@ -171,12 +166,16 @@ local plugins = {
     config = function()
       require("me.settings.feline")
     end,
-    dependencies = { "kyazdani42/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
   },
 
   -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
   {
     "monaqa/dial.nvim",
+    keys = {
+      { "<C-a>", mode = "n", desc = "Increment or cycle the word under the cursor, smartly" },
+      { "<C-x>", mode = "n", desc = "Decrement or cycle the word under the cursor, smartly" }
+    },
     config = function()
       require("me.settings.dial_swaps")
     end,
@@ -227,7 +226,13 @@ local plugins = {
 
   -- A smarter cursor position restoration function, excluding various buffers
   -- where it makes sense, and opening folds if needed.
-  { "farmergreg/vim-lastplace" },
+  { "farmergreg/vim-lastplace",
+    init = function()
+      vim.g.lastplace_ignore_buftype = "quickfix,nofile,help"
+      vim.g.lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+      vim.g.lastplace_open_folds = 1
+    end
+  },
 
   -- Key bindings help & reminder
   {
@@ -241,6 +246,14 @@ local plugins = {
   {
     "mhinz/vim-grepper",
     cmd = "Grepper",
+    init = function ()
+      vim.g.grepper = {
+        open = 0,
+        quickfix = 1,
+        searchreg = 1,
+        highlight = 0,
+      }
+    end
   },
 
   {
@@ -390,6 +403,61 @@ local plugins = {
       })
     end,
   },
+
+  -- what is the LSP doing? did one connect?
+	{
+		"mrded/nvim-lsp-notify",
+    dependencies = { "rcarriga/nvim-notify", },
+		main = "lsp-notify",
+		config = function()
+      require('lsp-notify').setup({
+        notify = require('notify'),
+      })
+		end,
+	},
+
+  {
+    "stevearc/dressing.nvim",
+    lazy = true,
+    init = function()
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.select = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.select(...)
+      end
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.input = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.input(...)
+      end
+    end,
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    keys = {
+      {
+        "<leader>un",
+        function()
+          require("notify").dismiss({ silent = true, pending = true })
+        end,
+        desc = "Dismiss all Notifications",
+      },
+    },
+    opts = {
+      timeout = 3000,
+      max_height = function()
+        return math.floor(vim.o.lines * 0.75)
+      end,
+      max_width = function()
+        return math.floor(vim.o.columns * 0.75)
+      end,
+      on_open = function(win)
+        vim.api.nvim_win_set_config(win, { zindex = 100 })
+      end,
+    },
+  },
+
 }
 
 -- Bootstrap lazy.nvim by automatically cloning the git repo
