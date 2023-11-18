@@ -1,10 +1,5 @@
 -- Set various global variables to configure all of the plugins I've installed
 
-if vim.fn.executable("editorconfig") then
-  vim.g.EditorConfig_core_mode = "external_command"
-  vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
-end
-
 -- Switch to the file's current directory if we're not in a found project
 vim.g.rooter_change_directory_for_non_project_files = "current"
 -- Change only the local buffer's directory, not the entire vim

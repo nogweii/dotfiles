@@ -68,17 +68,6 @@ local plugins = {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 
-  -- Automatically configure various editor settings in a standard way
-  {
-    "editorconfig/editorconfig-vim",
-    init = function()
-      if vim.fn.executable("editorconfig") then
-        vim.g.EditorConfig_exec_path = vim.fn.exepath("editorconfig")
-        vim.g.EditorConfig_core_mode = "external_command"
-      end
-    end,
-  },
-
   -- Easily put a character/pair around some text. Sandwich a word between
   -- parentheses!
   {
