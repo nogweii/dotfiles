@@ -105,8 +105,8 @@ fi
 alias gen-sha-pwd='head -c64 /dev/random | sha256sum'
 
 # Lazy open command
-if [ "${XDG_SESSION_DESKTOP}" = "kde" ]; then
-    alias open=kde-open5
+if [ "${XDG_SESSION_DESKTOP:l}" = "kde" ]; then
+    alias open='kde-open5 2>/dev/null'
 fi
 
 if [ -x "${commands[systemctl]}" ]; then
