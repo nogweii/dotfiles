@@ -9,6 +9,7 @@ vim.opt.complete       = vim.opt.complete + 'kspell'         -- Scan spell check
 vim.opt.completeopt    = "noinsert,menuone,noselect,preview"
 vim.opt.conceallevel   = 2                                   -- Automatically conceal characters
 vim.opt.errorbells     = false                               -- Disable any error bells
+vim.opt.exrc           = true                                -- Turn on reading local project configuration
 vim.opt.fileencoding   = "utf-8"                             -- Default to assuming files are encoded in UTF-8
 vim.opt.fileformat     = "unix"                              -- Prefer UNIX line endings
 vim.opt.foldlevel      = 5                                   -- Only fold sections deeper than this level automatically
