@@ -86,15 +86,6 @@ end)
 -- Tap - to jump into a file pane
 cmd_map({ keys = "-", command = "Neotree filesystem reveal current" })
 
--- a much smarter <C-a> and <C-x> that know how to flip through enumerated lists
--- and manipulate additional number formats & dates
-plug_map({ keys = "<C-a>", command = "dial-increment" })
-plug_map({ keys = "<C-x>", command = "dial-decrement" })
-plug_map({ mode = "v", keys = "<C-a>", command = "dial-increment" })
-plug_map({ mode = "v", keys = "<C-x>", command = "dial-decrement" })
-plug_map({ mode = "v", keys = "g<C-a>", command = "dial-increment" })
-plug_map({ mode = "v", keys = "g<C-x>", command = "dial-decrement" })
-
 -- easy buffer switching, that's barbar-aware
 cmd_map({ keys = "<C-n>", command = "BufferNext" })
 cmd_map({ keys = "<C-p>", command = "BufferPrev" })

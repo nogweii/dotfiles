@@ -1,66 +1,5 @@
+---@type LazySpec
 return {
-  -- Automatically jump to the project's root directory
-  {
-    "ahmedkhalf/project.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", },
-    config = function()
-      require("project_nvim").setup({
-        patterns = { "!>packages", ">code", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
-      })
-      require('telescope').load_extension('projects')
-    end,
-  },
-
-  { "nvim-tree/nvim-web-devicons", lazy = true },
-  { "MunifTanjim/nui.nvim", lazy = true },
-  { "nvim-lua/plenary.nvim", lazy = true },
-
-  -- a very beautiful tabline
-  { "romgrk/barbar.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-
-  -- a pretty file tree on the side
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    -- branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-    config = function()
-      require("me.settings.neo-tree")
-    end,
-  },
-
-  -- preview colors inline in the editor
-  {
-    "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("me.settings.treesitter")
-    end,
-    event = "BufRead",
-  },
-  -- Treesitter compatible rainbow parentheses
-  { "HiPhish/rainbow-delimiters.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-  -- Dynamically set &commentstring when moving around files with multiple filetypes combined
-  { "JoosepAlviste/nvim-ts-context-commentstring", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-  -- Add some context to where I am in a file
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup({})
-    end,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-
   -- Easily put a character/pair around some text. Sandwich a word between
   -- parentheses!
   {
@@ -88,13 +27,7 @@ return {
   -- alias 'nvim-startup-benchmark'
   { "tweekmonster/startuptime.vim", cmd = "StartupTime" },
 
-  { "tpope/vim-repeat" },
   { "tpope/vim-characterize" },
-  { "tpope/vim-eunuch" },
-  { "tpope/vim-fugitive" },
-  -- get more recently updated git related syntax files
-  -- this is the upstream source of what is shipped with the editor
-  { "tpope/vim-git" },
   { "tpope/vim-rsi" },
 
   -- a collection of LSP configs
@@ -116,7 +49,19 @@ return {
     version = false, -- use latest commit rather than version
   },
 
-  { "folke/neodev.nvim", opts = {} },
+  {
+    "folke/neodev.nvim",
+    lazy = true,
+    opts = {
+      library = {
+        enabled = true,
+        plugins = true,
+      },
+      lspconfig = false,
+      pathStrict = true,
+    }
+  },
+
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -129,53 +74,14 @@ return {
     end,
   },
 
-  -- put git change information in the sidebar, provide some helpers
-  -- to manage git hunks
-  {
-    "lewis6991/gitsigns.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("gitsigns").setup({})
-    end,
-  },
-  -- show git blame in a popup
-  { "rhysd/git-messenger.vim", cmd = "GitMessenger" },
-  -- yank a link to the commit
-  {
-    "ruifm/gitlinker.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("gitlinker").setup({
-        opts = {
-          add_current_line_on_normal_mode = false,
-          action_callback = require("gitlinker.actions").copy_to_clipboard,
-        },
-        callbacks = {
-          ["code.aether.earth"] = require("gitlinker.hosts").get_gitlab_type_url,
-        },
-        mappings = nil,
-      })
-    end,
-  },
-
-  -- a very customizble status bar framework for Neovim written in Lua
-  {
-    "feline-nvim/feline.nvim",
-    config = function()
-      require("me.settings.feline")
-    end,
-    dependencies = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
-  },
-
   -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
   {
     "monaqa/dial.nvim",
     keys = {
-      { "<C-a>", mode = "n", desc = "Increment or cycle the word under the cursor, smartly" },
-      { "<C-x>", mode = "n", desc = "Decrement or cycle the word under the cursor, smartly" }
+      { "<C-a>", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
+      { "<C-x>", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
+      { "g<C-a>", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
+      { "g<C-x>", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
     },
     config = function()
       require("me.settings.dial_swaps")
@@ -255,13 +161,6 @@ return {
         highlight = 0,
       }
     end
-  },
-
-  {
-    "kevinhwang91/nvim-bqf",
-    config = function()
-      require("bqf").setup()
-    end,
   },
 
   -- snippets engine
@@ -416,47 +315,4 @@ return {
       })
 		end,
 	},
-
-  {
-    "stevearc/dressing.nvim",
-    lazy = true,
-    init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.select = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
-        return vim.ui.select(...)
-      end
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.input = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
-        return vim.ui.input(...)
-      end
-    end,
-  },
-
-  {
-    "rcarriga/nvim-notify",
-    keys = {
-      {
-        "<leader>un",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
-        desc = "Dismiss all Notifications",
-      },
-    },
-    opts = {
-      timeout = 3000,
-      max_height = function()
-        return math.floor(vim.o.lines * 0.75)
-      end,
-      max_width = function()
-        return math.floor(vim.o.columns * 0.75)
-      end,
-      on_open = function(win)
-        vim.api.nvim_win_set_config(win, { zindex = 100 })
-      end,
-    },
-  },
-
 }

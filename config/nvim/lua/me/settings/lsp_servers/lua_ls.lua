@@ -12,5 +12,6 @@ return {
         enable = false,
       },
     },
-  }
+  },
+  before_init = require("neodev.lsp").before_init,
 }
