@@ -45,6 +45,19 @@ local opts = {
   defaults = {
     version = "*",
   },
+  performance = {
+    rtp = {
+      paths = { "/usr/lib/nvim" },
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      }
+    },
+  },
 }
 
 require("lazy").setup("me.plugins", opts)
