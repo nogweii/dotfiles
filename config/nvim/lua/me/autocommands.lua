@@ -62,3 +62,19 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost", "FileReadPost" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    local resession = require('resession')
+    -- Only load the session if nvim was started with no args
+    if vim.fn.argc(-1) == 0 then
+      resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
+    end
+  end,
+})
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    local resession = require('resession')
+    resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
+  end,
+})

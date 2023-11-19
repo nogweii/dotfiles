@@ -50,6 +50,9 @@ return {
           mappings = {
             ["gof"] = "open_dir",
             ["got"] = "open_term",
+            y = "yank_rel_path",
+            Y = "yank_abs_path",
+            c = "copy_to_clipboard"
           },
         },
 
@@ -69,6 +72,20 @@ return {
             end
             vim.call("gtfo#open#term", path, "")
           end,
+
+          yank_rel_path = function(state)
+            local node = state.tree:get_node()
+            local path = vim.fn.fnamemodify(node:get_id(), ":.")
+            vim.notify("Copied: " .. path)
+            vim.fn.setreg("+", path)
+          end,
+
+          yank_abs_path = function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            vim.notify("Copied: " .. path)
+            vim.fn.setreg("+", path)
+          end
         },
       },
       event_handlers = {
@@ -82,5 +99,6 @@ return {
       },
     },
     version = "*",
+    cmd = "Neotree",
   },
 }

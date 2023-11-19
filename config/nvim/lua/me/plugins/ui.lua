@@ -32,37 +32,34 @@ return {
     end,
   },
 
+  -- pretty replacement for the vim notifications messages
   {
     "rcarriga/nvim-notify",
-    keys = {
-      {
-        "<leader>un",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
-        desc = "Dismiss all Notifications",
-      },
-    },
     opts = {
       timeout = 3000,
+      render = "wrapped-compact",
+      stages = "slide",
+
       max_height = function()
-        return math.floor(vim.o.lines * 0.75)
+        return math.floor(vim.o.lines * 0.5)
       end,
       max_width = function()
-        return math.floor(vim.o.columns * 0.75)
+        return math.floor(vim.o.columns * 0.5)
       end,
       on_open = function(win)
         vim.api.nvim_win_set_config(win, { zindex = 100 })
       end,
     },
+    lazy = false,
+    config = function()
+      vim.notify = require("notify")
+    end
   },
 
   -- preview colors inline in the editor
   {
     "NvChad/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
+    opts = {},
   },
 
   -- a very beautiful tabline
