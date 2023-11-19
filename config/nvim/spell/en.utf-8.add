@@ -408,3 +408,6 @@ ENV
 pipefail
 env
 australium
+treesitter
+neovim
+nvim
