@@ -1,4 +1,4 @@
-local plugins = {
+return {
   -- Automatically jump to the project's root directory
   {
     "ahmedkhalf/project.nvim",
@@ -133,6 +133,7 @@ local plugins = {
   -- to manage git hunks
   {
     "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -459,47 +460,3 @@ local plugins = {
   },
 
 }
-
--- Bootstrap lazy.nvim by automatically cloning the git repo
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  if not vim.fn.executable("git") then
-    print("Lazy.nvim not installed and git not found in PATH. Plugins aren't available!")
-  else
-    vim.fn.system({
-      "git",
-      "clone",
-      "--filter=blob:none",
-      "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable", -- latest stable release
-      lazypath,
-    })
-    print("Lazy.nvim git repository cloned.")
-  end
-end
-vim.opt.rtp:prepend(lazypath)
-
-local opts = {
-  ui = {
-    icons = {
-      cmd = "⌘",
-      config = "🛠",
-      event = "📅",
-      ft = "📂",
-      init = "⚙",
-      keys = "🗝",
-      plugin = "🔌",
-      runtime = "💻",
-      source = "📄",
-      start = "🚀",
-      task = "📌",
-      lazy = "💤 ",
-    },
-  },
-
-  defaults = {
-    version = "*",
-  },
-}
-
-require("lazy").setup(plugins, opts)

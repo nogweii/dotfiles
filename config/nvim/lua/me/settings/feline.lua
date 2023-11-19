@@ -36,7 +36,7 @@ local components = {
       if next(vim.lsp.buf_get_clients(0)) ~= nil then
         -- an LSP server is installed & actively connected, hurrah!
         return {
-          str = "力",
+          str = "󰒋",
           hl = {
             bg = "#343a40",
             fg = "skyblue",
