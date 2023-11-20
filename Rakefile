@@ -16,18 +16,20 @@ Dir.chdir gitdir
 # Only show shell commands if we didn't run rake with -v or -t
 RakeFileUtils.verbose_flag = false unless @extra_information
 
-def dotfiles_list
-  (
-    # Start with everything in this directory, but not recursively
-    Dir['*'] -
-    # Don't symlink the following
-    %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
-    # Add these extra to the list to be symlink'd
-    %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb]
-  ).sort
-end
+DOTFILES = [
+  # Start with everything in this directory, but not recursively
+  Dir['*'] -
+  # Don't symlink the following
+  %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
+  # Add these extra to the list to be symlink'd
+  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb]
+].flatten.sort
 
-DOTFILES = []
+# if File.exist? File.expand_path '~/.local/share/konsole'
+#   dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
+# end
+
+task default: [:submodules, :prepare, :dotfiles, :unnecessary]
 
 # ~/.<dotfile> can be one of 3 states:
 #  - Doesn't exist
@@ -40,23 +42,15 @@ DOTFILES = []
 # - If it's a regular file/directory, we assume that there is content that you
 #   want to keep, and therefore we should not touch the file
 # - All symlinks are free game. We replace the symlink with whatever we want.
-#
-# This function builds a file task for Rake that resolves the above conditions.
-# Takes a local file path (relative to the root of the repository) and will
-# attempt to symlink the matching location (relative to $HOME, with a dot
-# prefixing it) to the source file within the repository.
-#
-# @param [String] dotfile The local file in the repo to be symlinked to $HOME
-# @param [String] home_path The destination path for the file, guessed from dotfile
-def dottask(dotfile, home_path = nil)
-  # Absolute path to where we're going to symlink in $HOME
-  home_abs_path = File.expand_path (home_path || "~/.#{dotfile}")
+desc 'Symlinks all my dotfiles'
+task :dotfiles  do
+  DOTFILES.each do |dotfile|
+    # Absolute path to where we're going to symlink in $HOME
+    home_abs_path = File.expand_path "~/.#{dotfile}"
 
-  # Absolute path to the real file, stored in the repository
-  repo_abs_path = File.expand_path "./#{dotfile}"
+    # Absolute path to the real file, stored in the repository
+    repo_abs_path = File.expand_path "./#{dotfile}"
 
-  # Build the file task that sets up the symlink
-  file home_abs_path do
     if not File.exist? home_abs_path
       symlink repo_abs_path, home_abs_path
     elsif File.symlink? home_abs_path
@@ -66,23 +60,7 @@ def dottask(dotfile, home_path = nil)
       warn "File '#{home_abs_path}' exists but is not a symlink. Not touching it!"
     end
   end
-
-  # This is a file we're managing, so append it to the list of files that we
-  # can clean
-  DOTFILES << home_abs_path
 end
-
-dotfiles_list.each do |dotfile|
-  dottask dotfile
-end
-if File.exist? File.expand_path '~/.local/share/konsole'
-  dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
-end
-
-task default: :dotfiles
-
-desc 'Symlinks all my dotfiles'
-task dotfiles: [:submodules, :prepare, DOTFILES, :unnecessary].flatten
 
 desc 'Initialize all submodules'
 task :submodules do
@@ -167,7 +145,7 @@ task :unnecessary do
     File.symlink? abs_path and File.readlink(abs_path).start_with?(File.expand_path('.'))
   end.map { |item| 'config/' + item.sub(/^\./, '') }
 
-  ((home_links + config_links) - dotfiles_list).each do |path|
+  ((home_links + config_links) - DOTFILES).each do |path|
     rm_r File.join(File.expand_path('~'), '.' + path)
   end
 end
