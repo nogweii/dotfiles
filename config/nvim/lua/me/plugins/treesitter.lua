@@ -17,9 +17,6 @@ return {
         },
       })
 
-      vim.wo.foldmethod = "expr"
-      vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-
       require('ts_context_commentstring').setup {}
     end,
     event = "BufRead",
