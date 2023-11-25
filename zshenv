@@ -50,7 +50,6 @@ path=(
 )
 
 fpath=(
-  $DOTSDIR/zsh/plugins/users-completions/src
   $DOTSDIR/zsh/functions
   $DOTSDIR/zsh/zle-widgets
   /usr/share/zsh/site-functions
