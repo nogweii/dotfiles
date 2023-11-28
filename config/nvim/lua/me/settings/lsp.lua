@@ -83,6 +83,7 @@ local binaries_to_lsp = {
   { "ansible-language-server", "ansiblels" },
   { "terraform-ls", "terraformls" },
   { "marksman", "marksman" },
+  { "docker-langserver", "dockerls" },
 }
 
 for _, lsp_map in pairs(binaries_to_lsp) do
