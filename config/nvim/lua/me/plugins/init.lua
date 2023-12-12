@@ -171,40 +171,6 @@ return {
     end
   },
 
-  -- snippets engine
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    config = function()
-      require("me.settings.luasnip")
-    end,
-  },
-  -- a bunch of community maintained snippets
-  { "rafamadriz/friendly-snippets" },
-
-  -- advanced & flexible completion menu
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require("me.settings.cmp")
-    end,
-    dependencies = { "L3MON4D3/LuaSnip" },
-  },
-  -- additional sources for cmp, lazily loaded
-  { "saadparwaiz1/cmp_luasnip" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-
-  -- Support HCL and other Hashicorp specific syntaxes
-  { "hashivim/vim-terraform" },
-
-  -- addtional syntax highlighting for postgresql extensions
-  {
-    "lifepillar/pgsql.vim",
-    ft = "sql",
-  },
-
   {
     "lukas-reineke/headlines.nvim",
     opts = function()
@@ -230,9 +196,6 @@ return {
       end)
     end,
   },
-
-  -- Add TICKscript (Influx Kapacitor 1.x) syntax
-  { "nathanielc/vim-tickscript" },
 
   -- quickly & easily generate a python docstring
   {
@@ -292,12 +255,6 @@ return {
       require("me.settings.formatter")
     end,
   },
-
-  -- ReasonML & ReScript syntax support
-  { "amiralies/vim-reason" },
-  { "rescript-lang/vim-rescript" },
-
-  { "Joorem/vim-haproxy" },
 
   {
     "echasnovski/mini.align",
