@@ -34,6 +34,7 @@ path=(
   /usr/local/{bin,sbin}        # Local administrator installed/odd-ball commands
   /usr/{bin,sbin}              # Most programs & binaries
   /{bin,sbin}                  # Lower-level, "basic" commands
+
   $path                        # System-provided paths
 
   $HOME/.local/share/cabal/bin # User-installed haskell packages
@@ -53,7 +54,6 @@ fpath=(
   $DOTSDIR/zsh/functions
   $DOTSDIR/zsh/zle-widgets
   /usr/share/zsh/site-functions
-  /opt/homebrew/share/zsh/site-functions
   $fpath
 )
 
@@ -79,6 +79,13 @@ if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
   manpath=(
     /opt/homebrew/share/man
     $manpath
+  )
+
+  # Homebrew installed zsh extras
+  fpath=(
+    $fpath
+    /opt/homebrew/share/zsh/site-functions
+    /opt/homebrew/share/zsh-completions
   )
 fi
 
