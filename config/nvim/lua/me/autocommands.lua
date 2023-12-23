@@ -78,3 +78,12 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
     resession.save(vim.fn.getcwd(), { dir = "dirsession", notify = false })
   end,
 })
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    vim.opt_local.path:append(vim.tbl_map(function (folder)
+      return folder.name
+    end, client.workspace_folders))
+  end
+})
