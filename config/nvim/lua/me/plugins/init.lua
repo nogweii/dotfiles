@@ -86,10 +86,10 @@ return {
   {
     "monaqa/dial.nvim",
     keys = {
-      { "<C-a>", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
-      { "<C-x>", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
-      { "g<C-a>", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
-      { "g<C-x>", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
+      { "<C-a>", "<Plug>(dial-increment)", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
+      { "<C-x>", "<Plug>(dial-increment)", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
+      { "g<C-a>", "g<Plug>(dial-increment)", mode = {"n", "v"}, desc = "Increment or cycle the word under the cursor, smartly" },
+      { "g<C-x>", "g<Plug>(dial-increment)", mode = {"n", "v"}, desc = "Decrement or cycle the word under the cursor, smartly" },
     },
     config = function()
       require("me.settings.dial_swaps")
