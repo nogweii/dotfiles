@@ -64,7 +64,7 @@ cmd_map({ keys = "ZW", command = "update" })
 -- TODO: integrate it with my workspace concept, editing a project-local lua file instead
 cmd_map({ keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua" })
 -- Easily search the directory
-cmd_map({ keys = "ZG", command = "Grepper" })
+cmd_map({ keys = "ZG", command = "Telescope live_grep" })
 plug_map({ mode = "o", keys = "gs", command = "GrepperOperator" })
 plug_map({ mode = "x", keys = "gs", command = "GrepperOperator" })
 -- Visualize the undo history of the file

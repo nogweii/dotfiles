@@ -49,7 +49,6 @@
   "vim-eunuch": { "branch": "master", "commit": "39e0232f490322c5a2d9e24275872f28da496a93" },
   "vim-fugitive": { "branch": "master", "commit": "96c1009fcf8ce60161cc938d149dd5a66d570756" },
   "vim-git": { "branch": "master", "commit": "290f5994e56477e50fe3fc0acfcb0d5973b81785" },
-  "vim-grepper": { "branch": "master", "commit": "5e0cc1c5753a7a81ca8ce3242888479faefbfabd" },
   "vim-gtfo": { "branch": "master", "commit": "7b2177d68f9492af1be6d13bf65d28377dfbec6e" },
   "vim-haproxy": { "branch": "master", "commit": "1d93a843b4c567c2f499ba0c7ed60c435109ee53" },
   "vim-lastplace": { "branch": "master", "commit": "bb3191b134ade9d1f01014e17c3df91e8911dd5c" },

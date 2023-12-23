@@ -157,20 +157,6 @@ return {
     end,
   },
 
-  -- Asynchronously use search tools
-  {
-    "mhinz/vim-grepper",
-    cmd = "Grepper",
-    init = function ()
-      vim.g.grepper = {
-        open = 0,
-        quickfix = 1,
-        searchreg = 1,
-        highlight = 0,
-      }
-    end
-  },
-
   {
     "lukas-reineke/headlines.nvim",
     opts = function()
