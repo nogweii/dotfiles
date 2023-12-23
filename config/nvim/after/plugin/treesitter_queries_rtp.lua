@@ -12,6 +12,8 @@ if not vim.o.runtimepath:find(system_rtp_dir) then
   return
 end
 
+-- The particular choice of Ruby is because I like it, not that the ruby
+-- highlights file is special
 local ruby_queries = vim.api.nvim_get_runtime_file('queries/ruby/highlights.scm', true)
 
 if #ruby_queries > 1 then

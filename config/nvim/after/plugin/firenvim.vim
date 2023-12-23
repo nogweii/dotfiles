@@ -1,7 +1,6 @@
 function! s:FirenvimSettingTweaks(event) abort
   " No need for a tab bar when the window is probably only ~3 lines tall
   set showtabline=0
-  exec ':BarbarDisable'
 endfunction
 
 " Global defaults for firenvim
