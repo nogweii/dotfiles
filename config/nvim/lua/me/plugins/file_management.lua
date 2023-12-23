@@ -8,6 +8,8 @@ return {
     config = function()
       require("project_nvim").setup({
         patterns = { "!>packages", ">code", ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+        -- try matching a pattern first, *then* use the LSP server's idea
+        detection_methods = { "pattern", "lsp" },
       })
       require('telescope').load_extension('projects')
     end,
