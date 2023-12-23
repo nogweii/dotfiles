@@ -21,9 +21,6 @@ return {
 
   { 'stevearc/resession.nvim', opts = {}, },
 
-  -- Launch the file manager or new terminal easily from within vim
-  { "justinmk/vim-gtfo" },
-
   -- Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
   -- present a nice display of what's taking so long startup. Also, see the shell
   -- alias 'nvim-startup-benchmark'
