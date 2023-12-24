@@ -2,8 +2,8 @@ _M = {}
 
 -- A little utility function to make nvim_set_keymap a bit more ergonomic
 function _M.map(args)
-  args = vim.tbl_extend("keep", args, {
-    mode = "", -- The vim mode for this map
+  args = vim.tbl_extend('keep', args, {
+    mode = '', -- The vim mode for this map
     keys = nil, -- The input sequence of keys to activate this mapping
     to = nil, -- Sequence to keys to 'type' into the editor
 
@@ -25,8 +25,8 @@ end
 function _M.plug_map(args)
   _M.map({
     keys = args.keys,
-    to = "<Plug>(" .. args.command .. ")",
-    mode = args.mode or "n",
+    to = '<Plug>(' .. args.command .. ')',
+    mode = args.mode or 'n',
     silent = true,
     recurse = true,
     plugins = true,
@@ -37,8 +37,8 @@ end
 function _M.cmd_map(args)
   _M.map({
     keys = args.keys,
-    to = "<cmd>" .. args.command .. "<CR>",
-    mode = args.mode or "n",
+    to = '<cmd>' .. args.command .. '<CR>',
+    mode = args.mode or 'n',
     silent = true,
     plugins = args.plugins == nil and true or args.plugins,
   })

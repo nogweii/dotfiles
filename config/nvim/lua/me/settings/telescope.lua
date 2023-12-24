@@ -1,22 +1,22 @@
-local actions = require("telescope.actions")
+local actions = require('telescope.actions')
 
-require("telescope").setup({
+require('telescope').setup({
   defaults = {
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
+        ['<esc>'] = actions.close,
       },
     },
   },
   pickers = {
     live_grep = {
-      theme = "ivy",
-      scroll_strategy = "limit",
+      theme = 'ivy',
+      scroll_strategy = 'limit',
       layout_config = {
         bottom_pane = {
           height = 15,
           preview_cutoff = 120,
-          prompt_position = "bottom"
+          prompt_position = 'bottom',
         },
       },
       prompt_title = false,
@@ -24,4 +24,4 @@ require("telescope").setup({
   },
 })
 
-require("telescope").load_extension("notify")
+require('telescope').load_extension('notify')

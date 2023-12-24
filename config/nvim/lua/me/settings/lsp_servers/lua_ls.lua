@@ -5,7 +5,7 @@ return {
         checkThirdParty = false,
       },
       completion = {
-        callSnippet = "Replace",
+        callSnippet = 'Replace',
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
@@ -13,5 +13,5 @@ return {
       },
     },
   },
-  before_init = require("neodev.lsp").before_init,
+  before_init = require('neodev.lsp').before_init,
 }

@@ -1,8 +1,8 @@
-vim.g.mapleader = ";"
+vim.g.mapleader = ';'
 
-local map = require("me.map_utils").map
-local cmd_map = require("me.map_utils").cmd_map
-local plug_map = require("me.map_utils").plug_map
+local map = require('me.map_utils').map
+local cmd_map = require('me.map_utils').cmd_map
+local plug_map = require('me.map_utils').plug_map
 
 --[[
                                  _
@@ -13,82 +13,82 @@ local plug_map = require("me.map_utils").plug_map
  |___/
  ]]
 -- Free up 'G' to be a generic prefix, and make gG do what G used to do
-map({ keys = "gG", to = "G" })
-map({ keys = "gG", to = "G", mode = "o" })
-map({ keys = "G", to = "", recurse = true })
+map({ keys = 'gG', to = 'G' })
+map({ keys = 'gG', to = 'G', mode = 'o' })
+map({ keys = 'G', to = '', recurse = true })
 
 -- change Y to only select the line starting from the cursor
-map({ keys = "Y", to = "y$" })
+map({ keys = 'Y', to = 'y$' })
 
 -- nop-out semicolon, it's my mapleader key
-map({ keys = ";", to = "", recurse = true })
+map({ keys = ';', to = '', recurse = true })
 -- but restore the functionality by using the comma key
-map({ keys = ",", to = ";" })
+map({ keys = ',', to = ';' })
 
 -- Easily (un)indent again in visual mode by immediately re-selecting
-map({ keys = "<", to = "<gv", mode = "v" })
-map({ keys = ">", to = ">gv", mode = "v" })
+map({ keys = '<', to = '<gv', mode = 'v' })
+map({ keys = '>', to = '>gv', mode = 'v' })
 
 -- Sometimes you just need to move a character or two in insert mode. Don't
 -- make these a habit, though!
-map({ keys = "<C-j>", to = "<Down>", mode = "i" })
-map({ keys = "<C-k>", to = "<Up>", mode = "i" })
-map({ keys = "<C-h>", to = "<Left>", mode = "i" })
-map({ keys = "<C-l>", to = "<Right>", mode = "i" })
+map({ keys = '<C-j>', to = '<Down>', mode = 'i' })
+map({ keys = '<C-k>', to = '<Up>', mode = 'i' })
+map({ keys = '<C-h>', to = '<Left>', mode = 'i' })
+map({ keys = '<C-l>', to = '<Right>', mode = 'i' })
 
 -- Swap ` and ', making ' more precise (line & column) by default
-map({ keys = "`", to = "'" })
-map({ keys = "'", to = "`" })
+map({ keys = '`', to = "'" })
+map({ keys = "'", to = '`' })
 
 -- Make interacting with the spell checking a little easier
-map({ keys = "zP", to = ":set spell!<CR>" }) -- Toggle spell check quickly
-map({ keys = "zp", to = "1z=" }) -- Accept the first spell correction
+map({ keys = 'zP', to = ':set spell!<CR>' }) -- Toggle spell check quickly
+map({ keys = 'zp', to = '1z=' }) -- Accept the first spell correction
 
 -- Attempt to clear the screen of artifacts and clear search highlight
-map({ keys = "<C-l>", to = "<c-l>:nohlsearch<CR>:redraw<CR>" })
+map({ keys = '<C-l>', to = '<c-l>:nohlsearch<CR>:redraw<CR>' })
 
 -- Map H and L to jump to the beginning or end of the line. H is smarter, in
 -- that it jumps between the first non-whitespace character or actual column 0.
-map({ keys = "H", to = "(col('.') == matchend(getline('.'), '^\\s*')+1 ? '0' : '^')", expression = true })
-map({ keys = "L", to = "$", recurse = true })
+map({ keys = 'H', to = "(col('.') == matchend(getline('.'), '^\\s*')+1 ? '0' : '^')", expression = true })
+map({ keys = 'L', to = '$', recurse = true })
 
 -- Easily get out of insert mode in the terminal
-map({ keys = "<C-s>", to = "<C-\\><C-n>", recurse = true, mode = "t" })
+map({ keys = '<C-s>', to = '<C-\\><C-n>', recurse = true, mode = 't' })
 
 -- Fuzzy find a file to edit
-cmd_map({ keys = "ZE", command = "Telescope find_files previewer=false prompt_prefix=🔍\\ " })
-cmd_map({ keys = "ZD", command = "BufferWipeout" })
+cmd_map({ keys = 'ZE', command = 'Telescope find_files previewer=false prompt_prefix=🔍\\ ' })
+cmd_map({ keys = 'ZD', command = 'BufferWipeout' })
 -- Save the file only when the buffer has been modified.
-cmd_map({ keys = "ZW", command = "update" })
+cmd_map({ keys = 'ZW', command = 'update' })
 -- Easily edit my vimrc file
 -- TODO: integrate it with my workspace concept, editing a project-local lua file instead
-cmd_map({ keys = "ZL", command = "edit " .. vim.fn.stdpath("config") .. "/init.lua" })
+cmd_map({ keys = 'ZL', command = 'edit ' .. vim.fn.stdpath('config') .. '/init.lua' })
 -- Easily search the directory
-cmd_map({ keys = "ZG", command = "Telescope live_grep" })
-plug_map({ mode = "o", keys = "gs", command = "GrepperOperator" })
-plug_map({ mode = "x", keys = "gs", command = "GrepperOperator" })
+cmd_map({ keys = 'ZG', command = 'Telescope live_grep' })
+plug_map({ mode = 'o', keys = 'gs', command = 'GrepperOperator' })
+plug_map({ mode = 'x', keys = 'gs', command = 'GrepperOperator' })
 -- Visualize the undo history of the file
-cmd_map({ keys = "ZU", command = "UndotreeToggle" })
+cmd_map({ keys = 'ZU', command = 'UndotreeToggle' })
 -- Find all of the code tags (TODO, NOTE, FIXME, etc) in the project
-cmd_map({ keys = "ZT", command = "CodeTagSearch" })
-cmd_map({ keys = "ZR", command = "TroubleToggle" })
-vim.keymap.set("n", "Z-", function()
-  require('telescope').extensions.projects.projects{}
-end, { desc = "Select project" })
-vim.keymap.set("n", "Z=", function()
+cmd_map({ keys = 'ZT', command = 'CodeTagSearch' })
+cmd_map({ keys = 'ZR', command = 'TroubleToggle' })
+vim.keymap.set('n', 'Z-', function()
+  require('telescope').extensions.projects.projects({})
+end, { desc = 'Select project' })
+vim.keymap.set('n', 'Z=', function()
   -- Ask the LSPs to format stuff
   vim.lsp.buf.formatting_sync()
 
   -- And ask formatter.nvim to do it's thing
-  require("formatter.format").format("", "", 1, 1, { lock = true, write = false })
+  require('formatter.format').format('', '', 1, 1, { lock = true, write = false })
 end)
 
 -- Tap - to jump into a file pane
-cmd_map({ keys = "-", command = "Neotree filesystem reveal current" })
+cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
 
 -- easy buffer switching, that's barbar-aware
-cmd_map({ keys = "<C-n>", command = "BufferNext" })
-cmd_map({ keys = "<C-p>", command = "BufferPrev" })
+cmd_map({ keys = '<C-n>', command = 'BufferNext' })
+cmd_map({ keys = '<C-p>', command = 'BufferPrev' })
 
 --[[
        _ _
@@ -99,22 +99,22 @@ cmd_map({ keys = "<C-p>", command = "BufferPrev" })
  |___/
  ]]
 -- Git hunk jumps, that behave the same when diffing two files
-map({ keys = "]c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true })
-map({ keys = "[c", to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true })
+map({ keys = ']c', to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true })
+map({ keys = '[c', to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true })
 -- a motion to select the whole hunk
-map({ mode = "o", keys = "ih", to = "<cmd>lua require('gitsigns').select_hunk()<CR>" })
-map({ mode = "x", keys = "ih", to = "<cmd>lua require('gitsigns').select_hunk()<CR>" })
-cmd_map({ keys = "<leader>gb", command = "GitMessenger" })
-map({ keys = "<leader>gS", to = "<cmd>lua require('gitsigns').stage_hunk()<CR>" })
-map({ keys = "<leader>gU", to = "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>" })
-map({ keys = "<leader>gp", to = "<cmd>lua require('gitsigns').preview_hunk()<CR>" })
-map({ keys = "<leader>gY", to = "<cmd>lua require('gitlinker').get_repo_url()<cr>" })
+map({ mode = 'o', keys = 'ih', to = "<cmd>lua require('gitsigns').select_hunk()<CR>" })
+map({ mode = 'x', keys = 'ih', to = "<cmd>lua require('gitsigns').select_hunk()<CR>" })
+cmd_map({ keys = '<leader>gb', command = 'GitMessenger' })
+map({ keys = '<leader>gS', to = "<cmd>lua require('gitsigns').stage_hunk()<CR>" })
+map({ keys = '<leader>gU', to = "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>" })
+map({ keys = '<leader>gp', to = "<cmd>lua require('gitsigns').preview_hunk()<CR>" })
+map({ keys = '<leader>gY', to = "<cmd>lua require('gitlinker').get_repo_url()<cr>" })
 map({
-  keys = "<leader>gB",
+  keys = '<leader>gB',
   to = "<cmd>lua require('gitlinker').get_repo_url({action_callback = require('gitlinker.actions').open_in_browser})<cr>",
 })
-map({ keys = "<leader>gy", to = "<cmd>lua require('gitlinker').get_buf_range_url('n')<cr>" })
-map({ keys = "<leader>gy", to = "<cmd>lua require('gitlinker').get_buf_range_url('v')<cr>", mode = "v" })
+map({ keys = '<leader>gy', to = "<cmd>lua require('gitlinker').get_buf_range_url('n')<cr>" })
+map({ keys = '<leader>gy', to = "<cmd>lua require('gitlinker').get_buf_range_url('v')<cr>", mode = 'v' })
 
 --[[
  _ _       _
@@ -124,9 +124,9 @@ map({ keys = "<leader>gy", to = "<cmd>lua require('gitlinker').get_buf_range_url
 |_|_|_| |_|\__\___|_|
  ]]
 -- linter errors & LSP diagnostics management via ALE
-cmd_map({ keys = "[d", command = "ALEPreviousWrap" })
-cmd_map({ keys = "]d", command = "ALENextWrap" })
-cmd_map({ keys = "<leader>df", command = "ALEFix" })
-cmd_map({ keys = "<leader>dd", command = "ALEDetail" })
-cmd_map({ keys = "<leader>dl", command = "ALELint" })
-cmd_map({ keys = "<leader>dL", command = "ALEToggle" })
+cmd_map({ keys = '[d', command = 'ALEPreviousWrap' })
+cmd_map({ keys = ']d', command = 'ALENextWrap' })
+cmd_map({ keys = '<leader>df', command = 'ALEFix' })
+cmd_map({ keys = '<leader>dd', command = 'ALEDetail' })
+cmd_map({ keys = '<leader>dl', command = 'ALELint' })
+cmd_map({ keys = '<leader>dL', command = 'ALEToggle' })

@@ -1,5 +1,5 @@
-require("neodev").setup({})
-local lspconfig = require("lspconfig")
+require('neodev').setup({})
+local lspconfig = require('lspconfig')
 
 -- keymaps
 local function on_attach(client, bufnr)
@@ -10,24 +10,24 @@ local function on_attach(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
 
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
-  buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "<C-]>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-  buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 
   -- Not all LSPs implement every bit of functionality; check the particular
   -- LSP server we've attached to for these
 
   if client.server_capabilities.document_formatting or client.server_capabilities.document_range_formatting then
-    buf_set_option("formatexpr", "v:lua.vim.lsp.formatexpr(#{timeout_ms:250})")
+    buf_set_option('formatexpr', 'v:lua.vim.lsp.formatexpr(#{timeout_ms:250})')
   end
 end
 
@@ -41,8 +41,8 @@ local make_capabilities = function()
   -- I've set up LuaSnip, which knows how to parse LSP provided snippets
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-  local cmp_lsp_caps = require("cmp_nvim_lsp").default_capabilities()
-  vim.tbl_deep_extend("force", capabilities, cmp_lsp_caps)
+  local cmp_lsp_caps = require('cmp_nvim_lsp').default_capabilities()
+  vim.tbl_deep_extend('force', capabilities, cmp_lsp_caps)
 
   return capabilities
 end
@@ -54,9 +54,9 @@ local function setup_lsp_server(name)
     capabilities = make_capabilities(),
   }
 
-  local has_lsp_config, custom_lsp_config = pcall(require, "me.settings.lsp_servers." .. name)
+  local has_lsp_config, custom_lsp_config = pcall(require, 'me.settings.lsp_servers.' .. name)
   if has_lsp_config then
-    opts = vim.tbl_deep_extend("force", opts, custom_lsp_config)
+    opts = vim.tbl_deep_extend('force', opts, custom_lsp_config)
   end
 
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -66,24 +66,24 @@ end
 -- A list of binaries found in $PATH and what configuration
 -- that powers
 local binaries_to_lsp = {
-  { "bash-language-server", "bashls" },
-  { "vscode-html-languageserver", "html" },
-  { "vscode-css-languageserver", "cssls" },
-  { "vscode-json-languageserver", "jsonls" },
-  { "yaml-language-server", "yamlls" },
-  { "lua-language-server", "lua_ls" },
-  { "typescript-language-server", "tsserver" },
-  { "gopls", "gopls" },
-  { "zk", "zk" },
-  { "texlab", "texlab" },
-  { "ccls", "ccls" },
-  { "dhall-lsp-server", "dhall_lsp_server" },
-  { "haskell-language-server-wrapper", "hls" },
-  { "pylsp", "pylsp" },
-  { "ansible-language-server", "ansiblels" },
-  { "terraform-ls", "terraformls" },
-  { "marksman", "marksman" },
-  { "docker-langserver", "dockerls" },
+  { 'bash-language-server', 'bashls' },
+  { 'vscode-html-languageserver', 'html' },
+  { 'vscode-css-languageserver', 'cssls' },
+  { 'vscode-json-languageserver', 'jsonls' },
+  { 'yaml-language-server', 'yamlls' },
+  { 'lua-language-server', 'lua_ls' },
+  { 'typescript-language-server', 'tsserver' },
+  { 'gopls', 'gopls' },
+  { 'zk', 'zk' },
+  { 'texlab', 'texlab' },
+  { 'ccls', 'ccls' },
+  { 'dhall-lsp-server', 'dhall_lsp_server' },
+  { 'haskell-language-server-wrapper', 'hls' },
+  { 'pylsp', 'pylsp' },
+  { 'ansible-language-server', 'ansiblels' },
+  { 'terraform-ls', 'terraformls' },
+  { 'marksman', 'marksman' },
+  { 'docker-langserver', 'dockerls' },
 }
 
 for _, lsp_map in pairs(binaries_to_lsp) do

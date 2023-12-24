@@ -1,5 +1,5 @@
-vim.g.material_style = "darker"
-require("material").setup({
+vim.g.material_style = 'darker'
+require('material').setup({
   styles = {
     comments = { italic = true },
   },
@@ -9,19 +9,19 @@ require("material").setup({
     -- Available plugins:
     -- "dap",
     -- "dashboard",
-    "gitsigns",
+    'gitsigns',
     -- "hop",
     -- "indent-blankline",
     -- "lspsaga",
     -- "mini",
-    "neogit",
-    "nvim-cmp",
+    'neogit',
+    'nvim-cmp',
     -- "nvim-navic",
     -- "nvim-tree",
     -- "sneak",
-    "telescope",
-    "trouble",
-    "which-key",
+    'telescope',
+    'trouble',
+    'which-key',
   },
 })
-vim.cmd("colorscheme material")
+vim.cmd('colorscheme material')

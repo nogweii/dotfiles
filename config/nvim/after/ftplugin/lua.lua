@@ -1,1 +1,1 @@
-vim.opt_local.suffixesadd:prepend "init.lua"
+vim.opt_local.suffixesadd:prepend('init.lua')

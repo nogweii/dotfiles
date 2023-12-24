@@ -1,11 +1,11 @@
-local cat = require("catppuccin")
+local cat = require('catppuccin')
 cat.setup({
   styles = {
-    functions = "NONE",
-    keywords = "NONE",
+    functions = 'NONE',
+    keywords = 'NONE',
   },
   integrations = {
-    ts_rainbow = "NONE",
+    ts_rainbow = 'NONE',
   },
 })
 -- Set the colorscheme

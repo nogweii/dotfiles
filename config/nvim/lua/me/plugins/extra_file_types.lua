@@ -1,24 +1,24 @@
 return {
   -- Support HCL and other Hashicorp specific syntaxes
-  { "hashivim/vim-terraform" },
+  { 'hashivim/vim-terraform' },
 
   -- addtional syntax highlighting for postgresql extensions
   {
-    "lifepillar/pgsql.vim",
-    ft = "sql",
+    'lifepillar/pgsql.vim',
+    ft = 'sql',
   },
 
   -- Add TICKscript (Influx Kapacitor 1.x) syntax
-  { "nathanielc/vim-tickscript" },
+  { 'nathanielc/vim-tickscript' },
 
   -- ReasonML & ReScript syntax support
-  { "amiralies/vim-reason" },
-  { "rescript-lang/vim-rescript" },
+  { 'amiralies/vim-reason' },
+  { 'rescript-lang/vim-rescript' },
 
-  { "Joorem/vim-haproxy" },
+  { 'Joorem/vim-haproxy' },
 
   {
-    "vim-crystal/vim-crystal",
+    'vim-crystal/vim-crystal',
     init = function()
       -- Disable the key mappings the plugin would make, most of them are redundant since I use
       -- specific plugins to handle the (generic) functionality

@@ -1,12 +1,12 @@
 return {
 
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
     version = false,
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      require("nvim-treesitter.configs").setup({
+      require('nvim-treesitter.configs').setup({
         -- Enable some modules shipped with nvim-treesitter
         highlight = {
           enable = true,
@@ -16,29 +16,29 @@ return {
         },
       })
     end,
-    event = "BufRead",
+    event = 'BufRead',
   },
 
   -- Treesitter compatible rainbow parentheses
   {
-    "HiPhish/rainbow-delimiters.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    'HiPhish/rainbow-delimiters.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       -- This module contains a number of default definitions
-      local rainbow_delimiters = require("rainbow-delimiters")
+      local rainbow_delimiters = require('rainbow-delimiters')
 
       ---@type rainbow_delimiters.config
       vim.g.rainbow_delimiters = {
         strategy = {
-          [""] = rainbow_delimiters.strategy["global"],
+          [''] = rainbow_delimiters.strategy['global'],
         },
         -- see |rb-delimiters-query| for more details on these
         query = {
-          [""] = "rainbow-delimiters",
-          lua = "rainbow-blocks",
-          latex = "rainbow-blocks",
-          javascript = "rainbow-parens",
-          typescript = "rainbow-parens",
+          [''] = 'rainbow-delimiters',
+          lua = 'rainbow-blocks',
+          latex = 'rainbow-blocks',
+          javascript = 'rainbow-parens',
+          typescript = 'rainbow-parens',
         },
         --[[ highlight = {
               'RainbowDelimiterRed',
@@ -55,17 +55,17 @@ return {
 
   -- Dynamically set &commentstring when moving around files with multiple filetypes combined
   {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {},
   },
 
   -- Add some context to where I am in a file
   {
-    "nvim-treesitter/nvim-treesitter-context",
+    'nvim-treesitter/nvim-treesitter-context',
     config = function()
-      require("treesitter-context").setup({})
+      require('treesitter-context').setup({})
     end,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 }

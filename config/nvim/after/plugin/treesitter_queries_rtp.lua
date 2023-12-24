@@ -6,7 +6,7 @@
 --
 -- Thus looking for queries for highlighting ruby code.
 
-local system_rtp_dir = "/usr/lib/nvim"
+local system_rtp_dir = '/usr/lib/nvim'
 
 if not vim.o.runtimepath:find(system_rtp_dir) then
   return
