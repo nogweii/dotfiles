@@ -87,3 +87,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, client.workspace_folders))
   end,
 })
+
+-- Configure the formatter for packer HCL files
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
+  pattern = { '*.pkr.hcl' },
+  callback = function()
+    require("conform").formatters_by_ft.hcl = { "packer_fmt" }
+  end
+})

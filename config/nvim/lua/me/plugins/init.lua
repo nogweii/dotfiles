@@ -254,13 +254,6 @@ return {
   { 'jiaoshijie/undotree', cmd = 'UndotreeToggle' },
 
   {
-    'mhartington/formatter.nvim',
-    config = function()
-      require('me.settings.formatter')
-    end,
-  },
-
-  {
     'echasnovski/mini.align',
     version = '*',
     config = function()

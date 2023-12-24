@@ -75,13 +75,6 @@ cmd_map({ keys = 'ZR', command = 'TroubleToggle' })
 vim.keymap.set('n', 'Z-', function()
   require('telescope').extensions.projects.projects({})
 end, { desc = 'Select project' })
-vim.keymap.set('n', 'Z=', function()
-  -- Ask the LSPs to format stuff
-  vim.lsp.buf.formatting_sync()
-
-  -- And ask formatter.nvim to do it's thing
-  require('formatter.format').format('', '', 1, 1, { lock = true, write = false })
-end)
 
 -- Tap - to jump into a file pane
 cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
