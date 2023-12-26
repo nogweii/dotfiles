@@ -22,13 +22,6 @@ local function on_attach(client, bufnr)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-
-  -- Not all LSPs implement every bit of functionality; check the particular
-  -- LSP server we've attached to for these
-
-  if client.server_capabilities.document_formatting or client.server_capabilities.document_range_formatting then
-    buf_set_option('formatexpr', 'v:lua.vim.lsp.formatexpr(#{timeout_ms:250})')
-  end
 end
 
 local make_capabilities = function()

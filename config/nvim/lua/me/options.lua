@@ -2,16 +2,16 @@
 -- Looking for configuration for plugins? Check settings/* and settings.lua
 
 -- stylua: ignore start
-vim.opt.background     = "dark"                              -- Use dark colors over lighter ones
-vim.opt.backspace      = "indent,eol,start"                  -- Smart backspace in insert mode
-vim.opt.backupdir      = vim.fn.stdpath("data") .. '/backup'
+vim.opt.background     = 'dark'                              -- Use dark colors over lighter ones
+vim.opt.backspace      = 'indent,eol,start'                  -- Smart backspace in insert mode
+vim.opt.backupdir      = vim.fn.stdpath('data') .. '/backup'
 vim.opt.complete       = vim.opt.complete + 'kspell'         -- Scan spell checker's dictionary for completion as well
-vim.opt.completeopt    = "noinsert,menuone,noselect,preview"
+vim.opt.completeopt    = 'noinsert,menuone,noselect,preview'
 vim.opt.conceallevel   = 2                                   -- Automatically conceal characters
 vim.opt.errorbells     = false                               -- Disable any error bells
 vim.opt.exrc           = true                                -- Turn on reading local project configuration
-vim.opt.fileencoding   = "utf-8"                             -- Default to assuming files are encoded in UTF-8
-vim.opt.fileformat     = "unix"                              -- Prefer UNIX line endings
+vim.opt.fileencoding   = 'utf-8'                             -- Default to assuming files are encoded in UTF-8
+vim.opt.fileformat     = 'unix'                              -- Prefer UNIX line endings
 vim.opt.foldlevel      = 5                                   -- Only fold sections deeper than this level automatically
 vim.opt.foldlevelstart = 5                                   -- Only fold sections deeper than this level automatically
 vim.opt.hidden         = true                                -- Allow changing buffers even with modifications
@@ -33,9 +33,9 @@ vim.opt.termguicolors  = true                                -- Use guifg over c
 vim.opt.title          = true                                -- Modify the terminal title
 vim.opt.undofile       = true                                -- Persist undo history across sessions
 vim.opt.updatetime     = 100                                 -- Millisecs idle before calling the CursorHold
-vim.opt.virtualedit    = "block"                             -- Block movement can go beyond end-of-line
+vim.opt.virtualedit    = 'block'                             -- Block movement can go beyond end-of-line
 vim.opt.wildmenu       = true                                -- Show completion matches in the status bar
-vim.opt.wildmode       = "longest,full"                      -- Expand the longest common match, then all
+vim.opt.wildmode       = 'longest,full'                      -- Expand the longest common match, then all
 vim.opt.wrap           = false                               -- Don't wrap lines
 -- stylua: ignore end
 
@@ -59,13 +59,13 @@ vim.opt.shortmess = vim.o.shortmess
 -- ignore a bunch of stuff in the wildmenu completion
 -- stylua: ignore
 vim.opt.wildignore = {
-  ".DS_Store", ".git", ".svn", ".hg",
-  "*.a", "*.o", "*.obj", "*.out",
-  "*.so", "*.dll", "*.exe", "*.bin",
-  "*~", "*.swp", "*.tmp",
-  "*.bmp", "*.gif", "*.ico", "*.jpg", "*.jpeg", "*.png",
-  "__pycache__", "*.pyc", "*pycache*",
-  "*.tar", "*.gz", "*.bz2", "*.zstd", "*.xz", "*.zip",
+  '.DS_Store', '.git', '.svn', '.hg',
+  '*.a', '*.o', '*.obj', '*.out',
+  '*.so', '*.dll', '*.exe', '*.bin',
+  '*~', '*.swp', '*.tmp',
+  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.jpeg', '*.png',
+  '__pycache__', '*.pyc', '*pycache*',
+  '*.tar', '*.gz', '*.bz2', '*.zstd', '*.xz', '*.zip',
   '*.ttf', '*.otf', '*.woff', '*.woff2', '*.eot'
 }
 
