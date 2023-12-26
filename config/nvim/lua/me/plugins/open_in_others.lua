@@ -32,7 +32,7 @@ return {
           pattern = '([\'"])([^/])/([^/])%1',
           prefix = 'https://github.com/',
           suffix = '',
-          file_patterns = { 'nvim/lua/.%S%.lua' },
+          file_patterns = { 'nvim/lua/.*plugins.*/.+%S%.lua$' },
           excluded_file_patterns = nil,
         },
 
