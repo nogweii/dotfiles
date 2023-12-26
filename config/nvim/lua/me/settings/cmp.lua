@@ -84,7 +84,12 @@ local config = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
-    { name = 'path' },
+    {
+      name = 'path',
+      option = {
+        trailing_slash = true,
+      },
+    },
   }),
 
   -- customize how the completion menu appears
