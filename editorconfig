@@ -47,3 +47,45 @@ sort_requires = true
 [*.rb]
 indent_style = space
 indent_size = 2
+
+[.git/COMMIT*]
+max_line_length = 72
+
+[{*.yml,*.yaml,*.json}]
+indent_style = space
+indent_size = 2
+
+[*.json5]
+indent_style = space
+indent_size = 4
+
+[{*.md,*.mkd,*.markdown}]
+indent_style = space
+indent_size = 4
+max_line_length = 80
+
+[{Makefile,*.mk}]
+indent_style = tab
+indent_size = 4
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+[*.go]
+indent_style = tab
+indent_size = 4
+
+[{.gitmodules,.git/config}]
+indent_style = tab
+tab_width = 4
+
+[*.{diff,patch}]
+trim_trailing_whitespace = false
+
+[Dockerfile]
+indent_size = 4
+
+# CRLF is required in batch files
+[*.{bat,cmd}]
+end_of_line = crlf
