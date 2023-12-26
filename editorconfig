@@ -1,0 +1,49 @@
+# vim: ft=editorconfig:
+# The root config for EditorConfig (https://editorconfig.org/) living in my home directory.
+# These are the global defaults that editorconfig-aware applications
+# (like neovim) will end up with if there isn't a project-specific version
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[{PKGBUILD,*.bash}]
+indent_style = space
+indent_size = 4
+
+# shfmt extensions
+shell_variant      = bash
+binary_next_line   = true
+switch_case_indent = false
+space_redirects    = false
+keep_padding       = true
+function_next_line = false
+
+[*.sh]
+indent_style = space
+indent_size = 4
+
+# shfmt extensions
+shell_variant      = posix
+binary_next_line   = true
+switch_case_indent = false
+space_redirects    = false
+keep_padding       = true
+function_next_line = false
+
+[*.lua]
+indent_style = space
+indent_size = 2
+# stylua extensions
+quote_type = single
+call_parentheses = always
+collapse_simple_statement = never
+sort_requires = true
+
+[*.rb]
+indent_style = space
+indent_size = 2

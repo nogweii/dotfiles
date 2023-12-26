@@ -154,7 +154,8 @@ desc 'List of everything this rake file will try managing'
 task :list do
   puts 'Symlink these files:'
   DOTFILES.each do |file|
-    puts " - #{file}"
+    home_abs_path = File.expand_path "~/.#{file}"
+    puts " - #{file} => #{home_abs_path}"
   end
   puts ''
   puts 'Create these directories:'
