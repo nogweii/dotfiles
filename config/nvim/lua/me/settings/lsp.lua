@@ -77,6 +77,7 @@ local binaries_to_lsp = {
   { 'terraform-ls', 'terraformls' },
   { 'marksman', 'marksman' },
   { 'docker-langserver', 'dockerls' },
+  { 'tflint', 'tflint' },
 }
 
 for _, lsp_map in pairs(binaries_to_lsp) do
