@@ -1,0 +1,88 @@
+live_config_reload = true
+
+[bell]
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#7f8c8d"
+blue = "#3daee9"
+cyan = "#16a085"
+green = "#1cdc9a"
+magenta = "#8e44ad"
+red = "#c0392b"
+white = "#ffffff"
+yellow = "#fdbc4b"
+
+[colors.dim]
+black = "#31363b"
+blue = "#1b668f"
+cyan = "#186c60"
+green = "#17a262"
+magenta = "#614a73"
+red = "#783228"
+white = "#63686d"
+yellow = "#b65619"
+
+[colors.normal]
+black = "#232627"
+blue = "#1d99f3"
+cyan = "#1abc9c"
+green = "#11d116"
+magenta = "#9b59b6"
+red = "#ed1515"
+white = "#fcfcfc"
+yellow = "#f67400"
+
+[colors.primary]
+background = "#232627"
+bright_background = "#000000"
+bright_foreground = "#ffffff"
+dim_background = "#31363b"
+dim_foreground = "#eff0f1"
+foreground = "#fcfcfc"
+
+[font]
+size = 16.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+auto_scroll = false
+history = 10000
+
+[selection]
+save_to_clipboard = false
+unfocused_hollow = true
+
+[window]
+dynamic_padding = false
+dynamic_title = true
+opacity = 0.9
+
+[window.dimensions]
+columns = 80
+lines = 24
