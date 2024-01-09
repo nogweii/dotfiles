@@ -38,9 +38,7 @@ yellow = "#f67400"
 
 [colors.primary]
 background = "#232627"
-bright_background = "#000000"
 bright_foreground = "#ffffff"
-dim_background = "#31363b"
 dim_foreground = "#eff0f1"
 foreground = "#fcfcfc"
 
@@ -71,11 +69,12 @@ action = "PasteSelection"
 mouse = "Middle"
 
 [scrolling]
-auto_scroll = false
 history = 10000
 
 [selection]
 save_to_clipboard = false
+
+[cursor]
 unfocused_hollow = true
 
 [window]
