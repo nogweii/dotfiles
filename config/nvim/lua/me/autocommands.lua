@@ -79,12 +79,15 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
   end,
 })
 
+-- Whenever an LSP attaches to vim, add the LSP's determined root directory to &path
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    vim.opt_local.path:append(vim.tbl_map(function(folder)
-      return folder.name
-    end, client.workspace_folders))
+    if not vim.tbl_isempty(client.workspace_folders) then
+      vim.opt_local.path:append(vim.tbl_map(function(folder)
+        return folder.name
+      end, client.workspace_folders))
+    end
   end,
 })
 
@@ -92,6 +95,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
   pattern = { '*.pkr.hcl' },
   callback = function()
-    require("conform").formatters_by_ft.hcl = { "packer_fmt" }
-  end
+    require('conform').formatters_by_ft.hcl = { 'packer_fmt' }
+  end,
 })
