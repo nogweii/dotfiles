@@ -29,4 +29,9 @@ return {
       vim.g.crystal_enable_completion = 0
     end,
   },
+
+  {
+    'NoahTheDuke/vim-just',
+    ft = { 'just' },
+  },
 }

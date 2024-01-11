@@ -53,6 +53,7 @@
   "vim-git": { "branch": "master", "commit": "290f5994e56477e50fe3fc0acfcb0d5973b81785" },
   "vim-gtfo": { "branch": "master", "commit": "7b2177d68f9492af1be6d13bf65d28377dfbec6e" },
   "vim-haproxy": { "branch": "master", "commit": "1d93a843b4c567c2f499ba0c7ed60c435109ee53" },
+  "vim-just": { "branch": "main", "commit": "c2c785b61eb5d5eddd8fe64e6856c9bf8988a3c4" },
   "vim-lastplace": { "branch": "master", "commit": "bb3191b134ade9d1f01014e17c3df91e8911dd5c" },
   "vim-pydocstring": { "branch": "master", "commit": "f6e3c52bfaf4b4f76dab4d84e75b94199d5f3b9c" },
   "vim-reason": { "branch": "master", "commit": "fead3eb030fe08f4f045cfa46cd1793b8c7a27cc" },
