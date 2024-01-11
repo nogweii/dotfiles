@@ -83,7 +83,7 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if not vim.tbl_isempty(client.workspace_folders) then
+    if client.workspace_folders ~= nil then
       vim.opt_local.path:append(vim.tbl_map(function(folder)
         return folder.name
       end, client.workspace_folders))
