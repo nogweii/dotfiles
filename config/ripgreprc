@@ -1,0 +1,12 @@
+# ripgrep config file, $RIPGREP_CONFIG_PATH points to this
+# each line is an individual command line argument, after whitespace is trimmed
+
+# Search hidden files and directories.
+--hidden
+
+# Searches case insensitively, unless there's a capital letter
+--smart-case
+
+# Easily search across stylesheet formats
+--type-add
+style:*.{css,sass,scss,less,stylus}

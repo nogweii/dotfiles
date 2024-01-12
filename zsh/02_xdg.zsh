@@ -52,3 +52,6 @@ export PSQL_HISTORY="${XDG_CACHE_HOME}/psql_history"
 
 export PYLINTRC="${XDG_CONFIG_HOME}/pylint.rc.toml"
 export KREW_ROOT="${XDG_DATA_HOME}/krew"
+
+# point ripgrep at the config file in the dotfiles clone
+export RIPGREP_CONFIG_PATH="${DOTSDIR}/config/ripgreprc"

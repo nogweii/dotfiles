@@ -1,0 +1,30 @@
+# modern rust tools global ignores
+# fd & ripgrep parse this file
+#
+# these globs are applied after parsing a project's git ignores,
+# which means everything in ~/dotfiles/config/git/ignores already applies
+
+# don't search inside various version control directories
+.git/
+.svn/
+.hg/
+
+# local downloads of third-party libraries in a project often aren't what I care about
+node_modules/
+fastlane/vendor/
+vendor/
+Trash/
+.yarn/
+.yarncache/
+
+# reasonml junk
+.graphql_ppx_cache/
+
+# generated files from package managers
+*.lock
+package-lock.json
+
+.direnv
+
+# Don't ignore .github directories
+!.github/

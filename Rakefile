@@ -22,7 +22,7 @@ DOTFILES = [
   # Don't symlink the following
   %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
   # Add these extra to the list to be symlink'd
-  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb]
+  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd]
 ].flatten.sort
 
 # if File.exist? File.expand_path '~/.local/share/konsole'

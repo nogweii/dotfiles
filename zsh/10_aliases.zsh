@@ -124,7 +124,7 @@ alias aursearch='cower -cauto -s'
 alias aurinfo='cower -cauto -i'
 
 if [ -n "${commands[rg]}" ]; then
-    alias gr='rg -S'
+    alias gr=rg
 elif [ -n "${commands[ag]}" ]; then
     alias gr=ag
 elif [ -n "${commands[ack]}" ]; then
