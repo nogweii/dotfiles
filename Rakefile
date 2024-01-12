@@ -170,7 +170,7 @@ task :list do
 end
 
 desc 'Check for any extra elements missing from this system'
-task :doctor => ['doctor:binaries', 'doctor:fonts', 'doctor:archlinux']
+task :doctor => ['doctor:binaries', 'doctor:archlinux']
 
 namespace :doctor do
   desc 'Find any missing CLI tools to fully make me comfortable'
@@ -181,29 +181,29 @@ namespace :doctor do
     shellcheck neovim-ruby-host nc youtube-dl zk].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
-        File.exists? File.join(path, binary)
+        File.exist? File.join(path, binary)
       end
       warn "Missing binary: #{binary}"
     end
   end
 
-  desc 'Check that all of my favorite fonts are available'
-  task :fonts do
-    all_fonts = `fc-list`.split("\n")
-
-    [
-      /Noto Color Emoji/,
-      /nerd font/i,
-      /Fira Sans:style=Regular/,
-      /Fira Code:style=Regular/
-    ].each do |font|
-      next if all_fonts.any? font
-
-      warn "Missing font matching #{font}"
-    end
-  end
-
   arch_ns = namespace :archlinux do
+    desc 'Check that all of my favorite fonts are available'
+    task :fonts do
+      all_fonts = `fc-list`.split("\n")
+
+      [
+        /Noto Color Emoji/,
+        /nerd font/i,
+        /Fira Sans:style=Regular/,
+        /Fira Code:style=Regular/
+      ].each do |font|
+        next if all_fonts.any? font
+
+        warn "Missing font matching #{font}"
+      end
+    end
+
     task :repo_key do
       aether_key_fingerprint = '739AA6E3A03B25494C16379E65462C4BAE7384AD'
       `pacman-key -f '#{aether_key_fingerprint}' >/dev/null 2>&1`
