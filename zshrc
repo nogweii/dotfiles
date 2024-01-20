@@ -1,14 +1,5 @@
 # Zsh user configuration file
 
-# Check for the minimum supported version. Borrowed from prezto. Considering I
-# use new enough features and expect as such, this seems like a safe bet.
-local min_zsh_version='5.0.2'
-if ! autoload -Uz is-at-least || ! is-at-least "$min_zsh_version"; then
-  print "zsh: old shell detected, minimum required: $min_zsh_version" >&2
-  return 1
-fi
-unset min_zsh_version
-
 # Disable color and theme in dumb/basic terminals.
 if [[ "$TERM" == 'dumb' || "$TERM" == "linux" ]]; then
   zstyle ':zsh' color 'no'
@@ -20,12 +11,6 @@ local zshrc_snipplet
 for zshrc_snipplet in $DOTSDIR/zsh/*.zsh ; do
         source $zshrc_snipplet
 done
-
-# GPG agent isn't running, start it! But only on configured boxes, so that the
-# servers aren't running an instance
-if [[ ! -S ~/.gnupg/S.gpg-agent && -f ~/.gnupg/gpg-agent.conf ]]; then
-  gpg-connect-agent /bye
-fi
 
 # And load local configuration overrides
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
