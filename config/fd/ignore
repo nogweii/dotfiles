@@ -16,6 +16,7 @@ vendor/
 Trash/
 .yarn/
 .yarncache/
+_opam*
 
 # reasonml junk
 .graphql_ppx_cache/
