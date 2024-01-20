@@ -1,7 +1,7 @@
 ---
 # Check the documentation for Gem::ConfigFile for the valid symbol keys
 
-:backtrace: true
+:backtrace: false
 :sources: ['https://rubygems.org']
 :verbose: false
 :concurrent_downloads: 4
