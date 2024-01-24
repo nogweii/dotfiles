@@ -55,3 +55,9 @@ export KREW_ROOT="${XDG_DATA_HOME}/krew"
 
 # point ripgrep at the config file in the dotfiles clone
 export RIPGREP_CONFIG_PATH="${DOTSDIR}/config/ripgreprc"
+
+# Put everything pipx installs under ~/.local/share/pipx/
+export PIPX_HOME="${XDG_DATA_HOME}/pipx"
+export PIPX_BIN_DIR="${XDG_DATA_HOME}/pipx/bin"
+
+AUTOSWITCH_VIRTUAL_ENV_DIR="${XDG_DATA_HOME}/autoswitch-venvs/"

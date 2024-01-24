@@ -27,6 +27,7 @@ path=(
   $HOME/.local/bin             # Machine-local artisinal scripts
   $HOME/.local/ruby/bin        # User-installed ruby gems
   "${VIRTUAL_ENV:-/dev/null}/bin" # Python virtualenv
+  $HOME/.local/share/pipx/bin  # pipx isolated apps
   $HOME/.local/pypi/bin        # User-installed python packages
   $HOME/.local/node/bin        # User-installed npm packages
   $HOME/.local/go/bin          # User-installed go packages
@@ -62,6 +63,7 @@ manpath=(
   /usr/local/share/man
   /usr/share/man
   $HOME/.local/ruby/share/man/  # Gem-installed man pages
+  $HOME/.local/share/man/       # pipx and other tools place man pages here
   $manpath
 )
 
