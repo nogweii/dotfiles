@@ -148,9 +148,11 @@ function prompt_evaryont_setup {
     ssh_host="%F{202}%m%f "
   fi
 
+  shell_in_subshell="%2(L.🐚%L .)"
+
   # Define prompts.
-  PROMPT="${ssh_host}%F{014}%${max_path_chars}<...<%F{014}\${\${(D)PWD:h}%/}/%<<%F{002}\${PWD:t}%(!.%F{052}⚡.%F{015})%b%f "
-  RPROMPT="%2(L.🐚%L .)%(?..%F{124}%1v%f! )"'${_prompt_virtualenv}${_prompt_tf_workspace}${ruby_version}${vcs_info_msg_0_}%f'
+  PROMPT="${shell_in_subshell}${ssh_host}%F{014}%${max_path_chars}<...<%F{014}\${\${(D)PWD:h}%/}/%<<%F{002}\${PWD:t}%(!.%F{052}⚡.%F{015})%b%f "
+  RPROMPT="%(?..%F{124}%1v%f! )"'${_prompt_virtualenv}${_prompt_tf_workspace}${ruby_version}${vcs_info_msg_0_}%f'
 
   add-zsh-hook precmd prompt_evaryont_precmd
 }
