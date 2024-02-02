@@ -28,6 +28,8 @@ local lsp_kind_emojis = {
   Event = '🌩️',
   Operator = '❎',
   TypeParameter = '🅾️',
+
+  Copilot = '🤖',
 }
 
 local is_prior_char_whitespace = function()
@@ -90,6 +92,7 @@ local config = {
         trailing_slash = true,
       },
     },
+    { name = 'copilot' },
   }),
 
   -- customize how the completion menu appears
