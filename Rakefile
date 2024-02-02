@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rake/clean'
+require 'pathname'
 
 ENV['HOME'] = ENV['DOTFILES_HOME_DIR'] if ENV.key? 'DOTFILES_HOME_DIR'
 @extra_information = (verbose == true) || (Rake.application.options.trace == true)
@@ -22,7 +23,7 @@ DOTFILES = [
   # Don't symlink the following
   %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
   # Add these extra to the list to be symlink'd
-  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd]
+  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd config/kitty]
 ].flatten.sort
 
 # if File.exist? File.expand_path '~/.local/share/konsole'
@@ -53,10 +54,10 @@ task :dotfiles  do
 
     if not File.exist? home_abs_path
       symlink repo_abs_path, home_abs_path
-    elsif File.symlink? home_abs_path
+    elsif File.symlink?(home_abs_path) and File.readlink(home_abs_path) != repo_abs_path
       rm_r home_abs_path
       symlink repo_abs_path, home_abs_path
-    else
+    elsif not File.symlink?(home_abs_path)
       warn "File '#{home_abs_path}' exists but is not a symlink. Not touching it!"
     end
   end
@@ -110,6 +111,13 @@ task :prepare => MAKE_DIRS do
   end
   unless File.exist? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
     sh 'tic terminfo/tmux-italics.termcap'
+  end
+
+  kitty_macos_path = Pathname.new '/Applications/kitty.app/Contents/Resources/terminfo/78/xterm-kitty'
+  kitty_terminfo_path = Pathname.new(ENV['TERMINFO']) + kitty_macos_path.parent.basename + kitty_macos_path.basename
+  if kitty_macos_path.exist? && !kitty_terminfo_path.exist?
+    FileUtils.mkdir_p File.join(ENV['TERMINFO'], kitty_macos_path.parent.basename)
+    FileUtils.symlink kitty_macos_path, File.join(ENV['TERMINFO'], kitty_macos_path.parent.basename, kitty_macos_path.basename)
   end
 end
 

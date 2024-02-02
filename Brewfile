@@ -32,5 +32,7 @@ cask 'iterm2'
 cask 'bitwarden'
 
 cask 'homebrew/cask-fonts/font-sauce-code-pro-nerd-font'
+cask 'homebrew/cask-fonts/font-source-code-pro'
+cask 'homebrew/cask-fonts/font-symbols-only-nerd-font'
 
 # vim: set filetype=ruby:
