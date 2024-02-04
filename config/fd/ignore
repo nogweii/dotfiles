@@ -17,6 +17,7 @@ Trash/
 .yarn/
 .yarncache/
 _opam*
+.bundle
 
 # reasonml junk
 .graphql_ppx_cache/
