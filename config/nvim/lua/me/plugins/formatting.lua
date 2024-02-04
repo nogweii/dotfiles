@@ -22,7 +22,7 @@ return {
         json      = { 'jq' },
         lua       = { 'stylua' },
         python    = { 'black' },
-        ruby      = { 'standardrb' },
+        -- ruby      = { 'standardrb' },
         sh        = { 'shfmt' },
         terraform = { 'terraform_fmt' },
         toml      = { 'taplo' },
