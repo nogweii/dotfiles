@@ -46,7 +46,7 @@
   "schemastore.nvim": { "branch": "main", "commit": "ce624332e6ba5a9a0c8f311a114ac179c5e72f62" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
-  "undotree": { "branch": "main", "commit": "80552a0180b49e5ba072c89ae91ce5d4e3aed36b" },
+  "undotree": { "branch": "main", "commit": "c6456101db0554fa0e9eb6a7d8ca9c2430953482" },
   "url-open": { "branch": "main", "commit": "cfe2d217a930dc620ead9c4b829777fcfbd323c3" },
   "vim-characterize": { "branch": "master", "commit": "885a00a3c21dd52ca8f2fd7d62850134934179d9" },
   "vim-crystal": { "branch": "master", "commit": "dc21188ec8c2ee77bb81dffca02e1a29d87cfd9f" },
