@@ -10,3 +10,6 @@
 [submodule "zsh/plugins/autoswitch-virtualenv"]
 	path = zsh/plugins/autoswitch-virtualenv
 	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+[submodule "zsh/plugins/bench"]
+	path = zsh/plugins/bench
+	url = https://github.com/romkatv/zsh-bench
