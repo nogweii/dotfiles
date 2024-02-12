@@ -56,6 +56,7 @@ fpath=(
   $DOTSDIR/zsh/zle-widgets
   /usr/share/zsh/site-functions
   $fpath
+  $DOTSDIR/zsh/plugins/zsh-completions
 )
 
 manpath=(
@@ -88,7 +89,6 @@ if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
   fpath=(
     $fpath
     /opt/homebrew/share/zsh/site-functions
-    /opt/homebrew/share/zsh-completions
   )
 fi
 
