@@ -46,7 +46,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # histdb: Store my shell history in a sqlite database
 typeset -g HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
 
-source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh 
+source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh
+
+source ${DOTSDIR}/zsh/plugins/many-dots-magic.zsh
 
 [ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
 source ${DOTSDIR}/zsh/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
