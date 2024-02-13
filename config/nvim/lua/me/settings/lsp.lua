@@ -78,6 +78,7 @@ local binaries_to_lsp = {
   { 'marksman', 'marksman' },
   { 'docker-langserver', 'dockerls' },
   { 'tflint', 'tflint' },
+  { 'jsonnet-language-server', 'jsonnet_ls' },
 }
 
 for _, lsp_map in pairs(binaries_to_lsp) do
