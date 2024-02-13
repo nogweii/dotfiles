@@ -1,0 +1,11 @@
+---
+# Configuration for the YAML formatting tool, yamlfmt.
+# Ref: https://github.com/google/yamlfmt/blob/main/docs/config-file.md
+formatter:
+  type: basic
+  indent: 2
+  include_document_start: true
+  retain_line_breaks: true
+  scan_folded_as_literal: true
+  indentless_arrays: false
+  drop_merge_tag: true
