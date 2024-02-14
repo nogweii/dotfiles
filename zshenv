@@ -56,7 +56,7 @@ fpath=(
   $DOTSDIR/zsh/zle-widgets
   /usr/share/zsh/site-functions
   $fpath
-  $DOTSDIR/zsh/plugins/zsh-completions
+  $DOTSDIR/zsh/plugins/zsh-completions/src
 )
 
 manpath=(
