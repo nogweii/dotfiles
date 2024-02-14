@@ -1,3 +1,5 @@
+# vim: set ft=gitconfig:
+#
 [github]
     user = nogweii
 [user]
@@ -27,6 +29,7 @@
     attributesfile = ~/dotfiles/config/git/attributes
 [branch]
     autosetuprebase = always
+    sort = -committerdate
 [web]
     browser = kde-open
 [browser "kde-open"]
@@ -91,6 +94,8 @@
     co = checkout
     # quick shortcut for push
     pu = push
+    # quick shortcut for force push
+    fpu = push --force-with-lease
     # quick shortcut for pull
     pl = pull
     # quick shortcut for commit, but also shows the diff in the commit message
@@ -194,4 +199,5 @@
     # print all of the files that have a gitattribute set
     all-attributes=!git ls-files | git check-attr --stdin -a
 
-# vim: set ft=gitconfig:
+[column]
+    ui = auto
