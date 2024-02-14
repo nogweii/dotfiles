@@ -1,5 +1,5 @@
 # vim: set ft=gitconfig:
-#
+
 [github]
     user = nogweii
 [user]
@@ -79,6 +79,12 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+
+[maintenance]
+    strategy = incremental
+
+[include]
+    path = maintenance_repos.conf
 
 [alias]
     # quick shortcut for add
@@ -198,6 +204,10 @@
     rem-up = "!f() { git remote update $1 && git remote prune $1 ;}; f"
     # print all of the files that have a gitattribute set
     all-attributes=!git ls-files | git check-attr --stdin -a
+    # register a repo to be monitored by the scheduled git jobs (see git-maintenance(8) for details)
+    maint-reg=!git maintenance register --config-file=$HOME/dotfiles/config/git/maintenance_repos.conf
+    # unregister a repo, so it's no longer monitored by scheduled git jobs
+    maint-unreg=!git maintenance unregister --config-file=$HOME/dotfiles/config/git/maintenance_repos.conf
 
 [column]
     ui = auto

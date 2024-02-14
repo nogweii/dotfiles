@@ -3,6 +3,7 @@
 Brewfile.lock.json
 Gemfile.lock
 config/git/spindle
+config/git/maintenance_repos.conf
 config/irb/irb_history
 config/nvim/autoload/plug.vim
 config/nvim/autoload/plug.vim.old
