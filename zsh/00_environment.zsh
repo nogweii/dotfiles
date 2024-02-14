@@ -94,3 +94,6 @@ export TZ_LIST="America/Phoenix,Phoenix;Etc/UTC,UTC;America/New_York,US East;Ame
 
 # A bunch of Hashicorp tools check in to https://checkpoint.hashicorp.com/ but I don't want that
 export CHECKPOINT_DISABLE=1
+
+# I manage krew through homebrew/pacman, so... don't phone home
+export KREW_NO_UPGRADE_CHECK=1
