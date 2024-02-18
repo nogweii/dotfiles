@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
     vim.opt_local.filetype = 'ruby'
   end,
 })
+
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
+  pattern = { '.codespellrc' },
+  callback = function()
+    vim.opt_local.filetype = 'ini'
+  end,
+})
