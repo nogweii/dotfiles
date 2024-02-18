@@ -26,10 +26,6 @@ DOTFILES = [
   %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd config/kitty config/yamlfmt]
 ].flatten.sort
 
-# if File.exist? File.expand_path '~/.local/share/konsole'
-#   dottask 'xdg-data/Happiness.profile', '~/.local/share/konsole/Happiness.profile'
-# end
-
 task default: [:submodules, :prepare, :dotfiles, :unnecessary]
 
 # ~/.<dotfile> can be one of 3 states:
