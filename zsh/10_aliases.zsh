@@ -159,3 +159,5 @@ alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbn
 
 # I do a lot of kubernetes stuff, make executing kubectl easier
 alias k=kubectl
+
+alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
