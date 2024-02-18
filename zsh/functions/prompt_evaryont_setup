@@ -72,7 +72,7 @@ function prompt_evaryont_help {
   nicoulaj prompt with inspiration from Ph!l's Zsh prompt.
 EOF
   [[ $ZSH_VERSION < 5.0.2 ]] &&
-    print '  Designed using Zsh version 5.0.2. No guarentees it will work.'
+    print '  Designed using Zsh version 5.0.2. No guarantees it will work.'
 
   cat <<EOF
 

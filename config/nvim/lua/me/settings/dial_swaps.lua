@@ -24,7 +24,7 @@ local my_augends = {
 
 -- NB: these enumerated lists are active in every buffer, they aren't scoped to
 -- a particular file type... this could be unwanted behavior!
-local addtional_enums = {
+local additional_enums = {
   boolean = { 'true', 'false' },
   capitalBoolean = { 'True', 'False' },
   c_bools = { 'TRUE', 'FALSE' },
@@ -43,7 +43,7 @@ local addtional_enums = {
 }
 
 -- Then add a whole bunch of additional ones based on static lists of words
-for _, string_list in pairs(addtional_enums) do
+for _, string_list in pairs(additional_enums) do
   table.insert(
     my_augends,
     augend.constant.new({

@@ -1,6 +1,6 @@
 local schemas = require('schemastore').json.schemas()
 
--- Extend the existing AWS CloudFormation schema to support the naming convetion IRL uses
+-- Extend the existing AWS CloudFormation schema to support the naming convention IRL uses
 local aws_cfn_schema_index = schemas.index['AWS CloudFormation']
 local aws_cfn_schema = vim.deepcopy(schemas[aws_cfn_schema_index])
 table.insert(aws_cfn_schema['fileMatch'], 'cloudformation/*.yml')
@@ -34,7 +34,7 @@ local setup_options = {
         '!Or map',
         '!Or sequence',
         '!FindInMap scalar',
-        '!FindInMap mappping',
+        '!FindInMap mapping',
         '!FindInMap sequence',
         '!Base64 scalar',
         '!Base64 map',

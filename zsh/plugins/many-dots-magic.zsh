@@ -5,7 +5,7 @@
 # Copyright (c) 2011, 2012 Akinori MUSHA
 # Licensed under the 2-clause BSD license.
 #
-# This tweek helps input ancestor directories beyond the parent (`..')
+# This tweak helps input ancestor directories beyond the parent (`..')
 # in a handy way.  You can just type triple dots to input `../..',
 # quadruple dots to `../../..', etc..
 #

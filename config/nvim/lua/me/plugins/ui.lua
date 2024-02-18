@@ -1,5 +1,5 @@
 return {
-  -- a very customizble status bar framework for Neovim written in Lua
+  -- a very customizable status bar framework for Neovim written in Lua
   {
     'feline-nvim/feline.nvim',
     config = function()

@@ -1,4 +1,4 @@
--- Automaticly trust .nvim.lua files in my dotfiles repo, as well as my projects in ~/code/
+-- Automatically trust .nvim.lua files in my dotfiles repo, as well as my projects in ~/code/
 
 --#region This section copied from nvim lua code
 -- See nvim's runtime in lua/vim/secure.lua (or online: https://github.com/neovim/neovim/blob/master/runtime/lua/vim/secure.lua)

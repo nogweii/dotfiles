@@ -2,7 +2,7 @@ return {
   -- Support HCL and other Hashicorp specific syntaxes
   { 'hashivim/vim-terraform' },
 
-  -- addtional syntax highlighting for postgresql extensions
+  -- additional syntax highlighting for postgresql extensions
   {
     'lifepillar/pgsql.vim',
     ft = 'sql',

@@ -8,7 +8,6 @@ function zle-keymap-select zle-line-init {
 }
 function zle-line-init {
     VIMODE='&' # zle defaults to insert mode
-    # auto-fu-init
     #zle -K vicmd
 }
 zle -N zle-line-init

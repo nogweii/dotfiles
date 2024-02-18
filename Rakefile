@@ -21,9 +21,9 @@ DOTFILES = [
   # Start with everything in this directory, but not recursively
   Dir['*'] -
   # Don't symlink the following
-  %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock xdg-data LICENSE] +
+  %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock _typos.toml LICENSE] +
   # Add these extra to the list to be symlink'd
-  %w[config/git config/conky config/nvim config/krb5_ipa.conf config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd config/kitty config/yamlfmt]
+  %w[config/git config/nvim config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd config/kitty config/yamlfmt]
 ].flatten.sort
 
 task default: [:submodules, :prepare, :dotfiles, :unnecessary]
