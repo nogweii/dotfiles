@@ -107,7 +107,7 @@ done
 unset function_file
 
 function df() {
-  # Is dfc installed & did I not pass any arguments to df? 
+  # Is dfc installed & did I not pass any arguments to df?
   if [ -n "${commands[dfc]}" -a $# -eq 0 ]; then
     # '-TbW' means to show the type not the graph, and don't truncate
     command dfc -TbW -q name
@@ -237,7 +237,7 @@ function tls-info() {
 function cat() {
   if [ -n "${commands[bat]}" ]; then
     if [[ $# == 1 && -t 0 ]]; then
-      # only use bat in the simplest case: a single file passed in 
+      # only use bat in the simplest case: a single file passed in
       # an interactive session
       bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | command less
     else
@@ -252,7 +252,7 @@ function cat() {
 function less() {
   if [ -n "${commands[bat]}" ]; then
     if [[ $# == 1 && -t 0 ]]; then
-      # only use bat in the simplest case: a single file passed in 
+      # only use bat in the simplest case: a single file passed in
       # an interactive session
       bat --paging=never --wrap=never --color=always --italic-text=always --decorations=always --terminal-width=$COLUMNS $1 | less
     else
@@ -278,4 +278,11 @@ function nvim-packs() {
     +'set termguicolors' \
     +'lua require("me.plugins")' \
     +'lua require("packer").sync()'
+}
+
+# Trims neovim's LSP log file to the last 50 lines
+function nvim-trim-lsp-log() {
+  local lsp_log_path=$(nvim --headless -c 'lua print(vim.lsp.get_log_path())' -c quit 2>&1)
+  echo "Trimming ${lsp_log_path}..."
+  tail -n50 "${lsp_log_path}" > "${lsp_log_path}.trimmed"
 }
