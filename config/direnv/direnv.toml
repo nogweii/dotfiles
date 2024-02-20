@@ -1,0 +1,12 @@
+[global]
+load_dotenv = true
+strict_env = true
+hide_env_diff = true
+
+[whitelist]
+# Any path that begins with one of these will have their `.env` loaded
+# WARNING: Security risk! Be careful with what you clone in ~/code/!
+prefix = [
+  "~/code/",
+  "~/dotfiles/"
+]
