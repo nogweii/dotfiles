@@ -45,6 +45,7 @@
   "resession.nvim": { "branch": "master", "commit": "dc8825439c619030925543a444c4186a2487c200" },
   "schemastore.nvim": { "branch": "main", "commit": "ce624332e6ba5a9a0c8f311a114ac179c5e72f62" },
   "telescope.nvim": { "branch": "master", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
+  "text-case.nvim": { "branch": "main", "commit": "c1ac8c498eef9f4486a1e27ceb5676469ae224dd" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
   "url-open": { "branch": "main", "commit": "cfe2d217a930dc620ead9c4b829777fcfbd323c3" },
