@@ -17,14 +17,23 @@ Dir.chdir gitdir
 # Only show shell commands if we didn't run rake with -v or -t
 RakeFileUtils.verbose_flag = false unless @extra_information
 
-DOTFILES = [
-  # Start with everything in this directory, but not recursively
-  Dir['*'] -
-  # Don't symlink the following
-  %w[Rakefile README.md config Brewfile Brewfile.lock.json Gemfile Gemfile.lock _typos.toml LICENSE] +
-  # Add these extra to the list to be symlink'd
-  %w[config/git config/nvim config/alacritty config/pylint.rc.toml config/gemrc config/tmux config/irb config/fd config/kitty config/yamlfmt]
-].flatten.sort
+# Start with everything in this directory, but not recursively
+DOTFILE_TARGETS = Dir['*'] +
+  # And load everything under config/
+  Dir['config/*']
+
+
+# Don't symlink the following files.
+# The files under config/ that are excluded are because I can specify their absolute path with ${DOTSDIR}
+DOTFILE_EXCLUSIONS = %w[
+  Rakefile README.md config Brewfile Brewfile.lock.json Gemfile
+  Gemfile.lock _typos.toml LICENSE
+
+  config/bundle config/inputrc config/npmrc config/psqlrc config/wgetrc
+  config/ripgreprc config/gemrc
+]
+
+DOTFILES = (DOTFILE_TARGETS - DOTFILE_EXCLUSIONS).flatten.sort
 
 task default: [:submodules, :prepare, :dotfiles, :unnecessary]
 
@@ -170,6 +179,16 @@ task :list do
   puts 'Clean up these old things:'
   OLD_CLEANUP.each do |thing|
     puts " - #{thing}"
+  end
+  puts ''
+  puts 'These files will not be symlinked:'
+  DOTFILE_EXCLUSIONS.each do |thing|
+    print " - #{thing}"
+    if not File.exist? thing
+      puts " (doesn't exist!)"
+    else
+      puts ''
+    end
   end
 end
 
