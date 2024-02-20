@@ -160,4 +160,6 @@ alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbn
 # I do a lot of kubernetes stuff, make executing kubectl easier
 alias k=kubectl
 
+# Helpful aliases to running the latest version of renovate bot on my laptop
 alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
+alias renovate-local="LOG_LEVEL=debug npx --package=renovate --yes renovate --platform=local"
