@@ -30,12 +30,12 @@ DOTFILE_EXCLUSIONS = %w[
   Gemfile.lock _typos.toml LICENSE
 
   config/bundle config/inputrc config/npmrc config/psqlrc config/wgetrc
-  config/ripgreprc config/gemrc
+  config/ripgreprc config/gemrc config/dircolors
 ]
 
 DOTFILES = (DOTFILE_TARGETS - DOTFILE_EXCLUSIONS).flatten.sort
 
-task default: [:submodules, :prepare, :dotfiles, :unnecessary]
+task default: [:submodules, :prepare, :dircolors, :dotfiles, :unnecessary]
 
 # ~/.<dotfile> can be one of 3 states:
 #  - Doesn't exist
@@ -287,5 +287,16 @@ namespace :doctor do
     else
       debug "Skipping archlinux tasks because this does not look like an Arch system"
     end
+  end
+end
+
+desc 'Use vivid to generate dircolors'
+task :dircolors do
+  require 'erb'
+
+  vivid_colors = `vivid generate ./config/dircolors/bamboo.yml`.strip
+  template = ERB.new File.open("./config/dircolors/zsh_template.erb").read
+  File.open("./zsh/00_z_dircolors.zsh", "w") do |f|
+    f.puts template.result(binding)
   end
 end

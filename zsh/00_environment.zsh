@@ -42,16 +42,6 @@ export LOCALE="en_US.utf8"
 # History location.
 export HISTSIZE="5000000" # Save a *lot* of history. Space is cheap
 export SAVEHIST="${HISTSIZE}"
-
-# Pretty colors! Used by zstyle & ls (and probably others)
-if [ -n "${commands[gdircolors]}" ]; then
-    eval $(gdircolors -b ${DOTSDIR}/config/dircolors)
-elif [ -n "${commands[dircolors]}" ]; then
-    eval $(dircolors -b ${DOTSDIR}/config/dircolors)
-else
-    echo "no (g)dircolors installed? check \$PATH"
-fi
-
 export LESSHISTSIZE=2000
 
 # Don't switch to VT100 mode for line drawing characters when in a UTF-8
