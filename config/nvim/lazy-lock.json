@@ -56,6 +56,7 @@
   "vim-git": { "branch": "master", "commit": "290f5994e56477e50fe3fc0acfcb0d5973b81785" },
   "vim-gtfo": { "branch": "master", "commit": "7b2177d68f9492af1be6d13bf65d28377dfbec6e" },
   "vim-haproxy": { "branch": "master", "commit": "1d93a843b4c567c2f499ba0c7ed60c435109ee53" },
+  "vim-helm": { "branch": "master", "commit": "86cc6766db60b8cc5731068d0c2111dee1f2b328" },
   "vim-just": { "branch": "main", "commit": "974b16e257e2d30d94ec954d815ff2755fa229fb" },
   "vim-kitty": { "branch": "main", "commit": "dc5086d4bdd3cc99133015dad0a1f1b3b61f5aaf" },
   "vim-lastplace": { "branch": "master", "commit": "bb3191b134ade9d1f01014e17c3df91e8911dd5c" },
