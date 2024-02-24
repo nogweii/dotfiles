@@ -2,7 +2,7 @@ require('neodev').setup({})
 local lspconfig = require('lspconfig')
 
 -- keymaps
-local function on_attach(client, bufnr)
+local function on_attach(_client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
