@@ -412,3 +412,6 @@ treesitter
 neovim
 nvim
 prometheus
+base64
+base32
+gah
