@@ -8,6 +8,11 @@
 #
 # It ends up doing the same job as histdb and zsh-history-substring-search
 
+# Early return to skip evaluating the rest of the file when atuin isn't installed
+if [[ -z $commands[atuin] ]]; then
+   return
+fi
+
 zmodload zsh/datetime 2>/dev/null
 
 export ATUIN_SESSION=$(atuin uuid)
