@@ -3,6 +3,8 @@
 # This file is a merge and customization of:
 # - The built-in zsh configuration (`atuin init zsh`)
 # - https://gist.github.com/tyalie/7e13cfe2ec62d99fa341a07ed12ef7c0
+# - https://github.com/takac/atuin/blob/zsh-ctrl-r-widget/atuin.isearch.zsh
+# - https://github.com/zsh-users/zsh-history-substring-search
 #
 # It ends up doing the same job as histdb and zsh-history-substring-search
 
@@ -62,88 +64,20 @@ _atuin_search_viins() {
     _atuin_search --keymap-mode=vim-insert
 }
 
-_atuin_up_search() {
-    # Only trigger if the buffer is a single line
-    if [[ ! $BUFFER == *$'\n'* ]]; then
-        _atuin_search --shell-up-key-binding "$@"
-    else
-        zle up-line
-    fi
-}
-_atuin_up_search_vicmd() {
-    _atuin_up_search --keymap-mode=vim-normal
-}
-_atuin_up_search_viins() {
-    _atuin_up_search --keymap-mode=vim-insert
-}
-
 add-zsh-hook preexec _atuin_preexec
 add-zsh-hook precmd _atuin_precmd
 
 zle -N atuin-search _atuin_search
 zle -N atuin-search-vicmd _atuin_search_vicmd
 zle -N atuin-search-viins _atuin_search_viins
-zle -N atuin-up-search _atuin_up_search
-zle -N atuin-up-search-vicmd _atuin_up_search_vicmd
-zle -N atuin-up-search-viins _atuin_up_search_viins
-
-# These are compatibility widget names for "atuin <= 17.2.1" users.
-zle -N _atuin_search_widget _atuin_search
-zle -N _atuin_up_search_widget _atuin_up_search
 
 bindkey -M emacs '^r' atuin-search
 bindkey -M viins '^r' atuin-search-viins
 bindkey -M vicmd '/' atuin-search
-bindkey -M emacs '^[[A' atuin-up-search
-bindkey -M vicmd '^[[A' atuin-up-search-vicmd
-bindkey -M viins '^[[A' atuin-up-search-viins
-bindkey -M emacs '^[OA' atuin-up-search
-bindkey -M vicmd '^[OA' atuin-up-search-vicmd
-bindkey -M viins '^[OA' atuin-up-search-viins
-bindkey -M vicmd 'k' atuin-up-search-vicmd
 
-#!/usr/bin/env zsh
-##############################################################################
-#
-# Copyright (c) 2023 Sophie Tyalie
-# Copyright (c) 2023 @Nezteb
-# All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-#  * Redistributions of source code must retain the above copyright
-#    notice, this list of conditions and the following disclaimer.
-#
-#  * Redistributions in binary form must reproduce the above
-#    copyright notice, this list of conditions and the following
-#    disclaimer in the documentation and/or other materials provided
-#    with the distribution.
-#
-#  * Neither the name of the FIZSH nor the names of its contributors
-#    may be used to endorse or promote products derived from this
-#    software without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
-# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-# POSSIBILITY OF SUCH DAMAGE.
-#
-##############################################################################
-
-#----------------------------------
-# main
-#----------------------------------
-
-# global configuration
-: ${ATUIN_HISTORY_SEARCH_FILTER_MODE='session'}
+typeset -g _atuin_highlight_current=''
+typeset -g _atuin_highlight_found='bg=#e2c792,fg=#252623,underline'
+typeset -g _atuin_highlight_not_found='bg=red,fg=white,bold'
 
 # internal variables
 typeset -g -i _atuin_history_match_index
@@ -166,8 +100,7 @@ atuin-history-down() {
 
   # iteratively use the next mechanism to process down if the previous didn't succeed
   _atuin-history-down-buffer ||
-  _atuin-history-down-search ||
-  zle _atuin_search_widget
+  _atuin-history-down-search
 
   _atuin-history-search-end
 }
@@ -175,10 +108,12 @@ atuin-history-down() {
 zle -N atuin-history-up
 zle -N atuin-history-down
 
-bindkey '\eOA' atuin-history-up
-bindkey '\eOB' atuin-history-down
 bindkey '^[[A' atuin-history-up
 bindkey '^[[B' atuin-history-down
+bindkey -M vicmd k atuin-history-up
+bindkey -M vicmd j atuin-history-down
+bindkey -M viins '^P' atuin-history-up
+bindkey -M viins '^N' atuin-history-down
 
 #-----------END main---------------
 
@@ -189,6 +124,7 @@ bindkey '^[[B' atuin-history-down
 _atuin-history-search-begin() {
   # assume we will not render anything
   _atuin_history_refresh_display=
+  _atuin_highlight_current=''
 
   # If the buffer is the same as the previously displayed history substring
   # search result, then just keep stepping through the match list. Otherwise
@@ -216,17 +152,48 @@ _atuin-history-search-end() {
   if [[ $_atuin_history_match_index -le 0 ]]; then
     _atuin_history_search_result="$_atuin_history_search_query"
   fi
+  # this is some arbitrary text that zle will ignore, but allows us to find our highlight later on
+  local highlight_memo='memo=atuin-history-search'
 
   # draw buffer if requested
   if [[ $_atuin_history_refresh_display -eq 1 ]]; then
     BUFFER="$_atuin_history_search_result"
+
+    # remove the custom atuin highlight, if it exists
+    region_highlight=( "${(@)region_highlight:#*${highlight_memo}*}" )
+
+    # move the cursor to the end of the command
     CURSOR="${#BUFFER}"
   fi
 
-  # for debug purposes only
-  #zle -R "mn: "$_atuin_history_match_index" / qr: $_atuin_history_search_result"
-  #read -k -t 1 && zle -U $REPLY
+  if [[ -z $_atuin_history_search_query ]]; then
+	  return 0
+  fi
 
+  # highlight command line using zsh-syntax-highlighting,
+  # before adding our own region
+  _zsh_highlight
+
+  # (i) get the index of a pattern, (#i) does it case insensitively
+  local matching_index="${BUFFER[(i)(#i)${_atuin_history_search_query}]}"
+  # if a string matches, it will be a number less than the length of the string.
+  # values greater than the length means it didn't match
+  if [[ $matching_index -le ${#BUFFER} ]]; then
+    # append our region to zle's highlights (see region_highlight in zshzle(1) for details)
+    region_highlight+=(
+      # it was found! tell zle to color this region of the text (but it's 0 indexed)
+      "$(($matching_index - 1)) $(($matching_index + ${#_atuin_history_search_query} - 1)) ${_atuin_highlight_current},${highlight_memo}"
+    )
+  fi
+
+  # redraw the line
+  zle -R
+
+  # wait for timeout (1 sec) or user input before removing the search highlight
+  read -k -t 1 && zle -U $REPLY
+  region_highlight=( "${(@)region_highlight:#*${highlight_memo}*}" )
+
+  return 0
 }
 
 _atuin-history-up-buffer() {
@@ -299,17 +266,20 @@ _atuin-history-up-search() {
     # if search result is empty, there's no more history
     # so just show the previous result
     _atuin_history_match_index+=-1
+    _atuin_highlight_current=$_atuin_highlight_not_found
     return 1
   fi
 
   _atuin_history_refresh_display=1
   _atuin_history_search_result="$search_result"
+  _atuin_highlight_current=$_atuin_highlight_found
   return 0
 }
 
 _atuin-history-down-search() {
   # we can't go below 0
   if [[ $_atuin_history_match_index -le 0 ]]; then
+    _atuin_highlight_current=$_atuin_highlight_not_found
     return 1
   fi
 
@@ -319,12 +289,13 @@ _atuin-history-down-search() {
   offset=$((_atuin_history_match_index-1))
   _atuin_history_search_result=$(_atuin-history-do-search $offset "$_atuin_history_search_query")
 
+  _atuin_highlight_current=$_atuin_highlight_found
   return 0
 }
 
 _atuin-history-do-search() {
   if [[ $1 -ge 0 ]]; then
-    atuin search --filter-mode "$ATUIN_HISTORY_SEARCH_FILTER_MODE" --search-mode prefix \
+    atuin search --filter-mode=global --search-mode full-text \
       --limit 1 --offset $1 --format "{command}" \
       "$2"
   fi
