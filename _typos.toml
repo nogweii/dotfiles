@@ -5,11 +5,7 @@ extend-exclude = [
   "config/nvim/spell/en.utf-8.add",
 
   # these are 3rd-party code, don't try to fix them
-  "zsh/plugins/zsh-completions/",
-  "zsh/plugins/bench/",
-  "zsh/plugins/fast-syntax-highlighting/",
-  "zsh/plugins/zsh-history-substring-search/",
-  "zsh/plugins/autoswitch-virtualenv",
+  "zsh/plugins/",
 
   # this has a bunch of junk in it, don't care. (also, 3rd-party)
   "config/kitty/glyphnames.json",
