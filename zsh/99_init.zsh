@@ -33,20 +33,6 @@ fi
 source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 FAST_HIGHLIGHT_STYLES[path]=underline
 
-# Enable fish-shell style history search:
-source ${DOTSDIR}/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-# histdb: Store my shell history in a sqlite database
-typeset -g HISTDB_FILE="${HOME}/.local/cache/zsh/histdb.sqlite"
-
-source ${DOTSDIR}/zsh/plugins/histdb/sqlite-history.zsh
-
 source ${DOTSDIR}/zsh/plugins/many-dots-magic.zsh
 
 [ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
