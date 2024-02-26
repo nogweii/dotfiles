@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+if [ -z "${1}" ]; then
+	echo -e "\nSyntax: $0 SERVICE_NAME"
+	return 1
+fi
+
+local service="${1}"
+local invoke_id="$(systemctl show -p InvocationID --value ${service})"
+journalctl -u "${service}" "INVOCATION_ID=${invoke_id}" + "_SYSTEMD_INVOCATION_ID=${invoke_id}"
