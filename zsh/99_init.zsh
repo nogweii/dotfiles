@@ -1,18 +1,3 @@
-function zle-keymap-select zle-line-init {
-    if [ "$KEYMAP" = 'vicmd' ] ; then
-        VIMODE='%#' # command mode
-    else
-        VIMODE='&'  # insert mode
-    fi
-    zle reset-prompt
-}
-function zle-line-init {
-    VIMODE='&' # zle defaults to insert mode
-    #zle -K vicmd
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 if [ -S "${XDG_RUNTIME_DIR}/podman/podman.sock" ]; then
     export DOCKER_HOST="unix://${XDG_RUNTIME_DIR}/podman/podman.sock"
 fi
@@ -28,6 +13,11 @@ fi
 # For MacOS homebrew installs
 [ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
 [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+
+bindkey -M emacs '^r' atuin-search
+bindkey -M viins '^r' atuin-search-viins
+bindkey -M vicmd '/' atuin-search
+bindkey -M vicmd '^r' atuin-search
 
 # Enable syntax highlighting:
 source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
