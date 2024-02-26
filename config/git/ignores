@@ -24,3 +24,4 @@ __pycache__
 .DS_Store
 .ropeproject
 .nvim.lua
+.dmypy.json
