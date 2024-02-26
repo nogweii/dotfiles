@@ -9,3 +9,4 @@ formatter:
   scan_folded_as_literal: true
   indentless_arrays: false
   drop_merge_tag: true
+  pad_line_comments: 2
