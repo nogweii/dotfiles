@@ -1,7 +1,7 @@
 -- Various additional filetype definitions
 
 vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { 'gemrc' },
+  pattern = { 'gemrc', '.yamlfmt' },
   callback = function()
     vim.opt_local.filetype = 'yaml'
   end,
