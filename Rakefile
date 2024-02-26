@@ -30,7 +30,7 @@ DOTFILE_EXCLUSIONS = %w[
   Gemfile.lock _typos.toml LICENSE
 
   config/bundle config/inputrc config/npmrc config/psqlrc config/wgetrc
-  config/ripgreprc config/gemrc config/dircolors
+  config/ripgreprc config/gemrc config/dircolors config/atuin/
 ]
 
 DOTFILES = (DOTFILE_TARGETS - DOTFILE_EXCLUSIONS).flatten.sort

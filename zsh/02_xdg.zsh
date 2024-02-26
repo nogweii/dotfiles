@@ -61,3 +61,5 @@ export PIPX_HOME="${XDG_DATA_HOME}/pipx"
 export PIPX_BIN_DIR="${XDG_DATA_HOME}/pipx/bin"
 
 AUTOSWITCH_VIRTUAL_ENV_DIR="${XDG_DATA_HOME}/autoswitch-venvs/"
+
+export ATUIN_CONFIG_DIR="${DOTSDIR}/config/atuin"
