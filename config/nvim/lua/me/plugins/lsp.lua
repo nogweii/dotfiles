@@ -8,7 +8,7 @@ return {
       -- see config/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
       'folke/neodev.nvim',
 
-      'b0o/schemastore.nvim',
+      'b0o/SchemaStore.nvim',
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
