@@ -233,4 +233,6 @@ return {
       })
     end,
   },
+
+  { 'rafcamlet/nvim-luapad' },
 }

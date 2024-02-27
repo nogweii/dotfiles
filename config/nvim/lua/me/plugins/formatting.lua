@@ -29,7 +29,7 @@ return {
         yaml      = { 'yamlfmt' },
 
         -- For all filetypes:
-        ['*']     = { 'trim_whitespace', 'trim_newlines', 'codespell' },
+        ['*']     = { 'trim_whitespace', 'trim_newlines' },
         -- For any that don't have a config:
         --['_']     = { 'codespell' },
         -- stylua: ignore end
