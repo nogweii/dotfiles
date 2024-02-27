@@ -144,6 +144,11 @@ task :unnecessary do
     rm_r path if File.exist? path or File.symlink? path
   end
 
+  `git status --porcelain=2`.split("\n").grep(/^? zsh\/plugins/).each do |old_zsh|
+    path = old_zsh.split(' ')[1]
+    rm_r path
+  end
+
   # Find various symlinks in my home directory that point to this folder but
   # wouldn't be recreated normally. (Often a result of a file that's been
   # deleted in the repo yet the symlink still remains)
@@ -294,6 +299,10 @@ desc 'Use vivid to generate dircolors'
 task :dircolors do
   require 'erb'
 
+  unless system('which vivid', {out: File::NULL})
+    puts "vivid is not installed! no dircolors for you."
+    return
+  end
   vivid_colors = `vivid generate ./config/dircolors/bamboo.yml`.strip
   template = ERB.new File.open("./config/dircolors/zsh_template.erb").read
   File.open("./zsh/00_z_dircolors.zsh", "w") do |f|
