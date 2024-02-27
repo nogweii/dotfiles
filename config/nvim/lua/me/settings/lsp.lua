@@ -1,5 +1,5 @@
 require('neodev').setup({})
-local lspconfig = require('lspconfig')
+local add_hook_after = require('lspconfig.util').add_hook_after
 
 -- keymaps
 local function on_attach(_client, bufnr)
@@ -43,7 +43,6 @@ end
 local function setup_lsp_server(name)
   local opts = {
     -- map buffer local keybindings when the language server attaches
-    on_attach = on_attach,
     capabilities = make_capabilities(),
   }
 
@@ -52,8 +51,11 @@ local function setup_lsp_server(name)
     opts = vim.tbl_deep_extend('force', opts, custom_lsp_config)
   end
 
+  -- A server config file can optionally define custom on_attach handlers
+  opts.on_attach = add_hook_after(on_attach, opts.on_attach)
+
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-  lspconfig[name].setup(opts)
+  require('lspconfig')[name].setup(opts)
 end
 
 -- A list of binaries found in $PATH and what configuration
