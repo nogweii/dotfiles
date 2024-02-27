@@ -1,5 +1,6 @@
 {
   "LuaSnip": { "branch": "master", "commit": "8ae1dedd988eb56441b7858bd1e8554dfadaa46d" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "a93078f016d3216f4ab4e4c65306b65212314d8d" },
   "bamboo.nvim": { "branch": "master", "commit": "2c5a7442f8db3dcc3f5175f0bed73675e26e3931" },
   "barbar.nvim": { "branch": "master", "commit": "dd852401ee902745b67fc09a83d113b3fe82a96f" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -11,6 +12,7 @@
   "copilot.lua": { "branch": "master", "commit": "03f825956ec49e550d07875d867ea6e7c4dc8c00" },
   "dial.nvim": { "branch": "master", "commit": "54b503f906bc9e5ab85288414840a1b86d40769f" },
   "dressing.nvim": { "branch": "master", "commit": "42d767b04c50a6966c9633e3968bc65c0c2f2bfc" },
+  "eagle.nvim": { "branch": "main", "commit": "177957f60f6ca9c38b92328c8a51453f88a9d098" },
   "feline.nvim": { "branch": "master", "commit": "79f5e9e5a76842b72f1814dcd4fc239a95ead391" },
   "friendly-snippets": { "branch": "main", "commit": "5cc1f45c6aac699ad008fb85f6ae03236062667d" },
   "git-messenger.vim": { "branch": "master", "commit": "8a61bdfa351d4df9a9118ee1d3f45edbed617072" },
@@ -71,5 +73,6 @@
   "vim-terraform": { "branch": "master", "commit": "21f756b933cd11ac5990a6046fdc7c4e2a6c0aee" },
   "vim-tickscript": { "branch": "master", "commit": "399e332b709f034421c83af9ea14380d71e0d743" },
   "which-key.nvim": { "branch": "main", "commit": "ce741eb559c924d72e3a67d2189ad3771a231414" },
-  "yaifa": { "branch": "master", "commit": "0f155bee3c84f12ecd715a63601e8446ae4199f8" }
+  "yaifa": { "branch": "master", "commit": "0f155bee3c84f12ecd715a63601e8446ae4199f8" },
+  "yaml-companion.nvim": { "branch": "main", "commit": "03f66e5e9c8b26a35b14593f24697f9a3bc64e48" }
 }

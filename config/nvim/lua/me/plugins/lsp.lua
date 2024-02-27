@@ -1,4 +1,4 @@
----@type LazySpec
+---@type LazySpec[]
 return {
   -- a collection of LSP configs
   {
@@ -8,8 +8,6 @@ return {
       -- see config/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
       'folke/neodev.nvim',
 
-      -- a downloaded copy of the SchemaStore.org catalog
-      -- (used by JSON & YAML LSPs)
       'b0o/schemastore.nvim',
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -35,5 +33,9 @@ return {
   {
     'mrded/nvim-lsp-notify',
     requires = { 'rcarriga/nvim-notify' },
+  },
+
+  {
+    'soulis-1256/eagle.nvim',
   },
 }

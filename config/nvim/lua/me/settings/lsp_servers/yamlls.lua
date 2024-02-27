@@ -1,5 +1,3 @@
-local schemas = require('schemastore').json.schemas()
-
 local setup_options = {
   settings = {
     yaml = {
@@ -8,7 +6,21 @@ local setup_options = {
         -- which can be configured in more ways than a basic on/off
         enable = false,
       },
-      schemas = schemas,
+      schemas = require('schemastore').yaml.schemas(),
+
+      -- I use yamlfmt, yamlls uses prettier. hm....
+      format = { enabled = false },
+      keyOrdering = false,
+    },
+  },
+
+  -- Tell yamlls that we do, in fact, support line folding
+  capabilities = {
+    textDocument = {
+      foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      },
     },
   },
 
@@ -25,7 +37,33 @@ local setup_options = {
         vim.lsp.buf_detach_client(bufnr, client.id)
       end, 100)
     end
+
+    vim.api.nvim_create_user_command('YamlCurrentSchema', function()
+      local schema = require('yaml-companion').get_buf_schema(0)
+      if schema.result[1].name == 'none' then
+        print('No schema loaded')
+        return
+      end
+      print('Current schema is ' .. schema.result[1].name)
+    end, {})
+
+    vim.api.nvim_create_user_command('YamlChangeSchema', 'Telescope yaml_schema', {})
   end,
 }
 
-return setup_options
+-- TODO: do I want to add lazy loading of the schemas? https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/yaml.lua#L36C1-L43C15
+-- TODO: do I add a hover text filter for html escape codes? https://github.com/hazelweakly/nixos-configs/blob/main/dots/nvim/lua/_/lsp/yamlls.lua#L4-L26
+--  and https://github.com/redhat-developer/yaml-language-server/pull/844
+-- TODO: add a bunch of yaml schema mappings that aren't shipped in schemastore
+--    e.g. https://github.com/arsham/shark/blob/9888a40f7fde3a0ccb51fe073799974c3b52a312/lua/plugins/lsp/config/schemas.lua
+--    also, `.gitlab/ci/*.yaml` should be registered as gitlab-ci schema
+-- TODO: extend the anti-yamlls detection to scan the file for {{ }} - https://github.com/towolf/vim-helm/issues/15
+
+-- Overwrite the function to get the list of schemas not from the LSP but from my local cache
+--[[ require('yaml-companion.schema').from_store = function()
+  return require('schemastore').yaml.schemas()
+end ]]
+
+return require('yaml-companion').setup({
+  lspconfig = setup_options,
+})
