@@ -37,5 +37,5 @@ return {
 
   { 'fladson/vim-kitty' },
 
-  { 'towolf/vim-helm' },
+  { 'towolf/vim-helm', ft = 'helm' },
 }

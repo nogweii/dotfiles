@@ -1,12 +1,5 @@
 local schemas = require('schemastore').json.schemas()
 
--- Extend the existing AWS CloudFormation schema to support the naming convention IRL uses
-local aws_cfn_schema_index = schemas.index['AWS CloudFormation']
-local aws_cfn_schema = vim.deepcopy(schemas[aws_cfn_schema_index])
-table.insert(aws_cfn_schema['fileMatch'], 'cloudformation/*.yml')
--- and then overwrite the table with my modified one
-schemas[aws_cfn_schema_index] = aws_cfn_schema
-
 local setup_options = {
   settings = {
     yaml = {
@@ -16,59 +9,23 @@ local setup_options = {
         enable = false,
       },
       schemas = schemas,
-      -- AWS CloudFormation tags
-      customTags = {
-        '!And scalar',
-        '!And map',
-        '!And sequence',
-        '!If scalar',
-        '!If map',
-        '!If sequence',
-        '!Not scalar',
-        '!Not map',
-        '!Not sequence',
-        '!Equals scalar',
-        '!Equals map',
-        '!Equals sequence',
-        '!Or scalar',
-        '!Or map',
-        '!Or sequence',
-        '!FindInMap scalar',
-        '!FindInMap mapping',
-        '!FindInMap sequence',
-        '!Base64 scalar',
-        '!Base64 map',
-        '!Base64 sequence',
-        '!Cidr scalar',
-        '!Cidr map',
-        '!Cidr sequence',
-        '!Ref scalar',
-        '!Ref map',
-        '!Ref sequence',
-        '!Sub scalar',
-        '!Sub map',
-        '!Sub sequence',
-        '!GetAtt scalar',
-        '!GetAtt map',
-        '!GetAtt sequence',
-        '!GetAZs scalar',
-        '!GetAZs map',
-        '!GetAZs sequence',
-        '!ImportValue scalar',
-        '!ImportValue map',
-        '!ImportValue sequence',
-        '!Select scalar',
-        '!Select map',
-        '!Select sequence',
-        '!Split scalar',
-        '!Split map',
-        '!Split sequence',
-        '!Join scalar',
-        '!Join map',
-        '!Join sequence',
-      },
     },
   },
+
+  --- Ran whenever yamlls attaches to a buffer, look at it and see if it is a file
+  --- that would not really work well with the LSP. Stuff like Helm, Jinja, and Go
+  --- template files are examples of that where it would be better to disable
+  --- the LSP instead.
+  ---@param client vim.lsp.client
+  ---@param bufnr number
+  on_attach = function(client, bufnr)
+    local filename = vim.api.nvim_buf_get_name(bufnr)
+    if filename:match('charts/.+/templates/.+%.ya?ml$') then
+      vim.defer_fn(function()
+        vim.lsp.buf_detach_client(bufnr, client.id)
+      end, 100)
+    end
+  end,
 }
 
 return setup_options
