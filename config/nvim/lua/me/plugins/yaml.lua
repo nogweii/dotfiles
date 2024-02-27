@@ -16,9 +16,7 @@ return {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope.nvim' },
     },
-    config = function()
-      require('telescope').load_extension('yaml_schema')
-    end,
     lazy = true,
+    version = false, -- get the latest commit, the last release is >2 yrs ago
   },
 }

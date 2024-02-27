@@ -47,7 +47,8 @@ local setup_options = {
       print('Current schema is ' .. schema.result[1].name)
     end, {})
 
-    vim.api.nvim_create_user_command('YamlChangeSchema', 'Telescope yaml_schema', {})
+    -- TODO: implement this correctly; actually set the schema. not just present a selector and do nothing
+    vim.api.nvim_create_user_command('YamlChangeSchema', 'lua require("yaml-companion").open_ui_select()', {})
   end,
 }
 
@@ -58,11 +59,6 @@ local setup_options = {
 --    e.g. https://github.com/arsham/shark/blob/9888a40f7fde3a0ccb51fe073799974c3b52a312/lua/plugins/lsp/config/schemas.lua
 --    also, `.gitlab/ci/*.yaml` should be registered as gitlab-ci schema
 -- TODO: extend the anti-yamlls detection to scan the file for {{ }} - https://github.com/towolf/vim-helm/issues/15
-
--- Overwrite the function to get the list of schemas not from the LSP but from my local cache
---[[ require('yaml-companion.schema').from_store = function()
-  return require('schemastore').yaml.schemas()
-end ]]
 
 return require('yaml-companion').setup({
   lspconfig = setup_options,
