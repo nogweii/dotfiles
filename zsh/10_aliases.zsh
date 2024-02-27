@@ -163,3 +163,5 @@ alias k=kubectl
 # Helpful aliases to running the latest version of renovate bot on my laptop
 alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
 alias renovate-local="LOG_LEVEL=debug npx --package=renovate --yes renovate --platform=local"
+
+alias compcachereset="rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
