@@ -42,7 +42,6 @@ bindkey -M viins '^Xf' complete-file
 bindkey -M viins '^X^F' complete-file
 
 # Press Alt-S to rapidly prepend sudo to the beginning of the line
-zle -N insert-sudo
 bindkey "^[s" insert-sudo
 
 bindkey -M vicmd 'ZE' fuzzy-edit
