@@ -1,3 +1,0 @@
-#!/bin/zsh
-# mkdir && cd
-mkdir -p $1 ; cd $1
