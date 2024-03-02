@@ -1,0 +1,4 @@
+first="awk '{print "
+last=" \"\"}'"
+cmd="${first}$(echo "$@" | sed "s:[0-9]*:\$&,:g")${last}"
+eval $cmd

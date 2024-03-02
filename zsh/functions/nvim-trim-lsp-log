@@ -1,0 +1,4 @@
+# Trims neovim's LSP log file to the last 50 lines
+local lsp_log_path=$(nvim --headless -c 'lua print(vim.lsp.get_log_path())' -c quit 2>&1)
+echo "Trimming ${lsp_log_path}..."
+tail -n50 "${lsp_log_path}" > "${lsp_log_path}.trimmed"

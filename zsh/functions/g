@@ -1,0 +1,12 @@
+# A smarter(ish) g alias: By default, 'g' alone will show the status. 'g blah'
+# still works.
+
+if [[ $# > 0 ]]; then
+  if [[ "$@" = "st" ]]; then
+    echo "\e[33mstop doing that! just use 'g'"
+  else
+    git "$@"
+  fi
+else
+  git status --short --branch
+fi

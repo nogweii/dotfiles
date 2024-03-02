@@ -1,0 +1,23 @@
+# Give us a root shell, or run the command with sudo.
+# Expands command aliases first (cool!)
+
+sudo_opts=""
+if [ ! -z "$SUDO_ASKPASS" ]; then
+    sudo_opts="-A"
+fi
+if [[ -n $1 ]]; then
+    #test if the first parameter is a alias
+    if [[ -n $aliases[$1] ]]; then
+        #if so, substitute the real command
+        sudo $sudo_opts ${=aliases[$1]} $argv[2,-1]
+    elif [[ "$1" = "vim" ]] ; then
+        # sudo vim -> sudoedit
+        sudoedit $sudo_opts $argv[2,-1]
+    else
+        #else just run sudo as is
+        sudo $sudo_opts $argv
+    fi
+else
+    #if no parameters were given, then assume we want a root shell
+    sudo $sudo_opts -s
+fi

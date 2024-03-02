@@ -1,0 +1,1 @@
+ps wwup $(pgrep -f $1) 2>&-
