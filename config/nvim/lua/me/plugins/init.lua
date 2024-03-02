@@ -59,7 +59,7 @@ return {
       },
       {
         '<C-x>',
-        '<Plug>(dial-increment)',
+        '<Plug>(dial-decrement)',
         mode = { 'n', 'v' },
         desc = 'Decrement or cycle the word under the cursor, smartly',
       },
@@ -71,7 +71,7 @@ return {
       },
       {
         'g<C-x>',
-        'g<Plug>(dial-increment)',
+        'g<Plug>(dial-decrement)',
         mode = { 'n', 'v' },
         desc = 'Decrement or cycle the word under the cursor, smartly',
       },

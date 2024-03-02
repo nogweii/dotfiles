@@ -40,6 +40,8 @@ local additional_enums = {
   rebase = { 'pick', 'reword', 'edit', 'squash', 'fixup', 'exec' },
   directions = { 'up', 'down', 'left', 'right' },
   cardinals = { 'north', 'east', 'south', 'west' },
+  days_of_the_week_abbrev = { 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' },
+  days_of_the_week_full = { 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' },
 }
 
 -- Then add a whole bunch of additional ones based on static lists of words
