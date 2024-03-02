@@ -1,0 +1,3 @@
+# prepend sudo to the beginning of the line
+zle beginning-of-line
+zle -U "sudo "

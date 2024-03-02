@@ -14,3 +14,9 @@ function _systemd_units()
 }
 
 compdef _systemd_units svccurlog
+
+if [ -n "${commands[fzf]}" ]; then
+    compdef fancy-pid-complete pidenv
+    compdef fancy-pid-complete pidstarted
+    compdef fancy-pid-complete pidof
+fi
