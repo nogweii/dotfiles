@@ -20,3 +20,10 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
     vim.opt_local.filetype = 'ini'
   end,
 })
+
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
+  pattern = { 'zsh/functions/*', 'zsh/zle-widgets/*' },
+  callback = function()
+    vim.opt_local.filetype = 'zsh'
+  end,
+})
