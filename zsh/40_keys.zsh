@@ -14,6 +14,13 @@ if [ -e $zkdb_file ] ; then
     [[ -n ${key[Delete]}    ]] && bindkey "${key[Delete]}"    delete-char
 fi
 
+# Map variants of Home to '^[[H', and varients of End to '^[[F'
+for mode in vicmd viins viopp; do
+    bindkey -M $mode -s '^[[1~' '^[[H' '^[[7~' '^[[H' '^[OH' '^[[H' \
+                        '^[[2~' '^[[F' '^[[8~' '^[[F' '^[OF' '^[[F'
+    bindkey -M $mode '^[[H' vi-beginning-of-line '^[[F' vi-end-of-line
+done
+
 bindkey '^W' backward-kill-word-match
 #bindkey . rationalise-dot
 # without this, typing a . aborts incremental history search
@@ -47,3 +54,28 @@ bindkey "^[s" insert-sudo
 
 bindkey -M vicmd 'ZE' fuzzy-edit
 bindkey -M viins '^O' fuzzy-edit
+
+# Load some optional but handy zle widgets that ship with Zsh itself
+autoload -Uz select-quoted select-bracketed split-shell-arguments surround
+
+zle -N select-quoted
+zle -N select-bracketed
+for mode in vicmd viopp; do
+	for seq in {a,i}{\',\",\`}; do
+		bindkey -M "$mode" "$seq" select-quoted
+	done
+	for seq in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+		bindkey -M "$mode" "$seq" select-bracketed
+	done
+done
+
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+
+bindkey -a cs change-surround
+bindkey -a ds delete-surround
+bindkey -a ys add-surround
+
+source ${DOTSDIR}/zsh/plugins/vi-more-increment/vi-increment.zsh
+source ${DOTSDIR}/zsh/plugins/vi-more-quote/vi-quote.zsh

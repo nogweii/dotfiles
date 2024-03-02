@@ -13,3 +13,9 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/plugins/vi-more-quote"]
+	path = zsh/plugins/vi-more-quote
+	url = https://github.com/zsh-vi-more/vi-quote
+[submodule "zsh/plugins/vi-more-increment"]
+	path = zsh/plugins/vi-more-increment
+	url = https://github.com/zsh-vi-more/vi-increment
