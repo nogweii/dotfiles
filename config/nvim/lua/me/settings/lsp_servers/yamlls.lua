@@ -1,3 +1,5 @@
+local schemas = require('schemastore')
+
 local setup_options = {
   settings = {
     yaml = {
@@ -5,8 +7,10 @@ local setup_options = {
         -- disable the schemas shipped with the LSP to use the schemastore plugin
         -- which can be configured in more ways than a basic on/off
         enable = false,
+        -- url = 'https://www.schemastore.org/api/json/catalog.json',
+        url = '',
       },
-      schemas = require('schemastore').yaml.schemas(),
+      schemas = schemas.yaml.schemas(),
 
       -- I use yamlfmt, yamlls uses prettier. hm....
       format = { enabled = false },
@@ -62,4 +66,7 @@ local setup_options = {
 
 return require('yaml-companion').setup({
   lspconfig = setup_options,
+  schemas = vim.tbl_map(function(schema)
+    return { name = schema.name, uri = schema.url }
+  end, schemas.json.schemas()),
 })
