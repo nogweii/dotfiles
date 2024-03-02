@@ -98,3 +98,9 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
     require('conform').formatters_by_ft.hcl = { 'packer_fmt' }
   end,
 })
+
+vim.api.nvim_create_user_command('ConformToggle', function()
+  vim.b.disable_autoformat = not vim.b.disable_autoformat
+end, {
+  desc = 'Toggle automatic formatting-on-save with Conform',
+})

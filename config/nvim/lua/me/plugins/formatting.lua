@@ -34,11 +34,15 @@ return {
         --['_']     = { 'codespell' },
         -- stylua: ignore end
       },
-      format_on_save = {
+
+      format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.b[bufnr].disable_autoformat then
+          return
+        end
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
+        return { timeout_ms = 500, lsp_fallback = true }
+      end,
     },
     init = function()
       -- If you want the formatexpr, here is the place to set it
