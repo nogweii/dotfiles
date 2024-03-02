@@ -9,6 +9,7 @@ git_diff_staged.diff
 .vagrant
 .directory
 tags
+TAGS
 .bundle
 .mypy_cache
 __pycache__
@@ -25,3 +26,7 @@ __pycache__
 .ropeproject
 .nvim.lua
 .dmypy.json
+_opam
+*.orig
+npm-debug.log
+yarn-error.log
