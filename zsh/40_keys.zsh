@@ -14,7 +14,7 @@ if [ -e $zkdb_file ] ; then
     [[ -n ${key[Delete]}    ]] && bindkey "${key[Delete]}"    delete-char
 fi
 
-# Map variants of Home to '^[[H', and varients of End to '^[[F'
+# Map variants of Home to '^[[H', and variants of End to '^[[F'
 for mode in vicmd viins viopp; do
     bindkey -M $mode -s '^[[1~' '^[[H' '^[[7~' '^[[H' '^[OH' '^[[H' \
                         '^[[2~' '^[[F' '^[[8~' '^[[F' '^[OF' '^[[F'
