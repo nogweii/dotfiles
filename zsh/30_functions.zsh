@@ -17,7 +17,6 @@ done
 for function_file in ${DOTSDIR}/zsh/zle-widgets/__* ; do
   emulate zsh -c "autoload -RUz ${function_file}"
   zle -N "${${function_file:t}#__}" ${function_file:t}
-  echo zle -N "${${function_file:t}#__}" ${function_file:t}
 done
 
 unset function_file
