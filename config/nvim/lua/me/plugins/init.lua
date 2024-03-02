@@ -235,4 +235,16 @@ return {
   },
 
   { 'rafcamlet/nvim-luapad' },
+
+  {
+    '2kabhishek/nerdy.nvim',
+    dependencies = {
+      'stevearc/dressing.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    cmd = 'Nerdy',
+    keys = {
+      { '<leader>nf', '<cmd>Nerdy<CR>', desc = 'Interactively choose a glyph from the Nerd Font collection' },
+    },
+  },
 }

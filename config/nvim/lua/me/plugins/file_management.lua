@@ -1,5 +1,8 @@
 return {
-  { 'tpope/vim-eunuch' },
+  {
+    'tpope/vim-eunuch',
+    cmd = { 'Chmod', 'Delete', 'Edit', 'Grep', 'Mkdir', 'Move', 'Rename', 'Unlink', 'Wall', 'Write' },
+  },
 
   -- Automatically jump to the project's root directory
   {

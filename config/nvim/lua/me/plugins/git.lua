@@ -1,5 +1,4 @@
 return {
-  { 'tpope/vim-fugitive' },
   -- get more recently updated git related syntax files
   -- this is the upstream source of what is shipped with the editor
   { 'tpope/vim-git' },
@@ -16,8 +15,10 @@ return {
       require('gitsigns').setup({})
     end,
   },
+
   -- show git blame in a popup
   { 'rhysd/git-messenger.vim', cmd = 'GitMessenger' },
+
   -- yank a link to the commit
   {
     'ruifm/gitlinker.nvim',
@@ -34,5 +35,18 @@ return {
         mappings = nil,
       })
     end,
+  },
+
+  -- Easily add co-authors to commits using the typical "Co-authored-by:" signature
+  {
+    '2kabhishek/co-author.nvim',
+    dependencies = {
+      'stevearc/dressing.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    cmd = { 'CoAuthor' },
+    keys = {
+      { '<leader>gC', '<cmd>CoAuthor<CR>', mode = { 'n' }, desc = 'Add co-authors to the commit' },
+    },
   },
 }
