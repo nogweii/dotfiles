@@ -98,10 +98,10 @@ function cawk {
 
 local function_file
 for function_file in ${DOTSDIR}/zsh/functions/* ; do
-  autoload ${function_file:t}
+  emulate zsh -c "autoload -RUz ${function_file}"
 done
 for function_file in ${DOTSDIR}/zsh/zle-widgets/* ; do
-  autoload ${function_file:t}
+  autoload -Uz ${function_file:t}
   zle -N ${function_file:t}
 done
 unset function_file
