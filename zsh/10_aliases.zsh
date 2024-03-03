@@ -49,11 +49,10 @@ alias nhclean='rm ./**/nohup.out'
 alias swpclean='rm $(find G "\/\..*\.swp$")'
 alias yrm='yes | rm -rvf'
 alias nrm='yrm &>/dev/null'
-alias startxl="startx &>/tmp/startx.log"
 
 alias makepkg="makepkg -s"
 
-alias addme='s gpasswd -a colin'
+alias addme="s gpasswd -a ${USER}"
 
 alias edit="${EDITOR}"
 alias s=`whence -p sudo`
@@ -89,17 +88,9 @@ if [ -n "${commands[hub]}" ]; then
 fi
 
 alias s=smart_sudo
-alias extr=extract_archive
-# sudo the previous command
-alias ss="s \$(fc -l \$[ \$(print -P '%\!') - 1 ] | cut -d' ' -f3-)"
-
 alias wc='wc -l'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
-if [ -n "${commands[mvn]}" ]; then
-    alias maven="mvn"
-    alias maven_notest="mvn -Dmaven.test.skip=true"
-fi
 
 # A quick utility that generates a nice, long password
 alias gen-sha-pwd='head -c64 /dev/random | sha256sum'
