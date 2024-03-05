@@ -52,13 +52,11 @@ autoload -Uz select-quoted select-bracketed split-shell-arguments surround
 
 zle -N select-quoted
 zle -N select-bracketed
-for mode in vicmd viopp; do
-	for seq in {a,i}{\',\",\`}; do
-		bindkey -M "$mode" "$seq" select-quoted
-	done
-	for seq in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-		bindkey -M "$mode" "$seq" select-bracketed
-	done
+for seq in {a,i}{\',\",\`}; do
+	bindkey -M viopp "$seq" select-quoted
+done
+for seq in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+	bindkey -M viopp "$seq" select-bracketed
 done
 
 zle -N delete-surround surround
