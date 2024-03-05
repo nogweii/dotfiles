@@ -10,6 +10,7 @@ alias -g   S='|sort'
 alias -g  TO='2>&1 3>&1' # '&>&1' returns a parse error
 alias -g   U='|uniq'
 alias -g  JL='| jq -C . | less'
+alias -g  RE='| ruby -ne'
 
 ########################
 # Listing aliases
