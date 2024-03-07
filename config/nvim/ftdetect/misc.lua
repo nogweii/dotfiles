@@ -1,29 +1,19 @@
 -- Various additional filetype definitions
+vim.filetype.add({
+  extension = {
+    hujson = 'json5',
+  },
 
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { 'gemrc', '.yamlfmt' },
-  callback = function()
-    vim.opt_local.filetype = 'yaml'
-  end,
-})
+  pattern = {
+    ['.*/zsh/functions/.*'] = 'zsh',
+    ['.*/zsh/zle-widgets/.*'] = 'zsh',
+  },
 
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { 'Podfile', 'Fastfile' },
-  callback = function()
-    vim.opt_local.filetype = 'ruby'
-  end,
-})
-
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { '.codespellrc' },
-  callback = function()
-    vim.opt_local.filetype = 'ini'
-  end,
-})
-
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { '*/zsh/functions/*', '*/zsh/zle-widgets/*' },
-  callback = function()
-    vim.opt_local.filetype = 'zsh'
-  end,
+  filename = {
+    ['.codespellrc'] = 'ini',
+    Podfile = 'ruby',
+    Fastfile = 'ruby',
+    ['.gemrc'] = 'yaml',
+    ['.yamlfmt'] = 'yaml',
+  },
 })
