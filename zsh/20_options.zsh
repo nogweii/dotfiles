@@ -1,7 +1,7 @@
 setopt   always_to_end          # move to the end of the word after a completion
 setopt   append_history         # Append, don't overwrite, the history file
 setopt   auto_cd                # Just type in the directory, no 'cd' needed!
-setopt   auto_name_dirs         # variables that point to a dir are used for %~
+unsetopt auto_name_dirs         # don't use variables that point to a dir in %~
 setopt   auto_pushd             # cd pushes the new directory to the stack
 setopt   auto_resume            # attempt fg a job before creating a new process
 unsetopt beep                   # I hate beeps
