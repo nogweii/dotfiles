@@ -4,4 +4,4 @@ if [ -z "${1}" ]; then
   return 1
 fi
 
-openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null </dev/null | openssl x509 -text -noout
+openssl s_client -servername "${1}" -connect "${1}":"${2:-443}" 2>/dev/null </dev/null | openssl x509 -text -noout -in /dev/stdin
