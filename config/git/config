@@ -115,7 +115,7 @@
     # pretty log
     lg = log --decorate --graph --pretty=format:'%Cred%h%Creset - %C(blue)%aN%Creset:%C(yellow)%d%Creset %s %Cgreen(%ar)%Creset' --abbrev-commit --date=relative
     # show all the files that are ignored
-    ls-ignored = ls-files --others -i --exclude-standard
+    ls-ignored = ls-files --others -i --exclude-standard --directory
     # show the changes that are pulled in (calls `git pull` as well)
     up = !"git pull && git log --pretty=format:'%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)' HEAD@{1}.."
     # find all empty directories, add a file within them, and commit it
@@ -183,7 +183,7 @@
     # Reset the local state of a submodule. (Useful for backing out of changes)
     subreset = "!f() { git submodule deinit --force $1 && git subup $1; }; f"
     # delete all files that are ignored by git
-    rm-ignored = "!rm -v $(git ls-files --others -i --exclude-standard)"
+    rm-ignored = "!git ls-ignored -z | xargs --no-run-if-empty -0 rm -rv"
     # show the remote url for the current branch
     remote-url = "!git ls-remote --get-url $(git for-each-ref --format='%(upstream:remotename)' $(git symbolic-ref -q HEAD))"
     # list all branches that have been merged
