@@ -130,11 +130,20 @@ cmp.setup.filetype('gitcommit', {
 })
 
 -- Use buffer source for `/` (relies on cmp's custom completion UI).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' },
   },
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' },
+  }, {
+    { name = 'cmdline' },
+  }),
 })
 
 -- when I press enter, check if there are any pairs to complete

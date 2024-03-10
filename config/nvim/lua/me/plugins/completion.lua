@@ -1,3 +1,4 @@
+---@type LazySpec[]
 return {
   -- snippets engine
   {
@@ -17,6 +18,7 @@ return {
       require('me.settings.cmp')
     end,
     dependencies = { 'L3MON4D3/LuaSnip' },
+    version = false,
   },
   -- additional sources for cmp, lazily loaded
   { 'saadparwaiz1/cmp_luasnip' },
