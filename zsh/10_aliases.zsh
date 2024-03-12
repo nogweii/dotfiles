@@ -88,7 +88,7 @@ if [ -n "${commands[hub]}" ]; then
     alias git=hub
 fi
 
-alias s=smart_sudo
+alias s=smart-sudo
 alias wc='wc -l'
 alias xf=extract_archive
 alias list-dbus="qdbus | sed '/^:/d;s/ //' | sort"
