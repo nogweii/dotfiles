@@ -1,5 +1,10 @@
 if [ -n "${commands[direnv]}" ]; then
   _direnv_hook() {
+    if [ -z "$_disable_direnv" ]; then
+      return 0
+    else
+      unset _disable_direnv
+    fi
     eval "$("${commands[direnv]}" export zsh)";
   }
 
