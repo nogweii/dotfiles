@@ -157,3 +157,5 @@ alias renovate-config-validator="npx --package=renovate --yes renovate-config-va
 alias renovate-local="LOG_LEVEL=debug npx --package=renovate --yes renovate --platform=local"
 
 alias compcachereset="rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
+
+alias dc=docker-compose
