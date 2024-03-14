@@ -11,6 +11,7 @@ vim.filetype.add({
 
   filename = {
     ['.codespellrc'] = 'ini',
+    ['.sqlfluff'] = 'cfg',
     Podfile = 'ruby',
     Fastfile = 'ruby',
     ['.gemrc'] = 'yaml',
