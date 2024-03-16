@@ -28,4 +28,5 @@ return {
   { 'hrsh7th/cmp-cmdline' },
   { 'petertriho/cmp-git' },
   { 'dmitmel/cmp-cmdline-history' },
+  { 'hrsh7th/cmp-emoji' },
 }

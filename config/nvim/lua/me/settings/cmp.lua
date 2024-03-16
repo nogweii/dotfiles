@@ -89,10 +89,11 @@ local config = {
     {
       name = 'path',
       option = {
-        trailing_slash = true,
+        label_trailing_slash = true,
       },
     },
     { name = 'copilot' },
+    { name = 'emoji' },
   }),
 
   -- customize how the completion menu appears
