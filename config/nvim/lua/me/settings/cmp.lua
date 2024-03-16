@@ -126,6 +126,7 @@ cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'git' },
   }),
 })
 
@@ -134,6 +135,7 @@ cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' },
+    { name = 'cmdline_history' },
   },
 })
 
@@ -143,7 +145,14 @@ cmp.setup.cmdline(':', {
     { name = 'path' },
   }, {
     { name = 'cmdline' },
+    { name = 'cmdline_history' },
   }),
+})
+
+require('cmp_git').setup({
+  gitlab = {
+    hosts = { 'code.aether.earth' },
+  },
 })
 
 -- when I press enter, check if there are any pairs to complete
