@@ -19,3 +19,6 @@
 [submodule "zsh/plugins/vi-more-increment"]
 	path = zsh/plugins/vi-more-increment
 	url = https://github.com/zsh-vi-more/vi-increment
+[submodule "zsh/plugins/autopair"]
+	path = zsh/plugins/autopair
+	url = https://github.com/hlissner/zsh-autopair
