@@ -2,11 +2,17 @@
 return {
   {
     'jakewvincent/mkdnflow.nvim',
-    config = function()
-      require('mkdnflow').setup({
-        -- Config goes here; leave blank for defaults
-      })
-    end,
+    --[[ init = function()
+      -- prevent mkdnflow from creating a ton of :Mkdn* commands
+      vim.api.nvim_set_var('loaded_mkdnflow', true)
+    end, ]]
+    opts = {
+      modules = {
+        maps = true,
+        cmp = true, -- add a completion source
+        yaml = true, -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
+      },
+    },
   },
 
   {
