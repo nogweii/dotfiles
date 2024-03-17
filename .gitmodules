@@ -22,3 +22,6 @@
 [submodule "zsh/plugins/autopair"]
 	path = zsh/plugins/autopair
 	url = https://github.com/hlissner/zsh-autopair
+[submodule "zsh/plugins/system-clipboard"]
+	path = zsh/plugins/system-clipboard
+	url = https://github.com/kutsan/zsh-system-clipboard
