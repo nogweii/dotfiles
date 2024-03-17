@@ -22,9 +22,6 @@ for mode in vicmd viins viopp; do
 done
 
 bindkey '^W' backward-kill-word-match
-#bindkey . rationalise-dot
-# without this, typing a . aborts incremental history search
-#bindkey -M isearch . self-insert
 
 # Support smarter/safer pasting in terminals with bracketed paste support
 # See also: https://cirw.in/blog/bracketed-paste
@@ -40,6 +37,8 @@ zle -C complete-file menu-expand-or-complete _generic
 zstyle ':completion:complete-file:*' completer _files
 bindkey -M viins '^Xf' complete-file
 bindkey -M viins '^X^F' complete-file
+
+bindkey "${terminfo[kcbt]}" reverse-menu-complete
 
 # Press Alt-S to rapidly prepend sudo to the beginning of the line
 bindkey "^[s" insert-sudo
@@ -66,6 +65,8 @@ zle -N change-surround surround
 bindkey -a cs change-surround
 bindkey -a ds delete-surround
 bindkey -a ys add-surround
+
+source ${DOTSDIR}/zsh/plugins/many-dots-magic.zsh
 
 source ${DOTSDIR}/zsh/plugins/vi-more-increment/vi-increment.zsh
 source ${DOTSDIR}/zsh/plugins/vi-more-quote/vi-quote.zsh
