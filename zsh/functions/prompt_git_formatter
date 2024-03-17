@@ -12,6 +12,7 @@ if (( $1 )); then
   typeset -A colors=(
          [meta]='%f'
         [clean]='%76F'
+       [branch]='%7F'
      [modified]='%178F'
     [untracked]='%39F'
    [conflicted]='%196F'
@@ -22,6 +23,7 @@ else
   typeset -A colors=(
          [meta]='%244F'
         [clean]='%244F'
+       [branch]='%244F'
      [modified]='%244F'
     [untracked]='%244F'
    [conflicted]='%244F'
@@ -36,7 +38,7 @@ local res
 # Show the branch name if it's known
 if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
   local branch=${(V)VCS_STATUS_LOCAL_BRANCH}
-  res+="${branch//\%/%%}"
+  res+="${colors[meta]}${colors[branch]}${branch//\%/%%}"
 fi
 
 # Show tag only if not on a branch.
