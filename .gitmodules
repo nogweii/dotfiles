@@ -3,7 +3,7 @@
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
 [submodule "zsh/plugins/autoswitch-virtualenv"]
 	path = zsh/plugins/autoswitch-virtualenv
-	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
+	url = https://github.com/nogweii/zsh-autoswitch-virtualenv
 [submodule "zsh/plugins/bench"]
 	path = zsh/plugins/bench
 	url = https://github.com/romkatv/zsh-bench
