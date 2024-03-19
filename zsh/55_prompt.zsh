@@ -684,13 +684,25 @@ functions -M prompt_git_formatter
   typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=0
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
-  # when accepting a command line. Supported values:
+  # when accepting a command line.
   #
-  #   - off:      Don't change prompt when accepting a command line.
-  #   - always:   Trim down prompt when accepting a command line.
-  #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
-  #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
+  # Turn it off to use my own flavor
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
+  # implementing my own transient prompt by defining two hook functions:
+  # this is called right before a prompt is displayed
+  # e.g. the command has finished.
+  # it needs to undo what post-prompt did
+  function p10k-on-pre-prompt() {
+    # Show the first prompt line.
+    p10k display '1'=show '<->/right'=show
+  }
+  # this is called right before a prompt is retired
+  # e.g. the user has hit <Enter>
+  function p10k-on-post-prompt() {
+    # Hide the empty line (if it's there) and the first prompt line
+    # also hide the right-hand side stuff
+    p10k display 'empty_line|1'=hide '<->/right'=hide
+  }
 
   # Instant prompt mode.
   #
