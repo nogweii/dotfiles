@@ -704,6 +704,7 @@ functions -M prompt_git_formatter
   # this is called right before a prompt is retired
   # e.g. the user has hit <Enter>
   function p10k-on-post-prompt() {
+    zle -K vicmd
     # Hide the empty line (if it's there) and the first prompt line
     # also hide the right-hand side stuff
     p10k display 'empty_line|1'=hide '<->/right'=hide
