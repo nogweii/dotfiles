@@ -1,0 +1,3 @@
+# A powerlevel10k prompt segment to indicate whether or not the current shell is a subshell.
+
+p10k segment -i '🐚' -t '%2(L.%L.)' -c '${(%)${:-"%2(L.%L.)"}}'

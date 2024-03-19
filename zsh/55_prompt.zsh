@@ -31,6 +31,7 @@ functions -M prompt_git_formatter
     newline                 # \n
     context                 # user@hostname
     vim_shell               # vim shell indicator (:sh)
+    shlvl
     dir                     # current directory
     prompt_char_joined      # prompt symbol
   )
@@ -682,6 +683,11 @@ functions -M prompt_git_formatter
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
   typeset -g POWERLEVEL9K_BATTERY_BACKGROUND=0
+
+  ################################[ shlvl: subshells ]#################################
+  # Custom segment, see zsh/functions/prompt_shlvl
+  typeset -g POWERLEVEL9K_SHLVL_FOREGROUND=221
+  typeset -g POWERLEVEL9K_SHLVL_BACKGROUND=238
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line.
