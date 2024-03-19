@@ -7,11 +7,6 @@ if [ -n "${commands[fortune]}" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
 
-bindkey -M emacs '^r' atuin-search
-bindkey -M viins '^r' atuin-search-viins
-bindkey -M vicmd '/' atuin-search
-bindkey -M vicmd '^r' atuin-search
-
 # Enable syntax highlighting:
 source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 FAST_HIGHLIGHT_STYLES[path]=underline
