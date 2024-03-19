@@ -301,7 +301,7 @@ task :dircolors do
 
   unless system('which vivid', {out: File::NULL})
     puts "vivid is not installed! no dircolors for you."
-    return
+    next
   end
   vivid_colors = `vivid generate ./config/dircolors/bamboo.yml`.strip
   template = ERB.new File.open("./config/dircolors/zsh_template.erb").read
