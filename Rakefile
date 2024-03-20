@@ -57,9 +57,15 @@ task :dotfiles  do
     # Absolute path to the real file, stored in the repository
     repo_abs_path = File.expand_path "./#{dotfile}"
 
-    if not File.exist? home_abs_path
+    if File.symlink?(home_abs_path) and (not File.exist? home_abs_path)
+      debug "Replacing #{home_abs_path} as it's a broken symlink"
+      rm_r home_abs_path
+      symlink repo_abs_path, home_abs_path
+    elsif not File.exist? home_abs_path
+      debug "Creating new symlink at #{home_abs_path}"
       symlink repo_abs_path, home_abs_path
     elsif File.symlink?(home_abs_path) and File.readlink(home_abs_path) != repo_abs_path
+      debug "Overriding the symlink at #{home_abs_path} with #{repo_abs_path}"
       rm_r home_abs_path
       symlink repo_abs_path, home_abs_path
     elsif not File.symlink?(home_abs_path)
