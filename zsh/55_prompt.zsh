@@ -728,6 +728,11 @@ functions -M prompt_git_formatter
   # really need it.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
 
+  # Output OSC 133 to tell the terminal emulator (mostly iterm & kitty)
+  # when a prompt is printed, or when the command's output begins.
+  # Useful for semantic keybinds in the terminal like "scroll to previous prompt"
+  typeset -g POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
+
   # If p10k is already loaded, reload configuration.
   # This works even with POWERLEVEL9K_DISABLE_HOT_RELOAD=true.
   (( ! $+functions[p10k] )) || p10k reload
