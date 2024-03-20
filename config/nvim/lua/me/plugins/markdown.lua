@@ -2,15 +2,19 @@
 return {
   {
     'jakewvincent/mkdnflow.nvim',
-    --[[ init = function()
-      -- prevent mkdnflow from creating a ton of :Mkdn* commands
-      vim.api.nvim_set_var('loaded_mkdnflow', true)
-    end, ]]
     opts = {
       modules = {
-        maps = true,
-        cmp = true, -- add a completion source
+        maps = false, -- don't do keymaps, ftplugin/markdown.lua has it handled
+        cmp = true,
         yaml = true, -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
+      },
+      links = {
+        style = 'markdown',
+      },
+      perspective = {
+        priority = 'root', -- search for files relative to the root of the notebook/wiki
+        root_tell = '.marksman.toml', -- this file is where the root is at
+        nvim_wd_heel = true, -- change nvim's dir when navigating files
       },
     },
   },
