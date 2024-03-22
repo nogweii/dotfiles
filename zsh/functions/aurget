@@ -2,5 +2,5 @@ local aurdir=${SRCDEST:-~/tmp/aur}
 mkdir -p $aurdir
 wget -q https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz -P $aurdir || return $?
 bsdtar xf $aurdir/$1.tar.gz -C $aurdir || return $?
-rm $aurdir/$1.tar.gz || return $?
+safedel $aurdir/$1.tar.gz
 cd $aurdir/$1 || return $?

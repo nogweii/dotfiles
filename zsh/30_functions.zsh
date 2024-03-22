@@ -3,6 +3,8 @@
 autoload -Uz add-zsh-hook
 autoload colors zsh/terminfo
 
+zmodload zsh/zutil
+
 local function_file
 # Prep every one of my custom functions to be autoloaded
 for function_file in ${DOTSDIR}/zsh/functions/* ; do

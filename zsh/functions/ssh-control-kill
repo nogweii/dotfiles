@@ -7,6 +7,6 @@
     echo "Killing $c"
     ssh -oControlPath=$c -O exit localhost
     sleep 0.5 # give a chance for the background ssh process to exit
-    [ -e $c ] && rm -v $c
+    [ -e $c ] && command rm -v $c
   done
 }
