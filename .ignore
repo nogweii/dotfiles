@@ -1,0 +1,5 @@
+# dotfiles specific things to ignore.
+# if you want the global config, see ./config/fd/ignore
+
+zsh/plugins/
+zsh/00_z_dircolors.zsh
