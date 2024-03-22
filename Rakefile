@@ -204,14 +204,14 @@ task :list do
 end
 
 desc 'Check for any extra elements missing from this system'
-task :doctor => ['doctor:binaries', 'doctor:archlinux']
+task :doctor => ['doctor:binaries', 'doctor:archlinux', 'doctor:macos']
 
 namespace :doctor do
   desc 'Find any missing CLI tools to fully make me comfortable'
   task :binaries do
     %w[jq rg npm pip irb bundle grc go mpv trash wget curl nvim yarn fzf fd lsd
       neomutt docker ansible sudo tmux dfc ncdu git sqlite3 bundle pry
-      shellcheck neovim-ruby-host nc trash].each do |binary|
+      shellcheck neovim-ruby-host nc trash kitty].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exist? File.join(path, binary)
@@ -288,7 +288,23 @@ namespace :doctor do
     end
   end
 
-  desc 'Run archlinux specific tasks, but only on arch systems.'
+  mac_ns = namespace :macos do
+    desc 'Check that all of my favorite fonts are available'
+    task :fonts do
+      all_fonts = `atsutil fonts -list`.split("\n")
+
+      [
+        /Symbols Nerd Font/i,
+        /Source Code Pro/i,
+      ].each do |font|
+        next if all_fonts.any? font
+
+        warn "Missing font matching #{font}"
+      end
+    end
+  end
+
+  desc 'Run ArchLinux-specific tasks'
   task :archlinux do
     if File.exist? "/etc/arch-release"
       arch_ns.tasks.each do |arch_task|
@@ -296,6 +312,17 @@ namespace :doctor do
       end
     else
       debug "Skipping archlinux tasks because this does not look like an Arch system"
+    end
+  end
+
+  desc 'Run MacOS specific tasks.'
+  task :macos do
+    if RbConfig::CONFIG["host_os"] =~ /darwin/
+      mac_ns.tasks.each do |mac_task|
+        mac_task.invoke
+      end
+    else
+      debug "Skipping mac tasks because this does not look like a MacOS system"
     end
   end
 end
