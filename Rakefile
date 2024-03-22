@@ -209,10 +209,9 @@ task :doctor => ['doctor:binaries', 'doctor:archlinux']
 namespace :doctor do
   desc 'Find any missing CLI tools to fully make me comfortable'
   task :binaries do
-    %w[jq rg npm pip irb bundle grc go youtube-dl streamlink mpv pamu2fcfg
-    wget curl nvim yarn fzf fd lsd neomutt docker ansible sudo tmux
-    dfc ncdu git sqlite3 ksshaskpass cryfs ctags bundle pry
-    shellcheck neovim-ruby-host nc youtube-dl zk].each do |binary|
+    %w[jq rg npm pip irb bundle grc go mpv trash wget curl nvim yarn fzf fd lsd
+      neomutt docker ansible sudo tmux dfc ncdu git sqlite3 bundle pry
+      shellcheck neovim-ruby-host nc trash].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exist? File.join(path, binary)
