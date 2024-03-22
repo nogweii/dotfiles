@@ -1,0 +1,55 @@
+local usage=(
+  "${0} [-h|--help] <FILE...>"
+  "for compatibility with rm, the following are ignored:"
+  # the list of arguments is a combination of GNU & BSD
+  # https://man.freebsd.org/cgi/man.cgi?query=rm
+  # https://man.archlinux.org/man/rm.1
+  "\t-v, --verbose"
+  "\t-r, -R, --recursive"
+  "\t-i, -I, --interactive"
+  "\t-P"
+  "\t-W"
+  "\t-d, --dir"
+  "\t-x, --one-file-system"
+  "\t--[no-]preserve-root"
+)
+
+zparseopts -D -F -E -- \
+  {h,-help}=flag_help \
+  {r,R,-recursive}=flag_recurse \
+  {v,-verbose}=flag_verbose \
+  {f,-force}=flag_force \
+  {i,I,-interactive::}=arg_interactive \
+  {d,-dir}=flag_dir \
+  {-no-preserve-root,-preserve-root::}=arg_preserve_root \
+  {x,-one-file-system}=flag_one_fs \
+  {P}=flag_bsd44_lite \
+  {W}=flag_undelete \
+  || { print -l $usage && return 2 }
+
+[[ -n "$flag_help" ]] && print -l $usage && return
+[[ -z "$@" ]] && print -l $usage && return 1
+
+case "$OSTYPE" in
+  darwin*)
+    if [[ -n "${commands[trash]}" ]]; then
+      # Utilize trash ( https://github.com/ali-rantakari/trash/ )
+      trash -v -F -- "${@}"
+    else
+      print -P "%B%UInstall the trash command!%b%u"
+      echo "\tbrew install trash"
+      return 8
+    fi
+  ;;
+
+  linux*)
+    if [[ -n "${commands[trash-put]}" ]]; then
+      # Utilize trash-cli ( https://github.com/andreafrancia/trash-cli )
+      trash-put --verbose -- "${@}"
+    else
+      print -P "%B%UInstall the trash command!%b%u"
+      echo "\tpacman -S trash-cli"
+      return 8
+    fi
+  ;;
+esac

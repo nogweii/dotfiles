@@ -35,21 +35,11 @@ alias    lld='ll -d *(/)'                 # only show directories
 # parent directories?
 alias mkdir='mkdir -p'
 alias cp='cp -Ri'
-# I'm using the GNU extensions to the rm command
-if [ -n "${commands[grm]}" ]; then
-    alias rm="${commands[grm]} -rv --one-file-system --no-preserve-root"
-else
-    alias rm="rm -rv --one-file-system --no-preserve-root"
-fi
+alias rm=safedel
 alias mv='mv -i'
 alias grep="grep $GREP_DEFAULTS" # Only use my preferences in the parent process
 
-########################
-# Convenience aliases
-alias nhclean='rm ./**/nohup.out'
-alias swpclean='rm $(find G "\/\..*\.swp$")'
-alias yrm='yes | rm -rvf'
-alias nrm='yrm &>/dev/null'
+alias nrm='yes | builtin command rm -rvf &>/dev/null'
 
 alias makepkg="makepkg -s"
 
@@ -81,11 +71,6 @@ elif [ -n "${commands[netstat]}" ]; then
     alias portstat="sudo netstat -tunelp"
 else
     alias portstat="echo missing ss and netstat"
-fi
-
-alias gh-pages='git symbolic-ref HEAD refs/heads/gh-pages && rm .git/index && git clean -fdx'
-if [ -n "${commands[hub]}" ]; then
-    alias git=hub
 fi
 
 alias s=smart-sudo
@@ -156,6 +141,6 @@ alias k=kubectl
 alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
 alias renovate-local="LOG_LEVEL=debug npx --package=renovate --yes renovate --platform=local"
 
-alias compcachereset="rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
+alias compcachereset="command rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
 
 alias dc=docker-compose
