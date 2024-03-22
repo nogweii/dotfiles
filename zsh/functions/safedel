@@ -38,7 +38,7 @@ case "$OSTYPE" in
     else
       print -P "%B%UInstall the trash command!%b%u"
       echo "\tbrew install trash"
-      exit 8
+      return 8
     fi
   ;;
 
@@ -49,7 +49,7 @@ case "$OSTYPE" in
     else
       print -P "%B%UInstall the trash command!%b%u"
       echo "\tpacman -S trash-cli"
-      exit 8
+      return 8
     fi
   ;;
 esac
