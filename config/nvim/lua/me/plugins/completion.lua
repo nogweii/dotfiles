@@ -3,13 +3,15 @@ return {
   -- snippets engine
   {
     'L3MON4D3/LuaSnip',
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+      { 'honza/vim-snippets', version = false },
+    },
     config = function()
       require('me.settings.luasnip')
     end,
+    version = 'v2.*',
   },
-  -- a bunch of community maintained snippets
-  { 'rafamadriz/friendly-snippets' },
 
   -- advanced & flexible completion menu
   {

@@ -74,6 +74,7 @@
   "vim-rescript": { "branch": "master", "commit": "58be69b06a2aa06133411f92aaf2bfef462fd8aa" },
   "vim-rsi": { "branch": "master", "commit": "45540637ead22f011e8215f1c90142e49d946a54" },
   "vim-sandwich": { "branch": "master", "commit": "785fb39d79bb843b545f1d8a9265bd8f2e2285f8" },
+  "vim-snippets": { "branch": "master", "commit": "393d980157b8149b3ff65a48bc4aae24dca9c846" },
   "vim-startuptime": { "branch": "master", "commit": "97a88e688482a09c3c4b777d07b509b328a5ec29" },
   "vim-terraform": { "branch": "master", "commit": "21f756b933cd11ac5990a6046fdc7c4e2a6c0aee" },
   "vim-tickscript": { "branch": "master", "commit": "399e332b709f034421c83af9ea14380d71e0d743" },
