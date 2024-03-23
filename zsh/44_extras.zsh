@@ -10,8 +10,3 @@ AUTOPAIR_PAIRS+=("<" ">")
 #unset 'AUTOPAIR_PAIRS[<]'
 # Then, do all of the key bindings:
 autopair-init
-
-source ${DOTSDIR}/zsh/plugins/system-clipboard/zsh-system-clipboard.zsh
-
-# Bind Y to yank until end of line, not the whole line.
-bindkey -M vicmd Y zsh-system-clipboard-vicmd-vi-yank-eol
