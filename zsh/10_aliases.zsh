@@ -14,7 +14,9 @@ alias -g  RE='| ruby -ne'
 
 ########################
 # Listing aliases
-if [ -n "${commands[lsd]}" ]; then
+if [ -n "${commands[eza]}" ]; then
+    alias ls="${commands[eza]} --classify=auto --icons=auto --color=auto --hyperlink"
+elif [ -n "${commands[lsd]}" ]; then
     alias ls="${commands[lsd]} --icon=auto --color=auto -F"
 elif [ -n "${commands[gls]}" ]; then
     alias ls="${commands[gls]} --color=auto -F"
