@@ -98,6 +98,10 @@ return {
             vim.b.miniindentscope_disable = true
           end,
         })
+
+        require('mini.pairs').setup({
+          modes = { insert = true, command = true, terminal = false },
+        })
       end,
       keys = {
         {

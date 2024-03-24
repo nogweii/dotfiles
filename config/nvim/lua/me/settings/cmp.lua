@@ -1,5 +1,4 @@
 local cmp = require('cmp')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require('luasnip')
 
 local lsp_kind_emojis = {
@@ -155,6 +154,3 @@ require('cmp_git').setup({
     hosts = { 'code.aether.earth' },
   },
 })
-
--- when I press enter, check if there are any pairs to complete
-cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))

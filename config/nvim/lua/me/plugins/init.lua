@@ -100,13 +100,6 @@ return {
     version = false,
   },
 
-  {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('me.settings.autopairs')
-    end,
-  },
-
   -- quickly toggle comments for a line (or motion)
   { 'b3nj5m1n/kommentary' },
 
