@@ -3,6 +3,7 @@ vim.g.mapleader = ';'
 local map = require('me.map_utils').map
 local cmd_map = require('me.map_utils').cmd_map
 local plug_map = require('me.map_utils').plug_map
+local keymap = vim.keymap.set
 
 --[[
                                  _
@@ -41,7 +42,15 @@ map({ keys = '`', to = "'" })
 map({ keys = "'", to = '`' })
 
 -- Make interacting with the spell checking a little easier
-map({ keys = 'zP', to = ':set spell!<CR>', desc = 'Toggle spell checking' })
+keymap('n', 'zP', function()
+  if vim.o.spell then
+    vim.o.spell = false
+    vim.notify('Spell checking disabled', vim.log.levels.INFO)
+  else
+    vim.o.spell = true
+    vim.notify('Spell checking enabled', vim.log.levels.INFO)
+  end
+end, { desc = 'Toggle spell checking' })
 map({ keys = 'zp', to = '1z=', desc = 'Accept the first spell correction' })
 
 -- Attempt to clear the screen of artifacts and clear search highlight
