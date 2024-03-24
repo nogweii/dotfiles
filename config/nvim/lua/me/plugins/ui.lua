@@ -57,7 +57,12 @@ return {
   -- preview colors inline in the editor
   {
     'NvChad/nvim-colorizer.lua',
-    opts = {},
+    opts = {
+      user_default_options = {
+        css = true,
+        names = false,
+      },
+    },
   },
 
   {
