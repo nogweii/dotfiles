@@ -14,6 +14,17 @@ return {
         })
 
         require('mini.bufremove').setup()
+        require('mini.bracketed').setup({
+          -- Disable a few targets that I don't care about
+          -- stylua: ignore start
+          buffer  = { suffix = '' }, -- this is handled by bufferline
+          file    = { suffix = '' },
+          oldfile = { suffix = '' },
+          undo    = { suffix = '' },
+          window  = { suffix = '' },
+          yank    = { suffix = '' },
+          -- stylua: ignore end
+        })
 
         -- Key bindings help & reminder
         local clue = require('mini.clue')

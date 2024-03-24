@@ -71,10 +71,6 @@ end, { desc = 'Select project' })
 -- Tap - to jump into a file pane
 cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
 
--- easy buffer switching, that's bufferline-aware
-cmd_map({ keys = '<C-n>', command = 'BufferLineCycleNext' })
-cmd_map({ keys = '<C-p>', command = 'BufferLineCyclePrev' })
-
 --[[
        _ _
   __ _(_) |_
