@@ -45,10 +45,10 @@ map({ keys = "'", to = '`' })
 keymap('n', 'zP', function()
   if vim.o.spell then
     vim.o.spell = false
-    vim.notify('Spell checking disabled', vim.log.levels.INFO)
+    vim.notify('Spell checking disabled', vim.log.levels.INFO, { icon = '󰜺', render = 'compact' })
   else
     vim.o.spell = true
-    vim.notify('Spell checking enabled', vim.log.levels.INFO)
+    vim.notify('Spell checking enabled', vim.log.levels.INFO, { icon = '󰓆', render = 'compact' })
   end
 end, { desc = 'Toggle spell checking' })
 map({ keys = 'zp', to = '1z=', desc = 'Accept the first spell correction' })
