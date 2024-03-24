@@ -33,17 +33,21 @@ local opts = {
       ft = '📂',
       init = '⚙' .. force_emoji,
       keys = '🗝' .. force_emoji,
+      lazy = '💤 ',
       plugin = '🔌',
       runtime = '💻' .. force_emoji,
       source = '📄',
       start = '🚀',
       task = '📌',
-      lazy = '💤 ',
     },
   },
 
   defaults = {
     version = '*',
+  },
+  change_detection = {
+    -- don't need a notification whenever a plugin file changes
+    notify = false,
   },
   performance = {
     rtp = {

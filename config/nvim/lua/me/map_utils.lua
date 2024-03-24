@@ -11,13 +11,14 @@ function _M.map(args)
     silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
     expression = false, -- set to true if the output is to be evaluated rather than typed
     plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
+    desc = '',
   })
 
   vim.api.nvim_set_keymap(
     args.mode,
     args.keys,
     args.to,
-    { noremap = not args.recurse, silent = args.silent, expr = args.expression }
+    { noremap = not args.recurse, silent = args.silent, expr = args.expression, desc = args.desc }
   )
 end
 
@@ -30,6 +31,7 @@ function _M.plug_map(args)
     silent = true,
     recurse = true,
     plugins = true,
+    desc = args.desc,
   })
 end
 
@@ -41,6 +43,7 @@ function _M.cmd_map(args)
     mode = args.mode or 'n',
     silent = true,
     plugins = args.plugins == nil and true or args.plugins,
+    desc = args.desc,
   })
 end
 

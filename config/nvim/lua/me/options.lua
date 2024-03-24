@@ -32,6 +32,7 @@ vim.opt.spell          = true                                -- Enable spell che
 vim.opt.spellcapcheck  = ''                                  -- Disable capitalization spell check
 vim.opt.termguicolors  = true                                -- Use guifg over ctermfg in true-color terminals
 vim.opt.title          = true                                -- Modify the terminal title
+vim.opt.timeoutlen     = 2500                                -- How long to wait for keymap before giving up
 vim.opt.undofile       = true                                -- Persist undo history across sessions
 vim.opt.updatetime     = 100                                 -- Millisecs idle before calling the CursorHold
 vim.opt.virtualedit    = 'block'                             -- Block movement can go beyond end-of-line

@@ -21,20 +21,32 @@ return {
 
   -- yank a link to the commit
   {
-    'ruifm/gitlinker.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('gitlinker').setup({
-        opts = {
-          add_current_line_on_normal_mode = false,
-          action_callback = require('gitlinker.actions').copy_to_clipboard,
+    'linrongbin16/gitlinker.nvim',
+    opts = function(_plugin, _opts)
+      return {
+        router = {
+          browse = {
+            ['^code%.aether%.earth'] = require('gitlinker.routers').gitlab_browse,
+          },
+          blame = {
+            ['^code%.aether%.earth'] = require('gitlinker.routers').gitlab_blame,
+          },
         },
-        callbacks = {
-          ['code.aether.earth'] = require('gitlinker.hosts').get_gitlab_type_url,
-        },
-        mappings = nil,
-      })
+      }
     end,
+    keys = {
+      {
+        '<leader>gy',
+        function()
+          require('gitlinker').link({
+            action = require('gitlinker.actions').clipboard,
+            router_type = 'browse',
+          })
+        end,
+        mode = { 'n', 'v' },
+        desc = 'Yank a git URL to this file',
+      },
+    },
   },
 
   -- Easily add co-authors to commits using the typical "Co-authored-by:" signature

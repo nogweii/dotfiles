@@ -62,6 +62,59 @@ return {
     opts = {},
   },
 
-  -- a very beautiful tabline
-  { 'romgrk/barbar.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    lazy = false,
+    keys = {
+      { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
+      { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
+    },
+    opts = {
+      options = {
+        close_command = function(n)
+          require('mini.bufremove').delete(n, false)
+        end,
+        right_mouse_command = function(n)
+          require('mini.bufremove').delete(n, false)
+        end,
+        diagnostics = 'nvim_lsp',
+        always_show_bufferline = false,
+        offsets = {
+          {
+            filetype = 'neo-tree',
+            text = 'Neo-tree',
+            highlight = 'Directory',
+            text_align = 'left',
+          },
+        },
+      },
+    },
+    config = function(_, opts)
+      require('bufferline').setup(opts)
+      -- Fix bufferline when restoring a session
+      vim.api.nvim_create_autocmd({ 'BufAdd', 'UIEnter', 'VimEnter' }, {
+        callback = function()
+          vim.schedule(function()
+            require('bufferline').setup(opts)
+          end)
+        end,
+      })
+    end,
+  },
+
+  { 'jiaoshijie/undotree', cmd = 'UndotreeToggle' },
+
+  -- when typing `:<number>` scroll to that line, only while in command mode
+  -- which allows easy peeking to another location in the file
+  {
+    'nacro90/numb.nvim',
+    config = function()
+      require('numb').setup({
+        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      })
+    end,
+  },
 }

@@ -22,16 +22,3 @@ wk.register({
     f = 'Run all fixers on the file',
   },
 }, { prefix = '<leader>' })
-
-wk.register({
-  D = 'Close the buffer',
-  E = 'Fuzzily find a file',
-  G = 'Search for text in files',
-  L = 'Edit the neovim config',
-  P = 'Edit the snippets file for this file type',
-  T = 'Search for code tags',
-  R = 'Show all LSP diagnostics',
-  U = 'Visualize undo tree',
-  W = 'Save changes',
-  ['='] = 'Format the file',
-}, { prefix = 'Z' })

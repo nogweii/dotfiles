@@ -81,18 +81,6 @@ return {
     end,
   },
 
-  -- when typing `:<number>` scroll to that line, only while in command mode
-  -- which allows easy peeking to another location in the file
-  {
-    'nacro90/numb.nvim',
-    config = function()
-      require('numb').setup({
-        show_numbers = true, -- Enable 'number' for the window while peeking
-        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-      })
-    end,
-  },
-
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
@@ -135,14 +123,6 @@ return {
     end,
   },
 
-  -- Key bindings help & reminder
-  {
-    'folke/which-key.nvim',
-    config = function()
-      require('me.settings.which_key')
-    end,
-  },
-
   -- quickly & easily generate a python docstring
   {
     'heavenshell/vim-pydocstring',
@@ -153,58 +133,6 @@ return {
       vim.g.pydocstring_enable_mapping = 0
       local cmd_map = require('me.map_utils').cmd_map
       cmd_map({ keys = '<leader>pd', command = 'Pydocstring' })
-    end,
-  },
-
-  -- Some utility key bindings for editng markdown tables
-  {
-    'allen-mack/nvim-table-md',
-    ft = 'markdown',
-    config = function()
-      vim.keymap.set('n', '<leader>mto', function()
-        require('tablemd').insertRow(false)
-      end)
-      vim.keymap.set('n', '<leader>mtO', function()
-        require('tablemd').insertRow(true)
-      end)
-      vim.keymap.set('n', '<leader>mti', function()
-        require('tablemd').insertColumn(true)
-      end)
-      vim.keymap.set('n', '<leader>mtI', function()
-        require('tablemd').insertColumn(false)
-      end)
-      vim.keymap.set('n', '<leader>mtf', function()
-        require('tablemd').format()
-      end)
-      vim.keymap.set('n', '<leader>mtd', function()
-        require('tablemd').deleteColumn()
-      end)
-
-      local wk = require('which-key')
-      wk.register({
-        name = 'Markdown Table',
-        o = 'Add a new row below',
-        O = 'Add a new row above',
-        i = 'Add a new column to the right',
-        I = 'Add a new column to the left',
-        f = 'Reformat the table',
-        d = 'Delete the current column',
-      }, { prefix = '<leader>mt' })
-    end,
-  },
-
-  { 'jiaoshijie/undotree', cmd = 'UndotreeToggle' },
-
-  {
-    'echasnovski/mini.align',
-    version = '*',
-    config = function()
-      require('mini.align').setup({
-        mappings = {
-          start = '', -- ga is already mapped to show the Unicode character, so don't overwrite that
-          start_with_preview = 'gA',
-        },
-      })
     end,
   },
 
