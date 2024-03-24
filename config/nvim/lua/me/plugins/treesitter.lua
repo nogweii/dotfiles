@@ -21,7 +21,8 @@ return {
 
   -- Treesitter compatible rainbow parentheses
   {
-    'HiPhish/rainbow-delimiters.nvim',
+    url = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+    name = 'rainbow-delimiters.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       -- This module contains a number of default definitions
