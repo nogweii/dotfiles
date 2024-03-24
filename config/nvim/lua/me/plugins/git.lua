@@ -46,6 +46,17 @@ return {
         mode = { 'n', 'v' },
         desc = 'Yank a git URL to this file',
       },
+      {
+        '<leader>gY',
+        function()
+          require('gitlinker').link({
+            action = require('gitlinker.actions').system,
+            router_type = 'browse',
+          })
+        end,
+        mode = { 'n', 'v' },
+        desc = 'Open the git URL in browser',
+      },
     },
   },
 
