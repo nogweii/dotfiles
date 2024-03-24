@@ -54,6 +54,8 @@ local opts = {
       paths = { '/usr/lib/nvim' },
       disabled_plugins = {
         'gzip',
+        'matchit',
+        'matchparen',
         'netrwPlugin',
         'tarPlugin',
         'tohtml',
