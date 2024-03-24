@@ -92,9 +92,6 @@ return {
     version = false,
   },
 
-  -- quickly toggle comments for a line (or motion)
-  { 'b3nj5m1n/kommentary' },
-
   { 'mfussenegger/nvim-lint' },
 
   -- A smarter cursor position restoration function, excluding various buffers

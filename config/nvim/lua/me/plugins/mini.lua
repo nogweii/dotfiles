@@ -3,6 +3,10 @@ return {
   {
     {
       'echasnovski/mini.nvim',
+      dependencies = {
+        -- Not directly used, but this has a number of well-maintained queries to power mini.ai
+        'nvim-treesitter/nvim-treesitter-textobjects',
+      },
       version = '*',
       lazy = false,
       config = function()
@@ -14,6 +18,7 @@ return {
         })
 
         require('mini.bufremove').setup()
+
         require('mini.bracketed').setup({
           -- Disable a few targets that I don't care about
           -- stylua: ignore start
@@ -24,6 +29,20 @@ return {
           window  = { suffix = '' },
           yank    = { suffix = '' },
           -- stylua: ignore end
+        })
+
+        local ai = require('mini.ai')
+        ai.setup({
+          n_lines = 500,
+          custom_textobjects = {
+            o = ai.gen_spec.treesitter({
+              a = { '@block.outer', '@conditional.outer', '@loop.outer' },
+              i = { '@block.inner', '@conditional.inner', '@loop.inner' },
+            }, {}),
+            f = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }, {}),
+            c = ai.gen_spec.treesitter({ a = '@class.outer', i = '@class.inner' }, {}),
+            u = ai.gen_spec.function_call(), -- u for "Usage"
+          },
         })
 
         -- Key bindings help & reminder
@@ -78,6 +97,7 @@ return {
         require('mini.indentscope').setup({
           symbol = '│',
           options = { try_as_border = true },
+          draw = { delay = 250 },
         })
         vim.api.nvim_create_autocmd('FileType', {
           pattern = {
@@ -102,12 +122,29 @@ return {
         require('mini.pairs').setup({
           modes = { insert = true, command = true, terminal = false },
         })
+
+        require('mini.comment').setup({
+          custom_commentstring = function()
+            return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
+          end,
+        })
       end,
       keys = {
         {
           'ZD',
           function()
-            require('mini.bufremove').delete(0, false)
+            local bd = require('mini.bufremove').delete
+            if vim.bo.modified then
+              local choice = vim.fn.confirm(('Save changes to %q?'):format(vim.fn.bufname()), '&Yes\n&No\n&Cancel')
+              if choice == 1 then -- Yes
+                vim.cmd.write()
+                bd(0)
+              elseif choice == 2 then -- No
+                bd(0, true)
+              end
+            else
+              bd(0)
+            end
           end,
           desc = 'Delete Buffer',
         },
