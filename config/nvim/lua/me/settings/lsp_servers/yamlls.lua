@@ -7,8 +7,6 @@ local setup_options = {
         -- disable the schemas shipped with the LSP to use the schemastore plugin
         -- which can be configured in more ways than a basic on/off
         enable = false,
-        -- url = 'https://www.schemastore.org/api/json/catalog.json',
-        url = '',
       },
       schemas = schemas.yaml.schemas(),
 
@@ -16,6 +14,7 @@ local setup_options = {
       format = { enabled = false },
       keyOrdering = false,
     },
+    redhat = { telemetry = { enabled = false } },
   },
 
   -- Tell yamlls that we do, in fact, support line folding
