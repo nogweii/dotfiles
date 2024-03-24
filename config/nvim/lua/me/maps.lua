@@ -61,6 +61,19 @@ map({ keys = '<C-l>', to = '<c-l>:nohlsearch<CR>:redraw<CR>' })
 map({ keys = 'H', to = "(col('.') == matchend(getline('.'), '^\\s*')+1 ? '0' : '^')", expression = true })
 map({ keys = 'L', to = '$', recurse = true })
 
+local toggle_diagnostic = function()
+  local buf_id = vim.api.nvim_get_current_buf()
+
+  if vim.diagnostic.is_disabled(buf_id) then
+    vim.diagnostic.enable(buf_id)
+    vim.notify('Diagnostics turned on', vim.log.levels.INFO, { icon = '', render = 'compact' })
+  else
+    vim.diagnostic.disable(buf_id)
+    vim.notify('Diagnostics turned off', vim.log.levels.INFO, { icon = '', render = 'compact' })
+  end
+end
+keymap('n', 'zT', toggle_diagnostic, { desc = 'Toggle diagnostics' })
+
 -- Easily get out of insert mode in the terminal
 map({ keys = '<C-s>', to = '<C-\\><C-n>', recurse = true, mode = 't', desc = 'Get out of insert mode' })
 
