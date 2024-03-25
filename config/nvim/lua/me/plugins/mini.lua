@@ -78,8 +78,8 @@ return {
             clue.gen_clues.registers(),
             clue.gen_clues.windows(),
             clue.gen_clues.z(),
-            { mode = 'n', keys = '<Leader>g', desc = '+Git' },
-            { mode = 'n', keys = '<Leader>l', desc = '+LSP' },
+            { mode = 'n', keys = '<Leader>g', desc = '󰊢 Git' },
+            { mode = 'n', keys = '<Leader>l', desc = ' LSP' },
           },
 
           window = {
@@ -128,22 +128,37 @@ return {
             return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
           end,
         })
+
+        require('mini.cursorword').setup({
+          -- Delay (in ms) between cursor movement and word highlighting
+          delay = 250,
+        })
+
+        local animate = require('mini.animate')
+        animate.setup({
+          resize = {
+            timing = animate.gen_timing.linear({ duration = 100, unit = 'total' }),
+          },
+          scroll = {
+            timing = animate.gen_timing.linear({ duration = 150, unit = 'total' }),
+          },
+        })
       end,
       keys = {
         {
           'ZD',
           function()
-            local bd = require('mini.bufremove').delete
+            local bufrm = require('mini.bufremove').delete
             if vim.bo.modified then
               local choice = vim.fn.confirm(('Save changes to %q?'):format(vim.fn.bufname()), '&Yes\n&No\n&Cancel')
               if choice == 1 then -- Yes
                 vim.cmd.write()
-                bd(0)
+                bufrm(0)
               elseif choice == 2 then -- No
-                bd(0, true)
+                bufrm(0, true)
               end
             else
-              bd(0)
+              bufrm(0)
             end
           end,
           desc = 'Delete Buffer',
