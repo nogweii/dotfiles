@@ -69,4 +69,18 @@ return {
     end,
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
+
+  {
+    'windwp/nvim-ts-autotag',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
+
+  {
+    'RRethy/nvim-treesitter-endwise',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-treesitter-endwise').init()
+    end,
+  },
 }
