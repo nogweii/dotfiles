@@ -83,13 +83,8 @@ return {
 
   -- Automatic semi-smart indentation settings for a buffer
   {
-    'Raimondi/yaifa',
-    init = function()
-      vim.g.yaifa_shiftwidth = 2
-      vim.g.yaifa_tabstop = 4
-      vim.g.yaifa_expandtab = 1
-    end,
-    version = false,
+    'nmac427/guess-indent.nvim',
+    opts = {},
   },
 
   { 'mfussenegger/nvim-lint' },
