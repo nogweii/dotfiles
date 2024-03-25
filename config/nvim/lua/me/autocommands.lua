@@ -104,3 +104,11 @@ vim.api.nvim_create_user_command('ConformToggle', function()
 end, {
   desc = 'Toggle automatic formatting-on-save with Conform',
 })
+
+-- For these filetypes, disable ufo's fold
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+  pattern = { 'git', 'help', 'qf', 'fugitive', 'fugitiveblame', 'neo-tree' },
+  callback = function()
+    vim.b.ufo_provider = ''
+  end,
+})

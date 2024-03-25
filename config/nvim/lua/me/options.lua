@@ -12,8 +12,9 @@ vim.opt.errorbells     = false                               -- Disable any erro
 vim.opt.exrc           = true                                -- Turn on reading local project configuration
 vim.opt.fileencoding   = 'utf-8'                             -- Default to assuming files are encoded in UTF-8
 vim.opt.fileformat     = 'unix'                              -- Prefer UNIX line endings
-vim.opt.foldlevel      = 5                                   -- Only fold sections deeper than this level automatically
-vim.opt.foldlevelstart = 5                                   -- Only fold sections deeper than this level automatically
+vim.opt.foldlevel      = 99                                  -- Only fold sections marked at this level (or higher)
+vim.opt.foldlevelstart = 99                                  -- When vim starts, start at this foldlevel
+vim.opt.foldcolumn     = "1"                                 -- Add N space for showing fold chars on the left
 vim.opt.hidden         = true                                -- Allow changing buffers even with modifications
 vim.opt.history        = 10000                               -- Remember lots of history for :
 vim.opt.hlsearch       = true                                -- Highlight search results
@@ -83,9 +84,15 @@ if not vim.fn.isdirectory(vim.o.backupdir) then
   vim.fn.mkdir(vim.o.backupdir, 'p')
 end
 
--- Don't always show the sign columns, but if there are, make sure there's room
--- for two. This matches the width of the mode indicator in the statusbar
-vim.opt.signcolumn = 'auto:2'
-
 -- Add angle brackets to the list of recognized characters in a pair
 vim.opt.matchpairs = vim.bo.matchpairs .. ',<:>'
+
+vim.opt.fillchars = {
+  eob = ' ', -- disable `~` on nonexistent lines
+
+  -- Make indication of a fold pretty snazzy-lookin'
+  fold = ' ',
+  foldopen = '',
+  foldsep = ' ',
+  foldclose = '',
+}

@@ -17,16 +17,6 @@ local setup_options = {
     redhat = { telemetry = { enabled = false } },
   },
 
-  -- Tell yamlls that we do, in fact, support line folding
-  capabilities = {
-    textDocument = {
-      foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true,
-      },
-    },
-  },
-
   --- Ran whenever yamlls attaches to a buffer, look at it and see if it is a file
   --- that would not really work well with the LSP. Stuff like Helm, Jinja, and Go
   --- template files are examples of that where it would be better to disable

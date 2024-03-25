@@ -128,4 +128,99 @@ return {
     'mcauley-penney/visual-whitespace.nvim',
     config = true,
   },
+
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = 'kevinhwang91/promise-async',
+    event = 'BufRead',
+    keys = {
+      {
+        'zR',
+        function()
+          require('ufo').openAllFolds()
+        end,
+        desc = 'Open all folds',
+      },
+      {
+        'zM',
+        function()
+          require('ufo').closeAllFolds()
+        end,
+        desc = 'Close all folds',
+      },
+      {
+        'zZ',
+        function()
+          require('ufo').peekFoldedLinesUnderCursor()
+        end,
+        desc = 'Peek folded lines under cursor',
+      },
+      {
+        'zr',
+        function()
+          require('ufo').openFoldsExceptKinds()
+        end,
+        desc = 'Fold less',
+      },
+      {
+        'zm',
+        function()
+          require('ufo').closeFoldsWith()
+        end,
+        desc = 'Fold more',
+      },
+    },
+    opts = {
+      provider_selector = function(bufnr, filetype, buftype)
+        local function handleFallbackException(targetBufnr, err, providerName)
+          if type(err) == 'string' and err:match('UfoFallbackException') then
+            return require('ufo').getFolds(targetBufnr, providerName)
+          else
+            return require('promise').reject(err)
+          end
+        end
+
+        -- Try to get ufo to generate folds via the LSP. But if that
+        -- fails, try again using Treesitter. Failing *that*, just
+        -- use indentation as the fold method.
+        ---@param targetBufnr number
+        ---@return Promise
+        local function findFirstAvailableProvider(targetBufnr)
+          return require('ufo')
+            .getFolds(targetBufnr, 'lsp')
+            :catch(function(err)
+              return handleFallbackException(targetBufnr, err, 'treesitter')
+            end)
+            :catch(function(err)
+              return handleFallbackException(targetBufnr, err, 'indent')
+            end)
+        end
+
+        return (filetype == '' or buftype == 'nofile') and 'indent' -- only use indent until a file is opened
+          or vim.b[bufnr].ufo_provider -- Allow a buffer to have specific overrides
+          or findFirstAvailableProvider -- And lastly, try to automatically determine the available provider
+      end,
+    },
+  },
+
+  {
+    'luukvbaal/statuscol.nvim',
+    opts = function()
+      local builtin = require('statuscol.builtin')
+      return {
+        setopt = true,
+        -- override the default list of segments with:
+        -- number-less fold indicator, then signs, then line number & separator
+        segments = {
+          { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
+          { text = { '%s' }, click = 'v:lua.ScSa' },
+          {
+            text = { builtin.lnumfunc, ' ' },
+            condition = { true, builtin.not_empty },
+            click = 'v:lua.ScLa',
+          },
+        },
+      }
+    end,
+  },
 }

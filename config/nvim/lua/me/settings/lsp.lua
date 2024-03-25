@@ -27,9 +27,11 @@ end
 local make_capabilities = function()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-  -- TODO: everyone does this, but what does it enable?
-  capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-  capabilities.textDocument.completion.completionItem.preselectSupport = true
+  -- nvim-ufo knows how to handle LSP defined fold ranges
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
 
   -- I've set up LuaSnip, which knows how to parse LSP provided snippets
   capabilities.textDocument.completion.completionItem.snippetSupport = true
