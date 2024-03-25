@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- Support HCL and other Hashicorp specific syntaxes
   { 'hashivim/vim-terraform' },

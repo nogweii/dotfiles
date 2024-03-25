@@ -32,7 +32,7 @@ return {
 
   {
     'mrded/nvim-lsp-notify',
-    requires = { 'rcarriga/nvim-notify' },
+    dependencies = { 'rcarriga/nvim-notify' },
   },
 
   {

@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- a very customizable status bar framework for Neovim written in Lua
   {

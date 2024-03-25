@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   -- get more recently updated git related syntax files
   -- this is the upstream source of what is shipped with the editor
