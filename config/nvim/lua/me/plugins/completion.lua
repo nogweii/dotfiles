@@ -39,7 +39,10 @@ return {
   { 'saadparwaiz1/cmp_luasnip' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/cmp-path' },
+  {
+    url = 'https://codeberg.org/FelipeLema/cmp-async-path',
+    name = 'cmp-async_path',
+  },
   { 'hrsh7th/cmp-cmdline' },
   { 'petertriho/cmp-git' },
   { 'dmitmel/cmp-cmdline-history' },

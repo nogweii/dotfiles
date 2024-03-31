@@ -86,7 +86,7 @@ local config = {
     { name = 'luasnip' },
     { name = 'buffer' },
     {
-      name = 'path',
+      name = 'async_path',
       option = {
         label_trailing_slash = true,
       },
@@ -125,7 +125,7 @@ cmp.setup(config)
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'buffer' },
-    { name = 'path' },
+    { name = 'async_path' },
     { name = 'git' },
   }),
 })
@@ -142,7 +142,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' },
+    { name = 'async_path' },
   }, {
     { name = 'cmdline' },
     { name = 'cmdline_history' },
