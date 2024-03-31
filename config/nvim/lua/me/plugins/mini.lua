@@ -118,6 +118,8 @@ return {
           callback = function()
             ---@diagnostic disable-next-line: inject-field
             vim.b.miniindentscope_disable = true
+            ---@diagnostic disable-next-line: inject-field
+            vim.b.minicursorword_disable = true
           end,
         })
 
