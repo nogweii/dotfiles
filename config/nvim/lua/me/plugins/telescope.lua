@@ -19,11 +19,9 @@ return {
             theme = 'ivy',
             scroll_strategy = 'limit',
             layout_config = {
-              bottom_pane = {
-                height = 15,
-                preview_cutoff = 120,
-                prompt_position = 'bottom',
-              },
+              height = 15,
+              prompt_position = 'bottom',
+              preview_width = 0,
             },
             prompt_title = false,
           },
