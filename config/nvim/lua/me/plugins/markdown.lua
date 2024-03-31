@@ -75,4 +75,88 @@ return {
       },
     },
   },
+
+  {
+    'HakonHarnes/img-clip.nvim',
+    opts = {
+      default = {
+        prompt_for_file_name = false,
+        relative_template_path = false,
+        drag_and_drop = {
+          -- enable drag and drop in insert mode
+          insert_mode = true,
+          -- copy images instead of using the original file
+          copy_images = true,
+          -- download images and save them to dir_path instead of using the URL
+          download_images = true,
+        },
+      },
+      filetypes = {
+        markdown = {
+          url_encode_path = false,
+          template = '![$CURSOR]($FILE_PATH)',
+
+          drag_and_drop = {
+            download_images = true,
+          },
+        },
+
+        html = {
+          url_encode_path = true,
+          template = '<img src="$FILE_PATH" alt="$CURSOR">',
+        },
+
+        tex = {
+          relative_template_path = false,
+          template = [[
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{$FILE_PATH}
+  \caption{$CURSOR}
+  \label{fig:$LABEL}
+\end{figure}
+    ]],
+        },
+
+        typst = {
+          template = [[
+#figure(
+  image("$FILE_PATH", width: 80%),
+  caption: [$CURSOR],
+) <fig-$LABEL>
+    ]],
+        },
+
+        rst = {
+          template = [[
+.. image:: $FILE_PATH
+   :alt: $CURSOR
+   :width: 80%
+    ]],
+        },
+
+        asciidoc = {
+          template = 'image::$FILE_PATH[width=80%, alt="$CURSOR"]',
+        },
+
+        org = {
+          template = [=[
+#+BEGIN_FIGURE
+[[file:$FILE_PATH]]
+#+CAPTION: $CURSOR
+#+NAME: fig:$LABEL
+#+END_FIGURE
+    ]=],
+        },
+      },
+      -- override options for specific files, dirs or custom triggers
+      files = {}, -- file specific options (e.g. "main.md" or "/path/to/main.md")
+      dirs = {}, -- dir specific options (e.g. "project" or "/home/user/project")
+      custom = {}, -- custom options enabled with the trigger option
+    },
+    keys = {
+      -- suggested keymap
+      { '<leader>mp', '<cmd>PasteImage<cr>', desc = 'Paste clipboard image' },
+    },
+  },
 }

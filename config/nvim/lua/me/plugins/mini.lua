@@ -81,6 +81,7 @@ return {
             { mode = 'n', keys = '<Leader>g', desc = '󰊢 Git' },
             { mode = 'n', keys = '<Leader>l', desc = ' LSP' },
             { mode = 'n', keys = '<Leader>m', desc = '󰽛 Markdown' },
+            { mode = 'n', keys = '<Leader>mt', desc = 'Tables' },
           },
 
           window = {
