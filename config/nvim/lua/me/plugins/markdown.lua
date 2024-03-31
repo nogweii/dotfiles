@@ -10,6 +10,14 @@ return {
       },
       links = {
         style = 'markdown',
+        -- Ran when I explicit choose to make a link (<CR> on selected text)
+        ---@param text string The text selected by me
+        ---@return string the name of the file in the link
+        transform_explicit = function(text)
+          text = text:gsub(' ', '-')
+          text = text:lower()
+          return text
+        end,
       },
       perspective = {
         priority = 'root', -- search for files relative to the root of the notebook/wiki
