@@ -1,25 +1,6 @@
 ---@type LazySpec[]
 return {
   {
-    'jakewvincent/mkdnflow.nvim',
-    opts = {
-      modules = {
-        maps = false, -- don't do keymaps, ftplugin/markdown.lua has it handled
-        cmp = true,
-        yaml = true, -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
-      },
-      links = {
-        style = 'markdown',
-      },
-      perspective = {
-        priority = 'root', -- search for files relative to the root of the notebook/wiki
-        root_tell = '.marksman.toml', -- this file is where the root is at
-        nvim_wd_heel = true, -- change nvim's dir when navigating files
-      },
-    },
-  },
-
-  {
     'lukas-reineke/headlines.nvim',
     opts = function()
       local opts = {}
