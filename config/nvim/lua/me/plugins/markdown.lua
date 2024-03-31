@@ -17,6 +17,7 @@ return {
         nvim_wd_heel = true, -- change nvim's dir when navigating files
       },
     },
+    ft = { 'markdown', 'rmd', 'md' },
   },
 
   {

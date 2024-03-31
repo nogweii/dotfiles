@@ -60,15 +60,12 @@ buf_keymap({ 'n' }, 'c', 'Toggle checklist', function()
 end)
 
 vim.keymap.set({ 'n' }, 'o', function()
-  require('mkdnflow.lists').newListItem(false, false, true, 'i', 'o')
+  mkdnflow.lists.newListItem(false, false, true, 'i', 'o')
 end, { desc = 'Additional list item below', buffer = true })
 vim.keymap.set({ 'n' }, 'O', function()
-  require('mkdnflow.lists').newListItem(false, true, true, 'i', 'O')
+  mkdnflow.lists.newListItem(false, true, true, 'i', 'O')
 end, { desc = 'Additional list item above', buffer = true })
 
-buf_keymap({ 'n' }, 'r', 'Rename link', function()
-  mkdnflow.paths.moveSource()
-end)
 buf_keymap({ 'n', 'v' }, 'p', 'Paste link from clipboard', function()
   mkdnflow.links.createLink({ from_clipboard = true })
 end)
@@ -76,6 +73,9 @@ buf_keymap({ 'n' }, 'P', 'Paste clipboard image', function()
   require('img-clip').pasteImage()
 end)
 
+buf_keymap({ 'n' }, 'r', 'Rename link', function()
+  mkdnflow.paths.moveSource()
+end)
 buf_keymap({ 'n' }, 'd', 'Destroy link', function()
   mkdnflow.links.destroyLink()
 end)
@@ -85,3 +85,12 @@ end)
 buf_keymap({ 'n' }, 'y', 'Yank header as link', function()
   mkdnflow.cursor.yankAsAnchorLink({})
 end)
+vim.keymap.set({ 'n', 'v' }, '<CR>', function()
+  local range
+  if vim.v.count == 0 then
+    range = false
+  else
+    range = vim.v.count
+  end
+  mkdnflow.links.followLink({ range = range })
+end, { desc = 'Follow or create a link', buffer = true })
