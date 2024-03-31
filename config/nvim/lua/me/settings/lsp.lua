@@ -4,24 +4,21 @@ local add_hook_after = require('lspconfig.util').add_hook_after
 -- keymaps
 local function on_attach(_client, bufnr)
   local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', ...)
   end
 
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
 local make_capabilities = function()
@@ -60,36 +57,29 @@ local function setup_lsp_server(name)
   require('lspconfig')[name].setup(opts)
 end
 
--- A list of binaries found in $PATH and what configuration
--- that powers
-local binaries_to_lsp = {
-  { 'bash-language-server', 'bashls' },
-  { 'vscode-html-languageserver', 'html' },
-  { 'vscode-css-languageserver', 'cssls' },
-  { 'vscode-json-languageserver', 'jsonls' },
-  { 'vscode-html-language-server', 'html' },
-  { 'vscode-css-language-server', 'cssls' },
-  { 'vscode-json-language-server', 'jsonls' },
-  { 'yaml-language-server', 'yamlls' },
-  { 'lua-language-server', 'lua_ls' },
-  { 'typescript-language-server', 'tsserver' },
-  { 'gopls', 'gopls' },
-  { 'zk', 'zk' },
-  { 'texlab', 'texlab' },
-  { 'ccls', 'ccls' },
-  { 'dhall-lsp-server', 'dhall_lsp_server' },
-  { 'haskell-language-server-wrapper', 'hls' },
-  { 'pylsp', 'pylsp' },
-  { 'ansible-language-server', 'ansiblels' },
-  { 'terraform-ls', 'terraformls' },
-  { 'marksman', 'marksman' },
-  { 'docker-langserver', 'dockerls' },
-  { 'tflint', 'tflint' },
-  { 'jsonnet-language-server', 'jsonnet_ls' },
+local lsps = {
+  'ansiblels',
+  'bashls',
+  'ccls',
+  'cssls',
+  'dhall_lsp_server',
+  'dockerls',
+  'gopls',
+  'hls',
+  'html',
+  'jsonls',
+  'jsonnet_ls',
+  'lua_ls',
+  'marksman',
+  'pylsp',
+  'terraformls',
+  'texlab',
+  'tflint',
+  'tsserver',
+  'yamlls',
+  'zk',
 }
 
-for _, lsp_map in pairs(binaries_to_lsp) do
-  if vim.fn.executable(lsp_map[1]) == 1 then
-    setup_lsp_server(lsp_map[2])
-  end
+for i = 1, #lsps do
+  setup_lsp_server(lsps[i])
 end
