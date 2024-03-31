@@ -152,4 +152,12 @@ return {
     dependencies = { 'nfrid/treesitter-utils' },
     ft = { 'markdown' },
   },
+
+  {
+    'ellisonleao/glow.nvim',
+    opts = {
+      pager = false,
+    },
+    cmd = 'Glow',
+  },
 }

@@ -24,6 +24,7 @@
   "git-messenger.vim": { "branch": "master", "commit": "8a61bdfa351d4df9a9118ee1d3f45edbed617072" },
   "gitlinker.nvim": { "branch": "master", "commit": "839215b322b15b662c08a010534e8de00dae38a6" },
   "gitsigns.nvim": { "branch": "main", "commit": "6ef8c54fb526bf3a0bc4efb0b2fe8e6d9a7daed2" },
+  "glow.nvim": { "branch": "main", "commit": "cf2177a514859fa3c55837b46de91d93b24cf488" },
   "guess-indent.nvim": { "branch": "main", "commit": "b8ae749fce17aa4c267eec80a6984130b94f80b2" },
   "headlines.nvim": { "branch": "master", "commit": "618ef1b2502c565c82254ef7d5b04402194d9ce3" },
   "img-clip.nvim": { "branch": "main", "commit": "568f0d94ac934cd501040216d426d81926d2a9cb" },

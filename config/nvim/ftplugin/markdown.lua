@@ -94,3 +94,6 @@ vim.keymap.set({ 'n', 'v' }, '<CR>', function()
   end
   mkdnflow.links.followLink({ range = range })
 end, { desc = 'Follow or create a link', buffer = true })
+buf_keymap({ 'n' }, 'v', 'Preview with :Glow', function()
+  require('glow').execute({ bang = true, fargs = {} })
+end)
