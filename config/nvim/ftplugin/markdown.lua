@@ -18,6 +18,11 @@ cmp.setup.filetype('markdown', {
   }),
 })
 
+-- These are do-nothing maps, yes. But they also define a description!
+-- That's the important part.
+vim.keymap.set('n', '<leader>m', function() end, { desc = '󰽛 Markdown', buffer = true })
+vim.keymap.set('n', '<leader>mt', function() end, { desc = 'Tables', buffer = true })
+
 ---Lazy function to easily create a buffer-specific mapping
 ---@param modes table All the vim modes the mapping is applied to
 ---@param mapping string The keys to bind this to

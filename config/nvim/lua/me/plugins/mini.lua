@@ -49,8 +49,8 @@ return {
         local clue = require('mini.clue')
         clue.setup({
           triggers = {
-            { mode = 'n', keys = '<Leader>' },
-            { mode = 'x', keys = '<Leader>' },
+            { mode = 'n', keys = '<leader>' },
+            { mode = 'x', keys = '<leader>' },
             { mode = 'i', keys = '<C-x>' },
             { mode = 'n', keys = 'g' },
             { mode = 'x', keys = 'g' },
@@ -78,10 +78,8 @@ return {
             clue.gen_clues.registers(),
             clue.gen_clues.windows(),
             clue.gen_clues.z(),
-            { mode = 'n', keys = '<Leader>g', desc = '󰊢 Git' },
-            { mode = 'n', keys = '<Leader>l', desc = ' LSP' },
-            { mode = 'n', keys = '<Leader>m', desc = '󰽛 Markdown' },
-            { mode = 'n', keys = '<Leader>mt', desc = 'Tables' },
+            { mode = 'n', keys = '<leader>g', desc = '󰊢 Git' },
+            { mode = 'n', keys = '<leader>l', desc = ' LSP' },
           },
 
           window = {
