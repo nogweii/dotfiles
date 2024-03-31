@@ -14,7 +14,7 @@ function! s:ShowHighlight()
 endfunction
 
 " And map the function
-noremap <script> <silent> <Leader>hi :call <SID>ShowHighlight()<CR>
+noremap <script> <silent> <Leader>vh :call <SID>ShowHighlight()<CR>
 
 " Original binding from the internet
 "nmap <silent> <leader>hi

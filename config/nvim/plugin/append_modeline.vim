@@ -19,4 +19,4 @@ function! s:AppendModeline()
 endfunction
 
 nnoremap <silent> <Plug>(AppendModeline) :call <SID>AppendModeline()<CR>
-nmap <silent> <Leader>ml <Plug>(AppendModeline)
+nmap <silent> <Leader>vm <Plug>(AppendModeline)

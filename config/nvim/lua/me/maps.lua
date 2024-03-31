@@ -90,6 +90,10 @@ vim.keymap.set('n', 'Z-', function()
   require('telescope').extensions.projects.projects({})
 end, { desc = 'Select project' })
 
+keymap('n', '<leader>vs', function()
+  vim.cmd.edit(vim.fn.stdpath('config') .. '/snippets/' .. vim.bo.filetype .. '.snippets')
+end, { desc = 'Edit snippets for filetype' })
+
 -- Tap - to jump into a file pane
 cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
 
