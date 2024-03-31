@@ -142,7 +142,7 @@ return {
             timing = animate.gen_timing.linear({ duration = 100, unit = 'total' }),
           },
           scroll = {
-            timing = animate.gen_timing.linear({ duration = 150, unit = 'total' }),
+            enable = false,
           },
         })
       end,
