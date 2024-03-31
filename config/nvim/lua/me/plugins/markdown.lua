@@ -1,6 +1,25 @@
 ---@type LazySpec[]
 return {
   {
+    'jakewvincent/mkdnflow.nvim',
+    opts = {
+      modules = {
+        maps = false, -- don't do keymaps, ftplugin/markdown.lua has it handled
+        cmp = true,
+        yaml = true, -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
+      },
+      links = {
+        style = 'markdown',
+      },
+      perspective = {
+        priority = 'root', -- search for files relative to the root of the notebook/wiki
+        root_tell = '.marksman.toml', -- this file is where the root is at
+        nvim_wd_heel = true, -- change nvim's dir when navigating files
+      },
+    },
+  },
+
+  {
     'lukas-reineke/headlines.nvim',
     opts = function()
       local opts = {}
@@ -30,54 +49,17 @@ return {
   {
     'allen-mack/nvim-table-md',
     ft = 'markdown',
-    keys = {
-      {
-        '<leader>mto',
-        function()
-          require('tablemd').insertRow(false)
-        end,
-        desc = 'Add table row below',
-      },
-      {
-        '<leader>mtO',
-        function()
-          require('tablemd').insertRow(true)
-        end,
-        desc = 'Add table row above',
-      },
-      {
-        '<leader>mti',
-        function()
-          require('tablemd').insertColumn(true)
-        end,
-        desc = 'Add table column to the right',
-      },
-      {
-        '<leader>mtI',
-        function()
-          require('tablemd').insertColumn(false)
-        end,
-        desc = 'Add table column to the left',
-      },
-      {
-        '<leader>mtf',
-        function()
-          require('tablemd').format()
-        end,
-        desc = 'Reformat the table',
-      },
-      {
-        '<leader>mtd',
-        function()
-          require('tablemd').deleteColumn()
-        end,
-        desc = 'Delete current table column',
-      },
-    },
+  },
+
+  {
+    'kiran94/edit-markdown-table.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    cmd = 'EditMarkdownTable',
   },
 
   {
     'HakonHarnes/img-clip.nvim',
+    cmd = { 'PasteImage', 'ImgClipDebug', 'ImgClipConfig' },
     opts = {
       default = {
         prompt_for_file_name = false,
@@ -154,9 +136,11 @@ return {
       dirs = {}, -- dir specific options (e.g. "project" or "/home/user/project")
       custom = {}, -- custom options enabled with the trigger option
     },
-    keys = {
-      -- suggested keymap
-      { '<leader>mp', '<cmd>PasteImage<cr>', desc = 'Paste clipboard image' },
-    },
+  },
+
+  {
+    'nfrid/markdown-togglecheck',
+    dependencies = { 'nfrid/treesitter-utils' },
+    ft = { 'markdown' },
   },
 }
