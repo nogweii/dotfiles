@@ -9,6 +9,11 @@ ENV['HOME'] = ENV['DOTFILES_HOME_DIR'] if ENV.key? 'DOTFILES_HOME_DIR'
 def debug(message)
   puts message if @extra_information
 end
+# A small alias to the function since it gets called a lot in here
+def exp(path)
+  File.expand_path path
+end
+DOTFILES_DIR = exp File.dirname(__FILE__)
 
 # cd to the top of the git repo
 gitdir = `git rev-parse --show-toplevel`.strip
@@ -18,7 +23,7 @@ Dir.chdir gitdir
 RakeFileUtils.verbose_flag = false unless @extra_information
 
 # Start with everything in this directory, but not recursively
-DOTFILE_TARGETS = Dir['*'] +
+DOTFILE_SOURCES = Dir['*'] +
   # And load everything under config/
   Dir['config/*']
 
@@ -27,13 +32,17 @@ DOTFILE_TARGETS = Dir['*'] +
 # The files under config/ that are excluded are because I can specify their absolute path with ${DOTSDIR}
 DOTFILE_EXCLUSIONS = %w[
   Rakefile README.md config Brewfile Brewfile.lock.json Gemfile
-  Gemfile.lock _typos.toml LICENSE
+  Gemfile.lock _typos.toml LICENSE bin
 
   config/bundle config/inputrc config/npmrc config/psqlrc config/wgetrc
   config/ripgreprc config/gemrc config/dircolors config/atuin/
 ]
 
-DOTFILES = (DOTFILE_TARGETS - DOTFILE_EXCLUSIONS).flatten.sort
+DOTFILES = (DOTFILE_SOURCES - DOTFILE_EXCLUSIONS).flatten.sort
+DOTFILE_TARGETS = DOTFILES.inject({}) do |collection, val|
+  collection.merge({exp("./#{val}") => exp("~/.#{val}")})
+end
+DOTFILE_TARGETS[exp("./bin")] = exp("~/bin")
 
 task default: [:submodules, :prepare, :dircolors, :dotfiles, :unnecessary]
 
@@ -50,26 +59,20 @@ task default: [:submodules, :prepare, :dircolors, :dotfiles, :unnecessary]
 # - All symlinks are free game. We replace the symlink with whatever we want.
 desc 'Symlinks all my dotfiles'
 task :dotfiles  do
-  DOTFILES.each do |dotfile|
-    # Absolute path to where we're going to symlink in $HOME
-    home_abs_path = File.expand_path "~/.#{dotfile}"
-
-    # Absolute path to the real file, stored in the repository
-    repo_abs_path = File.expand_path "./#{dotfile}"
-
-    if File.symlink?(home_abs_path) and (not File.exist? home_abs_path)
-      debug "Replacing #{home_abs_path} as it's a broken symlink"
-      rm_r home_abs_path
-      symlink repo_abs_path, home_abs_path
-    elsif not File.exist? home_abs_path
-      debug "Creating new symlink at #{home_abs_path}"
-      symlink repo_abs_path, home_abs_path
-    elsif File.symlink?(home_abs_path) and File.readlink(home_abs_path) != repo_abs_path
-      debug "Overriding the symlink at #{home_abs_path} with #{repo_abs_path}"
-      rm_r home_abs_path
-      symlink repo_abs_path, home_abs_path
-    elsif not File.symlink?(home_abs_path)
-      warn "File '#{home_abs_path}' exists but is not a symlink. Not touching it!"
+  DOTFILE_TARGETS.each do |source, destination|
+    if File.symlink?(destination) and (not File.exist? destination)
+      debug "Replacing #{destination} as it's a broken symlink"
+      rm_r destination
+      symlink source, destination
+    elsif not File.exist? destination
+      debug "Creating new symlink at #{destination}"
+      symlink source, destination
+    elsif File.symlink?(destination) and File.readlink(destination) != source
+      debug "Overriding the symlink at #{destination} with #{source}"
+      rm_r destination
+      symlink source, destination
+    elsif not File.symlink?(destination)
+      warn "File '#{destination}' exists but is not a symlink. Not touching it!"
     end
   end
 end
@@ -137,6 +140,7 @@ OLD_CLEANUP = [
   File.expand_path('./config/nvim/lua/packer_compiled.lua'),
   File.expand_path('~/.vim'),
   File.expand_path('~/.local/share/vim'),
+  File.expand_path('~/.bin'),
 ]
 OLD_CLEANUP.sort!
 OLD_CLEANUP.uniq!
@@ -147,11 +151,15 @@ task :unnecessary do
   RakeFileUtils.verbose_flag = true
 
   OLD_CLEANUP.each do |path|
-    rm_r path if File.exist? path or File.symlink? path
+    if File.exist? path or File.symlink? path
+      debug "Deleting old path #{path}"
+      rm_r path
+    end
   end
 
   `git status --porcelain=2`.split("\n").grep(/^? zsh\/plugins/).each do |old_zsh|
     path = old_zsh.split(' ')[1]
+    debug "Deleting zsh plugin #{old_zsh} that is no longer tracked"
     rm_r path
   end
 
@@ -160,16 +168,17 @@ task :unnecessary do
   # deleted in the repo yet the symlink still remains)
 
   home_links = Dir.entries(File.expand_path('~')).select do |home_path|
-    abs_path = File.join File.expand_path('~'), home_path
-    File.symlink? abs_path and File.readlink(abs_path).start_with?(File.expand_path('.'))
-  end.map { |item| item.sub(/^\./, '') }
+    abs_path = File.join exp('~'), home_path
+    File.symlink? abs_path and File.readlink(abs_path).start_with?(DOTFILES_DIR)
+  end.map { |item| File.join exp('~'), item }
 
   config_links = Dir.entries(File.expand_path('~/.config')).select do |home_path|
-    abs_path = File.join File.expand_path('~/.config'), home_path
-    File.symlink? abs_path and File.readlink(abs_path).start_with?(File.expand_path('.'))
-  end.map { |item| 'config/' + item.sub(/^\./, '') }
+    abs_path = File.join exp('~/.config'), home_path
+    File.symlink? abs_path and File.readlink(abs_path).start_with?(DOTFILES_DIR)
+  end.map { |item| File.join exp('~/.config'), item }
 
-  ((home_links + config_links) - DOTFILES).each do |path|
+  ((home_links + config_links) - DOTFILE_TARGETS.values).each do |path|
+    debug "Deleting unnecessary path #{path}"
     rm_r File.join(File.expand_path('~'), '.' + path)
   end
 end
@@ -177,9 +186,8 @@ end
 desc 'List of everything this rake file will try managing'
 task :list do
   puts 'Symlink these files:'
-  DOTFILES.each do |file|
-    home_abs_path = File.expand_path "~/.#{file}"
-    puts " - #{file} => #{home_abs_path}"
+  DOTFILE_TARGETS.each do |source, destination|
+    puts " - #{source} => #{home_abs_path}"
   end
   puts ''
   puts 'Create these directories:'

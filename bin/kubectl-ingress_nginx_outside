@@ -1,0 +1,26 @@
+#!/bin/ruby
+
+# A wrapper alias for easily using the ingress-nginx kubectl plugin with my nginx-for-outside deployment
+
+deployment_commands = [
+  "backends",
+  "certs",
+  "conf",
+  "exec",
+  "general",
+  "ingresses",
+  "logs",
+  "ssh",
+]
+
+args = ["kubectl", "ingress-nginx"]
+args << ARGV.dup
+
+if deployment_commands.include? ARGV[0]
+  args << "--namespace"
+  args << "nginx-for-outside"
+  args << "--deployment"
+  args << "nginx-for-outside-ingress-nginx-controller"
+end
+
+exec args.flatten.join(' ')

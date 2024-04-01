@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# dovecot-uidvalidity
+# dovecot.list.index
+# dovecot-uidvalidity.65a94f3b
+# dovecot.list.index.log
+# dovecot-uidlist
+# dovecot.index.log
+# dovecot.list.index.log.2
+
+log_file=$(mktemp)
+sieve-filter -Ce -o "mail_location=maildir:$HOME/mail:LAYOUT=fs" "$HOME/.config/sieve/.active.sieve" INBOX/Github >"${log_file}" 2>&1
+fd -0 dovecot ~/mail/ | xargs -0 rm
+bat -l log "${log_file}"
+rm "${log_file}"
