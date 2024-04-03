@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -euo 'pipefail'
+
+if [ -z "${1:-}" ]; then
+  gitlab_launch_template="lt-0fbec4cfb35e19815"
+
+  echo "Launching a new one-off instance of a Gitlab CI worker"
+  ec2_instance_id=$(aws ec2 run-instances --launch-template LaunchTemplateId=$gitlab_launch_template --query "Instances[0].InstanceId" --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value="colin manual launch"}]' | tr -d '"')
+
+  printf 'Newly launched ID: \e]8;;https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#InstanceDetails:instanceId=%s\e\\%s\e]8;;\e\\\n' "$ec2_instance_id" "$ec2_instance_id"
+  aws ec2 wait instance-running --instance-ids "${ec2_instance_id}"
+else
+  ec2_instance_id="$1"
+  printf 'Existing instance ID: \e]8;;https://us-west-2.console.aws.amazon.com/ec2/home?region=us-west-2#InstanceDetails:instanceId=%s\e\\%s\e]8;;\e\\\n' "$ec2_instance_id" "$ec2_instance_id"
+fi
+
+echo "Connecting to that instance:"
+while true; do
+    if aws ec2-instance-connect ssh --instance-id "${ec2_instance_id}" --os-user admin; then
+        break
+    else
+      echo "Failed, retrying soon"
+      sleep 3
+    fi
+done

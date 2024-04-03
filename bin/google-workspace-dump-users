@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+set -euo 'pipefail'
+
+timed_dir="${HOME}/Downloads/google-workspace-dump-users/$(date +%s)"
+mkdir -p "${timed_dir}"
+
+set -x
+cd "${timed_dir}"
+gam print users allfields > users.csv
+gam print aliases > alias.csv
+gam print groups name description > groups.csv
