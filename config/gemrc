@@ -1,5 +1,6 @@
 ---
 # Check the documentation for Gem::ConfigFile for the valid symbol keys
+# https://docs.ruby-lang.org/en/master/Gem/ConfigFile.html
 
 :backtrace: false
 :sources:
