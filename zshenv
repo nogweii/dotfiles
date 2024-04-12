@@ -151,9 +151,6 @@ fi
 # lib, etc directories don't pollute the top level directory
 export PYTHONUSERBASE=~/.local/pypi
 
-export GEM_SPEC_CACHE="${HOME}/.local/cache/gem"
-export GEM_HOME="${HOME}/.local/ruby"
-
 export CARGO_HOME="${HOME}/.local/cargo"
 
 unset PIP_USER
