@@ -1,5 +1,13 @@
 # Zsh user configuration file
 
+# Ensure that we have a sane (not-empty) umask. This might happen if umask is
+# not called in /etc/profile or if pam_umask hasn't had a chance yet
+if [ ! $(( $(umask) + 0 )) -gt 0 ]; then
+  # Nope, an empty umask this time around. Fix it with one that works well for
+  # me:
+  umask 022
+fi
+
 # Disable color and theme in dumb/basic terminals.
 if [[ "$TERM" == 'dumb' || "$TERM" == "linux" ]]; then
   zstyle ':zsh' color 'no'
@@ -14,11 +22,6 @@ done
 
 # And load local configuration overrides
 [[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# Rebuild the named directories hash. Since I just created a bunch of variables,
-# did a lot of scripting, and who knows what else, this hash table is populated
-# with a lot of extra junk.
-hash -dr
 
 # Stop tracing in zsh
 if [[ "$PROFILE_STARTUP" == true ]]; then

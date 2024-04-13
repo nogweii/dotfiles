@@ -1,27 +1,27 @@
 [submodule "zsh/plugins/fast-syntax-highlighting"]
-	path = zsh/plugins/fast-syntax-highlighting
+	path = etc/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
 [submodule "zsh/plugins/autoswitch-virtualenv"]
-	path = zsh/plugins/autoswitch-virtualenv
+	path = etc/zsh/plugins/autoswitch-virtualenv
 	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv
 [submodule "zsh/plugins/bench"]
-	path = zsh/plugins/bench
+	path = etc/zsh/plugins/bench
 	url = https://github.com/romkatv/zsh-bench
 [submodule "zsh/plugins/zsh-completions"]
-	path = zsh/plugins/zsh-completions
+	path = etc/zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "zsh/plugins/powerlevel10k"]
-	path = zsh/plugins/powerlevel10k
+	path = etc/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "zsh/plugins/vi-more-quote"]
-	path = zsh/plugins/vi-more-quote
+	path = etc/zsh/plugins/vi-more-quote
 	url = https://github.com/zsh-vi-more/vi-quote
 [submodule "zsh/plugins/vi-more-increment"]
-	path = zsh/plugins/vi-more-increment
+	path = etc/zsh/plugins/vi-more-increment
 	url = https://github.com/zsh-vi-more/vi-increment
 [submodule "zsh/plugins/autopair"]
-	path = zsh/plugins/autopair
+	path = etc/zsh/plugins/autopair
 	url = https://github.com/hlissner/zsh-autopair
 [submodule "zsh/plugins/system-clipboard"]
-	path = zsh/plugins/system-clipboard
+	path = etc/zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
