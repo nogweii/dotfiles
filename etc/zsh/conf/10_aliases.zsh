@@ -146,3 +146,6 @@ alias renovate-local="LOG_LEVEL=debug npx --package=renovate --yes renovate --pl
 alias compcachereset="command rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
 
 alias dc=docker-compose
+
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
