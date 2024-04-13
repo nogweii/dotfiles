@@ -52,9 +52,6 @@ export NCURSES_NO_UTF8_ACS=1
 # Windows subsystem (aka Bash on windows)
 [ -d /mnt/c/Windows ] && export LXSS=yep
 
-# Sorry Ansible, I like the sentiment but that's too much scrolling for me.
-export ANSIBLE_NOCOWS=1
-
 # If the faster/simpler find (https://github.com/sharkdp/fd) is installed, use it for fzf
 [ -n "${commands[fd]}" ] && export FZF_DEFAULT_COMMAND="fd --color always --no-ignore"
 export FZF_DEFAULT_OPTS="--inline-info --ansi"
