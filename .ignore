@@ -3,3 +3,5 @@
 
 zsh/plugins/
 zsh/00_z_dircolors.zsh
+etc/zsh/plugins/
+etc/zsh/00_z_dircolors.zsh

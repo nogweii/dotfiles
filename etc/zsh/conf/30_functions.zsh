@@ -7,7 +7,7 @@ zmodload zsh/zutil
 
 local function_file
 # Prep every one of my custom functions to be autoloaded
-for function_file in ${DOTSDIR}/zsh/functions/* ; do
+for function_file in ${ZDOTDIR}/functions/* ; do
   emulate zsh -c "autoload -RUz ${function_file}"
 done
 
@@ -16,7 +16,7 @@ done
 #
 # In order to be loaded, the file (and thus function) must have it's
 # name prefixed with two underscores. The zle widget name won't, though.
-for function_file in ${DOTSDIR}/zsh/zle-widgets/__* ; do
+for function_file in ${ZDOTDIR}/zle-widgets/__* ; do
   emulate zsh -c "autoload -RUz ${function_file}"
   zle -N "${${function_file:t}#__}" ${function_file:t}
 done

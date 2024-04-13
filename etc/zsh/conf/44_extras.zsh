@@ -1,9 +1,9 @@
-source ${DOTSDIR}/zsh/plugins/many-dots-magic.zsh
+source ${ZDOTDIR}/plugins/many-dots-magic.zsh
 
-source ${DOTSDIR}/zsh/plugins/vi-more-increment/vi-increment.zsh
-source ${DOTSDIR}/zsh/plugins/vi-more-quote/vi-quote.zsh
+source ${ZDOTDIR}/plugins/vi-more-increment/vi-increment.zsh
+source ${ZDOTDIR}/plugins/vi-more-quote/vi-quote.zsh
 
-source ${DOTSDIR}/zsh/plugins/autopair/autopair.zsh
+source ${ZDOTDIR}/plugins/autopair/autopair.zsh
 # Add an additional pair character:
 AUTOPAIR_PAIRS+=("<" ">")
 # To remove pairs, use:

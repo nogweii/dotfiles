@@ -8,9 +8,9 @@ if [ -n "${commands[fortune]}" -a -z "$SSH_CONNECTION" ] ; then
 fi
 
 # Enable syntax highlighting:
-source ${DOTSDIR}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ${ZDOTDIR}/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 FAST_HIGHLIGHT_STYLES[path]=underline
 
 [ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
-source ${DOTSDIR}/zsh/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+source ${ZDOTDIR}/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 AUTOSWITCH_SILENT='yes'

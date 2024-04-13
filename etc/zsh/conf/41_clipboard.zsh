@@ -1,6 +1,6 @@
 # Don't go through and set all of the default keybindings in the plugin
 ZSH_SYSTEM_CLIPBOARD_DISABLE_DEFAULT_MAPS=false
-source ${DOTSDIR}/zsh/plugins/system-clipboard/zsh-system-clipboard.zsh
+source ${ZDOTDIR}/plugins/system-clipboard/zsh-system-clipboard.zsh
 
 # Instead, define a subset of the keybindings that affect yanking & pasting but
 # not deleting/changing text.

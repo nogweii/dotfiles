@@ -741,7 +741,7 @@ functions -M prompt_git_formatter
 # Tell `p10k configure` which file it should overwrite.
 typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
-source ${DOTSDIR}/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source ${ZDOTDIR}/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'

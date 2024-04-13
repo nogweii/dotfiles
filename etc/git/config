@@ -24,9 +24,6 @@
     added = yellow
     changed = green
     untracked = cyan
-[core]
-    excludesfile = ~/dotfiles/config/git/ignores
-    attributesfile = ~/dotfiles/config/git/attributes
 [branch]
     autosetuprebase = always
     sort = -committerdate

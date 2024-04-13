@@ -16,7 +16,7 @@ fi
 
 # Hard coded path since we don't know what kind of environment we're in
 local zshrc_snipplet
-for zshrc_snipplet in $DOTSDIR/zsh/*.zsh ; do
+for zshrc_snipplet in $ZDOTDIR/conf/*.zsh ; do
         source $zshrc_snipplet
 done
 

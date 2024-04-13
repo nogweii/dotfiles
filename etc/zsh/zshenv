@@ -1,9 +1,5 @@
 # zshenv: Define environment variables
 
-# Hard-coded path to the checkout of my dotfiles, derived from the zshenv
-# symlink (this file).
-local DOTSDIR="${${:-$HOME/.zshenv}:A:h}"
-
 if [[ "${PROFILE_STARTUP:-false}" == true ]]; then
     # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
     PS4=$'%D{%M%S%.} %N:%i> '
@@ -19,7 +15,8 @@ unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 
 # Pull in settings from /etc/profile, like the path to java, etc.
 emulate sh -c 'source /etc/profile'
-emulate sh -c "source ${DOTSDIR}/profile"
+
+[[ -n "${commands[systemctl]}" ]] && eval $(systemctl --user show-environment)
 
 # And now, set them
 path=(
@@ -41,7 +38,7 @@ path=(
   $HOME/.local/share/cabal/bin # User-installed haskell packages
   $HOME/.cabal/bin
   $HOME/.heroku/client/bin     # Heroku toolbelt, via `heroku update`
-  $DOTSDIR/share/rbenv/bin     # rbenv install
+  $ZDOTDIR/share/rbenv/bin     # rbenv install
   $HOME/.local/elixir/bin      # Manually installed elixir 1.0 binaries
   $HOME/go/bin                 # go packages
   /usr/lib/cw                  # Colorized versions of GNU coreutils
@@ -52,11 +49,11 @@ path=(
 )
 
 fpath=(
-  $DOTSDIR/zsh/functions
-  $DOTSDIR/zsh/zle-widgets
+  $ZDOTDIR/zsh/functions
+  $ZDOTDIR/zsh/zle-widgets
   /usr/share/zsh/site-functions
   $fpath
-  $DOTSDIR/zsh/plugins/zsh-completions/src
+  $ZDOTDIR/zsh/plugins/zsh-completions/src
 )
 
 manpath=(
