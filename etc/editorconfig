@@ -89,3 +89,7 @@ indent_size = 4
 # CRLF is required in batch files
 [*.{bat,cmd}]
 end_of_line = crlf
+
+[sshd_config,ssh_config,.ssh/config,.ssh/conf.d/*]
+indent_size = 4
+indent_style = space

@@ -11,6 +11,10 @@ MAKE_DIRS = [
   File.expand_path('~/.local/share'),
   File.expand_path('~/.local/cache/zsh'),
   File.expand_path('~/.local/share/nvim/backup'),
+  File.expand_path('~/.ssh/'),
+  File.expand_path('~/.ssh/config.d/'),
+  File.expand_path('~/.ssh/keys/'),
+  File.expand_path('~/.ssh/tmp/'),
 ]
 
 File.open('etc/user-dirs.dirs').readlines.each do |user_dir|

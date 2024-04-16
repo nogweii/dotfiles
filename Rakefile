@@ -32,6 +32,7 @@ DOTFILE_TARGETS = DOTFILES.inject({}) do |collection, val|
   collection.merge({exp("./#{val}") => exp("~/.local/#{val}")})
 end
 DOTFILE_TARGETS[exp("./bin")] = exp("~/.local/bin")
+DOTFILE_TARGETS[exp("./etc/ssh_config")] = exp("~/.ssh/config")
 
 task default: [:submodules, :prepare, :dircolors, :dotfiles, :unnecessary]
 

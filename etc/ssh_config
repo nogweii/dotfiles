@@ -1,0 +1,45 @@
+# vim: set ft=sshconfig:
+
+# Order matters! ssh only pays attention to an option's first found value.
+# So the most specific domains matches should come first.
+Host github.com gitlab.com codeberg.org
+    User git
+    Port 22
+Host code.aether.earth
+    User git
+    Port 22792
+
+# Include every file in ~/.ssh/conf.d/
+Include conf.d/*.conf
+
+Host *
+    # I want to use keys only to authenticate
+    PasswordAuthentication no
+    ChallengeResponseAuthentication no
+    PubkeyAuthentication yes
+    IdentitiesOnly yes
+
+    # Prefer ssh certs over keys, prefer ed25519 over rsa
+    HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,ssh-rsa
+
+    # https://blog.stribik.technology/2015/01/04/secure-secure-shell.html
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+    MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com
+
+    ControlMaster auto
+    ControlPath ~/.ssh/tmp/%r@%h:%p
+    # Control sockets will persist until idle for this long
+    ControlPersist 30m
+
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    Compression yes
+
+    AddKeysToAgent yes
+    ExitOnForwardFailure yes
+
+    VerifyHostKeyDNS yes
+
+    ConnectionAttempts 2
+    ConnectTimeout 30

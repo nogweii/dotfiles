@@ -4,6 +4,7 @@ OLD_CLEANUP = [
   File.expand_path('~/.vim'),
   File.expand_path('~/.local/share/vim'),
   File.expand_path('~/.bin'),
+  File.expand_path('~/.ssh/conf.d/'),
 ]
 OLD_CLEANUP.sort!
 OLD_CLEANUP.uniq!
