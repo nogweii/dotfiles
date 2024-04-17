@@ -5,6 +5,7 @@ OLD_CLEANUP = [
   File.expand_path('~/.local/share/vim'),
   File.expand_path('~/.bin'),
   File.expand_path('~/.ssh/conf.d/'),
+  File.expand_path('~/.ssh/ansible_inventory.ssh_config'),
 ]
 OLD_CLEANUP.sort!
 OLD_CLEANUP.uniq!
