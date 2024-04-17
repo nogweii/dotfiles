@@ -9,8 +9,6 @@ function _G.dump(...)
   print(unpack(objects))
 end
 
-print("hello world")
-
 vim.loader.enable()
 
 require('me.options')
