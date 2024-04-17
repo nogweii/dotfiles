@@ -9,8 +9,8 @@ Host code.aether.earth
     User git
     Port 22792
 
-# Include every file in ~/.ssh/conf.d/
-Include conf.d/*.conf
+# Include every file in ~/.ssh/config.d/
+Include config.d/*.conf
 
 Host *
     # I want to use keys only to authenticate
