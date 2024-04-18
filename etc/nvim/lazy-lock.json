@@ -66,6 +66,7 @@
   "text-case.nvim": { "branch": "main", "commit": "c1ac8c498eef9f4486a1e27ceb5676469ae224dd" },
   "treesitter-utils": { "branch": "main", "commit": "0e1ac3ae9ae55a371f09aa1d7bbc757275567627" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "c43d9580c3ff5999a1eabca849f807ab33787ea7" },
   "undotree": { "branch": "main", "commit": "eab459ab87dd249617b5f7187bb69e614a083047" },
   "url-open": { "branch": "main", "commit": "cfe2d217a930dc620ead9c4b829777fcfbd323c3" },
   "vim-characterize": { "branch": "master", "commit": "885a00a3c21dd52ca8f2fd7d62850134934179d9" },
