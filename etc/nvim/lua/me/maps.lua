@@ -5,6 +5,7 @@ local cmd_map = require('me.map_utils').cmd_map
 local plug_map = require('me.map_utils').plug_map
 local keymap = vim.keymap.set
 
+--#region General editing keymaps
 --[[
                                  _
   __ _  ___ _ __   ___ _ __ __ _| |
@@ -61,19 +62,6 @@ map({ keys = '<C-l>', to = '<c-l>:nohlsearch<CR>:redraw<CR>' })
 map({ keys = 'H', to = "(col('.') == matchend(getline('.'), '^\\s*')+1 ? '0' : '^')", expression = true })
 map({ keys = 'L', to = '$', recurse = true })
 
-local toggle_diagnostic = function()
-  local buf_id = vim.api.nvim_get_current_buf()
-
-  if vim.diagnostic.is_disabled(buf_id) then
-    vim.diagnostic.enable(buf_id)
-    vim.notify('Diagnostics turned on', vim.log.levels.INFO, { icon = '', render = 'compact' })
-  else
-    vim.diagnostic.disable(buf_id)
-    vim.notify('Diagnostics turned off', vim.log.levels.INFO, { icon = '', render = 'compact' })
-  end
-end
-keymap('n', 'zT', toggle_diagnostic, { desc = 'Toggle diagnostics' })
-
 -- Easily get out of insert mode in the terminal
 map({ keys = '<C-s>', to = '<C-\\><C-n>', recurse = true, mode = 't', desc = 'Get out of insert mode' })
 
@@ -96,7 +84,9 @@ end, { desc = 'Edit snippets for filetype' })
 
 -- Tap - to jump into a file pane
 cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
+--#endregion
 
+--#region Git related keymaps
 --[[
        _ _
   __ _(_) |_
@@ -120,3 +110,51 @@ map({
   to = "<cmd>lua require('gitlinker').get_repo_url({action_callback = require('gitlinker.actions').open_in_browser})<cr>",
   desc = 'Open the git repo in a browser',
 })
+--#endregion
+
+--#region LSP related keymaps
+--[[
+ _
+| |
+| |___ _ __
+| / __| '_ \
+| \__ \ |_) |
+|_|___/ .__/
+      | |
+      |_|
+--]]
+keymap('n', 'gD', function()
+  vim.lsp.buf.declaration()
+end, { desc = 'Go to method declaration' })
+keymap('n', 'gd', function()
+  vim.lsp.buf.definition()
+end, { desc = 'Go to method definition' })
+keymap('n', 'K', function()
+  vim.lsp.buf.hover()
+end, { desc = 'Show help in a hover' })
+keymap('n', 'gi', function()
+  vim.lsp.buf.implementation()
+end, { desc = 'Go to method implementation' })
+keymap('n', '<C-k>', function()
+  vim.lsp.buf.signature_help()
+end, { desc = 'Show method signature in a hover' })
+keymap('n', 'gr', function()
+  vim.lsp.buf.references()
+end, { desc = 'List all references to method' })
+keymap('n', 'gR', function()
+  vim.lsp.buf.rename()
+end, { desc = 'Rename thing under cursor' })
+
+local toggle_diagnostic = function()
+  local buf_id = vim.api.nvim_get_current_buf()
+
+  if vim.diagnostic.is_disabled(buf_id) then
+    vim.diagnostic.enable(buf_id)
+    vim.notify('Diagnostics turned on', vim.log.levels.INFO, { icon = '', render = 'compact' })
+  else
+    vim.diagnostic.disable(buf_id)
+    vim.notify('Diagnostics turned off', vim.log.levels.INFO, { icon = '', render = 'compact' })
+  end
+end
+keymap('n', 'zT', toggle_diagnostic, { desc = 'Toggle diagnostics' })
+--#endregion

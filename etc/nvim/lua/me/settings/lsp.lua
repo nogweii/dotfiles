@@ -1,24 +1,9 @@
 require('neodev').setup({})
 local add_hook_after = require('lspconfig.util').add_hook_after
 
--- keymaps
+-- do stuff after the LSP server attaches to the document
 local function on_attach(_client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ...)
-  end
-
   vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-  -- Mappings.
-  local opts = { noremap = true, silent = true }
-  buf_set_keymap('gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 end
 
 local make_capabilities = function()
