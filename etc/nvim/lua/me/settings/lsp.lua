@@ -75,7 +75,6 @@ local lsps = {
   'terraformls',
   'texlab',
   'tflint',
-  'tsserver',
   'yamlls',
   'zk',
 }
