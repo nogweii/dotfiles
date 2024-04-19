@@ -52,7 +52,7 @@ source_env = ENV.to_h
 # specified in the files
 result_env = {}
 
-Dir["etc/environment.d/*.conf"].each do |env_file|
+Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].each do |env_file|
   File.open(env_file, 'r').read.scan(LINE) do |env_var, env_value|
     # Remove surrounding quotes
     env_value = env_value.strip.sub(/\A(['"])(.*)\1\z/m, '\2')
@@ -88,7 +88,7 @@ result_env.each do |var, value|
   elsif ARGV[0] == "-p"
     puts "launchctl setenv #{var} #{Shellwords.escape(value)}"
   elsif ARGV[0] == "-x"
-    system("launchctl setenv #{var} #{Shellwords.escape(value)}")
+    system("launchctl", "setenv", var, value)
   else
     puts "i don't understand. run #{$0} -h"
     exit 2
