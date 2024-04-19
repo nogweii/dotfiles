@@ -23,6 +23,10 @@ group :development do
   gem "octokit"
   gem "rubocop"
   gem "standard"
+
+  # This is the ruby Language Server -- bringing IDE functionality to every editor
+  gem "solargraph"
+  gem "ruby-lsp"
 end
 
 # These gems I like to have available for my machine or are commonly installed.
@@ -33,9 +37,6 @@ group :common do
   gem "typhoeus"
   gem "yard"
 end
-
-# This is the ruby Language Server -- bringing IDE functionality to every editor
-gem "solargraph"
 
 # Neovim gem enables ruby support in neovim
 gem "neovim"
