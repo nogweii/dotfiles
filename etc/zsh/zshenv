@@ -23,7 +23,6 @@ path=(
   $HOME/bin                    # My own scripts, programs, etc
   $HOME/.local/bin             # Machine-local artisanal scripts
   $HOME/.local/ruby/bin        # User-installed ruby gems
-  "${VIRTUAL_ENV:-/dev/null}/bin" # Python virtualenv
   $HOME/.local/share/pipx/bin  # pipx isolated apps
   $HOME/.local/pypi/bin        # User-installed python packages
   $HOME/.local/node/bin        # User-installed npm packages
@@ -68,6 +67,7 @@ manpath=(
 if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
   # On MacOS systems, prepend Homebrew & the GNU userland to path
   path=(
+    /opt/homebrew/lib/ruby/gems/*/bin # User-installed ruby gems (on macos)
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/go/libexec/bin
     /opt/homebrew/{bin,sbin}
