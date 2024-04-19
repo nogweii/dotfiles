@@ -80,7 +80,19 @@ Dir["etc/environment.d/*.conf"].each do |env_file|
 end
 
 result_env.each do |var, value|
-  puts "launchctl setenv #{var} #{Shellwords.escape(value)}"
+  if ARGV[0].nil? || ARGV[0] == "-h"
+    puts "does a bunch of `launchctl setenv` calls based on environment.d/"
+    puts "  -p => print what it would do"
+    puts "  -x => execute launchctl a lot"
+    exit 0
+  elsif ARGV[0] == "-p"
+    puts "launchctl setenv #{var} #{Shellwords.escape(value)}"
+  elsif ARGV[0] == "-x"
+    system("launchctl setenv #{var} #{Shellwords.escape(value)}")
+  else
+    puts "i don't understand. run #{$0} -h"
+    exit 2
+  end
 end
 
 __END__
