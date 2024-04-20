@@ -17,3 +17,4 @@ etc/nvim/plugin/packer_compiled.vim
 etc/nvim/spell/en.utf-8.add.spl
 etc/pianobar/state
 etc/zsh/01_private.zsh
+etc/zsh/local.zsh

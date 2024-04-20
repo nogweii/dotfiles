@@ -21,7 +21,8 @@ for zshrc_snipplet in $ZDOTDIR/conf/*.zsh ; do
 done
 
 # And load local configuration overrides
-[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -r ~/.zshrc.local && ! -r $ZDOTDIR/local.zsh ]] && mv -v ~/.zshrc.local $ZDOTDIR/local.zsh
+[[ -r $ZDOTDIR/local.zsh ]] && source $ZDOTDIR/local.zsh
 
 # Stop tracing in zsh
 if [[ "$PROFILE_STARTUP" == true ]]; then

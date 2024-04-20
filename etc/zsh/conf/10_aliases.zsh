@@ -149,3 +149,6 @@ alias dc=docker-compose
 
 alias adb='HOME="$XDG_DATA_HOME"/android adb'
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
+
+alias zshrc='$EDITOR $ZDOTDIR/zshrc'
+alias zlocalrc='$EDITOR $ZDOTDIR/local.zsh'
