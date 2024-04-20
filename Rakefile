@@ -25,14 +25,15 @@ Dir.chdir gitdir
 RakeFileUtils.verbose_flag = false unless @extra_information
 
 DOTFILE_SOURCES = Dir['share/*'] + Dir['etc/*']
-DOTFILE_EXCLUSIONS = []
+DOTFILE_EXCLUSIONS = ['etc/ssh']
 
 DOTFILES = (DOTFILE_SOURCES - DOTFILE_EXCLUSIONS).flatten.sort
 DOTFILE_TARGETS = DOTFILES.inject({}) do |collection, val|
   collection.merge({exp("./#{val}") => exp("~/.local/#{val}")})
 end
 DOTFILE_TARGETS[exp("./bin")] = exp("~/.local/bin")
-DOTFILE_TARGETS[exp("./etc/ssh_config")] = exp("~/.ssh/config")
+DOTFILE_TARGETS[exp("./etc/ssh/config")] = exp("~/.ssh/config")
+DOTFILE_TARGETS[exp("./etc/ssh/99-defaults.conf")] = exp("~/.ssh/config.d/99-defaults.conf")
 
 task default: [:submodules, :prepare, :dircolors, :dotfiles, :unnecessary]
 
@@ -70,8 +71,8 @@ end
 desc 'List of everything this rake file will try managing'
 task :list do
   puts 'Symlink these files:'
-  DOTFILE_TARGETS.each do |source, destination|
-    puts " - #{source} => #{destination}"
+  DOTFILE_TARGETS.sort.each do |source, destination|
+    puts " - #{source.delete_prefix Dir.pwd + "/"} => #{destination}"
   end
   puts ''
   puts 'Create these directories:'

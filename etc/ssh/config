@@ -1,0 +1,4 @@
+# vim: set ft=sshconfig:
+
+# Include every file in ~/.ssh/config.d/
+Include config.d/*.conf
