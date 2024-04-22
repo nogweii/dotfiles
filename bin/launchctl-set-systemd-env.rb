@@ -52,7 +52,7 @@ source_env = ENV.to_h
 # specified in the files
 result_env = {}
 
-Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].each do |env_file|
+Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].sort.each do |env_file|
   File.open(env_file, 'r').read.scan(LINE) do |env_var, env_value|
     # Remove surrounding quotes
     env_value = env_value.strip.sub(/\A(['"])(.*)\1\z/m, '\2')
@@ -94,12 +94,3 @@ result_env.each do |var, value|
     exit 2
   end
 end
-
-__END__
-
-may need to also restart the dock & UI:
-(that way apps launched via graphical means, through Spotlight or LaunchPad, or the dock itself,
-see these variables)
-
-killall Dock
-killall SystemUIServer
