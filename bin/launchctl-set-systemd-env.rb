@@ -63,19 +63,32 @@ Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].sort.each d
 
     while VARIABLE.match? env_value
       env_value.gsub!(VARIABLE) do |var|
-        search_env = source_env.merge(result_env)
-
         match = Regexp.last_match
         if not match[:colontype]
-          search_env.fetch(match[:varname], '')
+          source_env.fetch(match[:varname], '')
         elsif match[:colontype] == ":-"
-          match[:altvalue] unless search_env.has_key? match[:varname]
+          if source_env.has_key?(match[:varname]) and not source_env[match[:varname]].nil? and not source_env[match[:varname]].empty?
+            # there is a useful string in the environment named :varname, use it
+            source_env[match[:varname]]
+          else
+            # guess it isn't set, use the alternative string provided instead
+            match[:altvalue]
+          end
         elsif match[:colontype] == ":+"
-          match[:altvalue] if search_env.has_key? match[:varname]
+          if source_env.has_key?(match[:varname]) and not source_env[match[:varname]].nil? and not source_env[match[:varname]].empty?
+            # there is a valid environment variable named :varname, which means
+            # we need to use the alternate value instead
+            match[:altvalue]
+          else
+            # there is no such variable named :varname, so return an empty string
+            ''
+          end
         end
       end
     end
+
     result_env[env_var] = env_value
+    source_env[env_var] = env_value
   end
 end
 
