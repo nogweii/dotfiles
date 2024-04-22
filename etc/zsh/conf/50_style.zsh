@@ -59,7 +59,7 @@ compdef '_files -g "*.tgz *.gz *.tbz2 *.bz2 *.tar *.rar *.zip *.Z *.7z *.xz *.lz
 compdef _sudo smart-sudo
 compdef '_values "projects" ~/code/*(/:t)' prj
 
-zstyle -e ':completion:*:(ssh|scp|sftp|ssh-copy-id):*' hosts 'reply=(${(s: :)${${${(M)${(f)"$(<~/.ssh/config)"}:#Host*}#Host }:#*\**}} ${${${${(f)"$(<~/.ssh/known_hosts)"}:#[|0-9]*}%%\ *}%%,*} )'
+zstyle -e ':completion:*:(ssh|scp|sftp|ssh-copy-id):*' hosts 'reply=(${${${${(f)"$(<~/.ssh/known_hosts)"}:#[|0-9]*}%%\ *}%%,*} )'
 
 compdef g=git
 
