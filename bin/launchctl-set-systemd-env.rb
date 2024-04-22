@@ -48,6 +48,7 @@ VARIABLE = /
 # This is a hash that contains all of the environment variables we look up
 # values for
 source_env = ENV.to_h
+source_env['HOME'] = Dir.home
 # And this is final set of values that will be printed out, ones that were
 # specified in the files
 result_env = {}
