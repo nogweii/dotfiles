@@ -16,7 +16,7 @@ unsetopt GLOBAL_RCS # Don't use the global zsh configs (/etc/zsh*)
 # Pull in settings from /etc/profile, like the path to java, etc.
 emulate sh -c 'source /etc/profile'
 
-[[ -n "${commands[systemctl]}" ]] && eval $(systemctl --user show-environment)
+[[ -f /usr/bin/systemctl ]] && eval $(/usr/bin/systemctl --user show-environment)
 
 # And now, set them
 path=(
@@ -143,11 +143,3 @@ if [[ -z "$LANG" ]]; then
   export LC_ALL="en_US.UTF-8"
   export LANG="en_US.UTF-8"
 fi
-
-# Move the user base directory to a subdirectory beneath .local, so the bin,
-# lib, etc directories don't pollute the top level directory
-export PYTHONUSERBASE=~/.local/pypi
-
-export CARGO_HOME="${HOME}/.local/cargo"
-
-unset PIP_USER
