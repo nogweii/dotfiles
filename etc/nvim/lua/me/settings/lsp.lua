@@ -84,6 +84,7 @@ local lsps = {
   'tflint',
   'yamlls',
   'zk',
+  'crystalline',
 }
 
 for i = 1, #lsps do
