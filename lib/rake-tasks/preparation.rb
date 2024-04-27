@@ -34,7 +34,7 @@ end
 
 desc 'Prepare extra directories'
 task :prepare => MAKE_DIRS do
-  ENV['TERMINFO'] = File.join(ENV['XDG_DATA_HOME'] || '~/.local/share', 'terminfo')
+  ENV['TERMINFO'] = File.join(ENV['XDG_DATA_HOME'] || exp('~/.local/share'), 'terminfo')
   debug "TERMINFO directory is '#{ENV['TERMINFO']}'"
 
   unless File.exist? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
