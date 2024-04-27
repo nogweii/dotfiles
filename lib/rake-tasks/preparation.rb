@@ -34,13 +34,15 @@ end
 
 desc 'Prepare extra directories'
 task :prepare => MAKE_DIRS do
-  # ENV['TERMINFO'] = File.expand_path('~/.local/terminfo')
-  # unless File.exist? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
-  #   sh 'tic terminfo/screen-256color-italitc.termcap'
-  # end
-  # unless File.exist? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
-  #   sh 'tic terminfo/tmux-italics.termcap'
-  # end
+  ENV['TERMINFO'] = File.join(ENV['XDG_DATA_HOME'] || '~/.local/share', 'terminfo')
+  debug "TERMINFO directory is '#{ENV['TERMINFO']}'"
+
+  unless File.exist? File.join(ENV['TERMINFO'], 's', 'screen-256color-italic')
+    sh 'tic share/terminfo/screen-256color-italitc.termcap'
+  end
+  unless File.exist? File.join(ENV['TERMINFO'], 't', 'tmux-italics')
+    sh 'tic share/terminfo/tmux-italics.termcap'
+  end
 
   kitty_macos_path = Pathname.new '/Applications/kitty.app/Contents/Resources/terminfo/78/xterm-kitty'
   kitty_terminfo_path = Pathname.new(ENV['TERMINFO']) + kitty_macos_path.parent.basename + kitty_macos_path.basename
