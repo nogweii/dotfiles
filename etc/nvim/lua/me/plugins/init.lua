@@ -19,8 +19,6 @@ return {
     end,
   },
 
-  { 'stevearc/resession.nvim', opts = {} },
-
   -- Use :StartupTime to get an average of 10 runs of `nvim --startuptime` and
   -- present a nice display of what's taking so long startup. Also, see the shell
   -- alias 'nvim-startup-benchmark'
