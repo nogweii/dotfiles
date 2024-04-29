@@ -57,8 +57,10 @@ function M.does_resession_care(bufnr)
   return true
 end
 
+local group = vim.api.nvim_create_augroup('dotfiles/SessionManager', { clear = true })
 -- Autocommand 1: When launching neovim with no arguments, restore the directory's session
 vim.api.nvim_create_autocmd('VimEnter', {
+  group = group,
   callback = function()
     local cwd = vim.fn.getcwd()
     -- Check if we're in a directory that I don't want sessions for
@@ -80,6 +82,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 -- Autocommand 2: When quitting neovim, save the session if there is anything to save
 vim.api.nvim_create_autocmd('VimLeavePre', {
+  group = group,
   callback = function()
     local cwd = vim.fn.getcwd()
     -- Check if we're considering saving a per-directory session in a directory
