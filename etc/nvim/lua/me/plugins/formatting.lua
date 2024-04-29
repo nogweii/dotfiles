@@ -27,6 +27,7 @@ return {
         terraform = { 'terraform_fmt' },
         toml      = { 'taplo' },
         yaml      = { 'yamlfmt' },
+        json5     = { 'formatjson5' },
 
         -- For all filetypes:
         -- ['*']     = { 'trim_whitespace', 'trim_newlines' },
@@ -43,6 +44,14 @@ return {
         -- These options will be passed to conform.format()
         return { timeout_ms = 500, lsp_fallback = true }
       end,
+
+      formatters = {
+        formatjson5 = {
+          command = 'formatjson5',
+          args = { '--one_element_lines', '--sort_arrays', '-' },
+          stdin = true,
+        },
+      },
     },
     init = function()
       -- If you want the formatexpr, here is the place to set it
