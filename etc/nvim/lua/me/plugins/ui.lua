@@ -66,6 +66,8 @@ return {
     },
   },
 
+  -- flexible yet pretty list of buffers in the top of the screen
+  -- (filling in tabline, even though it's only ever 1 tab (usually))
   {
     'akinsho/bufferline.nvim',
     version = '*',
@@ -124,11 +126,13 @@ return {
     end,
   },
 
+  -- in visual mode, show all of the whitespace characters
   {
     'mcauley-penney/visual-whitespace.nvim',
     config = true,
   },
 
+  -- using the manual fold API, make smart folds calculated with indentation and TreeSitter
   {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',

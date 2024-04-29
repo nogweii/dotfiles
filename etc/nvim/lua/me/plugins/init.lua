@@ -79,12 +79,6 @@ return {
     end,
   },
 
-  -- Automatic semi-smart indentation settings for a buffer
-  {
-    'nmac427/guess-indent.nvim',
-    opts = {},
-  },
-
   { 'mfussenegger/nvim-lint' },
 
   -- A smarter cursor position restoration function, excluding various buffers

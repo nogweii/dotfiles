@@ -71,4 +71,14 @@ return {
       { '<leader>tc.', '<cmd>TextCaseOpenTelescope<CR>', mode = { 'n', 'x' }, desc = 'Telescope' },
     },
   },
+
+  -- Automatic semi-smart indentation settings for a buffer
+  {
+    'nmac427/guess-indent.nvim',
+    opts = {
+      auto_cmd = true,
+      -- editorconfig is the source of truth
+      override_editorconfig = false,
+    },
+  },
 }
