@@ -20,3 +20,6 @@ etc/zsh/01_private.zsh
 etc/zsh/local.zsh
 share/terminfo/s/
 share/terminfo/t/
+share/terminfo/73/
+share/terminfo/74/
+share/terminfo/78/
