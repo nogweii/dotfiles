@@ -81,4 +81,33 @@ return {
       override_editorconfig = false,
     },
   },
+
+  {
+    'danymat/neogen',
+    opts = {
+      snippet_engine = 'luasnip',
+    },
+    keys = {
+      { '<leader>tgg', '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
+    },
+  },
+
+  {
+    'LudoPinelli/comment-box.nvim',
+    opts = {
+      comment_style = 'auto',
+    },
+    keys = {
+      -- manage comment boxes
+      { '<leader>tbc', '<cmd>CBcatalog<CR>', desc = 'Show catalog' },
+      { '<leader>tbd', '<cmd>CBd<CR>', desc = 'Delete box' },
+      { '<leader>tby', '<cmd>CBy<CR>', desc = 'Yank contents of box' },
+
+      -- and bind various styles
+      { '<leader>tbb', '<cmd>CBccbox<CR>', desc = 'Box Title' },
+      { '<leader>tbt', '<cmd>CBllline<CR>', desc = 'Titled Line' },
+      { '<leader>tbl', '<cmd>CBline<CR>', desc = 'Simple Line' },
+      { '<leader>tbm', '<cmd>CBllbox14<CR>', desc = 'Marked' },
+    },
+  },
 }
