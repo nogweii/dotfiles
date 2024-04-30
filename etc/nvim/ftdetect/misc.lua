@@ -15,6 +15,7 @@ vim.filetype.add({
     Podfile = 'ruby',
     Fastfile = 'ruby',
     ['.gemrc'] = 'yaml',
+    gemrc = 'yaml',
     ['.yamlfmt'] = 'yaml',
   },
 })

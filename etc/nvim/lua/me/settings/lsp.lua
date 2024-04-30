@@ -23,9 +23,11 @@ for severity, icon in pairs(diagnostics_signs) do
   vim.fn.sign_define(name, { text = icon, texthl = name, numhl = '' })
 end
 
--- do stuff after the LSP server attaches to the document
-local function on_attach(_client, bufnr)
+-- do stuff after any LSP server attaches to the document
+local function any_lsp_attach(_client, bufnr)
   vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+  vim.bo[bufnr].tagfunc = 'v:lua.vim.lsp.tagfunc'
+  vim.bo[bufnr].formatexpr = 'v:lua.vim.lsp.formatexpr'
 end
 
 local make_capabilities = function()
@@ -58,7 +60,7 @@ local function setup_lsp_server(name)
   end
 
   -- A server config file can optionally define custom on_attach handlers
-  opts.on_attach = add_hook_after(on_attach, opts.on_attach)
+  opts.on_attach = add_hook_after(any_lsp_attach, opts.on_attach)
 
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   require('lspconfig')[name].setup(opts)

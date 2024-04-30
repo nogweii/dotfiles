@@ -1,7 +1,10 @@
 ---@type LazySpec
 return {
   -- Support HCL and other Hashicorp specific syntaxes
-  { 'hashivim/vim-terraform' },
+  {
+    'hashivim/vim-terraform',
+    ft = { 'hcl', 'terraform' },
+  },
 
   -- additional syntax highlighting for postgresql extensions
   {
@@ -9,14 +12,13 @@ return {
     ft = 'sql',
   },
 
-  -- Add TICKscript (Influx Kapacitor 1.x) syntax
-  { 'nathanielc/vim-tickscript' },
+  -- ReasonML syntax support
+  {
+    'reasonml-editor/vim-reason-plus',
+    ft = { 'reason', 'merlin' },
+  },
 
-  -- ReasonML & ReScript syntax support
-  { 'amiralies/vim-reason' },
-  { 'rescript-lang/vim-rescript' },
-
-  { 'Joorem/vim-haproxy' },
+  { 'Joorem/vim-haproxy', ft = 'haproxy' },
 
   {
     'vim-crystal/vim-crystal',
@@ -29,6 +31,7 @@ return {
       -- cmp & the LSPs handle this for me, don't need the basic completion this plugin provides
       vim.g.crystal_enable_completion = 0
     end,
+    ft = { 'crystal', 'ecrystal' },
   },
 
   {
@@ -36,7 +39,10 @@ return {
     ft = { 'just' },
   },
 
-  { 'fladson/vim-kitty' },
+  {
+    'fladson/vim-kitty',
+    ft = { 'kitty', 'kitty-session' },
+  },
 
   { 'towolf/vim-helm', ft = 'helm' },
 }

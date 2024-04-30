@@ -12,11 +12,15 @@ return {
   {
     'someone-stole-my-name/yaml-companion.nvim',
     dependencies = {
-      { 'neovim/nvim-lspconfig' },
-      { 'nvim-lua/plenary.nvim' },
-      { 'nvim-telescope/telescope.nvim' },
+      'neovim/nvim-lspconfig',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'b0o/SchemaStore.nvim',
     },
     lazy = true,
     version = false, -- get the latest commit, the last release is >2 yrs ago
+    -- ft = { 'yaml' },
+    ft = { '*yaml*' },
+    config = nil,
   },
 }
