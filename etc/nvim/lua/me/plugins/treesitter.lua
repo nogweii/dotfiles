@@ -84,4 +84,10 @@ return {
       require('nvim-treesitter-endwise').init()
     end,
   },
+
+  -- Use custom treesitter queries to highlight function arguments
+  {
+    'm-demare/hlargs.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
 }
