@@ -30,7 +30,11 @@ return {
     end,
   },
 
-  { 'tpope/vim-characterize' },
+  {
+    'tpope/vim-characterize',
+    keys = { { 'ga', '<Plug>(characterize)', desc = 'Inspect the current character' } },
+  },
+
   { 'tpope/vim-rsi' },
 
   {
