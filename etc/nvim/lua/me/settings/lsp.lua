@@ -12,10 +12,10 @@ vim.diagnostic.config({
 })
 
 local diagnostics_signs = {
-  [vim.diagnostic.severity.ERROR] = '⛔',
-  [vim.diagnostic.severity.WARN] = '⚠️',
-  [vim.diagnostic.severity.HINT] = '💡',
-  [vim.diagnostic.severity.INFO] = 'ℹ️',
+  [vim.diagnostic.severity.ERROR] = '',
+  [vim.diagnostic.severity.WARN] = '',
+  [vim.diagnostic.severity.HINT] = '',
+  [vim.diagnostic.severity.INFO] = '',
 }
 for severity, icon in pairs(diagnostics_signs) do
   local name = vim.diagnostic.severity[severity]:lower():gsub('^%l', string.upper)
