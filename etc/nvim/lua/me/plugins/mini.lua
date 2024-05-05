@@ -91,6 +91,10 @@ return {
               -- Use double-line border
               border = 'double',
             },
+
+            -- Keys to scroll inside the clue window
+            scroll_down = '<C-f>',
+            scroll_up = '<C-b>',
           },
         })
 
