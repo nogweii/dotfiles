@@ -3,19 +3,14 @@ return {
   -- a collection of LSP configs
   {
     'neovim/nvim-lspconfig',
-    dependencies = {
-      -- Additional LSP setup for the neovim nvim lua API.
-      -- see config/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
-      'folke/neodev.nvim',
-
-      'hrsh7th/cmp-nvim-lsp',
-    },
     config = function()
       require('me.settings.lsp')
     end,
     version = false, -- use latest commit rather than version
   },
 
+  -- Additional LSP setup for the neovim nvim lua API.
+  -- see etc/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
   {
     'folke/neodev.nvim',
     lazy = true,

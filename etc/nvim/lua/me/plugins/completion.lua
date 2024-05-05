@@ -24,6 +24,7 @@ return {
       require('luasnip.loaders.from_lua').lazy_load()
     end,
     version = 'v2.*',
+    event = 'InsertEnter',
   },
 
   -- advanced & flexible completion menu
@@ -32,19 +33,23 @@ return {
     config = function()
       require('me.settings.cmp')
     end,
-    dependencies = { 'L3MON4D3/LuaSnip' },
+    dependencies = {
+      { 'L3MON4D3/LuaSnip' },
+
+      -- additional sources for cmp, lazily loaded
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-buffer' },
+      {
+        url = 'https://codeberg.org/FelipeLema/cmp-async-path',
+        name = 'cmp-async_path',
+      },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'petertriho/cmp-git' },
+      { 'dmitmel/cmp-cmdline-history' },
+      { 'hrsh7th/cmp-emoji' },
+    },
     version = false,
+    event = 'InsertEnter',
   },
-  -- additional sources for cmp, lazily loaded
-  { 'saadparwaiz1/cmp_luasnip' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/cmp-buffer' },
-  {
-    url = 'https://codeberg.org/FelipeLema/cmp-async-path',
-    name = 'cmp-async_path',
-  },
-  { 'hrsh7th/cmp-cmdline' },
-  { 'petertriho/cmp-git' },
-  { 'dmitmel/cmp-cmdline-history' },
-  { 'hrsh7th/cmp-emoji' },
 }

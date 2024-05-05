@@ -1,3 +1,4 @@
+---@type lspconfig.Config
 return {
   settings = {
     Lua = {
@@ -17,5 +18,7 @@ return {
       },
     },
   },
-  before_init = require('neodev.lsp').before_init,
+  on_new_config = function(new_config, root_dir)
+    require('neodev.lsp').on_new_config(new_config, root_dir)
+  end,
 }
