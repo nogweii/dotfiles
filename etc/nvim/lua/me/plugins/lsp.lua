@@ -28,8 +28,4 @@ return {
     'mrded/nvim-lsp-notify',
     dependencies = { 'rcarriga/nvim-notify' },
   },
-
-  {
-    'soulis-1256/eagle.nvim',
-  },
 }
