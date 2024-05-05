@@ -89,7 +89,9 @@ return {
     },
     keys = {
       { '<leader>tgg', '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
+      { 'ZN', '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
     },
+    cmd = 'Neogen',
   },
 
   {
