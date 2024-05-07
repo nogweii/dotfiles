@@ -24,10 +24,18 @@ for severity, icon in pairs(diagnostics_signs) do
 end
 
 -- do stuff after any LSP server attaches to the document
-local function any_lsp_attach(_client, bufnr)
-  vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
-  vim.bo[bufnr].tagfunc = 'v:lua.vim.lsp.tagfunc'
-  vim.bo[bufnr].formatexpr = 'v:lua.vim.lsp.formatexpr'
+local function any_lsp_attach(client, bufnr)
+  local bufopt = vim.bo[bufnr]
+  bufopt.omnifunc = 'v:lua.vim.lsp.omnifunc'
+  bufopt.tagfunc = 'v:lua.vim.lsp.tagfunc'
+  bufopt.formatexpr = 'v:lua.vim.lsp.formatexpr'
+
+  -- add the LSP's determined root directory to &path
+  if client.workspace_folders ~= nil then
+    vim.opt_local.path:append(vim.tbl_map(function(folder)
+      return folder.name
+    end, client.workspace_folders))
+  end
 end
 
 local make_capabilities = function()
