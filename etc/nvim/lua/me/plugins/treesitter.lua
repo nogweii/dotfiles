@@ -65,9 +65,9 @@ return {
   -- Add some context to where I am in a file
   {
     'nvim-treesitter/nvim-treesitter-context',
-    config = function()
-      require('treesitter-context').setup({})
-    end,
+    opts = {
+      max_lines = 2,
+    },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
 
