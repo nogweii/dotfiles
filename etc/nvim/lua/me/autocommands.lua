@@ -1,50 +1,11 @@
-local function nvim_create_augroups(definitions)
-  for group_name, definition in pairs(definitions) do
-    vim.cmd('augroup ' .. group_name)
-    vim.cmd('autocmd!')
-    for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten({ 'autocmd', def }), ' ')
-      vim.cmd(command)
-    end
-    vim.cmd('augroup END')
-  end
-end
-
-nvim_create_augroups({
-  nospell_types = {
-    { 'FileType', 'lua', 'setlocal', 'nospell' },
-  },
-
-  nvim_tree_changes = {
-    { 'FileType', 'NvimTree', 'setlocal', 'cursorline' },
-  },
-
-  highlight_yank = { -- Copied from :help lua-highlight
-    { 'TextYankPost', '*', 'silent! lua vim.highlight.on_yank {timeout=500}' },
-  },
-
-  quickfix_windows = {
-    { 'QuickFixCmdPost', 'grep', 'cwindow' },
-    { 'QuickFixCmdPost', 'helpgrep', 'cwindow' },
-    { 'FileType', 'qf', 'setlocal scrolloff=0 nobuflisted' },
-  },
-
-  grepper = {
-    {
-      'User',
-      'Grepper',
-      [[call setqflist([], 'r', {'context': {'bqf': {'pattern_hl': histget('/')}}}) | botright copen]],
-    },
-  },
-
-  postgresql_configs = {
-    { 'BufNewFile,BufRead', 'psqlrc,.psqlrc', [[let b:sql_type_override='pgsql' | setfiletype sql]] },
-  },
-
-  lsp_document_highlight = {
-    { 'CursorMoved', '<buffer>', [[lua vim.lsp.buf.clear_references()]] },
-  },
-})
+-- nvim_create_augroups({
+-- nospell_types = {
+--   { 'FileType', 'lua', 'setlocal', 'nospell' },
+-- },
+-- lsp_document_highlight = {
+--   { 'CursorMoved', '<buffer>', [[lua vim.lsp.buf.clear_references()]] },
+-- },
+-- })
 
 -- Ansible file detection & configuration
 local au_group_ansiblefilepath = vim.api.nvim_create_augroup('AnsibleFilePath', {})
@@ -59,18 +20,6 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
     if looklike_paths:match_str(au_details.file) or vim.tbl_contains(ansible_file_names, file_base_name) then
       vim.opt_local.path:append({ './../templates', './../files', 'templates', 'files', '', '.' })
       vim.opt_local.filetype = 'yaml.ansible'
-    end
-  end,
-})
-
--- Whenever an LSP attaches to vim, add the LSP's determined root directory to &path
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client.workspace_folders ~= nil then
-      vim.opt_local.path:append(vim.tbl_map(function(folder)
-        return folder.name
-      end, client.workspace_folders))
     end
   end,
 })
@@ -92,7 +41,122 @@ end, {
 -- For these filetypes, disable ufo's fold
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'git', 'help', 'qf', 'fugitive', 'fugitiveblame', 'neo-tree' },
-  callback = function()
-    vim.b.ufo_provider = ''
+  callback = function(event)
+    vim.b[event.buf].ufo_provider = ''
   end,
 })
+
+local M = {}
+
+M.autocommands = {
+  highlight_yank = {
+    {
+      event = 'TextYankPost',
+      desc = 'Highlight yanked text',
+      pattern = '*',
+      callback = function()
+        vim.highlight.on_yank({ timeout = 500 })
+      end,
+    },
+  },
+
+  checktime = {
+    {
+      event = { 'FocusGained', 'TermClose', 'TermLeave' },
+      desc = 'Check if buffers changed on editor focus',
+      command = 'checktime',
+    },
+  },
+
+  create_dir = {
+    {
+      event = 'BufWritePre',
+      desc = "Automatically create parent directories if they don't exist when saving a file",
+      callback = function(args)
+        if not vim.api.nvim_buf_is_valid(args.buf) then
+          return
+        end
+        vim.fn.mkdir(vim.fn.fnamemodify(vim.loop.fs_realpath(args.match) or args.match, ':p:h'), 'p')
+      end,
+    },
+  },
+
+  q_close_windows = {
+    {
+      event = 'BufWinEnter',
+      desc = 'Make q close help, man, quickfix, dap floats',
+      callback = function(event)
+        if vim.tbl_contains({ 'help', 'nofile', 'quickfix' }, vim.bo[event.buf].buftype) then
+          vim.keymap.set('n', 'q', '<Cmd>close<CR>', {
+            desc = 'Close window',
+            buffer = event.buf,
+            silent = true,
+            nowait = true,
+          })
+        end
+      end,
+    },
+  },
+
+  terminal_settings = {
+    {
+      event = 'TermOpen',
+      desc = 'Disable line number/fold column/sign column for terminals',
+      callback = function()
+        vim.opt_local.number = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.foldcolumn = '0'
+        vim.opt_local.signcolumn = 'no'
+        vim.opt_local.scrolloff = 0
+      end,
+    },
+  },
+
+  quickfix_tweaks = {
+    {
+      event = 'FileType',
+      desc = 'Unlist quickfist buffers',
+      pattern = 'qf',
+      callback = function()
+        vim.opt_local.buflisted = false
+        vim.opt_local.scrolloff = 0
+      end,
+    },
+
+    {
+      event = 'QuickFixCmdPost',
+      desc = 'Open quickfix window after running commands',
+      pattern = { 'helpgrep', 'grep' },
+      command = 'cwindow',
+    },
+  },
+
+  sql_fun = {
+    {
+      event = { 'BufNewFile', 'BufRead' },
+      desc = 'Set the filetype for psqlrc',
+      pattern = { 'psqlrc', '.psqlrc' },
+      callback = function(args)
+        vim.b[args.buf].sql_type_override = 'psql'
+        vim.bo[args.buf].filetype = 'sql'
+      end,
+    },
+  },
+}
+
+function M.create_au()
+  for augroup, autocmds in pairs(M.autocommands) do
+    if autocmds then
+      local augroup_id = vim.api.nvim_create_augroup(augroup, { clear = true })
+      for _, autocmd in ipairs(autocmds) do
+        local event = autocmd.event
+        autocmd.event = nil
+        autocmd.group = augroup_id
+        autocmd.id = vim.api.nvim_create_autocmd(event, autocmd)
+        autocmd.event = event
+      end
+    end
+  end
+end
+
+return M
