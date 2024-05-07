@@ -17,6 +17,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Now that lazy.nvim has been added to &rtp, I can use it's event system to
+-- asynchronously load file plugins
+require('me.autocmd_async_file_event')
+
 -- Unicode has variants of the same glyph in multiple tables. Early pictographic symbols are an example
 -- of them being duplicated in the emoji list. (think: b&w smiley face vs full-color version.) Appending
 -- this codepoint will cause the previous character to always be selected from the emoji table.
