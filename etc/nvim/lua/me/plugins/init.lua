@@ -47,6 +47,7 @@ return {
         -- refer to the configuration section below
       })
     end,
+    event = 'AsyncFileLoad',
   },
 
   -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
@@ -83,7 +84,10 @@ return {
     end,
   },
 
-  { 'mfussenegger/nvim-lint' },
+  {
+    'mfussenegger/nvim-lint',
+    event = 'AsyncFileLoad',
+  },
 
   -- A smarter cursor position restoration function, excluding various buffers
   -- where it makes sense, and opening folds if needed.

@@ -22,10 +22,12 @@ return {
       lspconfig = false,
       pathStrict = true,
     },
+    event = 'LspAttach',
   },
 
   {
     'mrded/nvim-lsp-notify',
     dependencies = { 'rcarriga/nvim-notify' },
+    event = 'LspAttach',
   },
 }

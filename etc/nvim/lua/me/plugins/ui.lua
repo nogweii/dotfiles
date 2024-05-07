@@ -12,6 +12,7 @@ return {
   {
     'yorickpeterse/nvim-pqf',
     opts = {},
+    event = 'AsyncFileLoad',
   },
 
   {
@@ -64,6 +65,7 @@ return {
         names = false,
       },
     },
+    event = 'AsyncFileLoad',
   },
 
   -- flexible yet pretty list of buffers in the top of the screen
@@ -147,7 +149,7 @@ return {
   {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',
-    event = 'BufRead',
+    event = 'AsyncFileLoad',
     keys = {
       {
         'zR',

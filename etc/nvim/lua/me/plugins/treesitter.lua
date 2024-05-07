@@ -17,7 +17,7 @@ return {
         },
       })
     end,
-    event = 'BufRead',
+    event = 'AsyncFileLoad',
   },
 
   -- Treesitter compatible rainbow parentheses
@@ -53,6 +53,7 @@ return {
           }, ]]
       }
     end,
+    event = 'AsyncFileLoad',
   },
 
   -- Dynamically set &commentstring when moving around files with multiple filetypes combined
@@ -60,6 +61,7 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     opts = {},
+    event = 'AsyncFileLoad',
   },
 
   -- Add some context to where I am in a file
@@ -69,12 +71,14 @@ return {
       max_lines = 2,
     },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = 'AsyncFileLoad',
   },
 
   {
     'windwp/nvim-ts-autotag',
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = 'AsyncFileLoad',
   },
 
   {
@@ -83,11 +87,13 @@ return {
     config = function()
       require('nvim-treesitter-endwise').init()
     end,
+    event = 'AsyncFileLoad',
   },
 
   -- Use custom treesitter queries to highlight function arguments
   {
     'm-demare/hlargs.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    event = 'AsyncFileLoad',
   },
 }

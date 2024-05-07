@@ -117,6 +117,7 @@ return {
     },
     version = '*',
     cmd = 'Neotree',
+    event = 'AsyncFileLoad',
   },
 
   {
@@ -126,5 +127,6 @@ return {
       'nvim-neo-tree/neo-tree.nvim',
     },
     opts = {},
+    event = 'LspAttach',
   },
 }

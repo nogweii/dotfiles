@@ -80,6 +80,7 @@ return {
       -- editorconfig is the source of truth
       override_editorconfig = false,
     },
+    event = 'AsyncFileLoad',
   },
 
   {

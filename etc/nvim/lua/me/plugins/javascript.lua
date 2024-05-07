@@ -32,6 +32,7 @@ return {
     opts = {
       auto_override_publish_diagnostics = true,
     },
+    event = 'LspAttach',
   },
 
   {
