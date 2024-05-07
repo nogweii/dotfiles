@@ -100,20 +100,10 @@ return {
     end,
   },
 
-  -- quickly & easily generate a python docstring
   {
-    'heavenshell/vim-pydocstring',
-    build = 'make install',
-    ft = 'python',
-    config = function()
-      vim.g.pydocstring_formatter = 'google'
-      vim.g.pydocstring_enable_mapping = 0
-      local cmd_map = require('me.map_utils').cmd_map
-      cmd_map({ keys = '<leader>pd', command = 'Pydocstring' })
-    end,
+    'rafcamlet/nvim-luapad',
+    cmd = { 'LuaPad', 'LuaRun' },
   },
-
-  { 'rafcamlet/nvim-luapad' },
 
   {
     '2kabhishek/nerdy.nvim',

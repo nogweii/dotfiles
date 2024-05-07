@@ -87,7 +87,6 @@
   "vim-just": { "branch": "main", "commit": "a621ede3bcf551144358c112ba1f4e6c2e84e092" },
   "vim-kitty": { "branch": "main", "commit": "4f3f2901717320f80a1e16a868f706762be8535b" },
   "vim-lastplace": { "branch": "master", "commit": "563a6ffdbeb9d32951de1f1f3702cb412a17936e" },
-  "vim-pydocstring": { "branch": "master", "commit": "f6e3c52bfaf4b4f76dab4d84e75b94199d5f3b9c" },
   "vim-reason-plus": { "branch": "master", "commit": "c11a2940f8f3e3915e472c366fe460b0fe008bac" },
   "vim-repeat": { "branch": "master", "commit": "8106e142dfdc278ff3eaaadd7b362ad7949d4357" },
   "vim-rsi": { "branch": "master", "commit": "45540637ead22f011e8215f1c90142e49d946a54" },
