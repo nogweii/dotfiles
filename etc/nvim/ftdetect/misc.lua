@@ -17,5 +17,6 @@ vim.filetype.add({
     ['.gemrc'] = 'yaml',
     gemrc = 'yaml',
     ['.yamlfmt'] = 'yaml',
+    ['.ecrc'] = 'json',
   },
 })

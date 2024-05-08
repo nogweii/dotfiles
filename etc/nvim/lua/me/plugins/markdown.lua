@@ -6,7 +6,7 @@ return {
       modules = {
         maps = false, -- don't do keymaps, ftplugin/markdown.lua has it handled
         cmp = true,
-        yaml = true, -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
+        yaml = true,  -- parse the frontmatter as YAML to configure mkdnflow (just bib files for now)
       },
       links = {
         style = 'markdown',
@@ -20,9 +20,9 @@ return {
         end,
       },
       perspective = {
-        priority = 'root', -- search for files relative to the root of the notebook/wiki
+        priority = 'root',            -- search for files relative to the root of the notebook/wiki
         root_tell = '.marksman.toml', -- this file is where the root is at
-        nvim_wd_heel = true, -- change nvim's dir when navigating files
+        nvim_wd_heel = true,          -- change nvim's dir when navigating files
       },
     },
     ft = { 'markdown', 'rmd', 'md' },
@@ -118,6 +118,7 @@ return {
     ]],
         },
 
+        -- editorconfig-checker-disable
         rst = {
           template = [[
 .. image:: $FILE_PATH
@@ -125,6 +126,7 @@ return {
    :width: 80%
     ]],
         },
+        -- editorconfig-checker-enable
 
         asciidoc = {
           template = 'image::$FILE_PATH[width=80%, alt="$CURSOR"]',
@@ -141,8 +143,8 @@ return {
         },
       },
       -- override options for specific files, dirs or custom triggers
-      files = {}, -- file specific options (e.g. "main.md" or "/path/to/main.md")
-      dirs = {}, -- dir specific options (e.g. "project" or "/home/user/project")
+      files = {},  -- file specific options (e.g. "main.md" or "/path/to/main.md")
+      dirs = {},   -- dir specific options (e.g. "project" or "/home/user/project")
       custom = {}, -- custom options enabled with the trigger option
     },
   },
