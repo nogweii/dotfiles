@@ -84,11 +84,6 @@ return {
     end,
   },
 
-  {
-    'mfussenegger/nvim-lint',
-    event = 'AsyncFileLoad',
-  },
-
   -- A smarter cursor position restoration function, excluding various buffers
   -- where it makes sense, and opening folds if needed.
   {

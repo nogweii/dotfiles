@@ -36,6 +36,9 @@ local function any_lsp_attach(client, bufnr)
       return folder.name
     end, client.workspace_folders))
   end
+
+  -- connect the lsp-format autocommand to the buffer
+  require('lsp-format').on_attach(client, bufnr)
 end
 
 local make_capabilities = function()
@@ -68,7 +71,7 @@ local function setup_lsp_server(name)
   end
 
   -- A server config file can optionally define custom on_attach handlers
-  opts.on_attach = add_hook_after(any_lsp_attach, opts.on_attach)
+  opts.on_attach = add_hook_after(opts.on_attach, any_lsp_attach)
 
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
   require('lspconfig')[name].setup(opts)
@@ -95,6 +98,7 @@ local lsps = {
   'yamlls',
   'zk',
   'crystalline',
+  'taplo',
 }
 
 for i = 1, #lsps do

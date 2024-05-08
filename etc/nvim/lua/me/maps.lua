@@ -6,7 +6,7 @@ local plug_map = require('me.map_utils').plug_map
 local keymap = vim.keymap.set
 
 --#region General editing keymaps
---[[
+--[[ editorconfig-checker-disable
                                  _
   __ _  ___ _ __   ___ _ __ __ _| |
  / _` |/ _ \ '_ \ / _ \ '__/ _` | |
@@ -14,6 +14,7 @@ local keymap = vim.keymap.set
  \__, |\___|_| |_|\___|_|  \__,_|_|
  |___/
  ]]
+-- editorconfig-checker-enable
 -- Free up 'G' to be a generic prefix, and make gG do what G used to do
 map({ keys = 'gG', to = 'G', desc = 'Go to last line' })
 map({ keys = 'gG', to = 'G', mode = 'o' })
@@ -87,7 +88,7 @@ cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
 --#endregion
 
 --#region Git related keymaps
---[[
+--[[ editorconfig-checker-disable
        _ _
   __ _(_) |_
  / _` | | __|
@@ -95,6 +96,7 @@ cmd_map({ keys = '-', command = 'Neotree filesystem reveal current' })
  \__, |_|\__|
  |___/
  ]]
+-- editorconfig-checker-enable
 -- Git hunk jumps, that behave the same when diffing two files
 map({ keys = ']c', to = "&diff ? ']c' : '<cmd>lua require('gitsigns').next_hunk()<CR>'", expression = true })
 map({ keys = '[c', to = "&diff ? ']c' : '<cmd>lua require('gitsigns').prev_hunk()<CR>'", expression = true })
@@ -113,7 +115,7 @@ map({
 --#endregion
 
 --#region LSP related keymaps
---[[
+--[[ editorconfig-checker-disable
  _
 | |
 | |___ _ __
@@ -122,6 +124,7 @@ map({
 |_|___/ .__/
       | |
       |_|
+-- editorconfig-checker-enable
 --]]
 keymap('n', 'gD', function()
   vim.lsp.buf.declaration()

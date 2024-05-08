@@ -24,20 +24,6 @@ vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
   end,
 })
 
--- Configure the formatter for packer HCL files
-vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufReadPost', 'FileReadPost' }, {
-  pattern = { '*.pkr.hcl' },
-  callback = function()
-    require('conform').formatters_by_ft.hcl = { 'packer_fmt' }
-  end,
-})
-
-vim.api.nvim_create_user_command('ConformToggle', function()
-  vim.b.disable_autoformat = not vim.b.disable_autoformat
-end, {
-  desc = 'Toggle automatic formatting-on-save with Conform',
-})
-
 -- For these filetypes, disable ufo's fold
 vim.api.nvim_create_autocmd({ 'FileType' }, {
   pattern = { 'git', 'help', 'qf', 'fugitive', 'fugitiveblame', 'neo-tree' },
