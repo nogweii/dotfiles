@@ -2,7 +2,10 @@
 
 # Rename CLI parameters to friendlier names
 # https://git-scm.com/docs/gitattributes#_defining_a_custom_merge_driver
-base="$1"; local_="$2"; remote="$3"; merged="$4"
+base="$1"
+local_="$2"
+remote="$3"
+merged="$4"
 
 # Load the mergetool scripts
 TOOL_MODE=merge
@@ -20,12 +23,12 @@ merged_decrypted="${base_decrypted/_BASE_/_MERGED_}"
 backup_decrypted="${base_decrypted/_BASE_/_BACKUP_}"
 
 # If anything goes wrong, then delete our decrypted files
-handle_trap_exit () {
-  rm $base_decrypted || true
-  rm $local_decrypted || true
-  rm $remote_decrypted || true
-  rm $merged_decrypted || true
-  rm $backup_decrypted || true
+handle_trap_exit() {
+    rm "${base_decrypted}" || true
+    rm "${local_decrypted}" || true
+    rm "${remote_decrypted}" || true
+    rm "${merged_decrypted}" || true
+    rm "${backup_decrypted}" || true
 }
 trap handle_trap_exit EXIT
 
@@ -48,13 +51,13 @@ MERGED="$merged_decrypted"
 BACKUP="$backup_decrypted"
 
 # Override `check_unchanged` with a custom script
-check_unchanged () {
-  # If the contents haven't changed, then fail
-  if test "$MERGED" -nt "$BACKUP"; then
-    return 0
-  else
-    exit 1
-  fi
+check_unchanged() {
+    # If the contents haven't changed, then fail
+    if test "$MERGED" -nt "$BACKUP"; then
+        return 0
+    else
+        exit 1
+    fi
 }
 
 # Run the mergetool

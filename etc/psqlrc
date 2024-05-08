@@ -31,7 +31,7 @@
 -- Store a lot of history
 \set HISTSIZE 50000
 
--- When an error arises in the midst of a transaction, always rollback the 
+-- When an error arises in the midst of a transaction, always rollback the
 -- changes. Better safe than sorry, IMO!
 \set ON_ERROR_ROLLBACK on
 
@@ -69,25 +69,25 @@
 
 -- Long Running Queries
 SELECT $$
- SELECT pid, 
-        now() - pg_stat_activity.query_start AS duration, 
-        query AS query 
-   FROM pg_stat_activity 
-  WHERE pg_stat_activity.query <> ''::text 
-    AND now() - pg_stat_activity.query_start > interval '5 minutes' 
+ SELECT pid,
+        now() - pg_stat_activity.query_start AS duration,
+        query AS query
+   FROM pg_stat_activity
+  WHERE pg_stat_activity.query <> ''::text
+    AND now() - pg_stat_activity.query_start > interval '5 minutes'
   ORDER BY now() - pg_stat_activity.query_start DESC;
 $$ long_running_queries \gset
 
 -- Process Summary (ps)
 SELECT $$
- SELECT pid, 
+ SELECT pid,
         usename,
-        application_name AS source, 
-        age(now(),query_start) AS running_for, 
-        wait_event_type, wait_event, 
-        query AS query 
-   FROM pg_stat_activity 
-  WHERE query <> '<insufficient privilege>' 
+        application_name AS source,
+        age(now(),query_start) AS running_for,
+        wait_event_type, wait_event,
+        query AS query
+   FROM pg_stat_activity
+  WHERE query <> '<insufficient privilege>'
     AND pid <> pg_backend_pid()
     AND usename IS NOT NULL
   ORDER BY 3 DESC;
@@ -113,8 +113,8 @@ SELECT
     , age(relfrozenxid)                            AS xid_age
     , coalesce(cfma.value::float, autovacuum_freeze_max_age::float)
                                                    AS autovacuum_freeze_max_age
-    , ( coalesce(cvbt.value::float, autovacuum_vacuum_threshold::float) 
-      + coalesce(cvsf.value::float, autovacuum_vacuum_scale_factor::float) * 
+    , ( coalesce(cvbt.value::float, autovacuum_vacuum_threshold::float)
+      + coalesce(cvsf.value::float, autovacuum_vacuum_scale_factor::float) *
         pg_table_size(c.oid)
       )                                            AS autovacuum_vacuum_tuples
     , n_dead_tup                                   AS dead_tuples

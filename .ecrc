@@ -3,7 +3,8 @@
   "Format": "",
   "NoColor": false,
   "Exclude": [
-    "\\.add\\.spl$"
+    "\\.add\\.spl$",
+    "\\.(mk?d|markdown)$"
   ],
   "Disable": {
     "EndOfLine": false,

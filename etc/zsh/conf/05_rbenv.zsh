@@ -4,7 +4,7 @@
 
 # Early return to skip sourcing the rest of the file if rbenv isn't installed
 if [[ -z $commands[rbenv] ]]; then
-   return 
+   return
 fi
 
 export RBENV_SHELL=zsh
@@ -74,7 +74,7 @@ function _update_ruby_version()
     if [ "${ruby_version}" = "system" ]; then
       ruby_version=""
     else
-      gem_char="%{💎%G%}" 
+      gem_char="%{💎%G%}"
       ruby_version="%F{88}${gem_char}${ruby_version}%f"
     fi
   fi
@@ -82,7 +82,7 @@ function _update_ruby_version()
 # Update the version string every time I change directories
 chpwd_functions+=(_update_ruby_version)
 
-# And initialize $ruby_version 
+# And initialize $ruby_version
 _update_ruby_version
 
 # Don't need this variable any more
