@@ -43,4 +43,4 @@ zstyle ':zle:*' word-style normal
 zstyle ':zle:*' word-chars ''
 
 # Load a bunch of modules
-zmodload zsh/terminfo zsh/zselect zsh/system
+zmodload zsh/terminfo zsh/zselect zsh/system zsh/pcre

@@ -26,3 +26,19 @@ elif [ -n "${commands[keychain]}" ]; then
     eval $(keychain --eval --quiet --noask --agents ssh --absolute --dir $XDG_RUNTIME_DIR/keychain --systemd)
     SSH_AUTH_SOCK_SOURCE="gentoo-keychain"
 fi
+
+# zstyle -e ':completion:*:(ssh|scp|sftp|ssh-copy-id):*' hosts 'reply=(${${${${(f)"$(<~/.ssh/known_hosts)"}:#[|0-9]*}%%\ *}%%,*} )'
+
+# zstyle -e ':completion:*:hosts' hosts 'reply=(
+#   ${=${=${=${${(f)"$(<~/.ssh/known_hosts(N))"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ }
+#   ${=${(f)"$(</etc/hosts(|)(N))"}%%*}
+#   ${=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}
+# )'
+# : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}}
+
+
+zstyle -e ':completion:*:hosts' hosts 'reply=(
+  ${=${=${=${${(f)"$(cat {/etc/ssh/ssh_,~/.ssh/}known_hosts(|2)(N) 2> /dev/null)"}%%[#| ]*}//\]:[0-9]*/ }//,/ }//\[/ }
+  ${=${(f)"$(cat /etc/hosts(|)(N))"}%%(\#${_etc_host_ignores:+|${(j:|:)~_etc_host_ignores}})*}
+  ${=${${${${(@M)${(f)"$(cat ~/.ssh/config{,.d/*} 2> /dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+)'
