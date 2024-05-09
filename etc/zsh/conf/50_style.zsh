@@ -55,5 +55,14 @@ zstyle ':completion:*:*:task:*' group-name ''
 alias t=task
 compdef _task t=task
 
-# travis completion integration via the gem
-[ -f ${TRAVIS_CONFIG_PATH}/travis.sh ] && source ${TRAVIS_CONFIG_PATH}/travis.sh
+# Don't complete uninteresting users...
+zstyle ':completion:*:users' ignored-patterns \
+  '_*' adm amanda apache avahi beaglidx bin cacti canna clamav daemon dbus \
+  distcache dovecot fax ftp games gdm gkrellmd gopher hacluster haldaemon halt \
+  hsqldb ident junkbust ldap lp mail mailman mailnull mldonkey mysql nagios \
+  named netdump news nfsnobody 'nixbld*' nobody nscd ntp nut nx openvpn \
+  operator pcap postfix postgres privoxy pulse pvm quagga radvd rpc rpcuser \
+  rpm shutdown squid sshd sync 'systemd-*' uucp vcsa xfs
+
+# ...unless I really want to see one of them.
+zstyle '*' single-ignored show
