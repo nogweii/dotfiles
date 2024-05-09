@@ -15,7 +15,7 @@ local group_name = 'special_plugin_events'
 
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufWritePre' }, {
   group = vim.api.nvim_create_augroup(group_name, { clear = true }),
-  desc = 'A file has loaded, asychronously trigger more plugins',
+  desc = 'A file has loaded, asynchronously trigger more plugins',
   nested = true,
   callback = function(args)
     vim.schedule(function()

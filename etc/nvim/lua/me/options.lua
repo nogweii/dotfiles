@@ -90,7 +90,7 @@ vim.opt.matchpairs = vim.bo.matchpairs .. ',<:>'
 vim.opt.fillchars = {
   eob = ' ', -- disable `~` on nonexistent lines
 
-  -- Make indication of a fold pretty snazzy-lookin'
+  -- Make indication of a fold pretty snazzy-looking
   fold = ' ',
   foldopen = '',
   foldsep = ' ',

@@ -13,6 +13,7 @@ iabbrev forcably        forcibly
 iabbrev algorithims     algorithms
 iabbrev privilge        privilege
 iabbrev mispelled       misspelled
+iabbrev asychronously   asynchronously
 
 " Auto-add some accents
 iabbrev cafe            café
