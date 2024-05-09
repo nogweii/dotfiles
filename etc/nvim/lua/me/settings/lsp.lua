@@ -99,6 +99,7 @@ local lsps = {
   'zk',
   'crystalline',
   'taplo',
+  'ruff',
 }
 
 for i = 1, #lsps do

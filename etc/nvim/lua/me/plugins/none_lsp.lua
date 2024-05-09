@@ -33,6 +33,7 @@ return {
         nls.builtins.completion.spell,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
+        nls.builtins.formatting.shellharden,
         nls.builtins.code_actions.gitrebase,
         nls.builtins.code_actions.gitsigns,
         nls.builtins.code_actions.ts_node_action,
@@ -49,6 +50,8 @@ return {
         nls.builtins.formatting.terraform_fmt,
         nls.builtins.formatting.yamlfmt,
         nls.builtins.formatting.packer,
+        nls.builtins.diagnostics.hadolint,
+        nls.builtins.diagnostics.stylelint,
 
         -- these are from none-ls-extras.nvim
         require('none-ls.diagnostics.eslint'),
@@ -59,6 +62,7 @@ return {
 
         -- and here are some of my own custom additions
         require('me.none_ls.formatters.formatjson5'),
+        require('me.none_ls.diagnostics.typos'),
       }
     end,
   },
