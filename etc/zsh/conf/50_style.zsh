@@ -2,29 +2,6 @@ zstyle ':compinstall' filename "${XDG_CONFIG_HOME}/zsh/50_style.zsh"
 zmodload zsh/complist
 autoload -Uz compinit
 
-compsupercache ()
-{
-  local completion_dump="${XDG_CACHE_HOME}/zsh/compdump"
-  # use a separate file to determine when to regenerate, as compinit doesn't
-  # always need to modify the compdump
-  local last_dump="${completion_dump}.last"
-
-  if [[ -e "${last_dump}" && -f "${last_dump}"(#qN.md-1) ]]; then
-    compinit -C -d "${completion_dump}"
-  else
-    compinit -d "${completion_dump}"
-    touch "${last_dump}"
-  fi
-
-  # if zcompdump exists (and is non-zero), and is older than the .zwc file, then regenerate
-  if [[ -s "${completion_dump}" && (! -s "${completion_dump}.zwc" || "${completion_dump}" -nt "${completion_dump}.zwc") ]]; then
-    # since file is mem-mapped, it might be loaded right now (currently running shells), so rename it then make a new one
-    [[ -e "${completion_dump}.zwc" ]] && mv -f "${completion_dump}.zwc" "${completion_dump}.zwc.prior"
-    # compile it mapped, so multiple shells can share it (total mem reduction), but do so in the background
-    zcompile -M "${completion_dump}" &!
-  fi
-}
-
 compsupercache
 
 # Use a cache
