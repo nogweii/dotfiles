@@ -41,6 +41,3 @@ autoload -U backward-kill-word-match
 zle -N backward-kill-word-match
 zstyle ':zle:*' word-style normal
 zstyle ':zle:*' word-chars ''
-
-# Load a bunch of modules
-zmodload zsh/terminfo zsh/zselect zsh/system zsh/pcre

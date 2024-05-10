@@ -1,5 +1,4 @@
 zstyle ':compinstall' filename "${XDG_CONFIG_HOME}/zsh/50_style.zsh"
-zmodload zsh/complist
 autoload -Uz compinit
 
 compsupercache

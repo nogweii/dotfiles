@@ -13,8 +13,6 @@ if [[ -z $commands[atuin] ]]; then
    return
 fi
 
-zmodload zsh/datetime 2>/dev/null
-
 export ATUIN_SESSION=$(atuin uuid)
 ATUIN_HISTORY_ID=""
 
