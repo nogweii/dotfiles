@@ -7,10 +7,6 @@ if [ -n "${commands[fortune]}" -a -z "$SSH_CONNECTION" ] ; then
     fortune -s # "Short" apothegms only
 fi
 
-# Enable syntax highlighting:
-source ${ZDOTDIR}/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-FAST_HIGHLIGHT_STYLES[path]=underline
-
 [ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
 source ${ZDOTDIR}/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 AUTOSWITCH_SILENT='yes'
