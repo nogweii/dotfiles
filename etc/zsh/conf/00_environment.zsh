@@ -35,7 +35,7 @@ export QT_XFT=true
 export TMOUT=14400 # 4 hours
 
 # MAILDIR & new mail alerts
-test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
+# test -e $HOME/mail && export MAILDIR=$HOME/mail && for i in $(echo $MAILDIR/**/cur(:h)); do mailpath[$#mailpath+1]="${i}?You have new mail in ${i:t}."; done
 
 export LOCALE="en_US.utf8"
 
