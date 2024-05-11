@@ -2,7 +2,8 @@
 
 if [[ "${PROFILE_STARTUP:-false}" == true ]]; then
     # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
-    PS4=$'%D{%M%S%.} %N:%i> '
+    # PS4=$'%D{%M%S%.} %N:%i> '
+    PS4=$'\\\011%D{%s%6.}\011%x\011%I\011%N\011%e\011'
     local startlog_file=$HOME/tmp/startlog.$$
     exec 3>&2 2>$startlog_file
     echo "xtrace output being sent to ${startlog_file} for profiling..."
@@ -20,51 +21,41 @@ emulate sh -c 'source /etc/profile'
 
 # And now, set them
 path=(
-  $HOME/bin                    # My own scripts, programs, etc
-  $HOME/.local/bin             # Machine-local artisanal scripts
-  $HOME/.local/ruby/bin        # User-installed ruby gems
-  $HOME/.local/share/pipx/bin  # pipx isolated apps
-  $HOME/.local/pypi/bin        # User-installed python packages
-  $HOME/.local/node/bin        # User-installed npm packages
-  $HOME/.local/go/bin          # User-installed go packages
-  $HOME/.local/cargo/bin       # User-installed rust packages
-  /usr/local/{bin,sbin}        # Local administrator installed/odd-ball commands
-  /usr/{bin,sbin}              # Most programs & binaries
-  /{bin,sbin}                  # Lower-level, "basic" commands
+  $HOME/bin(-/N)                          # My own scripts, programs, etc
+  $HOME/.local/bin(-/N)                   # Machine-local artisanal scripts
+  # $HOME/.local/ruby/bin                 # User-installed ruby gems
+  $HOME/.local/share/pipx/bin(-/N)        # pipx isolated apps
+  $HOME/.local/share/npm/bin(-/N)         # User-installed npm packages
+  $HOME/.local/share/go/bin(-/N)          # User-installed go packages
+  $HOME/.local/share/cargo/bin(-/N)       # User-installed rust packages
+  /usr/local/{bin,sbin}(-/N)              # Local administrator installed/odd-ball commands
 
-  $path                        # System-provided paths
+  $path                                   # System-provided paths
 
-  $HOME/.local/share/cabal/bin # User-installed haskell packages
-  $HOME/.cabal/bin
-  $HOME/.heroku/client/bin     # Heroku toolbelt, via `heroku update`
-  $ZDOTDIR/share/rbenv/bin     # rbenv install
-  $HOME/.local/elixir/bin      # Manually installed elixir 1.0 binaries
-  $HOME/go/bin                 # go packages
-  /usr/lib/cw                  # Colorized versions of GNU coreutils
-  /usr/local/heroku/bin        # Heroku toolbelt, as installed from a package
-  /opt/java/bin                # Some java installations
-  $HOME/.local/share/krew/bin  # kubernetes CLI plugins installed by krew
-  $HOME/.kubectl-plugin-completion # Additional programs to provide completion to kubectl plugins
+  /usr/lib/cw(-/N)                        # Colorized versions of GNU coreutils
+  /opt/java/bin(-/N)                      # Some java installations
+  $HOME/.local/share/krew/bin(-/N)        # kubernetes CLI plugins installed by krew
+  $HOME/.kubectl-plugin-completion(-/N)   # Additional programs to provide completion to kubectl plugins
 )
 
 fpath=(
   $ZDOTDIR/zsh/functions
   $ZDOTDIR/zsh/zle-widgets
-  /usr/share/zsh/site-functions
+  /usr{/local,}/share/zsh/{site-functions,vendor-completions}(-/N)
   $fpath
-  $ZDOTDIR/zsh/plugins/zsh-completions/src
+  $ZDOTDIR/zsh/plugins/zsh-completions/src(-/N)
 )
 
 manpath=(
   #${${:-~/.rubygems/gems/*/man/*.[0-9]}:A:h} # Gem-installed man pages
-  /usr/local/share/man
-  /usr/share/man
-  $HOME/.local/ruby/share/man/  # Gem-installed man pages
-  $HOME/.local/share/man/       # pipx and other tools place man pages here
+  /usr/local/share/man(-/N)
+  /usr/share/man(-/N)
+  # $HOME/.local/ruby/share/man/  # Gem-installed man pages
+  # $HOME/.local/share/man/       # pipx and other tools place man pages here
   $manpath
 )
 
-if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
+if [[ $OSTYPE == darwin* ]]; then
   # On MacOS systems, prepend Homebrew & the GNU userland to path
   path=(
     /opt/homebrew/lib/ruby/gems/*/bin # User-installed ruby gems (on macos)
@@ -78,14 +69,14 @@ if [ -f "/System/Library/CoreServices/SystemVersion.plist" ]; then
 
   # And get the brew installed man pages prefixed too
   manpath=(
-    /opt/homebrew/share/man
+    /opt/homebrew/share/man(-/N)
     $manpath
   )
 
   # Homebrew installed zsh extras
   fpath=(
+    /opt/homebrew/share/zsh/site-functions(-/N)
     $fpath
-    /opt/homebrew/share/zsh/site-functions
   )
 fi
 
@@ -93,50 +84,6 @@ fi
 typeset -gU cdpath fpath mailpath manpath infopath path
 # And make sure these variables are exported to subcommands
 typeset -x PATH MANPATH INFOPATH
-
-# Given a list of arrays, delete any values from each that don't point to a
-# real directory. It will also resolve any symlinks.
-function _strip_fakes {
-  local a
-  local check_dir
-  local replacement_arr
-  for a in "$@"; do
-    [[ -f ${TMPDIR}/zsh_path_debug ]] && echo "${(q)a} before strip_fakes: ${(P)a}"
-    replacement_arr=()
-    integer i
-    for (( i=1; i<=${(P)#a}; i++ )); do
-      check_dir=${(P)${a}[i]}
-
-      if [[ ! -d ${check_dir} ]]; then
-        # It's not a directory! Skip it
-        continue
-      elif [[ -h ${check_dir} ]]; then
-        # It's a symlink; resolve it
-        replacement_arr+=${check_dir:A}
-      elif [[ ${check_dir} =~ '/$' ]]; then
-        # The given path ends in trailing slash. Homebrew warns about it, and
-        # is generally not advised anyways. Strip that character.
-        replacement_arr+=${check_dir[0,-2]}
-      elif [[ ${check_dir} =~ '^/mnt/c/' ]]; then
-        # Skip windows paths, for when I'm in LXSS.
-        continue
-      else
-        # Vanilla folder, add it
-        replacement_arr+=${check_dir}
-      fi
-
-      # Now that we've done a bunch of tweaks to the final array, make sure all
-      # the values are unique, again.
-      typeset -gU "${(q)a}"
-    done
-
-    [[ -f ${TMPDIR}/zsh_path_debug ]] && echo "${(q)a} after  strip_fakes: ${replacement_arr}"
-    # Set the array variable to it's filtered value
-    set -A "${(q)a}" $replacement_arr
-  done
-}
-_strip_fakes path fpath manpath
-unfunction _strip_fakes
 
 # Make sure we have a language set
 if [[ -z "$LANG" ]]; then
