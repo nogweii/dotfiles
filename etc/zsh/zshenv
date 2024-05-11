@@ -39,11 +39,11 @@ path=(
 )
 
 fpath=(
-  $ZDOTDIR/zsh/functions
-  $ZDOTDIR/zsh/zle-widgets
+  $ZDOTDIR/functions
+  $ZDOTDIR/zle-widgets
   /usr{/local,}/share/zsh/{site-functions,vendor-completions}(-/N)
   $fpath
-  $ZDOTDIR/zsh/plugins/zsh-completions/src(-/N)
+  $ZDOTDIR/plugins/zsh-completions/src(-/N)
 )
 
 manpath=(

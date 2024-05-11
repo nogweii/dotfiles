@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 autoload -Uz add-zsh-hook
+autoload -Uz zrecompile
 autoload colors zsh/terminfo
 
 local function_file
