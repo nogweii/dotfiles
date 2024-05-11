@@ -10,3 +10,7 @@ fi
 [ -n "${commands[python3]}" ] && AUTOSWITCH_DEFAULT_PYTHON=python3
 source ${ZDOTDIR}/plugins/autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 AUTOSWITCH_SILENT='yes'
+
+source ${ZDOTDIR}/plugins/you-should-use/you-should-use.plugin.zsh
+export YSU_MESSAGE_POSITION="after"
+export YSU_MODE=ALL

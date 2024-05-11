@@ -25,3 +25,6 @@
 [submodule "zsh/plugins/system-clipboard"]
 	path = etc/zsh/plugins/system-clipboard
 	url = https://github.com/kutsan/zsh-system-clipboard
+[submodule "etc/zsh/plugins/you-should-use"]
+	path = etc/zsh/plugins/you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use
