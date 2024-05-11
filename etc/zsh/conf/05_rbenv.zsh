@@ -25,36 +25,23 @@ fi
 
 path=("${RBENV_ROOT}/shims" $path)
 
-_rbenv_plugins=${${:-${RBENV_ROOT}/../rbenv-plugins}:A}
-if [ -d "${_rbenv_plugins}" ]; then
-  for plugin_bin in "${_rbenv_plugins}"/*/bin; do
-    PATH="${PATH}:${plugin_bin}"
-  done
-  for plugin_hook in "${_rbenv_plugins}"/*/etc/rbenv.d; do
-    RBENV_HOOK_PATH="${RBENV_HOOK_PATH}:${plugin_hook}"
-  done
-  typeset -x RBENV_HOOK_PATH
-fi
-
-# The completions are shipped in the same parent directory as the command
-source "${rbenv_parent_path}/completions/rbenv.zsh"
-
-rbenv rehash 2>/dev/null
-
 rbenv() {
-  local rbenv_subcommand
-  rbenv_subcommand="$1"
+  local command
+  command="${1:-}"
   if [ "$#" -gt 0 ]; then
     shift
   fi
 
-  case "$rbenv_subcommand" in
+  case "$command" in
   rehash|shell)
-    eval `rbenv "sh-$rbenv_subcommand" "$@"`;;
+    eval "$(rbenv "sh-$command" "$@")";;
   *)
-    command rbenv "$rbenv_subcommand" "$@";;
+    command rbenv "$command" "$@";;
   esac
 }
+
+# The completions are shipped in the same parent directory as the command
+source "${rbenv_parent_path}/completions/rbenv.zsh"
 
 # Don't need this variable any more
 unset rbenv_parent_path
