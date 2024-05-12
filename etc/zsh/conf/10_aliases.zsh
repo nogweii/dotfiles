@@ -137,7 +137,11 @@ fi
 alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbnail --xattrs --embed-metadata"
 
 # I do a lot of kubernetes stuff, make executing kubectl easier
-alias k=kubectl
+if [[ -v commands[kubecolor] ]]; then
+    alias k=kubecolor
+else
+    alias k=kubectl
+fi
 
 # Helpful aliases to running the latest version of renovate bot on my laptop
 alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
