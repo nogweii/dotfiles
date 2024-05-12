@@ -1,11 +1,14 @@
 local lsp_settings = {
   settings = {
-    -- See https://als.readthedocs.io/en/latest/settings/ for a reference
+    -- See https://ansible.readthedocs.io/projects/vscode-ansible/als/settings/ for a reference
     ansible = {
       completion = {
         provideRedirectModules = false,
         provideModuleOptionAliases = false,
       },
+      ansible = {
+        useFullyQualifiedCollectionNames = true,
+      }
     },
   },
 }
