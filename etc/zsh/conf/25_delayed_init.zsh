@@ -12,6 +12,7 @@ function _delayed_oneoff_init() {
   # remove this function from the list, it should only run once
   precmd_functions=(${precmd_functions:#_delayed_oneoff_init})
 
+  # Set up zsh's completion engine, using a cache
   compsupercache
 
   # Replay compdef calls.
