@@ -17,6 +17,7 @@ vim.filetype.add({
     ['.sqlfluff'] = 'cfg',
     Podfile = 'ruby',
     Fastfile = 'ruby',
+    Guardfile = 'ruby',
     ['.gemrc'] = 'yaml',
     gemrc = 'yaml',
     ['.yamlfmt'] = 'yaml',
