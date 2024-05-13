@@ -1,4 +1,5 @@
 typeset -ga _lazy_compdef
+typeset -ga delayed_init_functions
 
 # Define a compdef function immediately, that just queues up a bunch of calls
 function compdef() {
@@ -22,9 +23,12 @@ function _delayed_oneoff_init() {
   done
   unset _lazy_compdef
 
-  # Enable syntax highlighting:
-  source ${ZDOTDIR}/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-  FAST_HIGHLIGHT_STYLES[path]=underline
+  # Do any set up that has been delayed
+  local func
+  for func in $delayed_init_functions; do
+    $func
+  done
+  unset delayed_init_functions
 }
 
 precmd_functions=(_delayed_oneoff_init $precmd_functions)

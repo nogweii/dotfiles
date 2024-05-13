@@ -66,3 +66,12 @@ zstyle ':completion:*:users' ignored-patterns \
 
 # ...unless I really want to see one of them.
 zstyle '*' single-ignored show
+
+
+function zle_syntax_highlight() {
+  unfunction zle_syntax_highlight
+  # Enable syntax highlighting:
+  source ${ZDOTDIR}/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+  FAST_HIGHLIGHT_STYLES[path]=underline
+}
+delayed_init_functions+=(zle_syntax_highlight)
