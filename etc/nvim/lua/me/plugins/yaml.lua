@@ -23,4 +23,21 @@ return {
     ft = { '*yaml*' },
     config = nil,
   },
+
+  {
+    "cuducos/yaml.nvim",
+    ft = { "*yaml*" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim",
+    },
+    opts = {
+      -- tell the plugin to expect these filetypes:
+      ft = {
+        "yaml",
+        "eruby.yaml",
+        "yaml.ansible"
+      }
+    }
+  }
 }

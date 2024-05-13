@@ -100,6 +100,7 @@ local lsps = {
   'crystalline',
   'taplo',
   'ruff',
+  'jinja_lsp'
 }
 
 for i = 1, #lsps do

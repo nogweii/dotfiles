@@ -44,5 +44,13 @@ return {
     ft = { 'kitty', 'kitty-session' },
   },
 
-  { 'towolf/vim-helm', ft = 'helm' },
+  -- {
+  --   'towolf/vim-helm',
+  --   ft = 'helm'
+  -- },
+
+  {
+    url = 'https://gitlab.com/HiPhish/jinja.vim',
+    name = 'jinja.vim',
+  }
 }

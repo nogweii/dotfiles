@@ -2,6 +2,9 @@
 vim.filetype.add({
   extension = {
     hujson = 'json5',
+    -- jinja2 = 'jinja',
+    -- j2 = 'jinja',
+    -- jinja = 'jinja',
   },
 
   pattern = {
