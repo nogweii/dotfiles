@@ -9,5 +9,5 @@
 :concurrent_downloads: 4
 
 # And then non-symbol keys define the default arguments to subcommands
-install: "--no-document"
+install: "--no-document --user-install"
 update: "--no-document"

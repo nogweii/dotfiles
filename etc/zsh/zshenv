@@ -23,7 +23,7 @@ emulate sh -c 'source /etc/profile'
 path=(
   $HOME/bin(-/N)                          # My own scripts, programs, etc
   $HOME/.local/bin(-/N)                   # Machine-local artisanal scripts
-  # $HOME/.local/ruby/bin                 # User-installed ruby gems
+  $HOME/.local/share/gem/ruby/*/bin(-/N)  # User-installed ruby gems
   $HOME/.local/share/pipx/bin(-/N)        # pipx isolated apps
   $HOME/.local/share/npm/bin(-/N)         # User-installed npm packages
   $HOME/.local/share/go/bin(-/N)          # User-installed go packages
