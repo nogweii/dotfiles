@@ -75,3 +75,5 @@ function zle_syntax_highlight() {
   FAST_HIGHLIGHT_STYLES[path]=underline
 }
 delayed_init_functions+=(zle_syntax_highlight)
+
+compdef kubecolor=kubectl
