@@ -14,6 +14,7 @@ iabbrev algorithims     algorithms
 iabbrev privilge        privilege
 iabbrev mispelled       misspelled
 iabbrev asychronously   asynchronously
+iabbrev architechture   architecture
 
 " Auto-add some accents
 iabbrev cafe            café
