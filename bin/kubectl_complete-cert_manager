@@ -1,0 +1,13 @@
+#!/bin/bash
+out=$(kubectl cert_manager __complete "$@")
+
+# If, once we remove the directive, there are completions, let's print them
+if [ -n "${out%%:*}" ]; then
+   printf "%s\n" "${out[@]}"
+elif [[ ${@: -2:1} = "-n" ]] || [[ ${@: -2:1} = "--namespace" ]]; then
+   # If there are no completions we provide completions if the previous argument is -n/--namespace.
+   # This case is pretty common but normally requires the plugin to have added support for it.
+   kubectl get namespaces --output go-template='{{ range .items }}{{ .metadata.name }}{{"\n"}}{{ end }}'
+   # Turn off file completion
+   echo :4
+fi
