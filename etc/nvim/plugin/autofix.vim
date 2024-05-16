@@ -12,6 +12,7 @@ iabbrev defnitly        definitely
 iabbrev forcably        forcibly
 iabbrev algorithims     algorithms
 iabbrev privilge        privilege
+iabbrev privlege        privilege
 iabbrev mispelled       misspelled
 iabbrev asychronously   asynchronously
 iabbrev architechture   architecture
