@@ -8,8 +8,14 @@ vim.filetype.add({
   },
 
   pattern = {
-    ['.*/zsh/functions/.*'] = 'zsh',
+    ['.*/zsh/functions/.*']   = 'zsh',
     ['.*/zsh/zle-widgets/.*'] = 'zsh',
+
+    -- Gitlab CI yaml detection, as the normal filename or as .gitlab/ci/*
+    ['%.gitlab%-ci%.yml']     = 'yaml.gitlab',
+    ['%.gitlab%-ci%.yaml']    = 'yaml.gitlab',
+    ['%.gitlab/ci/.*%.yml']   = 'yaml.gitlab',
+    ['%.gitlab/ci/.*%.yaml']  = 'yaml.gitlab',
   },
 
   filename = {

@@ -5,7 +5,7 @@ return {
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'shfmt', 'shellharden' }),
+    opts = add_ensure({ 'shfmt', 'shellharden', 'bashls' }),
   },
 
 }

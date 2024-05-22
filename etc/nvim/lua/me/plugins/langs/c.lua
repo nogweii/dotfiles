@@ -6,6 +6,7 @@ local add_ensure = require('me.utils').add_ensure_installed
 return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'cpplint' })
+    opts = add_ensure({ 'cpplint', 'clangd' })
+    -- TODO: ccls ? is it usefully different from clangd?
   }
 }

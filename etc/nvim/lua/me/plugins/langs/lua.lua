@@ -21,6 +21,6 @@ return {
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'stylua' }),
+    opts = add_ensure({ 'stylua', 'lua_ls' }),
   },
 }

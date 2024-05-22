@@ -1,5 +1,7 @@
 require('neodev').setup({})
 local add_hook_after = require('lspconfig.util').add_hook_after
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 vim.diagnostic.config({
   underline = true,
@@ -77,32 +79,17 @@ local function setup_lsp_server(name)
   require('lspconfig')[name].setup(opts)
 end
 
-local lsps = {
-  'ansiblels',
-  'bashls',
-  'ccls',
-  'cssls',
-  'dhall_lsp_server',
-  'dockerls',
-  'gopls',
-  'hls',
-  'html',
-  'jsonls',
-  'jsonnet_ls',
-  'lua_ls',
-  'marksman',
-  'pylsp',
-  'terraformls',
-  'texlab',
-  'tflint',
-  'yamlls',
-  'zk',
-  'crystalline',
-  'taplo',
-  'ruff',
-  'jinja_lsp'
-}
+require("mason-lspconfig").setup_handlers {
+  -- The first entry (without a key) will be the default handler
+  -- and will be called for each installed server that doesn't have
+  -- a dedicated handler.
+  function(server_name)
+    setup_lsp_server(server_name)
+  end,
 
-for i = 1, #lsps do
-  setup_lsp_server(lsps[i])
-end
+  -- Next, you can provide a dedicated handler for specific servers.
+  -- For example, a handler override for the `rust_analyzer`:
+  -- ["rust_analyzer"] = function ()
+  --     require("rust-tools").setup {}
+  -- end
+}

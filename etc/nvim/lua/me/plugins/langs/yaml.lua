@@ -45,6 +45,6 @@ return {
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'yamlfmt', 'yamllint' })
+    opts = add_ensure({ 'yamlfmt', 'yamllint', 'yamlls', 'gitlab-ci-ls' })
   }
 }

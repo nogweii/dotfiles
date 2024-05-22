@@ -1,3 +1,5 @@
+local add_ensure = require('me.utils').add_ensure_installed
+
 ---@type LazySpec[]
 return {
   {
@@ -161,5 +163,10 @@ return {
       pager = false,
     },
     cmd = 'Glow',
+  },
+
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = add_ensure({ 'marksman', 'markdownlint', 'zk' }),
   },
 }
