@@ -1,38 +1,6 @@
 ---@type LazySpec
 return {
-  -- Support HCL and other Hashicorp specific syntaxes
-  {
-    'hashivim/vim-terraform',
-    ft = { 'hcl', 'terraform' },
-  },
-
-  -- additional syntax highlighting for postgresql extensions
-  {
-    'lifepillar/pgsql.vim',
-    ft = 'sql',
-  },
-
-  -- ReasonML syntax support
-  {
-    'reasonml-editor/vim-reason-plus',
-    ft = { 'reason', 'merlin' },
-  },
-
   { 'Joorem/vim-haproxy', ft = 'haproxy' },
-
-  {
-    'vim-crystal/vim-crystal',
-    init = function()
-      -- Disable the key mappings the plugin would make, most of them are redundant since I use
-      -- specific plugins to handle the (generic) functionality
-      vim.g.crystal_define_mappings = 0
-      -- I'll handle integrating the various tools with the other purpose-focused plugins
-      vim.g.crystal_auto_format = 0
-      -- cmp & the LSPs handle this for me, don't need the basic completion this plugin provides
-      vim.g.crystal_enable_completion = 0
-    end,
-    ft = { 'crystal', 'ecrystal' },
-  },
 
   {
     'NoahTheDuke/vim-just',

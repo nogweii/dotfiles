@@ -10,6 +10,12 @@ return {
     opts = add_ensure({ 'terraform-ls', 'tflint', 'tfsec' })
   },
 
+  -- Support HCL and other Hashicorp specific syntaxes
+  {
+    'hashivim/vim-terraform',
+    ft = { 'hcl', 'terraform' },
+  },
+
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
