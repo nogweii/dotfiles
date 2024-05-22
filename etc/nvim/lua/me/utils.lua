@@ -15,8 +15,7 @@ M.add_ensure_installed = function(additional)
   return function(_plugin, opts)
     opts.ensure_installed = opts.ensure_installed or {}
 
-    local new_list = vim.iter({ opts.ensure_installed, additional }):flatten():totable()
-    opts.ensure_installed = vim.fn.uniq(new_list)
+    vim.list_extend(opts.ensure_installed, additional)
 
     return opts
   end
