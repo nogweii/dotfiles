@@ -128,6 +128,23 @@ M.autocommands = {
       end,
     },
   },
+
+  gitlab_ci_extras = {
+    {
+      event = { 'BufNewFile', 'BufReadPost', 'FileReadPost' },
+      desc = 'Additional gitlab CI files in subdirectories',
+      pattern = { '*.ci*.yaml', '*.ci*.yml', '*-ci*.yaml', '*-ci*.yml' },
+      callback = function(args)
+        local util = require 'lspconfig.util'
+        if util.root_pattern('.gitlab-ci.y*ml')(vim.fn.fnamemodify(args.match, ':p:h')) then
+          vim.opt_local.filetype = 'yaml.gitlab'
+        end
+        -- check if in a root with .gitlab-ci.yaml/yml
+        -- then set filetype to 'yaml.gitlab'
+        -- set the yaml schema?
+      end,
+    },
+  },
 }
 
 function M.create_au()
