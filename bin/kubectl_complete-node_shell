@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Print out all of the nodes
+kubectl get nodes --output go-template='{{ range .items }}{{ .metadata.name }}{{"\n"}}{{ end }}'
+
+# Turn off file completion
+echo :4

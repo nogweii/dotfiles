@@ -139,8 +139,10 @@ alias ytdl.ogg="yt-dlp -x --audio-format=vorbis --audio-quality=0 --embed-thumbn
 # I do a lot of kubernetes stuff, make executing kubectl easier
 if [[ -v commands[kubecolor] ]]; then
     alias k=kubecolor
+    alias knodeshell="${commands[kubectl]} node-shell"
 else
     alias k=kubectl
+    alias knodeshell="kubectl node-shell"
 fi
 
 # Helpful aliases to running the latest version of renovate bot on my laptop
