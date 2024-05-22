@@ -11,4 +11,7 @@ return {
   { import = 'me.plugins.langs.terraform' },
   { import = 'me.plugins.langs.toml' },
   { import = 'me.plugins.langs.yaml' },
+
+  -- TODO: move these to separate files
+  { "mfussenegger/nvim-ansible" }
 }
