@@ -26,6 +26,7 @@ return {
     opts = {
       ensure_installed = {},
       automatic_installation = true,
+      handlers = {}, -- by setting this to {} all installed tools will be registered with none-ls
     },
     lazy = false,
   },
