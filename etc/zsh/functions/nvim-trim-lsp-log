@@ -2,3 +2,4 @@
 local lsp_log_path=$(nvim --headless -c 'lua print(vim.lsp.get_log_path())' -c quit 2>&1)
 echo "Trimming ${lsp_log_path}..."
 tail -n50 "${lsp_log_path}" > "${lsp_log_path}.trimmed"
+mv -f "${lsp_log_path}.trimmed" "${lsp_log_path}"
