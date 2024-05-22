@@ -6,12 +6,23 @@ namespace :doctor do
   task :binaries do
     %w[jq rg npm pip irb bundle grc go mpv trash wget curl nvim yarn fzf fd lsd
       neomutt docker ansible sudo tmux dfc ncdu git sqlite3 bundle pry
-      shellcheck neovim-ruby-host nc trash kitty].each do |binary|
+      shellcheck neovim-ruby-host nc kitty].each do |binary|
 
       next if ENV['PATH'].split(':').any? do |path|
         File.exist? File.join(path, binary)
       end
       warn "Missing binary: #{binary}"
+    end
+
+    # These neovim (or rather, my selected plugins) care about
+    %w[luarocks git make unzip wget curl gzip tar bash sh cargo
+      ruby python php go node composer gem java npm javac pip
+      gh gcc bundle wl-copy pbcopy rg grep fd
+    ].each do |binary|
+      next if ENV['PATH'].split(':').any? do |path|
+        File.exist? File.join(path, binary)
+      end
+      warn "Neovim will sad it can't find: #{binary}"
     end
   end
 
