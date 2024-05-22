@@ -1,3 +1,5 @@
+local add_ensure = require('me.utils').add_ensure_installed
+
 local javascript_fts = {
   'javascript',
   'javascriptreact',
@@ -9,6 +11,11 @@ local javascript_fts = {
 
 ---@type LazySpec
 return {
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = add_ensure({ 'eslint_d', 'prettierd' })
+  },
+
   {
     'pmizio/typescript-tools.nvim',
     dependencies = {
@@ -38,8 +45,5 @@ return {
   {
     'dmmulroy/tsc.nvim',
     ft = javascript_fts,
-    opts = {
-      auto_override_publish_diagnostics = true,
-    },
   },
 }

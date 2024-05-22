@@ -16,6 +16,7 @@ iabbrev privlege        privilege
 iabbrev mispelled       misspelled
 iabbrev asychronously   asynchronously
 iabbrev architechture   architecture
+iabbrev overriden       overridden
 
 " Auto-add some accents
 iabbrev cafe            café

@@ -1,4 +1,5 @@
 vim.g.mapleader = ';'
+vim.g.maplocalleader = ' '
 
 local map = require('me.map_utils').map
 local cmd_map = require('me.map_utils').cmd_map
@@ -154,11 +155,11 @@ end, { desc = 'Rename thing under cursor' })
 local toggle_diagnostic = function()
   local buf_id = vim.api.nvim_get_current_buf()
 
-  if vim.diagnostic.is_disabled(buf_id) then
-    vim.diagnostic.enable(buf_id)
+  if not vim.diagnostic.is_enabled(buf_id) then
+    vim.diagnostic.enable(true, buf_id)
     vim.notify('Diagnostics turned on', vim.log.levels.INFO, { icon = '', render = 'compact' })
   else
-    vim.diagnostic.disable(buf_id)
+    vim.diagnostic.enable(false, buf_id)
     vim.notify('Diagnostics turned off', vim.log.levels.INFO, { icon = '', render = 'compact' })
   end
 end

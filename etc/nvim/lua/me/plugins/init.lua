@@ -97,7 +97,7 @@ return {
 
   {
     'rafcamlet/nvim-luapad',
-    cmd = { 'LuaPad', 'LuaRun' },
+    cmd = { 'Luapad', 'LuaRun' },
   },
 
   {

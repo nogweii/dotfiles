@@ -44,6 +44,56 @@ local opts = {
       start = '🚀',
       task = '📌',
     },
+    custom_keys = {
+      -- disable the lazygit / terminal keybindings
+      ["<localleader>t"] = false,
+      ["<localleader>l"] = false,
+
+      ["<localleader>s"] = {
+        --- Show the entire plugin spec in a floating window
+        ---@param plugin LazyPlugin the plugin I'm highlighting
+        ---@return LazyFloat
+        function(plugin)
+          local float = require("lazy.view.float")({})
+          local lines = require("lazy.view.text").new()
+          lines.padding = 2
+
+          lines:nl()
+          lines:append("Plugin spec for ", "LazyH2")
+          lines:append(plugin[1], "Title"):nl():nl()
+          lines:append(vim.inspect(plugin))
+
+          lines:render(float.buf)
+
+          vim.bo[float.buf].modifiable = false
+          return float
+        end,
+        desc = "Print the plugin spec"
+      },
+
+      ["<localleader>o"] = {
+        --- Show resulting plugin options in a floating window
+        ---@param plugin LazyPlugin the plugin I'm highlighting
+        ---@return LazyFloat
+        function(plugin)
+          local float = require("lazy.view.float")({})
+          local lines = require("lazy.view.text").new()
+          lines.padding = 2
+
+          lines:nl()
+          lines:append("Final options for ", "LazyH2")
+          lines:append(plugin[1], "Title"):nl():nl()
+          local Plugin = require("lazy.core.plugin")
+          lines:append(vim.inspect(Plugin.values(plugin, "opts", false)))
+
+          lines:render(float.buf)
+
+          vim.bo[float.buf].modifiable = false
+          return float
+        end,
+        desc = "Print the resulting opts for the plugin"
+      }
+    },
   },
 
   defaults = {
