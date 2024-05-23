@@ -25,6 +25,7 @@ return {
     end,
     version = 'v2.*',
     event = 'InsertEnter',
+    build = 'make install_jsregexp'
   },
 
   -- advanced & flexible completion menu
