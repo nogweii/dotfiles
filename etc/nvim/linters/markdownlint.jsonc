@@ -1,0 +1,7 @@
+{
+    "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+    // by default, every rule is turned on
+    "default": true,
+    // don't bother me about line lengths
+    "line-length": false
+}

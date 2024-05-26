@@ -21,4 +21,17 @@ M.add_ensure_installed = function(additional)
   end
 end
 
+--- Configure a none-ls tool to use a configuration file in my dotfiles if
+--- there is no project-specific config.
+---@param project_confs string[] the list of filenames that indicate project specific config
+---@param fallback_filename string what filename (under ~nvim/linters/) to use in case
+---@return nil|string # the path to the global fallback config file if it should be used, nil otherwise
+M.alternative_config_file = function(project_confs, fallback_filename)
+  local utils = require("null-ls.utils")
+  local cond = utils.make_conditional_utils()
+  if not cond.root_has_file(project_confs) then
+    return vim.fs.joinpath(vim.fn.stdpath("config"), "linters", fallback_filename)
+  end
+end
+
 return M
