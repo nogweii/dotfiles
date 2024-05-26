@@ -45,16 +45,6 @@ compdef '_values "projects" ~/code/*(/:t)' prj
 
 compdef g=git
 
-zstyle ':completion::*:ssh-master-exit:*:*' file-patterns '~/.ssh/master-*(=):all-files'
-
-zstyle ':completion:*:*:task:*' verbose yes
-zstyle ':completion:*:*:task:*:descriptions' format '%U%B%d%b%u'
-
-zstyle ':completion:*:*:task:*' group-name ''
-
-alias t=task
-compdef _task t=task
-
 # Don't complete uninteresting users...
 zstyle ':completion:*:users' ignored-patterns \
   '_*' adm amanda apache avahi beaglidx bin cacti canna clamav daemon dbus \
@@ -76,4 +66,4 @@ function zle_syntax_highlight() {
 }
 delayed_init_functions+=(zle_syntax_highlight)
 
-compdef kubecolor=kubectl
+[[ -v commands[kubecolor] ]] && compdef kubecolor=kubectl
