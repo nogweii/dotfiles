@@ -3,14 +3,14 @@ _M = {}
 -- A little utility function to make nvim_set_keymap a bit more ergonomic
 function _M.map(args)
   args = vim.tbl_extend('keep', args, {
-    mode = '', -- The vim mode for this map
-    keys = nil, -- The input sequence of keys to activate this mapping
-    to = nil, -- Sequence to keys to 'type' into the editor
+    mode = '',          -- The vim mode for this map
+    keys = nil,         -- The input sequence of keys to activate this mapping
+    to = nil,           -- Sequence to keys to 'type' into the editor
 
-    recurse = false, -- set to true to not include noremap
-    silent = true, -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
+    recurse = false,    -- set to true to not include noremap
+    silent = true,      -- set to false to not include <silent>, e.g. the map will not be echoed to the command line
     expression = false, -- set to true if the output is to be evaluated rather than typed
-    plugins = false, -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
+    plugins = false,    -- set to true if the mapping requires plugins and should be disabled when packer wasn't loaded
     desc = '',
   })
 

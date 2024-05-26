@@ -76,8 +76,8 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
     lazy = false,
     keys = {
-      { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
-      { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
+      { '[b',    '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
+      { ']b',    '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
       { '<C-n>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
       { '<C-p>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
     },
@@ -122,7 +122,7 @@ return {
     'nacro90/numb.nvim',
     config = function()
       require('numb').setup({
-        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_numbers = true,    -- Enable 'number' for the window while peeking
         show_cursorline = true, -- Enable 'cursorline' for the window while peeking
       })
     end,
@@ -204,18 +204,18 @@ return {
         ---@return Promise
         local function findFirstAvailableProvider(targetBufnr)
           return require('ufo')
-            .getFolds(targetBufnr, 'lsp')
-            :catch(function(err)
-              return handleFallbackException(targetBufnr, err, 'treesitter')
-            end)
-            :catch(function(err)
-              return handleFallbackException(targetBufnr, err, 'indent')
-            end)
+              .getFolds(targetBufnr, 'lsp')
+              :catch(function(err)
+                return handleFallbackException(targetBufnr, err, 'treesitter')
+              end)
+              :catch(function(err)
+                return handleFallbackException(targetBufnr, err, 'indent')
+              end)
         end
 
         return (filetype == '' or buftype == 'nofile') and 'indent' -- only use indent until a file is opened
-          or vim.b[bufnr].ufo_provider -- Allow a buffer to have specific overrides
-          or findFirstAvailableProvider -- And lastly, try to automatically determine the available provider
+            or vim.b[bufnr].ufo_provider                            -- Allow a buffer to have specific overrides
+            or findFirstAvailableProvider                           -- And lastly, try to automatically determine the available provider
       end,
     },
   },
@@ -230,7 +230,7 @@ return {
         -- number-less fold indicator, then signs, then line number & separator
         segments = {
           { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
-          { text = { '%s' }, click = 'v:lua.ScSa' },
+          { text = { '%s' },             click = 'v:lua.ScSa' },
           {
             text = { builtin.lnumfunc, ' ' },
             condition = { true, builtin.not_empty },

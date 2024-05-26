@@ -15,7 +15,7 @@ return {
 
   -- Automatic semi-smart indentation settings for a buffer
   {
-    'nmac427/guess-indent.nvim',
+    'NMAC427/guess-indent.nvim',
     opts = {
       auto_cmd = true,
       -- editorconfig is the source of truth
@@ -31,7 +31,7 @@ return {
     },
     keys = {
       { '<leader>tgg', '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
-      { 'ZN', '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
+      { 'ZN',          '<cmd>Neogen<CR>', desc = 'Generate doc annotation' },
     },
     cmd = 'Neogen',
   },
@@ -44,13 +44,13 @@ return {
     keys = {
       -- manage comment boxes
       { 'gcbc', '<cmd>CBcatalog<CR>', desc = 'Show catalog' },
-      { 'gcbd', '<cmd>CBd<CR>', desc = 'Delete box' },
-      { 'gcby', '<cmd>CBy<CR>', desc = 'Yank contents of box' },
+      { 'gcbd', '<cmd>CBd<CR>',       desc = 'Delete box' },
+      { 'gcby', '<cmd>CBy<CR>',       desc = 'Yank contents of box' },
 
       -- and bind various styles
       { 'gcbb', '<cmd>CBlcbox10<CR>', desc = 'Boxed' },
-      { 'gcbt', '<cmd>CBllline<CR>', desc = 'Titled' },
-      { 'gcbl', '<cmd>CBline<CR>', desc = 'Simple Line' },
+      { 'gcbt', '<cmd>CBllline<CR>',  desc = 'Titled' },
+      { 'gcbl', '<cmd>CBline<CR>',    desc = 'Simple Line' },
       { 'gcbm', '<cmd>CBllbox14<CR>', desc = 'Marked' },
     },
   },

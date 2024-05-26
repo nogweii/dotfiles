@@ -46,8 +46,8 @@ end
 local nvim_lua_config = vim.fn.getcwd() .. '/.nvim.lua'
 
 if
-  (not vim.startswith(nvim_lua_config, vim.env.HOME .. '/code/'))
-  and (not vim.startswith(nvim_lua_config, vim.env.HOME .. '/dotfiles/'))
+    (not vim.startswith(nvim_lua_config, vim.env.HOME .. '/code/'))
+    and (not vim.startswith(nvim_lua_config, vim.env.HOME .. '/dotfiles/'))
 then
   return
 end
