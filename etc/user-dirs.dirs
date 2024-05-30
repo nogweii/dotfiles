@@ -1,6 +1,6 @@
 XDG_DESKTOP_DIR="$HOME/Desktop"
 XDG_DOCUMENTS_DIR="$HOME/docs"
-XDG_DOWNLOAD_DIR="$HOME/.local/tmp"
+XDG_DOWNLOAD_DIR="$HOME/Downloads"
 XDG_MUSIC_DIR="$HOME/media/music"
 XDG_PICTURES_DIR="$HOME/media/pics"
 XDG_PUBLICSHARE_DIR="$HOME/.local/srv"
