@@ -7,6 +7,10 @@
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [apply]
     whitespace = fix
+[checkout]
+    defaultRemote = origin
+    guess = true
+    workers = 2
 [color]
     branch = auto
     diff = auto
@@ -24,6 +28,8 @@
     added = yellow
     changed = green
     untracked = cyan
+[column]
+    ui = auto
 [branch]
     autosetuprebase = always
     sort = -committerdate
@@ -44,7 +50,7 @@
     tool = fugitive
     keepBackup = false
 [mergetool "fugitive"]
-    cmd = nvim -c \"Gvdiffsplit!\" \"$MERGED\"
+    cmd = nvim -c "Gvdiffsplit!" "$MERGED"
 [mergetool "sops"]
     cmd = sops-mergetool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [status]
@@ -93,12 +99,12 @@
     # quick shortcut for status, using the short codes without any helper
     # messages
     st = status -sb
-    # quick shortcut for checkout
-    co = checkout
     # quick shortcut for push
     pu = push
     # quick shortcut for force push
-    fpu = push --force-with-lease
+    puf = push --force-with-lease
+    # quick shortcut for switch
+    sw = switch
     # quick shortcut for pull
     pl = pull
     # quick shortcut for commit, but also shows the diff in the commit message
@@ -206,8 +212,6 @@
     # unregister a repo, so it's no longer monitored by scheduled git jobs
     maint-unreg=!git maintenance unregister --config-file=$HOME/dotfiles/config/git/maintenance_repos.conf
 
-[column]
-    ui = auto
 [url "https://invent.kde.org/"]
 	insteadOf = kde:
 [url "ssh://git@invent.kde.org/"]
