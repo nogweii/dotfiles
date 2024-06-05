@@ -10,3 +10,5 @@
 # Easily search across stylesheet formats
 --type-add
 style:*.{css,sass,scss,less,stylus}
+
+--no-follow
