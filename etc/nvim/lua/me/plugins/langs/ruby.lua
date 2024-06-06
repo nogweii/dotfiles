@@ -4,7 +4,7 @@ local add_ensure = require('me.utils').add_ensure_installed
 return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'solargraph', 'erb-formatter', 'erb-lint', 'rufo' })
+    opts = add_ensure({ 'solargraph', 'erb-formatter', 'erb-lint', 'rufo', 'ruby-lsp' })
     -- TODO: ruby-lsp crashes at start, because when it re-execs itself in a
     -- bundler context, it suddenly loses the ruby-lsp bin
     -- similar: https://github.com/Shopify/ruby-lsp/issues/1713
