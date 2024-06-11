@@ -20,3 +20,10 @@ if [ -n "${commands[fzf]}" ]; then
     compdef fancy-pid-complete pidstarted
     compdef fancy-pid-complete pidof
 fi
+
+function _talos_control_plane_services()
+{
+    _wanted talos-logs expl 'Control plane pod' \
+        compadd -- kube-apiserver kube-controller-manager kube-scheduler
+}
+compdef _talos_control_plane_services talos-control-logs
