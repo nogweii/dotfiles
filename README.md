@@ -45,7 +45,7 @@ to adhere to it:
 | `XDG_CACHE_HOME`      | `~/.local/cache`    |
 | `XDG_STATE_HOME`      | `~/.local/var`      |
 | `TMPDIR`              | `~/.local/tmp`      |
-| `XDG_DOWNLOAD_DIR`    | `~/.local/tmp`      |
+| `XDG_DOWNLOAD_DIR`    | `~/Downloads`      |
 | `XDG_PUBLICSHARE_DIR` | `~/.local/srv`      |
 | `XDG_DOCUMENTS_DIR`   | `~/docs`            |
 | `XDG_MUSIC_DIR`       | `~/media/music`     |
