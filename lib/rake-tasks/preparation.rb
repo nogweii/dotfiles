@@ -14,7 +14,7 @@ MAKE_DIRS = [
   File.expand_path('~/.ssh/'),
   File.expand_path('~/.ssh/config.d/'),
   File.expand_path('~/.ssh/keys/'),
-  File.expand_path('~/.ssh/tmp/'),
+  File.expand_path('~/.ssh/master/'),
 ]
 
 File.open('etc/user-dirs.dirs').readlines.each do |user_dir|

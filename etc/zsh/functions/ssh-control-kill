@@ -3,7 +3,7 @@
   setopt null_glob
   unsetopt nomatch
 
-  for c in ~/.ssh/tmp/*(=) $ANSIBLE_SSH_CONTROL_PATH_DIR/*(=); do
+  for c in ~/.ssh/master/*(=) $ANSIBLE_SSH_CONTROL_PATH_DIR/*(=); do
     echo "Killing $c"
     ssh -oControlPath=$c -O exit localhost
     sleep 0.5 # give a chance for the background ssh process to exit

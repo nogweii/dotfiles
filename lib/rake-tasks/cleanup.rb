@@ -6,6 +6,7 @@ OLD_CLEANUP = [
   File.expand_path('~/.bin'),
   File.expand_path('~/.ssh/conf.d/'),
   File.expand_path('~/.ssh/ansible_inventory.ssh_config'),
+  File.expand_path('~/.ssh/tmp/'),
   File.expand_path('~/bin'),
 ]
 OLD_CLEANUP.sort!
