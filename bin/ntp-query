@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+## A quick script to do a one-off query to a NTP server.
+## Prints out details from the response.
+## That's it. What? You expected more?
+
+require 'net/ntp'
+require 'pastel'
+require 'optimist'
+
+opts = Optimist.options do
+  banner <<~EOTEXT
+    #{File.readlines(__FILE__).grep(/^##/).map { |l| l.sub(/^## /, '') }.join}
+    #{$PROGRAM_NAME} [--opts] server
+
+    Options:
+  EOTEXT
+
+  opt :timeout, 'How long to wait before giving up', default: 60
+  opt :port, 'Which port to use', default: 123
+end
+
+server = ARGV.shift || 'pool.ntp.org'
+
+@pastel = Pastel.new
+
+ntp_response = Net::NTP.get(server, opts[:port], opts[:timeout])
+
+ntp_server = @pastel.green ntp_response.reference_clock_identifier
+stratum = @pastel.cyan ntp_response.stratum
+current_time = @pastel.yellow ntp_response.time.strftime('%d %b %Y %k:%M:%S.%L')
+offset = @pastel.magenta ntp_response.offset.round(2)
+
+puts <<~EOTEXT
+  Heard back from #{ntp_server} (stratum #{stratum}):
+  The time is '#{current_time}', #{offset} from local clock.
+EOTEXT

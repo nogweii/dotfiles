@@ -27,3 +27,6 @@ function _talos_control_plane_services()
         compadd -- kube-apiserver kube-controller-manager kube-scheduler
 }
 compdef _talos_control_plane_services talos-control-logs
+
+# My ntp-query script wants a hostname and any option listed in it's --help output
+compdef '_arguments "*:arg: _hosts" --' ntp-query

@@ -11,6 +11,7 @@ gem "tty"
 gem "uniscribe"
 
 gem 'net-ntp'
+gem 'optimist'
 
 # These gems I use within irb. Check config/irb/irb_conf.rb for details.
 group :irb do
