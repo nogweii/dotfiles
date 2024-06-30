@@ -1,7 +1,6 @@
 .bundle/
 .zcompdump
 Brewfile.lock.json
-Gemfile.lock
 etc/git/spindle
 etc/git/maintenance_repos.conf
 etc/irb/irb_history
