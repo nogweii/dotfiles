@@ -110,3 +110,18 @@ task :dircolors do
     f.puts template.result(binding)
   end
 end
+
+desc 'Rebuild some zsh caches'
+task zsh: %i[zsh:functions zsh:completion]
+
+namespace :zsh do
+  desc 'My personal function collection'
+  task :functions do
+    system('zsh -ic zfunccompile')
+  end
+
+  desc 'Completion engine'
+  task :completion do
+    system('zsh -ic compsupercache')
+  end
+end
