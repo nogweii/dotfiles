@@ -7,25 +7,26 @@
 
 require 'net/ntp'
 require 'pastel'
-require 'optimist'
+require 'optparse'
 
-opts = Optimist.options do
-  banner <<~EOTEXT
-    #{File.readlines(__FILE__).grep(/^##/).map { |l| l.sub(/^## /, '') }.join}
-    #{$PROGRAM_NAME} [--opts] server
+@timeout = 60
+@port = 123
 
-    Options:
-  EOTEXT
+OptParse.new do |opt|
+  opt.on('-timeout=TIME', 'How long to wait before giving up') do |t|
+    @timeout = t
+  end
 
-  opt :timeout, 'How long to wait before giving up', default: 60
-  opt :port, 'Which port to use', default: 123
-end
+  opt.on('-port=PORT', 'Which port to use') do |p|
+    @port = p
+  end
+end.parse!
 
 server = ARGV.shift || 'pool.ntp.org'
 
 @pastel = Pastel.new
 
-ntp_response = Net::NTP.get(server, opts[:port], opts[:timeout])
+ntp_response = Net::NTP.get(server, @port, @timeout)
 
 ntp_server = @pastel.green ntp_response.reference_clock_identifier
 stratum = @pastel.cyan ntp_response.stratum
