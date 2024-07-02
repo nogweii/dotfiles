@@ -16,6 +16,8 @@ vim.filetype.add({
     ['%.gitlab%-ci%.yaml']    = 'yaml.gitlab',
     ['%.gitlab/ci/.*%.yml']   = 'yaml.gitlab',
     ['%.gitlab/ci/.*%.yaml']  = 'yaml.gitlab',
+
+    ['.*/%.kube/config']           = 'yaml',
   },
 
   filename = {
