@@ -5,12 +5,19 @@
 [user]
     name = Nogweii
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only --features=add-p-interactive
 [apply]
     whitespace = fix
+
 [checkout]
     defaultRemote = origin
     guess = true
     workers = 2
+
 [color]
     branch = auto
     diff = auto
@@ -28,6 +35,7 @@
     added = yellow
     changed = green
     untracked = cyan
+
 [column]
     ui = auto
 [branch]
@@ -41,18 +49,6 @@
     default = current
 [help]
     autocorrect = 1
-[url "ssh://git@code.aether.earth:22792/"]
-    insteadOf = https://code.aether.earth/
-[merge "merge-changelog"]
-    name = GNU-style ChangeLog merge driver
-    driver = /usr/share/gnulib/modules/git-merge-changelog %O %A %B
-[merge]
-    tool = fugitive
-    keepBackup = false
-[mergetool "fugitive"]
-    cmd = nvim -c "Gvdiffsplit!" "$MERGED"
-[mergetool "sops"]
-    cmd = sops-mergetool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [status]
     submodulesummary = true
 [pack]
@@ -75,8 +71,15 @@
     textconv = ansible-vault view
 [log]
     mailmap = true
+
+[merge]
+    keepBackup = false
+    conflictstyle = diff3
 [mergetool]
     prompt = false
+[mergetool "sops"]
+    cmd = sops-mergetool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -216,3 +219,42 @@
 	insteadOf = kde:
 [url "ssh://git@invent.kde.org/"]
 	pushInsteadOf = kde:
+[url "ssh://git@code.aether.earth:22792/"]
+    insteadOf = https://code.aether.earth/
+
+[delta]
+    features = my-fancy-decorations file-labels-emoji hyperlinks
+    dark = true
+    navigate = true
+
+[delta "hyperlinks"]
+    hyperlinks = true
+    hyperlinks-file-link-format = "file://{path}:{line}"
+    # alternative when I have https://github.com/dandavison/open-in-editor/ set up?
+    # hyperlinks-file-link-format = "file-line://{path}:{line}"
+    relative-paths = true
+
+[delta "add-p-interactive"]
+    keep-plus-minus-markers = false
+
+[delta "my-fancy-decorations"]
+    hunk-header-style = omit
+    line-numbers = true
+    side-by-side = false
+    file-decoration-style = yellow ol ul
+    file-style = normal bold
+    inline-hint-style = gray
+
+[delta "file-labels-nerd-font"]
+    file-modified-label = 󰦒
+    file-removed-label = 󰆴
+    file-renamed-label = 
+    file-copied-label = 
+    file-added-label = 
+
+[delta "file-labels-emoji"]
+    file-modified-label = 📋
+    file-removed-label = 🗑️
+    file-renamed-label = ♻️
+    file-copied-label = 📎
+    file-added-label = 🆕
