@@ -214,6 +214,8 @@
     maint-reg=!git maintenance register --config-file=$HOME/dotfiles/config/git/maintenance_repos.conf
     # unregister a repo, so it's no longer monitored by scheduled git jobs
     maint-unreg=!git maintenance unregister --config-file=$HOME/dotfiles/config/git/maintenance_repos.conf
+    # show a list of files that were changed by a commit
+    files-changed-by=diff-tree --no-commit-id --name-only -r
 
 [url "https://invent.kde.org/"]
 	insteadOf = kde:
