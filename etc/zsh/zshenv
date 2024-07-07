@@ -52,7 +52,7 @@ manpath=(
   /usr/share/man(-/N)
   # $HOME/.local/ruby/share/man/  # Gem-installed man pages
   # $HOME/.local/share/man/       # pipx and other tools place man pages here
-  $manpath
+  ${manpath:-}
 )
 
 if [[ $OSTYPE == darwin* ]]; then
