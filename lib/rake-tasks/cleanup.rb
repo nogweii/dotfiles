@@ -1,18 +1,20 @@
 OLD_CLEANUP = [
-  File.expand_path('~/.local/share/nvim/site/pack/packer'),
-  File.expand_path('./etc/nvim/lua/packer_compiled.lua'),
-  File.expand_path('~/.vim'),
-  File.expand_path('~/.local/share/vim'),
-  File.expand_path('~/.bin'),
-  File.expand_path('~/.ssh/conf.d/'),
-  File.expand_path('~/.ssh/ansible_inventory.ssh_config'),
-  File.expand_path('~/.ssh/tmp/'),
-  File.expand_path('~/bin'),
+  File.expand_path("~/.local/share/nvim/site/pack/packer"),
+  File.expand_path("./etc/nvim/lua/packer_compiled.lua"),
+  File.expand_path("~/.vim"),
+  File.expand_path("~/.local/share/vim"),
+  File.expand_path("~/.bin"),
+  File.expand_path("~/.ssh/conf.d/"),
+  File.expand_path("~/.ssh/ansible_inventory.ssh_config"),
+  File.expand_path("~/.ssh/tmp/"),
+  File.expand_path("~/.ssh/master/"),
+  File.expand_path("~/.ssh/control/"),
+  File.expand_path("~/bin"),
 ]
 OLD_CLEANUP.sort!
 OLD_CLEANUP.uniq!
 
-desc 'Delete no longer necessary files and directories'
+desc "Delete no longer necessary files and directories"
 task :unnecessary do
   # I'm deleting things, be loud about what that is
   RakeFileUtils.verbose_flag = true
@@ -24,8 +26,8 @@ task :unnecessary do
     end
   end
 
-  `git status --porcelain=2`.split("\n").grep(/^? zsh\/plugins/).each do |old_zsh|
-    path = old_zsh.split(' ')[1]
+  `git status --porcelain=2`.split("\n").grep(%r{^? zsh/plugins}).each do |old_zsh|
+    path = old_zsh.split(" ")[1]
     debug "Deleting zsh plugin #{old_zsh} that is no longer tracked"
     rm_r path
   end

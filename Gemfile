@@ -10,16 +10,16 @@ gem "rainbow"
 gem "tty"
 gem "uniscribe"
 
-gem 'net-ntp'
-gem 'optimist'
+gem "net-ntp"
+gem "optimist"
 
 # These gems I use within irb. Check config/irb/irb_conf.rb for details.
 group :irb do
-  gem 'irbtools'
-  gem 'looksee'
-  gem 'net-http-spy'
-  gem 'pry' # because it's so damn neat and useful
-  gem 'racksh'
+  gem "irbtools"
+  gem "looksee"
+  gem "net-http-spy"
+  gem "pry" # because it's so damn neat and useful
+  gem "racksh"
 end
 
 group :development do

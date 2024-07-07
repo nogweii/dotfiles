@@ -1,6 +1,6 @@
-require 'etc'
+require "etc"
 
-desc 'Configure the system to find these dotfiles'
+desc "Configure the system to find these dotfiles"
 task :sysinstall do
   # rubygems has example regexes to match
   # https://github.com/rubygems/rubygems/blob/master/lib/rubygems/platform.rb#L85
@@ -20,7 +20,7 @@ namespace :sysinstall do
   end
 
   task :macos do
-    plist_path = File.join(ENV['HOME'], 'Library', 'LaunchAgents', "#{LAUNCHD_NAME}.plist")
+    plist_path = File.join(ENV["HOME"], "Library", "LaunchAgents", "#{LAUNCHD_NAME}.plist")
     mkdir_p File.dirname plist_path
     system("launchctl bootout gui/#{USER.uid} #{plist_path}") if File.exist? plist_path
 
@@ -33,7 +33,7 @@ end
 
 USER = Etc.getpwuid
 
-LAUNCHD_NAME = 'net.nogweii.systemd-env'
+LAUNCHD_NAME = "net.nogweii.systemd-env"
 # Launch ~/.local/bin/launchctl-set-systemd-env.rb when I log in to MacOS,
 # causing a bunch of environment variables (see ./etc/environment.d/*) to be
 # set for the session.
