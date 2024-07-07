@@ -283,7 +283,6 @@ hacktvists
 hacktivists
 WikiLeaks
 Obama
-supresssion/!
 urls/!
 SQLite
 PostgreSQL
@@ -308,7 +307,6 @@ app's
 inline
 VirtualBox
 Heroku
-sibiling/!
 Himex
 evogi
 grimoire
@@ -328,8 +326,6 @@ TLS
 systemd
 homelab
 letsencrypt
-oVirt
-#virt
 FQDN
 Synology
 hypervisor
@@ -357,8 +353,6 @@ Kubernetes
 PaaS
 Versioned
 challenegs
-ovirt/!
-oVirt
 WireGuard
 GitLab
 IPv6
@@ -421,6 +415,8 @@ artisanal
 configs
 userland
 tailscale
-#verriden
-overriden/!
 IPv4
+VLAN
+VLANs
+IoT
+OPNSense
