@@ -156,8 +156,7 @@ alias dc=docker-compose
 alias adb='HOME="$XDG_DATA_HOME"/android adb'
 alias wget="wget --hsts-file='$XDG_DATA_HOME/wget-hsts'"
 
-alias zshrc='$EDITOR $ZDOTDIR/zshrc'
-alias zlocalrc='$EDITOR $ZDOTDIR/local.zsh'
+alias zshrc-local='$EDITOR $ZDOTDIR/local.zsh'
 alias nvimrc='$EDITOR $XDG_CONFIG_HOME/nvim/lua/me/'
 
 [[ -r /etc/grc.zsh ]] && source /etc/grc.zsh
