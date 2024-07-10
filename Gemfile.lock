@@ -31,8 +31,9 @@ GEM
       irb (>= 1.7, < 2.0)
       paint (>= 0.9, < 3.0)
       unicode-display_width (>= 2.5)
-    faraday (2.9.2)
+    faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
+      logger
     faraday-net_http (3.1.0)
       net-http
     ffi (1.17.0-aarch64-linux-gnu)
@@ -45,10 +46,10 @@ GEM
     interactive_editor (0.0.12)
       spoon (~> 0.0.6)
     io-console (0.7.2)
-    irb (1.13.2)
+    irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    irbtools (4.0.10)
+    irbtools (4.0.11)
       clipboard (>= 1.4, < 3.0)
       code (>= 0.9.4, < 2.0)
       coderay (~> 1.1)
@@ -58,7 +59,7 @@ GEM
       fancy_irb (~> 2.1)
       hirb (~> 0.7, >= 0.7.3)
       interactive_editor (~> 0.0, >= 0.0.12)
-      irb (>= 1.12.0, < 1.14)
+      irb (>= 1.12.0, < 1.15)
       looksee (~> 5.0)
       methodfinder (~> 2.2, >= 2.2.5)
       object_shadow (~> 1.1)
@@ -75,6 +76,7 @@ GEM
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
+    logger (1.6.0)
     looksee (5.0.0)
     md2man (5.1.2)
       binman (~> 5.0)
@@ -113,7 +115,7 @@ GEM
     os (1.1.4)
     paint (2.3.0)
     parallel (1.25.1)
-    parser (3.3.3.0)
+    parser (3.3.4.0)
       ast (~> 2.4.1)
       racc
     pastel (0.6.1)
@@ -172,6 +174,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby_engine (2.0.3)
     ruby_version (1.0.3)
+    rufo (0.18.0)
     sawyer (0.9.2)
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
@@ -191,7 +194,7 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    sorbet-runtime (0.5.11473)
+    sorbet-runtime (0.5.11478)
     spoon (0.0.6)
       ffi
     standard (1.39.1)
@@ -294,6 +297,7 @@ PLATFORMS
 DEPENDENCIES
   binman
   faraday
+  irb
   irbtools
   looksee
   md2man
@@ -310,6 +314,7 @@ DEPENDENCIES
   ripper-tags
   rubocop
   ruby-lsp
+  rufo
   solargraph
   standard
   tty
