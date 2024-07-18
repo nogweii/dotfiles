@@ -1,4 +1,3 @@
-require('neodev').setup({})
 local add_hook_after = require('lspconfig.util').add_hook_after
 require("mason").setup()
 require("mason-lspconfig").setup()

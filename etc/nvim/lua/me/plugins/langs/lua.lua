@@ -3,20 +3,24 @@ local add_ensure = require('me.utils').add_ensure_installed
 ---@type LazySpec[]
 return {
 
-  -- Additional LSP setup for the neovim nvim lua API.
-  -- see etc/nvim/lua/me/settings/lsp_servers/lua_ls.lua for additional details
+  -- Additional LSP setup for LuaLS.
   {
-    'folke/neodev.nvim',
-    lazy = true,
+    "folke/lazydev.nvim",
+    dependencies = {
+      -- these repos contain extra typings
+      { "Bilal2453/luvit-meta",        lazy = true },
+      { "justinsgithub/wezterm-types", lazy = true },
+    },
+    ft = "lua", -- only load on lua files
     opts = {
       library = {
-        enabled = true,
-        plugins = true,
+        -- Load luvit types when the `vim.uv` word is found
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
+
+        -- Load the wezterm types when the `wezterm` module is required
+        { path = "wezterm-types",      mods = { "wezterm" } },
       },
-      lspconfig = false,
-      pathStrict = true,
     },
-    event = 'LspAttach',
   },
 
   {

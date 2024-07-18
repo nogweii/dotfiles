@@ -31,6 +31,20 @@ local lsp_kind_emojis = {
   Copilot = '🤖',
 }
 
+local default_sources = cmp.config.sources({
+  { name = 'nvim_lsp' },
+  { name = 'luasnip' },
+  {
+    name = 'async_path',
+    option = {
+      label_trailing_slash = true,
+    },
+  },
+  { name = 'copilot' },
+  { name = 'emoji' },
+  { name = 'buffer' },
+})
+
 local is_prior_char_whitespace = function()
   local col = vim.fn.col('.') - 1
   if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
@@ -81,19 +95,7 @@ local config = {
   }),
 
   -- define which sources to enable by default
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'buffer' },
-    {
-      name = 'async_path',
-      option = {
-        label_trailing_slash = true,
-      },
-    },
-    { name = 'copilot' },
-    { name = 'emoji' },
-  }),
+  sources = default_sources,
 
   -- customize how the completion menu appears
   formatting = {
@@ -124,9 +126,20 @@ cmp.setup(config)
 -- Set configuration for specific filetypes:
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'buffer' },
+    { name = 'luasnip' },
     { name = 'async_path' },
+    { name = 'emoji' },
     { name = 'git' },
+    { name = 'buffer' },
+  }),
+})
+
+cmp.setup.filetype('lua', {
+  sources = table.insert(vim.deepcopy(default_sources), {
+    {
+      name = "lazydev",
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    }
   }),
 })
 

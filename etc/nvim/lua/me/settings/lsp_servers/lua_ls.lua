@@ -18,7 +18,4 @@ return {
       },
     },
   },
-  on_new_config = function(new_config, root_dir)
-    require('neodev.lsp').on_new_config(new_config, root_dir)
-  end,
 }
