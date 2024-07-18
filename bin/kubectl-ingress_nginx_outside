@@ -10,7 +10,7 @@ deployment_commands = [
   "general",
   "ingresses",
   "logs",
-  "ssh",
+  "ssh"
 ]
 
 args = ["kubectl", "ingress-nginx"]
@@ -23,4 +23,4 @@ if deployment_commands.include? ARGV[0]
   args << "nginx-for-outside-ingress-nginx-controller"
 end
 
-exec args.flatten.join(' ')
+exec args.flatten.join(" ")

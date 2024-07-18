@@ -2,13 +2,13 @@
 
 # frozen_string_literal: true
 
-require 'yaml'
-require 'json'
+require "yaml"
+require "json"
 
 if ARGV[0]
   path = ARGV[0]
 else
-  warn 'You need to specify a file'
+  warn "You need to specify a file"
   exit 1
 end
 

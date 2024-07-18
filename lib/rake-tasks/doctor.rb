@@ -34,7 +34,7 @@ namespace :doctor do
         /Noto Color Emoji/,
         /nerd font/i,
         /Fira Sans:style=Regular/,
-        /Fira Code:style=Regular/,
+        /Fira Code:style=Regular/
       ].each do |font|
         next if all_fonts.any? font
 
@@ -84,7 +84,7 @@ namespace :doctor do
         "tmux",
         "docker",
         "shellcheck",
-        "openbsd-netcat",
+        "openbsd-netcat"
       ].each do |package_name|
         if not system("pacman -Qiq #{package_name} >/dev/null 2>&1")
           puts "Package #{package_name} not installed"
@@ -100,7 +100,7 @@ namespace :doctor do
 
       [
         /Symbols Nerd Font/i,
-        /Source Code Pro/i,
+        /Source Code Pro/i
       ].each do |font|
         next if all_fonts.any? font
 

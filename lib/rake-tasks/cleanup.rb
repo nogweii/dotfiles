@@ -9,7 +9,7 @@ OLD_CLEANUP = [
   File.expand_path("~/.ssh/tmp/"),
   File.expand_path("~/.ssh/master/"),
   File.expand_path("~/.ssh/control/"),
-  File.expand_path("~/bin"),
+  File.expand_path("~/bin")
 ]
 OLD_CLEANUP.sort!
 OLD_CLEANUP.uniq!

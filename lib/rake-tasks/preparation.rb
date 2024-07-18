@@ -11,15 +11,16 @@ MAKE_DIRS = [
   File.expand_path("~/.local/share"),
   File.expand_path("~/.local/cache/zsh"),
   File.expand_path("~/.local/share/nvim/backup"),
+  File.expand_path("~/.local/share/opentofu/plugins"),
   File.expand_path("~/.ssh/"),
   File.expand_path("~/.ssh/config.d/"),
   File.expand_path("~/.ssh/keys/"),
   File.expand_path("~/.ssh/c/"),
-  File.expand_path("~/.ssh/tmp/"),
+  File.expand_path("~/.ssh/tmp/")
 ]
 
-File.open("etc/user-dirs.dirs").readlines.each do |user_dir|
-  next if user_dir =~ /^#/
+File.open("etc/user-dirs.dirs").each_line do |user_dir|
+  next if /^#/.match?(user_dir)
 
   expand_path = user_dir.gsub(%r{.*="\$HOME/(.*)"\n}, "#{ENV["HOME"]}/\\1")
   MAKE_DIRS << expand_path

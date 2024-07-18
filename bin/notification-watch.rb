@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
-require 'dbus'
-require 'pastel'
+require "dbus"
+require "pastel"
 
 class EavesdropRule < DBus::MatchRule
   def to_s
@@ -17,7 +17,7 @@ class MonitoringBus < DBus::Connection
   def new(path)
     super(path)
     @monitoring_mode = false
-    @monitoring_func = Proc.new {}
+    @monitoring_func = Proc.new { }
   end
 
   def process(m)
@@ -32,9 +32,9 @@ end
 @pastel = Pastel.new(enabled: $stdout.tty?)
 
 mr = EavesdropRule.new
-mr.interface = 'org.freedesktop.Notifications'
-mr.member = 'Notify'
-mr.path = '/org/freedesktop/Notifications'
+mr.interface = "org.freedesktop.Notifications"
+mr.member = "Notify"
+mr.path = "/org/freedesktop/Notifications"
 
 # bus = DBus::SessionBus.instance
 bus = MonitoringBus.new(DBus::SessionBus.session_bus_address)

@@ -12,7 +12,7 @@
 # Big thanks to the dotenv ruby library, these regexes are based on it!
 # SPDX-License-Identifier: MIT
 
-require 'shellwords'
+require "shellwords"
 
 LINE = /
       (?:^|\A)              # beginning of line
@@ -48,13 +48,13 @@ VARIABLE = /
 # This is a hash that contains all of the environment variables we look up
 # values for
 source_env = ENV.to_h
-source_env['HOME'] = Dir.home
+source_env["HOME"] = Dir.home
 # And this is final set of values that will be printed out, ones that were
 # specified in the files
 result_env = {}
 
 Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].sort.each do |env_file|
-  File.open(env_file, 'r').read.scan(LINE) do |env_var, env_value|
+  File.open(env_file, "r").read.scan(LINE) do |env_var, env_value|
     # Remove surrounding quotes
     env_value = env_value.strip.sub(/\A(['"])(.*)\1\z/m, '\2')
     # Replace literal \n and \r with enough backslashes that they'll get through everything else
@@ -66,7 +66,7 @@ Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].sort.each d
       env_value.gsub!(VARIABLE) do |var|
         match = Regexp.last_match
         if not match[:colontype]
-          source_env.fetch(match[:varname], '')
+          source_env.fetch(match[:varname], "")
         elsif match[:colontype] == ":-"
           if source_env.has_key?(match[:varname]) and not source_env[match[:varname]].nil? and not source_env[match[:varname]].empty?
             # there is a useful string in the environment named :varname, use it
@@ -82,7 +82,7 @@ Dir[File.join(Dir.home, ".local", "etc", "environment.d", "*.conf")].sort.each d
             match[:altvalue]
           else
             # there is no such variable named :varname, so return an empty string
-            ''
+            ""
           end
         end
       end

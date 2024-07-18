@@ -5,24 +5,24 @@
 ## Prints out details from the response.
 ## That's it. What? You expected more?
 
-require 'net/ntp'
-require 'pastel'
-require 'optparse'
+require "net/ntp"
+require "pastel"
+require "optparse"
 
 @timeout = 60
 @port = 123
 
 OptParse.new do |opt|
-  opt.on('-timeout=TIME', 'How long to wait before giving up') do |t|
+  opt.on("-timeout=TIME", "How long to wait before giving up") do |t|
     @timeout = t
   end
 
-  opt.on('-port=PORT', 'Which port to use') do |p|
+  opt.on("-port=PORT", "Which port to use") do |p|
     @port = p
   end
 end.parse!
 
-server = ARGV.shift || 'pool.ntp.org'
+server = ARGV.shift || "pool.ntp.org"
 
 @pastel = Pastel.new
 
@@ -30,10 +30,10 @@ ntp_response = Net::NTP.get(server, @port, @timeout)
 
 ntp_server = @pastel.green ntp_response.reference_clock_identifier
 stratum = @pastel.cyan ntp_response.stratum
-current_time = @pastel.yellow ntp_response.time.strftime('%d %b %Y %k:%M:%S.%L')
+current_time = @pastel.yellow ntp_response.time.strftime("%d %b %Y %k:%M:%S.%L")
 offset = @pastel.magenta ntp_response.offset.round(2)
 
 puts <<~EOTEXT
-  Heard back from #{ntp_server} (stratum #{stratum}):
+       Heard back from #{ntp_server} (stratum #{stratum}):
   The time is '#{current_time}', #{offset} from local clock.
-EOTEXT
+     EOTEXT
