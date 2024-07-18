@@ -1,0 +1,2 @@
+# Cache downloaded plugins here
+plugin_cache_dir = "$XDG_DATA_HOME/opentofu/plugins"
