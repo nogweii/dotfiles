@@ -1,0 +1,13 @@
+---
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+
+Layout:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
+Style:
+  Enabled: false
