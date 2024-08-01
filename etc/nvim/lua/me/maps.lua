@@ -75,7 +75,7 @@ cmd_map({
 cmd_map({ keys = 'ZW', command = 'update', desc = 'Save file changes' })
 cmd_map({ keys = 'ZG', command = 'Telescope live_grep', desc = 'Search for text in all files' })
 cmd_map({ keys = 'ZU', command = 'UndotreeToggle', desc = 'Visualize undo tree' })
-cmd_map({ keys = 'ZR', command = 'TroubleToggle', desc = 'Show all LSP diagnostics' })
+cmd_map({ keys = 'ZR', command = 'Trouble diagnostics', desc = 'Show all LSP diagnostics' })
 vim.keymap.set('n', 'Z-', function()
   require('telescope').extensions.projects.projects({})
 end, { desc = 'Select project' })
