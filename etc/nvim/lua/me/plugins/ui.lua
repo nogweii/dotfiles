@@ -81,6 +81,7 @@ return {
       { '<C-n>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
       { '<C-p>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
     },
+    ---@type bufferline.UserConfig
     opts = {
       options = {
         close_command = function(n)
@@ -90,6 +91,7 @@ return {
           require('mini.bufremove').delete(n, false)
         end,
         diagnostics = 'nvim_lsp',
+        diagnostics_update_in_insert = false,
         always_show_bufferline = false,
         offsets = {
           {
@@ -215,7 +217,8 @@ return {
 
         return (filetype == '' or buftype == 'nofile') and 'indent' -- only use indent until a file is opened
             or vim.b[bufnr].ufo_provider                            -- Allow a buffer to have specific overrides
-            or findFirstAvailableProvider                           -- And lastly, try to automatically determine the available provider
+            or
+            findFirstAvailableProvider                              -- And lastly, try to automatically determine the available provider
       end,
     },
   },
