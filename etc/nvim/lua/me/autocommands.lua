@@ -145,6 +145,16 @@ M.autocommands = {
       end,
     },
   },
+
+  zoxide = {
+    {
+      event = 'DirChanged',
+      desc = 'Add the directory to the zoxide database',
+      callback = function(event)
+        vim.fn.system({ "zoxide", "add", event.file })
+      end
+    }
+  }
 }
 
 function M.create_au()

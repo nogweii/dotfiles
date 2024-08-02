@@ -79,6 +79,7 @@ cmd_map({ keys = 'ZR', command = 'Trouble diagnostics', desc = 'Show all LSP dia
 vim.keymap.set('n', 'Z-', function()
   require('telescope').extensions.projects.projects({})
 end, { desc = 'Select project' })
+cmd_map({ keys = 'ZC', command = 'Telescope zoxide list', desc = 'Change to a directory' })
 
 keymap('n', '<leader>vs', function()
   vim.cmd.edit(vim.fn.stdpath('config') .. '/snippets/' .. vim.bo.filetype .. '.snippets')
