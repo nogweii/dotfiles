@@ -57,7 +57,6 @@ zstyle ':completion:*:users' ignored-patterns \
 # ...unless I really want to see one of them.
 zstyle '*' single-ignored show
 
-
 function zle_syntax_highlight() {
   unfunction zle_syntax_highlight
   # Enable syntax highlighting:
@@ -67,3 +66,11 @@ function zle_syntax_highlight() {
 delayed_init_functions+=(zle_syntax_highlight)
 
 [[ -v commands[kubecolor] ]] && compdef kubecolor=kubectl
+
+if [[ -v commands[zoxide] ]]; then
+  function zoxide_zsh() {
+      unfunction zoxide_zsh
+      eval "$(zoxide init zsh)"
+  }
+  delayed_init_functions+=(zoxide_zsh)
+fi

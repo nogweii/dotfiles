@@ -2,7 +2,11 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'jvgrootveld/telescope-zoxide'
+    },
     config = function()
       local actions = require('telescope.actions')
 
@@ -29,6 +33,7 @@ return {
       })
 
       require('telescope').load_extension('notify')
+      require("telescope").load_extension('zoxide')
     end,
   },
 }

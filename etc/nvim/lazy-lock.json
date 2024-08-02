@@ -78,6 +78,7 @@
   "statuscol.nvim": { "branch": "main", "commit": "93d8bcda516fc86e11c03f9ef577bae9a72fba0e" },
   "telescope-terraform-doc.nvim": { "branch": "main", "commit": "7ac642765615e6ff164ecfc82eb278aa68d06840" },
   "telescope-terraform.nvim": { "branch": "main", "commit": "072c97023797ca1a874668aaa6ae0b74425335df" },
+  "telescope-zoxide": { "branch": "main", "commit": "68966349aa1b8e9ade403e18479ecf79447389a7" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "text-case.nvim": { "branch": "main", "commit": "13daf28a829e6d0646904c94214cb289bb0c6f34" },
   "treesitter-utils": { "branch": "main", "commit": "df621499e4227f0476f6f4bdb75a9d8dd18d16f2" },
