@@ -1,26 +1,32 @@
 [files]
 extend-exclude = [
-  # these misspellings are intentional, so that they get automatically fixed:
-  "etc/nvim/plugin/autofix.vim",
-  "etc/nvim/spell/en.utf-8.add",
+    # these misspellings are intentional, so that they get automatically fixed:
+    "etc/nvim/plugin/autofix.vim",
+    "etc/nvim/spell/en.utf-8.add",
 
-  # these are 3rd-party code, don't try to fix them
-  "zsh/plugins/",
-  "etc/dircolors/trapd00r",
+    # these are 3rd-party code, don't try to fix them
+    "zsh/plugins/",
+    "etc/dircolors/trapd00r",
 
-  # this has a bunch of junk in it, don't care. (also, 3rd-party)
-  "etc/kitty/glyphnames.json",
+    # this has a bunch of junk in it, don't care. (also, 3rd-party)
+    "etc/kitty/glyphnames.json",
+
+    # this is automatically generated and includes weird abbreviations
+    # (file extensions can be weird)
+    "etc/zsh/conf/00_z_dircolors.zsh",
 ]
 
 [default.extend-words]
 # iTerm is a program name
 iterm = "iterm"
+# gam, the "google account manager" program
+gam = "gam"
 
 [default]
 extend-ignore-re = [
-  # Line ignore with trailing 'spellchecker:disable-line'
-  "(?Rm)^.*spellchecker:disable-line$",
+    # Line ignore with trailing 'spellchecker:disable-line'
+    "(?Rm)^.*spellchecker:disable-line$",
 
-  # Line block with spellchecker:<on|off>
-  "\\s*spellchecker:off\\s*\\n.*\\n\\s*spellchecker:on",
+    # Line block with spellchecker:<on|off>
+    "\\s*spellchecker:\\s*off\\s*\\n.*\\n\\s*spellchecker:\\s*on",
 ]
