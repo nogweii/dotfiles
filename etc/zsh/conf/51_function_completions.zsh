@@ -23,8 +23,8 @@ fi
 
 function _talos_control_plane_services()
 {
-    _wanted talos-logs expl 'Control plane pod' \
-        compadd -- kube-apiserver kube-controller-manager kube-scheduler
+    local nodes=($(yq -r '.context as $c | .contexts[$c].nodes | join(" ")' < $TALOSCONFIG))
+    _arguments "1:Node:(${nodes})" "2:Control plane pod:(kubelet kube-apiserver kube-controller-manager kube-scheduler)"
 }
 compdef _talos_control_plane_services talos-control-logs
 

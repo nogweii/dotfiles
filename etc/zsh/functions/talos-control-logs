@@ -1,3 +1,12 @@
-local node="${1:-naquadah}"
+local node="${${1:-naquadah.home.arpa}%%.home.arpa}"
+local pod="${2:-kubelet}"
 
-talosctl logs -n "${node}" -k kube-system/kube-apiserver-${node}:kube-apiserver
+local log_args=""
+
+if [[ "${pod}" = 'kubelet' ]]; then
+    log_args="${pod}"
+else
+    log_args=("-k" "kube-system/${pod}-${node}:${pod}")
+fi
+
+talosctl logs -n "${node}" ${log_args}
