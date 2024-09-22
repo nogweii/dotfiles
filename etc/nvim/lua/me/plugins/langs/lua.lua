@@ -19,6 +19,9 @@ return {
 
         -- Load the wezterm types when the `wezterm` module is required
         { path = "wezterm-types",      mods = { "wezterm" } },
+
+        -- Add lazy.nvim to LuaLS's libraries when LazySpec is referenced
+        { path = "lazy.nvim",          words = { "LazySpec" } },
       },
     },
   },
