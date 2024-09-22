@@ -1,4 +1,3 @@
-local node_name=naquadah
-local node_fqdn=naquadah.home.arpa
+local node="${1:-naquadah}"
 
-talosctl logs -n "${node_fqdn}" -k kube-system/kube-apiserver-${node_name}:kube-apiserver
+talosctl logs -n "${node}" -k kube-system/kube-apiserver-${node}:kube-apiserver
