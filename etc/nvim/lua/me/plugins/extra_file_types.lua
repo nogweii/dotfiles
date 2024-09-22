@@ -18,7 +18,8 @@ return {
   -- },
 
   {
-    url = 'https://gitlab.com/HiPhish/jinja.vim',
+    url = 'https://gitlab.com/HiPhish/jinja.vim.git',
     name = 'jinja.vim',
+    submodules = false,
   }
 }
