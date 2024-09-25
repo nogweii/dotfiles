@@ -22,7 +22,7 @@ emulate sh -c 'source /etc/profile'
 # And now, set them
 path=(
   $HOME/bin(-/N)                          # My own scripts, programs, etc
-  $HOME/.local/bin(-/N)                   # Machine-local artisanal scripts
+  $HOME/.local/{,s}bin(-/N)               # Machine-local artisanal scripts
   $HOME/.local/share/gem/ruby/*/bin(-/N)  # User-installed ruby gems
   $HOME/.local/share/pipx/bin(-/N)        # pipx isolated apps
   $HOME/.local/share/npm/bin(-/N)         # User-installed npm packages
