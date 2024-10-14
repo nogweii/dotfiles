@@ -166,7 +166,16 @@ return {
   },
 
   {
+    "zk-org/zk-nvim",
+    config = function()
+      require("zk").setup({
+        picker = 'telescope',
+      })
+    end
+  },
+
+  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'marksman', 'markdownlint', 'zk' }),
+    opts = add_ensure({ 'marksman', 'markdownlint' }),
   },
 }
