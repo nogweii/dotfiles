@@ -64,6 +64,7 @@ alias e='$EDITOR'
 # 'special' character aliases.
 alias --  -="cd - &>/dev/null; ls"  # Go to the last directory
 alias     .='cd'
+alias qcd='_quiet_cd=1 cd'
 
 alias maxup="echo \$(uprecords -a | head -n3 | tail -n1 | sed s/\-\>// | awk '{ print \$2, \$3, \$4 }')" # requires uptimed
 
