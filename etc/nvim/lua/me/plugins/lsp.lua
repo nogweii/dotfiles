@@ -35,6 +35,7 @@ return {
     opts = {},
     keys = {
       { 'zF', toggle_formatting, desc = 'Toggle formatting' },
+      { 'ZF', '<cmd>Format<CR>', desc = 'Format Buffer' },
     },
   },
 }
