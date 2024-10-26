@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'rugged'
+end
+
+repo = Rugged::Repository.new('.')
+head = repo.head
+branch = repo.branches[head.name]
+
+if branch.remote && branch.remote.url.include?('code.aether.earth')
+  repo.remotes.set_url(branch.remote.name, branch.remote.url.gsub(/code\.aether\.earth:22792/, 'code.nogweii.net:22222'))
+  puts "Updated remote #{branch.remote.name}"
+end
