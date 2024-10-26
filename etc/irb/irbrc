@@ -7,7 +7,7 @@ begin
 
   begin
     require File.join(File.dirname(__FILE__), 'irbtools_config.rb')
-  rescue Gem::ConflictError
+  rescue Gem::ConflictError, LoadError
     puts "(no irbtools available)"
   end
 
