@@ -111,4 +111,6 @@ return {
       { '<leader>nf', '<cmd>Nerdy<CR>', desc = 'Interactively choose a glyph from the Nerd Font collection' },
     },
   },
+
+  { 'wakatime/vim-wakatime', lazy = false }
 }
