@@ -13,7 +13,7 @@ local javascript_fts = {
 return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'eslint_d', 'prettierd' })
+    opts = add_ensure({ 'eslint_d', 'prettierd', 'ts_ls' })
   },
 
   {
