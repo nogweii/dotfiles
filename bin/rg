@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Wrapper script for ripgrep that prepends '--ignore-file=$XDG_CONFIG_HOME/fd/ignore' to the argument list but with the environment variable expanded.
+# Since ripgrep doesn't do any advanced parsing of it's rc file, this is basically a script version of an alias to achieve that result.
+#
+# SPDX-License-Identifier: MIT
+
+# Look through $PATH and find the command that is *not* this file.
+# This is based on the assumption that this script is first in $PATH order, and we want to find the next entry.
+# Basically a copy of https://stackoverflow.com/a/5471032
+def other_which(cmd)
+  ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+    exe = File.join(path, cmd)
+    return exe if File.executable?(exe) && !File.directory?(exe) && exe != __FILE__
+  end
+  nil
+end
+
+# Prepend the arguments
+ARGV.unshift "--ignore-file", "#{ENV['XDG_CONFIG_HOME']}/fd/ignore"
+
+# And then execute the command and forward along any other arguments
+exec other_which("rg"), *ARGV
