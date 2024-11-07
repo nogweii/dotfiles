@@ -2,6 +2,16 @@ local add_hook_after = require('lspconfig.util').add_hook_after
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+-- Additional language servers:
+--    termux-language-server
+local configs = require 'lspconfig.configs'
+if not configs['termux_ls'] then
+  configs['termux_ls'] = require 'lspconfig/configs/termux_ls'
+end
+local server = require 'mason-lspconfig.mappings.server'
+server.lspconfig_to_package['termux_ls'] = 'termux-language-server'
+server.package_to_lspconfig['termux-language-server'] = 'termux_ls'
+
 vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
@@ -74,7 +84,7 @@ local function setup_lsp_server(name)
   -- A server config file can optionally define custom on_attach handlers
   opts.on_attach = add_hook_after(opts.on_attach, any_lsp_attach)
 
-  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
   require('lspconfig')[name].setup(opts)
 end
 
