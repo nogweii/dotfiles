@@ -85,7 +85,12 @@ local function setup_lsp_server(name)
   opts.on_attach = add_hook_after(opts.on_attach, any_lsp_attach)
 
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-  require('lspconfig')[name].setup(opts)
+  local upstream_config = require('lspconfig')[name]
+  if upstream_config.setup then
+    upstream_config.setup(opts)
+  else
+    vim.notify('No such LSP config ' .. name, vim.log.levels.DEBUG)
+  end
 end
 
 require("mason-lspconfig").setup_handlers {
