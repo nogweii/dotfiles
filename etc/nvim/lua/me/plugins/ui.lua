@@ -133,18 +133,9 @@ return {
   -- in visual mode, show all of the whitespace characters
   {
     'mcauley-penney/visual-whitespace.nvim',
-    opts = {},
-    -- lazily load the plugin only I enter Visual mode the first time
-    lazy = true,
-    init = function()
-      vim.api.nvim_create_autocmd('ModeChanged', {
-        pattern = '*:[vV]',
-        once = true,
-        callback = function()
-          require('visual-whitespace').highlight_ws()
-        end,
-      })
-    end,
+    opts = {
+      enabled = true,
+    },
   },
 
   -- using the manual fold API, make smart folds calculated with indentation and TreeSitter
