@@ -4,6 +4,6 @@ local add_ensure = require('me.utils').add_ensure_installed
 return {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'black', 'basedpyright', 'ruff-lsp' })
+    opts = add_ensure({ 'black', 'basedpyright', 'ruff' })
   }
 }
