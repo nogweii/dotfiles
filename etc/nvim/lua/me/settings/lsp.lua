@@ -1,4 +1,5 @@
 local add_hook_after = require('lspconfig.util').add_hook_after
+local config = require('me.settings.config')
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -98,6 +99,9 @@ require("mason-lspconfig").setup_handlers {
   -- and will be called for each installed server that doesn't have
   -- a dedicated handler.
   function(server_name)
+    if vim.tbl_contains(config.disabled_lsp, server_name) then
+      return {}
+    end
     setup_lsp_server(server_name)
   end,
 
