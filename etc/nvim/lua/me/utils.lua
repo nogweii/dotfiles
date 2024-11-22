@@ -15,7 +15,10 @@ M.add_ensure_installed = function(additional)
   return function(_plugin, opts)
     opts.ensure_installed = opts.ensure_installed or {}
 
-    vim.list_extend(opts.ensure_installed, additional)
+    if vim.env.SSH_CONNECTION ~= nil and vim.env.SSH_CONNECTION ~= '' then
+      -- Only ensure things are installed when running locally
+      vim.list_extend(opts.ensure_installed, additional)
+    end
 
     return opts
   end
