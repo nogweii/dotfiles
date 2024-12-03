@@ -20,7 +20,7 @@ task :unnecessary do
   RakeFileUtils.verbose_flag = true
 
   OLD_CLEANUP.each do |path|
-    if File.exist? path or File.symlink? path
+    if File.exist?(path) || File.symlink?(path)
       debug "Deleting old path #{path}"
       rm_r path
     end
@@ -38,6 +38,8 @@ task :unnecessary do
 
   home_links = []
   ["~", "~/.config", "~/.local/share", "~/.local/etc"].each do |scan_target|
+    next unless File.exist? scan_target
+
     home_links << Dir.entries(exp(scan_target)).select do |home_path|
       abs_path = File.join exp(scan_target), home_path
       File.symlink? abs_path and File.readlink(abs_path).start_with?(DOTFILES_DIR)
