@@ -147,8 +147,8 @@ else
 fi
 
 # Helpful aliases to running the latest version of renovate bot on my laptop
-alias renovate-config-validator="npx --package=renovate --yes renovate-config-validator --strict"
-alias renovate-local="LOG_LEVEL=debug FORCE_COLOR=3 npx --package=renovate --yes renovate --platform=local | less"
+alias renovate-config-validator="npx --package=renovate@latest --yes renovate-config-validator --strict"
+alias renovate-local="LOG_LEVEL=debug FORCE_COLOR=3 npx --package=renovate@latest --yes renovate --platform=local | less"
 
 alias compcachereset="command rm --interactive=never ${XDG_CACHE_HOME}/zsh/compdump*; compsupercache"
 
