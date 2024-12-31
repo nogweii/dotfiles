@@ -41,7 +41,8 @@ rbenv() {
 }
 
 # The completions are shipped in the same parent directory as the command
-source "${rbenv_parent_path}/completions/rbenv.zsh"
+source "${rbenv_parent_path}/completions/_rbenv"
+compdef _rbenv rbenv
 
 # Don't need this variable any more
 unset rbenv_parent_path
