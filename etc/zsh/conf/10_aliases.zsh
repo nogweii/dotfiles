@@ -161,3 +161,5 @@ alias zshrc-local='$EDITOR $ZDOTDIR/local.zsh'
 alias nvimrc='$EDITOR $XDG_CONFIG_HOME/nvim/lua/me/'
 
 [[ -r /etc/grc.zsh ]] && source /etc/grc.zsh
+
+alias glab-vars-to-env='glab variable export -F env'
