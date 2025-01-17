@@ -40,7 +40,7 @@ local default_sources = cmp.config.sources({
       label_trailing_slash = true,
     },
   },
-  { name = 'copilot' },
+  { name = 'minuet' },
   { name = 'emoji' },
   { name = 'buffer' },
 })
@@ -90,8 +90,9 @@ local config = {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     }),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<A-y>'] = require('minuet').make_cmp_map(),
   }),
 
   -- define which sources to enable by default
