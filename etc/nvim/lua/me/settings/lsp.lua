@@ -23,17 +23,16 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-local diagnostics_signs = {
-  [vim.diagnostic.severity.ERROR] = '',
-  [vim.diagnostic.severity.WARN] = '',
-  [vim.diagnostic.severity.HINT] = '',
-  [vim.diagnostic.severity.INFO] = '',
-}
-for severity, icon in pairs(diagnostics_signs) do
-  local name = vim.diagnostic.severity[severity]:lower():gsub('^%l', string.upper)
-  name = 'DiagnosticSign' .. name
-  vim.fn.sign_define(name, { text = icon, texthl = name, numhl = '' })
-end
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.HINT] = '',
+      [vim.diagnostic.severity.INFO] = '',
+    },
+  },
+})
 
 -- do stuff after any LSP server attaches to the document
 local function any_lsp_attach(client, bufnr)

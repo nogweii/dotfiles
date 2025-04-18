@@ -2,11 +2,16 @@
 return {
   -- a very customizable status bar framework for Neovim written in Lua
   {
-    'feline-nvim/feline.nvim',
+    "rebelot/heirline.nvim",
+    event = "BufReadPost",
     config = function()
-      require('me.settings.feline')
+      require("heirline").setup({
+        statusline = require("me.settings.heirline.statusline"),
+        opts = {
+          colors = require("me.settings.heirline.colors"),
+        }
+      })
     end,
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'lewis6991/gitsigns.nvim' },
   },
 
   {
