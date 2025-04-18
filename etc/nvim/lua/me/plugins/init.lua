@@ -69,6 +69,7 @@ return {
     config = function()
       require('me.settings.dial_swaps')
     end,
+    version = false,
   },
 
   -- A smarter cursor position restoration function, excluding various buffers
