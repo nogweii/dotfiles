@@ -115,6 +115,15 @@ M.autocommands = {
       pattern = { 'helpgrep', 'grep' },
       command = 'cwindow',
     },
+
+    {
+      event = 'FileType',
+      pattern = 'qf',
+      desc = 'Disable mini.cursorword in quickfix buffers',
+      callback = function(args)
+        vim.b[args.buf].minicursorword_disable = true
+      end,
+    }
   },
 
   sql_fun = {
