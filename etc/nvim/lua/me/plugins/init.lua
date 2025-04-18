@@ -37,19 +37,6 @@ return {
 
   { 'tpope/vim-rsi' },
 
-  {
-    'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('trouble').setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-    event = 'AsyncFileLoad',
-  },
-
   -- smart <C-a> and <C-x> that knows how to change dates, enumerated strings, and regular numbers
   {
     'monaqa/dial.nvim',

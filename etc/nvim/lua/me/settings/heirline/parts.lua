@@ -157,9 +157,7 @@ M.Diagnostics = {
 
   on_click = {
     callback = function()
-      require("trouble").toggle({ mode = "document_diagnostics" })
-      -- or
-      -- vim.diagnostic.setqflist()
+      vim.diagnostic.setqflist()
     end,
     name = "heirline_diagnostics",
   },
