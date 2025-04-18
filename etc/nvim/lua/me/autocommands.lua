@@ -62,7 +62,7 @@ M.autocommands = {
         if not vim.api.nvim_buf_is_valid(args.buf) then
           return
         end
-        vim.fn.mkdir(vim.fn.fnamemodify(vim.loop.fs_realpath(args.match) or args.match, ':p:h'), 'p')
+        vim.fn.mkdir(vim.fn.fnamemodify(vim.uv.fs_realpath(args.match) or args.match, ':p:h'), 'p')
       end,
     },
   },
