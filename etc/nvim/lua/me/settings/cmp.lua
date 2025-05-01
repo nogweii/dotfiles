@@ -40,7 +40,6 @@ local default_sources = cmp.config.sources({
       label_trailing_slash = true,
     },
   },
-  { name = 'minuet' },
   { name = 'emoji' },
   { name = 'buffer' },
 })
@@ -92,7 +91,6 @@ local config = {
     }),
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<A-y>'] = require('minuet').make_cmp_map(),
   }),
 
   -- define which sources to enable by default
