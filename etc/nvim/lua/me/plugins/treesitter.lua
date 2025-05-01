@@ -24,6 +24,7 @@ return {
   {
     url = 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
     name = 'rainbow-delimiters.nvim',
+    submodules = false,
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       -- This module contains a number of default definitions
