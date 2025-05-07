@@ -148,9 +148,6 @@ M.autocommands = {
         if util.root_pattern('.gitlab-ci.y*ml')(vim.fn.fnamemodify(args.match, ':p:h')) then
           vim.opt_local.filetype = 'yaml.gitlab'
         end
-        -- check if in a root with .gitlab-ci.yaml/yml
-        -- then set filetype to 'yaml.gitlab'
-        -- set the yaml schema?
       end,
     },
   },
