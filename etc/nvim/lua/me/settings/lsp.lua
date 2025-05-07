@@ -9,9 +9,9 @@ local configs = require 'lspconfig.configs'
 if not configs['termux_ls'] then
   configs['termux_ls'] = require 'lspconfig/configs/termux_ls'
 end
-local server = require 'mason-lspconfig.mappings.server'
-server.lspconfig_to_package['termux_ls'] = 'termux-language-server'
-server.package_to_lspconfig['termux-language-server'] = 'termux_ls'
+local mason_lspconfig = (require 'mason-lspconfig').get_mappings()
+mason_lspconfig.lspconfig_to_package['termux_ls'] = 'termux-language-server'
+mason_lspconfig.package_to_lspconfig['termux-language-server'] = 'termux_ls'
 
 vim.diagnostic.config({
   underline = true,
