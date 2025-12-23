@@ -1,6 +1,9 @@
 local aurdir=${SRCDEST:-~/tmp/aur}
 mkdir -p $aurdir
-wget -q https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz -P $aurdir || return $?
-bsdtar xf $aurdir/$1.tar.gz -C $aurdir || return $?
-safedel $aurdir/$1.tar.gz
-cd $aurdir/$1 || return $?
+if [ ! -f $aurdir/$1 ]; then
+    git clone -q https://aur.archlinux.org/$1.git $aurdir/$1 || return $?
+    cd $aurdir/$1 || return $?
+else
+    cd $aurdir/$1 || return $?
+    git pull
+fi
