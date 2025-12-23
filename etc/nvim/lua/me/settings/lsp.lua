@@ -1,15 +1,3 @@
---#region Additional language servers:
-
---    termux-language-server
-local configs = require 'lspconfig.configs'
-if not configs['termux_ls'] then
-  configs['termux_ls'] = require 'lspconfig/configs/termux_ls'
-end
-local mason_lspconfig = (require 'mason-lspconfig').get_mappings()
-mason_lspconfig.lspconfig_to_package['termux_ls'] = 'termux-language-server'
-mason_lspconfig.package_to_lspconfig['termux-language-server'] = 'termux_ls'
---#endregion
-
 --#region Configure diagnostics
 vim.diagnostic.config({
   underline = true,
