@@ -12,8 +12,8 @@ local javascript_fts = {
 ---@type LazySpec
 return {
   {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = add_ensure({ 'eslint_d', 'prettierd', 'ts_ls' })
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    opts = add_ensure({ 'eslint_d', 'prettierd', 'ts_ls' }),
   },
 
   {
@@ -37,7 +37,7 @@ return {
   {
     'dmmulroy/ts-error-translator.nvim',
     opts = {
-      auto_override_publish_diagnostics = true,
+      auto_attach = true,
     },
     event = 'LspAttach',
   },
