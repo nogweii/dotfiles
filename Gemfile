@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "~> 3"
+ruby "~> 4"
 
 gem "binman"
 gem "md2man"
