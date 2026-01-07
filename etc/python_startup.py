@@ -17,7 +17,8 @@ def setup_history():
 
     history: Path = state_home / "python_history"
 
-    readline.read_history_file(str(history))
+    if history.exists():
+        readline.read_history_file(str(history))
     atexit.register(readline.write_history_file, str(history))
 
 
