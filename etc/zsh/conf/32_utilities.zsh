@@ -15,7 +15,11 @@ _rake_does_task_list_need_generating () {
 _rake () {
   if [ -f Rakefile ]; then
     if _rake_does_task_list_need_generating; then
-      rake --silent --tasks | cut -d' ' -f2 2>/dev/null >.rake_tasks
+      if [ -f Gemfile -o -f gems.rb ]; then
+        bundle exec rake --silent --tasks | cut -d' ' -f2 2>/dev/null >.rake_tasks
+      else
+         rake --silent --tasks | cut -d' ' -f2 2>/dev/null >.rake_tasks
+      fi
     fi
     compadd `cat .rake_tasks`
   fi
