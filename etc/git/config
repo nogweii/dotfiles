@@ -54,7 +54,7 @@
 [pack]
     threads = 0
 [init]
-    templatedir = ~/dotfiles/config/git/template
+    templatedir = ~/dotfiles/etc/git/template/
     defaultBranch = main
 [diff]
     submodule = diff
