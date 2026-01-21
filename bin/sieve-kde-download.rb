@@ -6,6 +6,7 @@ require "fileutils"
 
 gemfile do
   source "https://rubygems.org"
+  gem "base64"
   gem "ruby-managesieve", require: "managesieve"
   gem "iniparse"
   gem "ruby-dbus", require: "dbus"
@@ -44,14 +45,7 @@ sieve = ManageSieve.new({
 # Then download the script marked as active
 active_script_name = sieve.scripts.find { |s| s[1] == "ACTIVE" }[0]
 
-# Possible sieve folder paths:
-# - ~/.dovecot.sieve/
-# - ~/sieve/
-# - 'sieve' folder underneath Maildir
-# - somewhere else I choose
-#@sieve_path = Pathname.new("#{ENV['HOME']}") / '.dovecot.sieve'
-#@sieve_path = Pathname.new("#{ENV['HOME']}") / 'mail' / '.sieve'
-@sieve_path = Pathname.new("#{ENV["XDG_CONFIG_HOME"]}") / "sieve"
+@sieve_path = Pathname.new(ENV["XDG_CONFIG_HOME"]) / "sieve"
 FileUtils.mkdir_p @sieve_path
 
 ESC = "\u001B["
@@ -70,9 +64,7 @@ sieve.scripts.each do |script|
   script_contents = sieve.get_script(script_name)
   script_path = @sieve_path / (script_name + ".sieve")
 
-  File.open(script_path, "w") do |fp|
-    fp.write(script_contents)
-  end
+  File.write(script_path, script_contents)
 
   # Provide a symlink to automatically run the active script
   FileUtils.symlink(script_path, @sieve_path / ".active.sieve", force: true) if active_status
