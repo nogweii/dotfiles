@@ -89,61 +89,68 @@ STATUSES = [
   Status.new(511, "Network Authentication Required", "Indicates that the client needs to authenticate to gain network access.")
 ]
 
-pastel = Pastel.new
-
-# Calculate available width
-width = [TTY::Screen.width, 80].max
-# Estimate status column width (longest name is around 35 chars) plus borders/padding
-status_col_width = STATUSES.map { |s| "#{s.code} #{s.name}".length }.max
-desc_width = [width - status_col_width - 8, 20].max
-
 def wrap_text(text, width)
   text.gsub(/(.{1,#{width}})(\s+|\Z)/, "\\1\n")
 end
 
-# Prepare table data
-table_data = []
-STATUSES.each do |s|
-  status_text = "#{s.code} #{s.name}"
-  wrapped_desc = wrap_text(s.description, desc_width).split("\n")
+width = [TTY::Screen.width, 80].max
+pastel = Pastel.new
+target_code = ARGV[0]&.to_i
+if target_code
+  status = STATUSES.find { |s| s.code == target_code }
 
-  # First row with status
-  table_data << [status_text, wrapped_desc.shift]
-
-  # Subsequent rows with empty status
-  wrapped_desc.each do |line|
-    table_data << ["", line]
+  if status
+    puts pastel.bold.cyan(TTY::Link.link_to("#{status.code} #{status.name}", status.link))
+    puts "\n"
+    puts wrap_text(status.description, width)
+  else
+    puts pastel.red("Status code #{target_code} not found.")
+    exit 1
   end
-end
+else
+  # Estimate status column width (longest name is around 35 chars) plus borders/padding
+  status_col_width = STATUSES.map { |s| "#{s.code} #{s.name}".length }.max
+  desc_width = [width - status_col_width - 8, 20].max
 
-header = ["Status", "Description"]
+  # Prepare table data
+  table_data = []
+  STATUSES.each do |s|
+    status_text = "#{s.code} #{s.name}"
+    wrapped_desc = wrap_text(s.description, desc_width).split("\n")
+    # First row with status
+    table_data << [status_text, wrapped_desc.shift]
+    # Subsequent rows with empty status
+    wrapped_desc.each do |line|
+      table_data << ["", line]
+    end
+  end
 
-table = TTY::Table.new(header: header, rows: table_data)
+  header = ["Status", "Description"]
+  table = TTY::Table.new(header: header, rows: table_data)
+  rendered_table = table.render(:unicode, width: width, resize: true) do |renderer|
+    renderer.border.separator = :each_row
+    renderer.padding = [0, 1]
 
-rendered_table = table.render(:unicode, width: width, resize: true) do |renderer|
-  renderer.border.separator = :each_row
-  renderer.padding = [0, 1]
-  # We let the columns auto-size, but they should adhere to our manual wrapping
-
-  renderer.filter = proc do |val, row_index, col_index|
-    if col_index == 0 # Status column
-      if val && !val.empty?
-        # Extract code to find the status object for the link
-        code = val.to_i
-        s = STATUSES.find { |stat| stat.code == code }
-
-        text = val
-        if s
-          text = TTY::Link.link_to(val, s.link)
+    # We let the columns auto-size, but they should adhere to our manual wrapping
+    renderer.filter = proc do |val, _row_index, col_index|
+      if col_index == 0 # Status column
+        if val && !val.empty?
+          # Extract code to find the status object for the link
+          code = val.to_i
+          s = STATUSES.find { |stat| stat.code == code }
+          text = val
+          if s
+            text = TTY::Link.link_to(val, s.link)
+          end
+          pastel.bold.cyan(text)
+        else
+          val
         end
-        pastel.bold.cyan(text)
       else
         val
       end
-    else
-      val
     end
   end
-end
 
-puts rendered_table
+  puts rendered_table
+end
