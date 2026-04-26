@@ -3,10 +3,10 @@ return {
   {
     {
       'echasnovski/mini.nvim',
-      dependencies = {
-        -- Not directly used, but this has a number of well-maintained queries to power mini.ai
-        'nvim-treesitter/nvim-treesitter-textobjects',
-      },
+      -- dependencies = {
+      --   -- Not directly used, but this has a number of well-maintained queries to power mini.ai
+      --   'nvim-treesitter/nvim-treesitter-textobjects',
+      -- },
       version = '*',
       lazy = false,
       config = function()
@@ -21,12 +21,12 @@ return {
 
         require('mini.bracketed').setup({
           -- Disable a few targets that I don't care about
-          buffer  = { suffix = '' }, -- this is handled by bufferline
-          file    = { suffix = '' },
+          buffer = { suffix = '' }, -- this is handled by bufferline
+          file = { suffix = '' },
           oldfile = { suffix = '' },
-          undo    = { suffix = '' },
-          window  = { suffix = '' },
-          yank    = { suffix = '' },
+          undo = { suffix = '' },
+          window = { suffix = '' },
+          yank = { suffix = '' },
         })
 
         local ai = require('mini.ai')

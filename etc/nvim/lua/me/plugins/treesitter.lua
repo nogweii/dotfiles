@@ -1,23 +1,11 @@
 ---@type LazySpec
 return {
-
   {
-    'nvim-treesitter/nvim-treesitter',
+    'neovim-treesitter/nvim-treesitter',
+    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    lazy = false,
     build = ':TSUpdate',
-    version = false,
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup({
-        -- Enable some modules shipped with nvim-treesitter
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        },
-      })
-    end,
-    event = 'AsyncFileLoad',
+    branch = 'main',
   },
 
   -- Treesitter compatible rainbow parentheses
