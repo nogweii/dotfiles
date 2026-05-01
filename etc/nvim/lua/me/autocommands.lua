@@ -123,7 +123,7 @@ M.autocommands = {
       callback = function(args)
         vim.b[args.buf].minicursorword_disable = true
       end,
-    }
+    },
   },
 
   sql_fun = {
@@ -144,7 +144,7 @@ M.autocommands = {
       desc = 'Additional gitlab CI files in subdirectories',
       pattern = { '*.ci*.yaml', '*.ci*.yml', '*-ci*.yaml', '*-ci*.yml' },
       callback = function(args)
-        local util = require 'lspconfig.util'
+        local util = require('lspconfig.util')
         if util.root_pattern('.gitlab-ci.y*ml')(vim.fn.fnamemodify(args.match, ':p:h')) then
           vim.opt_local.filetype = 'yaml.gitlab'
         end
@@ -157,10 +157,24 @@ M.autocommands = {
       event = 'DirChanged',
       desc = 'Add the directory to the zoxide database',
       callback = function(event)
-        vim.fn.system({ "zoxide", "add", event.file })
-      end
-    }
-  }
+        vim.fn.system({ 'zoxide', 'add', event.file })
+      end,
+    },
+  },
+
+  treesitter_enablement = {
+    {
+      event = 'FileType',
+      desc = 'Turn on highlighting using treesitter falling back to regex syntax highlighting',
+      callback = function()
+        if vim.treesitter.get_parser(nil, nil, { error = false }) then
+          vim.treesitter.start()
+        else
+          vim.cmd('syntax enable')
+        end
+      end,
+    },
+  },
 }
 
 function M.create_au()
