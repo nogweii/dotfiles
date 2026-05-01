@@ -19,7 +19,8 @@ def setup_history():
 
     if history.exists():
         readline.read_history_file(str(history))
-    atexit.register(readline.write_history_file, str(history))
+
+    _ = atexit.register(readline.write_history_file, str(history))
 
 
 if is_vanilla():
