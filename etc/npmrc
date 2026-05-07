@@ -2,14 +2,13 @@
 prefix=~/.local/node
 cache=~/.local/cache/npm
 
-# Use vim. TODO: update to nvim when that's more common across my computers
-editor="vim"
+editor="nvim"
 
 # Various defaults specified so I stop repeating myself every time I run npm init
-init-author-name="Evaryont"
-init-author-email="nogui@evaryont.me"
-init-author-url="https://evaryont.me"
-init-license="Apache-2.0"
+init-author-name="nogweii"
+init-author-email="code@nogweii.net"
+init-author-url="https://nogweii.net"
+init-license="MPL-2.0"
 init-version="0.1.0"
 
 # A little nicer commit message for npm version
@@ -18,8 +17,5 @@ message="Bump version to v%s"
 # Better looking tree drawing
 unicode=true
 
-# Move node-gyp's temporary directory to the cache folder too
-devdir=~/.local/cache/node-gyp
-
-@nogweii:registry=https://code.aether.earth/api/v4/packages/npm/
-https://code.aether.earth/api/v4/packages/npm/:_authToken=$GITLAB_API_PRIVATE_TOKEN
+@nogweii:registry=https://code.nogweii.net/api/v4/packages/npm/
+https://code.nogweii.net/api/v4/packages/npm/:_authToken=$GITLAB_API_PRIVATE_TOKEN
